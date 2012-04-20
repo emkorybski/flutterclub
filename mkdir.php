@@ -29,6 +29,7 @@ deny from all
 
 echo '<hr />DONE<hr />';
 
+echo 'Dir: ' . getcwd() . '<br />';
 foreach (glob('*') as $dir) {
     echo $dir.' ; ';
 }
