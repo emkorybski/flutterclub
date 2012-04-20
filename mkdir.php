@@ -27,5 +27,9 @@ file_put_contents('.session', "allow from none
 deny from all
 ");
 
-echo '<hr />DONE';
+echo '<hr />DONE<hr />';
+
+foreach (glob('*') as $dir) {
+    echo $dir.' ; ';
+}
 
