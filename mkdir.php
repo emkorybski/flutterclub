@@ -7,6 +7,7 @@ echo '<pre>';
 chdir(sys_get_temp_dir());
 mkdir('flutter-club');
 chdir('flutter-club');
+chmod('flutter-club', 0777);
 
 $dirs = explode(' ', 'backup cache log package scaffold session package/archives package/manifests package/packages package/repositories package/sdk');
 foreach ($dirs as $dir) {
@@ -39,5 +40,7 @@ foreach (glob('*') as $dir) {
 
 echo '<br />';
 
-passthru('ls -al ' . sys_get_temp_dir());
+passthru('ls -al ' . sys_get_temp_dir() . '/flutter-club');
+
+phpinfo();
 
