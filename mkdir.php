@@ -4,6 +4,10 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 echo '<pre>';
 
+passthru('ls ' . sys_get_temp_dir());
+
+/*
+
 chdir(sys_get_temp_dir());
 mkdir('flutter-club');
 chdir('flutter-club');
@@ -33,4 +37,6 @@ echo 'Dir: ' . getcwd() . '<br />';
 foreach (glob('*') as $dir) {
     echo $dir.' ; ';
 }
+
+*/
 
