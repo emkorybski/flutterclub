@@ -4,6 +4,8 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 echo '<pre>';
 
+ini_set('session.save_path', sys_get_temp_dir());
+
 chdir(sys_get_temp_dir());
 mkdir('flutter-club');
 chdir('flutter-club');
@@ -12,6 +14,7 @@ chmod('flutter-club', 0777);
 $dirs = explode(' ', 'backup cache log package scaffold session package/archives package/manifests package/packages package/repositories package/sdk');
 foreach ($dirs as $dir) {
 	echo '<hr />';
+	echo $dir . '<br />';
 	mkdir($dir);
 	chmod($dir, 0777);
 	print_r(stat($dir));
