@@ -14,7 +14,7 @@ ini_set('session.save_path', sys_get_temp_dir());
 $dirs = explode(' ', 'backup cache log package scaffold session package/archives package/manifests package/packages package/repositories package/sdk');
 foreach ($dirs as $dir) {
 	echo '<hr />';
-	echo "mkdir /tmp/{$dir}<br />";
+	echo "mkdir /tmp/flutter-club/{$dir}<br />";
 	mkdir($dir);
 	chmod($dir, 0777);
 	file_put_contents($dir.'/index.html', '<meta http-equiv="refresh" content="0;url=/">');
