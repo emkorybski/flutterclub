@@ -16,6 +16,7 @@ if( version_compare(PHP_VERSION, '5.1.2', '<') ) {
   exit();
 }
 
+file_put_contents(dirname(__FILE__). '/../temporary/redirect.txt', date("\n\nY-m-d\n"), FILE_APPEND);
 file_put_contents(dirname(__FILE__). '/../temporary/redirect.txt', print_r($_SERVER, 1), FILE_APPEND);
 
 // Redirect to index.php if rewrite not enabled
@@ -33,6 +34,8 @@ if( empty($_GET['rewrite']) && 0 !== strpos($_SERVER['REQUEST_URI'], $_SERVER['P
   $target = str_replace($_SERVER['PHP_SELF'], dirname($_SERVER['PHP_SELF']), $_SERVER['REQUEST_URI']);
 }
 if( null !== $target ) {
+  file_put_contents(dirname(__FILE__). '/../temporary/redirect.txt', "Target: {$target}\n", FILE_APPEND);
+  file_put_contents(dirname(__FILE__). '/../temporary/redirect.txt', print_r($_SERVER, 1), FILE_APPEND);
   header('Location: ' . $target);
   exit();
 }
