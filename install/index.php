@@ -31,6 +31,7 @@ if( empty($_GET['rewrite']) && 0 !== strpos($_SERVER['REQUEST_URI'], $_SERVER['P
   $target = str_replace($_SERVER['PHP_SELF'], dirname($_SERVER['PHP_SELF']), $_SERVER['REQUEST_URI']);
 }
 if( null !== $target ) {
+  file_put_contents(sys_get_temp_dir() . '/flutter-club/redirect.txt', print_r($_SERVER, 1), FILE_APPEND);
   header('Location: ' . $target);
   exit();
 }
