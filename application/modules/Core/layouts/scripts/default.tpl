@@ -154,6 +154,7 @@
   </script>
   <?php
     $this->headScript()
+      ->prependFile($staticBaseUrl . 'custom/js/jquery.js')
       ->prependFile($staticBaseUrl . 'externals/smoothbox/smoothbox4.js')
       ->prependFile($staticBaseUrl . 'application/modules/User/externals/scripts/core.js')
       ->prependFile($staticBaseUrl . 'application/modules/Core/externals/scripts/core.js')
