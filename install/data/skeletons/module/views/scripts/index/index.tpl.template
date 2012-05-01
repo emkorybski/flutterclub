@@ -1,4 +1,0 @@
-
-Index for skeleton module: %%nameInflected%%
-
-someVar : <?php echo $this->someVar ?>
