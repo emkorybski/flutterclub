@@ -1,0 +1,187 @@
+{
+  "type": "external",
+  "name": "mootools",
+  "version": "4.2.2",
+  "revision": "9643",
+  "path": "externals\/mootools",
+  "repository": null,
+  "date": "Thu, 19 Apr 2012 23:27:16 +0000",
+  "title": "Mootools",
+  "description": null,
+  "thumb": null,
+  "developer": null,
+  "authors": [
+    "Webligo Developments"
+  ],
+  "changeLog": {
+    "4.2.2": {
+      "manifest.php": "Incremented version",
+      "mootools-1.2.5-core-nc.js": "Removed",
+      "mootools-1.2.5-core-yc.js": "Removed",
+      "mootools-1.2.5.1-more-nc.js": "Removed",
+      "mootools-1.2.5.1-more-yc.js": "Removed",
+      "mootools-core-1.3.2-full-compat-nc.js": "Removed",
+      "mootools-core-1.3.2-full-compat-yc.js": "Removed",
+      "mootools-core-1.3.2-full-nocompat-nc.js": "Removed",
+      "mootools-core-1.3.2-full-nocompat-yc.js": "Removed",
+      "mootools-core-1.4.5-full-compat-nc.js": "Added",
+      "mootools-core-1.4.5-full-compat-yc.js": "Added",
+      "mootools-core-1.4.5-full-nocompat-nc.js": "Added",
+      "mootools-core-1.4.5-full-nocompat-yc.js": "Added",
+      "mootools-more-1.3.2.1-full-compat-nc.js": "Removed",
+      "mootools-more-1.3.2.1-full-compat-yc.js": "Removed",
+      "mootools-more-1.3.2.1-full-nocompat-nc.js": "Removed",
+      "mootools-more-1.3.2.1-full-nocompat-yc.js": "Removed",
+      "mootools-more-1.4.0.1-full-compat-nc.js": "Added",
+      "mootools-more-1.4.0.1-full-compat-yc.js": "Added",
+      "mootools-more-1.4.0.1-full-nocompat-nc.js": "Added",
+      "mootools-more-1.4.0.1-full-nocompat-yc.js": "Added"
+    },
+    "4.1.7": {
+      "manifest.php": "Incremented version",
+      "mootools-1.2.2-core-nc.js": "Removed",
+      "mootools-1.2.2-core-yc.js": "Removed",
+      "mootools-1.2.2.2-more-nc.js": "Removed",
+      "mootools-1.2.2.2-more-yc.js": "Removed",
+      "mootools-1.2.4-core-nc.js": "Removed",
+      "mootools-1.2.4-core-yc.js": "Removed",
+      "mootools-1.2.4.2-more-nc.js": "Removed",
+      "mootools-1.2.4.2-more-yc.js": "Removed",
+      "mootools-1.2.4.4-more-nc.js": "Removed",
+      "mootools-1.2.4.4-more-yc.js": "Removed",
+      "mootools-core-1.3.2-full-compat-nc.js": "Added",
+      "mootools-core-1.3.2-full-compat-yc.js": "Added",
+      "mootools-core-1.3.2-full-nocompat-nc.js": "Added",
+      "mootools-core-1.3.2-full-nocompat-yc.js": "Added",
+      "mootools-more-1.3.2.1-full-compat-nc.js": "Added",
+      "mootools-more-1.3.2.1-full-compat-yc.js": "Added",
+      "mootools-more-1.3.2.1-full-nocompat-nc.js": "Added",
+      "mootools-more-1.3.2.1-full-nocompat-yc.js": "Added"
+    },
+    "4.1.4": {
+      "manifest.php": "Incremented version",
+      "mootools-1.2.5.1-more-nc.js": "Added; Hack to prevent IE drag\/drop issues",
+      "mootools-1.2.5.1-more-yc.js": "Added; Hack to prevent IE drag\/drop issues",
+      "mootools-1.2.5-core-nc.js": "Hack to prevent IE drag\/drop issues",
+      "mootools-1.2.5-core-yc.js": "Hack to prevent IE drag\/drop issues"
+    },
+    "4.1.0": {
+      "manifest.php": "Incremented version",
+      "mootools-1.2.4.4-more-nc.js": "Hack to prevent IE draggable error",
+      "mootools-1.2.4.4-more-yc.js": "Hack to prevent IE draggable error"
+    },
+    "4.0.2": {
+      "manifest.php": "Incremented version",
+      "mootools-1.2.5-core-nc.js": "Added; Hack to prevent iframe issues",
+      "mootools-1.2.5-core-yc.js": "Added; Hack to prevent iframe issues"
+    },
+    "4.0.1": {
+      "manifest.php": "Incremented version",
+      "mootools-1.2.4-core-nc.js": "Hack to prevent iframe issues",
+      "mootools-1.2.4-core-yc.js": "Hack to prevent iframe issues",
+      "mootools-1.2.4.4-more-nc.js": "Added",
+      "mootools-1.2.4.4-more-yc.js": "Added"
+    }
+  },
+  "meta": {
+    "date": "Thu, 19 Apr 2012 23:27:16 +0000",
+    "title": "Mootools",
+    "description": null,
+    "developer": null,
+    "authors": [
+      "Webligo Developments"
+    ],
+    "changeLog": null
+  },
+  "actions": [
+    
+  ],
+  "callback": null,
+  "dependencies": null,
+  "tests": [
+    
+  ],
+  "permissions": [
+    
+  ],
+  "structure": {
+    "externals\/mootools": {
+      "type": "directory",
+      "path": "externals\/mootools",
+      "structure": [
+        {
+          "path": "manifest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4007,
+          "sha1": "e8e164efac3826cc46a69b82de0f545589667492"
+        },
+        {
+          "path": "mootools-core-1.4.5-full-compat-nc.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 160495,
+          "sha1": "2cc787ebd4d29f2e24646f76f9c525336949783e"
+        },
+        {
+          "path": "mootools-core-1.4.5-full-compat-yc.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 96362,
+          "sha1": "cc019ac09f68258ee3442fe7cc440adf78a3cef2"
+        },
+        {
+          "path": "mootools-core-1.4.5-full-nocompat-nc.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 150803,
+          "sha1": "069f109a295b2fad5b776d5adf5008aaded995d7"
+        },
+        {
+          "path": "mootools-core-1.4.5-full-nocompat-yc.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 90109,
+          "sha1": "2da56364be255f2a3944f11c42a1d53112066bd3"
+        },
+        {
+          "path": "mootools-more-1.4.0.1-full-compat-nc.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 237712,
+          "sha1": "3d09b0b0b6a2da3833ec99010c2013f51c196627"
+        },
+        {
+          "path": "mootools-more-1.4.0.1-full-compat-yc.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 148565,
+          "sha1": "51cb75de7af103e23bd0ed97be40661aa5584cfb"
+        },
+        {
+          "path": "mootools-more-1.4.0.1-full-nocompat-nc.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 235354,
+          "sha1": "adfed2c3b58ce01b7d84d52b44ce599124ccb7ac"
+        },
+        {
+          "path": "mootools-more-1.4.0.1-full-nocompat-yc.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 147179,
+          "sha1": "eb0fa8f0be51e598b835ef92f4fd7c8822b0697f"
+        }
+      ]
+    }
+  }
+}
