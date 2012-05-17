@@ -3,7 +3,7 @@
 
 <IfModule mod_rewrite.c>
   Options +FollowSymLinks
-  RewriteEngine Off
+  RewriteEngine On
 
   # Get rid of index.php
   RewriteCond %{REQUEST_URI} /index\.php

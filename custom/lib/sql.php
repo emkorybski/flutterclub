@@ -43,6 +43,7 @@ class sql extends Singleton {
 			while (ob_get_level()) {
 				ob_end_clean();
 			}
+			echo "\n\n<HR><HR><HR>\n\n";
 			bets::debug($sql);
 		}
 		$mysqlResult = $this->run($sql);

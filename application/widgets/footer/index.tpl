@@ -8,10 +8,10 @@
 	}
 	
 	.layout_core_menu_main {
-		background-color: #4fdbe1;
-		border: 1px solid #39a9d2;
-		border-width: 5px 0 0 5px;
-		border-radius: 5px;
+		background-color: #3aaacf;
+		border: 1px solid #388ab0;
+		border-width: 3px 0 0 3px;
+		border-radius: 7px;
 		position: absolute;
 		bottom: -20px;
 	}
@@ -22,11 +22,10 @@
 	
 	#global_header {
 		background: url(/fc/custom/images/topbar_bg.png) repeat-x center;
-		padding-bottom: 50px;
 	}
 	
 	body {
-		background-color: #f3f5f1;
+		background-color: #f1eeee;
 	}
 	
 	.layout_core_menu_logo {
@@ -38,15 +37,35 @@
 		height: 130px;
 	}
 	
+	#global_header {
+		background: #e9f4fa url(/fc/custom/images/clouds.png) repeat-x top center;
+		
+	}
+	
+	.layout_page_header {
+		background: url(/fc/custom/images/arrow.png) repeat-x center 187px;
+	}
+	
 	/* ** */
 	
-	.layout_user_list_online h3, #fc_activity_feed_title, #main_tabs {
+	#global_content .generic_layout_container h3, #fc_activity_feed_title, #main_tabs {
 		text-align: center;
-		background-color: #ff4200;
+		background-color: #ff6600;
 		color: #ffffff;
 		border-radius: 0;
-		border-top-left-radius: 5px;
-		border-top-right-radius: 5px;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+		font-family: fc_bebas;
+		font-size: 14px;
+		text-align: left;
+		word-spacing: 0.4em;
+	}
+	.clear {
+		clear: both;
+	}
+	
+	.generic_layout_container h3 {
+		margin-bottom: 0;
 	}
 	
 	#fc_activity_feed_title {
@@ -88,5 +107,24 @@
 	
 	#main_tabs {
 	}
+	
+	/* ** */
+	
+	@font-face {
+		font-family: fc_bebas;
+		src: url('/fc/custom/fonts/bebas.ttf');
+	}
+	
+	@font-face {
+		font-family: fc_pts;
+		src: url('/fc/custom/fonts/pts75f.ttf');
+	}
+	
+	.menu_core_main, .layout_categories h3 {
+		font-family: fc_bebas;
+		font-size: 14px;
+		word-spacing: 0.4em;
+	}
+	
 </style>
 

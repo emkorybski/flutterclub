@@ -1,7 +1,6 @@
 <?php defined('_ENGINE') or die('Access Denied'); return array (
-  'maintenance' => 
+  'class' => 'Zend_Mail_Transport_Sendmail',
+  'args' => 
   array (
-    'enabled' => false,
-    'code' => 'sg5e9',
   ),
 ); ?>

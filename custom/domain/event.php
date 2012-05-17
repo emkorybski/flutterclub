@@ -24,16 +24,50 @@ class Event extends DBRecord {
 		return Event::findWhere(array('idparent=' => $this->id));
 	}
 
+	public function addChildEvent($event) {
+		$event->idparent = $this->id;
+	}
+
 	public function getChildSelections() {
 		return Selection::findWhere(array('idevent=' => $this->id));
+	}
+
+	public function addChildSelection($selection) {
+		$selection->idevent = $this->id;
 	}
 
 	public function getSport() {
 		return Sport::get($this->idsport);
 	}
 
+	public function setSport($sport) {
+		$this->idsport = $sport->id;
+	}
+
 	public function getParent() {
 		return Event::get($this->idparent);
+	}
+
+	public function setParent($parent) {
+		$this->idparent = $parent->id;
+	}
+
+	public function topEvent() {
+		$event = $this;
+		while ($event->idparent) {
+			$event = static::get($event->idparent);
+		}
+		
+		return $event;
+	}
+
+	public function visible() {
+		foreach ($this->getChildEvents() as $childEvent) {
+			if ($childEvent->visible()) {
+				return true;
+			}
+		}
+		return Selection::countWhere(array('idevent=' => $this->id));
 	}
 
 }

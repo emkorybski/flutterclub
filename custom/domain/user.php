@@ -27,6 +27,7 @@ class User extends DBRecord {
 		if (!$currentUser) {
 			$currentUser = new User();
 			$currentUser->id_engine4_users = $socialId;
+			$currentUser->points = 0;
 			$currentUser->insert();
 		}
 		return $currentUser;

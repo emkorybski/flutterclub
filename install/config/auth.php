@@ -9,6 +9,6 @@
  * @version    $Id: auth.php 7244 2010-09-01 01:49:53Z john $
  * @author     John
  */
+
 defined('SEIRAN_INSTALL') or die(); // Example (pw:test) test:seiran:8bd98fb521b3b05f121560c504526a3d ?>
 someUser:someRealm:someMd5
-florin.ardelian@moredevs.ro:seiran:c1b191c738429c2197460e1ea1505ac9

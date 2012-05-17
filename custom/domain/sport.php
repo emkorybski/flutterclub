@@ -17,7 +17,37 @@ class Sport extends DBRecord {
 	}
 
 	public function getChildEvents() {
-		return Event::findWhere(array('idsport=', $this->id));
+		return Event::findWhere(array('idsport=' => $this->id));
+	}
+
+	public function addChildEvent($event) {
+		$event->idsport = $this->id;
+	}
+
+	public function initialize() {
+		call_user_func_array('parent::initialize', func_get_args());
+		$this->enabled = (isset($this->_data['enabled']) && ($this->enabled == 'y'));
+	}
+
+	public function update() {
+		$this->enabled = ($this->enabled ? 'y' : 'n');
+		call_user_func_array('parent::update', func_get_args());
+		$this->enabled = ($this->enabled == 'y');
+	}
+
+	public function insert() {
+		$this->enabled = ($this->enabled ? 'y' : 'n');
+		call_user_func_array('parent::insert', func_get_args());
+		$this->enabled = ($this->enabled == 'y');
+	}
+
+	public function visible() {
+		foreach ($this->getChildEvents() as $childEvent) {
+			if ($childEvent->visible()) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 }

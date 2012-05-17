@@ -16,7 +16,7 @@ abstract class bets {
 
 	public static function initialize() {
 		bets::sql();
-		self::$_oldErrorHandler = set_error_handler(array(__CLASS__, 'handleError'), error_reporting());
+	//	self::$_oldErrorHandler = set_error_handler(array(__CLASS__, 'handleError'), error_reporting());
 	}
 
 	/**
@@ -47,7 +47,7 @@ abstract class bets {
 			'File name' => $errfile,
 			'File line' => $errline
 		);
-		file_put_contents('/tmp/dcb-www-errors', print_r($report, 1), FILE_APPEND);
+		file_put_contents(dirname(__FILE__) . '/../../temporary/log/fc-errors', print_r($report, 1), FILE_APPEND);
 		call_user_func_array(self::$_oldErrorHandler, func_get_args());
 	}
 
