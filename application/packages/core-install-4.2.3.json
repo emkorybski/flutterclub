@@ -5,7 +5,7 @@
   "revision": "9688",
   "path": "\/",
   "repository": null,
-  "date": "Thu, 19 Apr 2012 23:27:16 +0000",
+  "date": "Wed, 23 May 2012 22:20:20 +0000",
   "title": "Package Manager",
   "description": "Package Manager",
   "thumb": null,
@@ -211,7 +211,7 @@
     }
   },
   "meta": {
-    "date": "Thu, 19 Apr 2012 23:27:16 +0000",
+    "date": "Wed, 23 May 2012 22:20:20 +0000",
     "title": "Package Manager",
     "description": "Package Manager",
     "developer": null,
@@ -2308,8 +2308,8 @@
           "dir": false,
           "file": true,
           "perms": "0666",
-          "size": 4113,
-          "sha1": "9da5760e85bb51b5faf159b4a65dacd104c12b45"
+          "size": 4317,
+          "sha1": "bca4c7a6b48f69a8b5ea6a1f2409b7fb36c0dfe7"
         },
         {
           "path": "views\/scripts\/manage\/install.tpl",

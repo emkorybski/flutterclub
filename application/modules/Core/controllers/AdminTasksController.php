@@ -6,7 +6,7 @@
  * @package    Core
  * @copyright  Copyright 2006-2010 Webligo Developments
  * @license    http://www.socialengine.net/license/
- * @version    $Id: AdminTasksController.php 9504 2011-11-17 20:16:02Z john $
+ * @version    $Id: AdminTasksController.php 9701 2012-04-26 02:18:32Z pamela $
  * @author     John Boehr <j@webligo.com>
  */
 
@@ -378,12 +378,13 @@ class Core_AdminTasksController extends Core_Controller_Action_Admin
       $tasksTable = Engine_Api::_()->getDbtable('tasks', 'core');
 
       // Single mode
-      if( null !== ($task_id = $this->_getParam('task_id')) && is_numeric($task_id) ) {
+/*      if( null == ($task_id = $this->_getParam('selection')) && is_array($task_id) ) {
         $tasks = array($task_id);
       }
-
+*/
       // Multi mode
-      else if( null !== ($tasks = $this->_getParam('selection')) && is_array($tasks) ) {
+      //else if( null !== ($tasks = $this->_getParam('selection')) && is_array($tasks) ) {
+      if( null !== ($tasks = $this->_getParam('selection')) && is_array($tasks) ) {          
         $tasks = array_filter($tasks);
       }
 
@@ -414,18 +415,23 @@ class Core_AdminTasksController extends Core_Controller_Action_Admin
       $tasksTable = Engine_Api::_()->getDbtable('tasks', 'core');
 
       // Single mode
-      if( null !== ($task_id = $this->_getParam('task_id')) && is_numeric($task_id) ) {
+/*      if( null !== ($task_id = $this->_getParam('selection')) && is_numeric($task_id) ) {
         $tasks = array($task_id);
       }
-
+*/
       // Multi mode
-      else if( null !== ($tasks = $this->_getParam('selection')) && is_array($tasks) ) {
+      //else if( null !== ($tasks = $this->_getParam('selection')) && is_array($tasks) ) {
+      if( null !== ($tasks = $this->_getParam('selection')) && is_array($tasks) ) {          
         $tasks = array_filter($tasks);
       }
 
       if( is_array($tasks) && !empty($tasks) ) {
         $taskObjects = $tasksTable->find($tasks);
-        $tasksTable->reset($taskObjects);
+        if( $taskObjects !== null ) {
+          foreach( $taskObjects as $taskObject ) {            
+            $tasksTable->reset($taskObject, true);
+          }
+        }
       }
     }
 

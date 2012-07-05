@@ -11,14 +11,15 @@ abstract class DBRecord extends Object {
 	protected static $_instances = array();
 	protected $_data = array();
 
+	public static $SQLDIE = 0;
+	
 	/**
 	 * Returns the database record with the given ID as a DBRecord object
 	 * @param int $id
 	 */
 	public static function get($id, $customDbClass = null) {
-		$id = (int) $id;
 		$className = ($customDbClass ? $customDbClass : get_called_class());
-		if (isset(static::$_instances[$className][$id])) {
+		if (isset(static::$_instances[$className][$id = (int) $id])) {
 			return static::$_instances[$className][$id];
 		}
 		try {
@@ -41,12 +42,12 @@ abstract class DBRecord extends Object {
 		$sql = '';
 		foreach ($conditions as $cond => $value) {
 			if (is_int($cond)) {
-				throw new Exception('You probably have an error in an SQL condition array. The correct form is array("cond"=>"value") not array("cond", "value")');
+				throw new \Exception('You probably have an error in an SQL condition array. The correct form is array("cond"=>"value") not array("cond", "value")');
 			}
 			$value = bets::sql()->escape($value);
 			$sql .= " AND ({$cond}{$value}) ";
 		}
-		return ' (1=1) ' . $sql;
+		return substr($sql, 4); // " AND"
 	}
 
 	/**
@@ -56,7 +57,7 @@ abstract class DBRecord extends Object {
 	public static function getWhere($conditions = array(), $extraQuery = '') {
 		$table = static::$_table;
 		$where = static::conditionstoSQL($conditions);
-		$sql = "SELECT id FROM `{$table}` WHERE {$where} {$extraQuery} LIMIT 1";
+		$sql = "SELECT `{$table}`.`id` AS `id` FROM `{$table}` WHERE {$where} {$extraQuery} LIMIT 1";
 		$result = bets::sql()->query($sql);
 		return (count($result) ? static::get($result[0]['id']) : null);
 	}
@@ -64,7 +65,7 @@ abstract class DBRecord extends Object {
 	public static function countWhere($conditions = array(), $extraQuery = '') {
 		$table = static::$_table;
 		$where = static::conditionstoSQL($conditions);
-		$sql = "SELECT Count(id) AS cnt FROM `{$table}` WHERE {$where} {$extraQuery}";
+		$sql = "SELECT Count(`{$table}`.`id`) AS `cnt` FROM `{$table}` WHERE {$where} {$extraQuery}";
 		$result = bets::sql()->query($sql);
 		return $result[0]['cnt'];
 	}
@@ -86,7 +87,7 @@ abstract class DBRecord extends Object {
 		// find all ids
 		$table = static::$_table;
 		$where = static::conditionstoSQL($conditions);
-		$sql = "SELECT id FROM `{$table}` WHERE {$where} {$extraQuery}";
+		$sql = "SELECT `{$table}`.`id` AS `id` FROM `{$table}` WHERE {$where} {$extraQuery}";
 		$rows = bets::sql()->query($sql);
 		if (!count($rows)) {
 			return array();
@@ -95,17 +96,23 @@ abstract class DBRecord extends Object {
 		$missingIds = array();
 		$className = get_called_class();
 		$instances = &static::$_instances[$className];
-		foreach ($rows as $row) {
-			$ids[] = $id = (int) $row['id'];
-			if (!isset($instances[$id])) {
+		$row = null;
+		foreach ($rows as &$row) {
+			if (!isset($instances[$ids[] = $id = (int) $row['id']])) {
 				$missingIds[] = $id;
 			}
 		}
+		unset($row);
 		// fill static::$_instances with missing records
 		if (count($missingIds)) {
-			$dbFieldNames = '`' . implode('`,`', $className::getFieldNames()) . '`';
+			$dbFieldNames = '';
+			foreach (static::getFieldNames() as $fieldName) {
+				$dbFieldNames .= ", `{$table}`.`{$fieldName}` AS `{$fieldName}`";
+			}
+			$dbFieldNames = substr($dbFieldNames, 2);
 			$missingIdsStr = implode(', ', $missingIds);
-			$missingRecords = bets::sql()->query("SELECT {$dbFieldNames} FROM `{$table}` WHERE (id IN ({$missingIdsStr}))");
+			$missingRecords = bets::sql()->query("SELECT {$dbFieldNames} FROM `{$table}` WHERE (`{$table}`.`id` IN ({$missingIdsStr}))");
+			$record = null;
 			foreach ($missingRecords as &$record) {
 				$instances[(int) $record['id']] = new $className(null, $record);
 			}
@@ -127,8 +134,7 @@ abstract class DBRecord extends Object {
 	}
 
 	protected static function getFieldNames() {
-		$className = get_called_class();
-		if (empty(static::$_fieldNames[$className])) {
+		if (empty(static::$_fieldNames[$className = get_called_class()])) {
 			static::$_fieldNames[$className] = array();
 			foreach (bets::sql()->query('DESCRIBE `' . static::$_table . '`') as $rowDescription) {
 				static::$_fieldNames[$className][] = $rowDescription['Field'];
@@ -148,8 +154,12 @@ abstract class DBRecord extends Object {
 		}
 		$id = bets::sql()->escape($id);
 		$table = static::$_table;
-		$dbFieldNames = '`' . implode('`,`', $this->getFieldNames()) . '`';
-		$result = bets::sql()->query("SELECT {$dbFieldNames} FROM `{$table}` WHERE (deleted = 'n') AND (id = {$id}) LIMIT 1");
+
+		$dbFieldNames = "`{$table}`.`id` AS `id`";
+		foreach ($this->getFieldNames() as $fieldName) {
+			$dbFieldNames .= ", `{$table}`.`{$fieldName}` AS `{$fieldName}`";
+		}
+		$result = bets::sql()->query("SELECT {$dbFieldNames} FROM `{$table}` WHERE (`{$table}`.`deleted` = 'n') AND (`{$table}`.`id` = {$id}) LIMIT 1");
 		if (!count($result)) {
 			throw new \Exception("Database error, element #{$id} not found in '{$table}'");
 		}
@@ -186,15 +196,15 @@ abstract class DBRecord extends Object {
 		$sql = "INSERT INTO `{$table}` SET ";
 		foreach ($this->_data as $field => $value) {
 			if (is_null($value)) {
-				$sql .= "`{$field}` = NULL, ";
+				$sql .= "`{$table}`.`{$field}` = NULL, ";
 			} else {
 				$value = bets::sql()->escape($value);
-				$sql .= "`{$field}` = {$value}, ";
+				$sql .= "`{$table}`.`{$field}` = {$value}, ";
 			}
 		}
 		bets::sql()->run(substr($sql, 0, strlen($sql) - 2));
 		$this->_data['id'] = intval(bets::sql()->insertId());
-		static::$_instances[__NAMESPACE__ . '\\' . $table][$this->_data['id']] = $this;
+		static::$_instances[__NAMESPACE__ . "\\" . $table][$this->_data['id']] = $this;
 		return $this->_data['id'];
 	}
 
@@ -218,9 +228,9 @@ abstract class DBRecord extends Object {
 		$sql = "UPDATE `{$table}` SET ";
 		foreach ($this->_data as $field => $value) {
 			$value = bets::sql()->escape($value);
-			$sql .= "`{$field}` = {$value}, ";
+			$sql .= "`{$table}`.`{$field}` = {$value}, ";
 		}
-		return bets::sql()->run(substr($sql, 0, strlen($sql) - 2) . " WHERE id = {$this->_data['id']}");
+		return bets::sql()->run(substr($sql, 0, strlen($sql) - 2) . " WHERE `{$table}`.`id` = {$this->_data['id']}");
 	}
 
 	/**
@@ -236,7 +246,7 @@ abstract class DBRecord extends Object {
 
 	public static function undelete($id) {
 		$table = static::$_table;
-		return bets::sql()->run("UPDATE `{$table}` SET deleted = 'n' WHERE id = '{$id}'");
+		return bets::sql()->run("UPDATE `{$table}` SET `{$table}`.`deleted` = 'n' WHERE `{$table}`.`id` = '{$id}'");
 	}
 
 	/**

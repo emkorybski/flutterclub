@@ -1,0 +1,85 @@
+{
+  "type": "widget",
+  "name": "rss",
+  "version": "4.2.4",
+  "revision": "9726",
+  "path": "application\/widgets\/rss",
+  "repository": null,
+  "date": "Wed, 23 May 2012 22:20:20 +0000",
+  "title": "RSS Feed",
+  "description": "Displays an RSS feed.",
+  "thumb": null,
+  "developer": null,
+  "authors": [
+    "Webligo Developments"
+  ],
+  "changeLog": {
+    "4.1.8": {
+      "Controller.php": "Added caching support",
+      "index.tpl": "Added caching support",
+      "manifest.php": "Incremented version"
+    },
+    "4.0.3": {
+      "Controller.php": "Fixed issue with getting link",
+      "index.tpl": "Fixed issue with getting link; added link enabling; added option to not strip HTML",
+      "manifest.php": "Incremented version; added option to not strip HTML"
+    },
+    "4.0.2": {
+      "index.tpl": "Added styles",
+      "manifest.php": "Incremented version"
+    }
+  },
+  "meta": {
+    "date": "Wed, 23 May 2012 22:20:20 +0000",
+    "title": "RSS Feed",
+    "description": "Displays an RSS feed.",
+    "developer": null,
+    "authors": [
+      "Webligo Developments"
+    ],
+    "changeLog": null
+  },
+  "actions": [
+    
+  ],
+  "callback": null,
+  "dependencies": null,
+  "tests": [
+    
+  ],
+  "permissions": [
+    
+  ],
+  "structure": {
+    "application\/widgets\/rss": {
+      "type": "directory",
+      "path": "application\/widgets\/rss",
+      "structure": [
+        {
+          "path": "Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3240,
+          "sha1": "3ea334b6f95057837fec09b8395cf6b17fb6bbfa"
+        },
+        {
+          "path": "index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1844,
+          "sha1": "eb706c8c2a6afab6761b4f51f2273a7b27bd52e4"
+        },
+        {
+          "path": "manifest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2406,
+          "sha1": "25481b70dc546c3a7816c5f44be472ec64eaea7c"
+        }
+      ]
+    }
+  }
+}

@@ -6,7 +6,7 @@
  * @package    User
  * @copyright  Copyright 2006-2010 Webligo Developments
  * @license    http://www.socialengine.net/license/
- * @version    $Id: Fields.php 9650 2012-03-16 00:52:27Z john $
+ * @version    $Id: Fields.php 9712 2012-05-08 21:42:53Z richard $
  * @author     John
  */
 
@@ -292,6 +292,17 @@ class User_Plugin_Signup_Fields extends Core_Plugin_FormSequence_Abstract
         $mailParams
       );
     }
+    
+    // Send Notify Admin E-mail
+    if( isset($this->_registry->mailAdminType) && $this->_registry->mailAdminType ) {
+      $mailAdminType   = $this->_registry->mailAdminType;
+      $mailAdminParams = $this->_registry->mailAdminParams;
+      Engine_Api::_()->getApi('mail', 'core')->sendSystem(
+        $user,
+        $mailAdminType,
+        $mailAdminParams
+      );
+    }    
   }
 
   public function getProfileTypeField() {

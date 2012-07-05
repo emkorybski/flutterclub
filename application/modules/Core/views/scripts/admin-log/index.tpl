@@ -6,7 +6,7 @@
  * @package    Core
  * @copyright  Copyright 2006-2010 Webligo Developments
  * @license    http://www.socialengine.net/license/
- * @version    $Id: index.tpl 9684 2012-04-18 02:07:28Z richard $
+ * @version    $Id: index.tpl 9717 2012-05-16 22:08:41Z richard $
  * @author     Alex
  */
 ?>
@@ -101,7 +101,7 @@
       <span class="admin_logs_nav_next">
         <?php if( $this->logEndOffset > 0 ): ?>
           <a href="<?php echo $this->url() ?>?<?php echo http_build_query(array(
-            'file' => $this->logFile,
+            'file' => $this->logName,
             'length' => $this->logLength,
             'offset' => $this->logEndOffset,
           )) ?>">
@@ -112,7 +112,7 @@
       <?php if( $this->logOffset < $this->logSize ): ?>
         <span class="admin_logs_nav_previous">
           <a href="<?php echo $this->url() ?>?<?php echo http_build_query(array(
-            'file' => $this->logFile,
+            'file' => $this->logName,
           )) ?>">
             Back to End
           </a>

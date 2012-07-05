@@ -6,7 +6,7 @@
  * @package    Core
  * @copyright  Copyright 2006-2010 Webligo Developments
  * @license    http://www.socialengine.net/license/
- * @version    $Id: AdminMenusController.php 9692 2012-04-19 20:27:34Z pamela $
+ * @version    $Id: AdminMenusController.php 9706 2012-05-01 17:58:02Z pamela $
  * @author     John
  */
 
@@ -193,9 +193,9 @@ class Core_AdminMenusController extends Core_Controller_Action_Admin
     unset($values['label']);
     unset($values['enabled']);
 
-    //if( $menuItem->custom ) {
+    if( $menuItem->custom ) {
       $menuItem->params = $values;
-    //} 
+    } 
     if( !empty($values['target']) ) {
       $menuItem->params = array_merge($menuItem->params, array('target' => $values['target']));
     } else if( isset($menuItem->params['target']) ){

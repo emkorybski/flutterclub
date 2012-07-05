@@ -6,7 +6,7 @@
  * @package    Core
  * @copyright  Copyright 2006-2010 Webligo Developments
  * @license    http://www.socialengine.net/license/
- * @version    $Id: AdminMessageController.php 9590 2012-01-10 23:32:58Z john $
+ * @version    $Id: AdminMessageController.php 9719 2012-05-16 23:19:40Z richard $
  * @author     John Boehr <j@webligo.com>
  */
 
@@ -66,7 +66,7 @@ class Core_AdminMessageController extends Core_Controller_Action_Admin
     $mail
       ->setFrom($values['from_address'], $values['from_name'])
       ->setSubject($values['subject'])
-      ->setBodyHtml($values['body'])
+      ->setBodyHtml(nl2br($values['body']))
       ;
 
     if( !empty($values['body_text']) ) {

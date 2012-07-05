@@ -6,7 +6,7 @@
  * @package    User
  * @copyright  Copyright 2006-2010 Webligo Developments
  * @license    http://www.socialengine.net/license/
- * @version    $Id: Twitter.php 9382 2011-10-14 00:41:45Z john $
+ * @version    $Id: Twitter.php 9720 2012-05-20 17:58:20Z richard $
  * @author     John Boehr <j@webligo.com>
  */
 
@@ -29,7 +29,15 @@ class User_Form_Admin_Twitter extends Engine_Form
       ;
 
     $description = $this->getTranslator()->translate('USER_ADMIN_SETTINGS_TWITTER_DESCRIPTION');
-    $description = vsprintf($description, array(
+	$settings = Engine_Api::_()->getApi('settings', 'core');
+	if( $settings->getSetting('user.support.links', 0) == 1 ) {
+	$moreinfo = $this->getTranslator()->translate( 
+        '<br>More Info: <a href="http://www.socialengine.net/support/documentation/article?q=204&question=Admin-Panel---Settings--Twitter-Integration" target="_blank"> KB Article</a>');
+	} else {
+	$moreinfo = $this->getTranslator()->translate( 
+        '');
+	}
+    $description = vsprintf($description.$moreinfo, array(
       'https://dev.twitter.com/apps/new',
       'http://' . $_SERVER['HTTP_HOST'] . Zend_Controller_Front::getInstance()->getRouter()->assemble(array(
           'module' => 'user',

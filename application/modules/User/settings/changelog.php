@@ -6,10 +6,37 @@
  * @package    User
  * @copyright  Copyright 2006-2010 Webligo Developments
  * @license    http://www.socialengine.net/license/
- * @version    $Id: changelog.php 9689 2012-04-19 00:22:35Z richard $
+ * @version    $Id: changelog.php 9726 2012-05-23 22:06:36Z richard $
  * @author     John
  */
 return array(
+  '4.2.4' => array(
+    '/application/languages/en/user.csv' => 'Change Verification Message',
+    'Form/Admin/Facebook.php' => 'Added support links in admin panel',
+    'Form/Admin/Signup/Account.php' => 'Different',
+    'Form/Admin/Twitter.php' => 'Added support links in admin panel',
+    'Form/Signup/Photo.php' => 'Fixes language on Notify Admin Signup Process form',
+    'Plugin/Signup/Account.php' => 'Fixes language on Notify Admin Signup Process form',
+    'Plugin/Signup/Fields.php' => 'Fixes language on Notify Admin Signup Process form',
+    'settings/changelog.php' => 'Incremented version',
+    'settings/install.php' => 'Fixes banned IP address to be erased after performing an upgrade',
+    'settings/manifest.php' => 'Incremented version',
+    'settings/my.sql' => 'Incremented version',
+    'views/scripts/_formEditImage.tpl' => 'Fixes Photo Required error',
+    'views/scripts/_formSignupImage.tpl' => 'Fixes Photo Required error',
+    'views/scripts/admin-fields/index.tpl' => 'Added support links in admin panel',
+    'views/scripts/admin-signup/index.tpl' => 'Added support links in admin panel',
+    'views/scripts/signup/verify.tpl' => 'Fixes Photo Required error',
+  ),
+  '4.2.3p1' => array(
+    '/application/languages/en/user.csv' => 'Fixes Photo Required error',
+    'Form/Admin/Signup/Account.php' => 'Fixes Photo Required error',
+    'Form/Signup/Photo.php' => 'Fixes Photo Required error',
+    'settings/manifest.php' => 'Incremented version',
+    'settings/my.sql' => 'Incremented version',
+    'views/scripts/_formEditImage.tpl' => 'Fixes Photo Required error',
+    'views/scripts/_formSignupImage.tpl' => 'Fixes Photo Required error',
+  ),
   '4.2.3' => array(
     '/application/languages/en/user.csv' => 'Rewrite Profile viewing and Profile Commenting Options Descriptions',
     'Form/Admin/Signup/Account.php' => 'Admin can choose to receive email when a new user signs up',

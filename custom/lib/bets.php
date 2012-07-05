@@ -20,7 +20,7 @@ abstract class bets {
 	}
 
 	/**
-	 * @return DCB\sql
+	 * @return \bets\sql
 	 */
 	public static function sql() {
 		return sql::getInstance();

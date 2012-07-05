@@ -6,7 +6,7 @@
  * @package    User
  * @copyright  Copyright 2006-2010 Webligo Developments
  * @license    http://www.socialengine.net/license/
- * @version    $Id: index.tpl 7244 2010-09-01 01:49:53Z john $
+ * @version    $Id: index.tpl 9720 2012-05-20 17:58:20Z richard $
  * @author     John
  */
 ?>
@@ -20,8 +20,14 @@
 <p>
   Your members will be asked to provide some information about themselves when joining the community or editing their profile. Create some profile questions that allow them to describe themselves in a way that relates to the theme of your community. To reorder the profile questions, click on their names and drag them up or down. If you want to show different sets of questions to different types of members, you can create multiple "profile types". This is useful, for example, if you want your community to have "fans" and "musicians", each with a different set of profile questions.
 </p>
-
+<?php
+$settings = Engine_Api::_()->getApi('settings', 'core');
+if( $settings->getSetting('user.support.links', 0) == 1 ) {
+	echo 'More info: <a href="http://www.socialengine.net/support/documentation/article?q=156&question=Admin-Panel---Settings--Profile-Questions" target="_blank">See KB article</a>';	
+} 
+?>	
 <br />
+<br />	
 
 <div class="admin_fields_type">
   <h3>Editing Profile Type:</h3>

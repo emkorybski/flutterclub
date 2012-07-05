@@ -6,7 +6,7 @@
  * @package    User
  * @copyright  Copyright 2006-2010 Webligo Developments
  * @license    http://www.socialengine.net/license/
- * @version    $Id: Facebook.php 9352 2011-10-05 22:04:53Z john $
+ * @version    $Id: Facebook.php 9720 2012-05-20 17:58:20Z richard $
  * @author     Steve
  */
 
@@ -29,7 +29,15 @@ class User_Form_Admin_Facebook extends Engine_Form
       ;
 
     $description = $this->getTranslator()->translate('USER_ADMIN_SETTINGS_FACEBOOK_DESCRIPTION');
-    $description = vsprintf($description, array(
+    $settings = Engine_Api::_()->getApi('settings', 'core');
+	if( $settings->getSetting('user.support.links', 0) == 1 ) {
+	$moreinfo = $this->getTranslator()->translate( 
+        '<br>More Info: <a href="http://www.socialengine.net/support/documentation/article?q=166&question=Admin-Panel---Settings--Facebook-Integration" target="_blank"> KB Article</a>');
+	} else {
+	$moreinfo = $this->getTranslator()->translate( 
+        '');
+	}
+	$description = vsprintf($description.$moreinfo, array(
       'http://www.facebook.com/developers/apps.php',
     ));
     $this->setDescription($description);

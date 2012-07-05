@@ -6,10 +6,38 @@
  * @package    Core
  * @copyright  Copyright 2006-2010 Webligo Developments
  * @license    http://www.socialengine.net/license/
- * @version    $Id: changelog.php 9689 2012-04-19 00:22:35Z richard $
+ * @version    $Id: changelog.php 9726 2012-05-23 22:06:36Z richard $
  * @author     John
  */
 return array(
+  '4.2.4' => array(
+    '/application/languages/en/core.csv' => 'Fixed typo in the admin signup notification mail template',
+    'Api/Mail.php' => 'Fixes error causing plain text e-mails to be set as html',
+    'controllers/AdminLogController.php' => 'Fixes next in the log browser',
+    'controllers/AdminMenusController.php' => 'Placing ban on editing non-custom menus once again',
+    'controllers/AdminMessageController.php' => 'Add paragraph capability to Email All Members',
+    'controllers/AdminTasksController.php' => 'Fixes Run Selected Now in Task Scheduler',
+    'externals/scripts/composer_link.js' => 'If a google doc is linked in the activity feed, title and doc will be Google Document',
+    'settings/changelog.php' => 'Incremented version',
+    'settings/install.php' => 'Fixes anned IP address to be erased after performing an upgrade.',
+    'settings/manifest.php' => 'Incremented version',
+    'settings/my.sql' => 'Incremented version',
+    'views/scripts/admin-log/index.tpl' => 'Added support links in admin panel',
+    'views/scripts/admin-report/index.tpl' => 'Added support links in admin panel',
+    'views/scripts/admin-tasks/index.tpl' => 'Added support links in admin panel',
+    'widgets/admin-news/index.tpl' => 'Update More SE News link',
+  ),
+  '4.2.3p1' => array(
+    '/application/languages/en/core.csv' => 'Fixed typo in the admin signup notification mail template',
+    'Api/Mail.php' => 'Fixes error causing plain text e-mails to be set as html',
+    'controllers/AdminMenusController.php' => 'Fixes error when menu title is edited',
+    'controllers/AdminTasksController.php' => 'Fixes Run Selected Now in Task Scheduler',
+    'externals/scripts/composer_link.js' => 'If a google doc is linked in the activity feed, title and doc will be Google Document',
+    'settings/manifest.php' => 'Incremented version',
+    'settings/my.sql' => 'Incremented version',
+    'views/scripts/admin-report/index.tpl' => 'Fixes Run Selected Now in Task Scheduler',
+    'views/scripts/admin-tasks/index.tpl' => 'Fixes Run Selected Now in Task Scheduler',
+  ),
   '4.2.3' => array(
     '/application/languages/en/core.csv' => 'Admin can choose to receive email when a new user signs up',
     'Api/Mail.php' => 'Admin can choose to receive email when a new user signs up',

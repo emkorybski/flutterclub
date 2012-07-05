@@ -31,6 +31,14 @@ class FeedManager extends Object {
 			echo "# Fetching {$nr}/{$count}: {$match}\n";
 			$this->parseFeed($this->fetch($match));
 		}
+		foreach (Sport::findAll() as $sport) {
+			$sport->visible = ($sport->computeVisibility() ? 'y' : 'n');
+			$sport->update();
+		}
+		foreach (Event::findAll() as $event) {
+			$event->visible = ($event->computeVisibility() ? 'y' : 'n');
+			$event->update();
+		}
 	}
 
 	public function fetch($url) {
@@ -50,27 +58,26 @@ class FeedManager extends Object {
 
 	private function xml2assoc($xml) {
 		$tree = array();
-		while($xml->read()) {
+		while ($xml->read()) {
 			switch ($xml->nodeType) {
-				
+
 				case \XMLReader::END_ELEMENT:
 					return $tree;
-				
+
 				case \XMLReader::ELEMENT:
 					$node = array('tag' => $xml->name, 'value' => $xml->isEmptyElement ? '' : $this->xml2assoc($xml));
-						if($xml->hasAttributes) {
-						while($xml->moveToNextAttribute()) {
+					if ($xml->hasAttributes) {
+						while ($xml->moveToNextAttribute()) {
 							$node['attributes'][$xml->name] = $xml->value;
 						}
 					}
 					$tree[] = $node;
 					break;
-				
+
 				case \XMLReader::TEXT:
-				
+
 				case \XMLReader::CDATA:
 					$tree .= $xml->value;
-				
 			}
 		}
 		return $tree;
@@ -136,7 +143,7 @@ class FeedManager extends Object {
 	}
 
 	private function fix_utf8($string) {
-		return preg_replace('/[^(\x20-\x7F)]*/','', $string);
+		return preg_replace('/[^(\x20-\x7F)]*/', '', $string);
 	}
 
 }
@@ -144,8 +151,7 @@ class FeedManager extends Object {
 try {
 	$fm = new FeedManager('http://www.betfair.com/partner/marketdata_xml3.asp');
 	$fm->run();
-}
-catch (Exception $e) {
+} catch (Exception $e) {
 	die('error');
 }
 

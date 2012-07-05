@@ -6,7 +6,7 @@
  * @package    User
  * @copyright  Copyright 2006-2010 Webligo Developments
  * @license    http://www.socialengine.net/license/
- * @version    $Id: _formSignupImage.tpl 9694 2012-04-19 23:22:08Z richard $
+ * @version    $Id: _formSignupImage.tpl 9696 2012-04-20 20:17:37Z richard $
  * @author     Jung
  */
 ?>
@@ -39,6 +39,16 @@
     <?php
       if (isset($_SESSION['TemporaryProfileImg'])){
         echo '<a href="javascript:void(0);" onclick="lassoStart();">'.$this->translate('Edit Thumbnail').'</a>';
+      }
+    ?>
+  </div>
+  <br/>
+  <div>
+    <?php 
+      $settings = Engine_Api::_()->getApi('settings', 'core');
+      
+      if (isset($_SESSION['TemporaryProfileImg']) && $settings->getSetting('user.signup.photo', 0) == 1){
+        echo '<button name="done" id="done" type="submit" onClick="javascript:finishForm();">Save Photo</button>';
       }
     ?>
   </div>

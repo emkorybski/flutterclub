@@ -1,0 +1,972 @@
+{
+  "type": "module",
+  "name": "chat",
+  "version": "4.2.1",
+  "revision": "9620",
+  "path": "application\/modules\/Chat",
+  "repository": null,
+  "date": "Wed, 22 Feb 2012 20:29:00 +0000",
+  "title": "Chat",
+  "description": "Chat",
+  "thumb": null,
+  "developer": null,
+  "authors": [
+    "Webligo Developments"
+  ],
+  "changeLog": {
+    "4.2.1": {
+      "controllers\/AjaxController.php": "Moving garbage collection to task scheduler",
+      "Plugin\/Task\/Cleanup.php": "Added",
+      "settings\/changelog.php": "Incremented version",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my-upgrade-4.2.0-4.2.1.sql": "Added",
+      "settings\/my.sql": "Incremented version"
+    },
+    "4.2.0": {
+      "controllers\/AdminSettingsController.php": "Fixed notice",
+      "externals\/scripts\/core.js": "Added namespace for Wibiya compatibility",
+      "Model\/DbTable\/Rooms.php": "Fixed warning",
+      "settings\/changelog.php": "Incremented version",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my-upgrade-4.1.8p1-4.2.0.sql": "Added",
+      "settings\/my.sql": "Incremented version"
+    },
+    "4.1.8p1": {
+      "controllers\/IndexController.php": "Added room count rebuild",
+      "externals\/scripts\/core.js": "Fixed errors caused by null user objects; Fixed issue with CDN\/Flash cross-domain",
+      "Model\/DbTable\/Rooms.php": "Added room count rebuild",
+      "Plugin\/Core.php": "Added cleanup hooks for deleted users",
+      "settings\/changelog.php": "Incremented version",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my.sql": "Incremented version"
+    },
+    "4.1.8": {
+      "controllers\/IndexController.php": "Added pages to the layout editor",
+      "externals\/.htaccess": "Updated with far-future expires headers for static resources",
+      "externals\/scripts\/core.js": "Removed contentEditable support; Added static base URL for CDN support",
+      "externals\/styles\/main.css": "Removed contentEditable support",
+      "Model\/DbTable\/Users.php": "Fixed issue where friends would not appear online immediately",
+      "Model\/User.php": "Fixed issue where friends would not appear online immediately",
+      "Plugin\/Core.php": "Added static base URL for CDN support",
+      "settings\/changelog.php": "Incremented version",
+      "settings\/install.php": "Added pages to the layout editor",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my.sql": "Incremented version",
+      "views\/scripts\/index\/index.tpl": "Added static base URL for CDN support",
+      "widgets\/chat\/index.tpl": "Added pages to the layout editor"
+    },
+    "4.1.7": {
+      "externals\/scripts\/core.js": "Removed contentEditable for mootools 1.3 compatibility",
+      "settings\/changelog.php": "Incremented version",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my.sql": "Incremented version"
+    },
+    "4.1.4": {
+      "externals\/scripts\/core.js": "Fixed issue with text input in mobile browsers",
+      "externals\/styles\/main.css": "Added svn:keywords Id",
+      "externals\/styles\/mobile.css": "Added",
+      "Model\/RoomUser.php": "Fixes issue where IM and chat would not work if the mysql connection timezone could not be changed",
+      "Plugin\/Core.php": "Fixed issue with text input in mobile browsers",
+      "settings\/changelog.php": "Incremented version",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my.sql": "Incremented version",
+      "views\/scripts\/index\/index.tpl": "Fixed issue with text input in mobile browsers"
+    },
+    "4.1.3": {
+      "externals\/scripts\/core.js": "Fixed issue with low delays causing excess server load",
+      "settings\/changelog.php": "Incremented version",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my.sql": "Incremented version"
+    },
+    "4.1.2": {
+      "controllers\/AjaxController.php": "Fixed error on missing users",
+      "controllers\/IndexController.php": "Widget compatibility",
+      "externals\/scripts\/core.js": "Fixed disconnection issue with IE8; fixed issue with system messages",
+      "lite.php": "Added cache-control headers",
+      "settings\/changelog.php": "Incremented version",
+      "settings\/content.php": "Added",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my.sql": "Incremented version",
+      "views\/scripts\/index\/index.tpl": "Widget compatibility",
+      "widgets\/chat\/Controller.php": "Added",
+      "widgets\/chat\/index.tpl": "Added"
+    },
+    "4.1.1": {
+      "externals\/.htaccess": "Added keywords; removed deprecated code",
+      "externals\/styles\/main.css": "IE formatting fix",
+      "settings\/changelog.php": "Incremented version",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my.sql": "Incremented version"
+    },
+    "4.1.0": {
+      "\/application\/languages\/en\/chat.csv": "Added phrases",
+      "controllers\/AdminSettingsController.php": "Removed global on\/off settings",
+      "controllers\/AjaxController.php": "Rooms are ordered by title",
+      "controllers\/IndexController.php": "Fixes issue with level settings disabling chat",
+      "externals\/ding.mp3": "Added for IM sound, compliments http:\/\/soundbible.com\/1127-Computer-Error.html",
+      "externals\/scripts\/core.js": "Added IM sound; AJAX requests are sent through index.php now to address baseUrl issues with profile address; added translations for site-wide IM chat",
+      "Form\/Admin\/Settings\/Global.php": "Removed global on\/off settings",
+      "Model\/DbTable\/RoomUsers.php": "Fixes issue where IM and chat would not work if the mysql connection timezone could not be changed",
+      "Model\/DbTable\/Users.php": "Fixes issue where IM and chat would not work if the mysql connection timezone could not be changed",
+      "Model\/Message.php": "Fixes issue with system messages when using mysql adapter",
+      "Plugin\/Core.php": "Added soundmanager for IM sound; fixes issue with level settings disabling chat",
+      "settings\/changelog.php": "Incremented version",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my-upgrade-4.0.4-4.1.0.sql": "Added",
+      "settings\/my.sql": "Incremented version",
+      "views\/scripts\/index\/index.tpl": "Fixes issue with level settings disabling chat, IE not seeing list of rooms"
+    },
+    "4.0.4": {
+      "controllers\/AdminManageController.php": "Added pagination",
+      "externals\/scripts\/core.js": "Added missing translation",
+      "Plugin\/Core.php": "Added missing translation",
+      "settings\/changelog.php": "Added",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my.sql": "Incremented version",
+      "views\/scripts\/admin-manage\/index.tpl": "Added pagination"
+    },
+    "4.0.3": {
+      "controllers\/AdminSettingsController.php": "Fixed warning message",
+      "controllers\/IndexController.php": "Removed deprecated code",
+      "Bootstrap.php": "Removed deprecated code",
+      "externals\/scripts\/core.js": "Improved language and localization support",
+      "externals\/styles\/mains.css": "Improved RTL support",
+      "Plugin\/Core.php": "Improved language support",
+      "views\/scripts\/index\/index.tpl": "Improved language support",
+      "views\/scripts\/index\/language.tpl": "Removed",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my-upgrade-4.0.2-4.0.3.sql": "Added",
+      "settings\/my.sql": "Incremented version",
+      "\/application\/languages\/en\/chat.csv": "Added missing phrases"
+    },
+    "4.0.2": {
+      "controllers\/AdminSettingsController.php": "Various level settings fixes and enhancements",
+      "Form\/Admin\/Settings\/Level.php": "Various level settings fixes and enhancements",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my-upgrade-4.0.1-4.0.2.sql": "Added",
+      "settings\/my.sql": "Various level settings fixes and enhancements"
+    },
+    "4.0.1": {
+      "controllers\/AdminSettingsController.php": "Fixed typo",
+      "settings\/manifest.php": "Incremented version"
+    }
+  },
+  "meta": {
+    "date": "Wed, 22 Feb 2012 20:29:00 +0000",
+    "title": "Chat",
+    "description": "Chat",
+    "developer": null,
+    "authors": [
+      "Webligo Developments"
+    ],
+    "changeLog": null
+  },
+  "actions": [
+    "install",
+    "upgrade",
+    "refresh",
+    "enable",
+    "disable"
+  ],
+  "callback": {
+    "path": "application\/modules\/Chat\/settings\/install.php",
+    "class": "Chat_Installer",
+    "priority": 100
+  },
+  "dependencies": {
+    "module-core": {
+      "type": "module",
+      "name": "core",
+      "guid": "module-core",
+      "minVersion": "4.2.0",
+      "maxVersion": null,
+      "excludeExcept": null
+    }
+  },
+  "tests": [
+    
+  ],
+  "permissions": [
+    
+  ],
+  "structure": {
+    "application\/modules\/Chat": {
+      "type": "directory",
+      "path": "application\/modules\/Chat",
+      "structure": [
+        {
+          "path": "Api",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Bootstrap.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 554,
+          "sha1": "cb2dd8e85786db409785b04710842fc2908ca625"
+        },
+        {
+          "path": "controllers",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/AdminManageController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2715,
+          "sha1": "f37de4d9e04165f6e118b3724a50257d5ba1f338"
+        },
+        {
+          "path": "controllers\/AdminSettingsController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4135,
+          "sha1": "c1c2d33830d1418807115fc320df50c80cbe0353"
+        },
+        {
+          "path": "controllers\/AjaxController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 15259,
+          "sha1": "fd7ac5ece5471d5a915d297863e6e636ab208600"
+        },
+        {
+          "path": "controllers\/IndexController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1706,
+          "sha1": "1406c12240810e4a0d9646cc6d64475acb7dbd53"
+        },
+        {
+          "path": "externals",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/.htaccess",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1042,
+          "sha1": "6c835f103d253edf70bfd5ba2430ebe3fa8cacdd"
+        },
+        {
+          "path": "externals\/ding.mp3",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 11571,
+          "sha1": "8cddaacaec46cdca7b80e8a51310af4703f96610"
+        },
+        {
+          "path": "externals\/images",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/images\/friends_online.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 741,
+          "sha1": "69e8e7677576ef6e15e15b9c0c34b95594f83cb6"
+        },
+        {
+          "path": "externals\/images\/less.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 249,
+          "sha1": "f677dcec2260f5dea6107cb6de532055865fe1c2"
+        },
+        {
+          "path": "externals\/images\/more.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 250,
+          "sha1": "e90346d849a29a3c679b6b3b01f406d6e88dd188"
+        },
+        {
+          "path": "externals\/images\/smilies",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/images\/smilies\/confused.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 759,
+          "sha1": "511a8a037740d4a634161e7f1453e67c68d01f58"
+        },
+        {
+          "path": "externals\/images\/smilies\/cool.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 814,
+          "sha1": "d045b2868f99133bfb11e442d0fca1bc998ae52b"
+        },
+        {
+          "path": "externals\/images\/smilies\/cry.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 760,
+          "sha1": "58e19ed6a7fde108484060032a44b7f5f44d1794"
+        },
+        {
+          "path": "externals\/images\/smilies\/embarrassed.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 713,
+          "sha1": "9f00a952a7c97d900b0115435b9e20f006924b33"
+        },
+        {
+          "path": "externals\/images\/smilies\/frown.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 738,
+          "sha1": "27e4f0048b7e11a11e0050faac94bb7bb69ab9f4"
+        },
+        {
+          "path": "externals\/images\/smilies\/grin.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 759,
+          "sha1": "7e84cc9b6b951b0122b81178156c93ce07369955"
+        },
+        {
+          "path": "externals\/images\/smilies\/lol.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 774,
+          "sha1": "9d88c2dcfc7985b4335c77d112464ad9e406c125"
+        },
+        {
+          "path": "externals\/images\/smilies\/mad.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3402,
+          "sha1": "8bbab979e854bbf84de6f89badcfe1a46d1bf6e0"
+        },
+        {
+          "path": "externals\/images\/smilies\/nervous.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3451,
+          "sha1": "86b0361271ede9869c40c65d4192e415535562e5"
+        },
+        {
+          "path": "externals\/images\/smilies\/neutral.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 699,
+          "sha1": "2ac8021e8f7113a124a496f9c62dc0ad8c2666b3"
+        },
+        {
+          "path": "externals\/images\/smilies\/smile.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 752,
+          "sha1": "4699ce02899f58ef56cb3edd9856d02e44a86448"
+        },
+        {
+          "path": "externals\/images\/smilies\/tongue.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 768,
+          "sha1": "462a7669c4bf011c67e2cc12490e72ad980bd4fa"
+        },
+        {
+          "path": "externals\/images\/smilies\/wink.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 750,
+          "sha1": "e77b3c88de19a8c3c5078981679c5371ebe0a377"
+        },
+        {
+          "path": "externals\/images\/state_offline.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 530,
+          "sha1": "dc1f0fa9b0bf83c89a8c391ce7f7d50a9ef2e862"
+        },
+        {
+          "path": "externals\/images\/state_online.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 583,
+          "sha1": "34c709875f4029dfae6eba5a152bef8337170910"
+        },
+        {
+          "path": "externals\/images\/status_away.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 283,
+          "sha1": "d0d28f29758f415681244fc0c5fad8d600c8afe5"
+        },
+        {
+          "path": "externals\/images\/status_idle.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 211,
+          "sha1": "4e5538f9dd4439f5d6f4c7821aee942ead663f1c"
+        },
+        {
+          "path": "externals\/images\/status_offline.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 287,
+          "sha1": "67d5027a975020a79b99a0839ad7e6c6fd84e5b7"
+        },
+        {
+          "path": "externals\/images\/status_online.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 295,
+          "sha1": "97deda5f041d16c2195e4b4db6dda79b8552a173"
+        },
+        {
+          "path": "externals\/images\/window_close.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 155,
+          "sha1": "c4cc5fab4e617f63ef9035747bfde81529868471"
+        },
+        {
+          "path": "externals\/images\/window_hide.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 129,
+          "sha1": "afe1ec9029c84f91c3539893206b0e12e7650e11"
+        },
+        {
+          "path": "externals\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/scripts\/core.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 59657,
+          "sha1": "2b3bc361b67e55ebf7508196f9df8b7c6a69ce4c"
+        },
+        {
+          "path": "externals\/styles",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/styles\/main.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 13520,
+          "sha1": "0bc5182382dbe9b3a2885cad3d69dbcf8f51a37e"
+        },
+        {
+          "path": "externals\/styles\/mobile.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 62,
+          "sha1": "dde9470d28b1e04f01ff4fbbf3ceae83684494c8"
+        },
+        {
+          "path": "Form",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/Room",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/Room\/Create.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1318,
+          "sha1": "983cd3adb6d925ef82f69408823d6e5a77558c96"
+        },
+        {
+          "path": "Form\/Admin\/Room\/Delete.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1182,
+          "sha1": "530ea7abfb012406a7fdca3edfe34aee200c2a89"
+        },
+        {
+          "path": "Form\/Admin\/Room\/Edit.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1258,
+          "sha1": "f18ad2c195b1e62b830280d7eeafadbc369a8ca8"
+        },
+        {
+          "path": "Form\/Admin\/Settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/Settings\/Global.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1455,
+          "sha1": "c0de863edde1b93dd089a45cc80e4f2a097af43b"
+        },
+        {
+          "path": "Form\/Admin\/Settings\/Level.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1441,
+          "sha1": "6f40d368ced1f9203fda758b5c25699b268f9449"
+        },
+        {
+          "path": "lite.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1261,
+          "sha1": "43bf20c217adff9e079459eddf09ab8c31a44805"
+        },
+        {
+          "path": "Model",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Model\/DbTable",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Model\/DbTable\/Events.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1284,
+          "sha1": "a4d3becb44c697c3201c6de90dc587dbebefde52"
+        },
+        {
+          "path": "Model\/DbTable\/Messages.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 588,
+          "sha1": "258dad9827aa3d8491b6ba299d10cfc45f33df8f"
+        },
+        {
+          "path": "Model\/DbTable\/Rooms.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 898,
+          "sha1": "0f15b43b8ad1e4f5aa75bdf02e013608c06739aa"
+        },
+        {
+          "path": "Model\/DbTable\/RoomUsers.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1315,
+          "sha1": "7374e8cfd6aaca6aa378e3350d9a585b973a4ebd"
+        },
+        {
+          "path": "Model\/DbTable\/Users.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2222,
+          "sha1": "520fd2550007e152e06faf713abcd98542d9e9f3"
+        },
+        {
+          "path": "Model\/DbTable\/Whispers.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2317,
+          "sha1": "ca14118ebb8c8bb67bb0f9ef48d150a4eaaae5c6"
+        },
+        {
+          "path": "Model\/Event.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2310,
+          "sha1": "56ec956378717ebf6fcf5c8c62e6cb28a237a979"
+        },
+        {
+          "path": "Model\/Exception.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 535,
+          "sha1": "76529592ab659f7aa0beced3f8a0f095a1164682"
+        },
+        {
+          "path": "Model\/Message.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2132,
+          "sha1": "e31485c41c949ea88f56520b9603768ef2e84028"
+        },
+        {
+          "path": "Model\/Room.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4090,
+          "sha1": "bef2cb09363675edc29f3be729f17147c113266e"
+        },
+        {
+          "path": "Model\/RoomUser.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4729,
+          "sha1": "2133b34e50d0a8db04d52b100ea9802c63bc42ab"
+        },
+        {
+          "path": "Model\/User.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6223,
+          "sha1": "cc7e454d181d00ca6bfcf4b8e8dc802b5d734115"
+        },
+        {
+          "path": "Model\/Whisper.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2069,
+          "sha1": "2ced8821e0f01a5dcf1208b4bb60cca9d44e9867"
+        },
+        {
+          "path": "Plugin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Plugin\/Core.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4540,
+          "sha1": "91977c398a83b05d38f3a743eaed12f48de001e4"
+        },
+        {
+          "path": "Plugin\/Task",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Plugin\/Task\/Cleanup.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 957,
+          "sha1": "b992deeac1fa695da265e81d73dd8d8e0ddfe617"
+        },
+        {
+          "path": "settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "settings\/changelog.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 8003,
+          "sha1": "01403bee1fc25dd152388934aff55bab76d069e7"
+        },
+        {
+          "path": "settings\/content.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 601,
+          "sha1": "ca08ad950e2de0a4cc2bd61db6571f2d3f1aa897"
+        },
+        {
+          "path": "settings\/install.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2191,
+          "sha1": "b9ab0c91aaef52cc42f34d41d7d716cbc9ee94aa"
+        },
+        {
+          "path": "settings\/manifest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1877,
+          "sha1": "300ea80b2ee4779c46a0dc61399ae32df20f7044"
+        },
+        {
+          "path": "settings\/my-upgrade-4.0.1-4.0.2.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 506,
+          "sha1": "08f8a5cc1597bb49e880e19233dbad4507cc7f01"
+        },
+        {
+          "path": "settings\/my-upgrade-4.0.2-4.0.3.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 309,
+          "sha1": "899d18b1cbbd9592b99029b21de243394ce20ec8"
+        },
+        {
+          "path": "settings\/my-upgrade-4.0.4-4.1.0.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 487,
+          "sha1": "45ec93c7111596564201ca5ed4c939795c4557da"
+        },
+        {
+          "path": "settings\/my-upgrade-4.1.8p1-4.2.0.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 53,
+          "sha1": "02135a17d2aed53132772582c7ad6cb7131bc072"
+        },
+        {
+          "path": "settings\/my-upgrade-4.2.0-4.2.1.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 267,
+          "sha1": "323fd88414638fef6e8a09f6cd573cb0e1d66c61"
+        },
+        {
+          "path": "settings\/my.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 7433,
+          "sha1": "c386614c6ed793a871e03b03152f65e19b972260"
+        },
+        {
+          "path": "views",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-manage",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/form.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 637,
+          "sha1": "30b2ea9671121a444880f6cd427675852d96361c"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2443,
+          "sha1": "1d0fd229d50999226f2ca11faa643cbb931eed21"
+        },
+        {
+          "path": "views\/scripts\/admin-settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 674,
+          "sha1": "0ec5f81db19721890dc86fa73dc82be70f20596d"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/level.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 882,
+          "sha1": "02c7707b42f4e6b2ba2c7e11dbaf6874dc718731"
+        },
+        {
+          "path": "views\/scripts\/index",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/index\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2672,
+          "sha1": "70a7ff90f78eb169154af4548631215b84a458b1"
+        },
+        {
+          "path": "widgets",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/chat",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/chat\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 814,
+          "sha1": "038ff995d96feb28249aeec95f0538a2ec8cb3dd"
+        },
+        {
+          "path": "widgets\/chat\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 443,
+          "sha1": "e60ee92b94c4ef6e83b97793f91fcc6b5b2da928"
+        }
+      ]
+    },
+    "application\/languages\/en\/chat.csv": {
+      "type": "file",
+      "path": "application\/languages\/en\/chat.csv",
+      "structure": {
+        "path": "chat.csv",
+        "dir": false,
+        "file": true,
+        "perms": "0666",
+        "size": 2571,
+        "sha1": "174711ff7dc7076d6378b69344f0139daca44bd0"
+      }
+    }
+  }
+}

@@ -1,3 +1,7 @@
+<?php if (empty($_REQUEST['format']) || ($_REQUEST['format'] != 'html')) { ?>
+<div class="box_shadow widget_body">
+<?php } ?>
+	
 <style type="text/css">
 	.layout_categories > div {
 		text-align: left;
@@ -32,38 +36,51 @@
 </style>
 
 <div class="betting_categories">
-	<div class="betting_category">
-		<input type="hidden" value="0" />
-		All
-	</div>
-	<hr style="border-bottom: 1px solid #cccccc" />
-	<?php foreach ($this->categories as $sport) { ?>
-	<div class="betting_category">
-		<input type="hidden" value="<?=$sport->id?>" />
-		<?=$sport->name?>
-	</div>
-	<hr style="border-bottom: 1px solid #cccccc" />
-	<?php } ?>
+	<?php
+		global $indent;
+		global $category;
+		$indent = 0;
+		foreach ($this->categories as $categ) {
+			$category = $categ;
+			require(dirname(__FILE__) . '/category.tpl');
+		}
+	?>
 </div>
 
 <script type="text/javascript">
-	function loadCateg(idCateg) {
-		var fill = jQuery('.layout_upcoming')[0];
-		jQuery('.betting_upcoming').css({opacity: 0.5}).addClass('betting_upcoming_loading');
-		jQuery.ajax('/fc/widget/index/name/upcoming?format=html&idsport=' + encodeURIComponent(idCateg), {
-			success: function (text) {
-				jQuery(fill).html(text);
-			},
-			complete: function (text) {
-				jQuery('.betting_upcoming').css({opacity: 1}).removeClass('betting_upcoming_loading');
-			},
-			dataType: 'html'
+	(function () {
+	
+	var j = jQuery;
+		
+	function loadCategories(hrefCategories, hrefSelections) {
+		if (loadCategories.busy) {
+			return;
+		}
+		loadCategories.busy += 2;
+		var fillCategories = j('.layout_categories .widget_body');
+		var fillSelections = j('.layout_upcoming .widget_body');
+		fillCategories.css({opacity: 0.5}).addClass('betting_upcoming_loading');
+		j.ajax(hrefCategories, {
+			dataType: 'html',
+			success: function (text) { fillCategories.html(text); },
+			error: function () { alert('Internal error. Try again.'); },
+			complete: function () { fillCategories.css({opacity: 1}).removeClass('betting_upcoming_loading'); --loadCategories.busy; }
 		});
+		fc.user.upcomingUrl = hrefSelections;
+		fc.user.updateBettingUpcoming();
 	}
-	jQuery('.betting_category').each(function (nr, categ) {
-		jQuery(categ).click(function () {
-			loadCateg(jQuery(categ).find('input')[0].value);
-		});
+	loadCategories.busy = 0;
+
+	j('.betting_category').click(function (event) {
+		event.preventDefault();
+		loadCategories(this.href, j(this).find('input').val());
 	});
+	
+	})();
 </script>
+
+	
+<?php if (empty($_REQUEST['format']) || ($_REQUEST['format'] != 'html')) { ?>
+</div>
+<?php } ?>
 

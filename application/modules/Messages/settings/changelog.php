@@ -6,10 +6,15 @@
  * @package    Messages
  * @copyright  Copyright 2006-2010 Webligo Developments
  * @license    http://www.socialengine.net/license/
- * @version    $Id: changelog.php 9586 2012-01-10 01:13:37Z john $
+ * @version    $Id: changelog.php 9726 2012-05-23 22:06:36Z richard $
  * @author     John
  */
 return array(
+  '4.2.4' => array(
+    'settings/content.php' => 'Move Messages Menu under Messages in Layout Blocks',
+    'settings/manifest.php' => 'Incremented version',
+    'settings/my.sql' => 'Incremented version',
+  ),
   '4.2.0' => array(
     'controllers/MessagesController.php' => 'Fixed issue with being able to send messages to members that are not your friend when disallowed by the admin',
     'settings/changelog.php' => 'Incremented version',

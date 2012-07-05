@@ -6,10 +6,21 @@
  * @package    Activity
  * @copyright  Copyright 2006-2010 Webligo Developments
  * @license    http://www.socialengine.net/license/
- * @version    $Id: changelog.php 9689 2012-04-19 00:22:35Z richard $
+ * @version    $Id: changelog.php 9726 2012-05-23 22:06:36Z richard $
  * @author     John
  */
 return array(
+  '4.2.4' => array(
+    'settings/changelog.php' => 'Incremented version',
+    'settings/manifest.php' => 'Incremented version',
+    'settings/my.sql' => 'Incremented version',
+    'views/scripts/_activityText.tpl' => 'Removes translation to activity titles in activity feeds',
+  ),
+  '4.2.3p1' => array(
+    'settings/manifest.php' => 'Incremented version',
+    'settings/my.sql' => 'Incremented version',
+    'views/scripts/_activityText.tpl' => 'Adds translation to activity titles in activity feeds',
+  ),
   '4.2.3' => array(
     'controllers/IndexController.php' => 'Fixes making a post when the privacy settings are not enabled',
     'Model/Action.php' => 'Fixes activity action error',

@@ -6,7 +6,7 @@
  * @package    Core
  * @copyright  Copyright 2006-2010 Webligo Developments
  * @license    http://www.socialengine.net/license/
- * @version    $Id: Mail.php 9680 2012-04-17 01:39:47Z richard $
+ * @version    $Id: Mail.php 9703 2012-04-28 00:46:05Z shaun $
  * @author     Steve
  */
 
@@ -188,6 +188,7 @@ class Core_Api_Mail extends Core_Api_Abstract
   {
     if( $this->_enabled ) {
       try {
+
         $mail->send($this->getTransport());
       } catch( Exception $e ) {
         // Silence? Note: Engine_Exception 's are already logged
@@ -447,9 +448,11 @@ class Core_Api_Mail extends Core_Api_Abstract
       // Check for missing text or html
       if( !$bodyHtmlTemplate ) {
         $bodyHtmlTemplate = nl2br($bodyTextTemplate);
-      } else if( !$bodyTextTemplate ) {
-        $bodyTextTemplate = strip_tags($bodyHtmlTemplate);
       }
+      if( !$bodyTextTemplate ) {
+        $bodyTextTemplate = $bodyHtmlTemplate;
+      }
+      $bodyTextTemplate = strip_tags($bodyTextTemplate);
       
       // Send
       if ($subjectKey == '_EMAIL_NOTIFY_ADMIN_USER_SIGNUP_SUBJECT') {

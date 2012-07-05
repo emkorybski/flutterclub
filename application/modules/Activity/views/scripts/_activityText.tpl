@@ -6,7 +6,7 @@
  * @package    Activity
  * @copyright  Copyright 2006-2010 Webligo Developments
  * @license    http://www.socialengine.net/license/
- * @version    $Id: _activityText.tpl 9612 2012-01-25 00:50:02Z pamela $
+ * @version    $Id: _activityText.tpl 9713 2012-05-08 21:47:51Z pamela $
  * @author     Jung
  */
 ?>

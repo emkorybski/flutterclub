@@ -6,7 +6,7 @@
  * @package    Messages
  * @copyright  Copyright 2006-2010 Webligo Developments
  * @license    http://www.socialengine.net/license/
- * @version    $Id: my.sql 9579 2012-01-06 00:00:44Z john $
+ * @version    $Id: my.sql 9726 2012-05-23 22:06:36Z richard $
  * @author     John
  */
 
@@ -111,7 +111,7 @@ INSERT IGNORE INTO `engine4_core_menus` (`name`, `type`, `title`) VALUES
 --
 
 INSERT IGNORE INTO `engine4_core_modules` (`name`, `title`, `description`, `version`, `enabled`, `type`) VALUES
-('messages', 'Messages', 'Messages', '4.2.0', 1, 'standard');
+('messages', 'Messages', 'Messages', '4.2.4', 1, 'standard');
 
 
 -- --------------------------------------------------------

@@ -6,7 +6,7 @@
  * @package    Messages
  * @copyright  Copyright 2006-2010 Webligo Developments
  * @license    http://www.socialengine.net/license/
- * @version    $Id: manifest.php 9579 2012-01-06 00:00:44Z john $
+ * @version    $Id: manifest.php 9726 2012-05-23 22:06:36Z richard $
  * @author     John
  */
 return array(
@@ -14,8 +14,8 @@ return array(
   'package' => array(
     'type' => 'module',
     'name' => 'messages',
-    'version' => '4.2.0',
-    'revision' => '$Revision: 9579 $',
+    'version' => '4.2.4',
+    'revision' => '$Revision: 9726 $',
     'path' => 'application/modules/Messages',
     'repository' => 'socialengine.net',
     'title' => 'Messages',

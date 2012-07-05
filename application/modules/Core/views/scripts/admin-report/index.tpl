@@ -6,7 +6,7 @@
  * @package    Core
  * @copyright  Copyright 2006-2010 Webligo Developments
  * @license    http://www.socialengine.net/license/
- * @version    $Id: index.tpl 9643 2012-03-10 00:34:52Z john $
+ * @version    $Id: index.tpl 9698 2012-04-20 21:21:13Z richard $
  * @author     Sami
  */
 ?>
@@ -44,6 +44,14 @@
   <?php echo $this->translate("This page lists all of the reports your users have sent in regarding inappropriate content, system abuse, spam, and so forth. You can use the search field to look for reports that contain a particular word or phrase. Very old reports are periodically deleted by the system.") ?>
 </p>
 
+<?php
+$settings = Engine_Api::_()->getApi('settings', 'core');
+if( $settings->getSetting('user.support.links', 0) == 1 ) {
+	echo 'More info: <a href="http://www.socialengine.net/support/documentation/article?q=179&question=Admin-Panel---Manage--Abuse-Reports" target="_blank">See KB article</a>.';	
+} 
+?>	
+<br />
+<br />
 
 <?php if( $this->paginator->getTotalItemCount() > 0 ): ?>
   <script type="text/javascript">

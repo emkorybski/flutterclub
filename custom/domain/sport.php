@@ -41,9 +41,9 @@ class Sport extends DBRecord {
 		$this->enabled = ($this->enabled == 'y');
 	}
 
-	public function visible() {
+	public function computeVisibility() {
 		foreach ($this->getChildEvents() as $childEvent) {
-			if ($childEvent->visible()) {
+			if ($childEvent->computeVisibility()) {
 				return true;
 			}
 		}

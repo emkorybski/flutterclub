@@ -6,7 +6,7 @@
  * @package    Core
  * @copyright  Copyright 2006-2010 Webligo Developments
  * @license    http://www.socialengine.net/license/
- * @version    $Id: index.tpl 9339 2011-09-29 23:03:01Z john $
+ * @version    $Id: index.tpl 9715 2012-05-10 00:21:47Z richard $
  * @author     John Boehr <john@socialengine.com>
  */
 ?>
@@ -38,7 +38,7 @@
           &nbsp;
         </div>
         <div class="admin_home_news_info">
-          &#187; <a href="http://www.socialengine.net"><?php echo $this->translate("More SE News") ?></a>
+          &#187; <a href="http://www.socialengine.net/blog"><?php echo $this->translate("More SE News") ?></a>
         </div>
       </li>
     </ul>

@@ -6,7 +6,7 @@
  * @package    User
  * @copyright  Copyright 2006-2010 Webligo Developments
  * @license    http://www.socialengine.net/license/
- * @version    $Id: verify.tpl 9536 2011-12-07 19:06:20Z shaun $
+ * @version    $Id: verify.tpl 9716 2012-05-14 20:05:57Z pamela $
  * @author     Jung
  */
 ?>
@@ -21,7 +21,7 @@
     }, 5000);
   </script>
 
-  <?php echo $this->translate("This account needs to be verified by email. Click %s to resend the email.",
+  <?php echo $this->translate("Your account has been verified. Please wait to be redirected or click %s to login.",
       $this->htmlLink(array('route'=>'user_login'), $this->translate("here"))) ?>
 
 <?php else: ?>

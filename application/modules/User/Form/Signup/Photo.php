@@ -6,7 +6,7 @@
  * @package    User
  * @copyright  Copyright 2006-2010 Webligo Developments
  * @license    http://www.socialengine.net/license/
- * @version    $Id: Photo.php 9632 2012-02-23 23:28:29Z richard $
+ * @version    $Id: Photo.php 9696 2012-04-20 20:17:37Z richard $
  * @author     John
  */
 
@@ -66,6 +66,7 @@ class User_Form_Signup_Photo extends Engine_Form
     ));
     
     // Element: done
+    if( $settings->getSetting('user.signup.photo', 0) == 0 ) {
     $this->addElement('Button', 'done', array(
       'label' => 'Save Photo',
       'type' => 'submit',
@@ -74,6 +75,7 @@ class User_Form_Signup_Photo extends Engine_Form
         'ViewHelper',
       ),
     ));
+    }
 
     // Element: skip  
     if( $settings->getSetting('user.signup.photo', 0) == 0 ) {
@@ -88,10 +90,5 @@ class User_Form_Signup_Photo extends Engine_Form
         ),
       ));
     }
-
-    // DisplayGroup: buttons
-    $this->addDisplayGroup(array('done', 'skip-link'), 'buttons', array(
-
-    ));
   }
 }

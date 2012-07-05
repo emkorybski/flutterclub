@@ -3,23 +3,16 @@
 namespace bets;
 
 require_once(PATH_LIB . 'dbrecord.php');
+require_once(PATH_DOMAIN . 'user_selection.php');
+require_once(PATH_DOMAIN . 'competition.php');
 
 class User extends DBRecord {
 
 	protected static $_table = 'fc_user';
 
-	public function login() {
-	//	bets::session()->set('iduser', $this->id);
-		throw new Exception('Can\'t login()');
-	}
-
-	public static function logout() {
-	//	bets::session()->un_set('iduser');
-		throw new Exception('Can\'t logout()');
-	}
-
+	/** @return null|\bets\User */
 	public static function getCurrentUser() {
-		$socialId = (int)(\Zend_Auth::getInstance()->getIdentity());
+		$socialId = (int) (\Zend_Auth::getInstance()->getIdentity());
 		if (!$socialId) {
 			return null;
 		}
@@ -31,6 +24,28 @@ class User extends DBRecord {
 			$currentUser->insert();
 		}
 		return $currentUser;
+	}
+
+	/** @return \bets\UserSelection[] */
+	public function getUserSelections() {
+		return UserSelection::findWhere(array('iduser=' => $this->id));
+	}
+
+	public function getPoints() {
+		$comp = Competition::getCurrent();
+		if (!$comp) {
+			// no active competition, no problem
+			return 0;
+		}
+		$startPoints = $comp->start_points;
+
+		$userSelections = UserSelection::findWhere(array('idcompetition=' => $comp->id, 'iduser=' => $this->id));
+		$betAmount = 0;
+		foreach ($userSelections as $sel) {
+			$betAmount += $sel->bet_amount;// * $sel->odds;
+		}
+
+		return $startPoints - $betAmount;
 	}
 
 	public static function isLoggedIn() {

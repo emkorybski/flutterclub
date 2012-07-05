@@ -6,7 +6,7 @@
  * @package    User
  * @copyright  Copyright 2006-2010 Webligo Developments
  * @license    http://www.socialengine.net/license/
- * @version    $Id: index.tpl 8379 2011-02-02 04:40:27Z john $
+ * @version    $Id: index.tpl 9720 2012-05-20 17:58:20Z richard $
  * @author     Jung
  */
 ?>
@@ -63,7 +63,13 @@
 <p>
   <?php echo $this->translate("USER_VIEWS_SCRIPTS_ADMINSIGNUP_INDEX_DESCRIPTION") ?>
 </p>
-
+<?php
+$settings = Engine_Api::_()->getApi('settings', 'core');
+if( $settings->getSetting('user.support.links', 0) == 1 ) {
+	echo 'More info: <a href="http://www.socialengine.net/support/documentation/article?q=157&question=Admin-Panel---Settings--Signup-Process" target="_blank">See KB article</a>';	
+} 
+?>	
+<br />
 <br />
 
 <div class='admin_signup_wrapper'>

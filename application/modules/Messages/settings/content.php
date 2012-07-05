@@ -6,7 +6,7 @@
  * @package    Messages
  * @copyright  Copyright 2006-2010 Webligo Developments
  * @license    http://www.socialengine.net/license/
- * @version    $Id: content.php 9308 2011-09-22 00:36:41Z john $
+ * @version    $Id: content.php 9724 2012-05-22 19:37:42Z richard $
  * @author     John Boehr <j@webligo.com>
  */
 return array(
@@ -29,7 +29,7 @@ return array(
   array(
     'title' => 'Messages Menu',
     'description' => 'Displays a menu in messages inbox, output, and compose pages.',
-    'category' => 'Videos',
+    'category' => 'Messages',
     'type' => 'widget',
     'name' => 'messages.menu',
     'requirements' => array(

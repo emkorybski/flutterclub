@@ -6,7 +6,7 @@
  * @package    Activity
  * @copyright  Copyright 2006-2010 Webligo Developments
  * @license    http://www.socialengine.net/license/
- * @version    $Id: manifest.php 9688 2012-04-18 23:32:12Z richard $
+ * @version    $Id: manifest.php 9726 2012-05-23 22:06:36Z richard $
  * @author     John
  */
 return array(
@@ -14,8 +14,8 @@ return array(
   'package' => array(
     'type' => 'module',
     'name' => 'activity',
-    'version' => '4.2.3',
-    'revision' => '$Revision: 9688 $',
+    'version' => '4.2.4',
+    'revision' => '$Revision: 9726 $',
     'path' => 'application/modules/Activity',
     'repository' => 'socialengine.net',
     'title' => 'Activity',

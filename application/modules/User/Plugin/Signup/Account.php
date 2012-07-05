@@ -6,7 +6,7 @@
  * @package    User
  * @copyright  Copyright 2006-2010 Webligo Developments
  * @license    http://www.socialengine.net/license/
- * @version    $Id: Account.php 9680 2012-04-17 01:39:47Z richard $
+ * @version    $Id: Account.php 9718 2012-05-16 22:48:15Z richard $
  * @author     John
  */
 
@@ -218,7 +218,7 @@ class User_Plugin_Signup_Account extends Core_Plugin_FormSequence_Abstract
 		$mailAdminParams = array(
 			'host' => $_SERVER['HTTP_HOST'],
 			'email' => $user->email,
-			'date' => time(),
+			'date' => date("F j, Y, g:i a"),
 			'recipient_title' => $super_admin->displayname,
 			'object_title' => $user->getTitle(),
 			'object_link' => $user->getHref(),
@@ -253,7 +253,7 @@ class User_Plugin_Signup_Account extends Core_Plugin_FormSequence_Abstract
 		$mailAdminParams = array(
 			'host' => $_SERVER['HTTP_HOST'],
 			'email' => $user->email,
-			'date' => time(),
+			'date' => date("F j, Y, g:i a"),
 			'recipient_title' => $super_admin->displayname,
 			'object_title' => $user->getTitle(),
 			'object_link' => $user->getHref(),
@@ -278,9 +278,9 @@ class User_Plugin_Signup_Account extends Core_Plugin_FormSequence_Abstract
       // );
     }
 	
-	if( $mailAdminType ) {
-      $this->_registry->mailParams = $mailAdminParams;
-      $this->_registry->mailType   = $mailAdminType;
+    if( $mailAdminType ) {
+      $this->_registry->mailAdminParams = $mailAdminParams;
+      $this->_registry->mailAdminType   = $mailAdminType;
       // Moved to User_Plugin_Signup_Fields
       // Engine_Api::_()->getApi('mail', 'core')->sendSystem(
       //   $user,

@@ -15,6 +15,10 @@
 	</style>
 
 	<div class="betting_history">
+		<?php
+		    //print_r($this->userSelections);
+		?>
+		
 		<?php foreach ($this->userSelections as $sel) { ?>
 		<div>
 			<!-- DATE -->

@@ -6,7 +6,7 @@
  * @package    Install
  * @copyright  Copyright 2006-2010 Webligo Developments
  * @license    http://www.socialengine.net/license/
- * @version    $Id: index.tpl 7244 2010-09-01 01:49:53Z john $
+ * @version    $Id: index.tpl 9698 2012-04-20 21:21:13Z richard $
  * @author     John
  */
 ?>
@@ -19,6 +19,11 @@
   Packages are plugins, themes, mods, and other extensions that you can add
   to your social network. 
 </p>
+
+<?php
+  echo 'More info: <a href="http://www.socialengine.net/support/documentation/article?q=180&question=Admin-Panel---Manage--Packages--Plugins" target="_blank">See KB article</a>.';	 
+?>	
+<br />	
 
 <br />
 

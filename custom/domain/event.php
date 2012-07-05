@@ -15,7 +15,7 @@ class Event extends DBRecord {
 			$event->delete();
 		}
 		foreach ($this->getChildSelections() as $selection) {
-			$event->delete();
+			$selection->delete();
 		}
 		call_user_func_array('parent::delete', func_get_args());
 	}
@@ -57,17 +57,24 @@ class Event extends DBRecord {
 		while ($event->idparent) {
 			$event = static::get($event->idparent);
 		}
-		
+
 		return $event;
 	}
 
-	public function visible() {
+	public function computeVisibility() {
 		foreach ($this->getChildEvents() as $childEvent) {
-			if ($childEvent->visible()) {
+			if ($childEvent->computeVisibility()) {
 				return true;
 			}
 		}
 		return Selection::countWhere(array('idevent=' => $this->id));
+	}
+
+	public function getOdds() {
+		if (!isset($this->_odds)) {
+			$this->_odds = (float) bets::sql()->queryField("SELECT odds FROM fc_event_odds WHERE id = ");
+		}
+		return $this->_odds;
 	}
 
 }

@@ -6,7 +6,7 @@
  * @package    Core
  * @copyright  Copyright 2006-2010 Webligo Developments
  * @license    http://www.socialengine.net/license/
- * @version    $Id: AdminLogController.php 9433 2011-10-26 17:49:17Z shaun $
+ * @version    $Id: AdminLogController.php 9717 2012-05-16 22:08:41Z richard $
  * @author     John Boehr <j@webligo.com>
  */
 
@@ -103,6 +103,7 @@ class Core_AdminLogController extends Core_Controller_Action_Admin
 
     // Get log length
     $this->view->logFile = $logFile;
+    $this->view->logName = $logName;
     $this->view->logSize = $logSize = filesize($logPath . DIRECTORY_SEPARATOR . $logFile);
     $this->view->logLength = $logLength = $values['length'];
     $this->view->logOffset = $logOffset = $this->_getParam('offset', $logSize);

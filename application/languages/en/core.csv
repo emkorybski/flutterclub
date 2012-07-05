@@ -1111,7 +1111,7 @@ Password: [password]
 "_EMAIL_NOTIFY_ADMIN_USER_SIGNUP_SUBJECT";"Someone has joined the social network!"
 "_EMAIL_NOTIFY_ADMIN_USER_SIGNUP_BODY";"
 
-Congratualations, someone has joined your social network. Welcome the new member to your site:
+Congratulations, someone has joined your social network. Welcome the new member to your site:
 
 [object_title] : http://[host][object_link]
 Signup Date: [date]

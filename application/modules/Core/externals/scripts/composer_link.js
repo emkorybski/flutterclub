@@ -1,5 +1,5 @@
 
-/* $Id: composer_link.js 9572 2011-12-27 23:41:06Z john $ */
+/* $Id: composer_link.js 9709 2012-05-02 01:11:14Z pamela $ */
 
 
 
@@ -166,8 +166,16 @@ Composer.Plugin.Link = new Class({
     }
     this.params.set('uri', responseJSON.url);
 
-    var title = responseJSON.title || responseJSON.url;
-    var description = responseJSON.description || responseJSON.title || responseJSON.url;
+    // If google docs then just output Google Document for title and descripton
+    var uristr = responseJSON.url;
+    if (uristr.substr(0, 23) == 'https://docs.google.com') {
+      var title = uristr;
+      var description = 'Google Document';
+    } else {
+      var title = responseJSON.title || responseJSON.url;
+      var description = responseJSON.description || responseJSON.title || responseJSON.url;
+    }
+       
     var images = responseJSON.images || [];
 
     this.params.set('title', title);

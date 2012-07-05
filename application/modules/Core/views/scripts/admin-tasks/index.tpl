@@ -6,7 +6,7 @@
  * @package    Core
  * @copyright  Copyright 2006-2010 Webligo Developments
  * @license    http://www.socialengine.net/license/
- * @version    $Id: index.tpl 9673 2012-04-11 22:49:36Z richard $
+ * @version    $Id: index.tpl 9701 2012-04-26 02:18:32Z pamela $
  * @author     John
  */
 ?>
@@ -110,8 +110,18 @@
         break;
     }
 
+    var selections=document.getElementsByTagName("input");
+    var checked = [];
+    for (var i = 0; i<selections.length;i++) {
+        if (selections[i].type == "checkbox") {
+            if (selections[i].checked) {
+                checked.push(selections[i]);
+            }
+        }
+    }   
+
     // Check selection
-    if( action != 'unlock' && $$('#admin-tasks-form input[type="checkbox"][checked]').length <= 0 ) {
+    if( action != 'unlock' && checked.length <= 0 ) {
       return;
     }
     

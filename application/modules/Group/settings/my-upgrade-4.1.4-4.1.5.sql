@@ -1,0 +1,1 @@
+UPDATE `engine4_core_menuitems` SET `params` = '{"route":"group_general","action":"browse"}' WHERE `engine4_core_menuitems`.`name` ='core_main_group' LIMIT 1 ;

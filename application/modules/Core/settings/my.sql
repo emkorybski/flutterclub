@@ -5,7 +5,7 @@
  * @package    Core
  * @copyright  Copyright 2006-2010 Webligo Developments
  * @license    http://www.socialengine.net/license/
- * @version    $Id: my.sql 9688 2012-04-18 23:32:12Z richard $
+ * @version    $Id: my.sql 9726 2012-05-23 22:06:36Z richard $
  * @author     John
  */
 
@@ -698,7 +698,7 @@ CREATE TABLE IF NOT EXISTS `engine4_core_modules` (
 --
 
 INSERT INTO `engine4_core_modules` (`name`, `title`, `description`, `version`, `enabled`, `type`) VALUES
-('core', 'Core', 'The Alpha and the Omega.', '4.2.3', 1, 'core');
+('core', 'Core', 'The Alpha and the Omega.', '4.2.4', 1, 'core');
 
 
 -- --------------------------------------------------------

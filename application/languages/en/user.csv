@@ -656,4 +656,4 @@ Please login to the admin panel to aprovie this user.
 [footer]"
 
 "This account still requires admin approval.";"This account still requires admin approval."
-"This account needs to be verified by email. Click %s to resend the email.";"This account needs to be verified by email. Click %s to resend the email."
+"Your account has been verified. Please wait to be redirected or click %s to login.";"Your account has been verified. Please wait to be redirected or click %s to login."

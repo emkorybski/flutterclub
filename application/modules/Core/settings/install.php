@@ -6,7 +6,7 @@
  * @package    Core
  * @copyright  Copyright 2006-2010 Webligo Developments
  * @license    http://www.socialengine.net/license/
- * @version    $Id: install.php 9429 2011-10-25 22:36:26Z john $
+ * @version    $Id: install.php 9722 2012-05-22 19:23:04Z matthew $
  */
 
 /**
@@ -292,7 +292,7 @@ class Core_Install extends Engine_Package_Installer_Module
     $cols = $db->describeTable($table);
 
     // Update
-    if( isset($cols[$column]) && $cols[$column]['DATA_TYPE'] != 'varbinary' ) {
+    if( isset($cols[$column]) && $cols[$column]['DATA_TYPE'] != 'varbinary(16)' ) {
       $temporaryColumn = $column . '_tmp6';
       // Drop temporary column if it already exists
       if( isset($cols[$temporaryColumn]) ) {

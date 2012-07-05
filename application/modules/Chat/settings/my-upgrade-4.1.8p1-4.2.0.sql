@@ -1,0 +1,1 @@
+ALTER TABLE `engine4_chat_events` ADD INDEX (`date`);

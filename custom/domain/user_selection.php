@@ -10,6 +10,11 @@ class UserSelection extends DBRecord {
 
 	protected static $_table = 'fc_user_selection';
 
+	public function insert() {
+		$this->odds = $this->getSelection()->odds;
+		call_user_func_array('parent::insert', func_get_args());
+	}
+	
 	public function getUser() {
 		return User::get($this->iduser);
 	}
