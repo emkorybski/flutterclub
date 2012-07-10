@@ -10,11 +10,30 @@ class Widget_Fc_Betting_SlipController extends Engine_Content_Widget_Abstract {
 
 	public function indexAction() {
 		switch (isset($_REQUEST['action']) ? strtolower($_REQUEST['action']) : '') {
+			
+			case 'approve_all':
+				foreach (bets\User::getCurrentUser()->getUserSelectionsNotConfirmed() as $userSel) {
+					$userSel->status = 'placed';
+					$userSel->update();
+				}
+				exit;
+			
+			case 'approve':
+				foreach (bets\User::getCurrentUser()->getUserSelectionsNotConfirmed() as $userSel) {
+					if (in_array($userSel->id,$_REQUEST['iduserselection'])){
+						$userSel->status = 'placed';
+						$userSel->update();
+					}
+				}
+				exit;
+				
 			case 'cancel':
-				foreach (bets\User::getCurrentUser()->getUserSelections() as $userSel) {
+				foreach (bets\User::getCurrentUser()->getUserSelectionsNotConfirmed() as $userSel) {
 					$userSel->delete();
 				}
 				exit;
+				
+				
 			case 'remove':
 				foreach ($_REQUEST['iduserselection'] as $idUserSel) {
 					$userSel = bets\UserSelection::get($idUserSel);
@@ -23,6 +42,8 @@ class Widget_Fc_Betting_SlipController extends Engine_Content_Widget_Abstract {
 				exit;
 			case 'update':
 				$userSel = bets\UserSelection::get($_REQUEST['iduserselection']);
+				
+				
 				if ($userSel) {
 					$userSel->bet_amount = (float)$_REQUEST['amount'];
 					$userSel->update();
@@ -35,7 +56,7 @@ class Widget_Fc_Betting_SlipController extends Engine_Content_Widget_Abstract {
 	}
 
 	public function fc_render() {
-		$this->view->slip = bets\User::getCurrentUser()->getUserSelections();
+		$this->view->slip = bets\User::getCurrentUser()->getUserSelectionsNotConfirmed();
 	}
 
 }

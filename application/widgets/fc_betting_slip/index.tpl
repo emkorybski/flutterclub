@@ -70,8 +70,12 @@
 	
 	<div class="fc_betting_slip">
 		
-		<?php foreach ($this->slip as $userSel) {
+		<?php 
+		if (count($this->slip)){
+			//print_r($this->slip);
+			foreach ($this->slip as $userSel) {
 			$sel = $userSel->getSelection();
+			
 		?>
 		<a href="#" class="slip_item">
 			<div class="box box_name box_update" title="<?=htmlentities($sel->name)?>"><?=htmlentities($sel->name)?></div>
@@ -83,14 +87,20 @@
 		<hr class="line" />
 		<?php } ?>
 		<div class="slip_actions">
-			<div class="action"><a href="#" class="action_approve">Approve</a></div>
-			<div class="action"><a href="#" class="action_accumulate">Accumulate</a></div>
-			<div class="action"><a href="#" class="action_remove">Remove</a></div>
-			<div class="action"><a href="#" class="action_cancel">Cancel</a></div>
+			<div class="action"><a href="#" class="action_approve_all">Confirm all bets</a></div>
+			<div class="action"><a href="#" class="action_approve">Confirm selected bets</a></div>
+			<div class="action"><a href="#" class="action_remove">Remove bets</a></div>
+			<div class="action"><a href="#" class="action_cancel">Cancel all bets</a></div>
 			<div class="clear"></div>
 		</div>
+		<?php
+		}else{
+		?>
+		<div href="#" class="slip_item">You don't have any bets in slip!</div>
+		<?php } ?>
 	</div>
-
+	
+	
 	<script type="text/javascript">
 		(function () {
 			j('.slip_item').click(function (e) { e.preventDefault(); });
@@ -103,6 +113,7 @@
 					inp.prop('checked', c);
 				});
 			});
+			
 			j('.slip_item .box_update').click(function () {
 				var item = j(j(this).parent());
 				var name = item.find('.box_name').html();
@@ -116,7 +127,7 @@
 				j.ajax('/fc/widget/index/name/fc_betting_slip?format=html', {
 					data: { action: 'update', iduserselection: idusersel, amount: Math.max(parseInt(newAmount) || 0, 0) },
 					dataType: 'html',
-					success: function () { fc.user.updateBettingSlip(); fc.user.updateBettingUpcoming(); }
+					success: function () { fc.user.updateBettingSlip(); fc.user.updateBettingUpcoming(); fc.user.updateBettingPending(); fc.user.updateBettingRecent(); }
 				});
 			});
 
@@ -127,12 +138,37 @@
 			j('.slip_actions a').click(function (e) {
 				e.preventDefault();
 				var action = j(this);
-				if (action.hasClass('action_approve')) {
+				if (action.hasClass('action_approve_all')) {
 					if (!confirm('Do you want to approve this betting slip for this competition?')) {
 						return;
 					}
-					alert('Not implemented');
+					
+					j.ajax('/fc/widget/index/name/fc_betting_slip?format=html', {
+						data: { action: 'approve_all' },
+						dataType: 'html',
+						success: function (text) { fc.user.updateBettingSlip(); fc.user.updateBettingUpcoming(); fc.user.updateBettingPending(); fc.user.updateBettingRecent(); }
+					});
+					
+					//alert('Not implemented');
 				}
+				
+				if (action.hasClass('action_approve')) {
+					var sel = getSelection();
+					if (sel.length < 1) {
+						alert('Select the bets you want to confirm.');
+						return;
+					}
+					if (!confirm((sel.length > 1) ? ('Do you want to confirm these ' + sel.length + ' bets?') : 'Do you want to confirm this bet?')) {
+						return;
+					}
+					j.ajax('/fc/widget/index/name/fc_betting_slip?format=html', {
+						data: { action: 'approve', iduserselection: sel.map(function() { return j(this).val() }).get() },
+						dataType: 'html',
+						success: function () { fc.user.updateBettingSlip(); fc.user.updateBettingUpcoming(); fc.user.updateBettingPending(); fc.user.updateBettingRecent(); }
+					});
+				}
+				
+				
 				if (action.hasClass('action_accumulate')) {
 					var sel = getSelection();
 					if (sel.length < 2) {
@@ -156,7 +192,7 @@
 					j.ajax('/fc/widget/index/name/fc_betting_slip?format=html', {
 						data: { action: 'remove', iduserselection: sel.map(function() { return j(this).val() }).get() },
 						dataType: 'html',
-						success: function () { fc.user.updateBettingSlip(); fc.user.updateBettingUpcoming(); }
+						success: function () { fc.user.updateBettingSlip(); fc.user.updateBettingUpcoming(); fc.user.updateBettingPending(); fc.user.updateBettingRecent(); }
 					});
 				}
 				if (action.hasClass('action_cancel')) {
@@ -166,7 +202,7 @@
 					j.ajax('/fc/widget/index/name/fc_betting_slip?format=html', {
 						data: { action: 'cancel' },
 						dataType: 'html',
-						success: function (text) { fc.user.updateBettingSlip(); fc.user.updateBettingUpcoming(); }
+						success: function (text) { fc.user.updateBettingSlip(); fc.user.updateBettingUpcoming(); fc.user.updateBettingPending(); fc.user.updateBettingRecent(); }
 					});
 				}
 			});

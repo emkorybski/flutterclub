@@ -64,6 +64,7 @@
 				}
 			?>
 		</div>
+		<div class="selection_share">Share</div>
 		<div class="clear"></div>
 	</a>
 	<hr class="line" />

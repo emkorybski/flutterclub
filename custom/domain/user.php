@@ -26,9 +26,24 @@ class User extends DBRecord {
 		return $currentUser;
 	}
 
+	// /** @return \bets\UserSelection[] */
+	// public function getUserSelections() {
+		// return UserSelection::findWhere(array('iduser=' => $this->id));
+	// }
+	
 	/** @return \bets\UserSelection[] */
-	public function getUserSelections() {
-		return UserSelection::findWhere(array('iduser=' => $this->id));
+	public function getUserSelectionsNotConfirmed() {
+		return UserSelection::findWhere(array('iduser=' => $this->id, 'status=' => 'notconfirmed'));
+	}
+	
+	/** @return \bets\UserSelection[] */
+	public function getUserSelectionsPending() {
+		return UserSelection::findWhere(array('iduser=' => $this->id, 'status=' => 'placed'));
+	}
+	
+	/** @return \bets\UserSelection[] */
+	public function getUserSelectionsSettled() {
+		return UserSelection::findWhere(array('iduser=' => $this->id), " and status in ('settled', 'win', 'loss')");
 	}
 
 	public function getPoints() {

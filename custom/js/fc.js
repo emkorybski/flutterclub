@@ -23,6 +23,45 @@ fc.user.updateBettingSlip = function (data) {
 		}
 	});
 }
+fc.user.updateBettingPending = function (data) {
+	var bettingPending = j('.fc_betting_pending');
+	bettingPending.css({
+		opacity: 0.5
+	}).addClass('betting_upcoming_loading');
+	j.ajax('/fc/widget/index/name/fc_betting_pending?format=html', {
+		data: data || {},
+		dataType: 'html',
+		success: function (text) {
+			bettingPending.html(text)
+		},
+		complete: function () {
+			bettingPending.css({
+				opacity: 1
+			}).removeClass('betting_upcoming_loading');
+		}
+	});
+}
+
+
+fc.user.updateBettingRecent = function (data) {
+	var bettingRecent = j('.fc_betting_recent');
+	bettingRecent.css({
+		opacity: 0.5
+	}).addClass('betting_upcoming_loading');
+	j.ajax('/fc/widget/index/name/fc_betting_recent?format=html', {
+		data: data || {},
+		dataType: 'html',
+		success: function (text) {
+			bettingRecent.html(text)
+		},
+		complete: function () {
+			bettingRecent.css({
+				opacity: 1
+			}).removeClass('betting_upcoming_loading');
+		}
+	});
+}
+
 
 
 fc.user.confirmBet = function () {
