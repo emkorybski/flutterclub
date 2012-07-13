@@ -74,7 +74,7 @@ fc.user.updateBettingMarkets = function (data) {
     if (!fc.user.bettingMarketsUrl) {
         return;
     }
-    var bettingMarkets = j('.fc_bettting_markets');
+    var bettingMarkets = j('.fc_betting_markets');
     bettingMarkets.css({
         opacity:0.5
     }).addClass('betting_upcoming_loading');
