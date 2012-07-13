@@ -80,7 +80,7 @@
 				&nbsp;
 				<?=$bet->amount?>
 				&nbsp;
-				<?=$bet->odds?>
+				<?=\bets\fc::formatOdds($bet->odds)?>
 				<?php
 					if ($bet->status == 'won') {
 						echo '<span style="color: green; font-size: 14px;"><strong>' . '+'.number_format($bet->amount * ($bet->odds - 1), 2, '.', '') . '</strong></span>';
@@ -93,7 +93,7 @@
 				<?php
 				foreach ($betSelections as $selection) {
 				?>
-					<li>&nbsp;&nbsp;&nbsp;->&nbsp;<?=$selection->name?>, <?=$selection->odds?>, <?=$selection->status?><br/></li>
+					<li>&nbsp;&nbsp;&nbsp;->&nbsp;<?=$selection->name?>, <?=\bets\fc::formatOdds($selection->odds)?>, <?=$selection->status?><br/></li>
 				<?php
 				}
 				?>

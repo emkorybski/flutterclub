@@ -48,7 +48,7 @@
 	<a href="/fc/widget/index/name/fc_betting_markets?format=html&idsport=<?=$this->idsport?>&idevent=<?=$this->idevent?>&vote_selection_id=<?=$sel->id?>" class="fc_selection">
 		<input type="hidden" class="selection_id" value="<?=$userSel ? 0 : $sel->id?>" />
 		<div class="selection_name"><?=$sel->name?></div>
-		<div class="selection_odds"><?=round($sel->odds)?>:1</div>
+		<div class="selection_odds" title="<?=\bets\fc::formatOdds($sel->odds, 'decimal')?>"><?=\bets\fc::formatOdds($sel->odds)?></div>
 		<div class="selection_bet">
 			<?php
 				if ($userSel) {

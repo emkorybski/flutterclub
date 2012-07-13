@@ -69,13 +69,5 @@ class Event extends DBRecord {
 		}
 		return Selection::countWhere(array('idevent=' => $this->id));
 	}
-
-	public function getOdds() {
-		if (!isset($this->_odds)) {
-			$this->_odds = (float) bets::sql()->queryField("SELECT odds FROM fc_event_odds WHERE id = ");
-		}
-		return $this->_odds;
-	}
-
 }
 

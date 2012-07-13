@@ -5,6 +5,7 @@ require_once(PATH_DOMAIN . 'event.php');
 require_once(PATH_DOMAIN . 'competition.php');
 require_once(PATH_DOMAIN . 'user_selection.php');
 require_once(PATH_DOMAIN . 'user.php');
+require_once(PATH_LIB . 'fc.php');
 
 class Widget_FC_Betting_MarketsController extends Engine_Content_Widget_Abstract {
 

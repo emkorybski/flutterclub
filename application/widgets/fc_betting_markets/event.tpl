@@ -93,7 +93,7 @@
 		<div class="selection">
 			<input class="selection_id" type="hidden" value="<?=$sel->id?>" />
 			<div class="selection_name"><?=$sel->name?></div>
-			<div class="selection_odds"><?=round($sel->odds)?></div>
+			<div class="selection_odds" title="<?=\bets\fc::formatOdds($sel->odds, 'decimal')?>"><?=\bets\fc::formatOdds($sel->odds)?></div>
 			<div class="selection_bet">
 				<?php
 					$userSel = bets\UserSelection::getWhere(array('idselection=' => $sel->id, 'iduser=' => $user->id));

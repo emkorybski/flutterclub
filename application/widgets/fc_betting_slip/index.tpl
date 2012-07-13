@@ -82,7 +82,7 @@
 		?>
 		<a href="#" class="slip_item">
 			<div class="box box_name" title="<?=htmlentities($sel->name)?>"><?=htmlentities($sel->name)?></div>
-			<div class="box box_odds" title="Odds 1:<?=round($userSel->odds, 2)?>">1:<?=round($userSel->odds, 2)?></div>
+			<div class="box box_odds" title="<?=\bets\fc::formatOdds($sel->odds, 'decimal')?>"><?=\bets\fc::formatOdds($sel->odds)?></div>
 			<div class="box box_bet_amount"><input type="text" data-userselectionid="<?=$userSel->id?>" /></div>
 			<div class="box box_action" title="Select several bets and an choose action from below"><input type="checkbox" value="<?=$userSel->id?>" /></div>
 			<div class="clear"></div>

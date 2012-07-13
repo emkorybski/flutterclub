@@ -32,7 +32,7 @@
 			<div class="betting_history_field_right"><?=$sel->getSelection()->getEvent()->name?></div>
 			<!-- BET -->
 			<div class="betting_history_field_left">Bet</div>
-			<div class="betting_history_field_right"><?=$sel->getSelection()->name?> (<?=$sel->odds?>:1)</div>
+			<div class="betting_history_field_right" title="<?=\bets\fc::formatOdds($sel->odds, 'decimal')?>"><?=$sel->getSelection()->name?> <?=\bets\fc::formatOdds($sel->odds)?></div>
 			<!-- STAKE -->
 			<div class="betting_history_field_left">Stake</div>
 			<div class="betting_history_field_right"><?=round($sel->bet_amount)?> points</div>

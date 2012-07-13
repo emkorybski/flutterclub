@@ -57,12 +57,12 @@
 				&nbsp;
 				<?=$bet->amount?>
 				&nbsp;
-				<?=$bet->odds?>
+				<?=\bets\fc::formatOdds($bet->odds)?>
 				<ul>
 				<?php
 				foreach ($betSelections as $selection) {
 				?>
-				<li>&nbsp;&nbsp;&nbsp;->&nbsp;<?=$selection->name?>, <?=$selection->odds?>, <?=$selection->status?><br/></li>
+				<li>&nbsp;&nbsp;&nbsp;->&nbsp;<?=$selection->name?>, <?=\bets\fc::formatOdds($selection->odds)?>, <?=$selection->status?><br/></li>
 				<?php
 				}
 				?>

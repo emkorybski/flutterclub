@@ -9,6 +9,7 @@ require_once(PATH_DOMAIN . 'selection.php');
 require_once(PATH_DOMAIN . 'user_selection.php');
 require_once(PATH_DOMAIN . 'bet.php');
 require_once(PATH_DOMAIN . 'bet_selection.php');
+require_once(PATH_LIB . 'fc.php');
 
 class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 {
@@ -70,6 +71,7 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 				}
 
 				// remove user selections from the bet slip
+				/*
 				foreach ($_REQUEST['bets'] as $userBet) {
 					if ($userBet['user_selection_id'] == 'accumulator') {
 						$userSelections = \bets\UserSelection::findWhere(array('iduser=' => $user->id));
@@ -82,6 +84,7 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 						$userSel->delete();
 					}
 				}
+				*/
 				exit;
 
 			case 'remove_selected':
