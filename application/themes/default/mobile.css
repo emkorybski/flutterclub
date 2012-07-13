@@ -1056,7 +1056,7 @@ form.filters dd + dt
   border: 1px solid #ccc;
 }
 
-.layout_upcoming, .layout_fc_betting_slip {
+.layout_fc_betting_markets, .layout_fc_betting_slip {
 	margin-top: 1em;
 }
 

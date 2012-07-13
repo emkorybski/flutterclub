@@ -1,13 +1,15 @@
 <?php
 
 error_reporting(E_ALL);
-ini_set('dispay_errors',1);
-require_once('custom/config.php');
-require_once(PATH_DOMAIN . 'user_selection.php');
+ini_set('display_errors', 1);
 
-class Widget_Fc_Betting_RecentController extends Engine_Content_Widget_Abstract {
-	public function indexAction() {
-	    $this->view->recent = \bets\User::getCurrentUser()->getUserSelectionsSettled();
+require_once('custom/config.php');
+require_once(PATH_DOMAIN . 'user.php');
+
+class Widget_FC_Betting_RecentController extends Engine_Content_Widget_Abstract
+{
+	public function indexAction()
+	{
+		$this->view->recent_bets = \bets\User::getCurrentUser()->getRecentBets();
 	}
 }
-

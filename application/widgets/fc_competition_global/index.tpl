@@ -3,11 +3,11 @@
 <?php } ?>
 	
 <style type="text/css">
-	.layout_categories > div {
+	.layout_fc_betting_categories > div {
 		text-align: left;
 	}
 
-	.layout_categories h3 {
+	.layout_fc_betting_categories h3 {
 		background-color: #ff6600;
 		color: white;
 		border-radius: 0;

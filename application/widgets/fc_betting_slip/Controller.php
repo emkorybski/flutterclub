@@ -4,60 +4,107 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 require_once('custom/config.php');
+require_once(PATH_DOMAIN . 'user.php');
+require_once(PATH_DOMAIN . 'selection.php');
 require_once(PATH_DOMAIN . 'user_selection.php');
+require_once(PATH_DOMAIN . 'bet.php');
+require_once(PATH_DOMAIN . 'bet_selection.php');
 
-class Widget_Fc_Betting_SlipController extends Engine_Content_Widget_Abstract {
-
-	public function indexAction() {
+class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
+{
+	public function indexAction()
+	{
 		switch (isset($_REQUEST['action']) ? strtolower($_REQUEST['action']) : '') {
-			
-			case 'approve_all':
-				foreach (bets\User::getCurrentUser()->getUserSelectionsNotConfirmed() as $userSel) {
-					$userSel->status = 'placed';
-					$userSel->update();
+
+			case 'place_bet':
+				$competition = bets\Competition::getCurrent();
+				$user = bets\User::getCurrentUser();
+				foreach ($_REQUEST['bets'] as $userBet) {
+					if ($userBet['user_selection_id'] == 'accumulator') {
+						$bet = new \bets\Bet();
+						$bet->idcompetition = $competition->id;
+						$bet->iduser = $user->id;
+						$bet->odds = 1;
+						$bet->amount = $userBet['amount'];
+						$bet->insert();
+
+						$userSelections = \bets\UserSelection::findWhere(array('iduser=' => $user->id));
+						$odds = 1;
+						foreach ($userSelections as $userSel) {
+							$odds *= $userSel->odds;
+
+							$selection = \bets\Selection::get($userSel->idselection);
+
+							$betSelection = new \bets\BetSelection();
+							$betSelection->idbet = $bet->id;
+							$betSelection->idselection = $selection->id;
+							$betSelection->name = $selection->name;
+							$betSelection->odds = $selection->odds;
+							$betSelection->insert();
+						}
+
+						$bet->odds = $odds;
+						$bet->update();
+						// TODO: update user's balance.
+					} else {
+						$idUserSel = $userBet['user_selection_id'];
+						$userSel = \bets\UserSelection::get($idUserSel);
+
+						$selection = \bets\Selection::get($userSel->idselection);
+
+						$bet = new \bets\Bet();
+						$bet->idcompetition = $competition->id;
+						$bet->iduser = $user->id;
+						$bet->odds = $selection->odds;
+						$bet->amount = $userBet['amount'];
+						$bet->insert();
+
+						$betSelection = new \bets\BetSelection();
+						$betSelection->idbet = $bet->id;
+						$betSelection->idselection = $selection->id;
+						$betSelection->name = $selection->name;
+						$betSelection->odds = $selection->odds;
+						$betSelection->insert();
+						// TODO: update user's balance.
+					}
 				}
-				exit;
-			
-			case 'approve':
-				foreach (bets\User::getCurrentUser()->getUserSelectionsNotConfirmed() as $userSel) {
-					if (in_array($userSel->id,$_REQUEST['iduserselection'])){
-						$userSel->status = 'placed';
-						$userSel->update();
+
+				// remove user selections from the bet slip
+				foreach ($_REQUEST['bets'] as $userBet) {
+					if ($userBet['user_selection_id'] == 'accumulator') {
+						$userSelections = \bets\UserSelection::findWhere(array('iduser=' => $user->id));
+						foreach ($userSelections as $userSel) {
+							$userSel->delete();
+						}
+					} else {
+						$idUserSel = $userBet['user_selection_id'];
+						$userSel = \bets\UserSelection::get($idUserSel);
+						$userSel->delete();
 					}
 				}
 				exit;
-				
-			case 'cancel':
-				foreach (bets\User::getCurrentUser()->getUserSelectionsNotConfirmed() as $userSel) {
-					$userSel->delete();
-				}
-				exit;
-				
-				
-			case 'remove':
-				foreach ($_REQUEST['iduserselection'] as $idUserSel) {
+
+			case 'remove_selected':
+				foreach ($_REQUEST['user_selection_ids'] as $idUserSel) {
 					$userSel = bets\UserSelection::get($idUserSel);
 					$userSel->delete();
 				}
 				exit;
-			case 'update':
-				$userSel = bets\UserSelection::get($_REQUEST['iduserselection']);
-				
-				
-				if ($userSel) {
-					$userSel->bet_amount = (float)$_REQUEST['amount'];
-					$userSel->update();
+
+			case 'remove_all':
+				foreach (bets\User::getCurrentUser()->getUserSelections() as $userSel) {
+					$userSel->delete();
 				}
 				exit;
+
 			default:
 				$this->fc_render();
 				break;
 		}
 	}
 
-	public function fc_render() {
-		$this->view->slip = bets\User::getCurrentUser()->getUserSelectionsNotConfirmed();
+	public function fc_render()
+	{
+		$this->view->slip = bets\User::getCurrentUser()->getUserSelections();
 	}
-
 }
-

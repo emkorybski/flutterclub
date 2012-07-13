@@ -148,7 +148,7 @@
 		src: url('/fc/custom/fonts/pts75f.ttf');
 	}
 
-	.menu_core_main, .layout_categories h3 {
+	.menu_core_main, .layout_fc_betting_categories h3 {
 		font-family: fc_bebas;
 		font-size: 14px;
 		word-spacing: 0.4em;

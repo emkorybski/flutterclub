@@ -31,18 +31,21 @@
 			text-overflow: ellipsis;
 		}
 		.slip_item .box_name {
-			width: 50%;
+			width: 40%;
 		}
 		.slip_item .box_odds {
 			width: 20%;
 		}
 		.slip_item .box_bet_amount {
-			width: 20%;
+			width: 30%;
+		}
+		.slip_item .box_bet_amount input {
+			width: 90%;
 		}
 		.slip_item .box_action {
 			width: 10%;
 		}
-		
+
 		.slip_actions {
 			padding: 10px 10px 0 0;
 		}
@@ -78,19 +81,19 @@
 			
 		?>
 		<a href="#" class="slip_item">
-			<div class="box box_name box_update" title="<?=htmlentities($sel->name)?>"><?=htmlentities($sel->name)?></div>
-			<div class="box box_odds box_update" title="Odds 1:<?=round($userSel->odds, 2)?>">1:<?=round($userSel->odds, 2)?></div>
-			<div class="box box_bet_amount box_update" title="<?=round($userSel->bet_amount)?> points"><?=round($userSel->bet_amount)?></div>
+			<div class="box box_name" title="<?=htmlentities($sel->name)?>"><?=htmlentities($sel->name)?></div>
+			<div class="box box_odds" title="Odds 1:<?=round($userSel->odds, 2)?>">1:<?=round($userSel->odds, 2)?></div>
+			<div class="box box_bet_amount"><input type="text" data-userselectionid="<?=$userSel->id?>" /></div>
 			<div class="box box_action" title="Select several bets and an choose action from below"><input type="checkbox" value="<?=$userSel->id?>" /></div>
 			<div class="clear"></div>
 		</a>
 		<hr class="line" />
 		<?php } ?>
+		<input type="text" class="box_accumulator" />
 		<div class="slip_actions">
-			<div class="action"><a href="#" class="action_approve_all">Confirm all bets</a></div>
-			<div class="action"><a href="#" class="action_approve">Confirm selected bets</a></div>
-			<div class="action"><a href="#" class="action_remove">Remove bets</a></div>
-			<div class="action"><a href="#" class="action_cancel">Cancel all bets</a></div>
+			<div class="action"><a href="#" class="action_remove_all">Remove all</a></div>
+			<div class="action"><a href="#" class="action_place_bet">Place bet</a></div>
+			<div class="action"><a href="#" class="action_remove_selected">Remove selected</a></div>
 			<div class="clear"></div>
 		</div>
 		<?php
@@ -99,11 +102,13 @@
 		<div href="#" class="slip_item">You don't have any bets in slip!</div>
 		<?php } ?>
 	</div>
-	
-	
+
 	<script type="text/javascript">
 		(function () {
-			j('.slip_item').click(function (e) { e.preventDefault(); });
+			j('.slip_item').click(function (e) {
+				e.preventDefault();
+			});
+
 			j('.slip_item .box_action').click(function (e) {
 				e.preventDefault();
 				e.stopPropagation();
@@ -113,102 +118,108 @@
 					inp.prop('checked', c);
 				});
 			});
-			
-			j('.slip_item .box_update').click(function () {
-				var item = j(j(this).parent());
-				var name = item.find('.box_name').html();
-				var amount = parseInt(item.find('.box_bet_amount').html()) || 0;
-				var idusersel = item.find('.box_action input').val();
-				
-				var newAmount = prompt('How many points do you want to bet on ' + name + ' ?', amount || '');
-				if (newAmount == null) {
-					return;
-				}
-				j.ajax('/fc/widget/index/name/fc_betting_slip?format=html', {
-					data: { action: 'update', iduserselection: idusersel, amount: Math.max(parseInt(newAmount) || 0, 0) },
-					dataType: 'html',
-					success: function () { fc.user.updateBettingSlip(); fc.user.updateBettingUpcoming(); fc.user.updateBettingPending(); fc.user.updateBettingRecent(); }
-				});
-			});
 
 			var getSelection = function () {
 				return j('.fc_betting_slip .slip_item .box_action input:checked');
 			}
 
+			var getBets = function () {
+				var bets = [];
+
+				var betAmounts = j('.fc_betting_slip .slip_item .box_bet_amount input');
+				betAmounts.each(function (index) {
+					var amount = j(this).val();
+					if (amount && !isNaN(amount)) {
+						bets.push({
+							user_selection_id:j(this).attr('data-userselectionid'),
+							amount:amount
+						})
+					}
+				});
+				return bets;
+			}
+
 			j('.slip_actions a').click(function (e) {
 				e.preventDefault();
 				var action = j(this);
-				if (action.hasClass('action_approve_all')) {
+
+				if (action.hasClass('action_place_bet')) {
 					if (!confirm('Do you want to approve this betting slip for this competition?')) {
 						return;
 					}
-					
+
+					var bets = getBets();
+					var accumulator = j('.fc_betting_slip .box_accumulator');
+					var accAmount = j(accumulator).val();
+					if (accAmount && !isNaN(accAmount)) {
+						bets.push({
+							user_selection_id:'accumulator',
+							amount:accAmount
+						})
+					}
+
+					if (bets.length <= 0) {
+						alert('Please insert stakes!');
+						return;
+					}
+
 					j.ajax('/fc/widget/index/name/fc_betting_slip?format=html', {
-						data: { action: 'approve_all' },
-						dataType: 'html',
-						success: function (text) { fc.user.updateBettingSlip(); fc.user.updateBettingUpcoming(); fc.user.updateBettingPending(); fc.user.updateBettingRecent(); }
+						data:{ action:'place_bet', bets:bets },
+						dataType:'html',
+						success:function (text) {
+							fc.user.updateBettingMarkets();
+							fc.user.updateBettingSlip();
+							fc.user.updateBettingPending();
+							fc.user.updateBettingRecent();
+						}
 					});
-					
-					//alert('Not implemented');
 				}
-				
-				if (action.hasClass('action_approve')) {
+
+				if (action.hasClass('action_remove_selected')) {
 					var sel = getSelection();
 					if (sel.length < 1) {
-						alert('Select the bets you want to confirm.');
+						alert('Please select at least one bet.');
 						return;
 					}
-					if (!confirm((sel.length > 1) ? ('Do you want to confirm these ' + sel.length + ' bets?') : 'Do you want to confirm this bet?')) {
+					if (!confirm('Do you really want to remove the selected bets?')) {
 						return;
 					}
+
+					var userSelectionIds = sel.map(function () {
+						return j(this).val()
+					}).get();
 					j.ajax('/fc/widget/index/name/fc_betting_slip?format=html', {
-						data: { action: 'approve', iduserselection: sel.map(function() { return j(this).val() }).get() },
-						dataType: 'html',
-						success: function () { fc.user.updateBettingSlip(); fc.user.updateBettingUpcoming(); fc.user.updateBettingPending(); fc.user.updateBettingRecent(); }
+						data:{ action:'remove_selected', user_selection_ids:userSelectionIds },
+						dataType:'html',
+						success:function () {
+							fc.user.updateBettingMarkets();
+							fc.user.updateBettingSlip();
+							fc.user.updateBettingPending();
+							fc.user.updateBettingRecent();
+						}
 					});
 				}
-				
-				
-				if (action.hasClass('action_accumulate')) {
-					var sel = getSelection();
-					if (sel.length < 2) {
-						alert('Select at least two bets to accumulate.');
+
+				if (action.hasClass('action_remove_all')) {
+					if (!confirm('Are you sure you want to remove all the bets?')) {
 						return;
 					}
-					if (!confirm('Do you want to accumulate these ' + sel.length + ' bets?')) {
-						return;
-					}
-					alert('Not implemented');
-				}
-				if (action.hasClass('action_remove')) {
-					var sel = getSelection();
-					if (sel.length < 1) {
-						alert('Select the bets you want to remove.');
-						return;
-					}
-					if (!confirm((sel.length > 1) ? ('Do you want to remove these ' + sel.length + ' bets?') : 'Do you want to remove this bet?')) {
-						return;
-					}
+
 					j.ajax('/fc/widget/index/name/fc_betting_slip?format=html', {
-						data: { action: 'remove', iduserselection: sel.map(function() { return j(this).val() }).get() },
-						dataType: 'html',
-						success: function () { fc.user.updateBettingSlip(); fc.user.updateBettingUpcoming(); fc.user.updateBettingPending(); fc.user.updateBettingRecent(); }
-					});
-				}
-				if (action.hasClass('action_cancel')) {
-					if (!confirm('Do you want to erase the entire betting slip? This action cannot be undone!')) {
-						return;
-					}
-					j.ajax('/fc/widget/index/name/fc_betting_slip?format=html', {
-						data: { action: 'cancel' },
-						dataType: 'html',
-						success: function (text) { fc.user.updateBettingSlip(); fc.user.updateBettingUpcoming(); fc.user.updateBettingPending(); fc.user.updateBettingRecent(); }
+						data:{ action:'remove_all' },
+						dataType:'html',
+						success:function () {
+							fc.user.updateBettingMarkets();
+							fc.user.updateBettingSlip();
+							fc.user.updateBettingPending();
+							fc.user.updateBettingRecent();
+						}
 					});
 				}
 			});
 		})();
 	</script>
-	
+
 <?php if (isset($_REQUEST['format']) && ($_REQUEST['format'] == 'html')) { ?>
 </div>
 <?php } ?>

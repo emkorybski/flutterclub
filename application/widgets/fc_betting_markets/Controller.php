@@ -6,7 +6,7 @@ require_once(PATH_DOMAIN . 'competition.php');
 require_once(PATH_DOMAIN . 'user_selection.php');
 require_once(PATH_DOMAIN . 'user.php');
 
-class Widget_UpcomingController extends Engine_Content_Widget_Abstract {
+class Widget_FC_Betting_MarketsController extends Engine_Content_Widget_Abstract {
 
 	public function indexAction() {
 		if (isset($_REQUEST['vote_selection_id'])) {

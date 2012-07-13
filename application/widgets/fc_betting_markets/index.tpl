@@ -1,5 +1,5 @@
 <?php if (empty($_REQUEST['format']) || ($_REQUEST['format'] != 'html')) { ?>
-<div class="fc_upcoming widget_body">
+<div class="fc_betting_markets widget_body">
 <?php } ?>
 	
 	<style type="text/css">
@@ -7,7 +7,7 @@
 			box-shadow: 5px 5px 15px 0 #cccccc;
 		}
 		
-		.fc_upcoming {
+		.fc_betting_markets {
 			background-color: #ffffff;
 		}
 		
@@ -45,7 +45,7 @@
 		foreach ($this->sel as $sel) {
 			$userSel = bets\UserSelection::getWhere(array('idselection=' => $sel->id, 'iduser=' => $user->id));
 	?>
-	<a href="/fc/widget/index/name/upcoming?format=html&idsport=<?=$this->idsport?>&idevent=<?=$this->idevent?>&vote_selection_id=<?=$sel->id?>" class="fc_selection">
+	<a href="/fc/widget/index/name/fc_betting_markets?format=html&idsport=<?=$this->idsport?>&idevent=<?=$this->idevent?>&vote_selection_id=<?=$sel->id?>" class="fc_selection">
 		<input type="hidden" class="selection_id" value="<?=$userSel ? 0 : $sel->id?>" />
 		<div class="selection_name"><?=$sel->name?></div>
 		<div class="selection_odds"><?=round($sel->odds)?>:1</div>
@@ -72,7 +72,7 @@
 
 	<script type="text/javascript">
 		(function () {
-			j('.layout_upcoming h3').html('Competition: ' + <?=($this->comp ? json_encode($this->comp->name) . " + ' (ends on " . substr($this->comp->ts_end, 0, 10) . ")'" : "'None selected'")?>);
+			j('.layout_fc_betting_markets h3').html('Competition: ' + <?=($this->comp ? json_encode($this->comp->name) . " + ' (ends on " . substr($this->comp->ts_end, 0, 10) . ")'" : "'None selected'")?>);
 			j('.fc_selection').click(function (event) {
 				event.preventDefault();
 				var selection_id = parseInt(j(this).find('.selection_id').val());
@@ -80,9 +80,9 @@
 					alert('This selection is already on your betting slip.');
 					return;
 				}
-				j.ajax('/fc/widget/index/name/upcoming?format=html', {
+				j.ajax('/fc/widget/index/name/fc_betting_markets?format=html', {
 					data: { vote_selection_id: selection_id },
-					success: function () { fc.user.updateBettingSlip(); fc.user.updateBettingUpcoming(); },
+					success: function () { fc.user.updateBettingSlip(); fc.user.updateBettingMarkets(); },
 					error: function () { alert('Internal error, try again'); }
 				});
 			});

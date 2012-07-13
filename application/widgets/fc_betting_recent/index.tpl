@@ -69,31 +69,42 @@
 	</style>
 	
 	<div class="fc_betting_recent">
-		
-		<?php 
-			if (count($this->recent)){
-			foreach ($this->recent as $userSel) {
-			$sel = $userSel->getSelection();
+		<ul>
+		<?php
+		foreach ($this->recent_bets as $bet) {
+			$betSelections = $bet->getSelections();
+			$isAccumulator = count($betSelections) > 1;
 		?>
-		<div href="#" class="recent_item">
-			<div class="box box_name box_update" title="<?=htmlentities($sel->name)?>"><?=htmlentities($sel->name)?></div>
-			<div class="box box_odds box_update" title="Odds 1:<?=round($userSel->odds, 2)?>">1:<?=round($userSel->odds, 2)?></div>
-			<div class="box box_bet_amount box_update" title="<?=round($userSel->bet_amount)?> points"><?=round($userSel->bet_amount)?></div>
-			<?php
-				if ($userSel->status != 'settled'){
-			?>
-				<div class="box box_bet_status box_update"><?=strtoupper($userSel->status)?></div>
-			<?php
+			<li>
+				<?php echo $isAccumulator ? 'accumulator' : 'single' ?>
+				&nbsp;
+				<?=$bet->amount?>
+				&nbsp;
+				<?=$bet->odds?>
+				<?php
+					if ($bet->status == 'won') {
+						echo '<span style="color: green; font-size: 14px;"><strong>' . '+'.number_format($bet->amount * ($bet->odds - 1), 2, '.', '') . '</strong></span>';
+					}
+					else {
+						echo '<span style="color: red; font-size: 14px"><strong>' . '-'.$bet->amount . '</strong></span>';
+					}
+				?>
+				<ul>
+				<?php
+				foreach ($betSelections as $selection) {
+				?>
+					<li>&nbsp;&nbsp;&nbsp;->&nbsp;<?=$selection->name?>, <?=$selection->odds?>, <?=$selection->status?><br/></li>
+				<?php
 				}
-			?>
-			<div class="clear"></div>
-		</div>
-		<hr class="line" />
-		<?php } } else { ?>
-		<div class="recent_item">You don't have any settled bets</div>
-		<?php } ?>
+				?>
+				</ul>
+				<br/>
+			</li>
+			<?php
+			}
+		?>
+		</ul>
 	</div>	
 <?php if (isset($_REQUEST['format']) && ($_REQUEST['format'] == 'html')) { ?>
 </div>
 <?php } ?>
-
