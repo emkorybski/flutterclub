@@ -6,11 +6,12 @@ require_once(PATH_LIB . 'dbrecord.php');
 require_once(PATH_DOMAIN . 'sport.php');
 require_once(PATH_DOMAIN . 'selection.php');
 
-class Event extends DBRecord {
-
+class Event extends DBRecord
+{
 	protected static $_table = 'fc_event';
 
-	public function delete() {
+	public function delete()
+	{
 		foreach ($this->getChildEvents() as $event) {
 			$event->delete();
 		}
@@ -20,39 +21,48 @@ class Event extends DBRecord {
 		call_user_func_array('parent::delete', func_get_args());
 	}
 
-	public function getChildEvents() {
+	public function getChildEvents()
+	{
 		return Event::findWhere(array('idparent=' => $this->id));
 	}
 
-	public function addChildEvent($event) {
+	public function addChildEvent($event)
+	{
 		$event->idparent = $this->id;
 	}
 
-	public function getChildSelections() {
+	public function getChildSelections()
+	{
 		return Selection::findWhere(array('idevent=' => $this->id));
 	}
 
-	public function addChildSelection($selection) {
+	public function addChildSelection($selection)
+	{
 		$selection->idevent = $this->id;
 	}
 
-	public function getSport() {
+	public function getSport()
+	{
 		return Sport::get($this->idsport);
 	}
 
-	public function setSport($sport) {
+	public function setSport($sport)
+	{
 		$this->idsport = $sport->id;
 	}
 
-	public function getParent() {
+	public function getParent()
+	{
 		return Event::get($this->idparent);
 	}
 
-	public function setParent($parent) {
+	public function setParent($parent)
+	{
 		$this->idparent = $parent->id;
 	}
 
-	public function topEvent() {
+	public function topEvent()
+	{
 		$event = $this;
 		while ($event->idparent) {
 			$event = static::get($event->idparent);
@@ -61,7 +71,8 @@ class Event extends DBRecord {
 		return $event;
 	}
 
-	public function computeVisibility() {
+	public function computeVisibility()
+	{
 		foreach ($this->getChildEvents() as $childEvent) {
 			if ($childEvent->computeVisibility()) {
 				return true;
@@ -70,4 +81,3 @@ class Event extends DBRecord {
 		return Selection::countWhere(array('idevent=' => $this->id));
 	}
 }
-
