@@ -36,9 +36,6 @@
 		.pending_item .box_odds {
 			width: 20%;
 		}
-		.pending_item .box_bet_amount {
-			width: 20%;
-		}
 		.pending_item .box_action {
 			width: 10%;
 		}
@@ -55,7 +52,7 @@
 			<li>
 				<?php echo $isAccumulator ? 'accumulator' : 'single' ?>
 				&nbsp;
-				<?=$bet->amount?>
+				<?=$bet->stake?>
 				&nbsp;
 				<?=\bets\fc::formatOdds($bet->odds)?>
 				<ul>

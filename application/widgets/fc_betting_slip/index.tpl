@@ -36,10 +36,10 @@
 		.slip_item .box_odds {
 			width: 20%;
 		}
-		.slip_item .box_bet_amount {
+		.slip_item .box_bet_stake {
 			width: 30%;
 		}
-		.slip_item .box_bet_amount input {
+		.slip_item .box_bet_stake input {
 			width: 90%;
 		}
 		.slip_item .box_action {
@@ -83,7 +83,7 @@
 		<a href="#" class="slip_item">
 			<div class="box box_name" title="<?=htmlentities($sel->name)?>"><?=htmlentities($sel->name)?></div>
 			<div class="box box_odds" title="<?=\bets\fc::formatOdds($sel->odds, 'decimal')?>"><?=\bets\fc::formatOdds($sel->odds)?></div>
-			<div class="box box_bet_amount"><input type="text" data-userselectionid="<?=$userSel->id?>" /></div>
+			<div class="box box_bet_stake"><input type="text" data-userselectionid="<?=$userSel->id?>" /></div>
 			<div class="box box_action" title="Select several bets and an choose action from below"><input type="checkbox" value="<?=$userSel->id?>" /></div>
 			<div class="clear"></div>
 		</a>
@@ -126,13 +126,13 @@
 			var getBets = function () {
 				var bets = [];
 
-				var betAmounts = j('.fc_betting_slip .slip_item .box_bet_amount input');
-				betAmounts.each(function (index) {
-					var amount = j(this).val();
-					if (amount && !isNaN(amount)) {
+				var betStake = j('.fc_betting_slip .slip_item .box_bet_stake input');
+				betStake.each(function (index) {
+					var stake = j(this).val();
+					if (stake && !isNaN(stake)) {
 						bets.push({
 							user_selection_id:j(this).attr('data-userselectionid'),
-							amount:amount
+							stake:stake
 						})
 					}
 				});
@@ -150,11 +150,11 @@
 
 					var bets = getBets();
 					var accumulator = j('.fc_betting_slip .box_accumulator');
-					var accAmount = j(accumulator).val();
-					if (accAmount && !isNaN(accAmount)) {
+					var accStake = j(accumulator).val();
+					if (accStake && !isNaN(accStake)) {
 						bets.push({
 							user_selection_id:'accumulator',
-							amount:accAmount
+							stake:accStake
 						})
 					}
 

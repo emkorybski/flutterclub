@@ -36,9 +36,6 @@
 		.recent_item .box_odds {
 			width: 20%;
 		}
-		.recent_item .box_bet_amount {
-			width: 20%;
-		}
 		.recent_item .box_action {
 			width: 10%;
 		}
@@ -78,15 +75,15 @@
 			<li>
 				<?php echo $isAccumulator ? 'accumulator' : 'single' ?>
 				&nbsp;
-				<?=$bet->amount?>
+				<?=$bet->stake?>
 				&nbsp;
 				<?=\bets\fc::formatOdds($bet->odds)?>
 				<?php
 					if ($bet->status == 'won') {
-						echo '<span style="color: green; font-size: 14px;"><strong>' . '+'.number_format($bet->amount * ($bet->odds - 1), 2, '.', '') . '</strong></span>';
+						echo '<span style="color: green; font-size: 14px;"><strong>' . '+'.number_format($bet->stake * ($bet->odds - 1), 2, '.', '') . '</strong></span>';
 					}
 					else {
-						echo '<span style="color: red; font-size: 14px"><strong>' . '-'.$bet->amount . '</strong></span>';
+						echo '<span style="color: red; font-size: 14px"><strong>' . '-'.$bet->stake . '</strong></span>';
 					}
 				?>
 				<ul>

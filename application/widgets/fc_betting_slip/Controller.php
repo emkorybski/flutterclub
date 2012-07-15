@@ -26,7 +26,7 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 						$bet->idcompetition = $competition->id;
 						$bet->iduser = $user->id;
 						$bet->odds = 1;
-						$bet->amount = $userBet['amount'];
+						$bet->stake = $userBet['stake'];
 						$bet->insert();
 
 						$userSelections = \bets\UserSelection::findWhere(array('iduser=' => $user->id));
@@ -57,7 +57,7 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 						$bet->idcompetition = $competition->id;
 						$bet->iduser = $user->id;
 						$bet->odds = $selection->odds;
-						$bet->amount = $userBet['amount'];
+						$bet->stake = $userBet['stake'];
 						$bet->insert();
 
 						$betSelection = new \bets\BetSelection();
