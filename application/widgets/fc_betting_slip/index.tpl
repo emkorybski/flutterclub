@@ -167,6 +167,7 @@
 						data:{ action:'place_bet', bets:bets },
 						dataType:'html',
 						success:function (text) {
+							fc.user.updateAccountBalance();
 							fc.user.updateBettingMarkets();
 							fc.user.updateBettingSlip();
 							fc.user.updateBettingPending();
@@ -192,6 +193,7 @@
 						data:{ action:'remove_selected', user_selection_ids:userSelectionIds },
 						dataType:'html',
 						success:function () {
+							fc.user.updateAccountBalance();
 							fc.user.updateBettingMarkets();
 							fc.user.updateBettingSlip();
 							fc.user.updateBettingPending();
@@ -209,6 +211,7 @@
 						data:{ action:'remove_all' },
 						dataType:'html',
 						success:function () {
+							fc.user.updateAccountBalance();
 							fc.user.updateBettingMarkets();
 							fc.user.updateBettingSlip();
 							fc.user.updateBettingPending();

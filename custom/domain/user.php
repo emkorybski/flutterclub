@@ -40,13 +40,4 @@ class User extends DBRecord
 	{
 		return Bet::findWhere(array('iduser=' => $this->id, 'status!=' => 'pending'));
 	}
-
-	public function getPoints()
-	{
-		$comp = Competition::getCurrent();
-		if (!$comp) {
-			return 0;
-		}
-		return $comp->start_points;
-	}
 }

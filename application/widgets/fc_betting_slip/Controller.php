@@ -5,6 +5,7 @@ ini_set('display_errors', 1);
 
 require_once('custom/config.php');
 require_once(PATH_DOMAIN . 'user.php');
+require_once(PATH_DOMAIN . 'user_balance.php');
 require_once(PATH_DOMAIN . 'selection.php');
 require_once(PATH_DOMAIN . 'user_selection.php');
 require_once(PATH_DOMAIN . 'bet.php');
@@ -20,6 +21,7 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 			case 'place_bet':
 				$competition = bets\Competition::getCurrent();
 				$user = bets\User::getCurrentUser();
+				$totalStake = 0;
 				foreach ($_REQUEST['bets'] as $userBet) {
 					if ($userBet['user_selection_id'] == 'accumulator') {
 						$bet = new \bets\Bet();
@@ -28,6 +30,7 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 						$bet->odds = 1;
 						$bet->stake = $userBet['stake'];
 						$bet->insert();
+						$totalStake += $bet->stake;
 
 						$userSelections = \bets\UserSelection::findWhere(array('iduser=' => $user->id));
 						$odds = 1;
@@ -46,7 +49,6 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 
 						$bet->odds = $odds;
 						$bet->update();
-						// TODO: update user's balance.
 					} else {
 						$idUserSel = $userBet['user_selection_id'];
 						$userSel = \bets\UserSelection::get($idUserSel);
@@ -59,6 +61,7 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 						$bet->odds = $selection->odds;
 						$bet->stake = $userBet['stake'];
 						$bet->insert();
+						$totalStake += $bet->stake;
 
 						$betSelection = new \bets\BetSelection();
 						$betSelection->idbet = $bet->id;
@@ -66,9 +69,12 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 						$betSelection->name = $selection->name;
 						$betSelection->odds = $selection->odds;
 						$betSelection->insert();
-						// TODO: update user's balance.
 					}
 				}
+				$balance = \bets\UserBalance::getCurrentBalance();
+				$balance->balance = $balance->balance - $totalStake;
+				$balance->update();
+				//TODO: update from within the class
 
 				// remove user selections from the bet slip
 				/*
