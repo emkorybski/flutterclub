@@ -19,9 +19,10 @@
 		float: left;
 		font-family: fc_bebas;
 		font-size: 14px;
-		font-weight: bold;
+		font-weight: normal;
 		word-spacing: .4em;
 		text-indent: 5px;
+		line-height: 22px;
 	}
 	#account_info .account_info_left {
 		width: 55%;

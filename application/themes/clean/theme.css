@@ -267,7 +267,7 @@ MAIN MENU WIDGET
 {
   float: left;
   font-size: $theme_topbar_menu_link_size;
-  font-weight: bold;
+  font-weight: normal;
   line-height: 1em;
 }
 html[dir="rtl"] .layout_core_menu_main > ul > li
@@ -1363,7 +1363,7 @@ html[dir="rtl"] .tabs_alt > ul
 .tabs_alt > ul > li.active > a
 {
   +rounded(3px, false, false, true, true);
-  border: 1px solid $theme_tabs_border_color;
+  /*border: 1px solid $theme_tabs_border_color;*/
   border-bottom: none;
   background-color: $theme_tabs_background_color_active;
   color: $theme_tabs_font_color_active;
