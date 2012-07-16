@@ -106,7 +106,6 @@
 		overflow: hidden;
 	}
 	#main_tabs li {
-		width: 50%;
 		float: left;
 		margin: 0;
 	}
@@ -118,15 +117,17 @@
 		position: static;
 		border-top-left-radius: 10px;
 		border-top-right-radius: 10px;
-		background-color: #cd4849;
+		background-color: #822E2C;
+		padding-left: 10px;
+		padding-right: 10px;
 	}
 	#global_wrapper #main_tabs li.active {
 		z-index: 10;
 		position: relative;
 	}
 	#global_wrapper #main_tabs li.active a {
-		border-color: #ff6600;
-		background-color: #ff6600;
+		border-color: #CD4849;
+		background-color: #CD4849;
 	}
 	.tabs_alt > ul > li.tab_active > a, .tabs_alt > ul > li.active > a {
 		font-weight: normal;
