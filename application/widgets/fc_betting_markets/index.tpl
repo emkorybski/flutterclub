@@ -20,7 +20,6 @@
 		.fc_selection * {
 			color: #5f93b4;
 			font-weight: bold;
-			text-shadow: #dddddd 2px 1px 1px;
 		}
 		.fc_selection .selection_name {
 			width: 55%;
