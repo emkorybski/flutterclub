@@ -1344,7 +1344,7 @@ TABS (TAB STYLE, NON-DEFAULT)
 {
   margin: 0px;
   text-align: left;
-  font-weight: bold;
+  font-weight: normal;
   border-bottom: 1px solid $theme_tabs_border_color;
   padding: 3px 0px 5px 7px;
 }
