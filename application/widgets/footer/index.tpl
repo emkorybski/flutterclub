@@ -60,6 +60,10 @@
 		text-align: left;
 		word-spacing: 0.4em;
 	}
+	#global_content .generic_layout_container h3 a {
+	    color: #fff;
+	    font-family: fc_bebas;
+	}
 	.clear {
 		clear: both;
 	}
