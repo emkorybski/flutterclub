@@ -15,7 +15,7 @@ class Widget_Fc_Competition_GlobalController extends Engine_Content_Widget_Abstr
 		$balaces = bets\UserBalance::getBalances();
 		foreach ($balaces as $o){
 			$count++;
-			$user = bets\User::getCurrentUserData($o->iduser);
+			$user = (object) bets\User::getCurrentUserData($o->iduser);
 			$data->idcompetition = $o->idcompetition;
 			$data->iduser = $o->iduser;
 			$data->balance = $o->balance;

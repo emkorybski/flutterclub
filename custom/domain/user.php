@@ -33,9 +33,9 @@ class User extends DBRecord
 	 **/
 	
 	public static function getCurrentUserData($uId = null){
-		$uId = $uId ? $uId : $this->id;
+		$uId = $uId ? $uId : self::getCurrentUser()->id;
 		$data = \bets\bets::sql()->query("SELECT * FROM engine4_users WHERE user_id = '$uId'");
-		return (object) $data[0];
+		return $data[0];
 	}
 
 	public function getUserSelections()
