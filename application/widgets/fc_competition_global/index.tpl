@@ -1,47 +1,155 @@
-<?php if (empty($_REQUEST['format']) || ($_REQUEST['format'] != 'html')) { ?>
+<?php if (empty($_REQUEST['format']) || ($_REQUEST['format'] != 'html')) { 
+?>
 <div class="box_shadow widget_body">
 <?php } ?>
 	
 <style type="text/css">
-	.layout_fc_betting_categories > div {
-		text-align: left;
+	.clear{
+		clear: both !important;
 	}
-
-	.layout_fc_betting_categories h3 {
-		background-color: #ff6600;
-		color: white;
-		border-radius: 0;
-		border-top-left-radius: 5px;
-		border-top-right-radius: 5px;
-	}
-
-	.betting_category {
-		cursor: pointer;
-		padding: 5px;
-	}
-	.betting_category:hover {
-		background-color: #e5e5e5;
-	}
-	.betting_categories {
-		background-color: #ffffff;
-	}
-
-	.betting_category {
-		font-family: fc_pts;
+	
+	.your_psition{
+		background: #FFFBE5 !important;
 		font-weight: bold;
+		border: 1px solid #FFEB70;
+		padding: 5px 10px;
+		margin:0px 0px 10px 0px;
 	}
-	.betting_category {
-		color: #0291d5;
+	
+	.layout{
+		background: #ffffff !important;
+		display: block !important;
+		padding: 10px;
 	}
+	
+	.layout  span{
+		float: left;
+		margin: 0px 10px 0px 0px;
+		padding: 10px;
+	}
+	
+	.layout .pos {
+		width: 10%;
+	}
+	
+	.layout .pic {
+		width: 30% !important;
+	}
+	
+	.layout .dat {
+		width: 50%;
+	}
+	
+	
+	.layout .big{
+		font-weight: bold;
+		font-size: 14px;
+	}
+	
+	.layout .position {
+		font-size: 28px;
+		font-weight: normal
+	}
+	
+	.layout .position_small {
+		font-size: 22px;
+		font-weight: normal
+	}
+	
+	.layout .layout_first_place{
+		border: 1px solid #ccc;
+		background: #f0f0f0;
+	}
+	
+	
+	.layout .layout_podium{
+		width: 49%;
+		border: 1px solid #efefef;
+		background: #f9f9f9;
+		margin: 10px 0px 0px 0px !important;
+	}
+	
+	.layout .left{
+		float: left;
+	}
+	.layout .right{
+		float: right;
+	}
+	
+	.width100{
+		width: 100px !important;
+	}
+	
+	.line{
+		border-top: 1px solid #ccc !important;
+		margin: 10px 0px;
+	}
+	
 </style>
 
-<div class="betting_categories">
-	<pre>
-	<?php
-		print_r($this->winners);
+<div class="layout">
+		<div class="your_psition">Your current position in competition is <?=$this->position?></div>
+		<?php
+		foreach($this->winners as $obj){
+			$count++;
+			if ($obj->position == 1){
+		?>
+			<div class="layout_first_place">
+				<span class="big position pos"><?=$obj->position?></span>
+				<span class="big pic"><?=$obj->userdata->name?></span>
+				<span class="dat">
+					Success rate: 6/11
+					<br>
+					Earnings: <?=$obj->balance?>
+				</span>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+		<?php
+			}
+			else
+			if ($obj->position > 1 && $obj->position <= 3)
+			{
+				$class = ($count == 2 ? 'left' : 'right');
+		?>
+				<div class="layout_podium <?=$class?>">
+					<span class="big position pos"><?=$obj->position?></span>
+					<span class="big pic"><?=$obj->userdata->name?></span>
+					<span class="dat">
+						Success rate: 6/11
+						<br>
+						Earnings: <?=$obj->balance?>
+					</span>
+					<div class="clear"></div>
+				</div>
+		<?php
+			}
+			else
+			{
+				if ($count == 4)
+				{
+				?>
+					<div class="clear"></div>
+					<div class="line"></div>
+					<div class="layout_all">
+						<span class="big right width100">Earnings</span>
+						<span class="big right width100">Success rate</span>
+						<div class="clear"></div>
+					</div>
+				<?
+				}
+		?>
+			
+			<div class="layout_all">
+				<span class="position_small"><?=$obj->position?></span>
+				<span class="pic"><?=$obj->userdata->name?></span>
+				<span class="width100 right"><?=$obj->balance?></span>
+				<span class="width100 right">6/10</span>
+				<div class="clear"></div>
+			</div>
 		
-	?>
-	</pre>
+	<?php } }?>
+	<div class="clear"></div>
 </div>
 
 

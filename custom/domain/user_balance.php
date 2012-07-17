@@ -28,10 +28,18 @@ class UserBalance extends DBRecord
 		}
 		return $balance;
 	}
-
+	
+	public static function getBalances($Object = null)
+	{
+		$idCompetition = $Object->idcompetition ? $Object->idcompetition : \bets\Competition::getCurrent()->id;
+		return static::findWhere(array('idcompetition=' => $idCompetition), ' ORDER BY balance DESC');
+	}
+		
 	public function updateBalance($stake)
 	{
 		$this->balance += $stake;
 		call_user_func_array('parent::update', func_get_args());
 	}
+	
+	
 }
