@@ -12,6 +12,13 @@
 		
 		.fc_betting_slip {
 			background-color: #ffffff;
+			text-align: right;
+		}
+
+		/* Position the accumulator input (probably temporary) */
+		.fc_betting_slip .box_accumulator {
+			margin-right: 20px;
+			margin-top: 10px;
 		}
 		.slip_item {
 			display: block;
@@ -55,7 +62,7 @@
 			border: 1px solid #5f93b4;
 			margin-left: 10px;
 			margin-bottom: 10px;
-			width: 93px;
+			width: auto;
 			text-align: center;
 			border-radius: 10px;
 		}
