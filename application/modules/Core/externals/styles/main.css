@@ -859,11 +859,16 @@ above the activity feed, allowing members to post.
   +foreground;
   +rounded;
   margin-bottom: 10px;
+  border: 2px solid #A0D4E2;
+}
+.activity-post-container > form {
+  border: none;
 }
 form.activity
 {
   padding: 7px;
   overflow: hidden;
+  background-color: #B9DBE5;
 }
 form.activity > div > input[type=text],
 form.activity > div > textarea
@@ -876,6 +881,7 @@ form.activity .buttonlink
   font-size: .8em;
   padding-top: 2px;
   padding-bottom: 1px;
+  color: #397E8E;
 }
 
 
