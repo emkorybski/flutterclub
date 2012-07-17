@@ -7,9 +7,9 @@
 			margin-right: 10px;
 		}
 		.layout_fc_betting_slip {
-			box-shadow: 5px 5px 15px 0 #cccccc;
+			box-shadow: none;
 		}
-		
+
 		.fc_betting_slip {
 			background-color: #ffffff;
 			text-align: right;
