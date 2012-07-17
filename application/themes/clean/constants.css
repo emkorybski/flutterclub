@@ -94,11 +94,11 @@ DEFAULT STYLES FOR THIS THEME
   theme_input_background_color: #fff;
   theme_input_font_color: #555;
   theme_input_border_colors: #999 #ccc #ccc #999;
-  theme_button_background_color: #619dbe;
-  theme_button_background_color_hover: #7eb6d5;
-  theme_button_background_color_active: #4e8aab;
+  theme_button_background_color: #ce4847;
+  theme_button_background_color_hover: #e5504e;
+  theme_button_background_color_active: #ce4847;
   theme_button_font_color: #fff;
-  theme_button_border_color: #50809b;
+  theme_button_border_color: #9F6969;
 
   /*
   PHOTO BORDERS

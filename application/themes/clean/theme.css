@@ -554,17 +554,17 @@ Used for most forms throughout the site.
 */
 button
 {
-  +rounded;
-  padding: .5em .8em;
-  font-weight: bold;
+  padding: .3em .8em;
+  font-weight: normal;
   font-size: 1.1em;
+  font-family: fc_bebas;
   border: none;
   background-color: $theme_button_background_color;
-  border: 1px solid $theme_button_border_color;
+  border: 2px solid $theme_button_border_color;
   color: $theme_button_font_color;
   text-shadow: 1px 1px 0px rgba(0,0,0,.3);
-  background-image: url(~/application/themes/clean/images/buttonbg.png);
-  background-repeat: repeat-x;
+  background-image: none;
+  background-repeat: no-repeat;
 }
 button:hover
 {
