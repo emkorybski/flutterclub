@@ -25,14 +25,20 @@ class User extends DBRecord
 		}
 		return $currentUser;
 	}
-	
+
+	public static function getSocialEngineUserId($fcUserId)
+	{
+		$user = \bets\User::get($fcUserId);
+		return $user->id_engine4_users;
+	}
+
 	/* Name: getCurrentUserData
 	 * Params: $uId
 	 * Author: Robert Asproniu
 	 * return user informations into an object from users table engine4_users
 	 **/
-	
-	public static function getCurrentUserData($uId = null){
+	public static function getCurrentUserData($uId = null)
+	{
 		$uId = $uId ? $uId : self::getCurrentUser()->id;
 		$data = \bets\bets::sql()->query("SELECT * FROM engine4_users WHERE user_id = '$uId'");
 		return $data[0];
