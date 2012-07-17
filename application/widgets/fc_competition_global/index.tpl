@@ -88,8 +88,10 @@
 </style>
 
 <div class="layout">
+		<?php if($this->position) {?>
 		<div class="your_psition">Your current position in competition is <?=$this->position?></div>
 		<?php
+		}
 		foreach($this->winners as $obj){
 			$count++;
 			if ($obj->position == 1){
