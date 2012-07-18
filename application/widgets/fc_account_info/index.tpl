@@ -13,7 +13,7 @@
 		width: 300px;
 		overflow: hidden;
 		position: relative;
-		top: 80px;
+		top: 70px;
 	}
 	#account_info .account_info_left, #account_info .account_info_right, #account_info .account_info_user_points {
 		float: left;
@@ -21,8 +21,7 @@
 		font-size: 14px;
 		font-weight: normal;
 		word-spacing: .4em;
-		text-indent: 5px;
-		line-height: 22px;
+		line-height: 28px;
 	}
 	#account_info .account_info_left {
 		width: 55%;
@@ -33,6 +32,7 @@
 		width: 40%;
 		background-color: #ffffff;
 		color: #666666;
+		text-indent: 5px;
 	}
 
 	.aim1 {
@@ -40,6 +40,10 @@
 		border-top-left-radius: 10px;
 		border-right: none;
 		border-bottom: none;
+		background-image: url(~/application/themes/clean/images/chip.png);
+		background-repeat: no-repeat;
+		background-position: 5px center;
+		text-indent: 30px;
 	}
 	.aim2 {
 		border: 2px solid #39abcd;
@@ -52,6 +56,10 @@
 		border-bottom-left-radius: 10px;
 		border-right: none;
 		border-top: none;
+		background-image: url(~/application/themes/clean/images/clock.png);
+		background-repeat: no-repeat;
+		background-position: 6px center;
+		text-indent: 30px;
 	}
 	.aim4 {
 		border: 2px solid #39abcd;

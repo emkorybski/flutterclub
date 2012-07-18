@@ -1893,12 +1893,12 @@ div.group_discussions_list
 .activity-post-container
 {
   margin-top: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #aeced9;
   background-color: #eee;
 }
 .activity-post-container > form
 {
-  border: 1px solid rgba(255,255,255,.7);
+  border: 0;
 }
 .global_form > div > div > h3 + div,
 .global_form > div > div > h3 + p + div

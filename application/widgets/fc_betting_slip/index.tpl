@@ -3,10 +3,16 @@
 		margin-right: 10px;
 	}
 	.layout_fc_betting_slip {
-		box-shadow: 5px 5px 15px 0 #cccccc;
+		box-shadow: none;
 	}
 	.fc_betting_slip {
 		background-color: #ffffff;
+		text-align: right;
+	}
+		/* Position the accumulator input (probably temporary) */
+	.fc_betting_slip .box_accumulator {
+		margin-right: 20px;
+		margin-top: 10px;
 	}
 	.slip_item {
 		display: block;
@@ -49,7 +55,7 @@
 		border: 1px solid #5f93b4;
 		margin-left: 10px;
 		margin-bottom: 10px;
-		width: 93px;
+		width: auto;
 		text-align: center;
 		border-radius: 10px;
 	}
@@ -84,12 +90,12 @@
 	</a>
 	<hr class="line"/>
 	<?php
-			if ( count($this->betting_slip) > 1 ) :
+		endforeach;
+		if ( count($this->betting_slip) > 1 ) :
 	?>
 	<input type="text" class="box_accumulator"/>
 	<?php
-			endif;
-		endforeach;
+		endif;
 	?>
 	<div class="slip_actions">
 		<div class="action"><a href="#" class="action_remove_all">Remove all</a></div>
