@@ -1,3 +1,33 @@
+<style type="text/css">
+	.layout_rss_feed > ul {
+		background-color: #fff;
+		padding: 10px;
+	}
+
+	.layout_rss_feed > ul li {
+		padding: 0 0 10px 0;
+		overflow: hidden;
+	}
+
+	.layout_rss_feed > ul li + li {
+		padding-top: 10px;
+		border-top-width: 1px;
+	}
+
+	.layout_rss_feed > ul li a {
+		font-weight: 700;
+	}
+
+	.layout_rss_feed .rss_time {
+		font-size: .8em;
+		color: #999;
+	}
+
+	.layout_rss_feed .rss_desc {
+		padding: 10px 0;
+	}
+</style>
+
 <?php
 /**
  * SocialEngine
