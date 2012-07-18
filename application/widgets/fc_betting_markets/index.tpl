@@ -44,7 +44,7 @@
 		foreach ($this->sel as $sel) {
 			$userSel = bets\UserSelection::getWhere(array('idselection=' => $sel->id, 'iduser=' => $user->id));
 	?>
-	<a href="/fc/widget/index/name/fc_betting_markets?format=html&idsport=<?=$this->idsport?>&idevent=<?=$this->idevent?>&vote_selection_id=<?=$sel->id?>" class="fc_selection">
+	<a href="<?=WEB_ROOT?>widget?name=fc_betting_markets&format=html&idsport=<?=$this->idsport?>&idevent=<?=$this->idevent?>&vote_selection_id=<?=$sel->id?>" class="fc_selection">
 		<input type="hidden" class="selection_id" value="<?=$userSel ? 0 : $sel->id?>" />
 		<div class="selection_name"><?=$sel->name?></div>
 		<div class="selection_odds" title="<?=\bets\fc::formatOdds($sel->odds, 'decimal')?>"><?=\bets\fc::formatOdds($sel->odds)?></div>
@@ -79,7 +79,7 @@
 					alert('This selection is already on your betting slip.');
 					return;
 				}
-				j.ajax('/fc/widget/index/name/fc_betting_markets?format=html', {
+				j.ajax(WEB_ROOT + 'widget?name=fc_betting_markets&format=html', {
 					data: { vote_selection_id: selection_id },
 					success: function () { fc.user.updateBettingSlip(); fc.user.updateBettingMarkets(); },
 					error: function () { alert('Internal error, try again'); }

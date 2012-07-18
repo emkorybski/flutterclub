@@ -138,7 +138,7 @@
 				return;
 			}
 			j('#main').css({opacity: 0.5});
-			j.ajax('/fc/widget/index/name/fc_betting_markets', {
+			j.ajax(WEB_ROOT + 'widget?name=fc_betting_markets', {
 				type: 'get',
 				data: {
 					format: 'html',

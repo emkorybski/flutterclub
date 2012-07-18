@@ -114,6 +114,6 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 
 	public function fc_render()
 	{
-		$this->view->slip = bets\User::getCurrentUser()->getUserSelections();
+		$this->view->betting_slip = bets\User::getCurrentUser()->getUserSelections();
 	}
 }

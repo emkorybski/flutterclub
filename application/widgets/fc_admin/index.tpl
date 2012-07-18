@@ -60,7 +60,7 @@
 						sportsList.push(input.value);
 					}
 				});
-				j.ajax('/fc/widget/index/name/fc_admin?action=setSports', {
+				j.ajax(WEB_ROOT + 'widget?name=fc_admin&action=setSports', {
 					data: {'sports': sportsList},
 					success: function () {
 						alert('Enabled sports list updated successfully.');
@@ -107,7 +107,7 @@
 					Name: <input class="comp_name" type="text" name="competition_<?=$comp->id?>" value="<?=htmlentities($comp->name)?>" /><br />
 					Period: <input type="text" class="comp_start" value="<?=substr($comp->ts_start, 0, 10)?>" /> ~ <input type="text" class="comp_end" value="<?=substr($comp->ts_end, 0, 10)?>" /><br />
 					<button class="edit_ok">Update</button>
-					<a href="/fc/widget/index/name/fc_admin?action=compEvents&idcompetition=<?=$comp->id?>" class="smoothbox edit_events ">Events</a>
+					<a href="<?=WEB_ROOT?>widget/index/name/fc_admin?action=compEvents&idcompetition=<?=$comp->id?>" class="smoothbox edit_events ">Events</a>
 					<a href="#" class="edit_delete">Delete</a>
 					<a href="#" class="edit_cancel">Cancel</a>
 				</div>
@@ -157,7 +157,7 @@
 				readonly.find('.comp_start').html(j(this.parentNode).find('.comp_start').val());
 				readonly.find('.comp_end').html(j(this.parentNode).find('.comp_end').val());
 				
-				j.ajax('/fc/widget/index/name/fc_admin?action=compUpdate', {
+				j.ajax(WEB_ROOT + 'widget?name=fc_admin&action=compUpdate', {
 					data: {
 						comp_id: readonly.find('.comp_id').val(),
 						comp_name: j(this.parentNode).find('.comp_name').val(),
@@ -175,7 +175,7 @@
 					return;
 				}
 				
-				j.ajax('/fc/widget/index/name/fc_admin?action=compDelete', {
+				j.ajax(WEB_ROOT + 'widget?name=fc_admin&action=compDelete', {
 					data: {
 						comp_id: j(this.parentNode.parentNode).find('.box_readonly .comp_id').val()
 					},
@@ -217,7 +217,7 @@
 				readonly.find('.comp_start').html(j(this.parentNode).find('.comp_start').val());
 				readonly.find('.comp_end').html(j(this.parentNode).find('.comp_end').val());
 
-				j.ajax('/fc/widget/index/name/fc_admin?action=compAdd', {
+				j.ajax(WEB_ROOT + 'widget?name=fc_admin&action=compAdd', {
 					data: {
 						comp_name: j(this.parentNode).find('.comp_name').val(),
 						comp_start: j(this.parentNode).find('.comp_start').val(),
