@@ -1,94 +1,74 @@
-<?php if (empty($_REQUEST['format']) || ($_REQUEST['format'] != 'html')) { ?>
-<div class="fc_betting_markets widget_body">
-<?php } ?>
-	
-	<style type="text/css">
-		.layout_middle {
-			box-shadow: 5px 5px 15px 0 #cccccc;
-		}
-		
-		.fc_betting_markets {
-			background-color: #ffffff;
-		}
-		
-		.fc_selection {
-			display: block;
-			font-family: fc_pts;
-			padding: 7px 10px;
-			text-decoration: none;
-		}
-		.fc_selection * {
-			color: #5f93b4;
-			font-weight: bold;
-		}
-		.fc_selection .selection_name {
-			width: 55%;
-			float: left;
-		}
-		.fc_selection .selection_odds {
-			width: 14%;
-			float: left;
-		}
-		.fc_selection .selection_bet {
-			width: 30%;
-			float: left;
-		}
-		.fc_selection:hover {
-			background-color: #e5e5e5;
-		}
-	</style>
 
-	<div class="overlay"></div>
-	<?php
-		$user = bets\User::getCurrentUser();
-		foreach ($this->sel as $sel) {
-			$userSel = bets\UserSelection::getWhere(array('idselection=' => $sel->id, 'iduser=' => $user->id));
-	?>
-	<a href="<?=WEB_ROOT?>widget?name=fc_betting_markets&format=html&idsport=<?=$this->idsport?>&idevent=<?=$this->idevent?>&vote_selection_id=<?=$sel->id?>" class="fc_selection">
-		<input type="hidden" class="selection_id" value="<?=$userSel ? 0 : $sel->id?>" />
-		<div class="selection_name"><?=$sel->name?></div>
-		<div class="selection_odds" title="<?=\bets\fc::formatOdds($sel->odds, 'decimal')?>"><?=\bets\fc::formatOdds($sel->odds)?></div>
-		<div class="selection_bet">
-			<?php
-				if ($userSel) {
-					if ($userSel->bet_amount) {
-						echo 'In betting slip';
-					}
-					else {
-						echo 'You bet ' . round($userSel->bet_amount) . ' points';
-					}
-				}
-				else {
-					echo '&nbsp;';
-				}
-			?>
-		</div>
-		<div class="selection_share">Share</div>
-		<div class="clear"></div>
-	</a>
-	<hr class="line" />
-	<?php } ?>
+<style type="text/css">
+	.layout_middle {
+		box-shadow: 5px 5px 15px 0 #cccccc;
+	}
+	.fc_betting_markets {
+		background-color: #ffffff;
+	}
+	.fc_selection {
+		display: block;
+		font-family: fc_pts;
+		padding: 7px 10px;
+		text-decoration: none;
+	}
+	.fc_selection * {
+		color: #5f93b4;
+		font-weight: bold;
+	}
+	.fc_selection .selection_name {
+		width: 55%;
+		float: left;
+	}
+	.fc_selection .selection_odds {
+		width: 14%;
+		float: left;
+	}
+	.fc_selection .selection_bet {
+		width: 30%;
+		float: left;
+	}
+	.fc_selection:hover {
+		background-color: #e5e5e5;
+	}
+</style>
 
-	<script type="text/javascript">
-		(function () {
-			j('.layout_fc_betting_markets h3').html('Competition: ' + <?=($this->comp ? json_encode($this->comp->name) . " + ' (ends on " . substr($this->comp->ts_end, 0, 10) . ")'" : "'None selected'")?>);
-			j('.fc_selection').click(function (event) {
-				event.preventDefault();
-				var selection_id = parseInt(j(this).find('.selection_id').val());
-				if (!selection_id) {
-					alert('This selection is already on your betting slip.');
-					return;
-				}
-				j.ajax(WEB_ROOT + 'widget?name=fc_betting_markets&format=html', {
-					data: { vote_selection_id: selection_id },
-					success: function () { fc.user.updateBettingSlip(); fc.user.updateBettingMarkets(); },
-					error: function () { alert('Internal error, try again'); }
-				});
-			});
-		})();
-	</script>
-
-<?php if (empty($_REQUEST['format']) || ($_REQUEST['format'] != 'html')) { ?>
+<div class="fc_betting_markets">
+<?php
+foreach ( $this->selections as $selection) :
+	$userSelection = bets\UserSelection::getWhere(array('idselection=' => $selection->id, 'iduser=' => $this->user->id));
+	$disabled = "";
+	if ($userSelection) {
+		$disabled = "disabled='disabled'";
+	}
+?>
+	<div class="selection_name"><?=$selection->name?></div>
+	<div class="selection_odds"><?=\bets\fc::formatOdds($selection->odds)?></div>
+	<button <?=$disabled?> data-idselection="<?=$selection->id?>" class="submit_selection">Add to Betslip</button>
+	<?=$disabled?>
+	<button value="Share" class="share_selection">Share</button>
+	<div class="clear"></div>
+</a>
+<hr class="line"/>
+<?php
+endforeach;
+?>
 </div>
-<?php } ?>
 
+<script type="text/javascript">
+	j('.submit_selection').live("click", function(evt){
+		evt.preventDefault();
+
+		var idSelection = parseInt(j(this).attr('data-idselection'));
+		j.ajax(WEB_ROOT + 'widget?name=fc_betting_markets&action=submitSelection&format=html', {
+			data:{ 'idselection':idSelection },
+			success:function () {
+				fc.user.updateBettingSlip();
+				fc.user.updateBettingMarkets();
+			},
+			error:function () {
+				alert('Internal error, try again');
+			}
+		});
+	});
+</script>

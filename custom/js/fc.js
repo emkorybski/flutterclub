@@ -14,7 +14,8 @@ fc.user.updateAccountBalance = function (data) {
         data:{balance:1},
         dataType:'html',
         success:function (text) {
-            j('.account_info_user_points').html(text);
+            var content = j('.account_info_user_points', text);
+            j('.account_info_user_points').html(content);
         },
         complete:function () {
             accountInfo.css({
@@ -34,7 +35,8 @@ fc.user.updateBettingSlip = function (data) {
         data:data || {},
         dataType:'html',
         success:function (text) {
-            bettingSlip.html(text)
+            var content = j('.fc_betting_slip', text);
+            bettingSlip.html(content)
         },
         complete:function () {
             bettingSlip.css({
@@ -53,7 +55,8 @@ fc.user.updateBettingPending = function (data) {
         data:data || {},
         dataType:'html',
         success:function (text) {
-            bettingPending.html(text)
+            var content = j('.fc_betting_pending', text);
+            bettingPending.html(content)
         },
         complete:function () {
             bettingPending.css({
@@ -74,7 +77,8 @@ fc.user.updateBettingRecent = function (data) {
         data:data || {},
         dataType:'html',
         success:function (text) {
-            bettingRecent.html(text)
+            var content = j('.fc_betting_recent', text);
+            bettingRecent.html(content)
         },
         complete:function () {
             bettingRecent.css({
@@ -97,7 +101,8 @@ fc.user.updateBettingMarkets = function (data) {
         data:data || {},
         dataType:'html',
         success:function (text) {
-            bettingMarkets.html(text);
+            var content = j('.fc_betting_markets', text);
+            bettingMarkets.html(content);
         },
         error:function () {
             alert('Internal error. Try again.');

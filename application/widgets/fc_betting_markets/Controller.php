@@ -7,38 +7,34 @@ require_once(PATH_DOMAIN . 'user_selection.php');
 require_once(PATH_DOMAIN . 'user.php');
 require_once(PATH_LIB . 'fc.php');
 
-class Widget_FC_Betting_MarketsController extends Engine_Content_Widget_Abstract {
-
-	public function indexAction() {
-		if (isset($_REQUEST['vote_selection_id'])) {
-			$this->fc_vote((int) $_REQUEST['vote_selection_id']);
+class Widget_FC_Betting_MarketsController extends Engine_Content_Widget_Abstract
+{
+	public function indexAction()
+	{
+		if (isset($_REQUEST['action'])) {
+			print_r($_REQUEST);
+			$this->submitSelection((int)$_REQUEST['idselection']);
 		} else {
-			$this->fc_render((int) $_REQUEST['idsport'], (int) $_REQUEST['idevent']);
+			$idEvent = (int)$_REQUEST['idevent'];
+
+			$this->view->selections = bets\Selection::findWhere(array('idevent=' => $idEvent), 'ORDER BY odds ASC');
+			$this->view->user = bets\User::getCurrentUser();
 		}
 	}
 
-	public function fc_render($idsport, $idevent) {
-		$this->view->comp = bets\Competition::getCurrent();
-		$this->view->sel = bets\Selection::findWhere(array('idevent=' => $idevent), 'ORDER BY odds');
-		$this->view->idsport = $idsport;
-		$this->view->idevent = $idevent;
-	}
-
-	public function fc_vote($idSelection) {
+	public function submitSelection($idSelection)
+	{
+		$competition = bets\Competition::getCurrent();
 		$user = bets\User::getCurrentUser();
 		$selection = bets\Selection::get($idSelection);
-		$userSel = bets\UserSelection::getWhere(array('iduser=' => $user->id, 'idselection=' => $idSelection));
-		if (!$user || !$selection || $userSel) {
-			return;
+
+		$userSelection = bets\UserSelection::getWhere(array('idcompetition=' => $competition->id, 'iduser=' => $user->id, 'idselection=' => $idSelection));
+		if (!$userSelection) {
+			$userSelection = new \bets\UserSelection();
+			$userSelection->idcompetition = $competition->id;
+			$userSelection->iduser = $user->id;
+			$userSelection->idselection = $selection->id;
+			$userSelection->insert();
 		}
-		$userSel = new \bets\UserSelection();
-		$userSel->setUser($user);
-		$userSel->setSelection($selection);
-		$userSel->bet_amount = 0;
-		$userSel->odds = $selection->odds;
-		$userSel->idcompetition = bets\Competition::getCurrent()->id;
-		$userSel->insert();
 	}
-
 }
-
