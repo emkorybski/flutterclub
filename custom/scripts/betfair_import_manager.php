@@ -223,5 +223,5 @@ class BetfairImportManager
 }
 
 $bfImportManager = new BetfairImportManager();
-//$bfImportManager->importSportsAndEvents();
+$bfImportManager->importSportsAndEvents();
 $bfImportManager->importEventsAndSelections('http://www.betfair.com/partner/marketdata_xml3.asp');
