@@ -45,8 +45,7 @@ foreach ( $this->selections as $selection) :
 	<div class="selection_name"><?=$selection->name?></div>
 	<div class="selection_odds"><?=\bets\fc::formatOdds($selection->odds)?></div>
 	<button <?=$disabled?> data-idselection="<?=$selection->id?>" class="submit_selection">Add to Betslip</button>
-	<?=$disabled?>
-	<button value="Share" class="share_selection">Share</button>
+	<a href="#" class="share_selection">Share</a>
 	<div class="clear"></div>
 </a>
 <hr class="line"/>
@@ -70,5 +69,9 @@ endforeach;
 				alert('Internal error, try again');
 			}
 		});
+	});
+	j('.share_selection').live("click", function(evt){
+		evt.preventDefault();
+		alert('Share');
 	});
 </script>
