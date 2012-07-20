@@ -31,6 +31,31 @@
 	.fc_selection:hover {
 		background-color: #e5e5e5;
 	}
+
+	/* Added 20/07 after selection update */
+	.fc_betting_markets .selection_name, .fc_betting_markets .selection_odds {
+		float: left;
+		margin-left: 10px;
+		margin-top: 10px;
+	}
+
+	.fc_betting_markets .selection_name {
+		width: 40%;
+	}
+
+	.fc_betting_markets button {
+		float: right;
+		margin: 4px;
+	}
+
+	.share_selection {
+		float: right;
+		margin-top: 10px;
+		margin-right: 10px;
+	}
+
+	/* --- */
+
 </style>
 
 <div class="fc_betting_markets">
