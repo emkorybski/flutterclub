@@ -56,7 +56,8 @@ class BetfairImportManager
 			$xmlContent = $this->loadUrlContent($match);
 			$xmlObject = simplexml_load_string($xmlContent);
 
-			$sportName = $xmlObject->attributes()['sport'];
+			$attributes = $xmlObject->attributes();
+			$sportName = $attributes['sport'];
 			$sport = \bets\Sport::getWhere(array('name=' => $sportName));
 			if (!$sport) {
 				var_dump(debug_backtrace());
@@ -134,8 +135,9 @@ class BetfairImportManager
 	private function parseEvents($sport, $bfEvents)
 	{
 		foreach ($bfEvents as $bfEvent) {
-			$eventName = $bfEvent->attributes()['name'];
-			$eventDate = date('Y-m-d 00:00:00', \DateTime::createFromFormat('d/m/Y', $bfEvent->attributes()['date'])->getTimestamp());
+			$attributes = $bfEvent->attributes();
+			$eventName = $attributes['name'];
+			$eventDate = date('Y-m-d 00:00:00', \DateTime::createFromFormat('d/m/Y', $attributes['date'])->getTimestamp());
 
 			$eventsList = explode('/', $eventName);
 
@@ -155,7 +157,7 @@ class BetfairImportManager
 			}
 
 			if (!$eventFound) {
-				echo $bfEvent->attributes()['name'] . "\n";
+				echo $attributes['name'] . "\n";
 				continue;
 			}
 
@@ -168,9 +170,10 @@ class BetfairImportManager
 	private function parseSubEvents($event, $bfSubEvents)
 	{
 		foreach ($bfSubEvents as $bfSubEvent) {
-			$subEventName = $bfSubEvent->attributes()['title'];
-			$subEventDate = date('Y-m-d H:i:00', \DateTime::createFromFormat('d/m/Y H:i', "{$bfSubEvent->attributes()['date']} {$bfSubEvent->attributes()['time']}")->getTimestamp());
-			$subEventBetfairMarketId = $bfSubEvent->attributes()['id'];
+			$attributes = $bfSubEvent->attributes();
+			$subEventName = $attributes['title'];
+			$subEventDate = date('Y-m-d H:i:00', \DateTime::createFromFormat('d/m/Y H:i', "{$attributes['date']} {$attributes['time']}")->getTimestamp());
+			$subEventBetfairMarketId = $attributes['id'];
 
 			$subEvent = \bets\Event::getWhere(array('betfairMarketId=' => $subEventBetfairMarketId));
 			if (!$subEvent) {
@@ -189,9 +192,10 @@ class BetfairImportManager
 	private function parseSelections($subEvent, $bfSelections)
 	{
 		foreach ($bfSelections as $bfSelection) {
-			$selectionName = $bfSelection->attributes()['name'];
-			$selectionOdds = $bfSelection->attributes()['backp1'];
-			$betfairSelectionId = $bfSelection->attributes()['id'];
+			$attributes = $bfSelection->attributes();
+			$selectionName = $attributes['name'];
+			$selectionOdds = $attributes['backp1'];
+			$betfairSelectionId = $attributes['id'];
 
 			$selection = \bets\Selection::getWhere(array('idevent=' => $subEvent->id, 'name=' => $selectionName, 'betfairSelectionId=' => $betfairSelectionId));
 			if (!$selection) {
