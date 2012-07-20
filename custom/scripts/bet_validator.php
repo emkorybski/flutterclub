@@ -3,14 +3,13 @@
 namespace bets;
 
 require_once(dirname(__FILE__) . '/../config.php');
-require_once(PATH_LIB . 'object.php');
 require_once(PATH_LIB . 'bets.php');
 require_once(PATH_LIB . 'social_engine.php');
 require_once(PATH_DOMAIN . 'user.php');
 require_once(PATH_DOMAIN . 'bet.php');
 require_once(PATH_DOMAIN . 'bet_selection.php');
 
-class BetValidator extends Object
+class BetValidator
 {
 	public function validateBets()
 	{
@@ -48,9 +47,5 @@ class BetValidator extends Object
 	}
 }
 
-try {
-	$betValidator = new BetValidator();
-	$betValidator->validateBets();
-} catch (Exception $e) {
-	die('error');
-}
+$betValidator = new BetValidator();
+$betValidator->validateBets();

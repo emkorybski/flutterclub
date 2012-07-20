@@ -12,33 +12,23 @@ class Event extends DBRecord
 
 	public function delete()
 	{
-		foreach ($this->getChildEvents() as $event) {
+		foreach ($this->getSubEvents() as $event) {
 			$event->delete();
 		}
-		foreach ($this->getChildSelections() as $selection) {
+		foreach ($this->getSelections() as $selection) {
 			$selection->delete();
 		}
 		call_user_func_array('parent::delete', func_get_args());
 	}
 
-	public function getChildEvents()
+	public function getSubEvents()
 	{
 		return Event::findWhere(array('idparent=' => $this->id));
 	}
 
-	public function addChildEvent($event)
-	{
-		$event->idparent = $this->id;
-	}
-
-	public function getChildSelections()
+	public function getSelections()
 	{
 		return Selection::findWhere(array('idevent=' => $this->id));
-	}
-
-	public function addChildSelection($selection)
-	{
-		$selection->idevent = $this->id;
 	}
 
 	public function getSport()
@@ -46,19 +36,9 @@ class Event extends DBRecord
 		return Sport::get($this->idsport);
 	}
 
-	public function setSport($sport)
-	{
-		$this->idsport = $sport->id;
-	}
-
 	public function getParent()
 	{
 		return Event::get($this->idparent);
-	}
-
-	public function setParent($parent)
-	{
-		$this->idparent = $parent->id;
 	}
 
 	public function topEvent()
@@ -69,15 +49,5 @@ class Event extends DBRecord
 		}
 
 		return $event;
-	}
-
-	public function computeVisibility()
-	{
-		foreach ($this->getChildEvents() as $childEvent) {
-			if ($childEvent->computeVisibility()) {
-				return true;
-			}
-		}
-		return Selection::countWhere(array('idevent=' => $this->id));
 	}
 }
