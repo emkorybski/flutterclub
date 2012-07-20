@@ -40,7 +40,7 @@
 		border-top-left-radius: 10px;
 		border-right: none;
 		border-bottom: none;
-		background-image: url(~/application/themes/clean/images/chip.png);
+		background-image: url(/application/themes/clean/images/chip.png);
 		background-repeat: no-repeat;
 		background-position: 5px center;
 		text-indent: 30px;
@@ -56,7 +56,7 @@
 		border-bottom-left-radius: 10px;
 		border-right: none;
 		border-top: none;
-		background-image: url(~/application/themes/clean/images/clock.png);
+		background-image: url(/application/themes/clean/images/clock.png);
 		background-repeat: no-repeat;
 		background-position: 6px center;
 		text-indent: 30px;
