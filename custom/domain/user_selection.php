@@ -25,4 +25,3 @@ class UserSelection extends DBRecord
 		return Selection::get($this->idselection);
 	}
 }
-

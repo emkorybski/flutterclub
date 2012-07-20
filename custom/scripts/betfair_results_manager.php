@@ -32,7 +32,7 @@ class BetfairResultsManager
 		foreach ($results as $resultItem) {
 			parse_str(html_entity_decode(parse_url($resultItem->link, PHP_URL_QUERY)), $queryString);
 			$betfairMarketId = $queryString['marketID'];
-			$winner = str_replace('Winner(s): ', '', $resultItem->description);
+			$winner = str_replace('Winner(s): ', '', trim($resultItem->description));
 
 			$betfairResult = \bets\BetfairResult::getWhere(array('betfairMarketId=' => $betfairMarketId, 'winner=' => $winner));
 			if (!$betfairResult) {
