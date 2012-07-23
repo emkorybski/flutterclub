@@ -124,7 +124,7 @@
 		background-color: #822E2C;
 		padding-left: 10px;
 		padding-right: 10px;
-		margin-right: 5px;
+		margin-right: 2px;
 	}
 	#global_wrapper #main_tabs li.active {
 		z-index: 10;
