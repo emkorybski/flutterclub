@@ -4,6 +4,9 @@
 	}
 	.layout_fc_betting_slip {
 		box-shadow: none;
+		border: 2px solid #CD4849;
+		border-top: 0;
+		margin-bottom: 1em;
 	}
 	.fc_betting_slip {
 		background-color: #ffffff;
