@@ -16,7 +16,7 @@ class Widget_FC_Betting_CategoriesController extends \Engine_Content_Widget_Abst
 	{
 		$result = array(array('idsport' => '', 'idevent' => '', 'name' => 'All'));
 		if (empty($idSport)) {
-			$sportRows = bets\bets::sql()->query("SELECT * FROM fc_sport");
+			$sportRows = bets\bets::sql()->query("SELECT * FROM fc_sport ORDER BY name ASC");
 			foreach ($sportRows as $sport) {
 				$result[] = array(
 					'idsport' => $sport['id'],
@@ -58,7 +58,7 @@ class Widget_FC_Betting_CategoriesController extends \Engine_Content_Widget_Abst
 	{
 		// TODO: make use of $tsStart & $tsStop
 		$result = array();
-		foreach (bets\Event::findWhere(array('idsport=' => $idSport, 'idparent=' => $idParent)) as $event) {
+		foreach (bets\Event::findWhere(array('idsport=' => $idSport, 'idparent=' => $idParent), "ORDER BY name ASC") as $event) {
 			$category = array(
 				'idsport' => $event->idsport,
 				'idevent' => $event->id,

@@ -20,27 +20,16 @@
 		width: 55%;
 		float: left;
 	}
-	.fc_selection .selection_odds {
-		width: 14%;
-		float: left;
-	}
-	.fc_selection .selection_bet {
-		width: 30%;
-		float: left;
-	}
 	.fc_selection:hover {
 		background-color: #e5e5e5;
 	}
 
 	/* Added 20/07 after selection update */
-	.fc_betting_markets .selection_name, .fc_betting_markets .selection_odds {
+	.fc_betting_markets .selection_name {
 		float: left;
+		width: 40%;
 		margin-left: 10px;
 		margin-top: 10px;
-	}
-
-	.fc_betting_markets .selection_name {
-		width: 40%;
 	}
 
 	.fc_betting_markets button {
@@ -68,8 +57,7 @@ foreach ( $this->selections as $selection) :
 	}
 ?>
 	<div class="selection_name"><?=$selection->name?></div>
-	<div class="selection_odds"><?=\bets\fc::formatOdds($selection->odds)?></div>
-	<button <?=$disabled?> data-idselection="<?=$selection->id?>" class="submit_selection">Add to Betslip</button>
+	<button <?=$disabled?> data-idselection="<?=$selection->id?>" class="submit_selection"><?=\bets\fc::formatOdds($selection->odds)?></button>
 	<a href="#" class="share_selection">Share</a>
 	<div class="clear"></div>
 </a>

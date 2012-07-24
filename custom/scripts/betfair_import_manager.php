@@ -15,8 +15,14 @@ class BetfairImportManager
 
 	public function __construct()
 	{
+		file_put_contents('betfair_import_manager.log', "Betfair Import Manager" . "\r\n");
 		$this->soapClient = new \SoapClient("https://api.betfair.com/global/v3/BFGlobalService.wsdl");
 		$this->login();
+	}
+
+	private static function log($message)
+	{
+		file_put_contents('betfair_import_manager.log', $message . "\r\n", FILE_APPEND | LOCK_EX);
 	}
 
 	public function login()
@@ -52,7 +58,7 @@ class BetfairImportManager
 		foreach ($matches[1] as $nr => $match) {
 			if ($nr % 4 != 0) continue;
 
-			echo "# Fetching {$nr}/{$count}: {$match}" . "\n";
+			self::log("# Fetching {$nr}/{$count}: {$match}" . "\r\n");
 			$xmlContent = $this->loadUrlContent($match);
 			$xmlObject = simplexml_load_string($xmlContent);
 
@@ -82,6 +88,7 @@ class BetfairImportManager
 
 	private function getActiveEventTypes()
 	{
+		self::log("getActiveEventTypes");
 		// getAllEventTypes
 		$soapRequest = new \stdClass();
 		$soapRequest->header = new \stdClass();
@@ -95,9 +102,10 @@ class BetfairImportManager
 		}
 
 		foreach ($response->eventTypeItems->EventType as $eventType) {
-			$sport = \bets\Sport::getWhere(array('name=' => $eventType->name));
+			self::log("   " . $eventType->name);
+			$sport = \bets\Sport::getWhere(array('name=' => trim($eventType->name)));
 			if (!$sport) {
-				$sport = new \bets\Sport(null, array('name' => $eventType->name, 'betfairSportId' => $eventType->id));
+				$sport = new \bets\Sport(null, array('name' => trim($eventType->name), 'betfairSportId' => $eventType->id));
 				$sport->insert();
 			}
 			$this->getEvents($sport->betfairSportId, $sport->id, 0);
@@ -119,9 +127,9 @@ class BetfairImportManager
 				? array($response->eventItems->BFEvent)
 				: $response->eventItems->BFEvent;
 			foreach ($bfEvents as $bfEvent) {
-				$event = \bets\Event::getWhere(array('name=' => $bfEvent->eventName, 'idparent=' => $fcParentId));
+				$event = \bets\Event::getWhere(array('name=' => trim($bfEvent->eventName), 'idparent=' => $fcParentId));
 				if (!$event) {
-					$event = new \bets\Event(null, array('name' => $bfEvent->eventName, 'ts' => $bfEvent->startTime, 'idparent' => $fcParentId));
+					$event = new \bets\Event(null, array('name' => trim($bfEvent->eventName), 'idparent' => $fcParentId));
 					$event->idsport = $sportId;
 					$parentId = $event->insert();
 				} else {
@@ -136,15 +144,16 @@ class BetfairImportManager
 	{
 		foreach ($bfEvents as $bfEvent) {
 			$attributes = $bfEvent->attributes();
-			$eventName = $attributes['name'];
-			$eventDate = date('Y-m-d 00:00:00', \DateTime::createFromFormat('d/m/Y', $attributes['date'])->getTimestamp());
+			$eventName = trim($attributes['name']);
+			//$eventDate = date('Y-m-d 00:00:00', \DateTime::createFromFormat('d/m/Y', $attributes['date'])->getTimestamp());
 
+			self::log($eventName);
 			$eventsList = explode('/', $eventName);
 
 			$idParent = 0;
 			$eventName = '';
 			for ($i = 0; $i < count($eventsList); $i++) {
-				$eventName .= $eventsList[$i];
+				$eventName .= trim($eventsList[$i]);
 				$event = \bets\Event::getWhere(array('idsport=' => $sport->id, 'idparent=' => $idParent, 'name=' => $eventName));
 				if (!$event) {
 					$eventName .= '/';
@@ -157,7 +166,7 @@ class BetfairImportManager
 			}
 
 			if (!$eventFound) {
-				echo $attributes['name'] . "\n";
+				self::log("EVENT NOT FOUND: " . $attributes['name'] . "\r\n");
 				continue;
 			}
 
@@ -171,9 +180,17 @@ class BetfairImportManager
 	{
 		foreach ($bfSubEvents as $bfSubEvent) {
 			$attributes = $bfSubEvent->attributes();
-			$subEventName = $attributes['title'];
+			$subEventName = trim($attributes['title']);
 			$subEventDate = date('Y-m-d H:i:00', \DateTime::createFromFormat('d/m/Y H:i', "{$attributes['date']} {$attributes['time']}")->getTimestamp());
 			$subEventBetfairMarketId = $attributes['id'];
+
+			self::log("   * " . $subEventName);
+
+			$nowDate = date('Y-m-d H:i:s');
+			$competitionEndDateTemp = date('Y-m-d 00:00:00', \DateTime::createFromFormat('d/m/Y', '29/07/2012')->getTimestamp());
+			self::log("      " . $nowDate . " < " . $subEventDate . " < " . $competitionEndDateTemp);
+			if ($subEventDate < $nowDate || $subEventDate > $competitionEndDateTemp)
+				continue;
 
 			$subEvent = \bets\Event::getWhere(array('betfairMarketId=' => $subEventBetfairMarketId));
 			if (!$subEvent) {
@@ -193,9 +210,11 @@ class BetfairImportManager
 	{
 		foreach ($bfSelections as $bfSelection) {
 			$attributes = $bfSelection->attributes();
-			$selectionName = $attributes['name'];
+			$selectionName = trim($attributes['name']);
 			$selectionOdds = $attributes['backp1'];
 			$betfairSelectionId = $attributes['id'];
+
+			self::log("         * " . $selectionName);
 
 			$selection = \bets\Selection::getWhere(array('idevent=' => $subEvent->id, 'name=' => $selectionName, 'betfairSelectionId=' => $betfairSelectionId));
 			if (!$selection) {
@@ -225,3 +244,4 @@ class BetfairImportManager
 $bfImportManager = new BetfairImportManager();
 $bfImportManager->importSportsAndEvents();
 $bfImportManager->importEventsAndSelections('http://www.betfair.com/partner/marketdata_xml3.asp');
+echo "DONE!";
