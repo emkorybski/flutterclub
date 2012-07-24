@@ -1,16 +1,31 @@
 <div class="generic_layout_container layout_betting_history">
 
 	<style type="text/css">
+		.layout_betting_history {
+			background-color: #fff;
+			padding: 5px;
+		}
+
 		.betting_history_field_left {
 			clear: left;
 			float: left;
-			width: 200px;
-			border: 1px solid blue;
+			width: 70px;
+			text-align: right;
+			margin-right: 10px;
+			color: #5f93b4;
+			font-weight: 700;
+			border: none;
 		}
+
 		.betting_history_field_right {
 			float: left;
-			width: 300px;
-			border: 1px solid green;
+			width: auto;
+			border: none;
+		}
+
+		.betting_history > div + div {
+			padding-top: 10px;
+			border-top-width: 1px;
 		}
 	</style>
 

@@ -105,7 +105,7 @@
 
 	#main_tabs {
 		background-color: transparent;
-		border-bottom: none;
+		border-bottom: 5px solid #CD4849;
 		padding: 0;
 		overflow: hidden;
 	}
@@ -124,6 +124,7 @@
 		background-color: #822E2C;
 		padding-left: 10px;
 		padding-right: 10px;
+		margin-right: 2px;
 	}
 	#global_wrapper #main_tabs li.active {
 		z-index: 10;
