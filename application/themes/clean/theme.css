@@ -1944,3 +1944,13 @@ div.group_discussions_list
   margin: 10px;
   border: 2px dashed $theme_border_color;
 }
+#global_page_core-help-terms ol,
+#global_page_core-help-privacy ol {
+  margin-bottom: 15px;
+  margin-left: 30px;
+}
+#global_page_core-help-terms ol li,
+#global_page_core-help-privacy ol li {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
