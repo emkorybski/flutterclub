@@ -35,6 +35,7 @@
 	.fc_betting_markets button {
 		float: right;
 		margin: 4px;
+		width: 70px;
 	}
 
 	.share_selection {
