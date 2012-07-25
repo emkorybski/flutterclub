@@ -38,6 +38,14 @@
 		width: 70px;
 	}
 
+	.fc_betting_markets button[disabled] {
+		background-color: #eee;
+		border-color: #aaa;
+		color: #aaa;
+		text-shadow: none;
+		cursor: inherit;
+	}
+
 	.share_selection {
 		float: right;
 		margin-top: 10px;
