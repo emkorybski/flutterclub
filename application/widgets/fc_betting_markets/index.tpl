@@ -35,7 +35,7 @@
 	.fc_betting_markets button {
 		float: right;
 		margin: 4px;
-		width: 70px;
+		width: 80px;
 	}
 
 	.fc_betting_markets button[disabled] {
