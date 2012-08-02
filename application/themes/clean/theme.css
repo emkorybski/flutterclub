@@ -1954,3 +1954,53 @@ div.group_discussions_list
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.layout_poll_home_poll {
+  background-color: $theme_foreground_background_color;
+  padding-bottom: 10px;
+  -webkit-border-radius: 10px;
+  -webkit-border-bottom-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius: 10px;
+  -moz-border-radius-bottomright: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-radius: 10px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.layout_poll_home_poll .poll_desc,
+.layout_poll_home_poll form,
+.layout_poll_home_poll .poll_stats {
+  padding: 0 10px;
+}
+
+.layout_poll_home_poll .poll_desc {
+    padding-top: 10px;
+}
+
+.layout_user_home_links {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.layout_user_home_links .quicklinks {
+  padding: 10px;
+}
+
+.layout_activity_feed {
+  background-color: $theme_foreground_background_color;
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-topright: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.activity-post-container {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 0px;
+}
