@@ -16,14 +16,14 @@ class BetfairImportManager
 
 	public function __construct()
 	{
-		file_put_contents('betfair_import_manager.log', "Betfair Import Manager" . "\r\n");
+		//file_put_contents('betfair_import_manager.log', "Betfair Import Manager" . "\r\n");
 		$this->soapClient = new \SoapClient("https://api.betfair.com/global/v3/BFGlobalService.wsdl");
 		$this->login();
 	}
 
 	private static function log($message)
 	{
-		file_put_contents('betfair_import_manager.log', $message . "\r\n", FILE_APPEND | LOCK_EX);
+		//file_put_contents('betfair_import_manager.log', $message . "\r\n", FILE_APPEND | LOCK_EX);
 	}
 
 	public function login()
