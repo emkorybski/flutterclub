@@ -55,15 +55,10 @@
 	.slip_actions .action {
 		float: left;
 		text-decoration: none;
-		border: 1px solid #5f93b4;
 		margin-left: 10px;
 		margin-bottom: 10px;
 		width: auto;
 		text-align: center;
-		border-radius: 10px;
-	}
-	.slip_actions .action:hover {
-		background-color: #eee;
 	}
 	.slip_actions a {
 		padding: 5px;
