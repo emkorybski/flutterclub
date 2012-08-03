@@ -11,6 +11,20 @@
 	.fc_betting_pending {
 		background-color: #ffffff;
 	}
+	.fc_betting_pending > ul > li {
+		padding-left: 10px;
+		padding-top: 10px;
+	}
+	.fc_betting_pending li + li {
+		border-top-width: 1px;
+	}
+	.fc_betting_pending .selection_name {
+		font-weight: bold;
+	}
+	.fc_betting_pending .selection_status {
+		display: block;
+		text-transform: capitalize;
+	}
 	.pending_item {
 		display: block;
 		padding: 5px 10px;
@@ -50,16 +64,16 @@
 		$isAccumulator = count($betSelections) > 1;
 ?>
 		<li>
-			<span class="bet_type"><?=($isAccumulator ? 'accumulator' : 'single')?></span>
+			<span class="bet_type"><?=($isAccumulator ? 'Accumulator' : 'Single')?></span>
 			<span class="bet_stake"><?=$bet->stake?></span>
-			<span class="bet_odds"><?=\bets\fc::formatOdds($bet->odds)?></span>
+			<span class="bet_odds">(<?=\bets\fc::formatOdds($bet->odds)?>)</span>
 			<ul>
 <?php
 				foreach ($betSelections as $selection) :
 ?>
 				<li>
 					<span class="selection_name"><?=$selection->name?></span>
-					<span class="selection_odds"><?=\bets\fc::formatOdds($selection->odds)?></span>
+					<span class="selection_odds">(<?=\bets\fc::formatOdds($selection->odds)?>)</span>
 					<span class="selection_status"><?=$selection->status?></span>
 				</li>
 <?php
