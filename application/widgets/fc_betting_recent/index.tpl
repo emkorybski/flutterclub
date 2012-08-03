@@ -82,11 +82,11 @@
 ?>
 			<span class="bet_status_won">+ <?=number_format($bet->stake * ($bet->odds - 1), 2, '.', '')?></span>
 <?php
-			else if ($bet->status == 'lost') :
+			elseif ($bet->status == 'lost') :
 ?>
 			<span class="bet_status_lost">- <?=$bet->stake?></span>
 <?php
-			else if ($bet->status == 'void') :
+			elseif ($bet->status == 'void') :
 ?>
 			<span class="bet_status_void">0</span>
 <?php
