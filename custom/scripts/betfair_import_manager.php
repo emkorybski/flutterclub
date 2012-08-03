@@ -4,6 +4,7 @@ namespace betfair;
 
 require_once(dirname(__FILE__) . '/../config.php');
 require_once(PATH_LIB . 'object.php');
+require_once(PATH_DOMAIN . 'competition.php');
 require_once(PATH_DOMAIN . 'sport.php');
 require_once(PATH_DOMAIN . 'event.php');
 require_once(PATH_DOMAIN . 'selection.php');
@@ -186,10 +187,10 @@ class BetfairImportManager
 
 			self::log("   * " . $subEventName);
 
+			$competition = \bets\Competition::getCurrent();
 			$nowDate = date('Y-m-d H:i:s');
-			$competitionEndDateTemp = date('Y-m-d 00:00:00', \DateTime::createFromFormat('d/m/Y', '29/07/2012')->getTimestamp());
-			self::log("      " . $nowDate . " < " . $subEventDate . " < " . $competitionEndDateTemp);
-			if ($subEventDate < $nowDate || $subEventDate > $competitionEndDateTemp)
+			self::log("      " . $nowDate . " < " . $subEventDate . " < " . $competition->ts_end);
+			if ($subEventDate < $nowDate || $subEventDate > $competition->ts_end)
 				continue;
 
 			$subEvent = \bets\Event::getWhere(array('betfairMarketId=' => $subEventBetfairMarketId));
