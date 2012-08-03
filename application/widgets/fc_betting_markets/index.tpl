@@ -35,6 +35,15 @@
 	.fc_betting_markets button {
 		float: right;
 		margin: 4px;
+		width: 80px;
+	}
+
+	.fc_betting_markets button[disabled] {
+		background-color: #eee;
+		border-color: #aaa;
+		color: #aaa;
+		text-shadow: none;
+		cursor: inherit;
 	}
 
 	.share_selection {

@@ -79,22 +79,12 @@
 		text-align: left;
 	}
 
-	.layout_activity_feed {
-		/*background-color: #bcf7ec;*/
-		/*cy*/
-	}
-	.layout_activity_feed h3 {
-		background: transparent;
-	}
 	.layout_activity_feed .tip span {
 		border: none;
 		background-color: transparent;
 	}
 	.activity-post-container {
 		background: transparent;
-	}
-	#activity-feed {
-		background-color: #ffffff;
 	}
 
 	/* ** */
