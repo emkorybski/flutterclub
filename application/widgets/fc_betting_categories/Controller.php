@@ -14,6 +14,8 @@ class Widget_FC_Betting_CategoriesController extends \Engine_Content_Widget_Abst
 
 	public function getCategories($tsStart, $tsStop, $idSport, $idEvent)
 	{
+		$now = date('Y-m-d H:i:s', mktime(date("H"), date("i"), date("s"), date("m"), date("d"), date("Y")));
+
 		$result = array(array('idsport' => '', 'idevent' => '', 'name' => 'All'));
 		if (empty($idSport)) {
 			$sportRows = bets\bets::sql()->query("SELECT * FROM fc_sport ORDER BY name ASC");
@@ -31,9 +33,8 @@ class Widget_FC_Betting_CategoriesController extends \Engine_Content_Widget_Abst
 				'idevent' => '',
 				'name' => $sport->name);
 			if (empty($idEvent)) {
-				$category['children'] = $this->getSportCategories($idSport, 0);
+				$category['children'] = $this->getSubcategories($now, $tsStop, $idSport, 0);
 			} else {
-				$now = date('Y-m-d H:i:s', mktime(date("H"), date("i"), date("s"), date("m"), date("d"), date("Y")));
 				$event = \bets\Event::get($idEvent);
 				$categoryHelper = array(
 					'idsport' => $sport->id,
