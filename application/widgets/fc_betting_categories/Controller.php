@@ -18,12 +18,12 @@ class Widget_FC_Betting_CategoriesController extends \Engine_Content_Widget_Abst
 
 		$result = array(array('idsport' => '', 'idevent' => '', 'name' => 'All'));
 		if (empty($idSport)) {
-			$sportRows = bets\bets::sql()->query("SELECT * FROM fc_sport ORDER BY name ASC");
+			$sportRows = \bets\Sport::findWhere(array('enabled=' => 'y'), 'ORDER BY name ASC');
 			foreach ($sportRows as $sport) {
 				$result[] = array(
-					'idsport' => $sport['id'],
+					'idsport' => $sport->id,
 					'idevent' => '',
-					'name' => $sport['name']);
+					'name' => $sport->name);
 			}
 		} else {
 			$sport = \bets\Sport::get($idSport);
