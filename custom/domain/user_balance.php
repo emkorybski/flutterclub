@@ -29,16 +29,32 @@ class UserBalance extends DBRecord
 		return $balance;
 	}
 
-	public static function getBalances($Object = null)
-	{
-		$idCompetition = $Object->idcompetition ? $Object->idcompetition : \bets\Competition::getCurrent()->id;
-		return static::findWhere(array('idcompetition=' => $idCompetition), ' ORDER BY balance DESC');
-	}
-
 	public static function updateUserBalance($stake)
 	{
 		$balance = self::getCurrentBalance();
 		$balance->balance += $stake;
 		$balance->update();
+	}
+
+	public static function getBalancesCompetition($Object = null)
+	{
+		$idCompetition = $Object->idcompetition ? $Object->idcompetition : \bets\Competition::getCurrent()->id;
+		$startPoints = \bets\Competition::getCurrent($idCompetition)->start_points;
+
+		$query = "SELECT
+                                b.*, 
+                                @rownum:=@rownum+1 as position 
+                          FROM 
+                                (SELECT 
+                                    p.*, (p.balance-$startPoints) as earnings 
+                                FROM 
+                                    fc_user_balance p, 
+                                    fc_competition c 
+                                WHERE 
+                                    p.idcompetition = c.id AND 
+                                    p.idcompetition = $idCompetition 
+                                ORDER BY earnings DESC) b,  
+                        (SELECT @rownum:=0) r";
+		return \bets\bets::sql()->query($query);
 	}
 }

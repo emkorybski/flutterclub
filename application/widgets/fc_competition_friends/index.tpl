@@ -88,68 +88,34 @@
 </style>
 
 <div class="layout">
+<pre>
+<?php //print_r($this->friends); ?>
+</pre>
 		<?php if($this->position) {?>
 		<div class="your_psition">Your current position in competition is <?=$this->position?></div>
+		<h3>Friends positions</h3>
+		
 		<?php
 		}
-		foreach($this->winners as $obj){
-			if ($obj->position == 1){
+		if (count($this->friends)){
 		?>
-			<div class="layout_first_place">
-				<span class="big position pos"><?=$obj->position?></span>
-				<span class="big pic"><?=$obj->userdata->name?></span>
-				<span class="dat">
-					Success rate: <?=$obj->successrate?>
-					<br>
-					Earnings: <?=$obj->earnings?>
-				</span>
+			<div class="layout_all">
+				<span class="big right width100">Earnings</span>
+				<span class="big right width100">Success rate</span>
 				<div class="clear"></div>
 			</div>
-			<div class="clear"></div>
 		<?php
-			}
-			else
-			if ($obj->position > 1 && $obj->position <= 3)
-			{
-				$class = ($obj->position == 2 ? 'left' : 'right');
+		foreach($this->friends as $obj){
 		?>
-				<div class="layout_podium <?=$class?>">
-					<span class="big position pos"><?=$obj->position?></span>
-					<span class="big pic"><?=$obj->userdata->name?></span>
-					<span class="dat">
-						Success rate: <?=$obj->successrate?>
-						<br>
-						Earnings: <?=$obj->earnings?>
-					</span>
-					<div class="clear"></div>
-				</div>
-		<?php
-			}
-			else
-			{
-				if ($obj->position == 4)
-				{
-				?>
-					<div class="clear"></div>
-					<div class="line"></div>
-					<div class="layout_all">
-						<span class="big right width100">Earnings</span>
-						<span class="big right width100">Success rate</span>
-						<div class="clear"></div>
-					</div>
-				<?
-				}
-		?>
-			
 			<div class="layout_all">
 				<span class="position_small"><?=$obj->position?></span>
-				<span class="pic"><?=$obj->userdata->name?></span>
+				<span class="pic"><?=$obj->friend->displayname?></span>
 				<span class="width100 right"><?=$obj->earnings?></span>
 				<span class="width100 right"><?=$obj->successrate?></span>
 				<div class="clear"></div>
 			</div>
-		
-	<?php } } }?>
+			<div class="clear"></div>
+	<?php } }?>
 	<div class="clear"></div>
 </div>	
 <?php if (empty($_REQUEST['format']) || ($_REQUEST['format'] != 'html')) { ?>
