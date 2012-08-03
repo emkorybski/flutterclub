@@ -34,6 +34,15 @@ class sql extends Singleton {
 		return static::$_link->query($sql);
 	}
 
+	public function runMulti($sql) {
+		return static::$_link->multi_query($sql);
+	}
+
+	public function commit()
+	{
+		return static::$_link->commit();
+	}
+
 	/**
 	 * @param string $sql
 	 * @return mixed[string][] Array of rows, each row is an associative array
@@ -56,6 +65,41 @@ class sql extends Singleton {
 		}
 		return $result;
 	}
+
+	public function multiQuery($sql) {
+		if (defined('SQLDIE')) {
+			while (ob_get_level()) {
+				ob_end_clean();
+			}
+			echo "\n\n<HR><HR><HR>\n\n";
+			bets::debug($sql);
+		}
+		return $this->runMulti($sql);
+	}
+
+	public function getResult()
+	{
+		$mysqlResult = static::$_link->store_result();
+		$result = array();
+		if ($mysqlResult) {
+			for ($i = $mysqlResult->num_rows; $i; --$i) {
+				$result[] = $mysqlResult->fetch_array(MYSQLI_ASSOC);
+			}
+			$mysqlResult->free();
+		}
+		return $result;
+	}
+
+	public function moreResults()
+	{
+		return static::$_link->more_results();
+	}
+
+	public function nextResult()
+	{
+		return static::$_link->next_result();
+	}
+
 
 	/**
 	 * Use this to get only one (the first) row of a query
@@ -84,5 +128,14 @@ class sql extends Singleton {
 		return static::$_link->insert_id;
 	}
 
+
+	public function getLastError() {
+		return static::$_link->errno;
+	}
+
+	public function getError() {
+		return static::$_link->error;
+	}
 }
+
 

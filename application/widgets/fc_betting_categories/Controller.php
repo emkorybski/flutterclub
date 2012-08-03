@@ -31,14 +31,16 @@ class Widget_FC_Betting_CategoriesController extends \Engine_Content_Widget_Abst
 				'idevent' => '',
 				'name' => $sport->name);
 			if (empty($idEvent)) {
-				$category['children'] = $this->getSubcategories($tsStart, $tsStop, $idSport, 0);
+				$category['children'] = $this->getSportCategories($idSport, 0);
 			} else {
+				$now = date('Y-m-d H:i:s', mktime(date("H"), date("i"), date("s"), date("m"), date("d"), date("Y")));
 				$event = \bets\Event::get($idEvent);
 				$categoryHelper = array(
 					'idsport' => $sport->id,
 					'idevent' => $event->id,
 					'name' => $event->name,
-					'children' => $this->getSubcategories($tsStart, $tsStop, $idSport, $event->id));
+					'children' => $this->getSubcategories($now, $tsStop, $idSport, $idEvent));
+
 				while ($event->idparent != 0) {
 					$event = \bets\Event::get($event->idparent);
 					$categoryHelper = array(
@@ -54,9 +56,8 @@ class Widget_FC_Betting_CategoriesController extends \Engine_Content_Widget_Abst
 		return $result;
 	}
 
-	public function getSubcategories($tsStart, $tsStop, $idSport, $idParent)
+	public function getSportCategories($idSport, $idParent)
 	{
-		// TODO: make use of $tsStart & $tsStop
 		$result = array();
 		foreach (bets\Event::findWhere(array('idsport=' => $idSport, 'idparent=' => $idParent), "ORDER BY name ASC") as $event) {
 			$category = array(
@@ -67,5 +68,29 @@ class Widget_FC_Betting_CategoriesController extends \Engine_Content_Widget_Abst
 		}
 		return $result;
 	}
-}
 
+	public function getSubcategories($tsStart, $tsStop, $idSport, $idParent)
+	{
+		$result = array();
+
+		bets\bets::sql()->multiQuery("call fc_get_active_events($idSport, $idParent, '$tsStart', '$tsStop')");
+
+		$activeEvents = bets\bets::sql()->getResult();
+		foreach ($activeEvents as $event) {
+			$category = array(
+				'idsport' => $event['idsport'],
+				'idevent' => $event['id'],
+				'name' => $event['name']);
+
+			$result[] = $category;
+		}
+
+		while (bets\bets::sql()->moreResults())
+		{
+			$activeEvents = bets\bets::sql()->getResult();
+			bets\bets::sql()->nextResult();
+		}
+
+		return $result;
+	}
+}
