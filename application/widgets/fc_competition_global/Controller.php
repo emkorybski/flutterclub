@@ -1,45 +1,38 @@
 <?php
 require_once('custom/config.php');
+
 require_once(PATH_DOMAIN . 'competition.php');
 require_once(PATH_DOMAIN . 'user.php');
 require_once(PATH_DOMAIN . 'user_balance.php');
 
 class Widget_Fc_Competition_GlobalController extends Engine_Content_Widget_Abstract {
+	
 	public function indexAction() {
-		$this->_data = $this->getCompetitionGlobal();
-		$this->view->winners = $this->_data;
-		$this->view->position = $this->getCompetitonPosition();
+		$this->view->winners = $this->getCompetitionGlobal();
+		$this->view->position = bets\Competition::getCompetitonPositions();
 	}
 
 	public function getCompetitionGlobal(){
-		$balaces = bets\UserBalance::getBalances();
-		foreach ($balaces as $o){
-			$count++;
-			$user = (object) bets\User::getCurrentUserData($o->iduser);
-			$data->idcompetition = $o->idcompetition;
-			$data->iduser = $o->iduser;
-			$data->balance = $o->balance;
-			$data->position = $count;
-			$data->userdata = (object) array(			
+		$balances = bets\UserBalance::getBalancesCompetition();               
+		foreach ($balances as $obj){
+			$obj = (object) $obj;
+			$user = (object) bets\User::getCurrentUserData($obj->iduser);
+			$data->idcompetition = $obj->idcompetition;
+			$data->iduser = $obj->iduser;
+			$data->balance = $obj->balance;
+			$data->position = $obj->position;
+			$data->earnings = $obj->earnings;
+			$data->successrate = bets\Bet::getSuccessRate($obj->iduser);
+			$data->userdata = (object) array(	
 				'name' => $user->displayname,
 				'email' => $user->email,
 				'locale' => $user->locale,
 				'timezone'=> $user->timezone,
-				
 			) ;
 			$array[] = $data;
 			unset($data);
 		}
 		return $array;	
-	}
-	
-	public function getCompetitonPosition(){
-		$data = $this->_data;
-		$uid = bets\User::getCurrentUser();
-		foreach ($data as $obj){
-			if ($obj->iduser == $uid->id)
-				return $obj->position;
-		}
-	}
+	}        
 }
 

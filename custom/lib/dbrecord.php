@@ -88,6 +88,7 @@ abstract class DBRecord extends Object {
 		$table = static::$_table;
 		$where = static::conditionstoSQL($conditions);
 		$sql = "SELECT `{$table}`.`id` AS `id` FROM `{$table}` WHERE {$where} {$extraQuery}";
+		
 		$rows = bets::sql()->query($sql);
 		if (!count($rows)) {
 			return array();
