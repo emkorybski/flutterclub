@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once('custom/config.php');
 require_once(PATH_DOMAIN . 'competition.php');
 require_once(PATH_DOMAIN . 'user_balance.php');

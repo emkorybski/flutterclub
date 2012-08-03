@@ -1,4 +1,4 @@
-<?php if (empty($_REQUEST['format']) || ($_REQUEST['format'] != 'html')) { 
+﻿<?php if (empty($_REQUEST['format']) || ($_REQUEST['format'] != 'html')) { 
 ?>
 <div class="box_shadow widget_body">
 <?php } ?>
