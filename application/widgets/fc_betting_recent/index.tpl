@@ -63,41 +63,55 @@
 </style>
 
 <div class="fc_betting_recent">
+<?php
+	if ( count($this->recent_bets) > 0 ) :
+?>
 	<ul>
-		<?php
+<?php
 		foreach ($this->recent_bets as $bet) :
 			$betSelections = $bet->getSelections();
 			$isAccumulator = count($betSelections) > 1;
-		?>
+?>
 		<li>
-			<?php echo $isAccumulator ? 'accumulator' : 'single' ?>
-			&nbsp;
-			<?=$bet->stake?>
-			&nbsp;
-			<?=\bets\fc::formatOdds($bet->odds)?>
-			<?php
-					if ($bet->status == 'won') {
-			echo '<span style="color: green; font-size: 14px;"><strong>' . '+'.number_format($bet->stake * ($bet->odds -
-			1), 2, '.', '') . '</strong></span>';
-			}
-			else {
-			echo '<span style="color: red; font-size: 14px"><strong>' . '-'.$bet->stake . '</strong></span>';
-			}
-			?>
+			<span class="bet_type"><?=($isAccumulator ? 'accumulator' : 'single')?></span>
+			<span class="bet_stake"><?=$bet->stake?></span>
+			<span class="bet_odds"><?=\bets\fc::formatOdds($bet->odds)?></span>
+			<span class="bet_status"><?=$bet->status?></span>
+<?php
+			if ($bet->status == 'won') :
+?>
+			<span class="bet_status_won">+ <?=number_format($bet->stake * ($bet->odds - 1), 2, '.', '')?></span>
+<?php
+			else if ($bet->status == 'lost') :
+?>
+			<span class="bet_status_lost">- <?=$bet->stake?></span>
+<?php
+			else if ($bet->status == 'void') :
+?>
+			<span class="bet_status_void">0</span>
+<?php
+			endif;
+?>
 			<ul>
-				<?php
-				foreach ($betSelections as $selection) {
-				?>
-				<li>&nbsp;&nbsp;&nbsp;->&nbsp;<?=$selection->name?>, <?=\bets\fc::formatOdds($selection->
-					odds)?>, <?=$selection->status?><br/></li>
-				<?php
-				}
-				?>
+<?php
+				foreach ($betSelections as $selection) :
+?>
+				<li>
+					<span class="selection_name"><?=$selection->name?></span>
+					<span class="selection_odds"><?=\bets\fc::formatOdds($selection->odds)?></span>
+					<span class="selection_status"><?=$selection->status?></span>
+				</li>
+<?php
+				endforeach;
+?>
 			</ul>
 			<br/>
 		</li>
-		<?php
+<?php
 		endforeach;
-		?>
+?>
 	</ul>
+<?php
+	endif;
+?>
 </div>

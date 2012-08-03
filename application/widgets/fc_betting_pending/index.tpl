@@ -40,32 +40,39 @@
 </style>
 
 <div class="fc_betting_pending">
+<?php
+	if ( count($this->pending_bets) > 0 ) :
+?>
 	<ul>
-		<?php
-		foreach ($this->pending_bets as $bet) :
-			$betSelections = $bet->getSelections();
-			$isAccumulator = count($betSelections) > 1;
-		?>
+<?php
+	foreach ($this->pending_bets as $bet) :
+		$betSelections = $bet->getSelections();
+		$isAccumulator = count($betSelections) > 1;
+?>
 		<li>
-			<?php echo $isAccumulator ? 'accumulator' : 'single' ?>
-			&nbsp;
-			<?=$bet->stake?>
-			&nbsp;
-			<?=\bets\fc::formatOdds($bet->odds)?>
+			<span class="bet_type"><?=($isAccumulator ? 'accumulator' : 'single')?></span>
+			<span class="bet_stake"><?=$bet->stake?></span>
+			<span class="bet_odds"><?=\bets\fc::formatOdds($bet->odds)?></span>
 			<ul>
-				<?php
-				foreach ($betSelections as $selection) {
-				?>
-				<li>&nbsp;&nbsp;&nbsp;->&nbsp;<?=$selection->name?>, <?=\bets\fc::formatOdds($selection->
-					odds)?>, <?=$selection->status?><br/></li>
-				<?php
-				}
-				?>
+<?php
+				foreach ($betSelections as $selection) :
+?>
+				<li>
+					<span class="selection_name"><?=$selection->name?></span>
+					<span class="selection_odds"><?=\bets\fc::formatOdds($selection->odds)?></span>
+					<span class="selection_status"><?=$selection->status?></span>
+				</li>
+<?php
+				endforeach;
+?>
 			</ul>
 			<br/>
 		</li>
-		<?php
+<?php
 		endforeach;
-		?>
+?>
 	</ul>
+<?php
+	endif;
+?>
 </div>

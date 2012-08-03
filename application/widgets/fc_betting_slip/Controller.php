@@ -71,13 +71,9 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 						$betSelection->insert();
 					}
 				}
-				$balance = \bets\UserBalance::getCurrentBalance();
-				$balance->balance = $balance->balance - $totalStake;
-				$balance->update();
-				//TODO: update from within the class
+				\bets\UserBalance::updateUserBalance(-1 * $totalStake);
 
 				// remove user selections from the bet slip
-				/*
 				foreach ($_REQUEST['bets'] as $userBet) {
 					if ($userBet['user_selection_id'] == 'accumulator') {
 						$userSelections = \bets\UserSelection::findWhere(array('iduser=' => $user->id));
@@ -90,8 +86,8 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 						$userSel->delete();
 					}
 				}
-				*/
 				exit;
+				break;
 
 			case 'remove_selected':
 				foreach ($_REQUEST['user_selection_ids'] as $idUserSel) {
@@ -99,12 +95,14 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 					$userSel->delete();
 				}
 				exit;
+				break;
 
 			case 'remove_all':
 				foreach (bets\User::getCurrentUser()->getUserSelections() as $userSel) {
 					$userSel->delete();
 				}
 				exit;
+				break;
 
 			default:
 				$this->fc_render();
