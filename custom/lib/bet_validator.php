@@ -6,6 +6,7 @@ require_once(dirname(__FILE__) . '/../config.php');
 require_once(PATH_LIB . 'bets.php');
 require_once(PATH_LIB . 'social_engine.php');
 require_once(PATH_DOMAIN . 'user.php');
+require_once(PATH_DOMAIN . 'user_balance.php');
 require_once(PATH_DOMAIN . 'bet.php');
 require_once(PATH_DOMAIN . 'bet_selection.php');
 
