@@ -46,9 +46,8 @@ class BetValidator
 					}
 				}
 				$seUserId = \bets\User::getSocialEngineUserId($pendingBet->iduser);
-				$betInfo = $pendingBet->id . " ; " . $pendingBet->odds . " ; " . $pendingBet->stake . " ; " . $pendingBet->status;
-				echo $betInfo;
-				\bets\SocialEngine::addActivityFeed($seUserId, "Another bet settled: " . $betInfo);
+				$notificationText = \bets\User::getSettledBetNotificationText($pendingBet);
+				\bets\SocialEngine::addActivityFeed($seUserId, $notificationText);
 			}
 		}
 	}

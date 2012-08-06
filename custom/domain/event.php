@@ -21,6 +21,20 @@ class Event extends DBRecord
 		call_user_func_array('parent::delete', func_get_args());
 	}
 
+	public function getPath()
+	{
+		$path = '';
+
+		$event = $this;
+		while ($event->idparent) {
+			$event = static::get($event->idparent);
+			$path = " - " . $event->name . $path;
+		}
+		$path = $this->getSport()->name . $path;
+
+		return $path;
+	}
+
 	public function getSubEvents()
 	{
 		return Event::findWhere(array('idparent=' => $this->id));
