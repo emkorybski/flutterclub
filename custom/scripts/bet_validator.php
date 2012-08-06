@@ -38,6 +38,13 @@ class BetValidator
 			$pendingBet->status = $betStatus;
 			$pendingBet->update();
 			if ($betStatus != 'pending') {
+				if ($betStatus == 'won') {
+					$balance = \bets\UserBalance::getWhere(array('idcompetition=' => $pendingBet->idcompetition, 'iduser=' => $pendingBet->iduser));
+					if ($balance) {
+						$balance->balance += $pendingBet->stake * $pendingBet->odds;
+						$balance->update();
+					}
+				}
 				$seUserId = \bets\User::getSocialEngineUserId($pendingBet->iduser);
 				$betInfo = $pendingBet->id . " ; " . $pendingBet->odds . " ; " . $pendingBet->stake . " ; " . $pendingBet->status;
 				echo $betInfo;
