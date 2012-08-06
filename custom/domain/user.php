@@ -89,6 +89,22 @@ class User extends DBRecord
 		return preg_replace($patterns, $replacements, $notificationText);
 	}
 
+	public static function sendEmail($fcUserId, $body)
+	{
+		$userData = \bets\User::getCurrentUserData($fcUserId);
+		$mailApi = \Engine_Api::_()->getApi('mail', 'core');
+
+		$mail = $mailApi->create();
+		$mail
+			->setFrom('admin@flutterclub.com', 'FlutterClub')
+			->setSubject('FlutterClub :: Bet Settled')
+			->setBodyHtml(nl2br($body))
+			->setBodyText($body);
+		$mail->addTo($userData['email']);
+
+		$mailApi->send($mail);
+	}
+
 	public function getUserSelections()
 	{
 		return \bets\UserSelection::findWhere(array('iduser=' => $this->id));

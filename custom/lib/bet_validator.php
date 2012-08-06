@@ -13,16 +13,14 @@ class BetValidator
 {
 	public function validateBets()
 	{
-		$pendingBetsList = \bets\bets::sql()->query("SELECT * FROM fc_bet WHERE status = 'pending'");
-		foreach ($pendingBetsList as $pendingBetData) {
-			$pendingBet = \bets\Bet::get($pendingBetData['id']);
-			$betSelectionsList = \bets\bets::sql()->query("SELECT * FROM fc_bet_selection WHERE idbet = " . $pendingBet->id);
+		$pendingBetsList = \bets\Bet::findWhere(array('status=' => 'pending'));
+		foreach ($pendingBetsList as $pendingBet) {
+			$betSelectionsList = \bets\BetSelection::findWhere(array('idbet=' => $pendingBet->id));
 
 			$selectionStatus = array('void' => 1, 'won' => 2, 'pending' => 3, 'lost' => 4);
 			$betTotalOdds = 1;
 			$betStatus = 0;
-			foreach ($betSelectionsList as $betSelectionData) {
-				$betSelection = \bets\BetSelection::get($betSelectionData['id']);
+			foreach ($betSelectionsList as $betSelection) {
 				$betStatus = max($betStatus, $selectionStatus[$betSelection->status]);
 
 				if ($betSelection->status == 'void') {
@@ -45,13 +43,12 @@ class BetValidator
 						$balance->update();
 					}
 				}
+
 				$seUserId = \bets\User::getSocialEngineUserId($pendingBet->iduser);
 				$notificationText = \bets\User::getSettledBetNotificationText($pendingBet);
 				\bets\SocialEngine::addActivityFeed($seUserId, $notificationText);
+				\bets\User::sendEmail($pendingBet->iduser, $notificationText);
 			}
 		}
 	}
 }
-
-$betValidator = new BetValidator();
-$betValidator->validateBets();
