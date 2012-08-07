@@ -112,13 +112,13 @@
 
 <script type="text/javascript">
 	(function () {
-		j('.slip_item').click(function (e) {
-			e.preventDefault();
+		j('.slip_item').live("click", function(evt){
+			evt.preventDefault();
 		});
 
-		j('.slip_item .box_action').click(function (e) {
-			e.preventDefault();
-			e.stopPropagation();
+		j('.slip_item .box_action').live("click", function(evt){
+			evt.preventDefault();
+			evt.stopPropagation();
 			var inp = j(this).find('input');
 			var c = inp.prop('checked');
 			setTimeout(function () {
@@ -146,8 +146,8 @@
 			return bets;
 		}
 
-		j('.slip_actions a').click(function (e) {
-			e.preventDefault();
+		j('.slip_actions a').live("click", function(evt){
+			evt.preventDefault();
 			var action = j(this);
 
 			if (action.hasClass('action_place_bet')) {
