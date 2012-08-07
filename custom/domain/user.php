@@ -75,7 +75,7 @@ class User extends DBRecord
 		$betSelections = $pendingBet->getSelections();
 		$isAccumulator = count($betSelections) > 1;
 		if (!$isAccumulator) {
-			$selection = \bets\Selection::get($betSelections[0]->id);
+			$selection = \bets\Selection::get($betSelections[0]->idselection);
 			$event = $selection->getEvent();
 			$replacements[5] = $event->getPath();
 			$replacements[6] = $event->name;
