@@ -49,7 +49,7 @@ class User extends DBRecord
 
 	public static function getSettledBetNotificationText($pendingBet)
 	{
-		$notificationText = file_get_contents(PATH_APP . "data\settled_bet_notification.tpl");
+		$notificationText = file_get_contents(PATH_APP . "data/settled_bet_notification.tpl");
 
 		$patterns = array();
 		$patterns[0] = '/{name}/';
