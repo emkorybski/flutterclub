@@ -6,6 +6,7 @@ require_once(dirname(__FILE__) . '/../config.php');
 require_once(PATH_LIB . 'bets.php');
 require_once(PATH_LIB . 'social_engine.php');
 require_once(PATH_DOMAIN . 'user.php');
+require_once(PATH_DOMAIN . 'user_balance.php');
 require_once(PATH_DOMAIN . 'bet.php');
 require_once(PATH_DOMAIN . 'bet_selection.php');
 
@@ -13,16 +14,14 @@ class BetValidator
 {
 	public function validateBets()
 	{
-		$pendingBetsList = \bets\bets::sql()->query("SELECT * FROM fc_bet WHERE status = 'pending'");
-		foreach ($pendingBetsList as $pendingBetData) {
-			$pendingBet = \bets\Bet::get($pendingBetData['id']);
-			$betSelectionsList = \bets\bets::sql()->query("SELECT * FROM fc_bet_selection WHERE idbet = " . $pendingBet->id);
+		$pendingBetsList = \bets\Bet::findWhere(array('status=' => 'pending'));
+		foreach ($pendingBetsList as $pendingBet) {
+			$betSelectionsList = \bets\BetSelection::findWhere(array('idbet=' => $pendingBet->id));
 
 			$selectionStatus = array('void' => 1, 'won' => 2, 'pending' => 3, 'lost' => 4);
 			$betTotalOdds = 1;
 			$betStatus = 0;
-			foreach ($betSelectionsList as $betSelectionData) {
-				$betSelection = \bets\BetSelection::get($betSelectionData['id']);
+			foreach ($betSelectionsList as $betSelection) {
 				$betStatus = max($betStatus, $selectionStatus[$betSelection->status]);
 
 				if ($betSelection->status == 'void') {
@@ -38,14 +37,19 @@ class BetValidator
 			$pendingBet->status = $betStatus;
 			$pendingBet->update();
 			if ($betStatus != 'pending') {
+				if ($betStatus == 'won') {
+					$balance = \bets\UserBalance::getWhere(array('idcompetition=' => $pendingBet->idcompetition, 'iduser=' => $pendingBet->iduser));
+					if ($balance) {
+						$balance->balance += $pendingBet->stake * $pendingBet->odds;
+						$balance->update();
+					}
+				}
+
 				$seUserId = \bets\User::getSocialEngineUserId($pendingBet->iduser);
-				$betInfo = $pendingBet->id . " ; " . $pendingBet->odds . " ; " . $pendingBet->stake . " ; " . $pendingBet->status;
-				echo $betInfo;
-				\bets\SocialEngine::addActivityFeed($seUserId, "Another bet settled: " . $betInfo);
+				$notificationText = \bets\User::getSettledBetNotificationText($pendingBet);
+				\bets\SocialEngine::addActivityFeed($seUserId, $notificationText);
+				\bets\User::sendEmail($pendingBet->iduser, $notificationText);
 			}
 		}
 	}
 }
-
-$betValidator = new BetValidator();
-$betValidator->validateBets();

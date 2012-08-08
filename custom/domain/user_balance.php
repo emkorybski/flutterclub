@@ -15,15 +15,15 @@ class UserBalance extends DBRecord
 
 	public static function getCurrentBalance()
 	{
-		$idCompetition = \bets\Competition::getCurrent()->id;
+		$competition = \bets\Competition::getCurrent();
 		$idUser = \bets\User::getCurrentUser()->id;
 
-		$balance = static::getWhere(array('idcompetition=' => $idCompetition, 'iduser=' => $idUser));
+		$balance = static::getWhere(array('idcompetition=' => $competition->id, 'iduser=' => $idUser));
 		if (!$balance) {
 			$balance = new UserBalance();
-			$balance->idcompetition = $idCompetition;
+			$balance->idcompetition = $competition->id;
 			$balance->iduser = $idUser;
-			$balance->balance = 10000;
+			$balance->balance = $competition->start_points;
 			$balance->insert();
 		}
 		return $balance;

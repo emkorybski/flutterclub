@@ -14,8 +14,8 @@ fc.user.updateAccountBalance = function (data) {
         data:{balance:1},
         dataType:'html',
         success:function (text) {
-            var content = j('.account_info_user_points', text);
-            j('.account_info_user_points').html(content);
+            var content = j('.account_info_user_points', accountInfo);
+            content.html(text);
         },
         complete:function () {
             accountInfo.css({
