@@ -67,7 +67,7 @@ foreach ( $this->selections as $selection) :
 ?>
 	<div class="selection_name"><?=$selection->name?></div>
 	<button <?=$disabled?> data-idselection="<?=$selection->id?>" class="submit_selection"><?=\bets\fc::formatOdds($selection->odds)?></button>
-	<a href="#" class="share_selection">Share</a>
+	<!-- <a href="#" class="share_selection">Share</a> -->
 	<div class="clear"></div>
 </a>
 <hr class="line"/>
