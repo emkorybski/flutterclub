@@ -151,9 +151,6 @@
 			var action = j(this);
 
 			if (action.hasClass('action_place_bet')) {
-				if (!confirm('Do you want to approve this betting slip for this competition?')) {
-					return;
-				}
 
 				var bets = getBets();
 				var accumulator = j('.fc_betting_slip .box_accumulator');
@@ -165,8 +162,21 @@
 					})
 				}
 
+				for (i=0; i<bets.length; i++)
+				{
+					if ((accStake && accStake > 500) || (bets[i].stake && bets[i].stake > 500))
+					{
+						alert('Maximum bet is FB$500!');
+						return;
+					}
+				}
+
 				if (bets.length <= 0) {
 					alert('Please insert stakes!');
+					return;
+				}
+
+				if (!confirm('Do you want to approve this betting slip for this competition?')) {
 					return;
 				}
 
