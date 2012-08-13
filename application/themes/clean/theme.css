@@ -2005,7 +2005,7 @@ div.group_discussions_list
   margin-bottom: 0px;
 }
 
-#inviter-importer-conteiner h3 {
-  background-color: transparent;
-  color: #555;
+.inviter-forms-conteiner h3 {
+  background-color: transparent !important;
+  color: #555 !important;
 }
