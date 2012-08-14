@@ -19,11 +19,19 @@ class Bet extends DBRecord
 		return \bets\BetSelection::findWhere(array('idbet=' => $this->id));
 	}
 	
+	public static function getUserBets($Id = null)
+	{
+		$cId = $Id ? $Id : \bets\User::getCurrentUser()->id;
+		return self::findWhere(array('iduser=' => $cId));
+	}
+	
+	
 	public static function getSuccessRate($uId = null){
 		$uI = $uId ? $uId : \bets\User::getCurrentUser()->id;
 		$uComp = \bets\Competition::getCurrent()->id;
 		$countAll = self::countWhere(array('iduser=' => $uI, 'idcompetition=' => $uComp));
 		$countWon = self::countWhere(array('iduser=' => $uI, 'idcompetition=' => $uComp, 'status=' => 'won'));
-		return $countWon.'/'.$countAll;
+		$countPending = self::countWhere(array('iduser=' => $uI, 'idcompetition=' => $uComp, 'status=' => 'pending'));
+		return $countWon.($countPending ? ' ('.$countPending.')' : '').'/'.$countAll;
 	}
 }

@@ -88,7 +88,7 @@ class User extends DBRecord
 
 		return preg_replace($patterns, $replacements, $notificationText);
 	}
-
+	
 	public static function sendEmail($fcUserId, $body)
 	{
 		$userData = \bets\User::getCurrentUserData($fcUserId);

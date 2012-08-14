@@ -19,4 +19,21 @@ class Selection extends DBRecord
 	{
 		return Event::get($this->idevent);
 	}
+	
+	public function getParent()
+	{
+		return Event::get($this->idevent)->getParent();
+	}
+	
+	public function topEvent()
+	{
+		return Event::get($this->idevent)->topEvent();
+		
+	}
+	
+	public function getPath()
+	{
+		return Event::get($this->idevent)->getPath();
+		
+	}
 }

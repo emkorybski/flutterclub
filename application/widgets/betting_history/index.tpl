@@ -30,6 +30,7 @@
 	</style>
 
 	<div class="betting_history">
+		
 		<?php
 		    //print_r($this->userSelections);
 		?>
@@ -39,6 +40,10 @@
 			<!-- DATE -->
 			<div class="betting_history_field_left">Date</div>
 			<div class="betting_history_field_right"><?=$sel->ts?></div>
+			<!-- SPORT -->
+			<div class="betting_history_field_left">Sport</div>
+			<div class="betting_history_field_right"><?=$sel->getSelection()->getEvent()->getSport()->name?></div>
+
 			<!-- CATEGORY -->
 			<div class="betting_history_field_left">Category</div>
 			<div class="betting_history_field_right"><?=$sel->getSelection()->getEvent()->topEvent()->name?></div>
@@ -47,13 +52,19 @@
 			<div class="betting_history_field_right"><?=$sel->getSelection()->getEvent()->name?></div>
 			<!-- BET -->
 			<div class="betting_history_field_left">Bet</div>
-			<div class="betting_history_field_right" title="<?=\bets\fc::formatOdds($sel->odds, 'decimal')?>"><?=$sel->getSelection()->name?> <?=\bets\fc::formatOdds($sel->odds)?></div>
+			<div class="betting_history_field_right" title="<?=\bets\fc::formatOdds($sel->odds, 'decimal')?>"><?=$sel->getSelection()->name?> (<?=\bets\fc::formatOdds($sel->odds)?>)</div>
 			<!-- STAKE -->
 			<div class="betting_history_field_left">Stake</div>
-			<div class="betting_history_field_right"><?=round($sel->bet_amount)?> points</div>
+			<div class="betting_history_field_right">FB$ <?=round($sel->stake)?></div>
+			<?php
+			if ($sel->betEarnings()){
+			?>
 			<!-- RESULT -->
 			<div class="betting_history_field_left">Result</div>
-			<div class="betting_history_field_right betting_history_<?=$sel->status?>"><?=$sel->status?></div>
+			<div class="betting_history_field_right betting_history_<?=$sel->betEarnings()?>"><?=$sel->betEarnings()?></div>
+			<?php
+			}
+			?>
 			<div class="clear"></div>
 			<br />
 		</div>

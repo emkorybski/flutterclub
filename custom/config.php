@@ -10,7 +10,7 @@ define('BETS_INITIALIZED', true);
 
 // DB configuration
 if (1 || (!isset($_SERVER['REMOTE_ADDR'])) || ($_SERVER['REMOTE_ADDR'] == '127.0.0.1')) {
-	define('BETS_DB_HOST', '127.0.0.1');
+	define('BETS_DB_HOST', 'localhost');
 	define('BETS_DB_USER', 'root');
 	define('BETS_DB_PASS', 'campofrio');
 	define('BETS_DB_NAME', 'fc');

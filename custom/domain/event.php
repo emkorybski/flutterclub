@@ -24,16 +24,17 @@ class Event extends DBRecord
 	public function getPath()
 	{
 		$path = '';
-
 		$event = $this;
 		while ($event->idparent) {
 			$event = static::get($event->idparent);
-			$path = " - " . $event->name . $path;
+			$path = " > " . $event->name . $path;
 		}
 		$path = $this->getSport()->name . $path;
 
 		return $path;
 	}
+	
+		
 
 	public function getSubEvents()
 	{
@@ -61,7 +62,6 @@ class Event extends DBRecord
 		while ($event->idparent) {
 			$event = static::get($event->idparent);
 		}
-
 		return $event;
 	}
 }

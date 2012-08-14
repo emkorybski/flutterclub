@@ -8,7 +8,7 @@ require_once(PATH_DOMAIN . 'selection.php');
 
 class UserSelection extends DBRecord
 {
-	protected static $_table = 'fc_user_selection';
+	protected static $_table = 'fc_bet';
 
 	public function insert()
 	{
@@ -22,6 +22,10 @@ class UserSelection extends DBRecord
 
 	public function getSelection()
 	{
-		return Selection::get($this->idselection);
+		return Selection::get($this->id);
+	}
+	
+	public function betEarnings(){
+		return $this->status == 'won' ? 'WON: FS$ '.$this->stake * ($this->odds - 1) : ($this->status == 'lost' ? 'LOST' : '');
 	}
 }

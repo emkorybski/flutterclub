@@ -149,8 +149,8 @@
 				<div class="clear"></div>
 			</div>
 		
-	<?php } 
-} ?>
+	<?php } }
+ ?>
 	<div class="clear"></div>
 </div>	
 <?php if (empty($_REQUEST['format']) || ($_REQUEST['format'] != 'html')) { ?>
