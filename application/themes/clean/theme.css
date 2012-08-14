@@ -2009,3 +2009,32 @@ div.group_discussions_list
   background-color: transparent !important;
   color: #555 !important;
 }
+
+/* User profile */
+
+.layout_page_user_profile_index .layout_activity_feed {
+    padding-top: 1px;
+    -webkit-border-top-left-radius: 0px;
+    -webkit-border-top-right-radius: 0px;
+    -moz-border-radius-topleft: 0px;
+    -moz-border-radius-topright: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.layout_page_user_profile_index .layout_group_profile_groups,
+.layout_page_user_profile_index .layout_video_profile_videos,
+.layout_page_user_profile_index .layout_user_profile_friends,
+.layout_page_user_profile_index .layout_user_profile_fields,
+.layout_page_user_profile_index .layout_core_profile_links {
+    padding: 10px;
+    background-color: #fff;
+}
+
+.layout_page_user_profile_index .layout_user_profile_fields {
+    padding-top: 1px;
+}
+
+.layout_page_user_profile_index .profile_fields > ul > li > span + span {
+    width: auto;
+}
