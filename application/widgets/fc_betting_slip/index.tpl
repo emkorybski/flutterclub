@@ -44,7 +44,7 @@
 		width: 30%;
 	}
 	.slip_item .box_bet_stake input {
-		width: 90%;
+		width: 50%;
 	}
 	.slip_item .box_action {
 		width: 10%;
@@ -80,7 +80,7 @@
 		<div class="box box_odds"
 			 title="<?=\bets\fc::formatOdds($sel->odds, 'decimal')?>"><?=\bets\fc::formatOdds($sel->odds)?>
 		</div>
-		<div class="box box_bet_stake"><input type="text" data-userselectionid="<?=$userSel->id?>"/></div>
+		<div class="box box_bet_stake">FC$ <input type="text" data-userselectionid="<?=$userSel->id?>"/></div>
 		<div class="box box_action" title="Select several bets and an choose action from below"><input type="checkbox"
 																									   value="<?=$userSel->id?>"/>
 		</div>
