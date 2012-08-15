@@ -2065,3 +2065,31 @@ div.group_discussions_list
 .layout_page_user_profile_index .profile_fields > ul > li > span + span {
     width: auto;
 }
+
+/* Groups */
+
+.groups_browse {
+    background-color: $theme_foreground_background_color;
+    padding: 10px;
+}
+
+.groups_browse h3 {
+    background-color: $theme_foreground_background_color;
+    padding: 0px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.groups_browse h3 a:link, .groups_browse h3 a:visited {
+    color: #4e81a1;
+    font-family: tahoma, arial, verdana, sans-serif;
+    word-spacing: 0em;
+}
+
+#global_page_group-index-browse form.filters, #global_page_group-index-manage form.filters {
+    background-color: $theme_foreground_background_color;
+}
+
+#global_page_group-index-create .global_form, #global_page_group-index-create .global_form h3 {
+    background-color: $theme_foreground_background_color;
+}
