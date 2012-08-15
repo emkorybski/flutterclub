@@ -2005,9 +2005,36 @@ div.group_discussions_list
   margin-bottom: 0px;
 }
 
+/* Friends Inviter */
+
+.inviter-forms-conteiner {
+    background-color: $theme_foreground_background_color;
+}
+
 .inviter-forms-conteiner h3 {
   background-color: transparent !important;
   color: #555 !important;
+}
+
+#global_page_inviter-invitations-index .my_invitations {
+    background-color: $theme_foreground_background_color;
+    padding: 10px;
+}
+
+#global_page_inviter-invitations-index .my_invitations h3 {
+    background-color: $theme_foreground_background_color;
+}
+
+#global_page_inviter-referrals-index h3,
+#global_page_inviter-referrals-index p,
+#global_page_inviter-referrals-index .inviter-search,
+#global_page_inviter-referrals-index .layout_middle {
+    margin-left: 10px;
+}
+
+#global_page_inviter-referrals-index #global_content,
+#global_page_inviter-referrals-index h3 {
+    background-color: $theme_foreground_background_color;
 }
 
 /* User profile */
@@ -2028,7 +2055,7 @@ div.group_discussions_list
 .layout_page_user_profile_index .layout_user_profile_fields,
 .layout_page_user_profile_index .layout_core_profile_links {
     padding: 10px;
-    background-color: #fff;
+    background-color: $theme_foreground_background_color;
 }
 
 .layout_page_user_profile_index .layout_user_profile_fields {
