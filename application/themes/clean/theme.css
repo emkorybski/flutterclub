@@ -2074,16 +2074,17 @@ div.group_discussions_list
 }
 
 .groups_browse h3 {
-    background-color: $theme_foreground_background_color;
-    padding: 0px;
-    font-weight: bold;
-    font-size: 13px;
+    background-color: $theme_foreground_background_color !important;
+    padding: 0px !important;
+    font-weight: bold !important;
+    font-size: 13px !important;
 }
 
-.groups_browse h3 a:link, .groups_browse h3 a:visited {
-    color: #4e81a1;
-    font-family: tahoma, arial, verdana, sans-serif;
-    word-spacing: 0em;
+.groups_browse h3 a:link,
+.groups_browse h3 a:visited {
+    color: #4e81a1 !important;
+    font-family: tahoma, arial, verdana, sans-serif !important;
+    word-spacing: 0em !important;
 }
 
 #global_page_group-index-browse form.filters, #global_page_group-index-manage form.filters {
