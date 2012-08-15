@@ -2093,3 +2093,15 @@ div.group_discussions_list
 #global_page_group-index-create .global_form, #global_page_group-index-create .global_form h3 {
     background-color: $theme_foreground_background_color;
 }
+
+/* Contact Us */
+
+#global_page_core-help-contact .global_form > div {
+    background-color: $theme_foreground_background_color;
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
