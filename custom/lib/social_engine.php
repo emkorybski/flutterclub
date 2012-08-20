@@ -11,7 +11,7 @@ class SocialEngine
 	{
 		// engine4_activity_actions
 		$query = "INSERT INTO `engine4_activity_actions` (`type`, `subject_type`, `subject_id`, `object_type`, `object_id`, `body`, `params`, `date`, `attachment_count`, `comment_count`, `like_count`) VALUES " .
-			"('status', 'user', $userId, 'user', $userId, '$message', '[]', NOW(), 0, 0, 0)";
+			"('status', 'user', $userId, 'user', $userId, '$message', '[]', UTC_TIMESTAMP(), 0, 0, 0)";
 		bets::sql()->run($query);
 
 		$actionId = bets::sql()->insertId();
