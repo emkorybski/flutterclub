@@ -74,22 +74,14 @@ class Widget_FC_Betting_CategoriesController extends \Engine_Content_Widget_Abst
 	{
 		$result = array();
 
-		bets\bets::sql()->multiQuery("call fc_get_active_events($idSport, $idParent, '$tsStart', '$tsStop')");
-
-		$activeEvents = bets\bets::sql()->getResult();
+		$activeEvents = bets\Event::findWhere(array('idsport=' => $idSport, 'idparent=' => $idParent, 'ts>' => $tsStart, 'ts<' => $tsStop), "ORDER BY name, id");
 		foreach ($activeEvents as $event) {
 			$category = array(
-				'idsport' => $event['idsport'],
-				'idevent' => $event['id'],
-				'name' => $event['name']);
+				'idsport' => $event->idsport,
+				'idevent' => $event->id,
+				'name' => $event->name);
 
 			$result[] = $category;
-		}
-
-		while (bets\bets::sql()->moreResults())
-		{
-			$activeEvents = bets\bets::sql()->getResult();
-			bets\bets::sql()->nextResult();
 		}
 
 		return $result;

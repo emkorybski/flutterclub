@@ -11,19 +11,26 @@ require_once(PATH_DOMAIN . 'selection.php');
 
 class BetfairImportManager
 {
+	private static $logEnabled = false;
+
 	public $soapClient;
 	public $sessionToken;
 
 	public function __construct()
 	{
-		//file_put_contents('betfair_import_manager.log', "Betfair Import Manager" . "\r\n");
+		if (self::$logEnabled) {
+			file_put_contents('betfair_import_manager.log', "Betfair Import Manager" . "\r\n");
+		}
+
 		$this->soapClient = new \SoapClient("https://api.betfair.com/global/v3/BFGlobalService.wsdl");
 		$this->login();
 	}
 
 	private static function log($message)
 	{
-		//file_put_contents('betfair_import_manager.log', $message . "\r\n", FILE_APPEND | LOCK_EX);
+		if (self::$logEnabled) {
+			file_put_contents('betfair_import_manager.log', $message . "\r\n", FILE_APPEND | LOCK_EX);
+		}
 	}
 
 	public function login()
@@ -146,7 +153,7 @@ class BetfairImportManager
 		foreach ($bfEvents as $bfEvent) {
 			$attributes = $bfEvent->attributes();
 			$eventName = trim($attributes['name']);
-			//$eventDate = date('Y-m-d 00:00:00', \DateTime::createFromFormat('d/m/Y', $attributes['date'])->getTimestamp());
+			$eventDate = date('Y-m-d 00:00:00', \DateTime::createFromFormat('d/m/Y', $attributes['date'])->getTimestamp());
 
 			self::log($eventName);
 			$eventsList = explode('/', $eventName);
@@ -177,6 +184,18 @@ class BetfairImportManager
 		}
 	}
 
+	private function updateParentEventsDate($event, $eventDate)
+	{
+		$evt = $event;
+		while ($evt->idparent) {
+			$evt = \bets\Event::get($evt->idparent);
+			if (!$evt->ts || $evt->ts < $eventDate) {
+				$evt->ts = $eventDate;
+				$evt->update();
+			}
+		}
+	}
+
 	private function parseSubEvents($event, $bfSubEvents)
 	{
 		foreach ($bfSubEvents as $bfSubEvent) {
@@ -199,6 +218,14 @@ class BetfairImportManager
 				$subEvent->idsport = $event->idsport;
 				$subEvent->idparent = $event->id;
 				$subEvent->insert();
+
+				$this->updateParentEventsDate($subEvent, $subEventDate);
+			} else {
+				$subEvent->name = $subEventName;
+				$subEvent->ts = $subEventDate;
+				$subEvent->update();
+
+				$this->updateParentEventsDate($subEvent, $subEventDate);
 			}
 
 			if (count($bfSubEvent->selection) > 0) {
@@ -245,4 +272,3 @@ class BetfairImportManager
 $bfImportManager = new BetfairImportManager();
 $bfImportManager->importSportsAndEvents();
 $bfImportManager->importEventsAndSelections('http://www.betfair.com/partner/marketdata_xml3.asp');
-echo "DONE!";
