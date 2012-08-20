@@ -16,7 +16,11 @@ class Widget_FC_Betting_MarketsController extends Engine_Content_Widget_Abstract
 			$this->submitSelection((int)$_REQUEST['idselection']);
 		} else {
 			$idEvent = (int)$_REQUEST['idevent'];
+			$event = \bets\Event::get($idEvent);
+			$parentEvent = \bets\Event::get($event->idparent);
 
+			$this->view->event = $event;
+			$this->view->parentEvent = $parentEvent;
 			$this->view->selections = bets\Selection::findWhere(array('idevent=' => $idEvent), 'ORDER BY odds ASC');
 			$this->view->user = bets\User::getCurrentUser();
 		}

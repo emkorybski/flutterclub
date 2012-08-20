@@ -23,21 +23,17 @@
 	.fc_selection:hover {
 		background-color: #e5e5e5;
 	}
-
-	/* Added 20/07 after selection update */
 	.fc_betting_markets .selection_name {
 		float: left;
 		width: 40%;
 		margin-left: 10px;
 		margin-top: 10px;
 	}
-
 	.fc_betting_markets button {
 		float: right;
 		margin: 4px;
 		width: 80px;
 	}
-
 	.fc_betting_markets button[disabled] {
 		background-color: #eee;
 		border-color: #aaa;
@@ -45,19 +41,21 @@
 		text-shadow: none;
 		cursor: inherit;
 	}
-
 	.share_selection {
 		float: right;
 		margin-top: 10px;
 		margin-right: 10px;
 	}
-
-	/* --- */
-
 </style>
 
 <div class="fc_betting_markets">
 <?php
+if (count($this->selections) > 0) :
+?>
+	<h1 class="market_title"><?=$this->parentEvent->name?></h1>
+	<h2 class="market_type"><?=$this->event->name?></h2>
+<?php
+endif;
 foreach ( $this->selections as $selection) :
 	$userSelection = bets\UserSelection::getWhere(array('idselection=' => $selection->id, 'iduser=' => $this->user->id));
 	$disabled = "";
