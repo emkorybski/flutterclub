@@ -76,7 +76,7 @@
 			<span class="account_info_user_points">FB$ <?=$this->userBalance->balance?></span>
 		</div>
 		<div class="account_info_left aim3">Competition ends:</div>
-		<div class="account_info_right aim4">9 days 7 hrs</div>
+		<div class="account_info_right aim4"><?=$this->competitionCountdown?></div>
 		<div class="clear"></div>
 	</div>
 </div>
