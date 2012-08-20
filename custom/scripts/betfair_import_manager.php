@@ -22,7 +22,7 @@ class BetfairImportManager
 			file_put_contents('betfair_import_manager.log', "Betfair Import Manager" . "\r\n");
 		}
 
-		$this->soapClient = new \SoapClient("https://api.betfair.com/global/v3/BFGlobalService.wsdl");
+		$this->soapClient = new \SoapClient("http://ec2-46-51-160-231.eu-west-1.compute.amazonaws.com:8002/global/v3/BFGlobalService.wsdl");
 		$this->login();
 	}
 
@@ -220,13 +220,14 @@ class BetfairImportManager
 				$subEvent->insert();
 
 				$this->updateParentEventsDate($subEvent, $subEventDate);
-			} else {
-				$subEvent->name = $subEventName;
-				$subEvent->ts = $subEventDate;
-				$subEvent->update();
-
-				$this->updateParentEventsDate($subEvent, $subEventDate);
 			}
+//			else {
+//				$subEvent->name = $subEventName;
+//				$subEvent->ts = $subEventDate;
+//				$subEvent->update();
+//
+//				$this->updateParentEventsDate($subEvent, $subEventDate);
+//			}
 
 			if (count($bfSubEvent->selection) > 0) {
 				$this->parseSelections($subEvent, $bfSubEvent->selection);
