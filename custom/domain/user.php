@@ -42,9 +42,29 @@ class User extends DBRecord
 	 **/
 	public static function getCurrentUserData($uId = null)
 	{
-		$uId = $uId ? $uId : self::getCurrentUser()->id;
+		$uId = $uId ? $uId : self::getCurrentUser()->id_engine4_users;
 		$data = \bets\bets::sql()->query("SELECT * FROM engine4_users WHERE user_id = '$uId'");
 		return $data[0];
+	}
+	
+	/* Name: getAdminUsers
+	 * Params: $cId (competition ID)
+	 * Author: Robert Asproniu
+	 * return admin users into array from table engine4_users
+	 * In Progress
+	 **/
+	public static function getAdminUsers($cId = null){
+		$iC = $cId ? $cId : \bets\Competition::getCurrent()->id;
+		$result = \bets\Bet::findWhere(array('idcompetition=' => $iC));
+		
+		foreach ($result as $data){
+			$u_4e = self::getSocialEngineUserId($data->iduser);
+			$user = self::getCurrentUserData($u_4e->id_engine4_users);
+			$u = (object) $user;
+			if ($u->level_id <> 4)
+				$array[] = $data->iduser;
+		}
+		return $array;
 	}
 
 	public static function getSettledBetNotificationText($pendingBet)

@@ -28,12 +28,6 @@ class Selection extends DBRecord
 	public function topEvent()
 	{
 		return Event::get($this->idevent)->topEvent();
-		
 	}
-	
-	public function getPath()
-	{
-		return Event::get($this->idevent)->getPath();
-		
-	}
+
 }

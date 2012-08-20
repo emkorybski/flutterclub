@@ -14,17 +14,14 @@ class Bet extends DBRecord
 		call_user_func_array('parent::insert', func_get_args());
 	}
 
-	public function getSelections()
+	public function getSelections($Id = null)
 	{
-		return \bets\BetSelection::findWhere(array('idbet=' => $this->id));
+		return \bets\BetSelection::findWhere(array('idbet=' => $Id ? $Id : $this->id));
 	}
 	
-	public static function getUserBets($Id = null)
-	{
-		$cId = $Id ? $Id : \bets\User::getCurrentUser()->id;
-		return self::findWhere(array('iduser=' => $cId));
+	public function getEarnings(){
+		return $this->status == 'won' ? $this->stake * ($this->odds - 1) : '';
 	}
-	
 	
 	public static function getSuccessRate($uId = null){
 		$uI = $uId ? $uId : \bets\User::getCurrentUser()->id;

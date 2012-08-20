@@ -24,8 +24,4 @@ class UserSelection extends DBRecord
 	{
 		return Selection::get($this->idselection);
 	}
-	
-	public function betEarnings(){
-		return $this->status == 'won' ? 'WON: FS$ '.$this->stake * ($this->odds - 1) : ($this->status == 'lost' ? 'LOST' : '');
-	}
 }
