@@ -6,6 +6,15 @@
 	.fc_betting_markets {
 		background-color: #ffffff;
 	}
+	.fc_betting_markets .market_title {
+		margin-left: 10px;
+		padding-top: 5px;
+		font-family: fc_pts;
+	}
+	.fc_betting_markets .market_type {
+		margin-left: 10px;
+		font-family: fc_pts;
+	}
 	.fc_selection {
 		display: block;
 		font-family: fc_pts;
