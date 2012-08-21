@@ -2127,7 +2127,7 @@ div.group_discussions_list
     margin-bottom: 10px;
 }
 
-#global_page_core-pages-game-rules ul {
+#global_page_core-pages-game-rules .generic_layout_container ul {
     list-style-position: inside;
     list-style-type: disc;
     margin-bottom: 10px
