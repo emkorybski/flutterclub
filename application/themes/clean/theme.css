@@ -2132,3 +2132,9 @@ div.group_discussions_list
     list-style-type: disc;
     margin-bottom: 10px
 }
+
+/* Leaderboard */
+
+.fc_competition_leaderboard {
+  background-color: $theme_foreground_background_color;
+}

@@ -1,5 +1,7 @@
 ﻿<style type="text/css">
-/* styles go in here */
+.fc_competition_leaderboard td {
+	vertical-align: bottom;
+}
 </style>
 
 <div class="fc_competition_leaderboard">
