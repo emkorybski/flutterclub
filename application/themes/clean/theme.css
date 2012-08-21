@@ -1460,8 +1460,8 @@ html[dir="rtl"] .tabs_alt > ul > li > a span
   float: none;
 }
 .tab_pulldown_contents li {
-    border: none;
-    float: none;
+    border: none !important;
+    float: none !important;
 }
 .tab_pulldown_contents > ul > li.active
 {
@@ -1473,7 +1473,7 @@ html[dir="rtl"] .tabs_alt > ul > li > a span
 }
 .tab_pulldown_contents > ul > li:hover
 {
-  background-color: $theme_pulldown_contents_list_background_color_hover;
+  background-color: #CD4849;
   cursor: pointer;
 }
 .tabs_alt > ul > li.tab_open .tab_pulldown_contents_wrapper
