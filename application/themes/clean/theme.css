@@ -2109,25 +2109,25 @@ div.group_discussions_list
 
 /* Game Rules */
 
-#global_page_core-pages-game-rules dl {
+.game_rules dl {
     margin-bottom: 10px;
 }
 
-#global_page_core-pages-game-rules dt {
+.game_rules dt {
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-#global_page_core-pages-game-rules dd {
+.game_rules dd {
     margin-bottom: 10px;
     margin-left: 20px;
 }
 
-#global_page_core-pages-game-rules p {
+.game_rules p {
     margin-bottom: 10px;
 }
 
-#global_page_core-pages-game-rules .generic_layout_container ul {
+.game_rules ul {
     list-style-position: inside;
     list-style-type: disc;
     margin-bottom: 10px
