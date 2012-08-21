@@ -6,9 +6,9 @@
 	<?php
 if ( count($this->leaderboardUsers) ) :
 	?>
-	<table style="border-collapse: separate;" cellspacing="15">
+	<table>
 		<tr>
-			<th>Rank</th>
+			<th></th>
 			<th>User</th>
 			<th>Profit</th>
 			<th>Success Rate</th>
@@ -19,7 +19,7 @@ if ( count($this->leaderboardUsers) ) :
 		?>
 		<tr>
 			<td><?=$user['position']?></td>
-			<td>
+			<td class="leaderboard_username">
 				<?=$this->htmlLink($seUser->getHref(), $this->itemPhoto($seUser, 'thumb.icon'))?>
 				<?=$this->htmlLink($seUser->getHref(), $seUser->getTitle())?>
 			</td>
