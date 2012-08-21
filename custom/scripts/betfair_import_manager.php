@@ -220,13 +220,14 @@ class BetfairImportManager
 				$subEvent->insert();
 
 				$this->updateParentEventsDate($subEvent, $subEventDate);
-			} else {
-				$subEvent->name = $subEventName;
-				$subEvent->ts = $subEventDate;
-				$subEvent->update();
-
-				$this->updateParentEventsDate($subEvent, $subEventDate);
 			}
+//			else {
+//				$subEvent->name = $subEventName;
+//				$subEvent->ts = $subEventDate;
+//				$subEvent->update();
+//
+//				$this->updateParentEventsDate($subEvent, $subEventDate);
+//			}
 
 			if (count($bfSubEvent->selection) > 0) {
 				$this->parseSelections($subEvent, $bfSubEvent->selection);

@@ -71,6 +71,9 @@ if (count($this->selections) > 0) :
 ?>
 	<h1 class="market_title"><?=$this->parentEvent->name?></h1>
 	<h2 class="market_type"><?=$this->event->name?></h2>
+	<div class="market_header"">
+		<span class="market_odds">Odds</span>
+	</div>
 <?php
 endif;
 foreach ( $this->selections as $selection) :
