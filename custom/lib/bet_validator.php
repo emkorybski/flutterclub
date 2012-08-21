@@ -46,8 +46,14 @@ class BetValidator
 				}
 
 				$seUserId = \bets\User::getSocialEngineUserId($pendingBet->iduser);
+				$seUser = \Engine_Api::_()->user()->getUser($seUserId);
 				$notificationText = \bets\User::getSettledBetNotificationText($pendingBet);
-				\bets\SocialEngine::addActivityFeed($seUserId, $notificationText);
+
+				// Add activity
+				\Engine_Api::_()->getDbtable('actions', 'activity')->addActivity($seUser, $seUser, 'status', $notificationText);
+				//$seUser->status()->setStatus($notificationText);
+
+				// Send email
 				\bets\User::sendEmail($pendingBet->iduser, $notificationText);
 			}
 		}
