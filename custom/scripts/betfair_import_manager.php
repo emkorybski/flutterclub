@@ -203,6 +203,7 @@ class BetfairImportManager
 			$subEventName = trim($attributes['title']);
 			$subEventDate = date('Y-m-d H:i:00', \DateTime::createFromFormat('d/m/Y H:i', "{$attributes['date']} {$attributes['time']}")->getTimestamp());
 			$subEventBetfairMarketId = $attributes['id'];
+			$subEventTotalAmountMatched = $attributes['TotalAmountMatched'];
 
 			self::log("   * " . $subEventName);
 
@@ -214,7 +215,7 @@ class BetfairImportManager
 
 			$subEvent = \bets\Event::getWhere(array('betfairMarketId=' => $subEventBetfairMarketId));
 			if (!$subEvent) {
-				$subEvent = new \bets\Event(null, array('name' => $subEventName, 'ts' => $subEventDate, 'betfairMarketId' => $subEventBetfairMarketId));
+				$subEvent = new \bets\Event(null, array('name' => $subEventName, 'ts' => $subEventDate, 'betfairMarketId' => $subEventBetfairMarketId, 'betfairAmountMatched' => $subEventTotalAmountMatched));
 				$subEvent->idsport = $event->idsport;
 				$subEvent->idparent = $event->id;
 				$subEvent->insert();
@@ -272,4 +273,4 @@ class BetfairImportManager
 
 $bfImportManager = new BetfairImportManager();
 $bfImportManager->importSportsAndEvents();
-$bfImportManager->importEventsAndSelections('http://www.betfair.com/partner/marketdata_xml3.asp');
+$bfImportManager->importEventsAndSelections("http://www.betfair.com/partner/marketdata_xml3.asp");
