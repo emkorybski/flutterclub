@@ -4,6 +4,13 @@ namespace bets;
 
 class fc
 {
+	public static function percentage($num, $den)
+	{
+		$percent1 = $num / $den;
+		$percent2 = $percent1 * 100;
+		return number_format($percent2, 2, '.', ' ') . '%';
+	}
+
 	private static $oddsFormat = 'fractional';
 
 	public static function formatOdds($dec, $oddsFormat)
