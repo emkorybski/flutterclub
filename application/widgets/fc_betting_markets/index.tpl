@@ -15,6 +15,14 @@
 		margin-left: 10px;
 		font-family: fc_pts;
 	}
+	.fc_betting_markets .market_header {
+		font-size: 15px;
+		line-height: 25px;
+		font-weight: bold;
+	}
+	.fc_betting_markets .market_header .market_odds {
+		margin-left: 466px;
+	}
 	.fc_selection {
 		display: block;
 		font-family: fc_pts;
