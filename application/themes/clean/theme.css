@@ -1459,6 +1459,10 @@ html[dir="rtl"] .tabs_alt > ul > li > a span
   border: none;
   float: none;
 }
+.tab_pulldown_contents li {
+    border: none;
+    float: none;
+}
 .tab_pulldown_contents > ul > li.active
 {
   background-color: #822E2C;
