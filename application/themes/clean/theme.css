@@ -2137,4 +2137,5 @@ div.group_discussions_list
 
 .fc_competition_leaderboard {
   background-color: $theme_foreground_background_color;
+  padding: 10px;
 }
