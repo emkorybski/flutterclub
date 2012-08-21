@@ -1421,8 +1421,7 @@ html[dir="rtl"] .tabs_alt > ul > li > a span
 .tabs_alt > ul > li.tab_open > a
 {
   +rounded(3px, false, false, true, true);
-  border: 1px solid $theme_pulldown_border_color;
-  border-bottom: none;
+  border: none;
   background-color: $theme_pulldown_background_color_active;
   color: $theme_pulldown_font_color_active;
   position: relative;
@@ -1450,15 +1449,23 @@ html[dir="rtl"] .tabs_alt > ul > li > a span
 .tab_pulldown_contents > ul > li
 {
   padding: 5px;
-  font-size: .8em;
   min-width: 100px;
   max-width: 250px;
   -moz-user-select: none;
   -webkit-user-select: none;
+  color: white;
+  background-color: #822E2C;
+  font-family: fc_bebas;
+  border: none;
+  float: none;
+}
+.tab_pulldown_contents li {
+    border: none !important;
+    float: none !important;
 }
 .tab_pulldown_contents > ul > li.active
 {
-  background-color: $theme_pulldown_contents_list_background_color_active;
+  background-color: #822E2C;
 }
 .tab_pulldown_contents > ul > li + li
 {
@@ -1466,14 +1473,15 @@ html[dir="rtl"] .tabs_alt > ul > li > a span
 }
 .tab_pulldown_contents > ul > li:hover
 {
-  background-color: $theme_pulldown_contents_list_background_color_hover;
+  background-color: #CD4849;
   cursor: pointer;
 }
 .tabs_alt > ul > li.tab_open .tab_pulldown_contents_wrapper
 {
   display: block;
+  background-color: #822E2C;
+  margin-top: 28px;
 }
-
 
 
 /*
@@ -2105,4 +2113,37 @@ div.group_discussions_list
     -moz-border-radius-topright: 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+}
+
+/* Game Rules */
+
+.game_rules dl {
+    margin-bottom: 10px;
+}
+
+.game_rules dt {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.game_rules dd {
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.game_rules p {
+    margin-bottom: 10px;
+}
+
+.game_rules ul {
+    list-style-position: inside;
+    list-style-type: disc;
+    margin-bottom: 10px
+}
+
+/* Leaderboard */
+
+.fc_competition_leaderboard {
+  background-color: $theme_foreground_background_color;
+  padding: 10px;
 }
