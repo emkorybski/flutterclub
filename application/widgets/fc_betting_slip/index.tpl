@@ -80,7 +80,7 @@
 		<div class="box box_odds"
 			 title="<?=\bets\fc::formatOdds($sel->odds, 'decimal')?>"><?=\bets\fc::formatOdds($sel->odds)?>
 		</div>
-		<div class="box box_bet_stake">FC$ <input type="text" data-userselectionid="<?=$userSel->id?>"/></div>
+		<div class="box box_bet_stake">FB$ <input type="text" data-userselectionid="<?=$userSel->id?>"/></div>
 		<div class="box box_action" title="Select several bets and an choose action from below"><input type="checkbox"
 																									   value="<?=$userSel->id?>"/>
 		</div>

@@ -14,9 +14,9 @@ class Bet extends DBRecord
 		call_user_func_array('parent::insert', func_get_args());
 	}
 
-	public function getSelections($Id = null)
+	public function getSelections()
 	{
-		return \bets\BetSelection::findWhere(array('idbet=' => $Id ? $Id : $this->id));
+		return BetSelection::findWhere(array('idbet=' => $this->id), "ORDER BY name ASC");
 	}
 	
 	public function getEarnings(){

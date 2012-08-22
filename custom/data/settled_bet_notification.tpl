@@ -1,8 +1,8 @@
-{name} just {status} FC$ {earnings}!
+{name} just {status} FB$ {earnings}!
 
 Category  {category}
 Event     {event}
 Bet       {selection}
 Odds      {odds}
-Stake     FC$ {stake}
+Stake     FB$ {stake}
 Status    {status}

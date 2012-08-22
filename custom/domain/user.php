@@ -13,6 +13,7 @@ require_once(PATH_DOMAIN . 'selection.php');
 class User extends DBRecord
 {
 	protected static $_table = 'fc_user';
+	private $currentCompetitionId;
 
 	public static function getCurrentUser()
 	{
@@ -26,13 +27,34 @@ class User extends DBRecord
 			$currentUser->points = 0;
 			$currentUser->insert();
 		}
+		$currentUser->currentCompetitionId = Competition::getCurrentId();
 		return $currentUser;
 	}
 
 	public static function getSocialEngineUserId($fcUserId)
 	{
-		$user = \bets\User::get($fcUserId);
+		$user = User::get($fcUserId);
 		return $user->id_engine4_users;
+	}
+
+	public function getUserSelections()
+	{
+		return UserSelection::findWhere(array('idcompetition=' => $this->currentCompetitionId, 'iduser=' => $this->id));
+	}
+
+	public function getPendingBets()
+	{
+		return Bet::findWhere(array('idcompetition=' => $this->currentCompetitionId, 'iduser=' => $this->id, 'status=' => 'pending'), "ORDER BY ts DESC");
+	}
+
+	public function getSettledBets()
+	{
+		return Bet::findWhere(array('idcompetition=' => $this->currentCompetitionId, 'iduser=' => $this->id, 'status != ' => 'pending'), "ORDER BY ts DESC");
+	}
+
+	public function getBettingHistory()
+	{
+		return Bet::findWhere(array('idcompetition=' => $this->currentCompetitionId, 'iduser=' => $this->id), "ORDER BY ts DESC");
 	}
 
 	/* Name: getCurrentUserData
@@ -46,21 +68,22 @@ class User extends DBRecord
 		$data = \bets\bets::sql()->query("SELECT * FROM engine4_users WHERE user_id = '$uId'");
 		return $data[0];
 	}
-	
+
 	/* Name: getAdminUsers
-	 * Params: $cId (competition ID)
-	 * Author: Robert Asproniu
-	 * return admin users into array from table engine4_users
-	 * In Progress
-	 **/
-	public static function getAdminUsers($cId = null){
+		 * Params: $cId (competition ID)
+		 * Author: Robert Asproniu
+		 * return admin users into array from table engine4_users
+		 * In Progress
+		 **/
+	public static function getAdminUsers($cId = null)
+	{
 		$iC = $cId ? $cId : \bets\Competition::getCurrent()->id;
 		$result = \bets\Bet::findWhere(array('idcompetition=' => $iC));
-		
-		foreach ($result as $data){
+
+		foreach ($result as $data) {
 			$u_4e = self::getSocialEngineUserId($data->iduser);
 			$user = self::getCurrentUserData($u_4e->id_engine4_users);
-			$u = (object) $user;
+			$u = (object)$user;
 			if ($u->level_id <> 4)
 				$array[] = $data->iduser;
 		}
@@ -108,7 +131,7 @@ class User extends DBRecord
 
 		return preg_replace($patterns, $replacements, $notificationText);
 	}
-	
+
 	public static function sendEmail($fcUserId, $body)
 	{
 		$userData = \bets\User::getCurrentUserData($fcUserId);
@@ -123,20 +146,5 @@ class User extends DBRecord
 		$mail->addTo($userData['email']);
 
 		$mailApi->send($mail);
-	}
-
-	public function getUserSelections()
-	{
-		return \bets\UserSelection::findWhere(array('iduser=' => $this->id));
-	}
-
-	public function getPendingBets()
-	{
-		return Bet::findWhere(array('iduser=' => $this->id, 'status=' => 'pending'));
-	}
-
-	public function getRecentBets()
-	{
-		return Bet::findWhere(array('iduser=' => $this->id, 'status!=' => 'pending'));
 	}
 }
