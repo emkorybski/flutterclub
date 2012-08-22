@@ -1,19 +1,49 @@
 <style type="text/css">
-/* add styling in here */
+	.profile_betting_history {
+		background-color: #fff;
+		padding: 10px;
+	}
+
+	.profile_betting_history ul li {
+		margin-bottom: 10px;
+	}
+
+	.profile_betting_history ul li + li {
+		border-top: 1px solid #eaeaea;
+		padding-top: 10px;
+	}
+
+	.profile_betting_history .bet_info {
+		font-weight: bold;
+		margin-bottom: 10px;
+	}
+
+	.profile_betting_history .bet_info span + span {
+		margin-left: 10px;
+	}
+
+	.profile_betting_history .bet_info .bet_stake:before {
+		content: 'FB$ ';
+	}
+
+	.profile_betting_history .bet_info .bet_status, .profile_betting_history .selection_status {
+		text-transform: capitalize;
+	}
+
+	.profile_betting_history table {
+		margin-left: 20px;
+	}
+
+	.profile_betting_history table td:first-child {
+		font-weight: bold;
+		padding-right: 20px;
+	}
 </style>
 
 <div class="profile_betting_history">
 <?php
 if ( count($this->bettingHistory) > 0 ) :
 ?>
-	<!--
-	<div class="bet_info">
-		<span class="bet_type">Bet Type</span> -
-		<span class="bet_odds">Odds</span> -
-		<span class="bet_stake">Stake</span> -
-		<span class="bet_status">Status</span> -
-	</div>
-	-->
 	<ul>
 		<?php
 		foreach ($this->bettingHistory as $bet) :
@@ -22,10 +52,10 @@ if ( count($this->bettingHistory) > 0 ) :
 		?>
 		<li>
 			<div class="bet_info">
-				<span class="bet_type"><?=($isAccumulator ? 'Accumulator' : 'Single')?></span> -
-				<span class="bet_odds"><?=\bets\fc::formatOdds($bet->odds)?></span> -
-				<span class="bet_stake"><?=$bet->stake?></span> -
-				<span class="bet_status"><?=$bet->status?></span> -
+				<span class="bet_type"><?=($isAccumulator ? 'Accumulator' : 'Single')?></span>
+				<span class="bet_odds"><?=\bets\fc::formatOdds($bet->odds)?></span>
+				<span class="bet_stake"><?=$bet->stake?></span>
+				<span class="bet_status"><?=$bet->status?></span>
 			</div>
 			<?php
 			foreach ($betSelections as $betSelection) :
