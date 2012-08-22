@@ -60,11 +60,6 @@ class User extends DBRecord
 		return Bet::findWhere(array('idcompetition=' => $this->currentCompetitionId, 'iduser=' => $this->id, 'status != ' => 'pending'), "ORDER BY ts DESC");
 	}
 
-	public function getBettingHistory()
-	{
-		return Bet::findWhere(array('idcompetition=' => $this->currentCompetitionId, 'iduser=' => $this->id), "ORDER BY ts DESC");
-	}
-
 	/* Name: getCurrentUserData
 	 * Params: $uId
 	 * Author: Robert Asproniu
