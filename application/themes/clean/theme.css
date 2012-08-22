@@ -2147,3 +2147,14 @@ div.group_discussions_list
   background-color: $theme_foreground_background_color;
   padding: 10px;
 }
+
+/* Browse members */
+
+#global_page_user-index-browse .browsemembers_criteria {
+    background-color: $theme_foreground_background_color;
+}
+
+#global_page_user-index-browse .browsemembers_results {
+    background-color: $theme_foreground_background_color;
+    padding: 10px;
+}
