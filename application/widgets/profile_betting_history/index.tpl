@@ -30,7 +30,8 @@ if ( count($this->bettingHistory) > 0 ) :
 			<?php
 			foreach ($betSelections as $betSelection) :
 				$selection = \bets\Selection::get($betSelection->idselection);
-				$event = \bets\Event::get($selection->idevent);
+				$market = \bets\Event::get($selection->idevent);
+				$event = $market->getParent();
 			?>
 			<table>
 				<tbody>
@@ -40,7 +41,7 @@ if ( count($this->bettingHistory) > 0 ) :
 					</tr>
 					<tr>
 						<td class="selection_event">Event</td>
-						<td class="selection_event"><?=$event->name?></td>
+						<td class="selection_event"><?=$event->name?> ( <?=$market->name?> )</td>
 					</tr>
 					<tr>
 						<td class="selection_event_date">Event Date</td>
