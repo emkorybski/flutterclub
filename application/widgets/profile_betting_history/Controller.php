@@ -11,7 +11,13 @@ class Widget_Profile_Betting_HistoryController extends Engine_Content_Widget_Abs
 {
 	public function indexAction()
 	{
-		$bettingHistory = \bets\User::getCurrentUser()->getBettingHistory();
+		if (!Engine_Api::_()->core()->hasSubject()) {
+			$this->setNoRender();
+			return;
+		}
+
+		$subject = Engine_Api::_()->core()->getSubject();
+		$bettingHistory = \bets\User::getUser($subject)->getBettingHistory();
 		$this->view->bettingHistory = $bettingHistory;
 	}
 }

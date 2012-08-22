@@ -31,6 +31,14 @@ class User extends DBRecord
 		return $currentUser;
 	}
 
+	public static function getUser($seUser)
+	{
+		$seUserId = $seUser->user_id;
+		$fcUser = static::getWhere(array('id_engine4_users=' => $seUserId));
+		$fcUser->currentCompetitionId = Competition::getCurrentId();
+		return $fcUser;
+	}
+
 	public static function getSocialEngineUserId($fcUserId)
 	{
 		$user = User::get($fcUserId);
