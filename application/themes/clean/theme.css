@@ -2194,3 +2194,9 @@ div.group_discussions_list
   padding-left: 10px;
   padding-bottom: 10px;
 }
+
+/* Recent bets, pending bets */
+.layout_fc_betting_pending,
+.layout_fc_betting_recent {
+    margin-bottom: 1em;
+}
