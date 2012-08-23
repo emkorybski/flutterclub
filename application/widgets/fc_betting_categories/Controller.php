@@ -74,7 +74,9 @@ class Widget_FC_Betting_CategoriesController extends \Engine_Content_Widget_Abst
 	{
 		$result = array();
 
-		$activeEvents = bets\Event::findWhere(array('idsport=' => $idSport, 'idparent=' => $idParent, 'ts>' => $tsStart, 'ts<' => $tsStop), "ORDER BY name, id");
+		$activeEvents = bets\Event::findWhere(
+			array('idsport=' => $idSport, 'idparent=' => $idParent, 'ts>' => $tsStart, 'ts<' => $tsStop),
+			"ORDER BY betfairAmountMatched DESC, name ASC, id ASC");
 		foreach ($activeEvents as $event) {
 			$category = array(
 				'idsport' => $event->idsport,
