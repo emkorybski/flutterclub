@@ -1,13 +1,13 @@
 <style type="text/css">
 	.layout_fc_betting_slip {
 		padding: 10px;
-		background-color: #fff
+		background-color: #fff;
+		margin-bottom: 10px;
 	}
 
 	.fc_betting_slip {
 		text-align: right;
 		background-color: #fff;
-		margin-bottom: 10px;
 	}
 
 	.fc_betting_slip table {
