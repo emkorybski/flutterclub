@@ -1,0 +1,424 @@
+"INVITER_Clear Credentials";"Clear Credentials"
+"INVITER_Clear Credentials confirmation";"Are you sure you want to clear credentials for this provider?"
+
+"INVITER_Referrals User";"User:"
+"INVITER_Referral Provider";"Provider:"
+"INVITER_Referrals Registration date";"Registration date:"
+"INVITER_Referral Came by referral link";"Came by referral link"
+"INVITER_Referral Came by email invitation";"Came by email invitation"
+"INVITER_Provider_Email";"Email"
+"INVITER_Provider_Link";"Referral link"
+"INVITER_Referral Link Share";"Share to Friends"
+"INVITER_Referral Link Description";"Use this unique referral link to share to your friends, on websites and blogs."
+"INVITER_Create Referral Link";"You have no referral link. Want to %1$screate%2$s it now?"
+"INVITER_No referrals";"You have no referrals."
+"INVITER_Invites Select All";"Select All"
+"INVITER_Invites Delete Selected";"Delete Selected"
+"INVITER_Invites not deleted";"Invites not deleted. Some error was occured."
+"INVITER_Invites deleted";"Invites deleted successfully."
+"INVITER_Invitations Delete selected";"Are you sure you want to delete the selected invitations?"
+"INVITER_Invites not selected";"You haven\'t selected any invite."
+
+"INVITER_Referral Link";"Referral link"
+"INVITER_Get Referral Link";"Get your referral link"
+
+
+"INVITER_Join our social network!";"Join our social network!"
+
+"INVITER_Contacts grabbing";"You are logged in. Wait while grabbing contacting..."
+"INVITER_Not logged in";"You are not logged in. Wait for redirecting..."
+"INVITER_Orkut_capthca";"type the code"
+"INVITER_Orkut_captcha_description";"Please type the captcha code below:"
+"INVITER_Orkut_captcha_error";"Captcha is incorrect. Please try again."
+
+"INVITER_No providers";"There is no integrated or configured providers."
+
+"INVITER_Introduction sex title";"INVITER_Introduction sex title"
+"INVITER_Introduction sex description";"INVITER_Introduction sex description"
+
+"INVITER_Introduction levels title";"Which member levels can see introductions from this member level?"
+"INVITER_Introduction levels description";"Current member level's introductions will be displayed for the selected below member levels."
+"INVITER_Deprecated providers";"Deprecated social services"
+"INVITER_Deprecated providers description";"These social services are integrated using OpenInviter platform. Unfortunately this platform is not stable and may cause errors. It is important for us to provide stable and user friendly features. Right now our team is working on integration of most popular services using their native APIs. It takes some time to integrate each service. We'll include them in future updates of Friends Inviter plugin which are free for you."
+"INVITER_ is not defined in config.php";" is not defined in config.php"
+"INVITER_Invalid service provider";"Invalid service provider"
+"INVITER_Please enter the full email, not just the username";"Please enter the full email, not just the username"
+"INVITER_Please enter just the username, not the full email";"Please enter just the username, not the full email"
+"INVITER_<b>{$user_domain}</b> is not a valid domain for this provider";"<b>{$user_domain}</b> is not a valid domain for this provider"
+"INVITER_Login failed. Please check the email and password you have provided and try again later";"Login failed. Please check the email and password you have provided and try again later"
+"INVITER_An error has occurred while sending friend request.";"An error has occurred while sending friend request."
+"INVITER_Friend request is not allowed for some users.";"Friend request is not allowed for some users."
+"INVITER_No active session";"No active session"
+"INVITER_Provider missing";"Provider missing"
+"INVITER_Inviter information missing";"Inviter information missing"
+"INVITER_Selected contacts are already members";"Selected contacts are already signed up on site"
+"INVITER_An error has occurred while sending invitation, please try again later";"An error has occurred while sending invitation, please try again later"
+"INVITER_Missing contacts!!!";"Missing contacts!"
+"INVITER_You haven't selected any contacts to invite";"You haven't selected any contacts to invite"
+"INVITER_ADMIN_STATS_INVITER_SENTS";"Sent Invites"
+"INVITER_ADMIN_STATS_INVITER_REFERREDS";"Referred Invites"
+"INVITER_ADMIN_STATS_INVITER_SENTS_INVITER_ADMIN_STATS_INVITER_REFERREDS";"Sent / Referred Invites"
+"INVITER_Invites sent successfully!";"Invites sent successfully!"
+"INVITER_Invalid request method";"Invalid request method"
+"INVITER_No file";"No file"
+"INVITER_Invalid Upload";"Invalid Upload";
+"INVITER_No contacts found in uploaded file.";"No contacts found in uploaded file."
+"INVITER_You're already in friendship with all of your uploaded contacts.";"You're already in friendship with all of your uploaded contacts."
+"INVITER_An error occurred.";"An error occurred."
+"INVITER_Failed!, incorrect email adress has been written.";"Failed!, incorrect email address has been written.";"Failed!, incorrect email addresses have been written."
+"INVITER_Invitation has been sent successfully.";"Invitation has been sent successfully.";"Invitations have been sent successfully."
+"INVITER_Written contact's already member.";"Written contact's already member.";"Written contacts're already members."
+"INVITER_Invitations sucessfully have been sent to your contacts.";"Invitations successfully have been sent to your contacts."
+"INVITER_Invitations not sent";"Invitations hasn't been sent to your contacts."
+"INVITER_No members specified";"No members specified"
+"INVITER_No action taken";"No action taken"
+"INVITER_Invalid data";"Invalid data"
+"INVITER_Your friend request has been sent.";"Your friend request has been sent."
+"INVITER_Friend request was not sent to some of selected members.";"Friend request was not sent to some of selected members."
+"INVITER_Invitation deleted.";"Invitation deleted."
+"INVITER_Failed!, please check your contacts and try again.";"Failed, please check your contacts and try again."
+"INVITER_Edit Suggest List";"Edit Suggest List"
+"INVITER_Add to Suggest";"Add to Suggest"
+"INVITER_Members successfully have been added to suggest list.";"Members successfully have been added to suggest list."
+"INVITER_Failed! Please check and try again later.";"Failed! Please check and try again later."
+"INVITER_Mutual Friends";"Mutual Friends"
+"INVITER_Step %d: Invite Your Friends";"Step %d: Invite Your Friends"
+"INVITER_Invite Friends";"Invite Friends"
+"INVITER_FORM_ADMIN_SIGNUP_INVITE_DESCRIPTION";"Do you want members to invite their friends during the signup process? It is Inviter form which allows member to invite his friends(or find friends within network) using his address book or social service(facebook, linkedin, hi5, etc)."
+"INVITER_Yes, include the 'Invite Friends' step during signup.";"Yes, include the 'Invite Friends' step during signup."
+"INVITER_No, do not include this step.";"No, do not include this step."
+"INVITER_Member Level Settings";"Member Level Settings"
+"INVITER_FORM_ADMIN_LEVEL_DESCRIPTION";"These settings are applied on a per member level basis. Start by selecting the member level you want to modify, then adjust the settings for that level below."
+"INVITER_Allow Using of Inviter?";"Allow Using of Inviter?"
+"INVITER_Allow Introduction Browsing?";"Allow Introduction Browsing?"
+"INVITER_Do you want to let members use inviter?";"Do you want to let members use inviter?"
+"INVITER_Do you want to let members browse introductions?";"Do you want to let members browse introductions?"
+"INVITER_No, do not allow use inviter.";"No, do not allow use inviter."
+"INVITER_Yes, allow use inviter.";"Yes, allow use inviter."
+"INVITER_How to create a contact file...";"How to create a contact file..."
+"INVITER_Outlook";"Outlook"
+"INVITER_OUTLOOK_UPLOAD_CONTACTS_DESCRIPTION";"To export a CSV or tab-delimited text file from Outlook:<br />
+<br />
+		1. Open Outlook<br />
+		2. Select 'Import and Export' from the File menu<br />
+		3. When the wizard opens, select 'Export to a file' and click 'Next'<br />
+		4. Select 'Comma separated values (Windows)' and click 'Next'<br />
+		5. Select the Contacts folder you would like to export and click 'Next'<br />
+		6. Choose a filename and a place to save the file (for instance, 'Contacts.csv' on the Desktop), then click 'Next'<br />
+		7. Confirm what you are exporting: make sure the checkbox next to 'Export...' is checked and click 'Finish'<br />
+<br />
+To upload your file, simply hit 'Browse' or 'Choose File' below and select the contact file you've just created."
+"INVITER_Outlook Express";"Outlook Express"
+"INVITER_OUTLOOK_EXPRESS_UPLOAD_CONTACTS_DESCRIPTION";"To export a CSV or tab-delimited text file from Outlook Express:<br />
+<br />
+   1. Open Outlook Express<br />
+   2. Select 'Export' from the 'File' menu<br />
+   3. Click 'Export', and then click 'Address Book'<br />
+   4. Select 'Text File' (Comma Separated Values), and then click 'Export'.<br />
+   5. Choose a filename and a place to save the file (for instance, 'Contacts.csv' on the Desktop) and click 'Next'<br />
+   6. Click to select the check boxes for the fields that you want to export, and then click 'Finish'. Please be sure to select the email address and name fields<br />
+   7. Click 'OK' and then click 'Close'<br />
+<br />
+To upload your file, simply hit 'Browse' or 'Choose File' below and select the contact file you've just created."
+"INVITER_Mozilla Thunderbir";"Mozilla Thunderbird"
+"INVITER_MOZILLA_THUNDERBIRD_UPLOAD_CONTACTS_DESCRIPTION";"To export an LDIF file from Mozilla Thunderbird:<br />
+<br />
+   1. Open Mozilla Thunderbird<br />
+   2. Select 'Address Book' from the 'Tools' menu<br />
+   3. When the address book window opens, select 'Export...' from the 'Tools' menu<br />
+   4. Choose a filename and a place to save the file (for instance, 'Contacts.ldif' on the Desktop) and click 'Save'<br />
+<br />
+To upload your file, simply hit 'Browse' or 'Choose File' below and select the contact file you've just created."
+"INVITER_Windows Mail";"Windows Mail"
+"INVITER_WINDOWS_MAIL_UPLOAD_CONTACTS_DESCRIPTION";"To export a CSV file from Windows Mail:<br />
+<br />
+   1. Open Windows Mail<br />
+   2. Select Tools | Windows Contacts... from the menu in Windows Mail<br />
+   3. Click 'Export' in the toolbar<br />
+   4. Make sure CSV (Comma Separated Values) is highlighted, then click 'Export'<br />
+   5. Now click 'Browse'<br />
+   6. Pick a folder to save the exported contacts.<br />
+   7. Choose a filename and a place to save the file (for instance, 'Contacts.csv' on the Desktop) and click 'Next'<br />
+   8. Click 'Save' then click 'Next'<br />
+   9. Make sure all address book fields you want included are checked<br />
+  10. Note that Windows Mail does not export first and last names separately, even though there are First Name and Last Name fields. Do choose Name instead.<br />
+  11. Click 'Finish'<br />
+  12. Click 'OK' then click 'Close'<br />
+<br />
+To upload your file, simply hit 'Browse' or 'Choose File' below and select the contact file you've just created."
+"INVITER_Other";"Other"
+"INVITER_OTHER_UPLOAD_CONTACTS_DESCRIPTION";"Many email clients and PIM  programs allow contacts to be exported to a file.We support the following types of contact file:<br />
+<br />
+    * Comma-separated values (.csv)<br />
+    * LDAP Data Interchange Format (.ldif)<br />
+Please check your email client's documentation to see whether contact export to one of these formats is supported."
+"INVITER_FORM_SIGNUP_INVITE_DESCRIPTION";"Invite friends from your address book or social service. We don't store your login information."
+"INVITER_Provider";"Provider"
+"INVITER_Import Contacts";"Import Contacts"
+"INVITER_FROM_WIDGET_IMPORT_DESCRIPTION";"How do you talk to the people you know? Choose a service:"
+"INVITER_Delete Invitation";"Delete Invitation"
+"INVITER_FORM_DELETE_DESCRIPTION";"Are you sure you want to delete this invitation?"
+"INVITER_Delete Invitation";"Delete Invitation"
+"INVITER_FORM_FRIENDREQUEST_DESCRIPTION";"Would you like to add this members as a friend?"
+"INVITER_FROM_IMPORT_DESCRIPTION";"How do you talk to the people you know? Choose a service:"
+"INVITER_Send Invitations";"Send Invitations"
+"INVITER_FORM_SEND_DESCRIPTION";"Would you like to send invitations to these contacts?"
+"INVITER_Resend New Invitation";"Resend New Invitation"
+"INVITER_FORM_SENDNEW_DESCRIPTION";"Please type your message and click `Resend button` to resend your invitation."
+"INVITER_From";"From"
+"INVITER_Resend Invitation";"Resend Invitation"
+"INVITER_Selected contact is already member";"Selected contact is already member"
+"INVITER_Failed! Error has occurred while sending your invites.Please try again later.";"Failed! Error has occurred while sending your invites.Please try again later."
+"INVITER_Invite sent successfully!";"Invite sent successfully!"
+"INVITER_FORM_UPDLOAD_DESCRIPTION";"Upload a contact file and we will tell you which of your contacts are on site and which you can invite to join."
+"INVITER_FORM_WRITE_DESCRIPTION";"Invite your friends to join! Enter email addresses separated by commas in the recipients box below. If your friends decide to sign up, a friend request from you will be waiting for them when they first sign in."
+"INVITER_Failed! No user selected, please try again later.";"Failed! No user selected, please try again later."
+"INVITER_Failed! No contact selected, please try again later.";"Failed! No contact selected, please try again later."
+"INVITER_Failed! Please check fields and try again later.";"Failed! Please check fields and try again later."
+"INVITER_People You May Know";"People You May Know"
+"INVITER_Top Inviters";"Top Inviters"
+"INVITER_Top Referrals";"Top Referrals"
+"Friends Inviter";"Friends Inviter"
+"INVITER_View Statistics";"View Statistics"
+"INVITER_VIEWS_SCRIPTS_ADMINSTATS_CHART_DESCRIPTION";"Below you can find detailed statistics for sent invitations and referred invites for any wished period. Please use the filters below to view statistics for wished period and sliced by selected unit."
+"INVITER_Invites Date";"Invites Date"
+"INVITER_Sent Invites";"Sent Invites"
+"INVITER_Referred Invites";"Referred Invites"
+"INVITER_View Statistics";"View Statistics"
+"INVITER_VIEWS_SCRIPTS_ADMINMANAGE_INDEX_DESCRIPTION";"You can find total statistics for invitations under `Quick Stats` section. Below you can browse inviters with all needed details: send invites, referred users, etc. Use filters and sort ording to find wished inviter."
+"INVITER_Quick Stats";"Quick Stats"
+"INVITER_Network Information";"Network Information"
+"INVITER_Total Invitations sent";"Total Invitations sent"
+"INVITER_Total Signups by Invitations";"Total Signups from Invitations"
+"INVITER_Invites/Signups Ratio";"Invites/Signups Ratio"
+"INVITER_Are you sure you want to delete the selected user accounts?";"Are you sure you want to delete the selected user accounts?"
+"INVITER_Filter inviters";"Filter inviters"
+"INVITER_%s inviter found";"%s inviter found";"%s inviters found"
+"INVITER_Referred Users";"Referred Users"
+"INVITER_VIEWS_SCRIPTS_INDEX_SUGGEST_DESCRIPTION";"Add people you know as friends and connect with public profiles you like."
+"INVITER_Invite your friends from your contact list.";"Invite your friends from your contact list."
+"INVITER_VIEWS_INDEX_CONTACTS_DESCRIPTION";"Below you can see you contact list fetched from your address book, please select contacts which you would like to invite to join on site."
+"INVITER_VIEWS_INDEX_CONTACTSFACEBOOK_DESCRIPTION";"Below you can see list of your friends from Facebook, please select friends which you would like to invite to join on site.<br/><a href='http://www.facebook.com/help/?faq=12203' target='blank'>Facebook privacy: You can send invitation to twenty friends at once.</a>"
+"INVITER_Select all members";"Select all members"
+"INVITER_There is no contacts.";"There are no contacts."
+"INVITER_Import Your Contacts";"Import Your Contacts"
+"INVITER_Upload Your Contacts";"Upload Your Contacts"
+"INVITER_Write Your Contacts";"Add Single Addresses"
+"INVITER_Edit list";"Edit list"
+"INVITER_VIEWS_SCRIPTS_INDEX_MEMBERS";"Add Friends"
+"INVITER_VIEWS_SCRIPTS_INDEX_MEMBERS_DESCRIPTION";"The following contacts are already signed up on our site. Select contacts to which you would like to send friend request."
+"INVITER_Pending Invitations";"Pending Invitations"
+"INVITER_VIEWS_SCRIPTS_INVITATIONS_INDEX_DESCRIPTION";"Below you can find your pending invitations."
+"INVITER_send new invite";"resend invitation"
+"INVITER_There are no pending invitations.";"There are no pending invitations."
+"INVITER_My Referrals";"My Referrals"
+"INVITER_VIEWS_SCRIPTS_REFERRALS_DESCRIPTION";"Check below your refferals - members who signed up from your invitation."
+"INVITER_There are no referrals.";"There are no referrals."
+"INVITER_No contacts selected!!!";"No contacts selected!"
+"INVITER_VIEWS_SCRIPTS_SIGNUP_CONTACTS_DESCRIPTION";"Invite friends from your address book or social service. We don't store your login information."
+"INVITER_No members selected!!!";"No members selected!"
+"INVITER_VIEWS_SCRIPTS_SIGNUP_MEMBERS";"You have contacts on our Social Network that you can add as your friends."
+"INVITER_VIEWS_SIGNUP_MEMBERS_DESCRIPTION";"The following contacts are already signed up on our site. Select contacts to which you would like to send friend request."
+"INVITER_%s mutual friend";"%s mutual friend";"%s mutual friends"
+"INVITER_Add Contacts File";"Add Contacts File"
+"INVITER_To enable the embedded uploader, unblock it in your browser and refresh (see Adblock).";"To enable the embedded uploader, unblock it in your browser and refresh (see Adblock)."
+"INVITER_To enable the embedded uploader, enable the blocked Flash movie (see Flashblock).";"To enable the embedded uploader, enable the blocked Flash movie (see Flashblock)."
+"INVITER_A required file was not found, please be patient and we will fix this.";"A required file was not found, please be patient and we will fix this."
+"INVITER_To enable the embedded uploader, install the latest Adobe Flash plugin.";"To enable the embedded uploader, install the latest Adobe Flash plugin."
+"INVITER_View More";"View More"
+"INVITER_%s invite";"%s invite";"%s invites"
+"INVITER_%s referral";"%s referral";"%s referrals"
+"INVITER_Edit list of people you may know.";"Edit list of people you may know."
+"USER_ADMIN_SIGNUP_STEP_5";"Friends Inviter"
+
+"_EMAIL_INVITER_TITLE";"Friends Inviter"
+"_EMAIL_INVITER_SUBJECT";"You have received an invitation to join our social network."
+"_EMAIL_INVITER_BODY";"Hello [to],
+
+You have been invited by [from] to join our social network.
+
+To join, please follow the link below:
+[link]
+
+Invitation code: [code]
+
+Best Regards,
+Social Network Administration
+
+----------------------------------------
+[message]"
+"_EMAIL_INVITER_DESCRIPTION";"This is the email that gets sent when members invite their friends to join during the signup process or using Inviter page or widget."
+
+"INVITER_Find Your Friends";"Find Your Friends"
+"INVITER_No contacts specified";"No contacts specified"
+"INVITER_Unable to get contacts.";"Unable to get contacts."
+
+
+"INVITER_Introduce Yourself";"Introduce Yourself"
+"INVITER_INTRODUCE_YOURSELF_DESC";"Introduction allows you to find more friends - just type a short message about yourself and what you are interested in. You can edit it later <a href='%s' target='_blank'>here</a>"
+"INVITER_Add info";"Start"
+"INVITER_FORM_EDIT_INTRODUCE_DESCRIPTION";"Introduction allows you to find more friends - just type a short message about yourself and what you are interested in. We randomly show introductions on Home page so it allows to find a lot of friends."
+"INVITER_About me";"About me"
+"INVITER_Show your introduction";"Show My Introduction"
+"INVITER_Profile Introduction";"Profile Introduction"
+"INVITER_My Introduction";"My Introduction"
+"INVITER_Your information successfully saved";"Your information successfully saved";
+"INVITER_Failed! Please type few words about you.";"Failed! Please type few words about you."
+"INVITER_Introduce Member";"Introduce Member"
+"INVITER_%s mutual friend";"%s mutual friend";"%s mutual friends"
+"INVITER_%s mutual like";"%s mutual like";"%s mutual likes"
+"INVITER_Find More Friends";"Find More Friends"
+"INVITER_%s, More Friends Are Waiting";"%s, More Friends Are Waiting"
+"INVITER_These %s found their friends";"This %s found his friends using the friend finder. Have you found all of your friends? Give it a try.";"These %s found their friends using the friend finder. Have you found all of your friends? Give it a try."
+"INVITER_Friend";"friend"
+"INVITER_%s Friends";"%s friends"
+"INVITER_Find Friends";"Find Friends"
+"INVITER_Facebook Friends";"Facebook Friends"
+"INVITER_Invite your Facebook friends to join";"Invite your Facebook friends to join"
+"INVITER_Facebook Friends on Site";"Facebook Friends on Site"
+"INVITER_You're friended on Facebook, connect with them here!";"Friended on Facebook, connect with them here!"
+"INVITER_Friended on Facebook and Site";"Friended on Facebook and Site"
+"INVITER_I connected with them on Facebook and Site";"I connected with them on Facebook and Site"
+"INVITER_Invite them";"Invite them"
+"INVITER_joined as %s";"joined as %s"
+"INVITER_Back to invitations";"Back to invitations"
+"INVITER_To continue you need login as %s";"To continue you need login as %s"
+"INVITER_FACEBOOK_PAGE_TITLE";"My Facebook"
+"INVITER_FACEBOOK_PAGE_DESCRIPTION";"You can view facebook friends here and invite them. Check facebook friends who already joined our site - just connect with them here!"
+"INVITER_FACEBOOK_INTEGRATION_ERROR";"Please provide Facebook Application ID to enable Facebook Integration. You can do it %s you just need to add application id."
+"INVITER_Select the friends you want to invite.";"Select the friends you want to invite."
+"ADMIN_SIGNUP_STEP_INVITER_PLUGIN_SIGNUP_INVITE";"Advanced Friends Inviter step"
+"INVITER_Please wait soon you will redirected to signup page.";"Please wait, soon you will be redirected to signup page."
+"INVITER_You need to be logged into Facebook to invite your friends.";"You need to be logged into Facebook to invite your friends."
+"INVITER_Skip this step.";"Skip this step."
+"INVITER_You have already invited all your contacts and connected with them here.";"You have already invited all your contacts and connected with them here."
+"INVITER_Please enter just the username, not the full email";"Please enter just the username, not the full email"
+"INVITER_Providers Settings";"Providers Settings"
+"INVITER_FORM_ADMIN_PROVIDERS_DESCRIPTION";"Please configure Facebook, Twitter and LinkedIn settings to make them work. These services require application creation to interact with them. You can find detailed information about application creation at Hire-Experts.com."
+"INVITER_TWITTER_APP_DESC";"If you would like Twitter integration then create an Application through the <a href=""http://twitter.com/apps/new"" target=""_blank"">Twitter Developers</a> page."
+"You are being invited to join our social network.";"You are being invited to join our social network."
+"INVITER_Confirm Account";"Confirm Account"
+"INVITER_FORM_CONFIRM_ACCOUNT_DESC";"Do you want to continue as <b>%s</b>"
+"INVITER_Continue";"Continue"
+"INVTTER_Use another account";"Use another account"
+"INVITER_LINKEDIN_APP_DESC";"If you would like LinkedIn integration then create an Application through the <a href=""https://www.linkedin.com/secure/developer"" target=""_blank"">LinkedIn Developers</a> page."
+"INVITER_Twitter Followers";"Twitter Followers"
+"INVITER_Invite your Twitter followers to join";"Invite your Twitter followers to join"
+"INVITER_Connect with Twitter";"Connect with Twitter"
+"INVITER_Invite your LinkedIn connections to join";"Invite your LinkedIn connections to join"
+"INVITER_Connect with LinkedIn";"Connect with LinkedIn"
+"INVITER_LinkedIn Connections";"LinkedIn Connections"
+"INVITER_Twitter Followers on Site";"Twitter Followers on Site"
+"INVITER_You're friended on Twitter, connect with them here!";"You're friended on Twitter, connect with them here!"
+"INVITER_Friended on Twitter and Site";"Friended on Twitter and Site"
+"INVITER_I connected with them on Twitter and Site";"I connected with them on Twitter and Site"
+"INVITER_Friended on LinkedIn and Site";"Friended on LinkedIn and Site"
+"INVITER_I connected with them on LinkedIn and Site";"I connected with them on LinkedIn and Site"
+"INVITER_LinkedIn Connections on Site";"LinkedIn Connections on Site"
+"INVITER_You're friended on LinkedIn, connect with them here!";"You're friended on LinkedIn, connect with them here!"
+"INVITER_Connect with Facebook";"Connect with Facebook"
+"INVITER_You have received an invitation to join our social network.";"You have received an invitation to join our social network."
+"INVITER_You have been invited by %1$s to join our social network. To join, please follow the link below: %2$s %3$s";"You have been invited by %1$s, please follow the link below to join: %2$s
+ %3$s"
+
+"INVITER_There was an error sending your message: The text length of your message is over the limit.";"There was an error sending your message: The text length of your message is over the limit."
+"INVITER_Failed! The text length of your message is over the limit.";"There was an error sending your message: the text length of your message is over the limit."
+
+"INVITER_Manage Providers";"Manage Providers"
+"INVITER_MANAGE_PROVIDERS_DESC";"Below you can see supported social networks and email services. You disable disable them if you don't like them to be shown and used by members to import contacts, you can enable them at any time. Also you can choose which services should be shown on `Inviter` widget with icons(recommended to display most popular services)."
+"INVITER_Enabled";"Enabled"
+"INVITER_disable";"disable"
+"INVITER_enable";"enable"
+"INVITER_hide";"hide"
+"INVITER_show";"show"
+"INVITER_Show on widget";"Show on widget"
+
+"Facebook settings";"Facebook settings"
+"Twitter settings";"Twitter settings"
+"LinkedIn settings";"LinkedIn settings"
+"GMail settings";"Gmail/Orkut settings"
+"INVITER_GMAIL_APP_DESC";"If you would like GMail/Orkut integration then add  through the <a href=""https://www.google.com/accounts/ManageDomains"" target=""_blank"">Manage your domains</a> page."
+"INVITER_YAHOO_APP_DESC";"If you would like Yahoo integration then add  through the <a href=""https://developer.apps.yahoo.com/projects"" target=""_blank"">Yahoo Developers</a> page."
+"INVITER_HOTMAIL_APP_DESC";"If you would like Live/Hotmail/MSN integration then add  through the <a href=""https://manage.dev.live.com/"" target=""_blank"">My Apps</a> page."
+"INVITER_LASTFM_APP_DESC";"If you would like Last.fm integration then add  through the <a href=""http://www.last.fm/api/account"" target=""_blank"">My Apps</a> page."
+
+"INVITER_MYSPACE_APP_DESC";"If you would like MySpace integration then add  through the <a href=""http://www.last.fm/api/account"" target=""_blank"">My Apps</a> page."
+
+"INVITER_FOUR_APP_DESC";"If you would like Foursquare integration then add  through the <a href=""https://foursquare.com/oauth/"" target=""_blank"">My OAuth Consumers</a> page."
+"INVITER_MAILRU_APP_DESC";"If you would like Mail.ru integration then add  through the <a href=""http://api.mail.ru/sites/my/add/"" target=""_blank"">My Sites</a> page."
+
+"INVITER_Mozilla Thunderbird";"Mozilla Thunderbird"
+
+"INVITER_FACEBOOK_APP_DESC";"If you would like Facebook integration then create an Application through the <a href=""http://www.facebook.com/developers/apps.php"" target=""_blank"">Facebook Developers</a> page."
+"Invitations";"Invitations"
+"My Referrals";"My Referrals"
+"Facebook";"Facebook"
+"Inviter";"Inviter"
+"Provider";"Provider"
+"View Charts";"View Charts"
+"Yahoo settings";"Yahoo settings"
+"Consumer Key";"Consumer Key"
+"Consumer Secret";"Consumer Secret"
+"API Key";"API Key"
+"Secret Key";"Secret Key"
+"OAuth Consumer Key";"OAuth Consumer Key"
+"OAuth Consumer Secret";"OAuth Consumer Secret"
+"email...";"email..."
+"password...";"password..."
+"provider...";"provider..."
+"INVITER_Add as friend";"Add as friend"
+"INVITER_Facebook session has been expired. Please try again.";"Your Facebook session has been expired. Please try again."
+
+
+"PAGE_INVITER_FROM_WIDGET_IMPORT_DESCRIPTION";"Import and invite your contacts to check your page. Please choose a social network or email service where from we can import your contacts:"
+"PAGE_INVITER_Import Contacts";"Import Contacts"
+"PAGE_INVITER_Send Invitations";"Send Invitations"
+"PAGE_INVITER_FORM_WRITE_DESCRIPTION";"Invite your friends to check your page. Enter email addresses separated by commas in the recipients box below. If your friends decide to sign up, a friend request from you will be waiting for them when they first sign in."
+"PAGE_INVITER_Import Your Contacts";"Import Your Contacts"
+"PAGE_INVITER_Write Your Contacts";"Write Your Contacts"
+"PAGE_INVITER_Failed!, please check your contacts and try again.";"Failed, please check your contacts and try again."
+"PAGE_INVITER_Failed! Please check and try again later.";"Failed! Please check and try again later."
+"PAGE_INVITER_People You May Know";"People You May Know"
+"PAGE_INVITER_Edit list";"Edit list"
+"PAGE_INVITER_VIEWS_SCRIPTS_INDEX_SUGGEST_DESCRIPTION";"Add people you know as friends and connect with public profiles you like."
+"PAGE_INVITER_Edit list of people you may know.";"Edit list of people you may know."
+"PAGE_INVITER_VIEWS_SCRIPTS_INDEX_MEMBERS";"Add Friends"
+"PAGE_INVITER_VIEWS_SCRIPTS_INDEX_MEMBERS_DESCRIPTION";"The following contacts are already signed up on our site. Select contacts to which you would like to send friend request."
+"PAGE_INVITER_Select all members";"Select all members"
+"PAGE_INVITER_There is no contacts.";"There are no contacts."
+"PAGE_INVITER_Invite your friends from your contact list.";"Invite your friends from your contact list."
+"PAGE_INVITER_VIEWS_INDEX_CONTACTSFACEBOOK_DESCRIPTION";"Below you can see list of your friends from Facebook, please select friends which you would like to invite to join on site.<br/><a href='http://www.facebook.com/help/?faq=12203' target='blank'>Facebook privacy: You can send invitation to twenty friends at once.</a>"
+"PAGE_INVITER_VIEWS_INDEX_CONTACTS_DESCRIPTION";"Below you can see you contact list fetched from your address book, please select contacts which you would like to invite to join on site."
+"PAGE_INVITER_No contacts specified";"No contacts specified."
+"PAGE_INVITER_No action taken";"No action taken."
+"PAGE_INVITER_Invalid data";"Invalid data."
+"PAGE_INVITER_There was an error sending your message: The text length of your message is over the limit.";"There was an error sending your message: The text length of your message is over the limit."
+"PAGE_INVITER_Invitations sucessfully have been sent to your contacts.";"Invitations successfully have been sent to your contacts."
+"PAGE_INVITER_Login failed. Please check the email and password you have provided and try again later";"Login failed. Please check the email and password you have provided and try again later."
+
+"PAGE_INVITER_Invite friends now";"Invite friends on this page now!"
+"PAGE_INVITER_Invite";"Invite!"
+"PAGE_INVITER_Back to Providers";"Back to Providers"
+"PAGE_INVITER_Back to Page";"Back to Page"
+"PAGE_INVITER_Check Page";"Check page on social network"
+"PAGE_INVITER_You are being invited to join our social network.";"You are being invited to check our page on social network."
+"PAGE_INVITER_Written contact's already member.";"Written contacts have already liked this page"
+
+"_EMAIL_PAGE_INVITER_TITLE";"Friends Inviter - invitation to like Pages"
+"_EMAIL_PAGE_INVITER_SUBJECT";"You have received an invitation to check our page."
+"_EMAIL_PAGE_INVITER_BODY";"Hello [to],
+
+You have been invited by [from] to check our social page - [page_title].
+
+You can view [page_title] by following the link below:
+[link]
+
+Best Regards,
+Social Network Administration
+
+----------------------------------------
+[message]"
+"_EMAIL_PAGE_INVITER_DESCRIPTION";"This is the email that gets sent when members invite their friends to check their page(<a href='www.hire-experts.com/social-engine/pages-se4-plugin' target='_blank'>Pages plugin</a> which allows members to create official social page for local business, public figures, etc)"
+
+"INVITER_Have you found all of your friends? Give it a try.";"Have you found all of your friends? Give it a try."
+"HE - Friends Inviter";"HE - Friends Inviter"
