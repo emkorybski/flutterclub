@@ -65,6 +65,8 @@
 		padding-left: 10px;
 		text-align: right;
 		vertical-align: top;
+		font-weight: bold;
+    	padding-right: 10px;
 	}
 
 	.profile_betting_history table tr:first-child td {
