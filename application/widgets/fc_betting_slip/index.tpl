@@ -1,4 +1,49 @@
 <style type="text/css">
+	.layout_fc_betting_slip {
+		padding: 10px;
+		background-color: #fff;
+		margin-bottom: 10px;
+	}
+
+	.fc_betting_slip {
+		text-align: right;
+		background-color: #fff;
+	}
+
+	.fc_betting_slip table {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	.fc_betting_slip tr {
+		background-color: #bfd8df;
+	}
+
+	.fc_betting_slip td {
+		padding: 5px;
+		border-bottom: 5px solid #fff;
+	}
+
+	.fc_betting_slip td.selection_stake input,
+	.box_accumulator {
+		width: 40px;
+	}
+
+	.fc_betting_slip .slip_actions {
+		margin-top: 10px;
+	}
+
+	.fc_betting_slip .action_remove_selection {
+		cursor: pointer;
+	}
+
+	.fc_betting_slip .action_remove_all {
+		float: left;
+	}
+
+	.fc_betting_slip .action_place_bet {
+		float: right;
+	}
 </style>
 
 <div class="fc_betting_slip">
