@@ -17,7 +17,6 @@ class Widget_Profile_Betting_HistoryController extends Engine_Content_Widget_Abs
 		}
 
 		$subject = Engine_Api::_()->core()->getSubject();
-		$bettingHistory = \bets\User::getUser($subject)->getSettledBets();
-		$this->view->bettingHistory = $bettingHistory;
+		$this->view->bettingHistory = \bets\User::getUser($subject)->getSettledBets();
 	}
 }

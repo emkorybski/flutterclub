@@ -43,7 +43,7 @@ class fc
 				if ($decFloor == 0 && ($chart[$i][1] == $chart[$i][2])) {
 					return 'Evs';
 				} else {
-					return ($chart[$i][1] + $decFloor * $chart[$i][2]) . " / " . $chart[$i][2];
+					return ($chart[$i][1] + $decFloor * $chart[$i][2]) . "/" . $chart[$i][2];
 				}
 			}
 		}

@@ -49,14 +49,16 @@ class User extends DBRecord
 		return UserSelection::findWhere(array('idcompetition=' => $this->currentCompetitionId, 'iduser=' => $this->id));
 	}
 
-	public function getPendingBets()
+	public function getPendingBets($limit = null)
 	{
-		return Bet::findWhere(array('idcompetition=' => $this->currentCompetitionId, 'iduser=' => $this->id, 'status=' => 'pending'), "ORDER BY ts DESC");
+		$extraQuery = "ORDER BY ts DESC" . ($limit != null ? " LIMIT $limit" : "");
+		return Bet::findWhere(array('idcompetition=' => $this->currentCompetitionId, 'iduser=' => $this->id, 'status=' => 'pending'), $extraQuery);
 	}
 
-	public function getSettledBets()
+	public function getSettledBets($limit = null)
 	{
-		return Bet::findWhere(array('idcompetition=' => $this->currentCompetitionId, 'iduser=' => $this->id, 'status != ' => 'pending'), "ORDER BY ts DESC");
+		$extraQuery = "ORDER BY ts DESC" . ($limit != null ? " LIMIT $limit" : "");
+		return Bet::findWhere(array('idcompetition=' => $this->currentCompetitionId, 'iduser=' => $this->id, 'status != ' => 'pending'), $extraQuery);
 	}
 
 	public static function getCurrentUserData($uId = null)

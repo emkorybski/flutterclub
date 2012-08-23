@@ -66,7 +66,7 @@
 		text-align: right;
 		vertical-align: top;
 		font-weight: bold;
-    	padding-right: 10px;
+		padding-right: 10px;
 	}
 
 	.profile_betting_history table tr:first-child td {
@@ -80,7 +80,6 @@
 	.profile_betting_history table tr:last-child td {
 		padding-bottom: 10px;
 	}
-
 </style>
 
 <div class="profile_betting_history">
@@ -99,6 +98,14 @@ if ( count($this->bettingHistory) > 0 ) :
 				<span class="bet_odds"><?=\bets\fc::formatOdds($bet->odds)?></span>
 				<span class="bet_stake"><?=$bet->stake?></span>
 				<span class="bet_status status_<?=$bet->status?>"><?=$bet->status?></span>
+				<?php
+				if ($bet->status == 'won') :
+					$betEarnings = $bet->stake * ($bet->odds - 1);
+				?>
+				<span class="bet_earnings"><?=number_format($betEarnings, 2, '.', ' ')?></span>
+				<?php
+				endif;
+				?>
 			</div>
 			<?php
 			foreach ($betSelections as $betSelection) :

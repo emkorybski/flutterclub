@@ -11,6 +11,6 @@ class Widget_FC_Betting_RecentController extends Engine_Content_Widget_Abstract
 {
 	public function indexAction()
 	{
-		$this->view->recent_bets = \bets\User::getCurrentUser()->getSettledBets();
+		$this->view->recent_bets = \bets\User::getCurrentUser()->getSettledBets(5);
 	}
 }

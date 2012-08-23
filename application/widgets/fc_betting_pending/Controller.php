@@ -11,6 +11,6 @@ class Widget_FC_Betting_PendingController extends Engine_Content_Widget_Abstract
 {
 	public function indexAction()
 	{
-		$this->view->pending_bets = \bets\User::getCurrentUser()->getPendingBets();
+		$this->view->pending_bets = \bets\User::getCurrentUser()->getPendingBets(5);
 	}
 }

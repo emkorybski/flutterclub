@@ -1,117 +1,155 @@
 <style type="text/css">
-	.layout_right {
-		margin-right: 10px;
-	}
-	.layout_fc_betting_recent {
-		box-shadow: none;
-		border: 2px solid #CD4849;
-		border-top: 0;
-		margin-bottom: 1em;
-	}
 	.fc_betting_recent {
-		background-color: #ffffff;
+		background-color: #fff;
+		padding: 10px;
 	}
-	.recent_item {
-		display: block;
-		padding: 5px 10px;
-		text-decoration: none;
-	}
-	.recent_item:hover {
-		background-color: #e5e5e5;
-	}
-	.recent_item .box {
-		float: left;
-		font-family: fc_pts;
-		color: #5f93b4;
-		font-weight: bold;
-		overflow: hidden;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-	}
-	.recent_item .box_name {
-		width: 50%;
-	}
-	.recent_item .box_odds {
-		width: 20%;
-	}
-	.recent_item .box_action {
-		width: 10%;
-	}
-	.recent_actions {
-		padding: 10px 10px 0 0;
-	}
-	.recent_actions .action {
-		float: left;
-		text-decoration: none;
-		border: 1px solid #5f93b4;
-		margin-left: 10px;
+
+	.fc_betting_recent ul li {
 		margin-bottom: 10px;
-		width: 93px;
-		text-align: center;
-		border-radius: 10px;
 	}
-	.recent_actions .action:hover {
-		background-color: #eee;
+
+	.fc_betting_recent ul li:last-child {
+		margin-bottom: 0;
 	}
-	.recent_actions a {
-		padding: 5px;
-		display: inline-block;
+
+	.fc_betting_recent ul li + li {
+		border-top: 1px solid #eaeaea;
+		padding-top: 10px;
 	}
-	.recent_actions a:hover {
-		text-decoration: none;
+
+	.fc_betting_recent .bet_info {
+		font-weight: bold;
+		background-color: #CD4849;
+		color: white;
+		padding: 10px 10px;
+		margin-bottom: 0px;
+		-webkit-box-shadow: 0px 5px 0px rgba(50, 50, 50, 0.5);
+		-moz-box-shadow: 0px 5px 0px rgba(50, 50, 50, 0.5);
+		box-shadow: 0px 3px 2px rgba(50, 50, 50, 0.5);
+		position: relative;
+	}
+
+	.fc_betting_recent .bet_info span + span {
+		margin-left: 10px;
+	}
+
+	.fc_betting_recent .bet_info .bet_stake:before {
+		content: 'FB$ ';
+	}
+
+	.fc_betting_recent .bet_info .bet_status,
+	.fc_betting_recent .selection_status {
+		text-transform: capitalize;
+	}
+
+	.fc_betting_recent .bet_info .bet_odds:before {
+		content: '(';
+	}
+
+	.fc_betting_recent .bet_info .bet_odds:after {
+		content: ')';
+	}
+
+	.fc_betting_recent table {
+		background-color: #BFD8DF;
+		width: 100%;
+		margin-left: 0;
+	}
+
+	.fc_betting_recent table + table {
+		border-top: 5px solid #fff;
+	}
+
+	.fc_betting_recent table td:first-child {
+		width: 80px;
+		padding-left: 10px;
+		text-align: right;
+		vertical-align: top;
+		font-weight: bold;
+		padding-right: 10px;
+	}
+
+	.fc_betting_recent table tr:first-child td {
+		padding-top: 10px;
+	}
+
+	.fc_betting_recent table td:last-child {
+		padding-right: 10px;
+	}
+
+	.fc_betting_recent table tr:last-child td {
+		padding-bottom: 10px;
 	}
 </style>
 
 <div class="fc_betting_recent">
 <?php
-	if ( count($this->recent_bets) > 0 ) :
+if ( count($this->recent_bets) > 0 ) :
 ?>
 	<ul>
-<?php
+		<?php
 		foreach ($this->recent_bets as $bet) :
 			$betSelections = $bet->getSelections();
 			$isAccumulator = count($betSelections) > 1;
-?>
+		?>
 		<li>
-			<span class="bet_type"><?=($isAccumulator ? 'accumulator' : 'single')?></span>
-			<span class="bet_stake"><?=$bet->stake?></span>
-			<span class="bet_odds"><?=\bets\fc::formatOdds($bet->odds)?></span>
-			<span class="bet_status"><?=$bet->status?></span>
-<?php
-			if ($bet->status == 'won') :
-?>
-			<span class="bet_status_won">+ <?=number_format($bet->stake * ($bet->odds - 1), 2, '.', '')?></span>
-<?php
-			elseif ($bet->status == 'lost') :
-?>
-			<span class="bet_status_lost">- <?=$bet->stake?></span>
-<?php
-			elseif ($bet->status == 'void') :
-?>
-			<span class="bet_status_void">0</span>
-<?php
-			endif;
-?>
-			<ul>
-<?php
-				foreach ($betSelections as $selection) :
-?>
-				<li>
-					<span class="selection_name"><?=$selection->name?></span>
-					<span class="selection_odds"><?=\bets\fc::formatOdds($selection->odds)?></span>
-					<span class="selection_status"><?=$selection->status?></span>
-				</li>
-<?php
-				endforeach;
-?>
-			</ul>
-			<br/>
+			<div class="bet_info">
+				<span class="bet_type"><?=($isAccumulator ? 'Accumulator' : 'Single')?></span>
+				<span class="bet_odds"><?=\bets\fc::formatOdds($bet->odds)?></span>
+				<span class="bet_stake"><?=$bet->stake?></span>
+				<span class="bet_status status_<?=$bet->status?>"><?=$bet->status?></span>
+				<?php
+				if ($bet->status == 'won') :
+				$betEarnings = $bet->stake * ($bet->odds - 1);
+				?>
+				<span class="bet_earnings"><?=number_format($betEarnings, 2, '.', ' ')?></span>
+				<?php
+				endif;
+				?>
+			</div>
+			<?php
+			foreach ($betSelections as $betSelection) :
+				$selection = \bets\Selection::get($betSelection->idselection);
+				$market = \bets\Event::get($selection->idevent);
+				$event = $market->getParent();
+			?>
+			<table>
+				<tbody>
+				<tr>
+					<td class="selection_name">Selection</td>
+					<td class="selection_name"><?=$betSelection->name?></td>
+				</tr>
+				<tr>
+					<td class="selection_event">Event</td>
+					<td class="selection_event"><?=$event->name?> ( <?=$market->name?> )</td>
+				</tr>
+				<tr>
+					<td class="selection_event_date">Event Date</td>
+					<td class="selection_event_date"><?=$event->ts?></td>
+				</tr>
+				<tr>
+					<td class="selection_odds">Odds</td>
+					<td class="selection_odds"><?=\bets\fc::formatOdds($betSelection->odds)?></td>
+				</tr>
+				<tr>
+					<td class="selection_status">Status</td>
+					<td class="selection_status status_<?=$betSelection->status?>"><?=$betSelection->status?></td>
+				</tr>
+				</tbody>
+			</table>
+			<?php
+			endforeach;
+			?>
 		</li>
-<?php
-		endforeach;
-?>
+	<?php
+	endforeach;
+	?>
 	</ul>
 <?php
-	endif;
+else :
+?>
+	You have no settled bets.
+<?php
+endif;
 ?>
 </div>
