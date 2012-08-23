@@ -1,4 +1,34 @@
 <style type="text/css">
+	.fc_betting_slip {
+		padding: 10px;
+		text-align: right;
+	}
+
+	.fc_betting_slip table {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	.fc_betting_slip td {
+		padding-bottom: 5px;
+	}
+
+	.fc_betting_slip td.selection_stake input,
+	.box_accumulator {
+		width: 40px;
+	}
+
+	.fc_betting_slip .slip_actions {
+		margin-top: 10px;
+	}
+
+	.fc_betting_slip .action_remove_all {
+		float: left;
+	}
+
+	.fc_betting_slip .action_place_bet {
+		float: right;
+	}
 </style>
 
 <div class="fc_betting_slip">
