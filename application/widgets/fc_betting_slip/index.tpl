@@ -1,6 +1,10 @@
 <style type="text/css">
-	.fc_betting_slip {
+	.layout_fc_betting_slip {
 		padding: 10px;
+		background-color: #fff
+	}
+
+	.fc_betting_slip {
 		text-align: right;
 		background-color: #fff;
 		margin-bottom: 10px;
@@ -11,8 +15,13 @@
 		margin-bottom: 10px;
 	}
 
+	.fc_betting_slip tr {
+		background-color: #bfd8df;
+	}
+
 	.fc_betting_slip td {
-		padding-bottom: 5px;
+		padding: 5px;
+		border-bottom: 5px solid #fff;
 	}
 
 	.fc_betting_slip td.selection_stake input,
