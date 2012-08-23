@@ -153,11 +153,6 @@ class BetfairImportManager
 
 	private function parseEvents($sport, $bfEvents)
 	{
-		$eventsDict = array();
-		foreach (\bets\Event::getWhere(array('idsport=' => $sport->id)) as $event) {
-			$eventsDict[$event->idparent . "_" . $event->name] = $event;
-		}
-
 		foreach ($bfEvents as $bfEvent) {
 			$attributes = $bfEvent->attributes();
 			$eventName = trim($attributes['name']);
@@ -170,12 +165,11 @@ class BetfairImportManager
 			$eventName = '';
 			for ($i = 0; $i < count($eventsList); $i++) {
 				$eventName .= trim($eventsList[$i]);
-				//$event = \bets\Event::getWhere(array('idsport=' => $sport->id, 'idparent=' => $idParent, 'name=' => $eventName));
-				if (!in_array($idParent . "_" . $eventName, $eventsDict)) {
+				$event = \bets\Event::getWhere(array('idsport=' => $sport->id, 'idparent=' => $idParent, 'name=' => $eventName));
+				if (!$event) {
 					$eventName .= '/';
 					$eventFound = false;
 				} else {
-					$event = $eventsDict[$idParent . "_" . $eventName];
 					$idParent = $event->id;
 					$eventName = '';
 					$eventFound = true;
