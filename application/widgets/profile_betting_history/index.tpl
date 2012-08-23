@@ -8,6 +8,10 @@
 		margin-bottom: 10px;
 	}
 
+	.profile_betting_history ul li:last-child {
+		margin-bottom: 0;
+	}
+
 	.profile_betting_history ul li + li {
 		border-top: 1px solid #eaeaea;
 		padding-top: 10px;
@@ -15,7 +19,14 @@
 
 	.profile_betting_history .bet_info {
 		font-weight: bold;
-		margin-bottom: 10px;
+		background-color: #CD4849;
+		color: white;
+		padding: 10px 10px;
+		margin-bottom: 0px;
+		-webkit-box-shadow: 0px 5px 0px rgba(50, 50, 50, 0.5);
+		-moz-box-shadow: 0px 5px 0px rgba(50, 50, 50, 0.5);
+		box-shadow: 0px 3px 2px rgba(50, 50, 50, 0.5);
+		position: relative;
 	}
 
 	.profile_betting_history .bet_info span + span {
@@ -26,18 +37,48 @@
 		content: 'FB$ ';
 	}
 
-	.profile_betting_history .bet_info .bet_status, .profile_betting_history .selection_status {
+	.profile_betting_history .bet_info .bet_status,
+	.profile_betting_history .selection_status {
 		text-transform: capitalize;
 	}
 
+	.profile_betting_history .bet_info .bet_odds:before {
+		content: '(';
+	}
+
+	.profile_betting_history .bet_info .bet_odds:after {
+		content: ')';
+	}
+
 	.profile_betting_history table {
-		margin-left: 20px;
+		background-color: #BFD8DF;
+		width: 100%;
+		margin-left: 0;
+	}
+
+	.profile_betting_history table + table {
+		border-top: 5px solid #fff;
 	}
 
 	.profile_betting_history table td:first-child {
-		font-weight: bold;
-		padding-right: 20px;
+		width: 80px;
+		padding-left: 10px;
+		text-align: right;
+		vertical-align: top;
 	}
+
+	.profile_betting_history table tr:first-child td {
+		padding-top: 10px;
+	}
+
+	.profile_betting_history table td:last-child {
+		padding-right: 10px;
+	}
+
+	.profile_betting_history table tr:last-child td {
+		padding-bottom: 10px;
+	}
+
 </style>
 
 <div class="profile_betting_history">
