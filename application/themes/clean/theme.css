@@ -2147,3 +2147,50 @@ div.group_discussions_list
   background-color: $theme_foreground_background_color;
   padding: 10px;
 }
+
+/* Browse members */
+
+#global_page_user-index-browse .browsemembers_criteria {
+    background-color: $theme_foreground_background_color;
+}
+
+#global_page_user-index-browse .browsemembers_results {
+    background-color: $theme_foreground_background_color;
+    padding: 10px;
+}
+
+/* View poll page */
+
+.layout_page_poll_poll_view {
+  background-color: #fff;
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-topright: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Hide the header (username of poll creator) - polls will only be created by admins */
+.layout_page_poll_poll_view h2 {
+  display: none;
+}
+
+.layout_page_poll_poll_view .polls_view {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.layout_page_poll_poll_view .poll_desc, .layout_page_poll_poll_view form 
+{
+  padding: 0 10px;
+}
+
+.layout_page_poll_poll_view .poll_desc {
+  padding-top: 10px;
+}
+
+.layout_page_poll_poll_view .layout_core_comments {
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
