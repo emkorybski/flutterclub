@@ -35,29 +35,4 @@ class UserBalance extends DBRecord
 		$balance->balance += $stake;
 		$balance->update();
 	}
-
-	public static function getBalancesCompetition($Object = null)
-	{
-		$idCompetition = $Object->idcompetition ? $Object->idcompetition : \bets\Competition::getCurrent()->id;
-		$startPoints = \bets\Competition::getCurrent($idCompetition)->start_points;
-		$admins = \bets\User::getAdminUsers();
-		$extraQuery = !empty($admins) ? "AND p.iduser NOT IN (".implode(',', $admins).")" : '';
-		$query = "SELECT
-                                b.*, 
-                                @rownum:=@rownum+1 as position 
-                          FROM 
-                                (SELECT 
-                                    p.*, (p.balance-{$startPoints}) as earnings 
-                                FROM 
-                                    fc_user_balance p, 
-                                    fc_competition c 
-                                WHERE 
-                                    p.idcompetition = c.id AND 
-                                    p.idcompetition = {$idCompetition} 
-									{$extraQuery} 
-                                ORDER BY earnings DESC) b,  
-                        (SELECT @rownum:=0) r";
-		
-		return \bets\bets::sql()->query($query);
-	}
 }

@@ -33,8 +33,6 @@ class Event extends DBRecord
 
 		return $path;
 	}
-	
-		
 
 	public function getSubEvents()
 	{

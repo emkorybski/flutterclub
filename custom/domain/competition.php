@@ -42,14 +42,4 @@ class Competition extends DBRecord
 		$currentCompetition = self::getCurrent();
 		return $currentCompetition->id;
 	}
-
-	public function getCompetitonPositions($uId = null)
-	{
-		$data = \bets\UserBalance::getBalancesCompetition();
-		$uid = $uId ? $uId : \bets\User::getCurrentUser()->id;
-		foreach ($data as $obj) {
-			if ($obj['iduser'] == $uid)
-				return $obj['position'];
-		}
-	}
 }

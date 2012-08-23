@@ -12,5 +12,4 @@ class BetSelection extends DBRecord
 	{
 		call_user_func_array('parent::insert', func_get_args());
 	}
-	
 }

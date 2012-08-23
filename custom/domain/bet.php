@@ -18,17 +18,4 @@ class Bet extends DBRecord
 	{
 		return BetSelection::findWhere(array('idbet=' => $this->id), "ORDER BY name ASC");
 	}
-	
-	public function getEarnings(){
-		return $this->status == 'won' ? $this->stake * ($this->odds - 1) : '';
-	}
-	
-	public static function getSuccessRate($uId = null){
-		$uI = $uId ? $uId : \bets\User::getCurrentUser()->id;
-		$uComp = \bets\Competition::getCurrent()->id;
-		$countAll = self::countWhere(array('iduser=' => $uI, 'idcompetition=' => $uComp));
-		$countWon = self::countWhere(array('iduser=' => $uI, 'idcompetition=' => $uComp, 'status=' => 'won'));
-		$countPending = self::countWhere(array('iduser=' => $uI, 'idcompetition=' => $uComp, 'status=' => 'pending'));
-		return $countWon.($countPending ? ' ('.$countPending.')' : '').'/'.$countAll;
-	}
 }

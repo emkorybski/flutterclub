@@ -21,7 +21,7 @@ class Widget_FC_Betting_MarketsController extends Engine_Content_Widget_Abstract
 
 			$this->view->event = $event;
 			$this->view->parentEvent = $parentEvent;
-			$this->view->selections = bets\Selection::findWhere(array('idevent=' => $idEvent), 'ORDER BY odds ASC');
+			$this->view->selections = bets\Selection::findWhere(array('idevent=' => $idEvent), 'ORDER BY id ASC');
 			$this->view->user = bets\User::getCurrentUser();
 		}
 	}
