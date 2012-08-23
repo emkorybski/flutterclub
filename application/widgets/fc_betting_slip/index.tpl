@@ -33,6 +33,10 @@
 		margin-top: 10px;
 	}
 
+	.fc_betting_slip .action_remove_selection {
+		cursor: pointer;
+	}
+
 	.fc_betting_slip .action_remove_all {
 		float: left;
 	}
