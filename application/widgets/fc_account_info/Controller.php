@@ -10,7 +10,7 @@ class Widget_FC_Account_InfoController extends Engine_Content_Widget_Abstract
 	public function indexAction()
 	{
 		$this->view->user = \bets\User::getCurrentUser();
-		$this->view->userBalance = \bets\UserBalance::getCurrentBalance();
+		$this->view->userBalance = \bets\UserBalance::getCurrentBalance(false);
 
 		$competition = bets\Competition::getCurrent();
 		$timeSpan = strtotime($competition->ts_end) - time();

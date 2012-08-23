@@ -13,7 +13,7 @@ class UserBalance extends DBRecord
 		call_user_func_array('parent::insert', func_get_args());
 	}
 
-	public static function getCurrentBalance()
+	public static function getCurrentBalance($forceInsert = true)
 	{
 		$competition = \bets\Competition::getCurrent();
 		$idUser = \bets\User::getCurrentUser()->id;
@@ -24,7 +24,9 @@ class UserBalance extends DBRecord
 			$balance->idcompetition = $competition->id;
 			$balance->iduser = $idUser;
 			$balance->balance = $competition->start_points;
-			$balance->insert();
+			if ($forceInsert) {
+				$balance->insert();
+			}
 		}
 		return $balance;
 	}
