@@ -89,11 +89,10 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 				exit;
 				break;
 
-			case 'remove_selected':
-				foreach ($_REQUEST['user_selection_ids'] as $idUserSel) {
-					$userSel = bets\UserSelection::get($idUserSel);
-					$userSel->delete();
-				}
+			case 'remove_selection':
+				$userSelectionId = $_REQUEST['user_selection_id'];
+				$userSelection = bets\UserSelection::get($userSelectionId);
+				$userSelection->delete();
 				exit;
 				break;
 

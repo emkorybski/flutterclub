@@ -1,241 +1,139 @@
 <style type="text/css">
-	.layout_right {
-		margin-right: 10px;
-	}
-	.layout_fc_betting_slip {
-		box-shadow: none;
-		border: 2px solid #CD4849;
-		border-top: 0;
-		margin-bottom: 1em;
-	}
-	.fc_betting_slip {
-		background-color: #ffffff;
-		text-align: right;
-	}
-		/* Position the accumulator input (probably temporary) */
-	.fc_betting_slip .box_accumulator {
-		margin-right: 20px;
-		margin-top: 10px;
-	}
-	.slip_item {
-		display: block;
-		padding: 5px 10px;
-		text-decoration: none;
-	}
-	.slip_item:hover {
-		background-color: #e5e5e5;
-	}
-	.slip_item .box {
-		float: left;
-		font-family: fc_pts;
-		color: #5f93b4;
-		font-weight: bold;
-		overflow: hidden;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-	}
-	.slip_item .box_name {
-		width: 40%;
-	}
-	.slip_item .box_odds {
-		width: 20%;
-	}
-	.slip_item .box_bet_stake {
-		width: 30%;
-	}
-	.slip_item .box_bet_stake input {
-		width: 50%;
-	}
-	.slip_item .box_action {
-		width: 10%;
-	}
-	.slip_actions {
-		padding: 10px 10px 0 0;
-	}
-	.slip_actions .action {
-		float: left;
-		text-decoration: none;
-		margin-left: 10px;
-		margin-bottom: 10px;
-		width: auto;
-		text-align: center;
-	}
-	.slip_actions a {
-		padding: 5px;
-		display: inline-block;
-	}
-	.slip_actions a:hover {
-		text-decoration: none;
-	}
 </style>
 
 <div class="fc_betting_slip">
+<?php
+if ( count($this->betting_slip) ) :
+?>
+	<table>
 	<?php
-	if ( count($this->betting_slip) ) :
-		foreach ($this->betting_slip as $userSel) :
-			$sel = $userSel->getSelection();
+	foreach ($this->betting_slip as $userSel) :
+		$sel = $userSel->getSelection();
 	?>
-	<a href="#" class="slip_item">
-		<div class="box box_name" title="<?=htmlentities($sel->name)?>"><?=htmlentities($sel->name)?></div>
-		<div class="box box_odds"
-			 title="<?=\bets\fc::formatOdds($sel->odds, 'decimal')?>"><?=\bets\fc::formatOdds($sel->odds)?>
-		</div>
-		<div class="box box_bet_stake">FB$ <input type="text" data-userselectionid="<?=$userSel->id?>"/></div>
-		<div class="box box_action" title="Select several bets and an choose action from below"><input type="checkbox"
-																									   value="<?=$userSel->id?>"/>
-		</div>
-		<div class="clear"></div>
-	</a>
-	<hr class="line"/>
+		<tr>
+			<td class="selection_name"><?=htmlentities($sel->name)?></td>
+			<td class="selection_odds"><?=\bets\fc::formatOdds($sel->odds)?></td>
+			<td class="selection_stake">FB$ <input type="text" data-userselectionid="<?=$userSel->id?>"/></td>
+			<td class="action_remove_selection" data-userselectionid="<?=$userSel->id?>">X</td>
+		</tr>
 	<?php
-		endforeach;
-		if ( count($this->betting_slip) > 1 ) :
+	endforeach;
 	?>
-	<input type="text" class="box_accumulator"/>
+	</table>
 	<?php
-		endif;
+	if ( count($this->betting_slip) > 1 ) :
 	?>
-	<div class="slip_actions">
-		<div class="action"><a href="#" class="action_remove_all">Remove all</a></div>
-		<div class="action"><a href="#" class="action_place_bet">Place bet</a></div>
-		<div class="action"><a href="#" class="action_remove_selected">Remove selected</a></div>
-		<div class="clear"></div>
-	</div>
-	<?php
-	else :
-	?>
-	<div href="#" class="slip_item">You don't have any bets in slip!</div>
+	<label for="accumulator">Accumulator</label>
+	<input id="accumulator" type="text" class="box_accumulator"/>
 	<?php
 	endif;
 	?>
+	<div class="slip_actions">
+		<div><a href="#" class="action_remove_all">Remove all</a></div>
+		<div class="action"><a href="#" class="action_place_bet">Place bet</a></div>
+		<div class="clear"></div>
+	</div>
+<?php
+else :
+?>
+	<div href="#" class="slip_item">You don't have any bets in slip!</div>
+<?php
+endif;
+?>
 </div>
 
 <script type="text/javascript">
-	(function () {
-		j('.slip_item').live("click", function(evt){
-			evt.preventDefault();
-		});
+	var getBets = function () {
+		var bets = [];
 
-		j('.slip_item .box_action').live("click", function(evt){
-			evt.preventDefault();
-			evt.stopPropagation();
-			var inp = j(this).find('input');
-			var c = inp.prop('checked');
-			setTimeout(function () {
-				inp.prop('checked', c);
-			});
+		var betStake = j('.fc_betting_slip table tr td.selection_stake input');
+		betStake.each(function (index) {
+			var stake = j(this).val();
+			if (stake && !isNaN(stake)) {
+				bets.push({
+					user_selection_id:j(this).attr('data-userselectionid'),
+					stake:stake
+				})
+			}
 		});
+		return bets;
+	}
 
-		var getSelection = function () {
-			return j('.fc_betting_slip .slip_item .box_action input:checked');
+	j('.action_remove_selection').live("click", function (evt) {
+		evt.preventDefault();
+
+		if (!confirm('Do you really want to remove this selection?')) {
+			return;
 		}
 
-		var getBets = function () {
-			var bets = [];
-
-			var betStake = j('.fc_betting_slip .slip_item .box_bet_stake input');
-			betStake.each(function (index) {
-				var stake = j(this).val();
-				if (stake && !isNaN(stake)) {
-					bets.push({
-						user_selection_id:j(this).attr('data-userselectionid'),
-						stake:stake
-					})
-				}
-			});
-			return bets;
-		}
-
-		j('.slip_actions a').live("click", function(evt){
-			evt.preventDefault();
-			var action = j(this);
-
-			if (action.hasClass('action_place_bet')) {
-
-				var bets = getBets();
-				var accumulator = j('.fc_betting_slip .box_accumulator');
-				var accStake = j(accumulator).val();
-				if (accStake && !isNaN(accStake)) {
-					bets.push({
-						user_selection_id:'accumulator',
-						stake:accStake
-					})
-				}
-
-				for (i=0; i<bets.length; i++)
-				{
-					if ((accStake && accStake > 500) || (bets[i].stake && bets[i].stake > 500))
-					{
-						alert('Maximum bet is FB$500!');
-						return;
-					}
-				}
-
-				if (bets.length <= 0) {
-					alert('Please insert stakes!');
-					return;
-				}
-
-				if (!confirm('Do you want to approve this betting slip for this competition?')) {
-					return;
-				}
-
-				j.ajax(WEB_ROOT + 'widget?name=fc_betting_slip&format=html', {
-					data:{ action:'place_bet', bets:bets },
-					dataType:'html',
-					success:function (text) {
-						fc.user.updateAccountBalance();
-						fc.user.updateBettingMarkets();
-						fc.user.updateBettingSlip();
-						fc.user.updateBettingPending();
-						fc.user.updateBettingRecent();
-					}
-				});
-			}
-
-			if (action.hasClass('action_remove_selected')) {
-				var sel = getSelection();
-				if (sel.length < 1) {
-					alert('Please select at least one bet.');
-					return;
-				}
-				if (!confirm('Do you really want to remove the selected bets?')) {
-					return;
-				}
-
-				var userSelectionIds = sel.map(function () {
-					return j(this).val()
-				}).get();
-				j.ajax(WEB_ROOT + 'widget?name=fc_betting_slip&format=html', {
-					data:{ action:'remove_selected', user_selection_ids:userSelectionIds },
-					dataType:'html',
-					success:function () {
-						fc.user.updateAccountBalance();
-						fc.user.updateBettingMarkets();
-						fc.user.updateBettingSlip();
-						fc.user.updateBettingPending();
-						fc.user.updateBettingRecent();
-					}
-				});
-			}
-
-			if (action.hasClass('action_remove_all')) {
-				if (!confirm('Are you sure you want to remove all the bets?')) {
-					return;
-				}
-
-				j.ajax(WEB_ROOT + 'widget?name=fc_betting_slip&format=html', {
-					data:{ action:'remove_all' },
-					dataType:'html',
-					success:function () {
-						fc.user.updateAccountBalance();
-						fc.user.updateBettingMarkets();
-						fc.user.updateBettingSlip();
-						fc.user.updateBettingPending();
-						fc.user.updateBettingRecent();
-					}
-				});
+		var userSelectionId = j(this).attr('data-userselectionid');
+		j.ajax(WEB_ROOT + 'widget?name=fc_betting_slip&format=html', {
+			data:{ action:'remove_selection', user_selection_id:userSelectionId },
+			dataType:'html',
+			success:function () {
+				fc.user.updateBettingMarkets();
+				fc.user.updateBettingSlip();
 			}
 		});
-	})();
+	});
+
+	j('.action_remove_all').live("click", function (evt) {
+		evt.preventDefault();
+
+		if (!confirm('Are you sure you want to remove all the bets?')) {
+			return;
+		}
+
+		j.ajax(WEB_ROOT + 'widget?name=fc_betting_slip&format=html', {
+			data:{ action:'remove_all' },
+			dataType:'html',
+			success:function () {
+				fc.user.updateBettingMarkets();
+				fc.user.updateBettingSlip();
+			}
+		});
+	});
+
+	j('.action_place_bet').live("click", function (evt) {
+		evt.preventDefault();
+
+		var bets = getBets();
+
+		var accumulator = j('.fc_betting_slip .box_accumulator');
+		var accStake = j(accumulator).val();
+		if (accStake && !isNaN(accStake)) {
+			bets.push({
+				user_selection_id:'accumulator',
+				stake:accStake
+			})
+		}
+
+		for (i = 0; i < bets.length; i++) {
+			if ((accStake && accStake > 500) || (bets[i].stake && bets[i].stake > 500)) {
+				alert('Maximum bet is FB$500!');
+				return;
+			}
+		}
+
+		if (bets.length <= 0) {
+			alert('Please insert stakes!');
+			return;
+		}
+
+		if (!confirm('Do you want to approve this betting slip for this competition?')) {
+			return;
+		}
+
+		j.ajax(WEB_ROOT + 'widget?name=fc_betting_slip&format=html', {
+			data:{ action:'place_bet', bets:bets },
+			dataType:'html',
+			success:function (text) {
+				fc.user.updateAccountBalance();
+				fc.user.updateBettingMarkets();
+				fc.user.updateBettingSlip();
+				fc.user.updateBettingPending();
+				fc.user.updateBettingRecent();
+			}
+		});
+	});
 </script>
