@@ -43,6 +43,11 @@ class sql extends Singleton {
 		return static::$_link->commit();
 	}
 
+	public function autocommit($mode)
+	{
+		return static::$_link->autocommit($mode);
+	}
+
 	/**
 	 * @param string $sql
 	 * @return mixed[string][] Array of rows, each row is an associative array

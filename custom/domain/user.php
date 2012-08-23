@@ -59,6 +59,13 @@ class User extends DBRecord
 		return Bet::findWhere(array('idcompetition=' => $this->currentCompetitionId, 'iduser=' => $this->id, 'status != ' => 'pending'), "ORDER BY ts DESC");
 	}
 
+	public static function getCurrentUserData($uId = null)
+	{
+		$uId = $uId ? $uId : self::getCurrentUser()->id_engine4_users;
+		$data = \bets\bets::sql()->query("SELECT * FROM engine4_users WHERE user_id = '$uId'");
+		return $data[0];
+	}
+
 	public static function getSettledBetNotificationText($pendingBet)
 	{
 		$notificationText = file_get_contents(PATH_APP . "data/settled_bet_notification.tpl");

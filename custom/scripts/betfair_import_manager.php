@@ -61,6 +61,8 @@ class BetfairImportManager
 
 	public function importEventsAndSelections($url)
 	{
+		\bets\bets::sql()->autocommit(false);
+
 		preg_match_all('#href="([^"]*SportName[^"]*)"#', $this->loadUrlContent($url), $matches);
 		$count = count($matches[1]);
 		foreach ($matches[1] as $nr => $match) {
@@ -81,6 +83,7 @@ class BetfairImportManager
 
 			$this->parseEvents($sport, $xmlObject->event);
 		}
+		\bets\bets::sql()->autocommit(true);
 
 //		$sportRows = \bets\bets::sql()->query("SELECT * FROM fc_sport");
 //		foreach ($sportRows as $sportRow) {
@@ -97,7 +100,7 @@ class BetfairImportManager
 	private function getActiveEventTypes()
 	{
 		self::log("getActiveEventTypes");
-		// getAllEventTypes
+
 		$soapRequest = new \stdClass();
 		$soapRequest->header = new \stdClass();
 		$soapRequest->header->sessionToken = $this->sessionToken;
@@ -150,10 +153,15 @@ class BetfairImportManager
 
 	private function parseEvents($sport, $bfEvents)
 	{
+		$eventsDict = array();
+		foreach (\bets\Event::getWhere(array('idsport=' => $sport->id)) as $event) {
+			$eventsDict[$event->idparent . "_" . $event->name] = $event;
+		}
+
 		foreach ($bfEvents as $bfEvent) {
 			$attributes = $bfEvent->attributes();
 			$eventName = trim($attributes['name']);
-			$eventDate = date('Y-m-d 00:00:00', \DateTime::createFromFormat('d/m/Y', $attributes['date'])->getTimestamp());
+			//$eventDate = date('Y-m-d 00:00:00', \DateTime::createFromFormat('d/m/Y', $attributes['date'])->getTimestamp());
 
 			self::log($eventName);
 			$eventsList = explode('/', $eventName);
@@ -162,11 +170,12 @@ class BetfairImportManager
 			$eventName = '';
 			for ($i = 0; $i < count($eventsList); $i++) {
 				$eventName .= trim($eventsList[$i]);
-				$event = \bets\Event::getWhere(array('idsport=' => $sport->id, 'idparent=' => $idParent, 'name=' => $eventName));
-				if (!$event) {
+				//$event = \bets\Event::getWhere(array('idsport=' => $sport->id, 'idparent=' => $idParent, 'name=' => $eventName));
+				if (!in_array($idParent . "_" . $eventName, $eventsDict)) {
 					$eventName .= '/';
 					$eventFound = false;
 				} else {
+					$event = $eventsDict[$idParent . "_" . $eventName];
 					$idParent = $event->id;
 					$eventName = '';
 					$eventFound = true;
@@ -182,6 +191,7 @@ class BetfairImportManager
 				$this->parseSubEvents($event, $bfEvent->subevent);
 			}
 		}
+		\bets\bets::sql()->commit();
 	}
 
 	private function updateParentEventsDate($event, $eventDate)
@@ -222,13 +232,13 @@ class BetfairImportManager
 
 				$this->updateParentEventsDate($subEvent, $subEventDate);
 			}
-//			else {
-//				$subEvent->name = $subEventName;
-//				$subEvent->ts = $subEventDate;
-//				$subEvent->update();
-//
-//				$this->updateParentEventsDate($subEvent, $subEventDate);
-//			}
+			else {
+				$subEvent->name = $subEventName;
+				$subEvent->ts = $subEventDate;
+				$subEvent->update();
+
+				$this->updateParentEventsDate($subEvent, $subEventDate);
+			}
 
 			if (count($bfSubEvent->selection) > 0) {
 				$this->parseSelections($subEvent, $bfSubEvent->selection);
