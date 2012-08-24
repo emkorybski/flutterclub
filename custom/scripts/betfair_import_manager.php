@@ -81,7 +81,7 @@ class BetfairImportManager
 
     private function getEventByBetfairMarketId($betfairMarketId)
     {
-        if (array_key_exists($betfairMarketId, $this->eventsByBetfairMarketId)) {
+        if ($betfairMarketId && array_key_exists($betfairMarketId, $this->eventsByBetfairMarketId)) {
             return $this->eventsByBetfairMarketId[$betfairMarketId];
         }
         else {
@@ -98,7 +98,7 @@ class BetfairImportManager
             $this->selectionsById[] = $selection;
         }
 
-        $this->selectionsByEventAndName[$selection->idevent . "_" . $selection->name . "_" . $selection->betfairSelectionId] = $selection;
+        $this->selectionsByEventAndName[$selection->idevent . "_" . $selection->betfairSelectionId . "_" . $selection->name] = $selection;
     }
 
     private function getSelectionByEventAndName($idEvent, $name, $betfairSelectionId)
@@ -152,7 +152,7 @@ class BetfairImportManager
 			$xmlObject = simplexml_load_string($xmlContent);
 
 			$attributes = $xmlObject->attributes();
-			$sportName = $attributes['sport'];
+			$sportName = $attributes['sport'].'';
 			$sport = \bets\Sport::getWhere(array('name=' => $sportName));
 			if (!$sport) {
 				var_dump(debug_backtrace());
@@ -266,7 +266,7 @@ class BetfairImportManager
 
         foreach ($bfEvents as $bfEvent) {
             $attributes = $bfEvent->attributes();
-            $eventName = trim($attributes['name']);
+            $eventName = trim($attributes['name'].'');
             //$eventDate = date('Y-m-d 00:00:00', \DateTime::createFromFormat('d/m/Y', $attributes['date'])->getTimestamp());
 
             self::log($eventName);
@@ -322,10 +322,10 @@ class BetfairImportManager
 	{
 		foreach ($bfSubEvents as $bfSubEvent) {
 			$attributes = $bfSubEvent->attributes();
-			$subEventName = trim($attributes['title']);
+			$subEventName = trim($attributes['title'].'');
 			$subEventDate = date('Y-m-d H:i:00', \DateTime::createFromFormat('d/m/Y H:i', "{$attributes['date']} {$attributes['time']}")->getTimestamp());
-			$subEventBetfairMarketId = $attributes['id'];
-			$subEventTotalAmountMatched = $attributes['TotalAmountMatched'];
+			$subEventBetfairMarketId = $attributes['id'].'';
+			$subEventTotalAmountMatched = $attributes['TotalAmountMatched'].'';
 
 			self::log("   * " . $subEventName);
 
@@ -334,6 +334,8 @@ class BetfairImportManager
 			self::log("      " . $nowDate . " < " . $subEventDate . " < " . $competition->ts_end);
 			if ($subEventDate < $nowDate || $subEventDate > $competition->ts_end)
 				continue;
+            if (!$subEventBetfairMarketId)
+                continue;
 
 			//$subEvent = \bets\Event::getWhere(array('betfairMarketId=' => $subEventBetfairMarketId));
             $subEvent = $this->getEventByBetfairMarketId($subEventBetfairMarketId);
@@ -373,9 +375,9 @@ class BetfairImportManager
 
 		foreach ($bfSelections as $bfSelection) {
 			$attributes = $bfSelection->attributes();
-			$selectionName = trim($attributes['name']);
-			$selectionOdds = $attributes['backp1'];
-			$betfairSelectionId = $attributes['id'];
+			$selectionName = trim($attributes['name'].'');
+			$selectionOdds = $attributes['backp1'].'';
+			$betfairSelectionId = $attributes['id'].'';
 
 			self::log("         * " . $selectionName);
 
