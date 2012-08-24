@@ -867,7 +867,6 @@ lists, etc. Each tag has its own remove link.
 /* header bar (logo and main menu) */
 .layout_page_header_mobi
 {
-  background-color: $theme_topbar_menu_background_color;
 }
 .layout_core_menu_logo
 {
@@ -878,6 +877,9 @@ lists, etc. Each tag has its own remove link.
   font-size: 18pt;
   letter-spacing: -0.05em;
   font-weight: bold;
+}
+.layout_core_menu_logo img {
+  height: auto;
 }
 .layout_core_menu_logo > a
 {
@@ -963,14 +965,15 @@ lists, etc. Each tag has its own remove link.
   outline: none;
   display: block;
   padding: .5em 0em;
-  background-color: $theme_topbar_menu_background_color;
-  border-bottom: 1px solid rgba(0,0,0,.2);
+  background-color: #D4FFFF;
+  border-bottom: 5px solid #3C88A8;
+  border-top: 5px solid #3C88A8;
   text-shadow: 1px 1px 0px rgba(0,0,0,.2);
 }
 .layout_mobi_mobi_menu_main ul a:link,
 .layout_mobi_mobi_menu_main ul a:visited
 {
-  color: $theme_topbar_menu_link_color;
+  color: #fff;
   text-decoration: none;
 }
 .layout_mobi_mobi_menu_main ul a:hover
@@ -979,13 +982,7 @@ lists, etc. Each tag has its own remove link.
 }
 .layout_mobi_mobi_menu_main li.active a
 {
-  +rounded(3px, false, false, true, true);
-  background-color: $theme_body_background_color;
-  color: $theme_font_color;
-  border: 1px solid transparent;
-  border-bottom: none;
-  text-shadow: none;
-  +shadow(0px, 0px, 4px, 0px, rgba(0,0,0,.4));
+  background-color: #71B8CA;
 }
 .layout_mobi_mobi_menu_main li.active:first-child a
 {
