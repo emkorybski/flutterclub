@@ -1,7 +1,7 @@
 <style type="text/css">
-	.fc_betting_pending {
-		background-color: #fff;
+	.layout_fc_betting_pending {
 		padding: 10px;
+		background-color: #fff;
 	}
 
 	.fc_betting_pending ul li {

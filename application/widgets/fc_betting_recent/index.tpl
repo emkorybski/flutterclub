@@ -1,7 +1,7 @@
 <style type="text/css">
-	.fc_betting_recent {
-		background-color: #fff;
+	.layout_fc_betting_recent {
 		padding: 10px;
+		background-color: #fff;
 	}
 
 	.fc_betting_recent ul li {
