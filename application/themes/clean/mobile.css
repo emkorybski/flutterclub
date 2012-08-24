@@ -878,8 +878,8 @@ lists, etc. Each tag has its own remove link.
   letter-spacing: -0.05em;
   font-weight: bold;
 }
-.layout_core_menu_logo img {
-  height: auto;
+.layout_page_header_mobi .layout_core_menu_logo img {
+  height: 25px;
 }
 .layout_core_menu_logo > a
 {
@@ -965,10 +965,12 @@ lists, etc. Each tag has its own remove link.
   outline: none;
   display: block;
   padding: .5em 0em;
-  background-color: #D4FFFF;
+  background-color: #3AAACF;
   border-bottom: 5px solid #3C88A8;
   border-top: 5px solid #3C88A8;
   text-shadow: 1px 1px 0px rgba(0,0,0,.2);
+  font-family: fc_bebas;
+  font-weight: normal;
 }
 .layout_mobi_mobi_menu_main ul a:link,
 .layout_mobi_mobi_menu_main ul a:visited
@@ -983,6 +985,7 @@ lists, etc. Each tag has its own remove link.
 .layout_mobi_mobi_menu_main li.active a
 {
   background-color: #71B8CA;
+  color: #D9FFFF;
 }
 .layout_mobi_mobi_menu_main li.active:first-child a
 {
