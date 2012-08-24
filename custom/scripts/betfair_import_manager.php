@@ -366,9 +366,9 @@ class BetfairImportManager
 			if (count($bfSubEvent->selection) > 0) {
 				$this->parseSelections($subEvent, $bfSubEvent->selection);
 			}
-
-            gc_collect_cycles();
 		}
+
+        gc_collect_cycles();
 	}
 
 	private function parseSelections($subEvent, $bfSelections)
