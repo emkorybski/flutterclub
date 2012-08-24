@@ -878,8 +878,8 @@ lists, etc. Each tag has its own remove link.
   letter-spacing: -0.05em;
   font-weight: bold;
 }
-.layout_core_menu_logo img {
-  height: auto;
+.layout_page_header_mobi .layout_core_menu_logo img {
+  height: 25px;
 }
 .layout_core_menu_logo > a
 {
