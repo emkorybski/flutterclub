@@ -33,19 +33,26 @@ class fc
 	{
 		$chart = self::$conversionChart;
 
-		$decFloor = 0;
-		if ($dec > 2) {
-			$decFloor = floor($dec) - 1;
-			$dec -= $decFloor;
-		}
-		for ($i = 0; $i < count($chart); $i++) {
-			if ($dec <= $chart[$i][0]) {
-				if ($decFloor == 0 && ($chart[$i][1] == $chart[$i][2])) {
-					return 'Evs';
-				} else {
-					return ($chart[$i][1] + $decFloor * $chart[$i][2]) . "/" . $chart[$i][2];
+		if ($dec < 10) {
+			for ($i = 0; $i < count($chart); $i++) {
+				if ($dec <= $chart[$i][0]) {
+					return $chart[$i][1] == $chart[$i][2]
+						? 'Evs'
+						: $chart[$i][1] . "/" . $chart[$i][2];
 				}
 			}
+		} else if ($dec < 40) {
+			return intval(round($dec)) . "/1";
+		} else {
+			$quotient = floor($dec / 10);
+			$reminder = $dec - $quotient * 10;
+			$round = $reminder > 2.5
+				? $reminder < 7.5
+					? 5
+					: 10
+				: 0;
+
+			return $quotient * 10 + $round . "/1";
 		}
 	}
 
@@ -91,6 +98,28 @@ class fc
 		array(1.82, 4, 5),
 		array(1.87, 5, 6),
 		array(1.93, 10, 11),
-		array(2.00, 1, 1)
+		array(2.06, 1, 1),
+		array(2.22, 6, 5),
+		array(2.30, 5, 4),
+		array(2.40, 11, 8),
+		array(2.62, 6, 4),
+		array(2.90, 7, 4),
+		array(3.19, 2, 1),
+		array(3.39, 9, 4),
+		array(3.59, 5, 2),
+		array(3.79, 11, 4),
+		array(4.34, 3, 1),
+		array(4.64, 7, 2),
+		array(5.34, 4, 1),
+		array(5.64, 9, 2),
+		array(6.34, 5, 1),
+		array(6.64, 11, 2),
+		array(7.34, 6, 1),
+		array(7.64, 13, 2),
+		array(8.34, 7, 1),
+		array(8.64, 15, 2),
+		array(9.34, 8, 1),
+		array(9.64, 17, 2),
+		array(9.99, 9, 1)
 	);
 }
