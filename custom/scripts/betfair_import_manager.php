@@ -140,8 +140,6 @@ class BetfairImportManager
 
 	public function importEventsAndSelections($url)
 	{
-        echo(gc_enabled());
-
         gc_enable();
 
 		\bets\bets::sql()->autocommit(false);
