@@ -140,6 +140,10 @@ class BetfairImportManager
 
 	public function importEventsAndSelections($url)
 	{
+        echo(gc_enabled());
+
+        gc_enable();
+
 		\bets\bets::sql()->autocommit(false);
 
 		preg_match_all('#href="([^"]*SportName[^"]*)"#', $this->loadUrlContent($url), $matches);
@@ -163,8 +167,6 @@ class BetfairImportManager
 			$this->parseEvents($sport, $xmlObject->event);
 		}
 
-		\bets\bets::sql()->autocommit(true);
-
 //		$sportRows = \bets\bets::sql()->query("SELECT * FROM fc_sport");
 //		foreach ($sportRows as $sportRow) {
 //			$sportId = $sportRow['id'];
@@ -175,6 +177,10 @@ class BetfairImportManager
 //			$xmlContent = $this->getUrlContent($marketDataUrl);
 //			$xmlObject = simplexml_load_string($xmlContent);
 //		}
+
+        \bets\bets::sql()->autocommit(true);
+
+        gc_disable();
 	}
 
 	private function getActiveEventTypes()
@@ -303,6 +309,8 @@ class BetfairImportManager
         $this->eventsById = null;
         $this->eventsByParentAndName = null;
         $this->eventsByBetfairMarketId = null;
+
+        gc_collect_cycles();
 	}
 
 	private function updateParentEventsDate($event, $eventDate)
@@ -360,6 +368,8 @@ class BetfairImportManager
 			if (count($bfSubEvent->selection) > 0) {
 				$this->parseSelections($subEvent, $bfSubEvent->selection);
 			}
+
+            gc_collect_cycles();
 		}
 	}
 
