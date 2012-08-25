@@ -365,13 +365,13 @@ class BetfairImportManager
 				$this->updateParentEventsDate($subEvent, $subEventDate);
 			}
 			else {
-                if ($subEvent->name != $subEventName || $subEvent->ts != $subEventDate) {
+                //if ($subEvent->name != $subEventName || $subEvent->ts != $subEventDate) {
                     $subEvent->name = $subEventName;
                     $subEvent->ts = $subEventDate;
                     $subEvent->setDirty(true); //$subEvent->update();
 
                     $this->updateParentEventsDate($subEvent, $subEventDate);
-                }
+                //}
 			}
 
 			if (count($bfSubEvent->selection) > 0) {
@@ -438,7 +438,7 @@ if (!BetfairImportManager::getRunning())
 {
     BetfairImportManager::setRunning(true);
     $bfImportManager = new BetfairImportManager();
-    $bfImportManager->importSportsAndEvents();
+    //$bfImportManager->importSportsAndEvents();
     $bfImportManager->importEventsAndSelections("http://www.betfair.com/partner/marketdata_xml3.asp");
     BetfairImportManager::setRunning(false);
 }
