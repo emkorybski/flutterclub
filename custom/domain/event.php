@@ -62,4 +62,34 @@ class Event extends DBRecord
 		}
 		return $event;
 	}
+
+    public static function bulkUpdate($events)
+    {
+        $stmt = null;
+
+        foreach($events as $event)
+        {
+            if (!$event->isDirty())
+                continue;
+
+            if (!$stmt) {
+                !$stmt = bets::sql()->stmt_init();
+                if (!$stmt) {
+                    throw new \Exception(bets::sql()->getLastError());
+                }
+                $stmt->prepare("UPDATE fc_event SET name = ?, ts = ? WHERE id = ?");
+            }
+
+            $name = $event->name;
+            $ts = $event->ts;
+            $id = $event->id;
+            $stmt->bind_param('sii', $name, $ts, $id);
+
+            $stmt->execute();
+        }
+
+        if ($stmt) {
+            $stmt->close();
+        }
+    }
 }

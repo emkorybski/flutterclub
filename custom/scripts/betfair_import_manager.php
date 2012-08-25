@@ -14,14 +14,14 @@ class BetfairImportManager
 	private static $logEnabled = false;
 
 
-    public static $isRunning = false;
-
     public static function setRunning($value) {
-        self::$isRunning = $value;
+        // running status needs to be saved in database
+        return false;
     }
 
     public static function getRunning() {
-        return self::$isRunning;
+        // running status needs to be saved in database
+        return false;
     }
 
 
@@ -55,7 +55,7 @@ class BetfairImportManager
 
     private function addEvent($event)
     {
-        if ($event->id > 0) {
+        if (!$event->isNew()) {
             $this->eventsById[$event->id] = $event;
         }
         else {
@@ -91,7 +91,7 @@ class BetfairImportManager
 
     private function addSelection($selection)
     {
-        if ($selection->id > 0) {
+        if (!$selection->isNew()) {
             $this->selectionsById[$selection->id] = $selection;
         }
         else {
@@ -217,6 +217,8 @@ class BetfairImportManager
 
 			$this->getEvents($sport->betfairSportId, $sport->id, 0);
 
+            \bets\Event::clearCache();
+
             $this->eventsById = null;
             $this->eventsByParentAndName = null;
             $this->eventsByBetfairMarketId = null;
@@ -273,7 +275,7 @@ class BetfairImportManager
             $eventName = trim($attributes['name'].'');
             //$eventDate = date('Y-m-d 00:00:00', \DateTime::createFromFormat('d/m/Y', $attributes['date'])->getTimestamp());
 
-            self::log($eventName);
+            //self::log($eventName);
             $eventsList = explode('/', $eventName);
 
             $idParent = 0;
@@ -302,7 +304,11 @@ class BetfairImportManager
             }
         }
 
+        \bets\Event::bulkUpdate($this->eventsById);
+
         \bets\bets::sql()->commit();
+
+        \bets\Event::clearCache();
 
         $this->eventsById = null;
         $this->eventsByParentAndName = null;
@@ -319,7 +325,7 @@ class BetfairImportManager
             $evt = $this->eventsById[$evt->idparent];
 			if (!$evt->ts || $evt->ts < $eventDate) {
 				$evt->ts = $eventDate;
-				$evt->update();
+				$evt->setDirty(true); //$evt->update();
 			}
 		}
 	}
@@ -333,11 +339,11 @@ class BetfairImportManager
 			$subEventBetfairMarketId = $attributes['id'].'';
 			$subEventTotalAmountMatched = $attributes['TotalAmountMatched'].'';
 
-			self::log("   * " . $subEventName);
+			//self::log("   * " . $subEventName);
 
 			$competition = \bets\Competition::getCurrent();
 			$nowDate = date('Y-m-d H:i:s');
-			self::log("      " . $nowDate . " < " . $subEventDate . " < " . $competition->ts_end);
+			//self::log("      " . $nowDate . " < " . $subEventDate . " < " . $competition->ts_end);
 			if ($subEventDate < $nowDate || $subEventDate > $competition->ts_end)
 				continue;
             if (!$subEventBetfairMarketId)
@@ -356,11 +362,13 @@ class BetfairImportManager
 				$this->updateParentEventsDate($subEvent, $subEventDate);
 			}
 			else {
-				$subEvent->name = $subEventName;
-				$subEvent->ts = $subEventDate;
-				$subEvent->update();
+                if ($subEvent->name != $subEventName || $subEvent->ts != $subEventDate) {
+                    $subEvent->name = $subEventName;
+                    $subEvent->ts = $subEventDate;
+                    $subEvent->setDirty(true); //$subEvent->update();
 
-				$this->updateParentEventsDate($subEvent, $subEventDate);
+                    $this->updateParentEventsDate($subEvent, $subEventDate);
+                }
 			}
 
 			if (count($bfSubEvent->selection) > 0) {
@@ -387,21 +395,26 @@ class BetfairImportManager
 			$selectionOdds = $attributes['backp1'].'';
 			$betfairSelectionId = $attributes['id'].'';
 
-			self::log("         * " . $selectionName);
+			//self::log("         * " . $selectionName);
 
 			//$selection = \bets\Selection::getWhere(array('idevent=' => $subEvent->id, 'name=' => $selectionName, 'betfairSelectionId=' => $betfairSelectionId));
 			$selection = $this->getSelectionByEventAndName($subEvent->id, $selectionName, $betfairSelectionId);
             if (!$selection) {
 				$selection = new \bets\Selection(null, array('name' => $selectionName, 'odds' => $selectionOdds, 'betfairSelectionId' => $betfairSelectionId));
 				$selection->idevent = $subEvent->id;
-				$selection->insert();
-
                 $this->addSelection($selection);
 			} else {
-				$selection->odds = $selectionOdds;
-				$selection->update();
+                if ($selection->odds != $selectionOdds) {
+				    $selection->odds = $selectionOdds;
+                    $selection->setDirty(true); //$selection->update();
+                }
 			}
 		}
+
+        \bets\Selection::bulkInsert($this->selectionsById);
+        \bets\Selection::bulkUpdate($this->selectionsById);
+
+        \bets\Selection::clearCache();
 
         $this->selectionsById = null;
         $this->selectionsByEventAndName = null;

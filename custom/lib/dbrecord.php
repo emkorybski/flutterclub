@@ -8,11 +8,18 @@ abstract class DBRecord extends Object {
 
 	protected static $_table = null;
 	protected static $_fieldNames = array();
+
 	protected static $_instances = array();
 	protected $_data = array();
+    protected $_dirty = false;
 
 	public static $SQLDIE = 0;
-	
+
+    public static function clearCache($customDbClass = null) {
+        $className = ($customDbClass ? $customDbClass : get_called_class());
+        static::$_instances[$className] = array();
+    }
+
 	/**
 	 * Returns the database record with the given ID as a DBRecord object
 	 * @param int $id
@@ -256,6 +263,18 @@ abstract class DBRecord extends Object {
 	public function dbFields() {
 		return $this->_data;
 	}
+
+    public function setDirty($value) {
+        $this->_dirty = $value;
+    }
+
+    public function isDirty() {
+        return $this->_dirty;
+    }
+
+    public function isNew() {
+        return !array_key_exists('id', $this->_data);
+    }
 
 }
 
