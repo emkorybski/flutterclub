@@ -33,7 +33,8 @@
 		margin-left: 10px;
 	}
 
-	.fc_betting_recent .bet_info .bet_stake:before {
+	.fc_betting_recent .bet_info .bet_stake:before,
+	.fc_betting_recent .bet_info .bet_earnings:before {
 		content: 'FB$ ';
 	}
 

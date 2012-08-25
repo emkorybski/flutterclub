@@ -33,7 +33,8 @@
 		margin-left: 10px;
 	}
 
-	.profile_betting_history .bet_info .bet_stake:before {
+	.profile_betting_history .bet_info .bet_stake:before,
+	.profile_betting_history .bet_info .bet_earnings:before {
 		content: 'FB$ ';
 	}
 
