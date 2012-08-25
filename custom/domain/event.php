@@ -83,7 +83,7 @@ class Event extends DBRecord
             $name = $event->name;
             $ts = $event->ts;
             $id = $event->id;
-            $stmt->bind_param('sii', $name, $ts, $id);
+            $stmt->bind_param('ssi', $name, $ts, $id);
 
             $stmt->execute();
         }

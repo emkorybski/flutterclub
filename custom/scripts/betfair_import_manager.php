@@ -35,6 +35,8 @@ class BetfairImportManager
     private $selectionsById;
     private $selectionsByEventAndName;
 
+    private $competition;
+
 	public function __construct()
 	{
 		if (self::$logEnabled) {
@@ -43,6 +45,8 @@ class BetfairImportManager
 
 		$this->soapClient = new \SoapClient("https://api.betfair.com/global/v3/BFGlobalService.wsdl");
 		$this->login();
+
+        $this->competition = \bets\Competition::getCurrent();
 	}
 
 	private static function log($message)
@@ -341,10 +345,9 @@ class BetfairImportManager
 
 			//self::log("   * " . $subEventName);
 
-			$competition = \bets\Competition::getCurrent();
 			$nowDate = date('Y-m-d H:i:s');
-			//self::log("      " . $nowDate . " < " . $subEventDate . " < " . $competition->ts_end);
-			if ($subEventDate < $nowDate || $subEventDate > $competition->ts_end)
+			//self::log("      " . $nowDate . " < " . $subEventDate . " < " . $this->competition->ts_end);
+			if ($subEventDate < $nowDate || $subEventDate > $this->competition->ts_end)
 				continue;
             if (!$subEventBetfairMarketId)
                 continue;
@@ -375,8 +378,6 @@ class BetfairImportManager
 				$this->parseSelections($subEvent, $bfSubEvent->selection);
 			}
 		}
-
-        gc_collect_cycles();
 	}
 
 	private function parseSelections($subEvent, $bfSelections)
