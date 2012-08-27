@@ -8,7 +8,7 @@ class fc
 	{
 		$percent1 = $num / $den;
 		$percent2 = $percent1 * 100;
-		return number_format($percent2, 2, '.', ' ') . '%';
+		return number_format($percent2, 2, '.', ',') . '%';
 	}
 
 	private static $oddsFormat = 'fractional';
@@ -26,7 +26,7 @@ class fc
 			return self::decimal2american($dec);
 		}
 
-		return number_format($dec, 2, '.', ' ');
+		return number_format($dec, 2, '.', ',');
 	}
 
 	public static function decimal2fractional($dec)

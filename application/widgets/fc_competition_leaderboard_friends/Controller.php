@@ -38,7 +38,7 @@ class Widget_FC_Competition_Leaderboard_FriendsController extends Engine_Content
 			$userData = array(
 				'position' => $position,
 				'user' => $seUser,
-				'profit' => number_format($leaderboardUserData['profit'], 2, '.', ' '),
+				'profit' => number_format($leaderboardUserData['profit'], 2, '.', ','),
 				'won_count' => $leaderboardUserData['won_count'],
 				'bet_count' => $leaderboardUserData['bet_count'],
 				'successRate' => $successRate);

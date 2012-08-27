@@ -103,7 +103,7 @@ if ( count($this->recent_bets) > 0 ) :
 				if ($bet->status == 'won') :
 				$betEarnings = $bet->stake * ($bet->odds - 1);
 				?>
-				<span class="bet_earnings"><?=number_format($betEarnings, 2, '.', ' ')?></span>
+				<span class="bet_earnings"><?=number_format($betEarnings, 2, '.', ',')?></span>
 				<?php
 				endif;
 				?>

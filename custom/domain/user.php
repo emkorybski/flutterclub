@@ -88,10 +88,10 @@ class User extends DBRecord
 		$replacements[0] = $userData['displayname'];
 
 		$replacements[1] = $pendingBet->status;
-		$replacements[2] = $pendingBet->odds;
-		$replacements[3] = number_format($pendingBet->stake, 2, '.', ' ');
+		$replacements[2] = fc::decimal2fractional($pendingBet->odds);
+		$replacements[3] = number_format($pendingBet->stake, 2, '.', ',');
 		$earnings = $pendingBet->status == 'won' ? $pendingBet->stake * ($pendingBet->odds - 1) : $pendingBet->stake;
-		$replacements[4] = number_format($earnings, 2, '.', ' ');
+		$replacements[4] = number_format($earnings, 2, '.', ',');
 
 		$betSelections = $pendingBet->getSelections();
 		$isAccumulator = count($betSelections) > 1;

@@ -4,6 +4,9 @@ namespace betfair;
 
 require_once(dirname(__FILE__) . '/../config.php');
 require_once(PATH_DOMAIN . 'betfair_result.php');
+require_once(PATH_DOMAIN . 'event.php');
+require_once(PATH_DOMAIN . 'selection.php');
+require_once(PATH_DOMAIN . 'bet_selection.php');
 
 class BetfairResultsManager
 {
@@ -19,8 +22,42 @@ class BetfairResultsManager
 				$this->getSportResults($sportResultsUrl);
 			}
 		}
-		\bets\bets::sql()->run("CALL fc_sp_update_selection_status()");
-		\bets\bets::sql()->run("CALL fc_sp_update_bet_selection_status()");
+
+		$this->updateSelectionStatus();
+		$this->updateBetSelectionStatus();
+	}
+
+	private function updateSelectionStatus()
+	{
+		$unprocessedBetfairResults = \bets\BetfairResult::findWhere(array('processed=' => 'n'));
+		foreach ($unprocessedBetfairResults as $betfairResult) {
+			$winners = explode(",", $betfairResult->winner);
+			array_walk($winners, create_function('&$val', '$val = trim($val);'));
+
+			$event = \bets\Event::getWhere(array('betfairMarketId=' => $betfairResult->betfairMarketId));
+			$eventSelections = \bets\Selection::findWhere(array('idevent=' => $event->id));
+			foreach ($eventSelections as $selection) {
+				$selection->status = in_array($selection->name, $winners)
+					? 'won'
+					: 'lost';
+				$selection->update();
+			}
+
+			$betfairResult->processed = 'y';
+			$betfairResult->update();
+		}
+	}
+
+	private function updateBetSelectionStatus()
+	{
+		$pendingBetSelections = \bets\BetSelection::findWhere(array('status=' => 'pending'));
+		foreach ($pendingBetSelections as $betSelection) {
+			$selection = \bets\Selection::get($betSelection->idselection);
+			if ($selection->status != 'pending') {
+				$betSelection->status = $selection->status;
+				$betSelection->update();
+			}
+		}
 	}
 
 	private function getSportResults($url)
@@ -58,4 +95,4 @@ class BetfairResultsManager
 }
 
 $bfResultsManager = new BetfairResultsManager();
-$bfResultsManager->run('http://rss.betfair.com/Navigation.aspx');
+$bfResultsManager->run("http://rss.betfair.com/Navigation.aspx");
