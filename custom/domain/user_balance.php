@@ -23,7 +23,7 @@ class UserBalance extends DBRecord
 			$balance = new UserBalance();
 			$balance->idcompetition = $competition->id;
 			$balance->iduser = $idUser;
-			$balance->balance = $competition->start_points;
+			$balance->balance = $competition->start_balance;
 			if ($forceInsert) {
 				$balance->insert();
 			}
