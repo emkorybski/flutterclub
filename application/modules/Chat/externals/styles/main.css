@@ -26,6 +26,7 @@ available chatrooms.
   height: 27px;
   margin-top: -27px;
   font-size: 8pt;
+  z-index: 9999;
 }
 #im_container div
 {
