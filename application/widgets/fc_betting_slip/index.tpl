@@ -75,7 +75,7 @@ if ( count($this->betting_slip) ) :
 	?>
 	<div class="slip_actions">
 		<div><a href="#" class="action_remove_all">Remove all</a></div>
-		<div class="action"><a href="#" class="action_place_bet">Place bet</a></div>
+		<button class="action_place_bet">Place Bet</button>
 		<div class="clear"></div>
 	</div>
 <?php
