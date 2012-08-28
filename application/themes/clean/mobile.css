@@ -1061,6 +1061,13 @@ form.filters dd + dt
   border: 1px solid #ccc;
 }
 
+/* Betting Categories */
+
+.betting_categories a {
+  height: 40px;
+  line-height: 40px;
+}
+
 
 
 /* Moved from widgets\footer\index.tpl - to be cleaned up */
