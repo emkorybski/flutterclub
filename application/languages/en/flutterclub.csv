@@ -1,10 +1,10 @@
 # mail templates
 
 # notify_bet_settlement
-"_EMAIL_NOTIFY_BET_SETTLE_TITLE";"Flutterclub - Bet Settlement Notification"
-"_EMAIL_NOTIFY_BET_SETTLE_DESCRIPTION";"This email is sent to the user when a bet is settled (won/lost/void)."
-"_EMAIL_NOTIFY_BET_SETTLE_SUBJECT";"Your bet has been settled"
-"_EMAIL_NOTIFY_BET_SETTLE_BODY";"[header]
+"_EMAIL_NOTIFY_BET_SETTLEMENT_TITLE";"Flutterclub - Bet Settlement Notification"
+"_EMAIL_NOTIFY_BET_SETTLEMENT_DESCRIPTION";"This email is sent to the user when a bet is settled (won/lost/void)."
+"_EMAIL_NOTIFY_BET_SETTLEMENT_SUBJECT";"Your bet has been settled"
+"_EMAIL_NOTIFY_BET_SETTLEMENT_BODY";"[header]
 
 Your bet has been settled on Flutterclub.
 You can find the details below:
