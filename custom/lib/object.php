@@ -2,25 +2,35 @@
 
 namespace bets;
 
-abstract class Object {
+abstract class Object
+{
 
-	public function __construct() {
+	public function __construct()
+	{
 		call_user_func_array(array($this, 'initialize'), func_get_args());
 	}
 
-	public function __destruct() {
+	public function __destruct()
+	{
 		call_user_func_array(array($this, 'destroy'), func_get_args());
 	}
 
-	// override me
-	protected function initialize() {
-		
+	public function __get($var)
+	{
+	}
+
+	public function __unset($var)
+	{
 	}
 
 	// override me
-	protected function destroy() {
-		
+	protected function initialize()
+	{
 	}
 
+	// override me
+	protected function destroy()
+	{
+	}
 }
 
