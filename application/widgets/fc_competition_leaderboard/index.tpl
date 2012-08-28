@@ -1,4 +1,4 @@
-﻿<style type="text/css">
+<style type="text/css">
 	.fc_competition_leaderboard td {
 		vertical-align: bottom;
 	}
