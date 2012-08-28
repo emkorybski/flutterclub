@@ -1,8 +1,5 @@
 
 <style type="text/css">
-	.layout_middle {
-		box-shadow: 5px 5px 15px 0 #cccccc;
-	}
 	.fc_betting_markets {
 		background-color: #ffffff;
 	}
