@@ -29,6 +29,7 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 						$bet->iduser = $user->id;
 						$bet->odds = 1;
 						$bet->stake = $userBet['stake'];
+						$bet->ts_placed = \bets\fc::getGMTTimestamp();
 						$bet->insert();
 						$totalStake += $bet->stake;
 
@@ -60,6 +61,7 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 						$bet->iduser = $user->id;
 						$bet->odds = $selection->odds;
 						$bet->stake = $userBet['stake'];
+						$bet->ts_placed = \bets\fc::getGMTTimestamp();
 						$bet->insert();
 						$totalStake += $bet->stake;
 

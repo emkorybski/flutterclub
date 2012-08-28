@@ -51,13 +51,13 @@ class User extends DBRecord
 
 	public function getPendingBets($limit = null)
 	{
-		$extraQuery = "ORDER BY ts DESC" . ($limit != null ? " LIMIT $limit" : "");
+		$extraQuery = "ORDER BY ts_settled DESC" . ($limit != null ? " LIMIT $limit" : "");
 		return Bet::findWhere(array('idcompetition=' => $this->currentCompetitionId, 'iduser=' => $this->id, 'status=' => 'pending'), $extraQuery);
 	}
 
 	public function getSettledBets($limit = null)
 	{
-		$extraQuery = "ORDER BY ts DESC" . ($limit != null ? " LIMIT $limit" : "");
+		$extraQuery = "ORDER BY ts_settled DESC" . ($limit != null ? " LIMIT $limit" : "");
 		return Bet::findWhere(array('idcompetition=' => $this->currentCompetitionId, 'iduser=' => $this->id, 'status != ' => 'pending'), $extraQuery);
 	}
 

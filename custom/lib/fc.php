@@ -11,6 +11,11 @@ class fc
 		return number_format($percent2, 2, '.', ',') . '%';
 	}
 
+	public static function getGMTTimestamp()
+	{
+		return date('Y-m-d H:i:s', \DateTime::createFromFormat('Y-m-d H:i:s', gmdate("Y-m-d H:i:s", time()))->getTimestamp());
+	}
+
 	private static $oddsFormat = 'fractional';
 
 	public static function formatOdds($dec, $oddsFormat)
