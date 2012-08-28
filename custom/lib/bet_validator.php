@@ -4,6 +4,7 @@ namespace bets;
 
 require_once(dirname(__FILE__) . '/../config.php');
 require_once(PATH_LIB . 'bets.php');
+require_once(PATH_LIB . 'fc.php');
 require_once(PATH_DOMAIN . 'user.php');
 require_once(PATH_DOMAIN . 'user_balance.php');
 require_once(PATH_DOMAIN . 'bet.php');
