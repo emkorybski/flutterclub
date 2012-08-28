@@ -1,0 +1,13 @@
+# mail templates
+
+# notify_bet_settle
+"_EMAIL_NOTIFY_BET_SETTLE_TITLE";"Bet Settled"
+"_EMAIL_NOTIFY_BET_SETTLE_DESCRIPTION";"a description"
+"_EMAIL_NOTIFY_BET_SETTLE_SUBJECT";"Your bet has been settled [test]"
+"_EMAIL_NOTIFY_BET_SETTLE_BODY";"[header]
+
+[test]
+some data here
+[data]
+
+[footer]"

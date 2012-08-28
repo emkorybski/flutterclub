@@ -34,7 +34,7 @@ class BetValidator
 
 			$pendingBet->odds = $betTotalOdds;
 			$pendingBet->status = $betStatus;
-			$pendingBet->ts_settled = \bets\fc::getGMTTimestamp();
+			$pendingBet->ts_settled = fc::getGMTTimestamp();
 			$pendingBet->update();
 			if ($betStatus != 'pending') {
 				if ($betStatus == 'won') {

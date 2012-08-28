@@ -20,4 +20,12 @@ class Widget_FC_ScriptController extends Engine_Content_Widget_Abstract
 		$betValidator = new \bets\BetValidator();
 		$betValidator->validateBets();
 	}
+
+	public function sendEmailAction()
+	{
+		$userData = \bets\User::getCurrentUserData(13);
+		\Engine_Api::_()->getApi('mail', 'core')->sendSystemRaw($userData['email'], 'notify_bet_settle', array(
+			'test' => '123'
+		));
+	}
 }

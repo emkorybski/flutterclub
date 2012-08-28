@@ -4,9 +4,9 @@ return array(
 	'params' =>
 	array(
 		'host' => 'localhost',
-		'username' => 'fc_app',
-		'password' => 'zZ92u]0',
-		'dbname' => 'fc_demo',
+		'username' => 'root',
+		'password' => '',
+		'dbname' => 'fc',
 		'charset' => 'UTF8',
 		'adapterNamespace' => 'Zend_Db_Adapter',
 	),
