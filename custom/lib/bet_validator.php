@@ -35,9 +35,11 @@ class BetValidator
 
 			$pendingBet->odds = $betTotalOdds;
 			$pendingBet->status = $betStatus;
-			$pendingBet->ts_settled = fc::getGMTTimestamp();
 			$pendingBet->update();
 			if ($betStatus != 'pending') {
+				$pendingBet->ts_settled = fc::getGMTTimestamp();
+				$pendingBet->update();
+
 				if ($betStatus == 'won') {
 					$balance = \bets\UserBalance::getWhere(array('idcompetition=' => $pendingBet->idcompetition, 'iduser=' => $pendingBet->iduser));
 					if ($balance) {
@@ -54,8 +56,10 @@ class BetValidator
 				\Engine_Api::_()->getDbtable('actions', 'activity')->addActivity($seUser, $seUser, 'status', $notificationText);
 				//$seUser->status()->setStatus($notificationText);
 
-				// Send email
-				\bets\User::sendEmail($pendingBet->iduser, $notificationText);
+				$userData = \bets\User::getCurrentUserData($pendingBet->iduser);
+				\Engine_Api::_()->getApi('mail', 'core')->sendSystem($userData['email'], 'notify_bet_settlement', array(
+					'bet_data' => $notificationText
+				));
 			}
 		}
 	}

@@ -24,8 +24,8 @@ class Widget_FC_ScriptController extends Engine_Content_Widget_Abstract
 	public function sendEmailAction()
 	{
 		$userData = \bets\User::getCurrentUserData(13);
-		\Engine_Api::_()->getApi('mail', 'core')->sendSystemRaw($userData['email'], 'notify_bet_settle', array(
-			'test' => '123'
+		\Engine_Api::_()->getApi('mail', 'core')->sendSystem($userData['email'], 'notify_bet_settlement', array(
+			'bet_data' => '[bet data here]'
 		));
 	}
 }
