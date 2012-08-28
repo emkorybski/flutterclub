@@ -9,17 +9,16 @@ if (defined('BETS_INITIALIZED')) {
 define('BETS_INITIALIZED', true);
 
 // DB configuration
-if (1 || (!isset($_SERVER['REMOTE_ADDR'])) || ($_SERVER['REMOTE_ADDR'] == '127.0.0.1')) {
+if (!isset($_SERVER['REMOTE_ADDR']) || ($_SERVER['REMOTE_ADDR'] == '127.0.0.1')) {
 	define('BETS_DB_HOST', 'localhost');
 	define('BETS_DB_USER', 'root');
-	define('BETS_DB_PASS', 'campofrio');
+	define('BETS_DB_PASS', '');
 	define('BETS_DB_NAME', 'fc');
-}
-else {
-	define('BETS_DB_HOST', 'mysql-shared-02.phpfog.com');
-	define('BETS_DB_USER', 'Custom App-38630');
-	define('BETS_DB_PASS', 'cx10u63r67GA');
-	define('BETS_DB_NAME', 'flutterclub_phpfogapp_com');
+} else {
+	define('BETS_DB_HOST', '5.79.7.99');
+	define('BETS_DB_USER', 'fc_app');
+	define('BETS_DB_PASS', 'zZ92u]0');
+	define('BETS_DB_NAME', 'fc_demo');
 }
 
 // Paths
@@ -30,4 +29,3 @@ define('WEB_ROOT', '/fc/');
 
 // Default includes
 require_once(PATH_LIB . 'bets.php');
-
