@@ -84,7 +84,11 @@ foreach ( $this->selections as $selection) :
 	}
 ?>
 	<div class="selection_name"><?=$selection->name?></div>
+	<?php if ($selection->odds > 1) : ?>
 	<button <?=$disabled?> data-idselection="<?=$selection->id?>" class="submit_selection"><?=\bets\fc::formatOdds($selection->odds)?></button>
+	<?php else  : ?>
+	<button disabled="disabled" data-idselection="<?=$selection->id?>">-</button>
+	<?php endif; ?>
 	<!-- <a href="#" class="share_selection">Share</a> -->
 	<div class="clear"></div>
 </a>
