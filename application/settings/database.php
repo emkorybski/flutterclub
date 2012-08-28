@@ -3,7 +3,7 @@ return array(
 	'adapter' => 'mysqli',
 	'params' =>
 	array(
-		'host' => '5.79.7.99',
+		'host' => 'localhost',
 		'username' => 'fc_app',
 		'password' => 'zZ92u]0',
 		'dbname' => 'fc_demo',
