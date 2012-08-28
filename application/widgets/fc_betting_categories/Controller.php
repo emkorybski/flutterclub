@@ -25,7 +25,7 @@ class Widget_FC_Betting_CategoriesController extends \Engine_Content_Widget_Abst
 //					'idevent' => '',
 //					'name' => $sport->name);
 //			}
-			$sportRows = \bets\bets::sql()->run("SELECT DISTINCT S.* FROM fc_event E JOIN fc_sport S ON E.idsport = S.id WHERE S.enabled = 'y' AND E.deleted = 'n' AND E.ts IS NOT NULL ORDER BY name ASC");
+			$sportRows = \bets\bets::sql()->query("SELECT DISTINCT S.* FROM fc_event E JOIN fc_sport S ON E.idsport = S.id WHERE S.enabled = 'y' AND E.deleted = 'n' AND E.ts IS NOT NULL ORDER BY name ASC");
 			foreach ($sportRows as $sport) {
 				$result[] = array(
 					'idsport' => $sport['id'],
