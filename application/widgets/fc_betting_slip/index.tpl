@@ -48,11 +48,11 @@
 
 <div class="fc_betting_slip">
 <?php
-if ( count($this->betting_slip) ) :
+if ( count($this->betSlipSelections) ) :
 ?>
 	<table>
 	<?php
-	foreach ($this->betting_slip as $userSel) :
+	foreach ($this->betSlipSelections as $userSel) :
 		$sel = $userSel->getSelection();
 	?>
 		<tr>
@@ -66,14 +66,14 @@ if ( count($this->betting_slip) ) :
 	?>
 	</table>
 	<?php
-	if ( $this->accumulator_valid ) :
+	if ( $this->accumulatorBetAvailable ) :
 	?>
 	<label for="accumulator">Accumulator</label>
 	<input id="accumulator" type="text" class="box_accumulator"/>
 	<?php
 	else :
 	?>
-	<p>You cannot place accumulator on selections within same event.</p>
+	<p>You cannot place accumulator on selections within same event or on the same selection more than once.</p>
 	<?php
 	endif;
 	?>

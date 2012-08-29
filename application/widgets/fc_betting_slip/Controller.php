@@ -33,26 +33,28 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 				break;
 			default:
 				$userSelections = bets\User::getCurrentUser()->getUserSelections();
-				$this->view->betting_slip = $userSelections;
-				$this->view->accumulator_valid = $this->validateAccumulator($userSelections);
+				$this->view->betSlipSelections = $userSelections;
+				$this->view->accumulatorBetAvailable = $this->validateAccumulator($userSelections);
 		}
 	}
 
 	private function validateAccumulator($userSelections)
 	{
 		$betSlipEvents = array();
-		$isValid = true;
+		$betSlipBetfairSelections = array();
 
+		$isValid = true;
 		foreach ($userSelections as $userSelection) {
-			$selection = \bets\Selection::get($userSelection->idselection);
+			$selection = $userSelection->getSelection();
 			$market = \bets\Event::get($selection->idevent);
 			$event = $market->getParent();
 
-			if (in_array($event->id, $betSlipEvents)) {
+			if (in_array($event->id, $betSlipEvents) || in_array($selection->betfairSelectionId, $betSlipBetfairSelections)) {
 				$isValid = false;
 				break;
 			} else {
 				array_push($betSlipEvents, $event->id);
+				array_push($betSlipBetfairSelections, $selection->betfairSelectionId);
 			}
 		}
 
@@ -83,7 +85,7 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 		$isValid = true;
 		foreach ($betSlipSelectionsStakes as $betSlipSelectionId => $betSlipSelectionStake) {
 			$userSelection = \bets\UserSelection::get($betSlipSelectionId);
-			$selection = \bets\Selection::get($userSelection->idselection);
+			$selection = $userSelection->getSelection();
 
 			$betSelections = \bets\BetSelection::findWhere(array('idselection=' => $selection->id));
 			$totalStake = 0;
