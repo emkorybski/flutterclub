@@ -4,7 +4,7 @@ var WEB_ROOT = '/fc/';
 if (!window.fc) fc = {}
 if (!fc.user) fc.user = {}
 
-fc.user.updateAccountBalance = function (data) {
+fc.user.updateAccountBalance = function () {
     var accountInfo = j('.account_info');
     accountInfo.css({
         opacity:0.5
@@ -25,14 +25,13 @@ fc.user.updateAccountBalance = function (data) {
     });
 }
 
-fc.user.updateBettingSlip = function (data) {
+fc.user.updateBettingSlip = function () {
     var bettingSlip = j('.fc_betting_slip');
     bettingSlip.css({
         opacity:0.5
     }).addClass('betting_upcoming_loading');
 
     j.ajax(WEB_ROOT + 'widget?name=fc_betting_slip&format=html', {
-        data:data || {},
         dataType:'html',
         success:function (text) {
             var content = j('.fc_betting_slip', text);

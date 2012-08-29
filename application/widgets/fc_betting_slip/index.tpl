@@ -66,10 +66,14 @@ if ( count($this->betting_slip) ) :
 	?>
 	</table>
 	<?php
-	if ( count($this->betting_slip) > 1 ) :
+	if ( $this->accumulator_valid ) :
 	?>
 	<label for="accumulator">Accumulator</label>
 	<input id="accumulator" type="text" class="box_accumulator"/>
+	<?php
+	else :
+	?>
+	<p>You cannot place accumulator on selections within same event.</p>
 	<?php
 	endif;
 	?>
@@ -171,13 +175,18 @@ endif;
 
 		j.ajax(WEB_ROOT + 'widget?name=fc_betting_slip&format=html', {
 			data:{ action:'place_bet', bets:bets },
-			dataType:'html',
-			success:function (text) {
-				fc.user.updateAccountBalance();
-				fc.user.updateBettingMarkets();
-				fc.user.updateBettingSlip();
-				fc.user.updateBettingPending();
-				fc.user.updateBettingRecent();
+			dataType:'json',
+			success:function (response) {
+				if (response.success) {
+					fc.user.updateAccountBalance();
+					fc.user.updateBettingMarkets();
+					fc.user.updateBettingSlip();
+					fc.user.updateBettingPending();
+					fc.user.updateBettingRecent();
+				}
+				else {
+					alert('Maximum bet is FB$500!');
+				}
 			}
 		});
 	});

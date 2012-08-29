@@ -12,7 +12,6 @@ class Widget_FC_Betting_MarketsController extends Engine_Content_Widget_Abstract
 	public function indexAction()
 	{
 		if (isset($_REQUEST['action'])) {
-			print_r($_REQUEST);
 			$this->submitSelection((int)$_REQUEST['idselection']);
 		} else {
 			$idEvent = (int)$_REQUEST['idevent'];
