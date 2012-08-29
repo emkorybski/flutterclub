@@ -1,5 +1,5 @@
 <?php if (empty($_REQUEST['format']) || ($_REQUEST['format'] != 'html')) { ?>
-<div class="box_shadow widget_body">
+<div class="widget_body">
 <?php } ?>
 	
 <style type="text/css">
