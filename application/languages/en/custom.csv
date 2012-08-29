@@ -1,0 +1,230 @@
+"_EMAIL_HEADER_SUBJECT";""
+"_EMAIL_HEADER_BODY";"Hi there,"
+"_EMAIL_FOOTER_SUBJECT";""
+"_EMAIL_FOOTER_BODY";"Best Regards,
+The flutterclub.com team"
+"_EMAIL_HEADER_MEMBER_SUBJECT";""
+"_EMAIL_HEADER_MEMBER_BODY";"Hi [recipient_title],"
+"_EMAIL_FOOTER_MEMBER_SUBJECT";""
+"_EMAIL_FOOTER_MEMBER_BODY";"Best Regards,
+The flutterclub.com team"
+"_EMAIL_CORE_CONTACT_SUBJECT";"ENQUIRY! A member has sent you a message using the contact page."
+"_EMAIL_CORE_CONTACT_BODY";"[header]
+
+[sender_title] has sent you a message using the contact page:
+
+Email : [sender_email]
+Message:
+[message][error_report]
+
+[footer]"
+"_EMAIL_CORE_VERIFICATION_SUBJECT";"flutterclub.com - Email Verification"
+"_EMAIL_CORE_VERIFICATION_BODY";"[header]
+
+Thank you for joining flutterclub.com. To verify your email address and continue, please click the following link:
+http://[host][object_link]
+
+Email: [email]
+
+[footer]"
+"_EMAIL_CORE_VERIFICATION_PASSWORD_SUBJECT";"flutterclub.com - Email Verification"
+"_EMAIL_CORE_VERIFICATION_PASSWORD_BODY";"[header]
+
+Thank you for joining flutterclub.com. To verify your email address and continue, please click the following link:
+http://[host][object_link]
+
+Email: [email]
+Password: [password]
+
+[footer]"
+"_EMAIL_NOTIFY_ADMIN_USER_SIGNUP_SUBJECT";"Someone has joined flutterclub.com!"
+"_EMAIL_NOTIFY_ADMIN_USER_SIGNUP_BODY";"
+Congratulations, someone has joined flutterclub.com. Welcome the new member to your site:
+
+[object_title] : http://[host][object_link]
+Signup Date: [date]"
+"_EMAIL_CORE_WELCOME_SUBJECT";"Welcome to the flutterclub.com!"
+"_EMAIL_CORE_WELCOME_BODY";"[header]
+
+Thank you for joining flutterclub.com. Click the following link and enter your information below to login:
+
+http://[host][object_link]
+
+Email: [email]
+
+[footer]"
+"_EMAIL_CORE_WELCOME_PASSWORD_SUBJECT";"Welcome to flutterclub.com!"
+"_EMAIL_CORE_WELCOME_PASSWORD_BODY";"[header]
+
+Thank you for joining flutterclub.com. Click the following link and enter your information below to login: 
+
+http://[host][object_link]
+
+Email: [email]
+Password: [password]
+
+[footer]"
+"_EMAIL_CORE_LOSTPASSWORD_SUBJECT";"flutterclub.com - Lost Password"
+"_EMAIL_CORE_LOSTPASSWORD_BODY";"[header]
+
+You have requested to reset your password because you have forgotten your password. If you did not request this, please ignore it. It will expire in 24 hours. To reset your password, please click the following link:
+
+http://[host][object_link]
+
+[footer]"
+"_EMAIL_NOTIFY_COMMENTED_SUBJECT";"[sender_title] commented on something you posted on flutterclub!"
+"_EMAIL_NOTIFY_COMMENTED_BODY";"[header]
+
+A new comment has been posted on one of your posts by [sender_title]. Please click the following link to view it:
+
+http://[host][object_link]
+
+[footer]"
+"_EMAIL_NOTIFY_COMMENTED_COMMENTED_SUBJECT";"[sender_title] also commented on a post you commented on!"
+"_EMAIL_NOTIFY_COMMENTED_COMMENTED_BODY";"[header]
+
+[sender_title] has also commented on a post you commented on. Please click the following link to view it:
+
+http://[host][object_link]
+
+[footer]"
+"_EMAIL_NOTIFY_LIKED_SUBJECT";"[sender_title] liked your post on flutterclub.com!"
+"_EMAIL_NOTIFY_LIKED_BODY";"[header]
+
+[sender_title] has liked one of your posts. Please click the following link to view it:
+
+http://[host][object_link]
+
+[footer]"
+"_EMAIL_NOTIFY_LIKED_COMMENTED_SUBJECT";"[sender_title] commented on a post you like on flutterclub.com!"
+"_EMAIL_NOTIFY_LIKED_COMMENTED_BODY";"[header]
+
+[sender_title] has commented on a post you liked. Please click the following link to view it:
+
+http://[host][object_link]
+
+[footer]"
+"_EMAIL_NOTIFY_FRIEND_ACCEPTED_SUBJECT";"[sender_title] has approved you as a friend on flutterclub.com!"
+"_EMAIL_NOTIFY_FRIEND_ACCEPTED_BODY";"[header]
+
+[sender_title] has approved you as a friend. Please click the following link to sign in:
+
+http://[host][object_link]
+
+[footer]"
+"_EMAIL_NOTIFY_FRIEND_REQUEST_SUBJECT";"[sender_title] has added you as a friend on flutterclub.com!"
+"_EMAIL_NOTIFY_FRIEND_REQUEST_BODY";"[header]
+
+[sender_title] has added you as a friend. Please click the following link to sign in and confirm this friendship request:
+
+http://[host][object_link]
+
+[footer]"
+"_EMAIL_NOTIFY_POST_USER_SUBJECT";"[sender_title] has posted on your flutterclub profile"
+"_EMAIL_NOTIFY_POST_USER_BODY";"[header]
+
+[sender_title] has posted something on your profile. Please click the following link to view it.
+
+http://[host][object_link]
+
+[footer]"
+"_EMAIL_NOTIFY_TAGGED_SUBJECT";"You have Been Tagged at flutterclub.com!"
+"_EMAIL_NOTIFY_TAGGED_BODY";"[header]
+
+You have been tagged in a [object_type_name]. Please click the following link to view it:
+
+http://[host][object_link]
+
+[footer]"
+"_EMAIL_INVITE_SUBJECT";"You have received an invitation to join flutterclub.com!"
+"_EMAIL_INVITE_BODY";"[header]
+
+You have been invited by [sender_title] to join flutterclub.com, where fantasy betting and social networking come together. To join, please follow the link below:
+
+http://[host][object_link]
+
+----------------------------------------
+[message]
+----------------------------------------
+
+[footer]"
+"_EMAIL_INVITE_CODE_SUBJECT";"You have received an invitation to join flutterclub.com!"
+"_EMAIL_INVITE_CODE_BODY";"[header]
+
+You have been invited by [sender_title] to join flutterclub.com, where fantasy betting and social networking come together! To join, please follow the link below:
+
+http://[host][object_link]
+
+----------------------------------------
+[message]
+----------------------------------------
+
+[footer]"
+"_EMAIL_NOTIFY_MESSAGE_NEW_SUBJECT";"You have received a new flutterclub message from [sender_title]."
+"_EMAIL_NOTIFY_MESSAGE_NEW_BODY";"[header]
+
+You have just received a new message from [sender_title]:
+
+[object_description]
+
+Please click the following link to login and view it:
+
+http://[host][object_link]
+
+[footer]"
+"_EMAIL_NOTIFY_GROUP_ACCEPTED_SUBJECT";"You have been approved to join the group [object_title] at flutterclub.com"
+"_EMAIL_NOTIFY_GROUP_ACCEPTED_BODY";"[header]
+
+You have been approved to join the group ""[object_title]"". Please click the following link to view it:
+
+http://[host][object_link]
+
+[footer]"
+"_EMAIL_NOTIFY_GROUP_APPROVE_SUBJECT";"[sender_title] has requested to join the group [object_title] at flutterclub.com!"
+"_EMAIL_NOTIFY_GROUP_APPROVE_BODY";"[header]
+
+[sender_title] has requested to join the group ""[object_title]"". Please click the following link to view it:
+
+http://[host][object_link]
+
+[footer]"
+"_EMAIL_NOTIFY_GROUP_INVITE_SUBJECT";"You have been invited to join the group [object_title] at flutterclub.com"
+"_EMAIL_NOTIFY_GROUP_INVITE_BODY";"[header]
+
+You have been invited to join the group ""[object_title]"". Please click the following link to view it:
+
+http://[host][object_link]
+
+[footer]"
+"_EMAIL_USER_ACCOUNT_APPROVED_SUBJECT";"Your flutterclub.com account has been approved!"
+"_EMAIL_USER_ACCOUNT_APPROVED_BODY";"[header]
+
+Your flutterclub.com account has been approved by an administrator. Please click the following link to sign in:
+
+http://[host][object_link]
+
+[footer]"
+"_EMAIL_INVITER_SUBJECT";"You have received an invitation to join flutterclub.com!"
+"_EMAIL_INVITER_BODY";"Hi [to],
+
+You have been invited by [from] to join flutterclub.com.
+
+To join, please follow the link below:
+[link]
+
+Invitation code: [code]
+
+Best Regards,
+The flutterclub.com team
+
+----------------------------------------
+[message]"
+"_EMAIL_NOTIFY_BET_SETTLEMENT_SUBJECT";"Your bet has been settled at flutterclub.com"
+"_EMAIL_NOTIFY_BET_SETTLEMENT_BODY";"[header]
+
+Your bet has been settled at flutterclub.com.
+Find details below:
+
+[bet_data]
+
+[footer]"
