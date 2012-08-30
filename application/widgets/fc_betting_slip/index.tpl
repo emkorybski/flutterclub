@@ -31,6 +31,7 @@
 
 	.fc_betting_slip .slip_actions {
 		margin-top: 10px;
+		position: relative;
 	}
 
 	.fc_betting_slip .action_remove_selection {
@@ -39,6 +40,8 @@
 
 	.fc_betting_slip .action_remove_all {
 		float: left;
+		position: absolute;
+		bottom: 0;
 	}
 
 	.fc_betting_slip .action_place_bet {
@@ -78,7 +81,7 @@ if ( count($this->betSlipSelections) ) :
 	endif;
 	?>
 	<div class="slip_actions">
-		<div><a href="#" class="action_remove_all">Remove all</a></div>
+		<a href="#" class="action_remove_all">Remove all</a>
 		<button class="action_place_bet">Place Bet</button>
 		<div class="clear"></div>
 	</div>
