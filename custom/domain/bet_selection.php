@@ -3,6 +3,7 @@
 namespace bets;
 
 require_once(PATH_LIB . 'dbrecord.php');
+require_once(PATH_DOMAIN . 'selection.php');
 
 class BetSelection extends DBRecord
 {
@@ -12,4 +13,10 @@ class BetSelection extends DBRecord
 	{
 		call_user_func_array('parent::insert', func_get_args());
 	}
+
+	public function getSelection()
+	{
+		return Selection::get($this->idselection);
+	}
+
 }
