@@ -36,6 +36,13 @@
 
 	.fc_betting_slip .action_remove_selection {
 		cursor: pointer;
+		overflow: hidden;
+		background-image: url(/fc/custom/images/delete.png);
+		background-size: 15px;
+		background-repeat: no-repeat;
+		background-position: center;
+		text-indent: -999px;
+		width: 8px;
 	}
 
 	.fc_betting_slip .action_remove_all {
