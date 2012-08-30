@@ -2207,6 +2207,31 @@ div.group_discussions_list
     margin-bottom: 1em;
 }
 
+/* Messages */
+
+body#global_page_messages-messages-view h3 {
+    background-color: $theme_foreground_background_color;
+}
+
+.layout_page_messages_messages_inbox,
+.layout_page_messages_messages_outbox {
+    padding: 10px;
+}
+
+.message_view_header {
+    padding: 0 10px;
+}
+
+.message_view {
+    background-color: $theme_foreground_background_color;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+form#messages_compose h3 {
+    background-color: $theme_foreground_background_color;
+}
+
 /* Moved from widgets\footer\index.tpl - to be cleaned up */
 .layout_page_header {
   background: #e9f4fa url(/fc/custom/images/clouds.png) repeat-x top center;
