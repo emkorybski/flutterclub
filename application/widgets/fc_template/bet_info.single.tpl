@@ -4,9 +4,14 @@
 	$selection = $betSelection->getSelection();
 	$event = $selection->getEvent();
 ?>
-Category: <?=$event->getPath()?>
-Event: <?=$event->name?>
+Event: <?=$event->getParent()->name?>
+
+Market: <?=$event->name?>
+
 Bet: <?=$betSelection->name?>
+
 Odds: <?=\bets\fc::decimal2fractional($bet->odds)?>
+
 Stake: FB$ <?=$bet->stake?>
+
 Status: <?=$bet->status?>

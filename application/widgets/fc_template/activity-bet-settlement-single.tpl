@@ -7,9 +7,14 @@
 ?>
 just <?=$bet->status?> FB$ <?=\bets\fc::formatDecimalNumber($profit)?>!
 
-Category: <?=$event->getPath()?>
-Event: <?=$event->name?>
+Event: <?=$event->getParent()->name?>
+
+Market: <?=$event->name?>
+
 Bet: <?=$betSelection->name?>
+
 Odds: <?=\bets\fc::decimal2fractional($bet->odds)?>
-Stake:     FB$ <?=$bet->stake?>
-Status: <span style="margin-left: 30px; color: red;"><?=$bet->status?></span>
+
+Stake: FB$ <?=$bet->stake?>
+
+Status: <?=$bet->status?>
