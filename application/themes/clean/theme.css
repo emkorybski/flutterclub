@@ -2109,6 +2109,41 @@ div.group_discussions_list
     background-color: $theme_foreground_background_color;
 }
 
+.layout_group_profile_photo {
+  margin-bottom: 15px;
+  background-color: $theme_foreground_background_color;
+  padding: 7px;
+  border-radius: none;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+.layout_group_profile_options {
+  background-color: $theme_foreground_background_color;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  padding: 0 10px;
+}
+
+.layout_page_group_profile_index .layout_activity_feed {
+  padding-top: 1px;
+  -webkit-border-top-left-radius: 0px;
+  -webkit-border-top-right-radius: 0px;
+  -moz-border-radius-topleft: 0px;
+  -moz-border-radius-topright: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.layout_page_group_profile_index .layout_group_profile_members,
+.layout_page_group_profile_index .layout_group_profile_photos,
+.layout_page_group_profile_index .layout_group_profile_discussions {
+  padding: 10px;
+  background-color: $theme_foreground_background_color;
+}
+
 /* Contact Us */
 
 #global_page_core-help-contact .global_form > div {
