@@ -16,6 +16,11 @@ class fc
 		return date('Y-m-d H:i:s', \DateTime::createFromFormat('Y-m-d H:i:s', gmdate("Y-m-d H:i:s", time()))->getTimestamp());
 	}
 
+	public static function formatDecimalNumber($number)
+	{
+		return number_format($number, 2, '.', ',');
+	}
+
 	private static $oddsFormat = 'fractional';
 
 	public static function formatOdds($dec, $oddsFormat)

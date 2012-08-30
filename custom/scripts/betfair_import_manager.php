@@ -11,7 +11,7 @@ require_once(PATH_DOMAIN . 'selection.php');
 
 class BetfairImportManager
 {
-	private $selectionValidationMinOdds = 1.02;
+	private $bookmakerMaxPercentage = 200;
 	private $excludedEvent = array('ANTEPOST', 'Asian Handicap');
 
 	private $soapClient;
@@ -328,29 +328,27 @@ class BetfairImportManager
 				$subEvent->insert();
 				$this->addEvent($subEvent);
 
-				$isValidSubEvent = false;
-				if (count($bfSubEvent->selection) > 0) {
-					$isValidSubEvent = $this->parseSelections($subEvent, $bfSubEvent->selection);
-				}
-
+				$isValidSubEvent = $this->parseSelections($subEvent, $bfSubEvent->selection);
 				if (!$isValidSubEvent) {
-					$subEvent->delete();
+					$subEvent->ts = null;
+					//$subEvent->update();
+					$subEvent->setDirty(true);
 				} else {
 					$this->updateParentEventsDate($subEvent, $subEventDate);
 				}
 			} else {
-				if ($subEvent->name != $subEventName || $subEvent->ts != $subEventDate) {
-					$subEvent->name = $subEventName;
-					$subEvent->ts = $subEventDate;
-					$subEvent->betfairAmountMatched = $subEventTotalAmountMatched;
-					//$subEvent->update();
-					$subEvent->setDirty(true);
+				$subEvent->name = $subEventName;
+				$subEvent->betfairAmountMatched = $subEventTotalAmountMatched;
 
-					if ($subEvent->ts != $subEventDate) {
+				$isValidSubEvent = $this->parseSelections($subEvent, $bfSubEvent->selection);
+				if ($subEvent->ts || $isValidSubEvent) {
+					if (!$subEvent->ts || $subEvent->ts != $subEventDate) {
+						$subEvent->ts = $subEventDate;
 						$this->updateParentEventsDate($subEvent, $subEventDate);
 					}
-					$this->parseSelections($subEvent, $bfSubEvent->selection);
 				}
+				//$subEvent->update();
+				$subEvent->setDirty(true);
 			}
 		}
 	}
@@ -365,15 +363,18 @@ class BetfairImportManager
 			$this->addSelection($selection);
 		}
 
-		$isValidMarket = false;
+		$isValidMarket = true;
+		$bookmakerPercentage = 0;
 		foreach ($bfSelections as $bfSelection) {
 			$attributes = $bfSelection->attributes();
 			$selectionName = trim($attributes['name'] . '');
 			$selectionOdds = $attributes['backp1'] . '';
 			$betfairSelectionId = $attributes['id'] . '';
 
-			if (!$isValidMarket && $selectionOdds != '' && floatval($selectionOdds) > $this->selectionValidationMinOdds) {
-				$isValidMarket = true;
+			if ($isValidMarket && $selectionOdds != '') {
+				$selectionPercentage = intval(100 / floatval($selectionOdds));
+				$bookmakerPercentage += $selectionPercentage;
+				$isValidMarket = $bookmakerPercentage < $this->bookmakerMaxPercentage;
 			}
 
 			//$selection = \bets\Selection::getWhere(array('idevent=' => $subEvent->id, 'name=' => $selectionName, 'betfairSelectionId=' => $betfairSelectionId));
