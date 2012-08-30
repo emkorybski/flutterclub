@@ -40,9 +40,9 @@
 		background-image: url(/fc/custom/images/delete.png);
 		background-size: 15px;
 		background-repeat: no-repeat;
-		background-position: center;
+		background-position: center left;
 		text-indent: -999px;
-		width: 8px;
+		width: 10px;
 	}
 
 	.fc_betting_slip .action_remove_all {
