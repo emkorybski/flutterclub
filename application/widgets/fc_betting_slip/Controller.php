@@ -88,11 +88,13 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 			$userSelection = \bets\UserSelection::get($betSlipSelectionId);
 			$selection = $userSelection->getSelection();
 
-			$betSelections = \bets\BetSelection::findWhere(array('iduser=' => $user->id, 'idselection=' => $selection->id));
+			$betSelections = \bets\BetSelection::findWhere(array('idselection=' => $selection->id));
 			$totalStake = 0;
 			foreach ($betSelections as $betSelection) {
 				$bet = \bets\Bet::get($betSelection->idbet);
-				$totalStake += $bet->stake;
+				if ($bet->iduser == $user->id) {
+					$totalStake += $bet->stake;
+				}
 			}
 			if ($totalStake + $betSlipSelectionStake > 500) {
 				$isValid = false;
