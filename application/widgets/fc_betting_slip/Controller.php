@@ -83,11 +83,12 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 		}
 
 		$isValid = true;
+		$user = bets\User::getCurrentUser();
 		foreach ($betSlipSelectionsStakes as $betSlipSelectionId => $betSlipSelectionStake) {
 			$userSelection = \bets\UserSelection::get($betSlipSelectionId);
 			$selection = $userSelection->getSelection();
 
-			$betSelections = \bets\BetSelection::findWhere(array('idselection=' => $selection->id));
+			$betSelections = \bets\BetSelection::findWhere(array('iduser=' => $user->id, 'idselection=' => $selection->id));
 			$totalStake = 0;
 			foreach ($betSelections as $betSelection) {
 				$bet = \bets\Bet::get($betSelection->idbet);
