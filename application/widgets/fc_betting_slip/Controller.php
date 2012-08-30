@@ -83,6 +83,7 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 		}
 
 		$isValid = true;
+		$user = bets\User::getCurrentUser();
 		foreach ($betSlipSelectionsStakes as $betSlipSelectionId => $betSlipSelectionStake) {
 			$userSelection = \bets\UserSelection::get($betSlipSelectionId);
 			$selection = $userSelection->getSelection();
@@ -91,7 +92,9 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 			$totalStake = 0;
 			foreach ($betSelections as $betSelection) {
 				$bet = \bets\Bet::get($betSelection->idbet);
-				$totalStake += $bet->stake;
+				if ($bet->iduser == $user->id) {
+					$totalStake += $bet->stake;
+				}
 			}
 			if ($totalStake + $betSlipSelectionStake > 500) {
 				$isValid = false;
