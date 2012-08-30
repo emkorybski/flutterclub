@@ -80,8 +80,9 @@ h4
 h2
 {
   font-size: $theme_headline_size_large;
-  letter-spacing: -0.03em;
+  letter-spacing: 0.1em;
   margin-bottom: 10px;
+  font-family: fc_bebas;
 }
 h3
 {
@@ -89,6 +90,8 @@ h3
   background-color: #eee;
   padding: .4em .7em;
   +rounded(3px);
+  font-family: fc_bebas;
+  letter-spacing: 0.1em;
 }
 h4
 {
