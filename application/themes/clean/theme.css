@@ -717,7 +717,13 @@ html[dir="rtl"] .global_form > div
 {
   border: 0px solid $theme_form_border_color;
   padding: 0px;
-  background-color: $theme_form_background_color;
+  background-color: $theme_foreground_background_color;
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-topright: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 /* form headline */
 .global_form div.form-wrapper-heading
@@ -2103,6 +2109,41 @@ div.group_discussions_list
     background-color: $theme_foreground_background_color;
 }
 
+.layout_group_profile_photo {
+  margin-bottom: 15px;
+  background-color: $theme_foreground_background_color;
+  padding: 7px;
+  border-radius: none;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+.layout_group_profile_options {
+  background-color: $theme_foreground_background_color;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  padding: 0 10px;
+}
+
+.layout_page_group_profile_index .layout_activity_feed {
+  padding-top: 1px;
+  -webkit-border-top-left-radius: 0px;
+  -webkit-border-top-right-radius: 0px;
+  -moz-border-radius-topleft: 0px;
+  -moz-border-radius-topright: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.layout_page_group_profile_index .layout_group_profile_members,
+.layout_page_group_profile_index .layout_group_profile_photos,
+.layout_page_group_profile_index .layout_group_profile_discussions {
+  padding: 10px;
+  background-color: $theme_foreground_background_color;
+}
+
 /* Contact Us */
 
 #global_page_core-help-contact .global_form > div {
@@ -2199,6 +2240,31 @@ div.group_discussions_list
 .layout_fc_betting_pending,
 .layout_fc_betting_recent {
     margin-bottom: 1em;
+}
+
+/* Messages */
+
+body#global_page_messages-messages-view h3 {
+    background-color: $theme_foreground_background_color;
+}
+
+.layout_page_messages_messages_inbox,
+.layout_page_messages_messages_outbox {
+    padding: 10px;
+}
+
+.message_view_header {
+    padding: 0 10px;
+}
+
+.message_view {
+    background-color: $theme_foreground_background_color;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+form#messages_compose h3 {
+    background-color: $theme_foreground_background_color;
 }
 
 /* Moved from widgets\footer\index.tpl - to be cleaned up */
