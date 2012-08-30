@@ -717,7 +717,13 @@ html[dir="rtl"] .global_form > div
 {
   border: 0px solid $theme_form_border_color;
   padding: 0px;
-  background-color: $theme_form_background_color;
+  background-color: $theme_foreground_background_color;
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-topright: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 /* form headline */
 .global_form div.form-wrapper-heading
