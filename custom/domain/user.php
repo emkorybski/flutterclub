@@ -78,4 +78,16 @@ class User extends DBRecord
 		$templateWidgetUrl = WEB_HOST . WEB_ROOT . "widget?" . http_build_query($queryStringData);
 		return trim(file_get_contents($templateWidgetUrl));
 	}
+
+	public static function getMailBetSettlementNotification($pendingBet)
+	{
+		$queryStringData = array(
+			'name' => 'fc_template',
+			'id_bet' => $pendingBet->id,
+			'template' => 'bet_settlement',
+			'format' => 'html');
+		$templateWidgetUrl = WEB_HOST . WEB_ROOT . "widget?" . http_build_query($queryStringData);
+		return trim(file_get_contents($templateWidgetUrl));
+	}
+
 }

@@ -40,7 +40,7 @@ class BetValidator
 				$pendingBet->ts_settled = fc::getGMTTimestamp();
 				$pendingBet->update();
 
-				if ($betStatus == 'won') {
+				if ($betStatus == 'won' || $betStatus == 'void') {
 					$balance = \bets\UserBalance::getWhere(array('idcompetition=' => $pendingBet->idcompetition, 'iduser=' => $pendingBet->iduser));
 					if ($balance) {
 						$balance->balance += $pendingBet->stake * $pendingBet->odds;
@@ -48,18 +48,28 @@ class BetValidator
 					}
 				}
 
+				if ($betStatus == 'void') continue;
+
 				$seUserId = \bets\User::getSocialEngineUserId($pendingBet->iduser);
 				$seUser = \Engine_Api::_()->user()->getUser($seUserId);
-				$notificationText = \bets\User::getActivityBetSettlementNotification($pendingBet);
 
 				// Add activity
-				\Engine_Api::_()->getDbtable('actions', 'activity')->addActivity($seUser, $seUser, 'status', $notificationText);
+				$activityNotificationText = \bets\User::getActivityBetSettlementNotification($pendingBet);
+				\Engine_Api::_()->getDbtable('actions', 'activity')->addActivity($seUser, $seUser, 'status', $activityNotificationText);
 				//$seUser->status()->setStatus($notificationText);
 
+				// Send email
 				$userData = \bets\User::getCurrentUserData($pendingBet->iduser);
-				\Engine_Api::_()->getApi('mail', 'core')->sendSystem($userData['email'], 'notify_bet_settlement', array(
-					'bet_data' => $notificationText
-				));
+				$mailBetInfoText = \bets\User::getMailBetSettlementNotification($pendingBet);
+				$profit = $betStatus == 'won' ? $pendingBet->stake * ($pendingBet->odds - 1) : $pendingBet->stake;
+				\Engine_Api::_()->getApi('mail', 'core')->sendSystem(
+					$userData['email'],
+					$betStatus == 'won' ? 'notify_bet_won' : 'notify_bet_lost',
+					array(
+						'profit' => fc::formatDecimalNumber($profit),
+						'bet_info' => $mailBetInfoText,
+						'betting_page' => 'betting page here...'
+					));
 			}
 		}
 	}
