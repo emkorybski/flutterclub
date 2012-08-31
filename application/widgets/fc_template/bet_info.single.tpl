@@ -3,6 +3,7 @@
 	$betSelection = \bets\BetSelection::getWhere(array('idbet=' => $bet->id));
 	$selection = $betSelection->getSelection();
 	$event = $selection->getEvent();
+	$profit = $bet->status == 'won' ? $bet->stake * ($bet->odds - 1) : $bet->stake;
 ?>
 Event: <?=$event->getParent()->name?>
 

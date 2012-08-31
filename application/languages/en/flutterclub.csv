@@ -1,14 +1,35 @@
 # mail templates
 
-# notify_bet_settlement
-"_EMAIL_NOTIFY_BET_SETTLEMENT_TITLE";"Flutterclub - Bet Settlement Notification"
-"_EMAIL_NOTIFY_BET_SETTLEMENT_DESCRIPTION";"This email is sent to the user when a bet is settled (won/lost/void)."
-"_EMAIL_NOTIFY_BET_SETTLEMENT_SUBJECT";"Your bet has been settled"
-"_EMAIL_NOTIFY_BET_SETTLEMENT_BODY";"[header]
+# notify_bet_won
+"_EMAIL_NOTIFY_BET_WON_TITLE";"Flutterclub - Bet Won Notification"
+"_EMAIL_NOTIFY_BET_WON_DESCRIPTION";"This email is sent to the user when a bet is settled and it is won."
+"_EMAIL_NOTIFY_BET_WON_SUBJECT";"Your bet has been settled"
+"_EMAIL_NOTIFY_BET_WON_BODY";"[header]
 
-Your bet has been settled on Flutterclub.
-You can find the details below:
+Your bet has been settled on Flutterclub. Find the details below:
 
-[bet_data]
+Congratulations [recipient_title], you just won FB$ [profit]!
+
+[bet_info]
+
+Let's make some more money!
+[betting_page]
+
+[footer]"
+
+# notify_bet_lost
+"_EMAIL_NOTIFY_BET_LOST_TITLE";"Flutterclub - Bet Lost Notification"
+"_EMAIL_NOTIFY_BET_LOST_DESCRIPTION";"This email is sent to the user when a bet is settled and it was lost."
+"_EMAIL_NOTIFY_BET_LOST_SUBJECT";"Your bet has been settled"
+"_EMAIL_NOTIFY_BET_LOST_BODY";"[header]
+
+Your bet has been settled at flutterclub.com. Find details below:
+
+Hard Luck [recipient_title], you just lost FB$ [profit]!
+
+[bet_info]
+
+Better luck next time, let's go again!
+[betting_page]
 
 [footer]"
