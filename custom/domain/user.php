@@ -84,7 +84,7 @@ class User extends DBRecord
 		$queryStringData = array(
 			'name' => 'fc_template',
 			'id_bet' => $pendingBet->id,
-			'template' => 'bet_settlement',
+			'template' => 'mail.bet_settlement',
 			'format' => 'html');
 		$templateWidgetUrl = WEB_HOST . WEB_ROOT . "widget?" . http_build_query($queryStringData);
 		return trim(file_get_contents($templateWidgetUrl));
