@@ -1256,3 +1256,7 @@ hr.line {
 .fc_competition_leaderboard td.leaderboard_username img {
   display: block;
 }
+
+.fc_competition_leaderboard span {
+  display: block;
+}
