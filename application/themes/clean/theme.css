@@ -361,10 +361,9 @@ Shows the mini menu and search widget
 */
 .layout_core_menu_mini
 {
-  width: auto;
+  width: $theme_topbar_minimenu_width;
   margin: 0px auto 0px auto;
   overflow: hidden;
-  float: right;
 }
 .layout_core_menu_mini > div > ul
 {
@@ -459,10 +458,9 @@ SITE LOGO WIDGET
 */
 .layout_core_menu_logo
 {
-  width: auto;
-  float: left;
+  width: $theme_topbar_logo_width;
   font-size: 23pt;
-  margin: 10px auto 0px 5px;
+  margin: 0px auto 20px 5px;
   text-align: left;
   letter-spacing: -2px;
   overflow: hidden;
@@ -2270,7 +2268,7 @@ form#messages_compose h3 {
 /* Moved from widgets\footer\index.tpl - to be cleaned up */
 .layout_page_header {
   background: #e9f4fa url(/fc/custom/images/clouds.png) repeat-x top center;
-  height: 183px;
+  height: 200px;
   position: relative;
   clear: both;
   margin-bottom: 20px;
@@ -2282,7 +2280,7 @@ form#messages_compose h3 {
   border-width: 3px 0 0 3px;
   border-radius: 7px;
   position: absolute;
-  bottom: -12px;
+  bottom: -20px;
 }
 
 #global_header .menu_core_main {
@@ -2312,7 +2310,7 @@ body {
 }
 
 .layout_page_header {
-  background: url(/fc/custom/images/arrow.png) repeat-x center 170px;
+  background: url(/fc/custom/images/arrow.png) repeat-x center 187px;
 }
 
 /* ** */

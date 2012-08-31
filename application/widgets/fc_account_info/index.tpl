@@ -13,7 +13,7 @@
 		width: 300px;
 		overflow: hidden;
 		position: relative;
-		top: 42px;
+		top: 70px;
 	}
 	#account_info .account_info_left, #account_info .account_info_right, #account_info .account_info_user_points {
 		float: left;
