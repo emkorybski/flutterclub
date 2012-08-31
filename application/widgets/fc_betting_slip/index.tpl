@@ -38,11 +38,15 @@
 		cursor: pointer;
 		overflow: hidden;
 		background-image: url(/fc/custom/images/delete.png);
-		background-size: 15px;
 		background-repeat: no-repeat;
-		background-position: center left;
+		background-position: 0px center;
 		text-indent: -999px;
-		width: 10px;
+		width: 15px;
+		padding: 0;
+	}
+
+	.fc_betting_slip .action_remove_selection:hover {
+		background-position: -15px center;
 	}
 
 	.fc_betting_slip .action_remove_all {
