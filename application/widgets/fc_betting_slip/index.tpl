@@ -43,10 +43,11 @@
 		text-indent: -999px;
 		width: 15px;
 		padding: 0;
+		padding-right: 5px;
 	}
 
 	.fc_betting_slip .action_remove_selection:hover {
-		background-position: -15px center;
+		background-position: -20px center;
 	}
 
 	.fc_betting_slip .action_remove_all {
