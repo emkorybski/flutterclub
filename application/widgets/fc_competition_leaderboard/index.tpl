@@ -44,7 +44,7 @@ if ( count($this->leaderboardUsers) ) :
 		<tr>
 			<th></th>
 			<th>User</th>
-			<th>Profit</th>
+			<th>FB$ Profit</th>
 			<th>Success Rate</th>
 		</tr>
 		<?php
@@ -57,7 +57,7 @@ if ( count($this->leaderboardUsers) ) :
 				<?=$this->htmlLink($seUser->getHref(), $this->itemPhoto($seUser, 'thumb.icon'))?>
 				<?=$this->htmlLink($seUser->getHref(), $seUser->getTitle())?>
 			</td>
-			<td>FB$ <?=$user['profit']?></td>
+			<td><?=$user['profit']?></td>
 			<td><?=$user['successRate']?> (<?=$user['won_count']?>/<?=$user['bet_count']?>)</td>
 		</tr>
 		<?php
