@@ -9,7 +9,21 @@ class Widget_FC_Betting_CategoriesController extends \Engine_Content_Widget_Abst
 	public function indexAction()
 	{
 		$competition = bets\Competition::getCurrent();
-		$this->view->categories = $this->getCategories($competition->ts_start, $competition->ts_end, $_REQUEST['idsport'], $_REQUEST['idevent']);
+		$idSport = null;
+		$idEvent = null;
+		if (isset($_REQUEST['idsport']) || isset($_REQUEST['idevent'])) {
+			$idSport = $_REQUEST['idsport'];
+			$idEvent = $_REQUEST['idevent'];
+		}
+		else if (isset($_REQUEST['event'])) {
+			$event = \bets\Event::get(intval($_REQUEST['event']));
+			if ($event) {
+				$idSport = $event->getSport()->id;
+				$idEvent = $event->id;
+			}
+		}
+
+		$this->view->categories = $this->getCategories($competition->ts_start, $competition->ts_end, $idSport, $idEvent);
 	}
 
 	public function getCategories($tsStart, $tsStop, $idSport, $idEvent)
@@ -18,14 +32,7 @@ class Widget_FC_Betting_CategoriesController extends \Engine_Content_Widget_Abst
 
 		$result = array(array('idsport' => '', 'idevent' => '', 'name' => 'All'));
 		if (empty($idSport)) {
-//			$sportRows = \bets\Sport::findWhere(array('enabled=' => 'y'), 'ORDER BY name ASC');
-//			foreach ($sportRows as $sport) {
-//				$result[] = array(
-//					'idsport' => $sport->id,
-//					'idevent' => '',
-//					'name' => $sport->name);
-//			}
-			$sportRows = \bets\bets::sql()->query("SELECT DISTINCT S.* FROM fc_event E JOIN fc_sport S ON E.idsport = S.id WHERE S.enabled = 'y' AND E.deleted = 'n' AND E.ts IS NOT NULL ORDER BY name ASC");
+			$sportRows = \bets\bets::sql()->query("SELECT DISTINCT S.* FROM fc_event E JOIN fc_sport S ON E.idsport = S.id WHERE S.enabled = 'y' AND E.ts IS NOT NULL AND E.ts > '$now' ORDER BY name ASC");
 			foreach ($sportRows as $sport) {
 				$result[] = array(
 					'idsport' => $sport['id'],
