@@ -7,6 +7,9 @@
 ?>
 just <?=$bet->status?> FB$ <?=\bets\fc::formatDecimalNumber($profit)?>!
 
+
+Date: <?=\bets\fc::formatTimestamp($event->getParent()->ts)?>
+
 Event: <?=$event->getParent()->name?>
 
 Market: <?=$event->name?>

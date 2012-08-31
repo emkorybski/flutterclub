@@ -5,6 +5,8 @@
 	$event = $selection->getEvent();
 	$profit = $bet->status == 'won' ? $bet->stake * ($bet->odds - 1) : $bet->stake;
 ?>
+Date: <?=\bets\fc::formatTimestamp($event->getParent()->ts)?>
+
 Event: <?=$event->getParent()->name?>
 
 Market: <?=$event->name?>
