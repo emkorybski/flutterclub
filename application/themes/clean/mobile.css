@@ -1250,3 +1250,9 @@ hr.line {
   background-color: transparent;
   color: #555;
 }
+
+/* Leaderboard */
+
+.fc_competition_leaderboard td.leaderboard_username img {
+  display: block;
+}

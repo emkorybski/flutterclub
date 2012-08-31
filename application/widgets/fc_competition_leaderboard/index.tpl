@@ -22,10 +22,6 @@
 		margin-right: 5px
 	}
 
-	.leaderboard_username a + a {
-		white-space: nowrap;
-	}
-
 	.fc_competition_leaderboard td:first-child {
 		max-width: 25px;
 		font-size: 30px;
