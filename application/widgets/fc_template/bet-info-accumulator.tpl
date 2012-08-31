@@ -17,6 +17,8 @@ foreach($betSelections as $betSelection) :
 ?>
 Selection #<?=$counter?>
 
+Date: <?=\bets\fc::formatTimestamp($event->getParent()->ts)?>
+
 Event: <?=$event->getPath()?>
 
 Market: <?=$event->name?>

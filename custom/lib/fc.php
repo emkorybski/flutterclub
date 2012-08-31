@@ -21,6 +21,11 @@ class fc
 		return number_format($number, 2, '.', ',');
 	}
 
+	public static function formatTimestamp($timestamp)
+	{
+		return date("j M Y, G:i", strtotime($timestamp));
+	}
+
 	private static $oddsFormat = 'fractional';
 
 	public static function formatOdds($dec, $oddsFormat)

@@ -6,6 +6,8 @@
 	$profit = $bet->status == 'won' ? $bet->stake * ($bet->odds - 1) : $bet->stake;
 ?>
 just <?=$bet->status?> FB$ <?=\bets\fc::formatDecimalNumber($profit)?>!
+<br/>
+Date: <?=\bets\fc::formatTimestamp($event->getParent()->ts)?>
 
 Event: <?=$event->getParent()->name?>
 
