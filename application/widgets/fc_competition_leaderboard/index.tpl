@@ -54,7 +54,7 @@ if ( count($this->leaderboardUsers) ) :
 				<?=$this->htmlLink($seUser->getHref(), $seUser->getTitle())?>
 			</td>
 			<td><?=$user['profit']?></td>
-			<td><?=$user['successRate']?> (<?=$user['won_count']?>/<?=$user['bet_count']?>)</td>
+			<td><span><?=$user['successRate']?></span> <span>(<?=$user['won_count']?>/<?=$user['bet_count']?>)</span></td>
 		</tr>
 		<?php
 	endforeach;
