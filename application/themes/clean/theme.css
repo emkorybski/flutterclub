@@ -2116,7 +2116,7 @@ div.group_discussions_list
   -webkit-border-radius: 3px;
 }
 
-.layout_group_profile_photo {
+.layout_group_profile_photo div {
   text-align: center;
 }
 
