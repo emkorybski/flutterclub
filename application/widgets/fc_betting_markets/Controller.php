@@ -13,16 +13,37 @@ class Widget_FC_Betting_MarketsController extends Engine_Content_Widget_Abstract
 	{
 		if (isset($_REQUEST['action'])) {
 			$this->submitSelection((int)$_REQUEST['idselection']);
-		} else {
-			$idEvent = (int)$_REQUEST['idevent'];
-			$event = \bets\Event::get($idEvent);
-			$parentEvent = \bets\Event::get($event->idparent);
-
-			$this->view->event = $event;
-			$this->view->parentEvent = $parentEvent;
-			$this->view->selections = bets\Selection::findWhere(array('idevent=' => $idEvent), 'ORDER BY id ASC');
-			$this->view->user = bets\User::getCurrentUser();
+			$this->setNoRender(true);
+			return;
 		}
+
+		if (isset($_REQUEST['idevent']) || isset($_REQUEST['event'])) {
+			$idEvent = -1;
+			if (isset($_REQUEST['event']) || !empty($_REQUEST['event'])) {
+				$idEvent = intval($_REQUEST['event']);
+			}
+			if (isset($_REQUEST['idevent']) && !empty($_REQUEST['idevent'])) {
+				$idEvent = intval($_REQUEST['idevent']);
+			}
+
+			$event = \bets\Event::get($idEvent);
+			if (!$event || !$event->betfairMarketId) {
+				$this->showDefaultMarkets();
+				return;
+			}
+
+			$this->view->user = bets\User::getCurrentUser();
+			$this->view->event = $event;
+			$this->view->parentEvent = \bets\Event::get($event->idparent);
+			$this->view->selections = bets\Selection::findWhere(array('idevent=' => $idEvent), 'ORDER BY id ASC');
+		} else {
+			$this->showDefaultMarkets();
+		}
+	}
+
+	private function showDefaultMarkets()
+	{
+		$this->_action = 'default';
 	}
 
 	public function submitSelection($idSelection)

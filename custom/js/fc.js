@@ -88,15 +88,12 @@ fc.user.updateBettingRecent = function (data) {
 }
 
 fc.user.updateBettingMarkets = function (data) {
-    if (!fc.user.bettingMarketsUrl) {
-        return;
-    }
     var bettingMarkets = j('.fc_betting_markets');
     bettingMarkets.css({
         opacity:0.5
     }).addClass('betting_upcoming_loading');
 
-    j.ajax(fc.user.bettingMarketsUrl, {
+    j.ajax(WEB_ROOT + 'widget?name=fc_betting_markets&format=html', {
         data:data || {},
         dataType:'html',
         success:function (text) {
@@ -113,7 +110,6 @@ fc.user.updateBettingMarkets = function (data) {
         }
     });
 }
-fc.user.bettingMarketsUrl = null;
 
 setTimeout(function () {
     OverText.update();
