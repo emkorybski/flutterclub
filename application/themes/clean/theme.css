@@ -2116,6 +2116,10 @@ div.group_discussions_list
   -webkit-border-radius: 3px;
 }
 
+.layout_group_profile_photo div {
+  text-align: center;
+}
+
 .layout_group_profile_options {
   background-color: $theme_foreground_background_color;
   -moz-border-radius: 3px;
@@ -2263,6 +2267,28 @@ body#global_page_messages-messages-view h3 {
 
 form#messages_compose h3 {
     background-color: $theme_foreground_background_color;
+}
+
+.layout_user_profile_photo {
+  margin-bottom: 15px;
+  background-color: $theme_foreground_background_color;
+  padding: 7px;
+  border-radius: none;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+.layout_user_profile_photo div {
+  text-align: center;
+}
+
+.layout_user_profile_options {
+  background-color: $theme_foreground_background_color;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  padding: 0 10px;
 }
 
 /* Moved from widgets\footer\index.tpl - to be cleaned up */

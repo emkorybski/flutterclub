@@ -22,10 +22,6 @@
 		margin-right: 5px
 	}
 
-	.leaderboard_username a + a {
-		white-space: nowrap;
-	}
-
 	.fc_competition_leaderboard td:first-child {
 		max-width: 25px;
 		font-size: 30px;
@@ -58,7 +54,7 @@ if ( count($this->leaderboardUsers) ) :
 				<?=$this->htmlLink($seUser->getHref(), $seUser->getTitle())?>
 			</td>
 			<td><?=$user['profit']?></td>
-			<td><?=$user['successRate']?> (<?=$user['won_count']?>/<?=$user['bet_count']?>)</td>
+			<td><span><?=$user['successRate']?></span> <span>(<?=$user['won_count']?>/<?=$user['bet_count']?>)</span></td>
 		</tr>
 		<?php
 	endforeach;
