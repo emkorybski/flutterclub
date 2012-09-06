@@ -77,7 +77,9 @@
 <?php
 foreach ( $this->upcomingEvents as $event) :
 ?>
-	<bold><?=$event->getPath(true)?></bold>
+	<p class="market_title">Sport: <?=$event->getSport()->name?></p>
+	<p class="market_title">Event: <?=$event->getPath(true)?></p>
+	<p class="market_title">Market: <?=$event->name?></p>
 <?
 	$eventSelections = $event->getSelections(3);
 	foreach ( $eventSelections as $selection) :
