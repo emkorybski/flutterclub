@@ -312,6 +312,10 @@ class BetfairImportManager
 		foreach ($bfSubEvents as $bfSubEvent) {
 			$attributes = $bfSubEvent->attributes();
 			$subEventName = trim($attributes['title'] . '');
+			if ($subEventName == '16:15 To Be Placed') {
+				$xx = 2;
+			}
+
 			$subEventDate = date('Y-m-d H:i:00', \DateTime::createFromFormat('d/m/Y H:i', "{$attributes['date']} {$attributes['time']}")->getTimestamp());
 			$subEventBetfairMarketId = $attributes['id'] . '';
 			$subEventTotalAmountMatched = $attributes['TotalAmountMatched'] . '';
@@ -399,7 +403,7 @@ class BetfairImportManager
 		if (($count <= 2 && $bookmakerPercentage < 120) ||
 			($count <= 5 && $bookmakerPercentage < 130) ||
 			($count <= 8 && $bookmakerPercentage < 150) ||
-			($count > 8 && $bookmakerPercentage < 180)
+			($count > 8 && $bookmakerPercentage < 250)
 		) {
 			$isValidMarket = true;
 			\bets\Selection::bulkInsert($this->selectionsById);
