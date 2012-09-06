@@ -46,7 +46,25 @@ class Widget_FC_Betting_MarketsController extends Engine_Content_Widget_Abstract
 		$this->_action = 'default';
 
 		$now = date('Y-m-d H:i:s', mktime(date("H"), date("i"), date("s"), date("m"), date("d"), date("Y")));
-		$upcomingEvents = \bets\Event::findWhere(array('betfairMarketId IS NOT ' => null, 'ts>' => $now), 'ORDER BY betfairAmountMatched DESC LIMIT 5');
+		$then = date('Y-m-d H:i:s', mktime(date("H") + 2, date("i"), date("s"), date("m"), date("d"), date("Y")));
+
+		$topSports = array('Soccer', 'Golf', 'Horse Racing', 'Rugby Union', 'Tennis', 'Cricket');
+		$upcomingEvents = array();
+		foreach ($topSports as $topSport) {
+			$sport = \bets\Sport::getWhere(array('name=' => $topSport));
+			if (!$sport) continue;
+
+			$upcomingEvent = \bets\Event::getWhere(array(
+				'idsport = ' => $sport->id,
+				'betfairMarketId IS NOT ' => null,
+				'betfairAmountMatched > ' => 0,
+				'ts > ' => $now,
+				'ts < ' => $then));
+			if ($upcomingEvent) {
+				$upcomingEvents[] = $upcomingEvent;
+			}
+		}
+
 		$this->view->upcomingEvents = $upcomingEvents;
 		$this->view->user = bets\User::getCurrentUser();
 	}

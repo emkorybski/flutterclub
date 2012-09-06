@@ -74,7 +74,35 @@
 </style>
 
 <div class="fc_betting_markets">
-	UPCOMING MARKETS
+<?php
+foreach ( $this->upcomingEvents as $event) :
+?>
+	<bold><?=$event->getPath(true)?></bold>
+<?
+	$eventSelections = $event->getSelections(3);
+	foreach ( $eventSelections as $selection) :
+		$userSelection = bets\UserSelection::getWhere(array('idselection=' => $selection->id, 'iduser=' => $this->user->id));
+		$disabled = "";
+		if ($userSelection) {
+			$disabled = "disabled='disabled'";
+		}
+?>
+	<div class="selection_name"><?=$selection->name?></div>
+	<?php if ($selection->odds > 1) : ?>
+	<button <?=$disabled?> data-idselection="<?=$selection->id?>" class="submit_selection"><?=\bets\fc::formatOdds($selection->odds)?></button>
+	<?php else  : ?>
+	<button disabled="disabled" data-idselection="<?=$selection->id?>">-</button>
+	<?php endif; ?>
+	<!-- <a href="#" class="share_selection">Share</a> -->
+	<div class="clear"></div>
+	</a>
+	<hr class="line"/>
+<?php
+	endforeach;
+?>
+<?php
+endforeach;
+?>
 </div>
 
 <script type="text/javascript">
