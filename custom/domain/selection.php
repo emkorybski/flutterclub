@@ -29,66 +29,66 @@ class Selection extends DBRecord
 	{
 		return Event::get($this->idevent)->topEvent();
 	}
-    
-    public static function bulkUpdate($selections)
-    {
-        $stmt = null;
 
-        foreach($selections as $selection)
-        {
-            if (!$selection->isDirty())
-                continue;
+	public static function bulkUpdate($selections)
+	{
+		$stmt = null;
 
-            if (!$stmt) {
-                $stmt =  bets::sql()->stmt_init();
-                if (!$stmt) {
-                    throw new \Exception(bets::sql()->getLastError());
-                }
-                $stmt->prepare("UPDATE fc_selection SET odds = ? WHERE id = ?");
-            }
+		foreach ($selections as $selection) {
+			if (!$selection->isDirty())
+				continue;
 
-            $odds = $selection->odds;
-            $id = $selection->id;
-            $stmt->bind_param('di', $odds, $id);
+			if (!$stmt) {
+				$stmt = bets::sql()->stmt_init();
+				if (!$stmt) {
+					throw new \Exception(bets::sql()->getLastError());
+				}
+				$stmt->prepare("UPDATE fc_selection SET odds = ?, betfairOrder = ? WHERE id = ?");
+			}
 
-            $stmt->execute();
-        }
+			$odds = $selection->odds;
+			$betfairOrder = $selection->betfairOrder;
+			$id = $selection->id;
 
-        if ($stmt) {
-            $stmt->close();
-        }
-    }
+			$stmt->bind_param('dii', $odds, $betfairOrder, $id);
+			$stmt->execute();
+		}
 
-    public static function bulkInsert($selections)
-    {
-        $stmt = null;
+		if ($stmt) {
+			$stmt->close();
+		}
+	}
 
-        foreach($selections as $selection)
-        {
-            if (!$selection->isNew())
-                continue;
+	public static function bulkInsert($selections)
+	{
+		$stmt = null;
 
-            if (!$stmt) {
-                $stmt = bets::sql()->stmt_init();
-                if (!$stmt) {
-                    throw new \Exception(bets::sql()->getLastError());
-                }
-                $stmt->prepare(
-                    "INSERT INTO fc_selection(idevent, name, odds, betfairSelectionId) " .
-                        "VALUES(?, ?, ?, ?)");
-            }
-            
-            $idevent = $selection->idevent;
-            $name = $selection->name;
-            $odds = $selection->odds;
-            $betfairSelectionId = $selection->betfairSelectionId;
-            $stmt->bind_param('isdi', $idevent, $name, $odds, $betfairSelectionId);
+		foreach ($selections as $selection) {
+			if (!$selection->isNew())
+				continue;
 
-            $stmt->execute();
-        }
+			if (!$stmt) {
+				$stmt = bets::sql()->stmt_init();
+				if (!$stmt) {
+					throw new \Exception(bets::sql()->getLastError());
+				}
+				$stmt->prepare(
+					"INSERT INTO fc_selection(idevent, name, odds, betfairSelectionId, betfairOrder) " .
+						"VALUES(?, ?, ?, ?, ?)");
+			}
 
-        if ($stmt) {
-            $stmt->close();
-        }
-    }
+			$idevent = $selection->idevent;
+			$name = $selection->name;
+			$odds = $selection->odds;
+			$betfairSelectionId = $selection->betfairSelectionId;
+			$betfairOrder = $selection->betfairOrder;
+
+			$stmt->bind_param('isdii', $idevent, $name, $odds, $betfairSelectionId, $betfairOrder);
+			$stmt->execute();
+		}
+
+		if ($stmt) {
+			$stmt->close();
+		}
+	}
 }

@@ -35,7 +35,7 @@ class Widget_FC_Betting_MarketsController extends Engine_Content_Widget_Abstract
 			$this->view->user = bets\User::getCurrentUser();
 			$this->view->event = $event;
 			$this->view->parentEvent = \bets\Event::get($event->idparent);
-			$this->view->selections = bets\Selection::findWhere(array('idevent=' => $idEvent), 'ORDER BY id ASC');
+			$this->view->selections = bets\Selection::findWhere(array('idevent=' => $idEvent), 'ORDER BY betfairOrder, id');
 		} else {
 			$this->showDefaultMarkets();
 		}
@@ -44,6 +44,11 @@ class Widget_FC_Betting_MarketsController extends Engine_Content_Widget_Abstract
 	private function showDefaultMarkets()
 	{
 		$this->_action = 'default';
+
+		$now = date('Y-m-d H:i:s', mktime(date("H"), date("i"), date("s"), date("m"), date("d"), date("Y")));
+		$upcomingEvents = \bets\Event::findWhere(array('betfairMarketId IS NOT ' => null, 'ts>' => $now), 'ORDER BY betfairAmountMatched DESC LIMIT 5');
+		$this->view->upcomingEvents = $upcomingEvents;
+		$this->view->user = bets\User::getCurrentUser();
 	}
 
 	public function submitSelection($idSelection)

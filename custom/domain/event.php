@@ -21,7 +21,7 @@ class Event extends DBRecord
 		call_user_func_array('parent::delete', func_get_args());
 	}
 
-	public function getPath()
+	public function getPath($excludeSport = false)
 	{
 		$path = '';
 		$event = $this;
@@ -29,7 +29,9 @@ class Event extends DBRecord
 			$event = static::get($event->idparent);
 			$path = " > " . $event->name . $path;
 		}
-		$path = $this->getSport()->name . $path;
+		$path = $excludeSport
+			? substr($path, 3)
+			: $this->getSport()->name . $path;
 
 		return $path;
 	}
@@ -39,9 +41,10 @@ class Event extends DBRecord
 		return Event::findWhere(array('idparent=' => $this->id));
 	}
 
-	public function getSelections()
+	public function getSelections($limit = null)
 	{
-		return Selection::findWhere(array('idevent=' => $this->id));
+		$extraQuery = ($limit != null ? " LIMIT $limit" : "");
+		return Selection::findWhere(array('idevent=' => $this->id), $extraQuery);
 	}
 
 	public function getSport()
@@ -63,33 +66,32 @@ class Event extends DBRecord
 		return $event;
 	}
 
-    public static function bulkUpdate($events)
-    {
-        $stmt = null;
+	public static function bulkUpdate($events)
+	{
+		$stmt = null;
 
-        foreach($events as $event)
-        {
-            if (!$event->isDirty())
-                continue;
+		foreach ($events as $event) {
+			if (!$event->isDirty())
+				continue;
 
-            if (!$stmt) {
-                !$stmt = bets::sql()->stmt_init();
-                if (!$stmt) {
-                    throw new \Exception(bets::sql()->getLastError());
-                }
-                $stmt->prepare("UPDATE fc_event SET name = ?, ts = ? WHERE id = ?");
-            }
+			if (!$stmt) {
+				!$stmt = bets::sql()->stmt_init();
+				if (!$stmt) {
+					throw new \Exception(bets::sql()->getLastError());
+				}
+				$stmt->prepare("UPDATE fc_event SET name = ?, ts = ? WHERE id = ?");
+			}
 
-            $name = $event->name;
-            $ts = $event->ts;
-            $id = $event->id;
-            $stmt->bind_param('ssi', $name, $ts, $id);
+			$name = $event->name;
+			$ts = $event->ts;
+			$id = $event->id;
+			$stmt->bind_param('ssi', $name, $ts, $id);
 
-            $stmt->execute();
-        }
+			$stmt->execute();
+		}
 
-        if ($stmt) {
-            $stmt->close();
-        }
-    }
+		if ($stmt) {
+			$stmt->close();
+		}
+	}
 }

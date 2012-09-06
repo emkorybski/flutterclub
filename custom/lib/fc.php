@@ -28,7 +28,33 @@ class fc
 
 	private static $oddsFormat = 'fractional';
 
-	public static function formatOdds($dec, $oddsFormat)
+	public static function roundDecimalOdds($dec)
+	{
+		$dec = floatval($dec);
+		$chart = self::$conversionChart;
+
+		if ($dec < 10) {
+			for ($i = 0; $i < count($chart); $i++) {
+				if ($dec <= $chart[$i][0]) {
+					return $chart[$i][0];
+				}
+			}
+		} else if ($dec < 40) {
+			return intval(round($dec));
+		} else {
+			$quotient = floor($dec / 10);
+			$reminder = $dec - $quotient * 10;
+			$round = $reminder > 2.5
+				? $reminder < 7.5
+					? 5
+					: 10
+				: 0;
+
+			return $quotient * 10 + $round;
+		}
+	}
+
+	public static function formatOdds($dec, $oddsFormat = null)
 	{
 		$format = empty($oddsFormat) ? self::$oddsFormat : $oddsFormat;
 		$dec = max(floatval($dec), 1);

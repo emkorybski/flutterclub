@@ -4,6 +4,7 @@ namespace betfair;
 
 require_once(dirname(__FILE__) . '/../config.php');
 require_once(PATH_LIB . 'object.php');
+require_once(PATH_LIB . 'fc.php');
 require_once(PATH_DOMAIN . 'competition.php');
 require_once(PATH_DOMAIN . 'sport.php');
 require_once(PATH_DOMAIN . 'event.php');
@@ -11,7 +12,6 @@ require_once(PATH_DOMAIN . 'selection.php');
 
 class BetfairImportManager
 {
-	private $bookmakerMaxPercentage = 200;
 	private $excludedEvent = array('ANTEPOST', 'Asian Handicap');
 
 	private $soapClient;
@@ -220,10 +220,14 @@ class BetfairImportManager
 				? array($response->eventItems->BFEvent)
 				: $response->eventItems->BFEvent;
 			foreach ($bfEvents as $bfEvent) {
+				$eventName = trim($bfEvent->eventName);
+				if (in_array($eventName, $this->excludedEvent)) {
+					continue;
+				}
 				//$event = \bets\Event::getWhere(array('name=' => trim($bfEvent->eventName), 'idparent=' => $fcParentId));
-				$event = $this->getEventByParentAndName($fcParentId, trim($bfEvent->eventName));
+				$event = $this->getEventByParentAndName($fcParentId, $eventName);
 				if (!$event) {
-					$event = new \bets\Event(null, array('name' => trim($bfEvent->eventName), 'idparent' => $fcParentId, 'betfairMarketId' => null));
+					$event = new \bets\Event(null, array('name' => $eventName, 'idparent' => $fcParentId, 'betfairMarketId' => null));
 					$event->idsport = $sportId;
 					$parentId = $event->insert();
 					$this->addEvent($event);
@@ -363,36 +367,41 @@ class BetfairImportManager
 			$this->addSelection($selection);
 		}
 
-		$isValidMarket = true;
 		$bookmakerPercentage = 0;
+		$count = 0;
 		foreach ($bfSelections as $bfSelection) {
+			$count++;
+
 			$attributes = $bfSelection->attributes();
 			$selectionName = trim($attributes['name'] . '');
 			$selectionOdds = $attributes['backp1'] . '';
 			$betfairSelectionId = $attributes['id'] . '';
 
-			if ($isValidMarket && $selectionOdds != '') {
-				$selectionPercentage = intval(100 / floatval($selectionOdds));
-				$bookmakerPercentage += $selectionPercentage;
-				$isValidMarket = $bookmakerPercentage < $this->bookmakerMaxPercentage;
-			}
+			$selectionOddsRounded = \bets\fc::roundDecimalOdds($selectionOdds);
+			$selectionPercentage = intval(100 / floatval($selectionOddsRounded));
+			$bookmakerPercentage += $selectionPercentage;
 
 			//$selection = \bets\Selection::getWhere(array('idevent=' => $subEvent->id, 'name=' => $selectionName, 'betfairSelectionId=' => $betfairSelectionId));
 			$selection = $this->getSelectionByEventAndName($subEvent->id, $selectionName, $betfairSelectionId);
 			if (!$selection) {
-				$selection = new \bets\Selection(null, array('name' => $selectionName, 'odds' => $selectionOdds, 'betfairSelectionId' => $betfairSelectionId));
+				$selection = new \bets\Selection(null, array('name' => $selectionName, 'odds' => $selectionOddsRounded, 'betfairSelectionId' => $betfairSelectionId, 'betfairOrder' => $count));
 				$selection->idevent = $subEvent->id;
 				$this->addSelection($selection);
 			} else {
-				if ($selection->odds != $selectionOdds) {
-					$selection->odds = $selectionOdds;
-					//$selection->update();
-					$selection->setDirty(true);
-				}
+				$selection->odds = $selectionOddsRounded;
+				$selection->betfairOrder = $count;
+				//$selection->update();
+				$selection->setDirty(true);
 			}
 		}
 
-		if ($isValidMarket) {
+		$isValidMarket = false;
+		if (($count <= 2 && $bookmakerPercentage < 120) ||
+			($count <= 5 && $bookmakerPercentage < 130) ||
+			($count <= 8 && $bookmakerPercentage < 150) ||
+			($count > 8 && $bookmakerPercentage < 180)
+		) {
+			$isValidMarket = true;
 			\bets\Selection::bulkInsert($this->selectionsById);
 		}
 		\bets\Selection::bulkUpdate($this->selectionsById);
