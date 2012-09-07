@@ -80,6 +80,7 @@ foreach ( $this->upcomingEvents as $event) :
 	<p class="market_title">Sport: <?=$event->getSport()->name?></p>
 	<p class="market_title">Event: <?=$event->getPath(true)?></p>
 	<p class="market_title">Market: <?=$event->name?></p>
+	<a href="<?=WEB_HOST.WEB_ROOT?>pages/betting?event=<?=$event->id?>">go to market</a>
 <?
 	$eventSelections = $event->getSelections(3);
 	foreach ( $eventSelections as $selection) :

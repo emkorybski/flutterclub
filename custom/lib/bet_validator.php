@@ -68,7 +68,7 @@ class BetValidator
 					array(
 						'profit' => fc::formatDecimalNumber($profit),
 						'bet_info' => $mailBetInfoText,
-						'betting_page' => 'betting page here...'
+						'betting_page' => WEB_HOST . WEB_ROOT . "pages/betting"
 					));
 			}
 		}

@@ -29,6 +29,6 @@ Bet: <?=$betSelection->name?>
 
 Odds: <?=\bets\fc::decimal2fractional($betSelection->odds)?>
 
-Status: <?=$bet->status?>
+Status: <?=$betSelection->status?>
 <br/>
 <?php endforeach; ?>
