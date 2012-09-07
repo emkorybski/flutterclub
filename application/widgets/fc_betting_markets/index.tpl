@@ -60,6 +60,9 @@
 		margin-top: 10px;
 		margin-right: 10px;
 	}
+	.fc_betting_markets hr.line + .market_title {
+    	margin-top: 50px;
+	}
 </style>
 
 <div class="fc_betting_markets">
