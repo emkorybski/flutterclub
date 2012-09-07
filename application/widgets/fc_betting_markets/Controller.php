@@ -46,7 +46,7 @@ class Widget_FC_Betting_MarketsController extends Engine_Content_Widget_Abstract
 		$this->_action = 'default';
 
 		$now = date('Y-m-d H:i:s', mktime(date("H"), date("i"), date("s"), date("m"), date("d"), date("Y")));
-		$then = date('Y-m-d H:i:s', mktime(date("H") + 2, date("i"), date("s"), date("m"), date("d"), date("Y")));
+		$then = date('Y-m-d H:i:s', mktime(date("H") + 8, date("i"), date("s"), date("m"), date("d"), date("Y")));
 
 		$topSports = array('Soccer', 'Golf', 'Horse Racing', 'Rugby Union', 'Tennis', 'Cricket');
 		$upcomingEvents = array();
@@ -57,9 +57,10 @@ class Widget_FC_Betting_MarketsController extends Engine_Content_Widget_Abstract
 			$upcomingEvent = \bets\Event::getWhere(array(
 				'idsport = ' => $sport->id,
 				'betfairMarketId IS NOT ' => null,
-				'betfairAmountMatched > ' => 0,
+				//'betfairAmountMatched > ' => 0,
 				'ts > ' => $now,
-				'ts < ' => $then));
+				'ts < ' => $then),
+				'ORDER BY betfairAmountMatched DESC, ts ASC');
 			if ($upcomingEvent) {
 				$upcomingEvents[] = $upcomingEvent;
 			}
