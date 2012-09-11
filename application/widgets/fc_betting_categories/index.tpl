@@ -1,4 +1,9 @@
 <style type="text/css">
+
+	.layout_fc_betting_categories {
+		margin-bottom: 20px;
+	}
+
 	.layout_fc_betting_categories > div {
 		text-align: left;
 	}
