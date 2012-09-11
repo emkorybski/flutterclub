@@ -1,7 +1,4 @@
 <style type="text/css">
-	.fc_betting_markets {
-		background-color: #ffffff;
-	}
 
 	.fc_betting_markets .market_title {
 		margin-left: 10px;
