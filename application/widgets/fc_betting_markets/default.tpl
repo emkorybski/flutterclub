@@ -74,6 +74,41 @@
 	.fc_betting_markets hr.line + .market_title {
 		margin-top: 50px;
 	}
+
+	.upcoming_market {
+		background-color: #bfd8df;
+		margin-bottom: 10px;
+		overflow: auto;
+	}
+
+	.upcoming_market h1.market_title {
+		background-color: #cd4849;
+		color: #fff;
+		margin-left: 0;
+		padding: 5px 10px;
+		margin-bottom: 10px;
+	}
+
+	.upcoming_market p.market_title {
+		font-size: 16px;
+		margin-left: 0;
+		padding: 5px 10px;
+	}
+
+	.upcoming_market .link_to_market {
+		float: right;
+		margin: 10px;
+		font-weight: bold;
+		color: #5F93B4;
+	}
+
+	.upcoming_market .selections {
+		background-color: #fff;
+		margin-left: 10px;
+		margin-right: 10px;
+		margin-top: 10px;
+	}
+
 </style>
 
 <div class="fc_betting_markets">
@@ -108,7 +143,7 @@ foreach ( $this->upcomingEvents as $event) :
 	endforeach;
 ?>
 	</div>
-	<a class="link_to_market" href="<?=WEB_HOST.WEB_ROOT?>pages/betting?event=<?=$event->id?>">View all selections</a>
+	<a class="link_to_market" href="<?=WEB_HOST.WEB_ROOT?>pages/betting?event=<?=$event->id?>">Go to market</a>
 	</div>
 <?php
 endforeach;
