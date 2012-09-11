@@ -80,10 +80,11 @@
 <?php
 foreach ( $this->upcomingEvents as $event) :
 ?>
-	<p class="market_title">Sport: <?=$event->getSport()->name?></p>
-	<p class="market_title">Event: <?=$event->getPath(true)?></p>
-	<p class="market_title">Market: <?=$event->name?></p>
-	<a href="<?=WEB_HOST.WEB_ROOT?>pages/betting?event=<?=$event->id?>">go to market</a>
+	<div class="upcoming_market">
+		<h1 class="market_title"><?=$event->getSport()->name?></h1>
+		<p class="market_title"><?=$event->getPath(true)?></p>
+		<p class="market_title"><?=$event->name?></p>
+		<a href="<?=WEB_HOST.WEB_ROOT?>pages/betting?event=<?=$event->id?>">go to market</a>
 <?
 	$eventSelections = $event->getSelections(3);
 	foreach ( $eventSelections as $selection) :
@@ -93,16 +94,17 @@ foreach ( $this->upcomingEvents as $event) :
 			$disabled = "disabled='disabled'";
 		}
 ?>
-	<div class="selection_name"><?=$selection->name?></div>
-	<?php if ($selection->odds > 1) : ?>
-	<button <?=$disabled?> data-idselection="<?=$selection->id?>" class="submit_selection"><?=\bets\fc::formatOdds($selection->odds)?></button>
-	<?php else  : ?>
-	<button disabled="disabled" data-idselection="<?=$selection->id?>">-</button>
-	<?php endif; ?>
-	<!-- <a href="#" class="share_selection">Share</a> -->
-	<div class="clear"></div>
-	</a>
-	<hr class="line"/>
+		<div class="selection_name"><?=$selection->name?></div>
+		<?php if ($selection->odds > 1) : ?>
+		<button <?=$disabled?> data-idselection="<?=$selection->id?>" class="submit_selection"><?=\bets\fc::formatOdds($selection->odds)?></button>
+		<?php else  : ?>
+		<button disabled="disabled" data-idselection="<?=$selection->id?>">-</button>
+		<?php endif; ?>
+		<!-- <a href="#" class="share_selection">Share</a> -->
+		<div class="clear"></div>
+		</a>
+		<hr class="line"/>
+	</div>
 <?php
 	endforeach;
 ?>
