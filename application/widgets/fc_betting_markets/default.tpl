@@ -84,7 +84,6 @@ foreach ( $this->upcomingEvents as $event) :
 	<h1 class="market_title"><?=$event->getSport()->name?></h1>
 	<p class="market_title"><?=$event->getPath(true)?></p>
 	<p class="market_title"><?=$event->name?></p>
-	<a href="<?=WEB_HOST.WEB_ROOT?>pages/betting?event=<?=$event->id?>">go to market</a>
 <?
 	$eventSelections = $event->getSelections(3);
 	foreach ( $eventSelections as $selection) :
@@ -107,6 +106,7 @@ foreach ( $this->upcomingEvents as $event) :
 <?php
 	endforeach;
 ?>
+	<a class="link_to_market" href="<?=WEB_HOST.WEB_ROOT?>pages/betting?event=<?=$event->id?>">View all selections</a>
 	</div>
 <?php
 endforeach;
