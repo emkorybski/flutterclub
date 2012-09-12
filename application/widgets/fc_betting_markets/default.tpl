@@ -97,6 +97,7 @@
 		margin: 10px;
 		font-weight: bold;
 		color: #5F93B4;
+		margin-bottom: 10px;
 	}
 
 	.fc_betting_market .selections {
