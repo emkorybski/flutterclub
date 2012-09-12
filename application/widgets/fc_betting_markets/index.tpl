@@ -92,13 +92,14 @@
 
 	.upcoming_market p.market_title {
 		font-size: 16px;
+		font-weight: bold;
 		margin-left: 0;
 		padding: 5px 10px;
 	}
 
 	.upcoming_market .link_to_market {
 		float: right;
-		margin: 10px;
+		margin: 0 10px;
 		font-weight: bold;
 		color: #5F93B4;
 	}
