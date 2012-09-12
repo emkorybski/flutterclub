@@ -76,13 +76,13 @@
 	.fc_betting_markets hr.line + .market_title {
     	margin-top: 50px;
 	}
-	.upcoming_market {
+	.fc_betting_market {
 		background-color: #bfd8df;
 		margin-bottom: 10px;
 		overflow: auto;
 	}
 
-	.upcoming_market h1.market_title {
+	.fc_betting_market h1.market_title {
 		background-color: #cd4849;
 		color: #fff;
 		margin-left: 0;
@@ -90,21 +90,21 @@
 		margin-bottom: 10px;
 	}
 
-	.upcoming_market p.market_title {
+	.fc_betting_market p.market_title {
 		font-size: 16px;
 		font-weight: bold;
 		margin-left: 0;
 		padding: 5px 10px;
 	}
 
-	.upcoming_market .link_to_market {
+	.fc_betting_market .link_to_market {
 		float: right;
 		margin: 0 10px;
 		font-weight: bold;
 		color: #5F93B4;
 	}
 
-	.upcoming_market .selections {
+	.fc_betting_market .selections {
 		background-color: #fff;
 		margin-left: 10px;
 		margin-right: 10px;
@@ -113,6 +113,7 @@
 </style>
 
 <div class="fc_betting_markets">
+<div class="fc_betting_market">
 <?php
 if (count($this->selections) > 0) :
 ?>
@@ -144,6 +145,7 @@ foreach ( $this->selections as $selection) :
 <?php
 endforeach;
 ?>
+</div>
 </div>
 </div>
 

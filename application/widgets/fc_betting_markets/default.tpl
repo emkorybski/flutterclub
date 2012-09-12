@@ -72,13 +72,13 @@
 		margin-top: 50px;
 	}
 
-	.upcoming_market {
+	.fc_betting_market {
 		background-color: #bfd8df;
 		margin-bottom: 10px;
 		overflow: auto;
 	}
 
-	.upcoming_market h1.market_title {
+	.fc_betting_market h1.market_title {
 		background-color: #cd4849;
 		color: #fff;
 		margin-left: 0;
@@ -86,20 +86,20 @@
 		margin-bottom: 10px;
 	}
 
-	.upcoming_market p.market_title {
+	.fc_betting_market p.market_title {
 		font-size: 16px;
 		margin-left: 0;
 		padding: 5px 10px;
 	}
 
-	.upcoming_market .link_to_market {
+	.fc_betting_market .link_to_market {
 		float: right;
 		margin: 10px;
 		font-weight: bold;
 		color: #5F93B4;
 	}
 
-	.upcoming_market .selections {
+	.fc_betting_market .selections {
 		background-color: #fff;
 		margin-left: 10px;
 		margin-right: 10px;
@@ -112,7 +112,7 @@
 <?php
 foreach ( $this->upcomingEvents as $event) :
 ?>
-	<div class="upcoming_market">
+	<div class="fc_betting_market">
 	<h1 class="market_title"><?=$event->getSport()->name?></h1>
 	<p class="market_title"><?=$event->getPath(true)?></p>
 	<p class="market_title"><?=$event->name?></p>
