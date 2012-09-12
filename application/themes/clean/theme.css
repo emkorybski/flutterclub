@@ -2232,6 +2232,36 @@ div.group_discussions_list
   margin-bottom: 5px;
 }
 
+/* Terms and Conditions */
+
+.terms_and_conditions {
+  background-color: $theme_foreground_background_color;
+  padding: 20px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+
+.terms_and_conditions p {
+  margin-bottom: 10px;
+}
+
+.terms_and_conditions ul,
+.terms_and_conditions ol {
+  list-style-position: inside;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+.terms_and_conditions ul {
+    list-style-type: disc;
+}
+
+.terms_and_conditions li,
+.terms_and_conditions li {
+  margin-bottom: 5px;
+}
+
 /* Leaderboard */
 
 .fc_competition_leaderboard {
