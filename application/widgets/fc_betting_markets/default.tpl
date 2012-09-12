@@ -1,23 +1,21 @@
 <style type="text/css">
 
-	.fc_betting_markets .market_title {
-		margin-left: 10px;
-		padding-top: 5px;
+	.fc_betting_market .market_title {
 		font-family: fc_pts;
 	}
 
-	.fc_betting_markets .market_type {
+	.fc_betting_market .market_type {
 		margin-left: 10px;
 		font-family: fc_pts;
 	}
 
-	.fc_betting_markets .market_header {
+	.fc_betting_market .market_header {
 		font-size: 15px;
 		line-height: 25px;
 		font-weight: bold;
 	}
 
-	.fc_betting_markets .market_header .market_odds {
+	.fc_betting_market .market_header .market_odds {
 		margin-left: 466px;
 	}
 
@@ -42,20 +40,20 @@
 		background-color: #e5e5e5;
 	}
 
-	.fc_betting_markets .selection_name {
+	.fc_betting_market .selection_name {
 		float: left;
 		width: 40%;
 		margin-left: 10px;
 		margin-top: 10px;
 	}
 
-	.fc_betting_markets button {
+	.fc_betting_market button {
 		float: right;
 		margin: 4px;
 		width: 80px;
 	}
 
-	.fc_betting_markets button[disabled] {
+	.fc_betting_market button[disabled] {
 		background-color: #eee;
 		border-color: #aaa;
 		color: #aaa;

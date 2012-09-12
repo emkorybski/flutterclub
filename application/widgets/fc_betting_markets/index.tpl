@@ -3,14 +3,14 @@
 	.fc_betting_markets {
 		overflow: auto;
 	}
-	.fc_betting_markets h1.market_title {
+	.fc_betting_market h1.market_title {
 		background-color: #cd4849;
 		color: #fff;
 		margin-left: 0;
 		padding: 5px 10px;
 		font-family: fc_pts;
 	}
-	.fc_betting_markets .market_type {
+	.fc_betting_market .market_type {
 		margin-left: 0;
 		padding-left: 10px;
 		padding-top: 5px;
@@ -18,18 +18,18 @@
 		font-size: 22px;
 		font-family: fc_pts;
 	}
-	.fc_betting_markets .market_header {
+	.fc_betting_market .market_header {
 		font-size: 14px;
 		line-height: 25px;
 		font-weight: bold;
 	}
-	.fc_betting_markets .selections {
+	.fc_betting_market .selections {
 		background-color: #fff;
 		margin-left: 10px;
 		margin-right: 10px;
 		margin-bottom: 10px;
 	}
-	.fc_betting_markets .market_header .market_odds {
+	.fc_betting_market .market_header .market_odds {
 		margin-left: 466px;
 	}
 	.fc_selection {
@@ -49,18 +49,18 @@
 	.fc_selection:hover {
 		background-color: #e5e5e5;
 	}
-	.fc_betting_markets .selection_name {
+	.fc_betting_market .selection_name {
 		float: left;
 		width: 40%;
 		margin-left: 10px;
 		margin-top: 10px;
 	}
-	.fc_betting_markets button {
+	.fc_betting_market button {
 		float: right;
 		margin: 4px;
 		width: 80px;
 	}
-	.fc_betting_markets button[disabled] {
+	.fc_betting_market button[disabled] {
 		background-color: #eee;
 		border-color: #aaa;
 		color: #aaa;
@@ -72,7 +72,7 @@
 		margin-top: 10px;
 		margin-right: 10px;
 	}
-	.fc_betting_markets hr.line + .market_title {
+	.fc_betting_market hr.line + .market_title {
     	margin-top: 50px;
 	}
 	.fc_betting_market {
