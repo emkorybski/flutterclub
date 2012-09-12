@@ -2169,27 +2169,28 @@ div.group_discussions_list
 }
 
 .game_rules dl {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .game_rules dt {
-    font-weight: bold;
-    margin-bottom: 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .game_rules dd {
-    margin-bottom: 10px;
-    margin-left: 20px;
+  margin-bottom: 10px;
+  margin-left: 20px;
 }
 
 .game_rules p {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .game_rules ul,
 .game_rules ol {
   list-style-position: inside;
   margin-bottom: 10px;
+  margin-left: 20px;
 }
 
 .game_rules ul {
@@ -2209,6 +2210,26 @@ div.group_discussions_list
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
+}
+
+.privacy_policy p {
+  margin-bottom: 10px;
+}
+
+.privacy_policy ul,
+.privacy_policy ol {
+  list-style-position: inside;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+.privacy_policy ul {
+    list-style-type: disc;
+}
+
+.privacy_policy li,
+.privacy_policy li {
+  margin-bottom: 5px;
 }
 
 /* Leaderboard */
