@@ -2161,11 +2161,11 @@ div.group_discussions_list
 /* Game Rules */
 
 .game_rules {
-    background-color: $theme_foreground_background_color;
-    padding: 20px;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
+  background-color: $theme_foreground_background_color;
+  padding: 20px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
 }
 
 .game_rules dl {
@@ -2199,6 +2199,16 @@ div.group_discussions_list
 .game_rules li,
 .game_rules li {
   margin-bottom: 5px;
+}
+
+/* Privacy policy */
+
+.privacy_policy {
+  background-color: $theme_foreground_background_color;
+  padding: 20px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
 }
 
 /* Leaderboard */
