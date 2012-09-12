@@ -9,6 +9,10 @@
 		margin-left: 0;
 		padding: 5px 10px;
 		font-family: fc_pts;
+		-webkit-box-shadow: 0px 5px 0px rgba(50, 50, 50, 0.5);
+		-moz-box-shadow: 0px 5px 0px rgba(50, 50, 50, 0.5);
+		box-shadow: 0px 3px 2px rgba(50, 50, 50, 0.5);
+		position: relative;
 	}
 	.fc_betting_market .market_type {
 		margin-left: 0;
