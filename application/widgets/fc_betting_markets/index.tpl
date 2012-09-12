@@ -4,7 +4,7 @@
 		background-color: #bfd8df;
 		overflow: auto;
 	}
-	.fc_betting_markets .market_title {
+	.fc_betting_markets h1.market_title {
 		background-color: #cd4849;
 		color: #fff;
 		margin-left: 0;
