@@ -1,7 +1,6 @@
 
 <style type="text/css">
 	.fc_betting_markets {
-		background-color: #bfd8df;
 		overflow: auto;
 	}
 	.fc_betting_markets h1.market_title {
