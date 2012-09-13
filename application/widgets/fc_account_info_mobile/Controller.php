@@ -18,9 +18,9 @@ class Widget_FC_Account_Info_MobileController extends Engine_Content_Widget_Abst
 		$hours = floor(($timeSpan - $days * 86400) / 3600);
 
 		if ($days > 0) {
-			$countdown = sprintf('%d %s, %d %s', $days, 'D', $hours, 'H');
+			$countdown = sprintf('%d %s, %d %s', $days, 'd', $hours, 'h');
 		} else if ($hours > 0) {
-			$countdown = sprintf('%d %s', $hours, 'H');
+			$countdown = sprintf('%d %s', $hours, 'h');
 		} else {
 			$countdown = '< 1 hour';
 		}
