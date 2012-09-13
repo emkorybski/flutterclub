@@ -7,7 +7,7 @@ Odds: <?=\bets\fc::decimal2fractional($bet->odds)?>
 
 Stake: FB$ <?=$bet->stake?>
 
-Status: <?=$bet->status?>
+Status: <?=ucfirst($bet->status)?>
 <br/>
 <?php
 $counter = 0;
