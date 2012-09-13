@@ -29,9 +29,8 @@
 	}
 	.fc_betting_market .selections {
 		background-color: #fff;
-		margin-left: 10px;
-		margin-right: 10px;
-		margin-bottom: 10px;
+		margin: 10px;
+		margin-bottom: 0;
 	}
 	.fc_betting_market .market_header .market_odds {
 		margin-left: 466px;
@@ -82,6 +81,7 @@
 	.fc_betting_market {
 		background-color: #bfd8df;
 		margin-bottom: 10px;
+		padding-bottom: 10px;
 		overflow: auto;
 	}
 
@@ -105,14 +105,7 @@
 		margin: 0 10px;
 		font-weight: bold;
 		color: #5F93B4;
-		margin-bottom: 10px;
-	}
-
-	.fc_betting_market .selections {
-		background-color: #fff;
-		margin-left: 10px;
-		margin-right: 10px;
-		margin-top: 10px;
+		margin-bottom: 0;
 	}
 </style>
 
