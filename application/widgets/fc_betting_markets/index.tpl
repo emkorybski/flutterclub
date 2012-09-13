@@ -102,7 +102,7 @@
 
 	.fc_betting_market .link_to_market {
 		float: right;
-		margin: 0 10px;
+		margin: 10px;
 		font-weight: bold;
 		color: #5F93B4;
 		margin-bottom: 0;

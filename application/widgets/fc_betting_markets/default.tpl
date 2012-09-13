@@ -74,7 +74,7 @@
 		background-color: #bfd8df;
 		margin-bottom: 10px;
 		overflow: auto;
-		padding-bottom: 0;
+		padding-bottom: 10px;
 	}
 
 	.fc_betting_market h1.market_title {
