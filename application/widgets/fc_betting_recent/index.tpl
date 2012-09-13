@@ -97,7 +97,7 @@ if ( count($this->recent_bets) > 0 ) :
 			<div class="bet_info">
 				<span class="bet_type"><?=($isAccumulator ? 'Accumulator' : 'Single')?></span>
 				<span class="bet_odds"><?=\bets\fc::formatOdds($bet->odds)?></span>
-				<span class="bet_stake"><?=$bet->stake?></span>
+				<span class="bet_stake"><?=$bet->stake?></span><br>
 				<span class="bet_status status_<?=$bet->status?>"><?=$bet->status?></span>
 				<?php
 				if ($bet->status == 'won') :
