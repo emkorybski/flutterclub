@@ -14,11 +14,11 @@
 		border: 2px solid #39abcd;
 		color: #fff;
 		font-family: fc_bebas;
-		padding: 3px;
+		padding: 8px 3px;
 		border-radius: 5px;
 		position: absolute;
 		right: 5px;
-		top: 12px;
+		top: 7px;
 		letter-spacing: 1px;
 		font-size: 10px;
 		line-height: 10px;
