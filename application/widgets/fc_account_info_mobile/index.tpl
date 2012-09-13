@@ -18,10 +18,10 @@
 		border-radius: 5px;
 		position: absolute;
 		right: 5px;
-		top: 10px;
+		top: 12px;
 		letter-spacing: 1px;
-		font-size: 14px;
-		line-height: 14px;
+		font-size: 10px;
+		line-height: 10px;
 	}
 	.mobile_account_info .balance:before {
 		content: 'FB$ ';
