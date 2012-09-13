@@ -126,7 +126,7 @@ if ( count($this->bettingHistory) > 0 ) :
 					</tr>
 					<tr>
 						<td class="selection_event_date">Event Date</td>
-						<td class="selection_event_date"><?=$event->ts?></td>
+						<td class="selection_event_date"><?=\bets\fc::formatTimestamp($event->ts)?></td>
 					</tr>
 					<tr>
 						<td class="selection_odds">Odds</td>
