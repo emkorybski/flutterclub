@@ -737,12 +737,16 @@ Used at the top of most browse pages. Often contains button-style tabs.
 {
   +rounded;
   display: block;
-  padding: .4em .6em;
-  font-weight: bold;
+  font-weight: normal;
   text-decoration: none;
   color: $theme_buttontabs_font_color;
   background-color: $theme_buttontabs_background_color;
   font-size: .9em;
+  font-family: fc_bebas;
+  letter-spacing: 0.1em;
+  padding: 4px 10px;
+  color: #fff;
+  background-color: #822E2C;
 }
 .tabs > ul li > a:hover
 {
@@ -752,8 +756,7 @@ Used at the top of most browse pages. Often contains button-style tabs.
 }
 .tabs > ul li.active > a
 {
-  background-color: $theme_buttontabs_background_color_active;
-  color: $theme_buttontabs_font_color_active;
+  background-color: #CD4849;
 }
 .tabs > ul li.active > a:hover
 {
