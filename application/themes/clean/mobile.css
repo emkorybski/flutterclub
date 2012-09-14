@@ -1122,7 +1122,7 @@ body {
 
 /* ** */
 
-#global_content .generic_layout_container h3:first-child {
+#global_content .generic_layout_container > h3:first-child {
   text-align: center;
   background-color: #ff6600;
   color: #ffffff;
@@ -1134,7 +1134,7 @@ body {
   text-align: left;
   word-spacing: 0.4em;
 }
-#global_content .generic_layout_container h3:first-child a {
+#global_content .generic_layout_container > h3:first-child a {
     color: #fff;
     font-family: fc_bebas;
 }
