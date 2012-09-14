@@ -62,12 +62,14 @@ h4
 }
 h2
 {
+  font-family: fc_bebas;
   font-size: $theme_headline_size_large;
   letter-spacing: -1px;
   margin-bottom: 10px;
 }
 h3
 {
+  font-family: fc_bebas;
   font-size: $theme_headline_size_medium;
   letter-spacing: -1px;
 }
@@ -1120,7 +1122,7 @@ body {
 
 /* ** */
 
-#global_content .generic_layout_container h3, #fc_activity_feed_title, #main_tabs {
+#global_content .generic_layout_container h3:first-child {
   text-align: center;
   background-color: #ff6600;
   color: #ffffff;
@@ -1132,7 +1134,7 @@ body {
   text-align: left;
   word-spacing: 0.4em;
 }
-#global_content .generic_layout_container h3 a {
+#global_content .generic_layout_container h3:first-child a {
     color: #fff;
     font-family: fc_bebas;
 }
@@ -1170,6 +1172,9 @@ body {
   border-bottom: 5px solid #CD4849;
   padding: 0;
   overflow: hidden;
+  font-size: 14px;
+  text-align: left;
+  word-spacing: 0.4em;
 }
 #main_tabs li {
   float: left;
