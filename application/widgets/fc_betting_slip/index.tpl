@@ -26,7 +26,7 @@
 
 	.fc_betting_slip td.selection_stake input,
 	.box_accumulator {
-		width: 40px;
+		width: 40px !important;
 	}
 
 	.fc_betting_slip .slip_actions {
