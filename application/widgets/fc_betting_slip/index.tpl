@@ -81,12 +81,12 @@ if ( count($this->betSlipSelections) ) :
 	?>
 	</table>
 	<?php
-	if ( $this->accumulatorBetAvailable ) :
+	if ( count($this->betSlipSelections) > 1 && $this->accumulatorBetAvailable ) :
 	?>
 	<label for="accumulator">Accumulator</label>
 	<input id="accumulator" type="text" class="box_accumulator"/>
 	<?php
-	else :
+	elseif ( !$this->accumulatorBetAvailable ) :
 	?>
 	<p>You cannot place accumulator on selections within same event or on the same selection more than once.</p>
 	<?php
@@ -192,15 +192,19 @@ endif;
 			data:{ action:'place_bet', bets:bets },
 			dataType:'json',
 			success:function (response) {
-				if (response.success) {
+				if (response.result == 'invalid_selection_timestamp') {
+					alert('Invalid selections timestamp. Betting slip will be refreshed');
+					fc.user.updateBettingSlip();
+				}
+				else if (response.result == 'max_stake_exceeded') {
+					alert('Maximum bet is FB$500!');
+				}
+				else if (response.result == 'success') {
 					fc.user.updateAccountBalance();
 					fc.user.updateBettingMarkets();
 					fc.user.updateBettingSlip();
 					fc.user.updateBettingPending();
 					fc.user.updateBettingRecent();
-				}
-				else {
-					alert('Maximum bet is FB$500!');
 				}
 			}
 		});

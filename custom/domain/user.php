@@ -44,8 +44,19 @@ class User extends DBRecord
 		return $user->id_engine4_users;
 	}
 
-	public function getUserSelections()
+	public function getUserSelections($validate = false)
 	{
+		if ($validate) {
+			$now = date('Y-m-d H:i:s', mktime(date("H"), date("i"), date("s"), date("m"), date("d"), date("Y")));
+			$userSelections = UserSelection::findWhere(array('idcompetition=' => $this->currentCompetitionId, 'iduser=' => $this->id));
+			foreach ($userSelections as $userSelection) {
+				$selection = $userSelection->getSelection();
+				$event = $selection->getEvent();
+				if ($event->ts < $now) {
+					$userSelection->delete();
+				}
+			}
+		}
 		return UserSelection::findWhere(array('idcompetition=' => $this->currentCompetitionId, 'iduser=' => $this->id));
 	}
 
