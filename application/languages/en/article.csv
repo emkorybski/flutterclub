@@ -30,7 +30,7 @@
 "Enter the your license key that is provided to you when you purchased this plugin. If you do not know your license key, please contact Radcodes support team.";"Enter the your license key that is provided to you when you purchased this plugin. If you do not know your license key, please contact Radcodes support team."
 "%s article found";"%s article found";"%s articles found"
 "%d article";"%d article";"%d articles"
-"%s Articles";"%s Articles"
+"%s Articles";"Articles: %s"
 "My %s Articles";"My %s Articles"
 
 "Comments";"Comments"
