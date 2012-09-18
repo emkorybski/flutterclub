@@ -1,0 +1,413 @@
+"Article";"Article"
+"Articles";"Articles"
+"article";"article";"articles"
+"View All Articles";"View All Articles"
+"Delete Article?";"Delete Article?"
+"Are you sure that you want to delete the article with the title ""<a href=""%3$s"">%1$s</a>"" last modified %2$s? It will not be recoverable after being deleted.";"Are you sure that you want to delete the article with the title ""<a href=""%3$s"">%1$s</a>"" last modified %2$s? It will not be recoverable after being deleted."
+
+"Delete";"Delete"
+"or";"or"
+"cancel";"cancel"
+
+"ITEM_TYPE_ARTICLE";"Articles"
+"ITEM_TYPE_ARTICLE_PHOTO";"Article Photos"
+"ITEM_TYPE_ARTICLE_ALBUM";"Article Albums"
+"ADMIN_ACTIVITY_TYPE_ARTICLE_NEW";"When a new article is posted."
+"ADMIN_ACTIVITY_TYPE_LIKE_ARTICLE";"When someone likes one of my article postings."
+"ADMIN_ACTIVITY_TYPE_LIKED_ARTICLE";"When someone comments on an article posting I liked."
+"ADMIN_ACTIVITY_TYPE_COMMENT_ARTICLE";"When someone comments on my article."
+"ADMIN_ACTIVITY_TYPE_COMMENTED_ARTICLE";"When someone comments on an article I commented on."
+
+"_ACTIVITY_ACTIONTYPE_ARTICLE_NEW";"New articles"
+"_ACTIVITY_ACTIONTYPE_COMMENT_ARTICLE";"Comments on your articles"
+
+"ACTIVITY_TYPE_COMMENTED_ARTICLE";"When someone comments on a article I commented on."
+"ACTIVITY_TYPE_COMMENT_ARTICLE";"When someone comments on one of my articles."
+"ACTIVITY_TYPE_LIKED_ARTICLE";"When someone comments on a article I liked."
+"ACTIVITY_TYPE_LIKE_ARTICLE";"When someone likes one of my articles."
+
+"ARTICLE_FORM_ADMIN_GLOBAL_ARTICLE_PAGE_DESCRIPTION";"How many articles will be shown per page? (Enter a number between 1 and 100)"
+"Enter the your license key that is provided to you when you purchased this plugin. If you do not know your license key, please contact Radcodes support team.";"Enter the your license key that is provided to you when you purchased this plugin. If you do not know your license key, please contact Radcodes support team."
+"%s article found";"%s article found";"%s articles found"
+"%d article";"%d article";"%d articles"
+"%s Articles";"%s Articles"
+"My %s Articles";"My %s Articles"
+
+"Comments";"Comments"
+
+"Main Photo";"Main Photo"
+
+"Post New Article";"Post New Article"
+"Showing articles posted";"Showing articles posted"
+"by %1$s";"by %1$s"
+"using tag #%1$s";"using tag #%1$s"
+"on %1$s";"on %1$s"
+"in %1$s";"in %1$s"
+"by <span>%1$s</span>";"by <span>%1$s</span>"
+"using tag #<span>%1$s</span>";"using tag #<span>%1$s</span>"
+"on <span>%1$s</span>";"on <span>%1$s</span>"
+"in <span>%1$s</span>";"in <span>%1$s</span>"
+
+"by <a href='%2$s'>%1$s</a>";"by <a href='%2$s'>%1$s</a>"
+"using tag #<a href='%2$s'>%1$s</a>";"using tag #<a href='%2$s'>%1$s</a>"
+"on <a href='%2$s'>%1$s</a>";"on <a href='%2$s'>%1$s</a>"
+"in <a href='%2$s'>%1$s</a>";"in <a href='%2$s'>%1$s</a>"
+"by user %s";"by user %s"
+"using tag #%s";"using tag #%s"
+"with keyword %s";"with keyword %s"
+"on %s";"on %s"
+
+
+"Showing articles posted by";"Showing articles posted by"
+"Showing articles using the tag";"Showing articles using the tag"
+"Showing articles posted on";"Showing articles posted on"
+
+"Show on Article Profiles?";"Show on Article Profiles?"
+"Show on Article Profiles";"Show on Article Profiles"
+"Show on Article Profiles (with links)";"Show on Article Profiles (with links)"
+"Hide on Article Profiles";"Hide on Article Profiles"
+"Article Details";"Article Details"
+"Photo Gallery";"Photo Gallery"
+"Photos Per Gallery";"Photos Per Gallery"
+"If the article has main photo cover, would you like to show it on the article view page?";"If the article has main photo cover, would you like to show it on the article view page?"
+"How many photos will be shown on article's photo gallery section? (Enter a number between 0 and 999)";"How many photos will be shown on article's photo gallery section? (Enter a number between 0 and 999)"
+"How many articles will be shown on article integration section of user profile? (Enter a number between 1 and 999)";"How many articles will be shown on article integration section of user profile? (Enter a number between 1 and 999)"
+"Sorting Priority";"Sorting Priority"
+"If you would like sponsored articles, or featured articles etc.. to show on top of browse page, you can apply pre-sorted order on articles:";"If you would like sponsored articles, or featured articles etc.. to show on top of browse page, you can apply pre-sorted order on articles:"
+"User preference";"User preference"
+"Featured articles, then user preference";"Featured articles, then user preference"
+"Sponsored articles, then user preference";"Sponsored articles, then user preference"
+"Featured articles, sponsored articles, then user preference";"Featured articles, sponsored articles, then user preference"
+"Sponsored articles, featured articles, then user preference";"Sponsored articles, featured articles, then user preference"
+
+"ARTICLE_FORM_ADMIN_WIDGET_TITLE";"Widget Settings"
+"ARTICLE_FORM_ADMIN_WIDGET_DESCRIPTION";"These settings affect all article widgets. The ""Landing"" widgets are used on article landing page. The ""List"" widgets are mainly used for home page integration. Of course, you can use these widgets on other pages as well."
+"How many articles will be shown on User Profile - Articles section? (Enter a number between 1 and 10)";"How many articles will be shown on User Profile - Articles section? (Enter a number between 1 and 10)"
+"Landing - Featured Articles";"Landing - Featured Articles"
+"How many articles will be shown in the Featured section? (Enter a number between 0 and 10)";"How many articles will be shown in the Featured section? (Enter a number between 0 and 10)"
+"Landing - Sponsored Articles";"Landing - Sponsored Articles"
+"How many articles will be shown in the Sponsored section? (Enter a number between 0 and 10)";"How many articles will be shown in the Sponsored section? (Enter a number between 0 and 10)"
+"Landing - Recently Posted Articles";"Landing - Recently Posted Articles"
+"How many articles will be shown in the Recently Posted section? (Enter a number between 1 and 20)";"How many articles will be shown in the Recently Posted section? (Enter a number between 1 and 20)"
+"Landing - Most Commented Articles";"Landing - Most Commented Articles"
+"How many articles will be shown in the Most Commented section? (Enter a number between 0 and 10)";"How many articles will be shown in the Most Commented section? (Enter a number between 0 and 10)"
+"Landing - Most Commented Period";"Landing - Most Commented Period"
+"What publishing period should be used for Most Commented section?";"What publishing period should be used for Most Commented section?"
+"Landing - Most Viewed Articles";"Landing - Most Viewed Articles"
+"How many articles will be shown in the Most Viewed section? (Enter a number between 0 and 10)";"How many articles will be shown in the Most Viewed section? (Enter a number between 0 and 10)"
+"Landing - Most Viewed Period";"Landing - Most Viewed Period"
+"What publishing period should be used for Most Viewed section?";"What publishing period should be used for Most Viewed section?"
+
+
+"List - Recent Articles";"List - Recent Articles"
+"How many articles will be shown in the Recent Articles widget? (Enter a number between 0 and 10)";"How many articles will be shown in the Recent Articles widget? (Enter a number between 0 and 10)"
+"List - Featured Articles";"List - Featured Articles"
+"How many articles will be shown in the Featured Articles widget? (Enter a number between 0 and 10)";"How many articles will be shown in the Featured Articles widget? (Enter a number between 0 and 10)"
+"List - Sponsored Articles";"List - Sponsored Articles"
+"How many articles will be shown in the Sponsored Articles widget? (Enter a number between 0 and 10)";"How many articles will be shown in the Sponsored Articles widget? (Enter a number between 0 and 10)"
+
+
+
+"All Time";"All Time"
+"This Week";"This Week"
+"This Month";"This Month"
+"3 Months";"3 Months"
+"6 Months";"6 Months"
+"This Year";"This Year"
+
+"Article Album";"Article Album"
+"%s Photo";"%s Photo";"%s Photos"
+"%s view";"%s view";"%s views"
+"%s comment";"%s comment";"%s comments"
+"%s like";"%s like";"%s likes"
+"%1$s like";"%1$s like";"%1$s likes"
+"View Photos";"View Photos"
+"map";"map"
+"Article Body";"Article Body"
+
+"Nobody has posted an article with that criteria.";"Nobody has posted an article with that criteria."
+"Be the first to <a href='%s'>post</a> one!";"Be the first to <a href='%s'>post</a> one!"
+"Nobody has posted an article yet.";"Nobody has posted an article yet."
+
+"Search Articles";"Search Articles"
+"All Categories";"All Categories"
+
+"%1$s's Tags";"%1$s's Tags"
+"%1$s's Article";"%1$s's Article"
+"%1$s's Articles";"%1$s's Articles"
+
+"Edit Article";"Edit Article"
+"Add Photos";"Add Photos"
+"View All Photos";"View All Photos"
+"Edit Article Photo";"Edit Article Photo"
+"Delete Article Photo";"Delete Article Photo"
+"Are you sure you want to delete this photo?";"Are you sure you want to delete this photo?"
+"View Article Photos";"View Article Photos"
+
+"Publish Article";"Publish Article"
+
+"Delete Article";"Delete Article"
+
+"posted by";"posted by"
+"posted by %s";"posted by %s"
+"You do not have any article that match your search criteria.";"You do not have any article that match your search criteria."
+"You do not have any articles.";"You do not have any articles."
+
+"Get started by <a href='%1$s'>posting</a> a new article.";"Get started by <a href='%1$s'>posting</a> a new article."
+"Get started by <a href='%1$s'>uploading</a> a new photo.";"Get started by <a href='%1$s'>uploading</a> a new photo."
+
+"Article Posted";"Article Posted"
+"Your article was successfully saved. Would you like to add some photos to it?";"Your article was successfully saved. Would you like to add some photos to it?"
+
+"continue to view this article";"continue to view this article"
+
+"This article has not been published yet.";"This article has not been published yet."
+"No one will be able to view this article until you <a href='%1$s'>publish</a> it.";"No one will be able to view this article until you <a href='%1$s'>publish</a> it."
+
+"The article you are looking for does not exist or has been deleted.";"The article you are looking for does not exist or has been deleted."
+"Edit This Article";"Edit This Article"
+
+"Categories";"Categories"
+"All Categories";"All Categories"
+"Archives";"Archives"
+
+"This is a featured article.";"This is a featured article."
+
+"Posted by %s";"Posted by %s"
+"Posted by";"Posted by"
+"Filed in";"Filed in"
+
+"Article Photos";"Article Photos"
+"Manage Photos";"Manage Photos"
+"Save Changes";"Save Changes"
+"Your changes were saved.";"Your changes were saved."
+"This article does not have any photos.";"This article does not have any photos."
+
+"File Upload";"File Upload"
+"This form is just an example fallback for the unobtrusive behaviour of FancyUpload. If this part is not changed, something must be wrong with your code.";"This form is just an example fallback for the unobtrusive behaviour of FancyUpload. If this part is not changed, something must be wrong with your code."
+
+"Upload a Photo:";"Upload a Photo:"
+"Click ""Add Photos"" to select one or more photos from your computer. After you have selected the photos, they will begin to upload right away. When your upload is finished, click the button below your photo list to save them to your article.";"Click ""Add Photos"" to select one or more photos from your computer. After you have selected the photos, they will begin to upload right away. When your upload is finished, click the button below your photo list to save them to your article."
+"Clear List";"Clear List"
+
+"Search";"Search"
+
+"Title";"Title"
+"Image Description";"Image Description"
+"Delete Photo";"Delete Photo"
+
+"Add New Photos";"Add New Photos"
+"Choose photos on your computer to add to this article. (2MB maximum)";"Choose photos on your computer to add to this article. (2MB maximum)"
+"Save Photos";"Save Photos"
+
+"Compose your new article below, then click ""Post Article"" to publish the article.";"Compose your new article below, then click ""Post Article"" to publish the article."
+"Article Title";"Article Title"
+"Tags (Keywords)";"Tags (Keywords)"
+"Category";"Category"
+"Content";"Content"
+"Main Photo";"Main Photo"
+"Published";"Published"
+"Saved As Draft";"Saved As Draft"
+"Draft";"Draft"
+"If article is published, it cannot be switched back to draft mode.";"If article is published, it cannot be switched back to draft mode."
+"Privacy";"Privacy"
+"Who may see this article?";"Who may see this article?"
+"Comment Privacy";"Comment Privacy"
+"Who may post comments on this article?";"Who may post comments on this article?"
+"Post Article";"Post Article"
+
+"Edit Article";"Edit Article"
+"Edit your article below, then click ""Save Changes"" to save your article.";"Edit your article below, then click ""Save Changes"" to save your article."
+"Album Cover";"Album Cover"
+
+"Short Description";"Short Description"
+"You may optionally enter article's excerpt or summary below";"You may optionally enter article's excerpt or summary below"
+
+"Recently Posted";"Recently Posted"
+
+"Browse By";"Browse By"
+"Most Recent";"Most Recent"
+"Most Viewed";"Most Viewed"
+"Most Commented";"Most Commented"
+"Most Liked";"Most Liked"
+"Last Updated";"Last Updated"
+"Sponsored Articles";"Sponsored Articles"
+"Featured Articles";"Featured Articles"
+"Recent Articles";"Recent Articles"
+
+"Widget Settings";"Widget Settings"
+"These settings affect all article widgets.";"These settings affect all article widgets."
+
+"User Profile Articles";"User Profile Articles"
+"Articles Per Widget Block";"Articles Per Widget Block"
+"Main Photo Cover";"Main Photo Cover"
+"Show";"Show"
+"Everyone's Posts";"Everyone's Posts"
+"Only My Friends' Posts";"Only My Friends' Posts"
+
+"Status";"Status"
+"All Articles";"All Articles"
+"Only Featured Articles";"Only Featured Articles"
+"Only Non-Featured Articles";"Only Non-Featured Articles"
+
+"Category";"Category"
+"All Categories";"All Categories"
+
+"Your changes have been saved.";"Your changes have been saved."
+
+"Max file size limit exceeded (probably).";"Max file size limit exceeded (probably)."
+"Invalid request method";"Invalid request method"
+"No file";"No file"
+"Invalid Upload";"Invalid Upload"
+"An error occurred.";"An error occurred"
+
+"Browse Articles";"Browse Articles"
+"My Articles";"My Articles"
+
+"You have already created the maximum number of articles allowed.";"You have already created the maximum number of articles allowed."
+"If you would like to create a new article, please <a href="%1$s">delete</a> an old one first.";"If you would like to create a new article, please <a href="%1$s">delete</a> an old one first."
+"If you would like to create a new article, please delete an old one first.";"If you would like to create a new article, please delete an old one first."
+
+"Everyone's Posts";"Everyone's Posts"
+"Only My Friends' Posts";"Only My Friends' Posts"
+
+"Next &#187;";"Next &#187;"
+"&#171; Previous";"&#171; Previous"
+
+"%s has not posted an article yet.";"%s has not posted an article yet."
+
+"ARTICLES_VIEWS_SCRIPTS_ADMINMANAGE_INDEX_DESCRIPTION";"This page lists all of the articles your users have posted. You can use this page to monitor these articles and delete offensive material if necessary. Entering criteria into the filter fields will help you find specific articles. Leaving the filter fields blank will show all the articles on your social network."
+"There are no articles by your members yet.";"There are no articles by your members yet."
+
+"Delete Article?";"Delete Article?"
+"ARTICLE_VIEWS_SCRIPTS_ADMINMANAGE_DELETE_DESCRIPTION";"Are you sure that you want to delete this article? It will not be recoverable after being deleted."
+"Delete Article Category?"
+"Move Articles To Category";"Move Articles To Category"
+"ARTICLES_VIEWS_SCRIPTS_ADMINCATEGORIES_DESCRIPTION";"If you want to allow your users to categorize their article entries, create the categories below. This feature is useful if you want to list all your users' article entries that If you have no categories, your users will not be given the option of assigning a article category."
+"ARTICLES_VIEWS_SCRIPTS_ADMINCATEGORIES_DELETE_DESCRIPTION";"Are you sure that you want to delete this category? It will not be recoverable after being deleted. You also have to move existing articles that belong to this deleting category to a new category."
+"Move Article Category";"Move Article Category"
+"ARTICLES_VIEWS_SCRIPTS_ADMINCATEGORIES_MOVE_DESCRIPTION";"You can move article's category from one to another by completing form below."
+
+"From Category";"From Category"
+"To Category";"To Category"
+"Move Articles";"Move Articles"
+
+"Featured Article?";"Featured Article?"
+"ARTICLE_VIEWS_SCRIPTS_ADMINMANAGE_FEATURED_DESCRIPTION";"Would you like to mark this article as featured?"
+"Sponsored Article?";"Sponsored Article?"
+"ARTICLE_VIEWS_SCRIPTS_ADMINMANAGE_SPONSORED_DESCRIPTION";"Would you like to mark this article as sponsored?"
+
+"Yes";"Yes"
+"No";"No"
+"Featured";"Featured"
+"Sponsored";"Sponsored"
+
+"Article Categories";"Article Categories"
+"ARTICLES_VIEWS_SCRIPTS_ADMINSETTINGS_CATEGORIES_DESCRIPTION";"If you want to allow your users to categorize their article entries, create the categories below. This feature is useful if you want to list all your users' article entries that If you have no categories, your users will not be given the option of assigning an article category."
+"There are currently no categories.";"There are currently no categories."
+"Upload complete.";"Upload complete."
+"An error occurred:";"An error occurred:"
+"To enable the embedded uploader, install the latest Adobe Flash plugin.";"To enable the embedded uploader, install the latest Adobe Flash plugin."
+"A required file was not found, please be patient and we'll fix this.";"A required file was not found, please be patient and we'll fix this."
+"To enable the embedded uploader, enable the blocked Flash movie (see Flashblock).";"To enable the embedded uploader, enable the blocked Flash movie (see Flashblock)."
+"To enable the embedded uploader, unblock it in your browser and refresh (see Adblock).";"To enable the embedded uploader, unblock it in your browser and refresh (see Adblock)."
+"Article Questions";"Article Questions"
+"View Articles";"View Articles"
+
+"These settings are applied on a per member level basis. Start by selecting the member level you want to modify, then adjust the settings for that level below.";"These settings are applied on a per member level basis. Start by selecting the member level you want to modify, then adjust the settings for that level below."
+"Allow Viewing of Articles?";"Allow Viewing of Articles?"
+"Do you want to let members view articles? If set to no, some other settings on this page may not apply.";"Do you want to let members view articles? If set to no, some other settings on this page may not apply."
+"No, do not allow articles to be viewed.";"No, do not allow articles to be viewed."
+"Yes, allow viewing of articles.";"Yes, allow viewing of articles."
+"Yes, allow viewing of all articles, even private ones.";"Yes, allow viewing of all articles, even private ones."
+
+"Allow Editing of Articles?";"Allow Editing of Articles?"
+"Do you want to let members edit articles? If set to no, some other settings on this page may not apply.";"Do you want to let members edit articles? If set to no, some other settings on this page may not apply."
+"No, do not allow members to edit their articles.";"No, do not allow members to edit their articles."
+"Yes, allow members to edit their own articles.";"Yes, allow members to edit their own articles."
+"Yes, allow members to edit all articles.";"Yes, allow members to edit all articles."
+
+"Allow Deletion of Articles?";"Allow Deletion of Articles?"
+"Do you want to let members delete articles? If set to no, some other settings on this page may not apply.";"Do you want to let members delete articles? If set to no, some other settings on this page may not apply."
+"No, do not allow members to delete their articles.";"No, do not allow members to delete their articles."
+"Yes, allow members to delete their own articles.";"Yes, allow members to delete their own articles."
+"Yes, allow members to delete all articles.";"Yes, allow members to delete all articles."
+
+"Allow Creation of Articles?";"Allow Creation of Articles?"
+"Yes, allow creation of articles.";"Yes, allow creation of articles."
+"No, do not allow articles to be created.";"No, do not allow articles to be created."
+
+"Allow Commenting on Articles?";"Allow Commenting on Articles?"
+"Do you want to let members of this level comment on articles?";"Do you want to let members of this level comment on articles?"
+"No, do not allow members to comment on articles.";"No, do not allow members to comment on articles."
+"Yes, allow members to comment on articles.";"Yes, allow members to comment on articles."
+"Yes, allow members to comment on all articles, including private ones.";"Yes, allow members to comment on all articles, including private ones."
+
+"Allow Uploading of Photos?";"Allow Uploading of Photos?"
+"ARTICLE_FORM_ADMIN_LEVEL_PHOTO_DESCRIPTION";"Do you want to let members upload photos to a article? If set to no, the option to upload photos will not appear."
+"Yes, allow photo uploading to all articles, including private ones.";"Yes, allow photo uploading to all articles, including private ones."
+"Yes, allow photo uploading to articles.";"Yes, allow photo uploading to articles."
+"No, do not allow photo uploading.";"No, do not allow photo uploading."
+
+
+"Do you want to let members view articles? If set to no, some other settings on this page may not apply.";"Do you want to let members view articles? If set to no, some other settings on this page may not apply."
+"Do you want to let members edit articles? If set to no, some other settings on this page may not apply.";"Do you want to let members edit articles? If set to no, some other settings on this page may not apply."
+"Do you want to let members delete articles? If set to no, some other settings on this page may not apply.";"Do you want to let members delete articles? If set to no, some other settings on this page may not apply."
+"ARTICLE_FORM_ADMIN_LEVEL_PHOTO_DESCRIPTION";"Do you want to let members upload photos to an article? If set to no, the option to upload photos will not appear."
+"Do you want to let members create articles? If set to no, some other settings on this page may not apply. This is useful if you want members to be able to view articles, but only want certain levels to be able to create articles.";"Do you want to let members create articles? If set to no, some other settings on this page may not apply. This is useful if you want members to be able to view articles, but only want certain levels to be able to create articles."
+"Your members can choose from any of the options checked below when they decide who can see their articles. These options appear on your members' ""Add Articles"" and ""Edit Entry"" pages. If you do not check any options, everyone will be allowed to view articles.";"Your members can choose from any of the options checked below when they decide who can see their articles. These options appear on your members' ""Add Articles"" and ""Edit Entry"" pages. If you do not check any options, everyone will be allowed to view articles."
+"Your members can choose from any of the options checked below when they decide who can post comments on their articles. If you do not check any options, everyone will be allowed to post comments on articles.";"Your members can choose from any of the options checked below when they decide who can post comments on their articles. If you do not check any options, everyone will be allowed to post comments on articles."
+"Enter the maximum number of allowed articles. The field must contain an integer. Enter 0 for unlimited articles.";"Enter the maximum number of allowed articles. The field must contain an integer. Enter 0 for unlimited articles."
+
+"HTML Attributes in WYSIWYG Editor";"HTML Attributes in WYSIWYG Editor"
+"ARTICLE_FORM_ADMIN_LEVEL_HTMLATTRS_DESCRIPTION";"If you want to allow specific HTML tag attributes, you can enter them below (separated by commas). Example: href, src, alt, border, align, width, height, target, style, name, value, id, class, colspan"
+
+
+"Would you like to mark article as Featured when created?";"Would you like to mark article as Featured when created?"
+"Mark as Featured on Creation?";"Mark as Featured on Creation?"
+"Yes, mark article as Featured when created.";"Yes, mark article as Featured when created."
+"No, do not mark article as Featured when created.";"No, do not mark article as Featured when created."
+
+"Would you like to mark article as Sponsored when created?";"Would you like to mark article as Sponsored when created?"
+"Mark as Sponsored on Creation?";"Mark as Sponsored on Creation?"
+"Yes, mark article as Sponsored when created.";"Yes, mark article as Sponsored when created."
+"No, do not mark article as Sponsored when created.";"No, do not mark article as Sponsored when created."
+
+"Allow Viewing of Articles?";"Allow Viewing of Articles?"
+"Allow Editing of Articles?";"Allow Editing of Articles?"
+"Allow Deletion of Articles?";"Allow Deletion of Articles?"
+"Allow Creation of Articles?";"Allow Creation of Articles?"
+"Articles Article Privacy";"Articles Article Privacy"
+"Article Comment Options";"Article Comment Options"
+"Maximum Allowed Articles";"Maximum Allowed Articles"
+"HTML in Articles?";"HTML in Articles?"
+"ARTICLE_FORM_ADMIN_LEVEL_HTML_DESCRIPTION";"If you want to allow specific HTML tags, you can enter them below (separated by commas). Example: b, img, a, embed, font"
+
+"These settings affect all members in your community.";"These settings affect all members in your community."
+
+"Public Permissions";"Public Permissions"
+"ARTICLE_FORM_ADMIN_GLOBAL_ARTICLEPUBLIC_DESCRIPTION";"Select whether or not you want to let the public (visitors that are not logged-in) to view the following sections of your social network. In some cases (such as Profiles, Blogs, and Albums), if you have given them the option, your users will be able to make their pages private even though you have made them publically viewable here. For more permissions settings, please visit the General Settings page."
+"Yes, the public can view articles unless they are made private.";"Yes, the public can view articles unless they are made private."
+"No, the public cannot view articles.";"No, the public cannot view articles."
+
+
+"Articles Per Page";"Articles Per Page"
+"How many articles will be shown per page? (Enter a number between 1 and 999)";"How many articles will be shown per page? (Enter a number between 1 and 999)"
+"No identifier specified";"No identifier specified"
+"Your changes were saved. Click <a href='%1$s'>here</a> to view your article.";"Your changes were saved. Click <a href='%1$s'>here</a> to view your article."
+"Delete Article Category?";"Delete Article Category?"
+
+"Popular Tags";"Popular Tags"
+
+"{item:$subject} posted a new article:";"{item:$subject} posted a new article:"
+"{item:$subject} commented on {item:$owner}'s {item:$object:article}: {body:$body}";"{item:$subject} commented on {item:$owner}'s {item:$object:article}: {body:$body}"
+"{item:$subject} has commented on your {item:$object:article}.";"{item:$subject} has commented on your {item:$object:article}."
+"{item:$subject} likes your {item:$object:article}.";"{item:$subject} likes your {item:$object:article}."
+"{item:$subject} has commented on a {item:$object:article} you commented on.";"{item:$subject} has commented on a {item:$object:article} you commented on."
+"{item:$subject} has commented on a {item:$object:article} you liked.";"{item:$subject} has commented on a {item:$object:article} you liked."
+
+"People can search for this article";"People can search for this article"
+"This article is in Draft mode. Administrator will review and manually publish it.";"This article is in Draft mode. Administrator will review and manually publish it."
+"Status: Draft";"Status: Draft"
+"Administrator will manually review and publish this article.";"Administrator will manually review and publish this article."
+"Administrator will review and manually publish article once it is approved.";"Administrator will review and manually publish article once it is approved."
