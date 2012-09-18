@@ -2598,3 +2598,8 @@ div.layout_article_list_articles ul.articles_rows {
 .article_profile_title h3 {
   padding: 0;
 }
+
+.layout_article_list_tags .articles_popular_tags {
+  background-color: #fff;
+  padding: 10px;
+}
