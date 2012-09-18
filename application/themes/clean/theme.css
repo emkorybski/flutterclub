@@ -2603,3 +2603,7 @@ div.layout_article_list_articles ul.articles_rows {
   background-color: #fff;
   padding: 10px;
 }
+
+.layout_article_browse_articles .article_meta {
+  display: none;
+}
