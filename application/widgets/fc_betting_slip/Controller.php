@@ -22,7 +22,7 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 
 		switch ($action) {
 			case 'place_bet':
-				$response = array('success' => $this->placeBet());
+				$response = array('result' => $this->placeBet());
 				exit(json_encode($response));
 				break;
 			case 'remove_selection':
@@ -32,7 +32,7 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 				$this->removeAllSelections();
 				break;
 			default:
-				$userSelections = bets\User::getCurrentUser()->getUserSelections();
+				$userSelections = bets\User::getCurrentUser()->getUserSelections(true);
 				$this->view->betSlipSelections = $userSelections;
 				$this->view->accumulatorBetAvailable = $this->validateAccumulator($userSelections);
 		}
@@ -61,8 +61,30 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 		return $isValid;
 	}
 
+	private function validateSelectionTimestamp()
+	{
+		$competition = bets\Competition::getCurrent();
+		$user = bets\User::getCurrentUser();
+
+		$now = date('Y-m-d H:i:s', mktime(date("H"), date("i"), date("s"), date("m"), date("d"), date("Y")));
+
+		$isValid = true;
+		$userSelections = \bets\UserSelection::findWhere(array('idcompetition=' => $competition->id, 'iduser=' => $user->id));
+		foreach ($userSelections as $userSelection) {
+			$selection = $userSelection->getSelection();
+			$event = $selection->getEvent();
+			if ($event->ts < $now) {
+				$isValid = false;
+				$userSelection->delete();
+			}
+		}
+
+		return $isValid;
+	}
+
 	private function validateSelectionMaxStake()
 	{
+		$user = bets\User::getCurrentUser();
 		$betSlipSelectionsStakes = array();
 
 		$betSlipSelections = $_REQUEST['bets'];
@@ -71,10 +93,9 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 			$betSlipSelectionStake = $betSlipSelection['stake'];
 
 			if ($betSlipSelectionId == 'accumulator') {
-				foreach ($betSlipSelections as $accSelection) {
-					if ($accSelection['user_selection_id'] == 'accumulator') continue;
-
-					$accSelectionId = $accSelection['user_selection_id'];
+				$userSelections = bets\User::getCurrentUser()->getUserSelections();
+				foreach ($userSelections as $accUserSelection) {
+					$accSelectionId = $accUserSelection->id;
 					$betSlipSelectionsStakes[$accSelectionId] += $betSlipSelectionStake;
 				}
 			} else {
@@ -83,7 +104,6 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 		}
 
 		$isValid = true;
-		$user = bets\User::getCurrentUser();
 		foreach ($betSlipSelectionsStakes as $betSlipSelectionId => $betSlipSelectionStake) {
 			$userSelection = \bets\UserSelection::get($betSlipSelectionId);
 			$selection = $userSelection->getSelection();
@@ -106,8 +126,12 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 
 	private function placeBet()
 	{
+		if (!$this->validateSelectionTimestamp()) {
+			return 'invalid_selection_timestamp';
+		}
+
 		if (!$this->validateSelectionMaxStake()) {
-			return false;
+			return 'max_stake_exceeded';
 		}
 
 		$competition = bets\Competition::getCurrent();
@@ -125,7 +149,7 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 				$bet->insert();
 				$totalStake += $bet->stake;
 
-				$userSelections = \bets\UserSelection::findWhere(array('iduser=' => $user->id));
+				$userSelections = $user->getUserSelections();
 				$odds = 1;
 				foreach ($userSelections as $userSel) {
 					$odds *= $userSel->odds;
@@ -170,7 +194,7 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 		// remove user selections from the bet slip
 		foreach ($_REQUEST['bets'] as $betSlipSelection) {
 			if ($betSlipSelection['user_selection_id'] == 'accumulator') {
-				$userSelections = \bets\UserSelection::findWhere(array('iduser=' => $user->id));
+				$userSelections = $user->getUserSelections();
 				foreach ($userSelections as $userSel) {
 					$userSel->delete();
 				}
@@ -181,7 +205,7 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 			}
 		}
 
-		return true;
+		return 'success';
 	}
 
 	private function removeSelection()
