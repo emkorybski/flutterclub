@@ -2595,3 +2595,8 @@ div.layout_article_manage_articles ul.articles_rows {
     padding-left: 10px;
     padding-top: 5px;
 }
+
+.article_title h3,
+.article_profile_title h3 {
+    padding: 0;
+}
