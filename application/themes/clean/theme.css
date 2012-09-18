@@ -91,6 +91,7 @@ h3
 {
   font-size: $theme_headline_size_medium;
   background-color: transparent;
+  padding: .4em .7em;
   +rounded(3px);
   font-family: fc_bebas;
   letter-spacing: 0.1em;
@@ -2560,7 +2561,8 @@ hr.line {
     background-color: $theme_foreground_background_color;
 }
 
-.layout_article_browse_articles .articles_rows {
+div.layout_article_browse_articles ul.articles_rows,
+div.layout_article_manage_articles ul.articles_rows {
     background-color: $theme_foreground_background_color;
     margin: 0;
     padding: 10px;
