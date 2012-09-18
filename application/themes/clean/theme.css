@@ -2607,3 +2607,15 @@ div.layout_article_list_articles ul.articles_rows {
 .layout_article_browse_articles .article_meta {
   display: none;
 }
+
+div.article_featured_slide .article_photo img {
+    max-height: 100px;
+}
+
+.article_featured_mask .article_featured_slides > div {
+    height: 100px;
+}
+
+.article_featured_mask {
+    height: 130px;
+}
