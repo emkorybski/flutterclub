@@ -2556,8 +2556,7 @@ hr.line {
 
 /* Articles */
 
-.article_featured_articles,
-.layout_page_article_profile_index .layout_right {
+.article_featured_articles {
     background-color: $theme_foreground_background_color;
 }
 
