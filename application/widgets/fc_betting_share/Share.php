@@ -25,10 +25,11 @@ class FC_Betting_Share extends Engine_Form
 			->setAttrib('class', 'global_form_popup')
 			->setAction($_SERVER['REQUEST_URI']);
 
-		$this->addElement('Text', 'message', array(
+		$this->addElement('Textarea', 'message', array(
 			'allowEmpty' => true,
 			'required' => false,
-			'placeholder' => 'Write a message...'
+			'placeholder' => 'Write a message...',
+			'rows' => '3',
 		));
 
 		$this->addElement('Button', 'submit', array(
