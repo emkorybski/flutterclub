@@ -72,7 +72,7 @@
 	}
 	.share_selection {
 		float: right;
-		margin-top: 10px;
+		margin-top: 12px;
 		margin-right: 10px;
 	}
 	.fc_betting_market hr.line + .market_title {
@@ -135,7 +135,7 @@ foreach ( $this->selections as $selection) :
 	<?php else  : ?>
 	<button disabled="disabled" data-idselection="<?=$selection->id?>">-</button>
 	<?php endif; ?>
-	<a href="/fc/widget?name=fc_betting_share&format=html&id=<?=$selection->id?>" class="smoothbox">Share</a>
+	<a href="/fc/widget?name=fc_betting_share&format=html&id=<?=$selection->id?>" class="share_selection smoothbox">Share</a>
 	<div class="clear"></div>
 </a>
 <hr class="line"/>
