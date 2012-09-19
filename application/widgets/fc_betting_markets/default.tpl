@@ -135,7 +135,7 @@ foreach ( $this->upcomingEvents as $event) :
 	<?php else  : ?>
 	<button disabled="disabled" data-idselection="<?=$selection->id?>">-</button>
 	<?php endif; ?>
-	<!-- <a href="#" class="share_selection">Share</a> -->
+	<a href="/fc/widget?name=fc_betting_share&format=html&id=<?=$selection->id?>" class="smoothbox">Share</a>
 	<div class="clear"></div>
 	</a>
 	<hr class="line"/>

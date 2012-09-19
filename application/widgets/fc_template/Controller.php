@@ -12,6 +12,7 @@ class Widget_FC_TemplateController extends Engine_Content_Widget_Abstract
 	private $templateTypes = array(
 		'activity.bet_settlement',
 		'mail.bet_settlement',
+		'activity.bet_share'
 	);
 
 	public function indexAction()
@@ -22,19 +23,27 @@ class Widget_FC_TemplateController extends Engine_Content_Widget_Abstract
 			return;
 		}
 
-		$idBet = intval($_REQUEST['id_bet']);
-		$bet = \bets\Bet::get($idBet);
-		$betType = count($bet->getSelections()) == 1 ? 'single' : 'accumulator';
-		switch ($templateType) {
-			case 'activity.bet_settlement':
-				$this->_action = "activity-bet-settlement-$betType";
-				break;
-			case 'mail.bet_settlement':
-				$this->_action = "bet-info-$betType";
-				break;
+		if ($templateType == 'activity.bet_settlement' || $templateType == 'mail.bet_settlement') {
+			$idBet = intval($_REQUEST['id_bet']);
+			$bet = \bets\Bet::get($idBet);
+			$betType = count($bet->getSelections()) == 1 ? 'single' : 'accumulator';
+			switch ($templateType) {
+				case 'activity.bet_settlement':
+					$this->_action = "activity-bet-settlement-$betType";
+					break;
+				case 'mail.bet_settlement':
+					$this->_action = "bet-info-$betType";
+					break;
+			}
+			$this->view->bet = $bet;
+		} else if ($templateType == 'activity.bet_share') {
+			$this->_action = "activity-bet-share";
+			$idSelection = intval($_REQUEST['id_selection']);
+			$selection = \bets\Selection::get($idSelection);
+			$this->view->message = $_REQUEST['message'];
+			$this->view->selection = $selection;
 		}
 
-		$this->view->bet = $bet;
 		$this->getElement()->clearDecorators();
 	}
 }
