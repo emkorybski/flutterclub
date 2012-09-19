@@ -21,18 +21,18 @@ class FC_Betting_Share extends Engine_Form
 	public function init()
 	{
 		$this->setTitle('Share Bet')
-			->setDescription('Share Bet Description')
+			->setDescription('Post details of this bet and an optional message to your activity feed')
 			->setAttrib('class', 'global_form_popup')
 			->setAction($_SERVER['REQUEST_URI']);
 
 		$this->addElement('Text', 'message', array(
-			'label' => 'Enter your message',
 			'allowEmpty' => true,
 			'required' => false,
+			'placeholder' => 'Write a message...'
 		));
 
 		$this->addElement('Button', 'submit', array(
-			'label' => 'Share Bet',
+			'label' => 'Share',
 			'type' => 'submit',
 			'ignore' => true,
 			'decorators' => array('ViewHelper')
