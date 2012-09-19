@@ -1769,8 +1769,6 @@ div.albums_viewmedia_info {
 #filter_form,
 form.filters
 {
-  background-color: #eee;
-  padding: 20px;
   font-size: 1.1em;
 }
 #filter_form label
@@ -2561,41 +2559,63 @@ hr.line {
 }
 
 div.layout_article_browse_articles ul.articles_rows,
-div.layout_article_manage_articles ul.articles_rows {
-    background-color: $theme_foreground_background_color;
-    margin: 0;
-    padding: 10px;
-}
+div.layout_article_manage_articles ul.articles_rows,
+div.layout_article_list_articles ul.articles_rows {
+  background-color: $theme_foreground_background_color;
+  margin: 0;
+  padding: 10px;
+  }
 
 .layout_core_container_tabs > .layout_article_list_articles {
-    background-color: $theme_foreground_background_color;
-    padding: 10px;
+  background-color: $theme_foreground_background_color;
+  padding: 10px;
 }
 
 .layout_page_article_profile_index .layout_middle {
-    background-color: $theme_foreground_background_color;
-    padding: 10px;
-    padding-top: 0;
+  background-color: $theme_foreground_background_color;
+  padding: 10px;
+  padding-top: 0;
 }
 
 .layout_core_container_tabs .layout_article_profile_comments,
 .layout_core_container_tabs .layout_article_profile_photos {
-    padding: 10px;
+  padding: 10px;
 }
 
 #global_page_article-photo-list .layout_middle {
-    background-color: $theme_foreground_background_color;
-    padding: 0 10px;
+  background-color: $theme_foreground_background_color;
+  padding: 0 10px;
 }
 
 .article_photos_list_options {
-    background-color: $theme_foreground_background_color;
-    margin-bottom: 0;
-    padding-left: 10px;
-    padding-top: 5px;
+  background-color: $theme_foreground_background_color;
+  margin-bottom: 0;
+  padding-left: 10px;
+  padding-top: 5px;
 }
 
 .article_title h3,
 .article_profile_title h3 {
-    padding: 0;
+  padding: 0;
+}
+
+.layout_article_list_tags .articles_popular_tags {
+  background-color: #fff;
+  padding: 10px;
+}
+
+.layout_article_browse_articles .article_meta {
+  display: none;
+}
+
+div.article_featured_slide .article_photo img {
+    max-height: 100px;
+}
+
+.article_featured_mask .article_featured_slides > div {
+    height: 100px;
+}
+
+.article_featured_mask {
+    height: 130px;
 }
