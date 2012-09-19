@@ -162,8 +162,8 @@ endforeach;
 			}
 		});
 	});
-	j('.share_selection').live("click", function(evt){
-		evt.preventDefault();
-		alert('Share');
-	});
+	// j('.share_selection').live("click", function(evt){
+	// 	evt.preventDefault();
+	// 	alert('Share');
+	// });
 </script>
