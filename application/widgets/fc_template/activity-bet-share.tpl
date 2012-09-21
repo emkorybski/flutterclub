@@ -3,13 +3,9 @@ $event = $this->selection->getEvent();
 ?>
 <?=$this->message?><br/>
 
-Selection details:
+<a href="<?=WEB_HOST . WEB_ROOT?>pages/betting?event=<?=$event->id?>" target="_blank" title="<?=$event->name?>"><?=$event->getParent()->name?>: <?=$event->name?></a>
 
 Date: <?=\bets\fc::formatTimestamp($event->getParent()->ts)?>
-
-Event: <?=$event->getParent()->name?>
-
-Market: <?=$event->name?>
 
 Bet: <?=$this->selection->name?>
 
