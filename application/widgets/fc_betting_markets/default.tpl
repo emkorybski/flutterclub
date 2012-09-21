@@ -63,7 +63,7 @@
 
 	.share_selection {
 		float: right;
-		margin-top: 10px;
+		margin-top: 12px;
 		margin-right: 10px;
 	}
 	.fc_betting_markets hr.line + .market_title {
@@ -112,15 +112,15 @@
 </style>
 
 <div class="fc_betting_markets">
-	<?php
-	foreach ( $this->upcomingEvents as $event) :
-	?>
+<?php
+foreach ( $this->upcomingEvents as $event) :
+?>
 	<div class="fc_betting_market">
 		<h1 class="market_title"><?=$event->getSport()->name?></h1>
 		<p class="market_title"><?=$event->getPath(true)?></p>
 		<p class="market_title"><?=$event->name?></p>
 		<div class="selections">
-		<?
+		<?php
 		$eventSelections = $event->getSelections(3);
 		foreach ( $eventSelections as $selection) :
 			$userSelection = bets\UserSelection::getWhere(array(
@@ -137,7 +137,7 @@
 			<?php else  : ?>
 				<button disabled="disabled" data-idselection="<?=$selection->id?>">-</button>
 			<?php endif; ?>
-			<a href="/fc/widget?name=fc_betting_share&format=html&id=<?=$selection->id?>" class="smoothbox">Share</a>
+			<a href="/fc/widget?name=fc_betting_share&format=html&id=<?=$selection->id?>" class="share_selection smoothbox">Share</a>
 			<div class="clear"></div>
 			<hr class="line"/>
 		<?php
@@ -148,9 +148,9 @@
 		<a href="<?=WEB_HOST . WEB_ROOT?>pages/betting?event=<?=$event->id?>">market url</a>
 		<p>ID: <?=$event->id?></p>
 	</div>
-	<?php
-	endforeach;
-	?>
+<?php
+endforeach;
+?>
 </div>
 
 <script type="text/javascript">
@@ -168,9 +168,5 @@
 				alert('Internal error, try again');
 			}
 		});
-	});
-	j('.share_selection').live("click", function (evt) {
-		evt.preventDefault();
-		alert('Share');
 	});
 </script>

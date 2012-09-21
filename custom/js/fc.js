@@ -99,6 +99,7 @@ fc.user.updateBettingMarkets = function (data) {
         success:function (text) {
             var content = j('.fc_betting_markets', text);
             bettingMarkets.html(content);
+            Smoothbox.bind();
         },
         error:function () {
             alert('Internal error. Try again.');

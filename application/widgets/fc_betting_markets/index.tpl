@@ -72,7 +72,7 @@
 	}
 	.share_selection {
 		float: right;
-		margin-top: 10px;
+		margin-top: 12px;
 		margin-right: 10px;
 	}
 	.fc_betting_market hr.line + .market_title {
@@ -120,9 +120,6 @@
 			<span class="market_odds">Odds</span>
 		</div>
 		<div class="selections">
-	<?php
-	endif;
-	?>
 		<?php
 		foreach ( $this->selections as $selection) :
 			$userSelection = bets\UserSelection::getWhere(array(
@@ -130,7 +127,7 @@
 				'iduser=' => $this->user->id));
 			$disabled = "";
 			if ($userSelection) {
-				$disabled = "disabled='disabled'";
+			$disabled = "disabled='disabled'";
 			}
 		?>
 			<div class="selection_name"><?=$selection->name?></div>
@@ -139,7 +136,7 @@
 			<?php else  : ?>
 				<button disabled="disabled" data-idselection="<?=$selection->id?>">-</button>
 			<?php endif; ?>
-			<a href="/fc/widget?name=fc_betting_share&format=html&id=<?=$selection->id?>" class="smoothbox">Share</a>
+			<a href="/fc/widget?name=fc_betting_share&format=html&id=<?=$selection->id?>" class="share_selection smoothbox">Share</a>
 			<div class="clear"></div>
 			<hr class="line"/>
 		<?php
@@ -148,11 +145,14 @@
 		</div>
 		<a href="<?=WEB_HOST . WEB_ROOT?>pages/betting?event=<?=$this->event->id?>">market url</a>
 		<p>ID: <?=$this->event->id?></p>
+	<?php
+	endif;
+	?>
 	</div>
 </div>
 
 <script type="text/javascript">
-	j('.submit_selection').live("click", function(evt){
+	j('.submit_selection').live("click", function (evt) {
 		evt.preventDefault();
 
 		var idSelection = parseInt(j(this).attr('data-idselection'));
@@ -166,9 +166,5 @@
 				alert('Internal error, try again');
 			}
 		});
-	});
-	j('.share_selection').live("click", function(evt){
-		evt.preventDefault();
-		alert('Share');
 	});
 </script>
