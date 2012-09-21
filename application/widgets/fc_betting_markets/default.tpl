@@ -112,42 +112,45 @@
 </style>
 
 <div class="fc_betting_markets">
-<?php
-foreach ( $this->upcomingEvents as $event) :
-?>
+	<?php
+	foreach ( $this->upcomingEvents as $event) :
+	?>
 	<div class="fc_betting_market">
-	<h1 class="market_title"><?=$event->getSport()->name?></h1>
-	<p class="market_title"><?=$event->getPath(true)?></p>
-	<p class="market_title"><?=$event->name?></p>
-	<div class="selections">
-<?
-	$eventSelections = $event->getSelections(3);
-	foreach ( $eventSelections as $selection) :
-		$userSelection = bets\UserSelection::getWhere(array('idselection=' => $selection->id, 'iduser=' => $this->user->id));
-		$disabled = "";
-		if ($userSelection) {
-			$disabled = "disabled='disabled'";
-		}
-?>
-	<div class="selection_name"><?=$selection->name?></div>
-	<?php if ($selection->odds > 1) : ?>
-	<button <?=$disabled?> data-idselection="<?=$selection->id?>" class="submit_selection"><?=\bets\fc::formatOdds($selection->odds)?></button>
-	<?php else  : ?>
-	<button disabled="disabled" data-idselection="<?=$selection->id?>">-</button>
-	<?php endif; ?>
-	<a href="/fc/widget?name=fc_betting_share&format=html&id=<?=$selection->id?>" class="smoothbox">Share</a>
-	<div class="clear"></div>
-	</a>
-	<hr class="line"/>
-<?php
+		<h1 class="market_title"><?=$event->getSport()->name?></h1>
+		<p class="market_title"><?=$event->getPath(true)?></p>
+		<p class="market_title"><?=$event->name?></p>
+		<div class="selections">
+		<?
+		$eventSelections = $event->getSelections(3);
+		foreach ( $eventSelections as $selection) :
+			$userSelection = bets\UserSelection::getWhere(array(
+				'idselection=' => $selection->id,
+				'iduser=' => $this->user->id));
+			$disabled = "";
+			if ($userSelection) {
+				$disabled = "disabled='disabled'";
+			}
+		?>
+			<div class="selection_name"><?=$selection->name?></div>
+			<?php if ($selection->odds > 1) : ?>
+				<button <?=$disabled?> data-idselection="<?=$selection->id?>" class="submit_selection"><?=\bets\fc::formatOdds($selection->odds)?></button>
+			<?php else  : ?>
+				<button disabled="disabled" data-idselection="<?=$selection->id?>">-</button>
+			<?php endif; ?>
+			<a href="/fc/widget?name=fc_betting_share&format=html&id=<?=$selection->id?>" class="smoothbox">Share</a>
+			<div class="clear"></div>
+			<hr class="line"/>
+		<?php
+		endforeach;
+		?>
+		</div>
+		<a class="link_to_market" href="<?=WEB_HOST.WEB_ROOT?>pages/betting?event=<?=$event->id?>">Go to market</a>
+		<a href="<?=WEB_HOST . WEB_ROOT?>pages/betting?event=<?=$event->id?>">market url</a>
+		<p>ID: <?=$event->id?></p>
+	</div>
+	<?php
 	endforeach;
-?>
-	</div>
-	<a class="link_to_market" href="<?=WEB_HOST.WEB_ROOT?>pages/betting?event=<?=$event->id?>">Go to market</a>
-	</div>
-<?php
-endforeach;
-?>
+	?>
 </div>
 
 <script type="text/javascript">

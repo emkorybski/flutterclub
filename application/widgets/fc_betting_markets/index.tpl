@@ -110,40 +110,45 @@
 </style>
 
 <div class="fc_betting_markets">
-<div class="fc_betting_market">
-<?php
-if (count($this->selections) > 0) :
-?>
-	<h1 class="market_title"><?=$this->parentEvent->name?></h1>
-	<h2 class="market_type"><?=$this->event->name?></h2>
-	<div class="market_header">
-		<span class="market_odds">Odds</span>
+	<div class="fc_betting_market">
+	<?php
+	if (count($this->selections) > 0) :
+	?>
+		<h1 class="market_title"><?=$this->parentEvent->name?></h1>
+		<h2 class="market_type"><?=$this->event->name?></h2>
+		<div class="market_header">
+			<span class="market_odds">Odds</span>
+		</div>
+		<div class="selections">
+	<?php
+	endif;
+	?>
+		<?php
+		foreach ( $this->selections as $selection) :
+			$userSelection = bets\UserSelection::getWhere(array(
+				'idselection=' => $selection->id,
+				'iduser=' => $this->user->id));
+			$disabled = "";
+			if ($userSelection) {
+				$disabled = "disabled='disabled'";
+			}
+		?>
+			<div class="selection_name"><?=$selection->name?></div>
+			<?php if ($selection->odds > 1) : ?>
+				<button <?=$disabled?> data-idselection="<?=$selection->id?>" class="submit_selection"><?=\bets\fc::formatOdds($selection->odds)?></button>
+			<?php else  : ?>
+				<button disabled="disabled" data-idselection="<?=$selection->id?>">-</button>
+			<?php endif; ?>
+			<a href="/fc/widget?name=fc_betting_share&format=html&id=<?=$selection->id?>" class="smoothbox">Share</a>
+			<div class="clear"></div>
+			<hr class="line"/>
+		<?php
+		endforeach;
+		?>
+		</div>
+		<a href="<?=WEB_HOST . WEB_ROOT?>pages/betting?event=<?=$this->event->id?>">market url</a>
+		<p>ID: <?=$this->event->id?></p>
 	</div>
-	<div class="selections">
-<?php
-endif;
-foreach ( $this->selections as $selection) :
-	$userSelection = bets\UserSelection::getWhere(array('idselection=' => $selection->id, 'iduser=' => $this->user->id));
-	$disabled = "";
-	if ($userSelection) {
-		$disabled = "disabled='disabled'";
-	}
-?>
-	<div class="selection_name"><?=$selection->name?></div>
-	<?php if ($selection->odds > 1) : ?>
-	<button <?=$disabled?> data-idselection="<?=$selection->id?>" class="submit_selection"><?=\bets\fc::formatOdds($selection->odds)?></button>
-	<?php else  : ?>
-	<button disabled="disabled" data-idselection="<?=$selection->id?>">-</button>
-	<?php endif; ?>
-	<a href="/fc/widget?name=fc_betting_share&format=html&id=<?=$selection->id?>" class="smoothbox">Share</a>
-	<div class="clear"></div>
-</a>
-<hr class="line"/>
-<?php
-endforeach;
-?>
-</div>
-</div>
 </div>
 
 <script type="text/javascript">
