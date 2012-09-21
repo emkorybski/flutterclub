@@ -311,20 +311,16 @@ class BetfairImportManager
 	{
 		foreach ($bfSubEvents as $bfSubEvent) {
 			$attributes = $bfSubEvent->attributes();
-			$subEventName = trim($attributes['title'] . '');
-			if ($subEventName == '16:15 To Be Placed') {
-				$xx = 2;
-			}
+			if (!$attributes['id'])
+				continue;
 
+			$subEventName = trim($attributes['title'] . '');
 			$subEventDate = date('Y-m-d H:i:00', \DateTime::createFromFormat('d/m/Y H:i', "{$attributes['date']} {$attributes['time']}")->getTimestamp());
-			$subEventBetfairMarketId = $attributes['id'] . '';
-			$subEventTotalAmountMatched = $attributes['TotalAmountMatched'] . '';
+			$subEventBetfairMarketId = intval($attributes['id']);
+			$subEventTotalAmountMatched = floatval($attributes['TotalAmountMatched']);
 
 			$nowDate = date('Y-m-d H:i:s');
 			if ($subEventDate < $nowDate || $subEventDate > $this->competition->ts_end)
-				continue;
-
-			if (!$subEventBetfairMarketId)
 				continue;
 
 			//$subEvent = \bets\Event::getWhere(array('betfairMarketId=' => $subEventBetfairMarketId));

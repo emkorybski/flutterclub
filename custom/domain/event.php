@@ -79,13 +79,14 @@ class Event extends DBRecord
 				if (!$stmt) {
 					throw new \Exception(bets::sql()->getLastError());
 				}
-				$stmt->prepare("UPDATE fc_event SET name = ?, ts = ? WHERE id = ?");
+				$stmt->prepare("UPDATE fc_event SET name = ?, ts = ?, betfairAmountMatched = ? WHERE id = ?");
 			}
 
 			$name = $event->name;
 			$ts = $event->ts;
+			$amountMatched = $event->betfairAmountMatched;
 			$id = $event->id;
-			$stmt->bind_param('ssi', $name, $ts, $id);
+			$stmt->bind_param('ssi', $name, $ts, $amountMatched, $id);
 
 			$stmt->execute();
 		}
