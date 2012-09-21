@@ -145,8 +145,6 @@ foreach ( $this->upcomingEvents as $event) :
 		?>
 		</div>
 		<a class="link_to_market" href="<?=WEB_HOST.WEB_ROOT?>pages/betting?event=<?=$event->id?>">Go to market</a>
-		<a href="<?=WEB_HOST . WEB_ROOT?>pages/betting?event=<?=$event->id?>">market url</a>
-		<p>ID: <?=$event->id?></p>
 	</div>
 <?php
 endforeach;

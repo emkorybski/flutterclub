@@ -143,8 +143,7 @@
 		endforeach;
 		?>
 		</div>
-		<a href="<?=WEB_HOST . WEB_ROOT?>pages/betting?event=<?=$this->event->id?>">market url</a>
-		<p>ID: <?=$this->event->id?></p>
+		<a class="link_to_market" href="<?=WEB_HOST . WEB_ROOT?>pages/betting?event=<?=$this->event->id?>">Market ID: <?=$this->event->id?></a>
 	<?php
 	endif;
 	?>
