@@ -3,7 +3,7 @@
 	$betSelection = \bets\BetSelection::getWhere(array('idbet=' => $bet->id));
 	$selection = $betSelection->getSelection();
 	$event = $selection->getEvent();
-	$profit = $bet->status == 'won' ? $bet->stake * ($bet->odds - 1) : $bet->stake;
+	$profit = $bet->status == 'won' ? \bets\fc::getProfit($bet->stake, $bet->odds) : $bet->stake;
 ?>
 just <?=$bet->status?> FB$ <?=\bets\fc::formatDecimalNumber($profit)?>!
 

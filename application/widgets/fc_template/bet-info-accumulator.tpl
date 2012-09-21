@@ -1,7 +1,7 @@
 <?php
 $bet = $this->bet;
 $betSelections = $bet->getSelections();
-$profit = $bet->status == 'won' ? $bet->stake * ($bet->odds - 1) : $bet->stake;
+$profit = $bet->status == 'won' ? \bets\fc::getProfit($bet->stake, $bet->odds) : $bet->stake;
 ?>
 Odds: <?=\bets\fc::decimal2fractional($bet->odds)?>
 

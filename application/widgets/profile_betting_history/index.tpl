@@ -34,7 +34,7 @@
 	}
 
 	.profile_betting_history .bet_info .bet_stake:before,
-	.profile_betting_history .bet_info .bet_earnings:before {
+	.profile_betting_history .bet_info .bet_profit:before {
 		content: 'FB$ ';
 	}
 
@@ -101,9 +101,9 @@ if ( count($this->bettingHistory) > 0 ) :
 				<span class="bet_status status_<?=$bet->status?>"><?=$bet->status?></span>
 				<?php
 				if ($bet->status == 'won') :
-					$betEarnings = $bet->stake * ($bet->odds - 1);
+					$profit = \bets\fc::getProfit($bet->stake, $bet->odds)
 				?>
-				<span class="bet_earnings"><?=number_format($betEarnings, 2, '.', ',')?></span>
+				<span class="bet_profit"><?=number_format($profit, 2, '.', ',')?></span>
 				<?php
 				endif;
 				?>

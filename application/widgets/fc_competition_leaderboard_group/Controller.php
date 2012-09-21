@@ -35,7 +35,7 @@ class Widget_FC_Competition_Leaderboard_GroupController extends Engine_Content_W
 			if (!in_array($seUser->user_id, $groupMembersIds))
 				continue;
 
-			$successRate = \bets\fc::percentage($leaderboardUserData['won_count'], $leaderboardUserData['bet_count']);
+			$successRate = \bets\fc::getPercentage($leaderboardUserData['won_count'], $leaderboardUserData['bet_count']);
 			$userData = array(
 				'position' => $position,
 				'user' => $seUser,

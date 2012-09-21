@@ -34,7 +34,7 @@ class Widget_FC_Competition_Leaderboard_FriendsController extends Engine_Content
 			if (!in_array($seUser->user_id, $userFriendsIds))
 				continue;
 
-			$successRate = \bets\fc::percentage($leaderboardUserData['won_count'], $leaderboardUserData['bet_count']);
+			$successRate = \bets\fc::getPercentage($leaderboardUserData['won_count'], $leaderboardUserData['bet_count']);
 			$userData = array(
 				'position' => $position,
 				'user' => $seUser,

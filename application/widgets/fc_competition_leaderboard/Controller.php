@@ -22,7 +22,7 @@ class Widget_FC_Competition_LeaderboardController extends Engine_Content_Widget_
 		foreach ($leaderboardData as $leaderboardUserData) {
 			$fcUser = \bets\User::get($leaderboardUserData['iduser']);
 			$seUser = Engine_Api::_()->user()->getUser($fcUser->id_engine4_users);
-			$successRate = \bets\fc::percentage($leaderboardUserData['won_count'], $leaderboardUserData['bet_count']);
+			$successRate = \bets\fc::getPercentage($leaderboardUserData['won_count'], $leaderboardUserData['bet_count']);
 			$userData = array(
 				'position' => $position,
 				'user' => $seUser,

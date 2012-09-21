@@ -374,21 +374,20 @@ class BetfairImportManager
 
 			$attributes = $bfSelection->attributes();
 			$selectionName = trim($attributes['name'] . '');
-			$selectionOdds = $attributes['backp1'] . '';
-			$betfairSelectionId = $attributes['id'] . '';
+			$selectionOdds = floatval($attributes['backp1']);
+			$betfairSelectionId = intval($attributes['id']);
 
-			$selectionOddsRounded = \bets\fc::roundDecimalOdds($selectionOdds);
-			$selectionPercentage = intval(100 / floatval($selectionOddsRounded));
+			$selectionPercentage = intval(100 / floatval($selectionOdds));
 			$bookmakerPercentage += $selectionPercentage;
 
 			//$selection = \bets\Selection::getWhere(array('idevent=' => $subEvent->id, 'name=' => $selectionName, 'betfairSelectionId=' => $betfairSelectionId));
 			$selection = $this->getSelectionByEventAndName($subEvent->id, $selectionName, $betfairSelectionId);
 			if (!$selection) {
-				$selection = new \bets\Selection(null, array('name' => $selectionName, 'odds' => $selectionOddsRounded, 'betfairSelectionId' => $betfairSelectionId, 'betfairOrder' => $count));
+				$selection = new \bets\Selection(null, array('name' => $selectionName, 'odds' => $selectionOdds, 'betfairSelectionId' => $betfairSelectionId, 'betfairOrder' => $count));
 				$selection->idevent = $subEvent->id;
 				$this->addSelection($selection);
 			} else {
-				$selection->odds = $selectionOddsRounded;
+				$selection->odds = $selectionOdds;
 				$selection->betfairOrder = $count;
 				//$selection->update();
 				$selection->setDirty(true);

@@ -43,7 +43,7 @@ class BetValidator
 				if ($betStatus == 'won' || $betStatus == 'void') {
 					$balance = \bets\UserBalance::getWhere(array('idcompetition=' => $pendingBet->idcompetition, 'iduser=' => $pendingBet->iduser));
 					if ($balance) {
-						$balance->balance += $pendingBet->stake * $pendingBet->odds;
+						$balance->balance += $pendingBet->stake + \bets\fc::getProfit($pendingBet->stake, $pendingBet->odds);
 						$balance->update();
 					}
 				}
@@ -61,7 +61,7 @@ class BetValidator
 				// Send email
 				$userData = \bets\User::getCurrentUserData($pendingBet->iduser);
 				$mailBetInfoText = \bets\User::getMailBetSettlementNotification($pendingBet);
-				$profit = $betStatus == 'won' ? $pendingBet->stake * ($pendingBet->odds - 1) : $pendingBet->stake;
+				$profit = $betStatus == 'won' ? \bets\fc::getProfit($pendingBet->stake, $pendingBet->odds) : $pendingBet->stake;
 				\Engine_Api::_()->getApi('mail', 'core')->sendSystem(
 					$userData['email'],
 					$betStatus == 'won' ? 'notify_bet_won' : 'notify_bet_lost',

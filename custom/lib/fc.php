@@ -4,21 +4,11 @@ namespace bets;
 
 class fc
 {
-	public static function percentage($num, $den)
-	{
-		$percent1 = $num / $den;
-		$percent2 = $percent1 * 100;
-		return number_format($percent2, 2, '.', ',') . '%';
-	}
+	private static $oddsFormat = 'fractional';
 
 	public static function getGMTTimestamp()
 	{
 		return date('Y-m-d H:i:s', \DateTime::createFromFormat('Y-m-d H:i:s', gmdate("Y-m-d H:i:s", time()))->getTimestamp());
-	}
-
-	public static function formatDecimalNumber($number)
-	{
-		return number_format($number, 2, '.', ',');
 	}
 
 	public static function formatTimestamp($timestamp)
@@ -26,32 +16,22 @@ class fc
 		return date("j M Y, G:i", strtotime($timestamp));
 	}
 
-	private static $oddsFormat = 'fractional';
-
-	public static function roundDecimalOdds($dec)
+	public static function formatDecimalNumber($number)
 	{
-		$dec = floatval($dec);
-		$chart = self::$conversionChart;
+		return number_format($number, 2, '.', ',');
+	}
 
-		if ($dec < 10) {
-			for ($i = 0; $i < count($chart); $i++) {
-				if ($dec <= $chart[$i][0]) {
-					return $chart[$i][0];
-				}
-			}
-		} else if ($dec < 40) {
-			return intval(round($dec));
-		} else {
-			$quotient = floor($dec / 10);
-			$reminder = $dec - $quotient * 10;
-			$round = $reminder > 2.5
-				? $reminder < 7.5
-					? 5
-					: 10
-				: 0;
+	public static function getPercentage($num, $den)
+	{
+		$percent1 = $num / $den;
+		$percent2 = $percent1 * 100;
+		return number_format($percent2, 2, '.', ',') . '%';
+	}
 
-			return $quotient * 10 + $round;
-		}
+	public static function getProfit($stake, $odds)
+	{
+		$fractions = self::getFractions($odds);
+		return $stake * $fractions[0] / $fractions[1];
 	}
 
 	public static function formatOdds($dec, $oddsFormat = null)
@@ -72,18 +52,29 @@ class fc
 
 	public static function decimal2fractional($dec)
 	{
+		$fractions = self::getFractions($dec);
+		return $fractions[0] == $fractions[1]
+			? 'Evs'
+			: $fractions[0] . '/' . $fractions[1];
+	}
+
+	public static function decimal2american($dec)
+	{
+		return $dec;
+	}
+
+	private static function getFractions($dec)
+	{
 		$chart = self::$conversionChart;
 
 		if ($dec < 10) {
 			for ($i = 0; $i < count($chart); $i++) {
 				if ($dec <= $chart[$i][0]) {
-					return $chart[$i][1] == $chart[$i][2]
-						? 'Evs'
-						: $chart[$i][1] . "/" . $chart[$i][2];
+					return array($chart[$i][1], $chart[$i][2]);
 				}
 			}
 		} else if ($dec < 40) {
-			return intval(round($dec)) . "/1";
+			return array(intval(round($dec)), 1);
 		} else {
 			$quotient = floor($dec / 10);
 			$reminder = $dec - $quotient * 10;
@@ -93,13 +84,8 @@ class fc
 					: 10
 				: 0;
 
-			return $quotient * 10 + $round . "/1";
+			return array($quotient * 10 + $round, 1);
 		}
-	}
-
-	public static function decimal2american($dec)
-	{
-		return $dec;
 	}
 
 	private static $conversionChart = array(
