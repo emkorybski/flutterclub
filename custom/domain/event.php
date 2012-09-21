@@ -86,7 +86,7 @@ class Event extends DBRecord
 			$ts = $event->ts;
 			$amountMatched = $event->betfairAmountMatched;
 			$id = $event->id;
-			$stmt->bind_param('ssi', $name, $ts, $amountMatched, $id);
+			$stmt->bind_param('ssdi', $name, $ts, $amountMatched, $id);
 
 			$stmt->execute();
 		}
