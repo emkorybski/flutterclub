@@ -374,6 +374,9 @@ class BetfairImportManager
 
 			$attributes = $bfSelection->attributes();
 			$selectionName = trim($attributes['name'] . '');
+			if ($subEvent->getSport()->name == 'Horse Racing' && $subEvent->topEvent()->name == 'USA') {
+				$selectionName = preg_replace('/^(\d)+. /', '', $selectionName);
+			}
 			$selectionOdds = floatval($attributes['backp1']);
 			$betfairSelectionId = intval($attributes['id']);
 
