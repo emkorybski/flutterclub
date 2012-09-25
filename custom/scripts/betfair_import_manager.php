@@ -12,7 +12,8 @@ require_once(PATH_DOMAIN . 'selection.php');
 
 class BetfairImportManager
 {
-	private $excludedEvent = array('ANTEPOST', 'Asian Handicap');
+	private $excludedEvents = array('ANTEPOST', 'Asian Handicap');
+	private $excludedEventsContaining = array('Match Bets');
 
 	private $soapClient;
 	private $sessionToken;
@@ -221,9 +222,21 @@ class BetfairImportManager
 				: $response->eventItems->BFEvent;
 			foreach ($bfEvents as $bfEvent) {
 				$eventName = trim($bfEvent->eventName);
-				if (in_array($eventName, $this->excludedEvent)) {
+
+				if (in_array($eventName, $this->excludedEvents)) {
 					continue;
 				}
+
+				$isExcludedEvent = false;
+				foreach ($this->excludedEventsContaining as $exclude) {
+					if (strstr($eventName, $exclude) != false) {
+						$isExcludedEvent = true;
+						break;
+					}
+				}
+				if ($isExcludedEvent)
+					continue;
+
 				//$event = \bets\Event::getWhere(array('name=' => trim($bfEvent->eventName), 'idparent=' => $fcParentId));
 				$event = $this->getEventByParentAndName($fcParentId, $eventName);
 				if (!$event) {
@@ -273,7 +286,7 @@ class BetfairImportManager
 				}
 			}
 
-			if (!$eventFound || in_array($event->name, $this->excludedEvent)) {
+			if (!$eventFound || in_array($event->name, $this->excludedEvents)) {
 				continue;
 			}
 
