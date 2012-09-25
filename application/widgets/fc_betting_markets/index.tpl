@@ -116,6 +116,7 @@
 	?>
 		<h1 class="market_title"><?=$this->parentEvent->name?></h1>
 		<h2 class="market_type"><?=$this->event->name?></h2>
+		<h3>( <a href="http://sports.betfair.com/?mi=<?=$this->event->betfairMarketId?>&ex=1" target="_blank" title="bet for real">bet for real</a> )</h3>
 		<div class="market_header">
 			<span class="market_odds">Odds</span>
 		</div>

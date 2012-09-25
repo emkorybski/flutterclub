@@ -380,7 +380,7 @@ class BetfairImportManager
 			$selectionOdds = floatval($attributes['backp1']);
 			$betfairSelectionId = intval($attributes['id']);
 
-			$selectionPercentage = intval(100 / floatval($selectionOdds));
+			$selectionPercentage = $selectionOdds > 0 ? intval(100 / floatval($selectionOdds)) : 100;
 			$bookmakerPercentage += $selectionPercentage;
 
 			//$selection = \bets\Selection::getWhere(array('idevent=' => $subEvent->id, 'name=' => $selectionName, 'betfairSelectionId=' => $betfairSelectionId));

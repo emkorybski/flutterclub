@@ -119,6 +119,7 @@ foreach ( $this->upcomingEvents as $event) :
 		<h1 class="market_title"><?=$event->getSport()->name?></h1>
 		<p class="market_title"><?=$event->getPath(true)?></p>
 		<p class="market_title"><?=$event->name?></p>
+		<h3>( <a href="http://sports.betfair.com/?mi=<?=$event->betfairMarketId?>&ex=1" target="_blank" title="bet for real">bet for real</a> )</h3>
 		<div class="selections">
 		<?php
 		$eventSelections = $event->getSelections(3);
