@@ -107,6 +107,16 @@
 		color: #5F93B4;
 		margin-bottom: 0;
 	}
+
+	.fc_betting_market .link_to_betfair {
+		float: left;
+		margin: 10px;
+		font-weight: bold;
+		color: #5F93B4;
+		margin-bottom: 0;
+		font-style: italic;
+		padding-right: 5px;
+	}
 </style>
 
 <div class="fc_betting_markets">
@@ -116,7 +126,6 @@
 	?>
 		<h1 class="market_title"><?=$this->parentEvent->name?></h1>
 		<h2 class="market_type"><?=$this->event->name?></h2>
-		<h3>( <a href="http://sports.betfair.com/?mi=<?=$this->event->betfairMarketId?>&ex=1" target="_blank" title="bet for real">bet for real</a> )</h3>
 		<div class="market_header">
 			<span class="market_odds">Odds</span>
 		</div>
@@ -144,6 +153,7 @@
 		endforeach;
 		?>
 		</div>
+		<a class="link_to_betfair" href="http://sports.betfair.com/?mi=<?=$event->betfairMarketId?>&ex=1" target="_blank" title="Bet for real with Betfair">Bet for real with Betfair</a>
 		<a class="link_to_market" href="<?=WEB_HOST . WEB_ROOT?>pages/betting?event=<?=$this->event->id?>">Market ID: <?=$this->event->id?></a>
 	<?php
 	endif;

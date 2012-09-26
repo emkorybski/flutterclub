@@ -103,6 +103,16 @@
 		margin-bottom: 0;
 	}
 
+	.fc_betting_market .link_to_betfair {
+		float: left;
+		margin: 10px;
+		font-weight: bold;
+		color: #5F93B4;
+		margin-bottom: 0;
+		font-style: italic;
+		padding-right: 5px;
+	}
+
 	.fc_betting_market .selections {
 		background-color: #fff;
 		margin: 10px;
@@ -119,7 +129,6 @@ foreach ( $this->upcomingEvents as $event) :
 		<h1 class="market_title"><?=$event->getSport()->name?></h1>
 		<p class="market_title"><?=$event->getPath(true)?></p>
 		<p class="market_title"><?=$event->name?></p>
-		<h3>( <a href="http://sports.betfair.com/?mi=<?=$event->betfairMarketId?>&ex=1" target="_blank" title="bet for real">bet for real</a> )</h3>
 		<div class="selections">
 		<?php
 		$eventSelections = $event->getSelections(3);
@@ -145,6 +154,7 @@ foreach ( $this->upcomingEvents as $event) :
 		endforeach;
 		?>
 		</div>
+		<a class="link_to_betfair" href="http://sports.betfair.com/?mi=<?=$event->betfairMarketId?>&ex=1" target="_blank" title="Bet for real with Betfair">Bet for real with Betfair</a>
 		<a class="link_to_market" href="<?=WEB_HOST.WEB_ROOT?>pages/betting?event=<?=$event->id?>">Go to market</a>
 	</div>
 <?php
