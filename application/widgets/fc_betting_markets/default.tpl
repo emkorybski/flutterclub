@@ -107,10 +107,14 @@
 		float: left;
 		margin: 10px;
 		font-weight: bold;
-		color: #5F93B4;
+		color: #000;
 		margin-bottom: 0;
 		font-style: italic;
 		padding-right: 5px;
+		background-color: #fff;
+		vertical-align: top;
+		padding-left: 5px;
+		padding-top: 2px;
 	}
 
 	.fc_betting_market .selections {
@@ -154,7 +158,7 @@ foreach ( $this->upcomingEvents as $event) :
 		endforeach;
 		?>
 		</div>
-		<a class="link_to_betfair" href="http://sports.betfair.com/?mi=<?=$event->betfairMarketId?>&ex=1" target="_blank" title="Bet for real with Betfair">Bet for real with Betfair</a>
+		<a class="link_to_betfair" href="http://sports.betfair.com/?mi=<?=$event->betfairMarketId?>&ex=1" target="_blank" title="Bet for real with Betfair">Bet for real with <img src="/fc/custom/images/betfair.jpg" alt="Betfair"></a>
 		<a class="link_to_market" href="<?=WEB_HOST.WEB_ROOT?>pages/betting?event=<?=$event->id?>">Go to market</a>
 	</div>
 <?php
