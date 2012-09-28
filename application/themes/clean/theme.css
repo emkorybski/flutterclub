@@ -1913,8 +1913,11 @@ div.group_discussions_list
 .activity-post-container
 {
   margin-top: 10px;
-  border: 1px solid #aeced9;
+  border: 2px solid #A0D4E2;
   background-color: #eee;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
 }
 .activity-post-container > form
 {
@@ -1928,6 +1931,7 @@ div.group_discussions_list
   color: #fff;
   margin-bottom: 5px;
   font-weight: 400;
+  word-spacing: 0.1em;
 }
 .activity-post-container > form > h1 span {
   font-family: inherit;
@@ -2441,7 +2445,7 @@ body {
   font-family: fc_bebas;
   font-size: 14px;
   text-align: left;
-  word-spacing: 0.4em;
+  word-spacing: 0.3em;
   padding: 5px;
 }
 #global_content .generic_layout_container > h3:first-child a {
