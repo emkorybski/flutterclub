@@ -1066,6 +1066,10 @@ form.filters dd + dt
   border: 1px solid #ccc;
 }
 
+.activity-post-container > form > h1 {
+  display: none;
+}
+
 /* Betting Categories */
 
 .betting_categories a {
