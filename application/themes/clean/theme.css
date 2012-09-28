@@ -1920,6 +1920,19 @@ div.group_discussions_list
 {
   border: 0;
 }
+#compose-menu {
+    display: block !important;
+}
+.activity-post-container > form > h1 {
+  font-family: fc_bebas;
+  color: #fff;
+  margin-bottom: 5px;
+  font-weight: 400;
+}
+.activity-post-container > form > h1 span {
+  font-family: inherit;
+  color: #ff6600;
+}
 .global_form > div > div > h3 + div,
 .global_form > div > div > h3 + p + div
 {
