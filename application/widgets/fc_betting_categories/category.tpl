@@ -4,7 +4,6 @@
    style="display: block; padding-left: <?=10 + $indent * 20?>px; text-decoration: none">
 	<?=$category['name']?>
 </a>
-<hr class="line"/>
 <?php
 	if (!empty($category['children'])) {
 		++$indent;

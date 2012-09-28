@@ -26,6 +26,7 @@
 		font-family: fc_pts;
 		font-weight: bold;
 		color: #0291d5;
+		border-bottom: 1px solid #cccccc;
 	}
 
 	.fc_betting_category:hover {
