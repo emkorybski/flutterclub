@@ -177,6 +177,7 @@
 			success:function () {
 				fc.user.updateBettingSlip();
 				fc.user.updateBettingMarkets();
+				j('.layout_fc_betting_slip')[0].scrollIntoView();
 			},
 			error:function () {
 				alert('Internal error, try again');
