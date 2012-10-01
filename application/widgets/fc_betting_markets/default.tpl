@@ -161,7 +161,7 @@ foreach ( $this->upcomingEvents as $event) :
 		?>
 		</div>
 		<!-- <a class="link_to_betfair" href="http://sports.betfair.com/?mi=<?=$event->betfairMarketId?>&ex=1" target="_blank" title="Bet for real with Betfair">Bet for real with <img src="/fc/custom/images/betfair.jpg" alt="Betfair"></a> -->
-		<a class="link_to_market" href="<?=WEB_HOST.WEB_ROOT?>pages/<?=(!empty($_SESSION['mobile']) && !empty($_SESSION['mobile']['mobile'])->mobile) ? 'mbetting' : 'betting'?>?event=<?=$event->id?>">Go to market</a>
+		<a class="link_to_market" href="<?=WEB_HOST.WEB_ROOT?>pages/betting?event=<?=$event->id?>">Go to market</a>
 	</div>
 <?php
 endforeach;
