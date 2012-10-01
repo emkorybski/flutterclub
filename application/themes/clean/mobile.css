@@ -1081,6 +1081,9 @@ form.filters dd + dt
   white-space: nowrap;
 }
 
+.fc_betting_categories a.category_branch {
+  color: #555;
+}
 
 
 /* Moved from widgets\footer\index.tpl - to be cleaned up */
