@@ -26,6 +26,7 @@
 		font-size: 14px;
 		line-height: 25px;
 		font-weight: bold;
+		overflow: auto;
 	}
 	.fc_betting_market .selections {
 		background-color: #fff;
@@ -33,7 +34,8 @@
 		margin-bottom: 0;
 	}
 	.fc_betting_market .market_header .market_odds {
-		margin-left: 466px;
+		float: right;
+		margin-right: 35px;
 	}
 	.fc_selection {
 		display: block;
