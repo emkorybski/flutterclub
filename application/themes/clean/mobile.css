@@ -1075,6 +1075,10 @@ form.filters dd + dt
 .fc_betting_categories a {
   height: 40px;
   line-height: 40px;
+  font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 
