@@ -182,7 +182,7 @@
 				alert('Internal error, try again');
 			},
 			complete:function () {
-				j('.layout_fc_betting_slip')[0].scrollIntoView();
+				j('.layout_fc_betting_slip')[0].scrollIntoView(false);
 			}
 		});
 	});
