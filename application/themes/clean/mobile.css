@@ -1072,7 +1072,7 @@ form.filters dd + dt
 
 /* Betting Categories */
 
-.betting_categories a {
+.fc_betting_categories a {
   height: 40px;
   line-height: 40px;
 }
