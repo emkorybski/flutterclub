@@ -1359,15 +1359,15 @@ hr.line {
 }
 
 .layout_fc_betting_slip {
-  padding: 0;
+  padding: 0 !important;
 }
 
 .layout_fc_betting_slip h3 {
-  font-family: fc_pts;
-  font-size: 27px;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  padding: 5px 10px;
-  margin-bottom: 5px;
+  font-family: fc_pts !important;
+  font-size: 27px !important;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
+  padding: 5px 10px !important;
+  margin-bottom: 5px !important;
 }
