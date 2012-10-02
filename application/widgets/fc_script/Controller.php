@@ -25,15 +25,38 @@ class Widget_FC_ScriptController extends Engine_Content_Widget_Abstract
 		$currentDate = new \DateTime();
 		$settlementDate = $currentDate->sub(new \DateInterval("P1D"));
 
-		$competition = \bets\Competition::getWhere(array('settled=' => 'n', 'ts_end<' => $settlementDate->format('Y-m-d H:i:s')));
-		if (!$competition)
+		$this->competition = \bets\Competition::getWhere(array('settled=' => 'n', 'ts_end<' => $settlementDate->format('Y-m-d H:i:s')));
+		if (!$this->competition)
 			return;
 
-		$this->competition = $competition;
-
 		$this->voidPendingBets();
+		$this->sendCompetitionLeaderboardEmail();
+		$this->createFutureCompetition();
 
+		$this->competition->settled = 'y';
+		$this->competition->update();
+	}
+
+	private function voidPendingBets()
+	{
+		$pendingBets = \bets\Bet::findWhere(array('idcompetition=' => $this->competition->id, 'status=' => 'pending'));
+		foreach ($pendingBets as $pendingBet) {
+			$pendingSelections = \bets\BetSelection::findWhere(array('idbet=' => $pendingBet->id, 'status=' => 'pending'));
+			foreach ($pendingSelections as $pendingSelection) {
+				$pendingSelection->odds = 1;
+				$pendingSelection->status = 'void';
+				$pendingSelection->update();
+			}
+		}
+
+		$betValidator = new \bets\BetValidator();
+		$betValidator->validateBets();
+	}
+
+	private function sendCompetitionLeaderboardEmail()
+	{
 		$leaderboard = $this->getCompetitionLeaderboard();
+
 		$emailTextBody = "Position, Name, Profit, Success Rate" . "\r\n";
 		$emailHtmlBody = "<table border='1' bordercolor='#000000' cellpadding='5' cellspacing='0'>";
 		$emailHtmlBody .= "
@@ -75,27 +98,11 @@ class Widget_FC_ScriptController extends Engine_Content_Widget_Abstract
 			$mail->addTo($recipientEmail, $recipientName);
 			$mail->setFrom($fromAddress, $fromName);
 			$mail->setSubject($subject);
-			//$mail->setBodyHtml($emailHtmlBody);
+			$mail->setBodyHtml($emailHtmlBody);
 			$mail->setBodyText($emailTextBody);
-			$res = $mailApi->sendRaw($mail);
+			$mailApi->sendRaw($mail);
 		} catch (Exception $e) {
 		}
-	}
-
-	private function voidPendingBets()
-	{
-		$pendingBets = \bets\Bet::findWhere(array('idcompetition=' => $this->competition->id, 'status=' => 'pending'));
-		foreach ($pendingBets as $pendingBet) {
-			$pendingSelections = \bets\BetSelection::findWhere(array('idbet=' => $pendingBet->id, 'status=' => 'pending'));
-			foreach ($pendingSelections as $pendingSelection) {
-				$pendingSelection->odds = 1;
-				$pendingSelection->status = 'void';
-				$pendingSelection->update();
-			}
-		}
-
-		$betValidator = new \bets\BetValidator();
-		$betValidator->validateBets();
 	}
 
 	private function getCompetitionLeaderboard()
@@ -125,7 +132,21 @@ class Widget_FC_ScriptController extends Engine_Content_Widget_Abstract
 			$leaderboard[] = $userData;
 			$position++;
 		}
-
 		return $leaderboard;
+	}
+
+	private function createFutureCompetition()
+	{
+		$lastCompetition = \bets\Competition::getWhere(array(), "ORDER BY ts_end DESC");
+
+		$endDate = new \DateTime($lastCompetition->ts_end);
+		$endDate->add(new \DateInterval("P14D"));
+
+		$newCompetition = new \bets\Competition();
+		$newCompetition->start_balance = 10000;
+		$newCompetition->ts_start = $lastCompetition->ts_end;
+		$newCompetition->ts_end = date('Y-m-d H:i:s', $endDate->getTimestamp());
+		$newCompetition->settled = 'n';
+		$newCompetition->insert();
 	}
 }
