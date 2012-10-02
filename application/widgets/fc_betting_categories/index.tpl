@@ -16,27 +16,29 @@
 		border-top-right-radius: 5px;
 	}
 
+	.fc_betting_categories {
+		background-color: #ffffff;
+	}
+
 	.fc_betting_category {
 		cursor: pointer;
 		padding: 5px;
+		font-family: fc_pts;
+		font-weight: bold;
+		color: #0291d5;
+		border-bottom: 1px solid #cccccc;
 	}
 
 	.fc_betting_category:hover {
 		background-color: #e5e5e5;
 	}
 
-	.fc_betting_categories {
-		background-color: #ffffff;
+	a.category_branch {
+		color: #555;
 	}
+}
 
-	.fc_betting_category {
-		font-family: fc_pts;
-		font-weight: bold;
-	}
 
-	.fc_betting_category {
-		color: #0291d5;
-	}
 </style>
 
 <div class="fc_betting_categories">

@@ -1913,12 +1913,29 @@ div.group_discussions_list
 .activity-post-container
 {
   margin-top: 10px;
-  border: 1px solid #aeced9;
+  border: 2px solid #A0D4E2;
   background-color: #eee;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
 }
 .activity-post-container > form
 {
   border: 0;
+}
+#compose-menu {
+    display: block !important;
+}
+.activity-post-container > form > h1 {
+  font-family: fc_bebas;
+  color: #fff;
+  margin-bottom: 5px;
+  font-weight: 400;
+  word-spacing: 0.1em;
+}
+.activity-post-container > form > h1 span {
+  font-family: inherit;
+  color: #ff6600;
 }
 .global_form > div > div > h3 + div,
 .global_form > div > div > h3 + p + div
@@ -2066,12 +2083,14 @@ div.group_discussions_list
 .layout_page_user_profile_index .layout_video_profile_videos,
 .layout_page_user_profile_index .layout_user_profile_friends,
 .layout_page_user_profile_index .layout_user_profile_fields,
-.layout_page_user_profile_index .layout_core_profile_links {
+.layout_page_user_profile_index .layout_core_profile_links,
+.layout_page_user_profile_index .layout_user_profile_statistics {
     padding: 10px;
     background-color: $theme_foreground_background_color;
 }
 
-.layout_page_user_profile_index .layout_user_profile_fields {
+.layout_page_user_profile_index .layout_user_profile_fields,
+.layout_page_user_profile_index .layout_user_profile_statistics {
     padding-top: 1px;
 }
 
@@ -2428,7 +2447,7 @@ body {
   font-family: fc_bebas;
   font-size: 14px;
   text-align: left;
-  word-spacing: 0.4em;
+  word-spacing: 0.3em;
   padding: 5px;
 }
 #global_content .generic_layout_container > h3:first-child a {

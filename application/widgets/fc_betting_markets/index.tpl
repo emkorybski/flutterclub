@@ -26,6 +26,7 @@
 		font-size: 14px;
 		line-height: 25px;
 		font-weight: bold;
+		overflow: auto;
 	}
 	.fc_betting_market .selections {
 		background-color: #fff;
@@ -33,7 +34,8 @@
 		margin-bottom: 0;
 	}
 	.fc_betting_market .market_header .market_odds {
-		margin-left: 466px;
+		float: right;
+		margin-right: 35px;
 	}
 	.fc_selection {
 		display: block;
@@ -157,7 +159,7 @@
 		endforeach;
 		?>
 		</div>
-		<a class="link_to_betfair" href="http://sports.betfair.com/?mi=<?=$this->event->betfairMarketId?>&ex=1" target="_blank" title="Bet for real with Betfair">Bet for real with <img src="/fc/custom/images/betfair.jpg" alt="Betfair"></a>
+		<!-- <a class="link_to_betfair" href="http://sports.betfair.com/?mi=<?=$this->event->betfairMarketId?>&ex=1" target="_blank" title="Bet for real with Betfair">Bet for real with <img src="/fc/custom/images/betfair.jpg" alt="Betfair"></a> -->
 		<a class="link_to_market" href="<?=WEB_HOST . WEB_ROOT?>pages/betting?event=<?=$this->event->id?>">Market ID: <?=$this->event->id?></a>
 	<?php
 	endif;
@@ -178,6 +180,9 @@
 			},
 			error:function () {
 				alert('Internal error, try again');
+			},
+			complete:function () {
+				j('.action_place_bet')[0].scrollIntoView(false);
 			}
 		});
 	});

@@ -104,6 +104,7 @@ endif; ?>
   <div class="activity-post-container">
 
     <form method="post" action="<?php echo $this->url(array('module' => 'activity', 'controller' => 'index', 'action' => 'post'), 'default', true) ?>" class="activity" enctype="application/x-www-form-urlencoded" id="activity-form">
+      <h1>What's <span>New?</span></h1>
       <textarea id="activity_body" cols="1" rows="1" name="body"></textarea>
       <input type="hidden" name="return_url" value="<?php echo $this->url() ?>" />
       <?php if( $this->viewer() && $this->subject() && !$this->viewer()->isSelf($this->subject())): ?>
