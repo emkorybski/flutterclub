@@ -2083,12 +2083,14 @@ div.group_discussions_list
 .layout_page_user_profile_index .layout_video_profile_videos,
 .layout_page_user_profile_index .layout_user_profile_friends,
 .layout_page_user_profile_index .layout_user_profile_fields,
-.layout_page_user_profile_index .layout_core_profile_links {
+.layout_page_user_profile_index .layout_core_profile_links,
+.layout_page_user_profile_index .layout_user_profile_statistics {
     padding: 10px;
     background-color: $theme_foreground_background_color;
 }
 
-.layout_page_user_profile_index .layout_user_profile_fields {
+.layout_page_user_profile_index .layout_user_profile_fields,
+.layout_page_user_profile_index .layout_user_profile_statistics {
     padding-top: 1px;
 }
 
