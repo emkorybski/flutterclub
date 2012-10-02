@@ -85,17 +85,14 @@ class Widget_FC_ScriptController extends Engine_Content_Widget_Abstract
 		$emailHtmlBody .= "</table>";
 
 		try {
-			$fromAddress = Engine_Api::_()->getApi('settings', 'core')->getSetting('core.mail.from', 'admin@' . $_SERVER['HTTP_HOST']);
-			$fromName = Engine_Api::_()->getApi('settings', 'core')->getSetting('core.mail.name', 'Site Admin');
-
-			$recipientEmail = 'paul.negrutiu@gmail.com';
-			$recipientName = 'Paul Negrutiu';
+			$fromAddress = $toAddress = Engine_Api::_()->getApi('settings', 'core')->getSetting('core.mail.from', 'admin@' . $_SERVER['HTTP_HOST']);
+			$fromName = $toName = Engine_Api::_()->getApi('settings', 'core')->getSetting('core.mail.name', 'Site Admin');
 			$subject = "Competition settlement - Leaderboard.";
 
 			$mailApi = Engine_Api::_()->getApi('mail', 'core');
 			$mail = $mailApi->create();
 
-			$mail->addTo($recipientEmail, $recipientName);
+			$mail->addTo($toAddress, $toName);
 			$mail->setFrom($fromAddress, $fromName);
 			$mail->setSubject($subject);
 			$mail->setBodyHtml($emailHtmlBody);
