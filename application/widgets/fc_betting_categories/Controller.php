@@ -14,8 +14,7 @@ class Widget_FC_Betting_CategoriesController extends \Engine_Content_Widget_Abst
 		if (isset($_REQUEST['idsport']) || isset($_REQUEST['idevent'])) {
 			$idSport = $_REQUEST['idsport'];
 			$idEvent = $_REQUEST['idevent'];
-		}
-		else if (isset($_REQUEST['event'])) {
+		} else if (isset($_REQUEST['event'])) {
 			$event = \bets\Event::get(intval($_REQUEST['event']));
 			if ($event) {
 				$idSport = $event->getSport()->id;
@@ -95,8 +94,8 @@ class Widget_FC_Betting_CategoriesController extends \Engine_Content_Widget_Abst
 			$category = array(
 				'idsport' => $event->idsport,
 				'idevent' => $event->id,
-				'name' => $event->name);
-
+				'name' => $event->name,
+				'isLeaf' => $event->betfairMarketId != null);
 			$result[] = $category;
 		}
 
