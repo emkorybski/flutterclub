@@ -147,7 +147,7 @@
 			}
 			$goToMarketUrl = WEB_HOST . WEB_ROOT;
 			$goToMarketUrl .= \bets\fc::isMobileVersion() ? "pages/mbetting" : "pages/betting";
-			$goToMarketUrl .= "?event=" .$event->id;
+			$goToMarketUrl .= "?event=" .$this->event->id;
 		?>
 			<div class="selection_name"><?=$selection->name?></div>
 			<?php if ($selection->odds > 1) : ?>
