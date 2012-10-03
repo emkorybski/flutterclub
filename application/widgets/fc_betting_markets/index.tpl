@@ -145,6 +145,9 @@
 			if ($userSelection) {
 			$disabled = "disabled='disabled'";
 			}
+			$goToMarketUrl = WEB_HOST . WEB_ROOT;
+			$goToMarketUrl .= \bets\fc::isMobileVersion() ? "pages/mbetting" : "pages/betting";
+			$goToMarketUrl .= "?event=" .$event->id;
 		?>
 			<div class="selection_name"><?=$selection->name?></div>
 			<?php if ($selection->odds > 1) : ?>
@@ -160,7 +163,7 @@
 		?>
 		</div>
 		<!-- <a class="link_to_betfair" href="http://sports.betfair.com/?mi=<?=$this->event->betfairMarketId?>&ex=1" target="_blank" title="Bet for real with Betfair">Bet for real with <img src="/fc/custom/images/betfair.jpg" alt="Betfair"></a> -->
-		<a class="link_to_market" href="<?=WEB_HOST . WEB_ROOT?>pages/betting?event=<?=$this->event->id?>">Market ID: <?=$this->event->id?></a>
+		<a class="link_to_market" href="<?=$goToMarketUrl?">Market ID: <?=$this->event->id?></a>
 	<?php
 	endif;
 	?>
