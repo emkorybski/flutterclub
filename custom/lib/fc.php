@@ -14,12 +14,13 @@ class fc
 
 	public static function getGMTTimestamp()
 	{
-		return date('Y-m-d H:i:s', \DateTime::createFromFormat('Y-m-d H:i:s', gmdate("Y-m-d H:i:s", time()))->getTimestamp());
+		$datetime = new \DateTime();
+		return $datetime->format('Y-m-d H:i:s');
 	}
 
 	public static function formatTimestamp($timestamp)
 	{
-		return date("j M Y, G:i", strtotime($timestamp));
+		return date("j M Y, G:i GMT", strtotime($timestamp));
 	}
 
 	public static function formatDecimalNumber($number)
