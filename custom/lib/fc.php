@@ -20,7 +20,7 @@ class fc
 
 	public static function formatTimestamp($timestamp)
 	{
-		return date("j M Y, G:i GMT", strtotime($timestamp));
+		return date("j M Y, G:i T", strtotime($timestamp));
 	}
 
 	public static function formatDecimalNumber($number)
