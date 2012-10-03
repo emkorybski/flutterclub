@@ -6,6 +6,12 @@ class fc
 {
 	private static $oddsFormat = 'fractional';
 
+	public static function isMobileVersion()
+	{
+		$isMobile = \Engine_Api::_()->hasModuleBootstrap('mobi') && \Engine_Api::_()->mobi()->isMobile();
+		return $isMobile;
+	}
+
 	public static function getGMTTimestamp()
 	{
 		return date('Y-m-d H:i:s', \DateTime::createFromFormat('Y-m-d H:i:s', gmdate("Y-m-d H:i:s", time()))->getTimestamp());

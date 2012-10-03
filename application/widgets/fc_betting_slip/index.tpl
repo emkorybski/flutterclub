@@ -196,6 +196,9 @@ endif;
 					alert('Invalid selections timestamp. Betting slip will be refreshed');
 					fc.user.updateBettingSlip();
 				}
+				else if (response.result == 'balance_exceeded') {
+					alert("Unfortunately you don't have enough FB$ to place this bet.");
+				}
 				else if (response.result == 'max_stake_exceeded') {
 					alert('Maximum bet is FB$500!');
 				}

@@ -38,6 +38,18 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 		}
 	}
 
+	private function validateBalanceExceed()
+	{
+		$betTotalStake = 0;
+		$betSlipSelections = $_REQUEST['bets'];
+		foreach ($betSlipSelections as $betSlipSelection) {
+			$betTotalStake += floatval($betSlipSelection['stake']);
+		}
+
+		$userBalance = \bets\UserBalance::getCurrentBalance(false);
+		return $betTotalStake <= $userBalance;
+	}
+
 	private function validateAccumulator($userSelections)
 	{
 		$betSlipEvents = array();
@@ -128,6 +140,10 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 	{
 		if (!$this->validateSelectionTimestamp()) {
 			return 'invalid_selection_timestamp';
+		}
+
+		if (!$this->validateBalanceExceed()) {
+			return 'balance_exceeded';
 		}
 
 		if (!$this->validateSelectionMaxStake()) {
