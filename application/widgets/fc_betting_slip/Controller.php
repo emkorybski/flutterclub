@@ -47,7 +47,7 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 		}
 
 		$userBalance = \bets\UserBalance::getCurrentBalance(false);
-		return $betTotalStake <= $userBalance;
+		return $betTotalStake <= $userBalance->balance;
 	}
 
 	private function validateAccumulator($userSelections)
