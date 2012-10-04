@@ -48,7 +48,8 @@ class Widget_FC_Betting_MarketsController extends Engine_Content_Widget_Abstract
 		$now = date('Y-m-d H:i:s', mktime(date("H"), date("i"), date("s"), date("m"), date("d"), date("Y")));
 		$then = date('Y-m-d H:i:s', mktime(date("H") + 8, date("i"), date("s"), date("m"), date("d"), date("Y")));
 
-		$topSports = array('Soccer', 'Golf', 'Horse Racing', 'Rugby Union', 'Tennis', 'Cricket');
+		// $topSports = array('Soccer', 'Golf', 'Horse Racing', 'Rugby Union', 'Tennis', 'Cricket');
+		$topSports = array('Soccer', 'Golf', 'Horse Racing', 'Rugby Union', 'Cricket');
 		$upcomingEvents = array();
 		foreach ($topSports as $topSport) {
 			$sport = \bets\Sport::getWhere(array('name=' => $topSport));
