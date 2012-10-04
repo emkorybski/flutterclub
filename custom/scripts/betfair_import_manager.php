@@ -251,9 +251,7 @@ class BetfairImportManager
 			}
 		}
 		else if ($response->errorCode != 'OK') {
-			var_dump(debug_backtrace());
-			var_dump($response);
-			die("getEvents ERROR!");
+			var_dump($response->errorCode);
 		}
 	}
 
