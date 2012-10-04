@@ -250,6 +250,11 @@ class BetfairImportManager
 				$this->getEvents($bfEvent->eventId, $sportId, $parentId);
 			}
 		}
+		else {
+			var_dump(debug_backtrace());
+			var_dump($response);
+			die("getEvents ERROR!");
+		}
 	}
 
 	private function parseEvents($sport, $bfEvents)
