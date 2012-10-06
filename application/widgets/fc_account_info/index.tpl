@@ -33,6 +33,9 @@
 		background-color: #ffffff;
 		color: #666666;
 		text-indent: 5px;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
 	}
 
 	.aim1 {
