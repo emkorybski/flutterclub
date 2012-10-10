@@ -1373,3 +1373,26 @@ hr.line {
   padding: 5px 10px !important;
   margin-bottom: 5px !important;
 }
+
+/* login or signup */
+
+.layout_user_login_or_signup > h3:first-child {
+  color: #555;
+  background-color: transparent;
+  font-size: 21px;
+  word-spacing: .2em;
+}
+
+.layout_user_login_or_signup > h3:first-child a {
+  padding: 0px 8px 2px 8px;
+  background-color: #ce4847;
+  border: 1px solid #9F6969;
+  color: #fff;
+  background-image: url(/application/modules/Mobi/externals/images/mobile_buttonbg.png?c=21);
+  background-repeat: repeat-x;
+  background-position: top left;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
