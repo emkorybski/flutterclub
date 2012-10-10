@@ -1377,10 +1377,10 @@ hr.line {
 /* login or signup */
 
 .layout_user_login_or_signup > h3 {
-  color: #555;
-  background-color: transparent;
-  font-size: 21px;
-  word-spacing: .2em;
+  color: #555 !important;
+  background-color: transparent !important;
+  font-size: 21px !important;
+  word-spacing: .2em !important;
 }
 
 .layout_user_login_or_signup > h3 a {
