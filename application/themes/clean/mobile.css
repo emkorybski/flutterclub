@@ -1396,3 +1396,12 @@ hr.line {
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
+
+/* group profile */
+
+.layout_group_profile_options #profile_options li a {
+  display: inline-block;
+  padding: 0;
+  padding-left: 21px;
+  margin: 5px;
+}
