@@ -1376,14 +1376,14 @@ hr.line {
 
 /* login or signup */
 
-.layout_user_login_or_signup > h3:first-child {
+.layout_user_login_or_signup > h3 {
   color: #555;
   background-color: transparent;
   font-size: 21px;
   word-spacing: .2em;
 }
 
-.layout_user_login_or_signup > h3:first-child a {
+.layout_user_login_or_signup > h3 a {
   padding: 0px 8px 2px 8px;
   background-color: #ce4847;
   border: 1px solid #9F6969;
