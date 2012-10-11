@@ -2098,6 +2098,15 @@ div.group_discussions_list
     width: auto;
 }
 
+/* Pagination of friends list causes creates nested divs with class 'layout_user_profile_friends' */
+.layout_user_profile_friends > .layout_user_profile_friends h3 {
+    display: none;
+}
+
+.layout_user_profile_friends > .layout_user_profile_friends {
+    padding: 0;
+}
+
 /* Groups */
 
 .groups_browse {
