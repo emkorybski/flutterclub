@@ -127,7 +127,7 @@
 
 </style>
 
-<div class="fc_betting_markets">
+<div class="fc_betting_markets upcoming_events">
 <?php
 foreach ( $this->upcomingEvents as $event) :
 ?>
