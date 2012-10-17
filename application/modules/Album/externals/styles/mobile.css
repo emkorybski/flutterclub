@@ -1,0 +1,347 @@
+
+/* $Id: mobile.css 8825 2011-04-09 01:34:20Z john $ */
+
+
+
+/*
+BROWSE ALBUMS, VIEW ALBUM
+Styles for the browse and view album pages.
+*/
+.album_options
+{
+  margin: 5px 0px 12px 0px;
+  overflow: hidden;
+}
+.album_options a
+{
+  margin-right: 15px;
+}
+
+
+/*
+ICONS
+*/
+.icon_photos_new
+{
+  background-image: url(~/application/modules/Album/externals/images/add.png);
+}
+
+
+
+
+/*
+ACTIVITY FEED COMPOSER PHOTO
+These styles are used for the attachment composer above the
+main feed.
+*/
+#compose-photo-activator,
+#compose-photo-menu span
+{
+  background-repeat: no-repeat;
+  background-image: url(~/application/modules/Album/externals/images/album_upload.png);
+}
+#compose-photo-preview-image
+{
+  max-width: 160px;
+}
+#compose-photo-form-fancy-file
+{
+  background-image: url(~/application/modules/Album/externals/images/add.png);
+}
+
+
+
+
+
+
+
+
+
+
+/*
+VIEW MY ALBUMS
+Styles for the member's own albums
+management page.
+*/
+ul.albums_manage
+{
+  clear: both;
+  overflow: hidden;
+}
+ul.albums_manage > li
+{
+  overflow: hidden;
+}
+ul.albums_manage > li + li
+{
+  margin-top: 10px;
+}
+ul.albums_manage .albums_manage_photo
+{
+  overflow: hidden;
+  text-align: center;
+}
+ul.albums_manage .albums_manage_photo img
+{
+  text-align: center;
+  margin: 4px;
+}
+ul.albums_manage .albums_manage_info
+{
+  text-align: center;
+}
+ul.albums_manage .albums_manage_info h3
+{
+  font-weight: bold;
+  font-size: 11pt;
+  letter-spacing: 0px;
+}
+ul.albums_manage .albums_manage_info_photos
+{
+  font-size: .8em;
+  color: $theme_font_color_light;
+  text-align: center;
+}
+ul.albums_manage .albums_manage_info_desc
+{
+  display: none;
+}
+ul.albums_manage .albums_manage_options
+{
+  display: none;
+}
+
+
+
+
+/*
+VIEW PHOTO
+These styles are used on the view photo page within
+an album.
+*/
+#global_page_album-photo-view #global_content > h2
+{
+  text-align: center;
+  font-size: 1.3em;
+}
+div.albums_viewmedia .albums_viewmedia_nav
+{
+  clear: both;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+div.albums_viewmedia .albums_viewmedia_nav > div
+{
+  float: left;
+  overflow: visible;
+}
+div.albums_viewmedia .albums_viewmedia_nav > div + div
+{
+  float: none;
+  text-align: right;
+}
+div.albums_viewmedia .albums_viewmedia_nav > div + div > a + a
+{
+  margin-left: 20px;
+}
+div.album_viewmedia_container a:link
+{
+  text-decoration: none;
+}
+div.albums_viewmedia_info p
+{
+  text-align: left;
+}
+div.albums_viewmedia > span + div > a
+{
+  display: block;
+  margin-bottom: 5px;
+  text-align: center;
+}
+div.albums_viewmedia > span + div > a:link
+{
+  display: block;
+  margin-bottom: 5px;
+  text-align: center;
+}
+div.albums_viewmedia_info .albums_viewmedia_info_title
+{
+  margin-top: 5px;
+  font-weight: bold;
+}
+div.albums_viewmedia_info .albums_viewmedia_info_caption
+{
+  margin-top: 3px;
+  font-size: .8em;
+  text-align: center;
+  font-size: 10pt;
+  margin-top: 3px;
+}
+#global_page_album-photo-view .comments
+{
+  width: auto;
+}
+#global_page_album-photo-view .albums_viewmedia
+{
+  min-width: 0px;
+  max-width: none;
+  margin: 0px;
+}
+#global_page_album-photo-view .albums_viewmedia_nav
+{
+  margin-top: 15px;
+  text-align: center;
+}
+#global_page_album-photo-view .albums_viewmedia_nav > div
+{
+  float: none;
+  text-align: center;
+}
+#global_page_album-photo-view .albums_viewmedia_nav > div + div
+{
+  margin-top: 10px;
+  font-weight: bold;
+}
+#global_page_album-photo-view .albums_viewmedia_nav > div + div > a
+{
+  +rounded(3px);
+  display: inline-block;
+  padding: 4px 7px;
+  font-size: 11pt;
+  background-color: $theme_buttontabs_background_color;
+  color: $theme_buttontabs_font_color_hover;
+}
+#global_page_album-photo-view .albums_viewmedia_info
+{
+  +rounded(0px);
+  background: none;
+  border: none;
+  padding: 0px;
+}
+#global_page_album-photo-view .album_viewmedia_container
+{
+  margin: 10px 0px 0px 0px;
+  text-align: center;
+}
+#global_page_album-photo-view #media_photo
+{
+  text-align: center;
+  max-width: 95%;
+}
+#global_page_album-photo-view .albums_viewmedia_info_title
+{
+  text-align: center;
+  font-size: 13pt;
+}
+#global_page_album-photo-view .albums_viewmedia_info_date,
+#global_page_album-photo-view .albums_viewmedia_info_actions
+{
+  display: none;
+}
+
+
+
+
+
+
+
+/*
+VIEW ALBUM
+*/
+#global_page_album-album-view #global_content > h2
+{
+  text-align: center;
+  font-size: 1.3em;
+}
+#global_page_album-album-view .comments
+{
+  width: auto;
+}
+#global_page_album-album-view .album_options
+{
+  display: none;
+}
+
+
+/*
+POPULAR/RECENT ALBUMS/PHOTOS WIDGETS
+Lists the most popular or recent photos or albums.
+*/
+.layout_album_list_popular_albums,
+.layout_album_list_popular_photos,
+.layout_album_list_recent_albums,
+.layout_album_list_recent_photos
+{
+  clear: both;
+  overflow: auto;
+  width: 100%;
+}
+
+
+
+/* ACTION TYPE ICONS */
+.activity_icon_comment_album,
+.activity_icon_comment_album_photo
+{
+  background-image: url(~/application/modules/Core/externals/images/types/post.png);
+}
+
+
+
+
+
+/* ITEM TYPE ICONS */
+.item_icon_album,
+.item_icon_album_photo
+{
+  background-image: url(~/application/modules/Album/externals/images/types/album.png);
+}
+
+
+
+
+/* ICONS */
+.icon_photos_new
+{
+  background-image: url(~/application/modules/Album/externals/images/add.png);
+}
+.icon_photos_manage
+{
+  background-image: url(~/application/modules/Album/externals/images/album_manage.png);
+}
+.icon_photos_settings
+{
+  background-image: url(~/application/modules/Album/externals/images/album_editinfo.png);
+}
+.icon_photos_delete
+{
+  background-image: url(~/application/modules/Album/externals/images/album_delete.png);
+}
+.icon_photos_flip_horizontal
+{
+  background-image: url(~/application/modules/Album/externals/images/flip_horizontal.png);
+}
+.icon_photos_flip_vertical
+{
+  background-image: url(~/application/modules/Album/externals/images/flip_vertical.png);
+}
+.icon_photos_rotate_ccw
+{
+  background-image: url(~/application/modules/Album/externals/images/rotate_ccw.png);
+}
+.icon_photos_rotate_cw
+{
+  background-image: url(~/application/modules/Album/externals/images/rotate_cw.png);
+}
+
+
+
+
+
+
+
+/* hide menu items */
+.headline .tabs .navigation li > a.album_main_upload
+{
+  display: none;
+}

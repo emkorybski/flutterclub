@@ -32,12 +32,12 @@ class BetfairResultsManager
 		$unprocessedBetfairResults = \bets\BetfairResult::findWhere(array('processed=' => 'n'));
 		foreach ($unprocessedBetfairResults as $betfairResult) {
 			$winners = explode(",", $betfairResult->winner);
-			array_walk($winners, create_function('&$val', '$val = strtolower(trim($val));'));
+			array_walk($winners, create_function('&$val', '$val = trim($val);'));
 
 			$event = \bets\Event::getWhere(array('betfairMarketId=' => $betfairResult->betfairMarketId));
 			$eventSelections = \bets\Selection::findWhere(array('idevent=' => $event->id));
 			foreach ($eventSelections as $selection) {
-				$selection->status = in_array(strtolower($selection->name), $winners)
+				$selection->status = in_array($selection->name, $winners)
 					? 'won'
 					: 'lost';
 				$selection->update();

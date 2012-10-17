@@ -73,14 +73,16 @@
 	}
 
 	.fc_betting_market {
-		background-color: #bfd8df;
+		background-color: #DBE2E3;
 		margin-bottom: 10px;
 		overflow: auto;
 		padding-bottom: 10px;
+		border-top-left-radius:8px;
+		border-top-right-radius:8px;
 	}
 
 	.fc_betting_market h1.market_title {
-		background-color: #cd4849;
+		background-color: #aa0088;
 		color: #fff;
 		margin-left: 0;
 		padding: 5px 10px;
@@ -89,6 +91,8 @@
 		-moz-box-shadow: 0px 5px 0px rgba(50, 50, 50, 0.5);
 		box-shadow: 0px 3px 2px rgba(50, 50, 50, 0.5);
 		position: relative;
+		border-top-left-radius:8px;
+		border-top-right-radius:8px;
 	}
 
 	.fc_betting_market p.market_title {
@@ -101,7 +105,7 @@
 		float: right;
 		margin: 10px;
 		font-weight: bold;
-		color: #5F93B4;
+		color: #000000;
 		margin-bottom: 0;
 	}
 
@@ -127,7 +131,7 @@
 
 </style>
 
-<div class="fc_betting_markets upcoming_events">
+<div class="fc_betting_markets">
 <?php
 foreach ( $this->upcomingEvents as $event) :
 ?>

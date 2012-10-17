@@ -8,26 +8,50 @@
 <?php if ($this->user) { ?>
 
 <style type="text/css">
+
+@import "~/application/custom/fonts/nunito/stylesheet.css";
+
 	.mobile_account_info {
-		float: right; 
-		background-color: #70B8C7;
-		border: 2px solid #39abcd;
-		color: #fff;
-		font-family: fc_bebas;
-		padding: 8px 3px;
+		width:70%; 
+		margin-top:0px;
+		margin-bottom:8px;
+		margin-left:auto;
+		margin-right:auto;
+		background-color: #dbe2e3;
+		border: 5px solid #000;
+		color: #000;
+		font-family: "nunito";
+		padding: 8px 5px;
 		border-radius: 5px;
-		position: absolute;
-		right: 5px;
-		top: 7px;
+		text-align:center;
+		
+		
 		letter-spacing: 1px;
-		font-size: 10px;
+		font-size: 14px;
 		line-height: 10px;
 	}
+	
+	.mobile_account_info .balance {
+		
+		color:#aa0088;
+		font-weight:bold;
+	}
+	
+	.mobile_account_info .remaining{
+		
+		color:#aa0088;
+		font-weight:bold;
+	}
+	
 	.mobile_account_info .balance:before {
 		content: 'FB$ ';
+		
+		font-weight:bold;
 	}
 	.mobile_account_info .balance:after {
 		content: ' | ';
+		
+		font-weight:bold;
 	}
 </style>
 

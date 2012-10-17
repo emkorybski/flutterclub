@@ -1,0 +1,545 @@
+<!DOCTYPE NewsML PUBLIC "urn:newsml:iptc.org:20001006:NewsMLv1.2:1" "http://www.afp.com/dtd/NewsMLv1.2.dtd"> 
+<NewsML> 
+	<NewsEnvelope> 
+		<DateAndTime>20101007T024726-04:00</DateAndTime> 
+	</NewsEnvelope> 
+	
+	<NewsItem> 
+		<Identification> 
+			<NewsIdentifier> 
+				<ProviderId>www.feedsyndicate.com</ProviderId> 
+				<DateId>20101006</DateId> 
+				<NewsItemId>7020135382</NewsItemId> 
+				<RevisionId PreviousRevision="0" Update="N">1</RevisionId> 
+				<PublicIdentifier>urn:NewsML:www.feedsyndicate.com:20101006:7020135382:1</PublicIdentifier> 
+			</NewsIdentifier> 
+		</Identification> 
+		
+		<NewsManagement> 
+			<NewsItemType FormalName="News"/> 
+			<FirstCreated>20101000T024726-0400</FirstCreated> 
+			<ThisRevisionCreated>20101000T024726-0400</ThisRevisionCreated> 
+			<Status FormalName="Usable"/> 
+		</NewsManagement> 
+		
+		<NewsComponent>	
+			<NewsLines> 
+				<HeadLine>Oh, Roy! Phils Ace Halladay No-Hits Reds To Kick Off NLDS</HeadLine> 
+				<DateLine></DateLine> 
+				<CopyrightLine>© 2010 </CopyrightLine> 
+			</NewsLines> 
+			<AdministrativeMetadata> 
+				<Provider> 
+				<Party FormalName=""/> 
+				</Provider> 
+				<Creator> 
+				<Party FormalName=""/> 
+				</Creator> 
+			</AdministrativeMetadata> 
+			<DescriptiveMetadata> 
+				<SubjectCode> 
+	<Subject FormalName="Major League Baseball - National League" /> 
+</SubjectCode> 
+ 
+			</DescriptiveMetadata> 
+ 
+		<NewsComponent> 
+		<Role FormalName="Summary" /> 
+         <ContentItem> 
+           <MediaType FormalName="Text"/> 
+           <Format FormalName="bcNITF2.5"/> 
+           <DataContent> 
+             <![CDATA[Philadelphia Phillies ace Roy Halladay no-hit the Cincinnati Reds Wednesday in game 1 of the NLDS. The Phils beat the Reds 4-0 and Halladay became the second pitcher to throw a no-no in postseason history (Yanks' Don Larsen tossed a perfect game the 1956 World Series).]]> 
+           </DataContent> 
+         </ContentItem> 
+       </NewsComponent> 
+			
+ 
+	<NewsComponent> 
+		<ContentItem> 
+		  <MediaType FormalName="Text"/> 
+		  <Format FormalName="bcNITF2.5"/> 
+		  <DataContent> 
+<![CDATA[&lt;p&gt;Ed Condran - AHN Sports Correspondent&lt;/p&gt; 
+&lt;p&gt;Philadelphia, PA, United States (AHN) - During spring training Roy Halladay talked about his dream of pitching in the postseason.&lt;/p&gt; 
+&lt;p&gt;  His dream was a nightmare for the Cincinnati Reds.&lt;/p&gt; 
+&lt;p&gt;  Halladay became just the second pitcher to throw a no-hitter in a post-season game.&lt;/p&gt; 
+&lt;p&gt;  The Phillies blanked the Reds 4-0 Wednesday at Citizens Bank Park to take a 1-0 lead in their best of five NLDS series.&lt;/p&gt; 
+&lt;p&gt;  Halladay spanked the Reds throughout the game. The robotic righthander was perfect, save a fifth inning walk.&lt;/p&gt; 
+&lt;p&gt;  Halladay pounded the plate as a remarkable 79 of his 104 pitches were strikes.&lt;/p&gt; 
+&lt;p&gt;  "He was tremendous," manager Charlie Manuel said. "Great command. Absolutely unreal. I felt he used all of his pitches pretty good."&lt;/p&gt; 
+&lt;p&gt;  Halladay, who flashed a brief smile while detailing his special performance, acknowledged the significance of his accomplishment but noted that it takes a back seat to his ultimate goal, winning a World Series.&lt;/p&gt; 
+&lt;p&gt;  "It was one of those special things that you'll always remember," Halladay said. "But the playoffs take priority. It's pretty neat for me to be able to go out and win a game like that and know there's more to come for us and more to accomplish. We're one game up. We've got to win two more."&lt;/p&gt; 
+&lt;p&gt;  If the Phillies offense generates runs for Roy Oswalt and Cole Hamels like they did for Halladay, it could be a short series. The Phillies gave Halladay, who tossed his second no-hitter of the season, ample support by scoring all four runs in the first two innings.&lt;/p&gt; 
+&lt;p&gt;  Shane Victorino led the attack with a double, a single and a pair of RBI.&lt;/p&gt; 
+&lt;p&gt;  It was clearly Halladay's night. The robotic righthander drove in a run with a single. "That made it fun for me," Halladay said.&lt;/p&gt; 
+&lt;p&gt;  His pitching performance made it fun for his teammates and Phillies fans. Everyone at the soldout park in South Philly was ecstatic except Reds manager Dusty Baker and his team.&lt;/p&gt; 
+&lt;p&gt;  "That is the best pitched game I've seen since I've been going to the playoffs and the World Series," Baker said. "I don't think he threw anything down the heart of the plate tonight. We got beat by a great performance tonight."&lt;/p&gt; 
+&lt;p&gt;  "It was like a situation where you're almost helpless because the guy was dealing. It's the second time this year he's done that against two pretty good hitting teams, our team and the Florida Marlins. Like they say, good pitching beats good hitting and that was great pitching tonight."&lt;/p&gt;]]> 
+		  </DataContent> 
+		</ContentItem> 
+	</NewsComponent> 
+	
+ 
+	<NewsComponent Duid="7020135382.jpg"> 
+		<NewsLines> 
+			<HeadLine>Oh, Roy! Phils Ace Halladay No-Hits Reds To Kick Off NLDS</HeadLine> 
+			<CopyrightLine>© Wikipedia</CopyrightLine> 
+		</NewsLines> 
+		
+		<AdministrativeMetadata> 
+			<Creator> 
+				<Party FormalName="keith allison" /> 
+			</Creator> 
+		</AdministrativeMetadata> 
+		
+		
+			<NewsComponent> 
+			<Role FormalName="Caption" /> 
+			<ContentItem> 
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent> 
+					<![CDATA[Roy Halladay]]> 
+				</DataContent> 
+			</ContentItem> 
+		</NewsComponent> 
+		
+		
+		<NewsComponent> 
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://media.feedsyndicate.com/media/8/90018887_1.jpg"> 
+			<MediaType FormalName="Photo" /> 
+		</ContentItem> 
+		</NewsComponent> 
+	</NewsComponent> 
+			
+ 
+		</NewsComponent> 
+	</NewsItem> 
+		
+ 
+	<NewsItem> 
+		<Identification> 
+			<NewsIdentifier> 
+				<ProviderId>www.feedsyndicate.com</ProviderId> 
+				<DateId>20101006</DateId> 
+				<NewsItemId>7020135078</NewsItemId> 
+				<RevisionId PreviousRevision="0" Update="N">1</RevisionId> 
+				<PublicIdentifier>urn:NewsML:www.feedsyndicate.com:20101006:7020135078:1</PublicIdentifier> 
+			</NewsIdentifier> 
+		</Identification> 
+		
+		<NewsManagement> 
+			<NewsItemType FormalName="News"/> 
+			<FirstCreated>20101000T024726-0400</FirstCreated> 
+			<ThisRevisionCreated>20101000T024726-0400</ThisRevisionCreated> 
+			<Status FormalName="Usable"/> 
+		</NewsManagement> 
+		
+		<NewsComponent>	
+			<NewsLines> 
+				<HeadLine>Seeds Flourish At CWG Tennis; England's O'Brien Tumbles</HeadLine> 
+				<DateLine></DateLine> 
+				<CopyrightLine>© 2010 </CopyrightLine> 
+			</NewsLines> 
+			<AdministrativeMetadata> 
+				<Provider> 
+				<Party FormalName=""/> 
+				</Provider> 
+				<Creator> 
+				<Party FormalName=""/> 
+				</Creator> 
+			</AdministrativeMetadata> 
+			<DescriptiveMetadata> 
+				<SubjectCode> 
+	<Subject FormalName="sports event" /> 
+</SubjectCode> 
+ 
+			</DescriptiveMetadata> 
+ 
+		<NewsComponent> 
+		<Role FormalName="Summary" /> 
+         <ContentItem> 
+           <MediaType FormalName="Text"/> 
+           <Format FormalName="bcNITF2.5"/> 
+           <DataContent> 
+             <![CDATA[Top seeds Somdev Devvarman of India and Australia's Anastasia Rodionova highlighted second-round winners Wednesday by dismissing their opponents in the men's and women's singles tennis event, respectively, at the 2010 Commonwealth Games.]]> 
+           </DataContent> 
+         </ContentItem> 
+       </NewsComponent> 
+			
+ 
+	<NewsComponent> 
+		<ContentItem> 
+		  <MediaType FormalName="Text"/> 
+		  <Format FormalName="bcNITF2.5"/> 
+		  <DataContent> 
+<![CDATA[&lt;p&gt;Jojo Doria - AHN Sports Contributor&lt;/p&gt; 
+&lt;p&gt;New Delhi, India (AHN) - Top seeds Somdev Devvarman of India and Australia's Anastasia Rodionova highlighted second-round winners Wednesday by dismissing their opponents in the men's and women's singles tennis event, respectively, at the 2010 Commonwealth Games.&lt;/p&gt; 
+&lt;p&gt;  Devvarman, ranked No. 100 in the world, eliminated Sri Lanka's Amresh Jayawickrene in 6-0, 6-1 fashion, while Russian-born Rodiova pasted Larikah Russell of Bahamas, 6-1, 6-3.&lt;/p&gt; 
+&lt;p&gt;  England's Katie O'Brien, third seed, was the only major casualty Wednesday as seeds advanced into the quarterfinals. O'Brien succumbed to local bet Rushmi Chakravarthi, 1-6, 7-6, 7-5.&lt;/p&gt; 
+&lt;p&gt;  Peter Luczak and Matt Ebden, second and third seed, respectively, led the Australian charge into the last eight. Luczak thumped India's Bopanna Rohan, while Ebden conquered Qureshi Aisam-ul-haq of Pakistan.&lt;/p&gt; 
+&lt;p&gt;  English fourth seed James Ward also advanced after eliminating Scotland's Jamie Murray, brother of world No. 4 Andy Murray.&lt;/p&gt; 
+&lt;p&gt;  Crowd favorite Sania Mirza, the first Indian female player to win a WTA tournament, booked a spot in the quarterfinal after posting a 6-0, 6-2 demolition of Brittay Teei of the Cook Islands.&lt;/p&gt; 
+&lt;p&gt;  Australian fourth seed Sally Peers also moved through the last eight following a straight sets conquest of Irufa Mahir of the Maldives.&lt;/p&gt;]]> 
+		  </DataContent> 
+		</ContentItem> 
+	</NewsComponent> 
+	
+ 
+	<NewsComponent Duid="7020135078.jpg"> 
+		<NewsLines> 
+			<HeadLine>Seeds Flourish At CWG Tennis; England's O'Brien Tumbles</HeadLine> 
+			<CopyrightLine>© Wikipedia</CopyrightLine> 
+		</NewsLines> 
+		
+		<AdministrativeMetadata> 
+			<Creator> 
+				<Party FormalName="mario zamic" /> 
+			</Creator> 
+		</AdministrativeMetadata> 
+		
+		
+			<NewsComponent> 
+			<Role FormalName="Caption" /> 
+			<ContentItem> 
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent> 
+					<![CDATA[Somdev Devvarman]]> 
+				</DataContent> 
+			</ContentItem> 
+		</NewsComponent> 
+		
+		
+		<NewsComponent> 
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://media.feedsyndicate.com/media/c/90018883_1.jpg"> 
+			<MediaType FormalName="Photo" /> 
+		</ContentItem> 
+		</NewsComponent> 
+	</NewsComponent> 
+			
+ 
+		</NewsComponent> 
+	</NewsItem> 
+		
+ 
+	<NewsItem> 
+		<Identification> 
+			<NewsIdentifier> 
+				<ProviderId>www.feedsyndicate.com</ProviderId> 
+				<DateId>20101006</DateId> 
+				<NewsItemId>7020134322</NewsItemId> 
+				<RevisionId PreviousRevision="0" Update="N">1</RevisionId> 
+				<PublicIdentifier>urn:NewsML:www.feedsyndicate.com:20101006:7020134322:1</PublicIdentifier> 
+			</NewsIdentifier> 
+		</Identification> 
+		
+		<NewsManagement> 
+			<NewsItemType FormalName="News"/> 
+			<FirstCreated>20101000T024726-0400</FirstCreated> 
+			<ThisRevisionCreated>20101000T024726-0400</ThisRevisionCreated> 
+			<Status FormalName="Usable"/> 
+		</NewsManagement> 
+		
+		<NewsComponent>	
+			<NewsLines> 
+				<HeadLine>Surgery Completed: Phils' Doc Tosses No-Hitter In NLDS Opener Vs. Reds</HeadLine> 
+				<DateLine></DateLine> 
+				<CopyrightLine>© 2010 </CopyrightLine> 
+			</NewsLines> 
+			<AdministrativeMetadata> 
+				<Provider> 
+				<Party FormalName=""/> 
+				</Provider> 
+				<Creator> 
+				<Party FormalName=""/> 
+				</Creator> 
+			</AdministrativeMetadata> 
+			<DescriptiveMetadata> 
+				<SubjectCode> 
+	<Subject FormalName="Major League Baseball - National League" /> 
+</SubjectCode> 
+ 
+			</DescriptiveMetadata> 
+ 
+		<NewsComponent> 
+		<Role FormalName="Summary" /> 
+         <ContentItem> 
+           <MediaType FormalName="Text"/> 
+           <Format FormalName="bcNITF2.5"/> 
+           <DataContent> 
+             <![CDATA[Roy Halladay made his playoff debut a special one, tossing a a no-hitter to lead the Philadelphia Phillies over the Cincinnati Reds 4-0 in game one of the NLDS Wednesday. 'Doc' allowed just one walk in a masterful performance]]> 
+           </DataContent> 
+         </ContentItem> 
+       </NewsComponent> 
+			
+ 
+	<NewsComponent> 
+		<ContentItem> 
+		  <MediaType FormalName="Text"/> 
+		  <Format FormalName="bcNITF2.5"/> 
+		  <DataContent> 
+<![CDATA[&lt;p&gt;Ed Condran - AHN Sports Correspondent&lt;/p&gt; 
+&lt;p&gt;Philadelphia, PA, United States (AHN) - Roy Halladay made his playoff debut a special one, tossing a a no-hitter to lead the Philadelphia Phillies over the Cincinnati Reds 4-0 in game one of the NLDS Wednesday. 'Doc' allowed just one walk in a masterful performance&lt;/p&gt; 
+&lt;p&gt;  Halladay pounded the plate with 46 of his 61 pitches called strikes through five frames.&lt;/p&gt; 
+&lt;p&gt;  Halladay kept the Reds off-balance with a good fastball, a-plus change-up and a sharp breaking curveball.&lt;/p&gt; 
+&lt;p&gt;  The Phillies gave Halladay ample support by scoring four runs in the first two innings.&lt;/p&gt; 
+&lt;p&gt;  Shane Victorino led the attack with a double, a single and a pair of RBIs.&lt;/p&gt; 
+&lt;p&gt;  Halladay helped himself with a run batted in.&lt;/p&gt;]]> 
+		  </DataContent> 
+		</ContentItem> 
+	</NewsComponent> 
+	
+ 
+	<NewsComponent Duid="7020134322.jpg"> 
+		<NewsLines> 
+			<HeadLine>Surgery Completed: Phils' Doc Tosses No-Hitter In NLDS Opener Vs. Reds</HeadLine> 
+			
+		</NewsLines> 
+		
+		
+		
+		<NewsComponent> 
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://media.feedsyndicate.com/media/e/90018876_1.gif"> 
+			<MediaType FormalName="Photo" /> 
+		</ContentItem> 
+		</NewsComponent> 
+	</NewsComponent> 
+			
+ 
+		</NewsComponent> 
+	</NewsItem> 
+		
+ 
+	<NewsItem> 
+		<Identification> 
+			<NewsIdentifier> 
+				<ProviderId>www.feedsyndicate.com</ProviderId> 
+				<DateId>20101006</DateId> 
+				<NewsItemId>7020134093</NewsItemId> 
+				<RevisionId PreviousRevision="0" Update="N">1</RevisionId> 
+				<PublicIdentifier>urn:NewsML:www.feedsyndicate.com:20101006:7020134093:1</PublicIdentifier> 
+			</NewsIdentifier> 
+		</Identification> 
+		
+		<NewsManagement> 
+			<NewsItemType FormalName="News"/> 
+			<FirstCreated>20101000T024726-0400</FirstCreated> 
+			<ThisRevisionCreated>20101000T024726-0400</ThisRevisionCreated> 
+			<Status FormalName="Usable"/> 
+		</NewsManagement> 
+		
+		<NewsComponent>	
+			<NewsLines> 
+				<HeadLine>Baylor's Dunn Arrested, Suspended For Alleged Assault Of Girlfriend</HeadLine> 
+				<DateLine></DateLine> 
+				<CopyrightLine>© 2010 </CopyrightLine> 
+			</NewsLines> 
+			<AdministrativeMetadata> 
+				<Provider> 
+				<Party FormalName=""/> 
+				</Provider> 
+				<Creator> 
+				<Party FormalName=""/> 
+				</Creator> 
+			</AdministrativeMetadata> 
+			<DescriptiveMetadata> 
+				<SubjectCode> 
+	<Subject FormalName="college basketball" /> 
+</SubjectCode> 
+ 
+			</DescriptiveMetadata> 
+ 
+		<NewsComponent> 
+		<Role FormalName="Summary" /> 
+         <ContentItem> 
+           <MediaType FormalName="Text"/> 
+           <Format FormalName="bcNITF2.5"/> 
+           <DataContent> 
+             <![CDATA[Baylor senior guard LaceDarius Dunn, one of the key members of the Bears' run to the Elite Eight last season, has been indefinitely suspended following his arrest in Waco, Texas, on charges of aggravated assault involving his girlfriend, the school announced Tuesday.]]> 
+           </DataContent> 
+         </ContentItem> 
+       </NewsComponent> 
+			
+ 
+	<NewsComponent> 
+		<ContentItem> 
+		  <MediaType FormalName="Text"/> 
+		  <Format FormalName="bcNITF2.5"/> 
+		  <DataContent> 
+<![CDATA[&lt;p&gt;Jojo Doria - AHN Sports Contributor&lt;/p&gt; 
+&lt;p&gt;Waco, TX, United States (AHN) - Baylor senior guard LaceDarius Dunn, one of the key members of the Bears' run to the Elite Eight last season, has been indefinitely suspended following his arrest in Waco, Texas, on charges of aggravated assault involving his girlfriend, the school announced Tuesday.&lt;/p&gt; 
+&lt;p&gt;  Multiple reports indicated Dunn, 23, turned himself in to authorities Tuesday to face an aggravated assault charge, in which he is accused of breaking his girlfriend's jaw during an incident last week.&lt;/p&gt; 
+&lt;p&gt;  According to police reports, the alleged assault occurred on Sept. 27 during an argument between the 6-foot-4, 205 Baylor star guard and his longtime girlfriend, LaCharlesla Edwards, 21.&lt;/p&gt; 
+&lt;p&gt;  She reportedly went to the hospital to seek treatment after Dunn punched her in the face.&lt;/p&gt; 
+&lt;p&gt;  Dunn and Edwards, the mother of his 3-year-old son, have been dating for nearly a decade.&lt;/p&gt; 
+&lt;p&gt;  Meanwhile, Edwards indicated Wednesday that she has no interest in pressing charges in the case.&lt;/p&gt; 
+&lt;p&gt;  In a statement released through her attorney Jason Darling Wednesday, Edwards stated that Dunn "has never struck me during our long term relationship."&lt;/p&gt; 
+&lt;p&gt;  Edwards also indicated that she and her family are "deeply disturbed" about the "misinformation and half truths" reported by media regarding the incident.&lt;/p&gt; 
+&lt;p&gt;  She also added: "What happened on the night of September 27 was an accident and I went to the hospital for precautionary reasons. I never expressed any interest in pressing charges nor will I in the future press charges on this incident. I am fine and my jaw is not broken as is being reported."&lt;/p&gt; 
+&lt;p&gt;  Dunn was released from the McLennan County Jail Tuesday.&lt;/p&gt; 
+&lt;p&gt;  In a release, Baylor said it was gathering all the facts pertaining to the incident and will not issue further comment until more information becomes available.&lt;/p&gt; 
+&lt;p&gt;  The news of Dunn's suspension came a day after Baylor's leading scorer was named as one of the 50 preseason candidates for the John R. Wooden Award.&lt;/p&gt; 
+&lt;p&gt;  During his junior year, Dunn set single-season records for points (704) and free throw shooting percentage (85.7 on 126-of-147 attempts).&lt;/p&gt; 
+&lt;p&gt;  He also established marks on three-point field goals (116), while becoming the career-leader in three pointers (299) in the program's history.&lt;/p&gt; 
+&lt;p&gt;  Dunn was also named a second-team All-Big 12 selection as he averaged 19.6 points and 4.8 rebounds last season when Baylor set a school record 28 victories.&lt;/p&gt; 
+&lt;p&gt;  The Bears got within one win of making it first NCAA Final Four appearance in 60 years.&lt;/p&gt;]]> 
+		  </DataContent> 
+		</ContentItem> 
+	</NewsComponent> 
+	
+ 
+	<NewsComponent Duid="7020134093.jpg"> 
+		<NewsLines> 
+			<HeadLine>Baylor's Dunn Arrested, Suspended For Alleged Assault Of Girlfriend</HeadLine> 
+			<CopyrightLine>© baylorbears.com</CopyrightLine> 
+		</NewsLines> 
+		
+		<AdministrativeMetadata> 
+			<Creator> 
+				<Party FormalName="baylor athletics" /> 
+			</Creator> 
+		</AdministrativeMetadata> 
+		
+		
+			<NewsComponent> 
+			<Role FormalName="Caption" /> 
+			<ContentItem> 
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent> 
+					<![CDATA[LaceDarius Dunn]]> 
+				</DataContent> 
+			</ContentItem> 
+		</NewsComponent> 
+		
+		
+		<NewsComponent> 
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://media.feedsyndicate.com/media/4/90018875_1.jpg"> 
+			<MediaType FormalName="Photo" /> 
+		</ContentItem> 
+		</NewsComponent> 
+	</NewsComponent> 
+			
+ 
+		</NewsComponent> 
+	</NewsItem> 
+		
+ 
+	<NewsItem> 
+		<Identification> 
+			<NewsIdentifier> 
+				<ProviderId>www.feedsyndicate.com</ProviderId> 
+				<DateId>20101006</DateId> 
+				<NewsItemId>7020133192</NewsItemId> 
+				<RevisionId PreviousRevision="0" Update="N">1</RevisionId> 
+				<PublicIdentifier>urn:NewsML:www.feedsyndicate.com:20101006:7020133192:1</PublicIdentifier> 
+			</NewsIdentifier> 
+		</Identification> 
+		
+		<NewsManagement> 
+			<NewsItemType FormalName="News"/> 
+			<FirstCreated>20101000T024726-0400</FirstCreated> 
+			<ThisRevisionCreated>20101000T024726-0400</ThisRevisionCreated> 
+			<Status FormalName="Usable"/> 
+		</NewsManagement> 
+		
+		<NewsComponent>	
+			<NewsLines> 
+				<HeadLine>Lee Stellar As Rangers Take ALDS Game 1 From Rays</HeadLine> 
+				<DateLine></DateLine> 
+				<CopyrightLine>© 2010 </CopyrightLine> 
+			</NewsLines> 
+			<AdministrativeMetadata> 
+				<Provider> 
+				<Party FormalName=""/> 
+				</Provider> 
+				<Creator> 
+				<Party FormalName=""/> 
+				</Creator> 
+			</AdministrativeMetadata> 
+			<DescriptiveMetadata> 
+				<SubjectCode> 
+	<Subject FormalName="Major League Baseball - National League" /> 
+</SubjectCode> 
+ 
+			</DescriptiveMetadata> 
+ 
+		<NewsComponent> 
+		<Role FormalName="Summary" /> 
+         <ContentItem> 
+           <MediaType FormalName="Text"/> 
+           <Format FormalName="bcNITF2.5"/> 
+           <DataContent> 
+             <![CDATA[Cliff Lee worked up and down the strike zone for seven innings of one-run ball as the Texas Rangers notched a 5-1 victory over the Rays in Tampa Wednesday afternoon. The win gives the underdog Rangers a 1-0 lead in their American League Division Series.]]> 
+           </DataContent> 
+         </ContentItem> 
+       </NewsComponent> 
+			
+ 
+	<NewsComponent> 
+		<ContentItem> 
+		  <MediaType FormalName="Text"/> 
+		  <Format FormalName="bcNITF2.5"/> 
+		  <DataContent> 
+<![CDATA[&lt;p&gt;Kareem Shaker - AHN Sports Reporter&lt;/p&gt; 
+&lt;p&gt;Tampa Bay, FL, United States (AHN) - In a battle of division champion aces, the Rangers' Cliff Lee got the best of Tampa and David Price.&lt;/p&gt; 
+&lt;p&gt;  Lee worked up and down the strike zone for seven innings of one-run ball as Texas worked a 5-1 victory over the Rays Wednesday afternoon.&lt;/p&gt; 
+&lt;p&gt;  The win gives the underdog Rangers a 1-0 lead in their American League Division Series.&lt;/p&gt; 
+&lt;p&gt;  Price gave up homers to Nelson Cruz and No. 9 batter Bengia Molina, coughing up five runs (four earned) in 6 2-3.&lt;/p&gt; 
+&lt;p&gt;  Molina had three hits in all, pacing the Rangers 10-hit attack.&lt;/p&gt; 
+&lt;p&gt;  Vlad Guerrero knocked in a run and Jeff Francouer added an RBI double for the AL West champion Rangers, who took a 2-0 lead after two innings and tacked on single runs the next three frames.&lt;/p&gt; 
+&lt;p&gt;  The Rays 3-7 batters in the lineup went an abysmal 2-for-18 with no extra base hits.&lt;/p&gt; 
+&lt;p&gt;  Carl Crawford did swipe his first base of the postseason for Tampa.&lt;/p&gt; 
+&lt;p&gt;  Ben Zobrist accounted for the Rays lone run, a solo homer in the seventh that failed short of starting a rally.&lt;/p&gt; 
+&lt;p&gt;  The Rays, who committed a pair of infield errors, will look to tie the series at one game apiece Thursday at 2:37 pm ET.&lt;/p&gt;]]> 
+		  </DataContent> 
+		</ContentItem> 
+	</NewsComponent> 
+	
+ 
+	<NewsComponent Duid="7020133192.jpg"> 
+		<NewsLines> 
+			<HeadLine>Lee Stellar As Rangers Take ALDS Game 1 From Rays</HeadLine> 
+			<CopyrightLine>© Wikipedia</CopyrightLine> 
+		</NewsLines> 
+		
+		<AdministrativeMetadata> 
+			<Creator> 
+				<Party FormalName="Keith Allison" /> 
+			</Creator> 
+		</AdministrativeMetadata> 
+		
+		
+			<NewsComponent> 
+			<Role FormalName="Caption" /> 
+			<ContentItem> 
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent> 
+					<![CDATA[Cliff Lee]]> 
+				</DataContent> 
+			</ContentItem> 
+		</NewsComponent> 
+		
+		
+		<NewsComponent> 
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://media.feedsyndicate.com/media/e/90018868_1.jpg"> 
+			<MediaType FormalName="Photo" /> 
+		</ContentItem> 
+		</NewsComponent> 
+	</NewsComponent> 
+			
+ 
+		</NewsComponent> 
+	</NewsItem> 
+		
+ 
+</NewsML> 
+ 

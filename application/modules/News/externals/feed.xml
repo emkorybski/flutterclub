@@ -1,0 +1,1441 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE NewsML PUBLIC "urn:newsml:iptc.org:20001006:NewsMLv1.2:1" "http://www.afp.com/dtd/NewsMLv1.2.dtd">
+<NewsML>
+	<NewsEnvelope>
+		<DateAndTime>20101006T001908-04:00</DateAndTime>
+	</NewsEnvelope>
+	
+	<NewsItem>
+		<Identification>
+			<NewsIdentifier>
+				<ProviderId>www.feedsyndicate.com</ProviderId>
+				<DateId>20101004</DateId>
+				<NewsItemId>7020106538</NewsItemId>
+				<RevisionId PreviousRevision="0" Update="N">1</RevisionId>
+				<PublicIdentifier>urn:NewsML:www.feedsyndicate.com:20101004:7020106538:1</PublicIdentifier>
+			</NewsIdentifier>
+		</Identification>
+		
+		<NewsManagement>
+			<NewsItemType FormalName="News"/>
+			<FirstCreated>20101000T001908-0400</FirstCreated>
+			<ThisRevisionCreated>20101000T001908-0400</ThisRevisionCreated>
+			<Status FormalName="Usable"/>
+		</NewsManagement>
+		
+		<NewsComponent>	
+			<NewsLines>
+				<HeadLine>Chinese Monopoly On Rare Earth Metals Challenged</HeadLine>
+				<DateLine></DateLine>
+				<CopyrightLine>© 2010 </CopyrightLine>
+			</NewsLines>
+			<AdministrativeMetadata>
+				<Provider>
+				<Party FormalName=""/>
+				</Provider>
+				<Creator>
+				<Party FormalName=""/>
+				</Creator>
+			</AdministrativeMetadata>
+			<DescriptiveMetadata>
+				<SubjectCode>
+	<Subject FormalName="politics" />
+</SubjectCode>
+
+			</DescriptiveMetadata>
+
+		<NewsComponent>
+		<Role FormalName="Summary" /> 
+         <ContentItem>
+           <MediaType FormalName="Text"/>
+           <Format FormalName="bcNITF2.5"/>
+           <DataContent>
+             <![CDATA[China's worldwide monopoly over the production and exportation of rare earth metals, and its strict export quotas over their distribution, is being challenged by the United States and Japan. Both countries are looking for alternative ways to obtain these scarce resources that are indispensable in many modern and hi-tech electronics products.]]>
+           </DataContent>
+         </ContentItem>
+       </NewsComponent> 
+			
+
+	<NewsComponent>
+		<ContentItem>
+		  <MediaType FormalName="Text"/>
+		  <Format FormalName="bcNITF2.5"/>
+		  <DataContent>
+<![CDATA[&lt;p&gt;Lawrence Mijares - AHN News Contributor&lt;/p&gt;
+&lt;p&gt;United States (AHN) - China's worldwide monopoly over the production and exportation of rare earth metals, and its strict export quotas over their distribution, is being challenged by the United States and Japan. Both countries are looking for alternative ways to obtain these scarce resources that are indispensable in many modern and hi-tech electronics products.&lt;/p&gt;
+&lt;p&gt;  Today, China accounts for 95 percent of global production of rare earth metals and recently withheld shipments to Japan in a diplomatic incident stemming from a controversy over the ownership of a chain of islands between the two countries. While China later reverved itself, a Japanese trading firm source said customers are now looking elsewhere for supplies.&lt;/p&gt;
+&lt;p&gt;  In the late 1980s, the U.S. was the world's number one producer of rare earth metals, a title that has now been eclipsed by China. This has impelled the Obama administration to recently call for a diversification of sources where one doesn't have to rely on just one source, but ideally to several.&lt;/p&gt;
+&lt;p&gt;  "Rare earths are virtually indispensable in the modern world," Paul Strange, professor of physics at the University of Kent, told an interviewer in the magazine TechEye. "Rare earth materials include the strongest magnets known and they are found in every car and a huge number of electronic devices, particularly associated with information storage. On top of that they are very likely to have applications in new electronics, and in green technologies such as catalytic converters and rechargeable battery materials."&lt;/p&gt;]]>
+		  </DataContent>
+		</ContentItem>
+	</NewsComponent>
+	
+
+	<NewsComponent Duid="7020106538.jpg">
+		<NewsLines>
+			<HeadLine>Chinese Monopoly On Rare Earth Metals Challenged</HeadLine>
+			<CopyrightLine>© AHN</CopyrightLine>
+		</NewsLines>
+		
+		<AdministrativeMetadata>
+			<Creator>
+				<Party FormalName="AHN Fle" /> 
+			</Creator>
+		</AdministrativeMetadata>
+		
+		
+			<NewsComponent>
+			<Role FormalName="Caption" /> 
+			<ContentItem>
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent>
+					<![CDATA[Rare earth materials include compounds to make the strongest magnets known and are found in every car and a huge number of electronic devices, particularly those associated with information storage.]]>
+				</DataContent>
+			</ContentItem>
+		</NewsComponent>
+		
+		
+		<NewsComponent>
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://media.feedsyndicate.com/media/1/90018636_1.jpg">
+			<MediaType FormalName="Photo" /> 
+		</ContentItem>
+		</NewsComponent>
+	</NewsComponent>
+			
+
+	<NewsComponent Duid="7020106538.jpg">
+		<NewsLines>
+			<HeadLine>Chinese Monopoly On Rare Earth Metals Challenged</HeadLine>
+			<CopyrightLine>© Map Copyright Google Maps</CopyrightLine>
+		</NewsLines>
+		
+		<AdministrativeMetadata>
+			<Creator>
+				<Party FormalName="Google Maps" /> 
+			</Creator>
+		</AdministrativeMetadata>
+		
+		
+			<NewsComponent>
+			<Role FormalName="Caption" /> 
+			<ContentItem>
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent>
+					<![CDATA[Story Location]]>
+				</DataContent>
+			</ContentItem>
+		</NewsComponent>
+		
+		
+		<NewsComponent>
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://www.feedsyndicate.com/cgi-bin/static_mapcgipoint370902400957128910zoom6">
+			<MediaType FormalName="Photo" /> 
+		</ContentItem>
+		</NewsComponent>
+	</NewsComponent>
+			
+
+		</NewsComponent>
+	</NewsItem>
+		
+
+	<NewsItem>
+		<Identification>
+			<NewsIdentifier>
+				<ProviderId>www.feedsyndicate.com</ProviderId>
+				<DateId>20101004</DateId>
+				<NewsItemId>7020103953</NewsItemId>
+				<RevisionId PreviousRevision="0" Update="N">1</RevisionId>
+				<PublicIdentifier>urn:NewsML:www.feedsyndicate.com:20101004:7020103953:1</PublicIdentifier>
+			</NewsIdentifier>
+		</Identification>
+		
+		<NewsManagement>
+			<NewsItemType FormalName="News"/>
+			<FirstCreated>20101000T001908-0400</FirstCreated>
+			<ThisRevisionCreated>20101000T001908-0400</ThisRevisionCreated>
+			<Status FormalName="Usable"/>
+		</NewsManagement>
+		
+		<NewsComponent>	
+			<NewsLines>
+				<HeadLine>Yemen Children Caught in the Crossfire</HeadLine>
+				<DateLine></DateLine>
+				<CopyrightLine>© 2010 </CopyrightLine>
+			</NewsLines>
+			<AdministrativeMetadata>
+				<Provider>
+				<Party FormalName=""/>
+				</Provider>
+				<Creator>
+				<Party FormalName=""/>
+				</Creator>
+			</AdministrativeMetadata>
+			<DescriptiveMetadata>
+				<SubjectCode>
+	<Subject FormalName="politics" />
+</SubjectCode>
+
+			</DescriptiveMetadata>
+
+		<NewsComponent>
+		<Role FormalName="Summary" /> 
+         <ContentItem>
+           <MediaType FormalName="Text"/>
+           <Format FormalName="bcNITF2.5"/>
+           <DataContent>
+             <![CDATA[Thousands of children have been displaced in Southern Yemen and are suffering from malnutrition as fighting continues between government forces and rebels.]]>
+           </DataContent>
+         </ContentItem>
+       </NewsComponent> 
+			
+
+	<NewsComponent>
+		<ContentItem>
+		  <MediaType FormalName="Text"/>
+		  <Format FormalName="bcNITF2.5"/>
+		  <DataContent>
+<![CDATA[&lt;p&gt;The Media Line Staff&lt;/p&gt;
+&lt;p&gt;Yemen (TML) - Children are increasingly bearing the brunt of the violent clashes between government forces and rebels in Southern Yemen despite efforts by aid groups to help them.&lt;/p&gt;
+&lt;p&gt;  The most recent clashes have displaced some 15,000 people; most of them children, bringing the total number of Yemen's displaced at 300,000 since the uprising began six years ago. About 60 percent of these are children, according to the United Nations Children's Fund (UNICEF).&lt;/p&gt;
+&lt;p&gt;  "It is easy to imagine that this ongoing conflict is worsening the situation for children," Geert Cappelaere, the UNICEF's representative in Yemen, told The Media Line. "The mounting tension is intensifying how much the children are being affected."&lt;/p&gt;
+&lt;p&gt;  Injured in the fighting, their educations put on hold, the children were innocent victims suffering from water shortages and malnutrition.&lt;/p&gt;
+&lt;p&gt;  "Each of these military interventions has an extremely important affect on children," Cappelaere said. "We are not here to judge whether interventions are politically correct, just to say that they have a huge impact on children."&lt;/p&gt;
+&lt;p&gt;  Nevertheless, Cappelaere tried to sound upbeat.&lt;/p&gt;
+&lt;p&gt;  "We are, despite the dire situation and complexity of the working environment, still strongly committed to a child focused agenda."&lt;/p&gt;
+&lt;p&gt;  She explained that this centered on ensuring proper nutrition and primary education for every boy and every girl. In order to achieve this, Cappelaere said, there had to be an environment conducive for the changes to take place in Yemen.&lt;/p&gt;
+&lt;p&gt;  "One of the obstacles from a humanitarian agenda is that the environment is not conducive. We need a commitment and we need to have support from the country and from a developing partner," she said.&lt;/p&gt;
+&lt;p&gt;  The International Committee of the Red Cross (ICRC) was one such organization partnering with UNICEF to aid Yemen refugees.&lt;/p&gt;
+&lt;p&gt;  "In Shabwah (the region where most of the clashes are occurring) we are responding to the immediate urgent need of those affected by the conflict," Rarabab Al Rifai spokesperson at the ICRC told The Media Line. "The ICRC is aiding those that have been displaced from their homes or residents from the area that have chosen not to leave."&lt;/p&gt;
+&lt;p&gt;  Al Rifai said their immediate priority was to provide food and clean water in the "dire humanitarian situation." Second to this came shelter and medical assistance.&lt;/p&gt;
+&lt;p&gt;  "A couple weeks ago, when we were providing water, there were around 4,300 displaced people and some of them had moved further south. After carrying out the necessary urgent care we put in 16 water points in the area to provide the displaced with urgently needed water," Al Rifai recalled.&lt;/p&gt;
+&lt;p&gt;  Recent attempts to get children back in school were thwarted after the class rooms were taken over in order to house more displaced people.&lt;/p&gt;
+&lt;p&gt;  The United Nations High Commission for Refugees (UNHCR) also expressed growing concern over the turmoil in Yemen.&lt;/p&gt;
+]]>
+		  </DataContent>
+		</ContentItem>
+	</NewsComponent>
+	
+
+	<NewsComponent Duid="7020103953.jpg">
+		<NewsLines>
+			<HeadLine>Yemen Children Caught in the Crossfire</HeadLine>
+			<CopyrightLine>© AHN</CopyrightLine>
+		</NewsLines>
+		
+		<AdministrativeMetadata>
+			<Creator>
+				<Party FormalName="AHN" /> 
+			</Creator>
+		</AdministrativeMetadata>
+		
+		
+			<NewsComponent>
+			<Role FormalName="Caption" /> 
+			<ContentItem>
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent>
+					<![CDATA[Thousands of children have been displaced in Southern Yemen and are suffering from malnutrition as fighting continues between government forces and rebels.]]>
+				</DataContent>
+			</ContentItem>
+		</NewsComponent>
+		
+		
+		<NewsComponent>
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://media.feedsyndicate.com/media/c/90018635_1.png">
+			<MediaType FormalName="Photo" /> 
+		</ContentItem>
+		</NewsComponent>
+	</NewsComponent>
+			
+
+	<NewsComponent Duid="7020103953.jpg">
+		<NewsLines>
+			<HeadLine>Yemen Children Caught in the Crossfire</HeadLine>
+			<CopyrightLine>© Map Copyright Google Maps</CopyrightLine>
+		</NewsLines>
+		
+		<AdministrativeMetadata>
+			<Creator>
+				<Party FormalName="Google Maps" /> 
+			</Creator>
+		</AdministrativeMetadata>
+		
+		
+			<NewsComponent>
+			<Role FormalName="Caption" /> 
+			<ContentItem>
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent>
+					<![CDATA[Story Location]]>
+				</DataContent>
+			</ContentItem>
+		</NewsComponent>
+		
+		
+		<NewsComponent>
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://www.feedsyndicate.com/cgi-bin/static_map.cgi?point=15.5527270,48.5163880zoom=6">
+			<MediaType FormalName="Photo" /> 
+		</ContentItem>
+		</NewsComponent>
+	</NewsComponent>
+			
+
+		</NewsComponent>
+	</NewsItem>
+		
+
+	<NewsItem>
+		<Identification>
+			<NewsIdentifier>
+				<ProviderId>www.feedsyndicate.com</ProviderId>
+				<DateId>20101004</DateId>
+				<NewsItemId>7020103342</NewsItemId>
+				<RevisionId PreviousRevision="0" Update="N">1</RevisionId>
+				<PublicIdentifier>urn:NewsML:www.feedsyndicate.com:20101004:7020103342:1</PublicIdentifier>
+			</NewsIdentifier>
+		</Identification>
+		
+		<NewsManagement>
+			<NewsItemType FormalName="News"/>
+			<FirstCreated>20101000T001908-0400</FirstCreated>
+			<ThisRevisionCreated>20101000T001908-0400</ThisRevisionCreated>
+			<Status FormalName="Usable"/>
+		</NewsManagement>
+		
+		<NewsComponent>	
+			<NewsLines>
+				<HeadLine>Ottawa Allocates $90 Million For Cyber Security Over Next 5 Years</HeadLine>
+				<DateLine></DateLine>
+				<CopyrightLine>© 2010 </CopyrightLine>
+			</NewsLines>
+			<AdministrativeMetadata>
+				<Provider>
+				<Party FormalName=""/>
+				</Provider>
+				<Creator>
+				<Party FormalName=""/>
+				</Creator>
+			</AdministrativeMetadata>
+			<DescriptiveMetadata>
+				<SubjectCode>
+	<Subject FormalName="politics" />
+</SubjectCode>
+
+			</DescriptiveMetadata>
+
+		<NewsComponent>
+		<Role FormalName="Summary" /> 
+         <ContentItem>
+           <MediaType FormalName="Text"/>
+           <Format FormalName="bcNITF2.5"/>
+           <DataContent>
+             <![CDATA[Canadian Public Safety Minister Vice Toews announced on Sunday that Ottawa has allocated $90 million, spread over the next five years, to provide cyber security for Canada. The government seeks to stop the growing threat of cyber crimes against the government, industries and individuals across Canada.]]>
+           </DataContent>
+         </ContentItem>
+       </NewsComponent> 
+			
+
+	<NewsComponent>
+		<ContentItem>
+		  <MediaType FormalName="Text"/>
+		  <Format FormalName="bcNITF2.5"/>
+		  <DataContent>
+<![CDATA[&lt;p&gt;AHN News Staff&lt;/p&gt;
+&lt;p&gt;Ottawa, Ontario, Canada (AHN) - Canadian Public Safety Minister Vice Toews announced on Sunday that Ottawa has allocated $90 million, spread over the next five years, to provide cyber security for Canada. The government seeks to stop the growing threat of cyber crimes against the government, industries and individuals across Canada.&lt;/p&gt;
+&lt;p&gt;  The investment would secure the computer systems of the government of Canada and partner with other governments and industry to protect systems that are vital to Canadian security, economic prosperity and quality of life.&lt;/p&gt;
+&lt;p&gt;  Toews said in a statement, ""But just as cyberspace is constantly evolving, so too are the cyber threats to our security, prosperity and quality of life. It's time to take protection of Canada's cyberspace to the next level and that's exactly what Canada's Cyber Security Strategy will do."&lt;/p&gt;
+&lt;p&gt;  However, a computer security expert downplayed Toew's announcement. Richard Rosenberg, professor emeritus of computer science at the University of British Columbia said the announcement had scant details and the $90 million allocation is not sufficient.&lt;/p&gt;
+&lt;p&gt;  Rosenberg stressed Toews should have made it clear that despite the measures being taken by the federal government there is no guarantee of protection against cyber attacks. He also urged Canadians to help battle cyber attacks by not downloading attachments from strangers and to be wary of attachments even from friends.&lt;/p&gt;]]>
+		  </DataContent>
+		</ContentItem>
+	</NewsComponent>
+	
+
+	<NewsComponent Duid="7020103342.jpg">
+		<NewsLines>
+			<HeadLine>Ottawa Allocates $90 Million For Cyber Security Over Next 5 Years</HeadLine>
+			<CopyrightLine>© AHN</CopyrightLine>
+		</NewsLines>
+		
+		<AdministrativeMetadata>
+			<Creator>
+				<Party FormalName="AHN" /> 
+			</Creator>
+		</AdministrativeMetadata>
+		
+		
+			<NewsComponent>
+			<Role FormalName="Caption" /> 
+			<ContentItem>
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent>
+					<![CDATA[Canadian Public Safety Minister Vice Toews announced on Sunday that Ottawa has allocated $90 million, spread over the next five years, to provide cyber security for Canada. The government seeks to stop the growing threat of cyber crimes against the govern]]>
+				</DataContent>
+			</ContentItem>
+		</NewsComponent>
+		
+		
+		<NewsComponent>
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://media.feedsyndicate.com/media/8/90018603_1.jpg">
+			<MediaType FormalName="Photo" /> 
+		</ContentItem>
+		</NewsComponent>
+	</NewsComponent>
+			
+
+	<NewsComponent Duid="7020103342.jpg">
+		<NewsLines>
+			<HeadLine>Ottawa Allocates $90 Million For Cyber Security Over Next 5 Years</HeadLine>
+			<CopyrightLine>© Map Copyright Google Maps</CopyrightLine>
+		</NewsLines>
+		
+		<AdministrativeMetadata>
+			<Creator>
+				<Party FormalName="Google Maps" /> 
+			</Creator>
+		</AdministrativeMetadata>
+		
+		
+			<NewsComponent>
+			<Role FormalName="Caption" /> 
+			<ContentItem>
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent>
+					<![CDATA[Story Location]]>
+				</DataContent>
+			</ContentItem>
+		</NewsComponent>
+		
+		
+		<NewsComponent>
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://www.feedsyndicate.com/cgi-bin/static_map.cgi?point=45.4115720,-75.6981940zoom=6">
+			<MediaType FormalName="Photo" /> 
+		</ContentItem>
+		</NewsComponent>
+	</NewsComponent>
+			
+
+		</NewsComponent>
+	</NewsItem>
+		
+
+	<NewsItem>
+		<Identification>
+			<NewsIdentifier>
+				<ProviderId>www.feedsyndicate.com</ProviderId>
+				<DateId>20101004</DateId>
+				<NewsItemId>7020102113</NewsItemId>
+				<RevisionId PreviousRevision="0" Update="N">1</RevisionId>
+				<PublicIdentifier>urn:NewsML:www.feedsyndicate.com:20101004:7020102113:1</PublicIdentifier>
+			</NewsIdentifier>
+		</Identification>
+		
+		<NewsManagement>
+			<NewsItemType FormalName="News"/>
+			<FirstCreated>20101000T001908-0400</FirstCreated>
+			<ThisRevisionCreated>20101000T001908-0400</ThisRevisionCreated>
+			<Status FormalName="Usable"/>
+		</NewsManagement>
+		
+		<NewsComponent>	
+			<NewsLines>
+				<HeadLine>Fiji Arrests Former Prime Minister Mahendra Chaudhry</HeadLine>
+				<DateLine></DateLine>
+				<CopyrightLine>© 2010 </CopyrightLine>
+			</NewsLines>
+			<AdministrativeMetadata>
+				<Provider>
+				<Party FormalName=""/>
+				</Provider>
+				<Creator>
+				<Party FormalName=""/>
+				</Creator>
+			</AdministrativeMetadata>
+			<DescriptiveMetadata>
+				<SubjectCode>
+	<Subject FormalName="politics" />
+</SubjectCode>
+
+			</DescriptiveMetadata>
+
+		<NewsComponent>
+		<Role FormalName="Summary" /> 
+         <ContentItem>
+           <MediaType FormalName="Text"/>
+           <Format FormalName="bcNITF2.5"/>
+           <DataContent>
+             <![CDATA[The Indian-born former Prime Minister of Fuji, Mahendra Chaudhry, who was to appear in a court on Monday for allegedly violating the emergency regulations of the military government, has been released on $500 bail.]]>
+           </DataContent>
+         </ContentItem>
+       </NewsComponent> 
+			
+
+	<NewsComponent>
+		<ContentItem>
+		  <MediaType FormalName="Text"/>
+		  <Format FormalName="bcNITF2.5"/>
+		  <DataContent>
+<![CDATA[&lt;p&gt;AHN News Staff&lt;/p&gt;
+&lt;p&gt;Suva, Fiji (AHN) - The Indian-born former Prime Minister of Fuji, Mahendra Chaudhry, who was to appear in a court on Monday for allegedly violating the emergency regulations of the military government, has been released on $500 bail.&lt;/p&gt;
+&lt;p&gt;  Labor Party leader Chaudhry and five of his associates were detained Friday while they met with sugar farmers in Rakiraki.&lt;/p&gt;
+&lt;p&gt;  Tavua Magistrates Court's Justice Faizal Koya issued the bail orders, but immediately withdrew from the bench, adding that he personally knew one of the accused. Koya later also dismissed a plea by a police prosecutor for Chaudhry and his associates to surrender their travel documents, stating that he could not make a decision because he had excused himself from hearing the case.&lt;/p&gt;
+&lt;p&gt;  The military imposed the Public Emergency Regulations last year.&lt;/p&gt;
+&lt;p&gt;  Chaudhry argued that he was not holding any public meeting, adding that his visit to the area was aimed at assessing the drought's impact on sugar cane fields in Rakiraki. He added that the military officials arrested him while he was discussing the matter with his National Farmers Union's farmer members in Rakiraki.&lt;/p&gt;
+&lt;p&gt;  Chaudhry is the main opposition leader in Fiji, a nation where media freedom is highly restricted. The political parties are not allowed to issue any statements. Commodore Voreqe Bainimarama overthrew Chaudhry's government through a bloodless coup some 10 years ago. He immediately revoked the Constitution and imposed a ban on all public meetings.&lt;/p&gt;]]>
+		  </DataContent>
+		</ContentItem>
+	</NewsComponent>
+	
+
+	<NewsComponent Duid="7020102113.jpg">
+		<NewsLines>
+			<HeadLine>Fiji Arrests Former Prime Minister Mahendra Chaudhry</HeadLine>
+			<CopyrightLine>© AHN</CopyrightLine>
+		</NewsLines>
+		
+		<AdministrativeMetadata>
+			<Creator>
+				<Party FormalName="AHN" /> 
+			</Creator>
+		</AdministrativeMetadata>
+		
+		
+			<NewsComponent>
+			<Role FormalName="Caption" /> 
+			<ContentItem>
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent>
+					<![CDATA[The Indian-born former Fijian Premier Premier Mahendra Chaudhry, who was to appear in a court on Monday for allegedly violating the emergency regulations of the military government, has been released on $500 bail.]]>
+				</DataContent>
+			</ContentItem>
+		</NewsComponent>
+		
+		
+		<NewsComponent>
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://media.feedsyndicate.com/media/6/90018594_1.jpg">
+			<MediaType FormalName="Photo" /> 
+		</ContentItem>
+		</NewsComponent>
+	</NewsComponent>
+			
+
+	<NewsComponent Duid="7020102113.jpg">
+		<NewsLines>
+			<HeadLine>Fiji Arrests Former Prime Minister Mahendra Chaudhry</HeadLine>
+			<CopyrightLine>© Map Copyright Google Maps</CopyrightLine>
+		</NewsLines>
+		
+		<AdministrativeMetadata>
+			<Creator>
+				<Party FormalName="Google Maps" /> 
+			</Creator>
+		</AdministrativeMetadata>
+		
+		
+			<NewsComponent>
+			<Role FormalName="Caption" /> 
+			<ContentItem>
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent>
+					<![CDATA[Story Location]]>
+				</DataContent>
+			</ContentItem>
+		</NewsComponent>
+		
+		
+		<NewsComponent>
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://www.feedsyndicate.com/cgi-bin/static_map.cgi?point=-18.1419310,178.4242400zoom=10">
+			<MediaType FormalName="Photo" /> 
+		</ContentItem>
+		</NewsComponent>
+	</NewsComponent>
+			
+
+		</NewsComponent>
+	</NewsItem>
+		
+
+	<NewsItem>
+		<Identification>
+			<NewsIdentifier>
+				<ProviderId>www.feedsyndicate.com</ProviderId>
+				<DateId>20101004</DateId>
+				<NewsItemId>7020101903</NewsItemId>
+				<RevisionId PreviousRevision="0" Update="N">1</RevisionId>
+				<PublicIdentifier>urn:NewsML:www.feedsyndicate.com:20101004:7020101903:1</PublicIdentifier>
+			</NewsIdentifier>
+		</Identification>
+		
+		<NewsManagement>
+			<NewsItemType FormalName="News"/>
+			<FirstCreated>20101000T001908-0400</FirstCreated>
+			<ThisRevisionCreated>20101000T001908-0400</ThisRevisionCreated>
+			<Status FormalName="Usable"/>
+		</NewsManagement>
+		
+		<NewsComponent>	
+			<NewsLines>
+				<HeadLine>Kashmiri Police Beat Journalists During Curfew</HeadLine>
+				<DateLine></DateLine>
+				<CopyrightLine>© 2010 </CopyrightLine>
+			</NewsLines>
+			<AdministrativeMetadata>
+				<Provider>
+				<Party FormalName=""/>
+				</Provider>
+				<Creator>
+				<Party FormalName=""/>
+				</Creator>
+			</AdministrativeMetadata>
+			<DescriptiveMetadata>
+				<SubjectCode>
+	<Subject FormalName="politics" />
+</SubjectCode>
+
+			</DescriptiveMetadata>
+
+		<NewsComponent>
+		<Role FormalName="Summary" /> 
+         <ContentItem>
+           <MediaType FormalName="Text"/>
+           <Format FormalName="bcNITF2.5"/>
+           <DataContent>
+             <![CDATA[Police in Indian State of Kashmir have beaten two journalists while they were on they way to their offices despite the government's repeated reminders that pressmen must be allowed free movement even during the curfew.]]>
+           </DataContent>
+         </ContentItem>
+       </NewsComponent> 
+			
+
+	<NewsComponent>
+		<ContentItem>
+		  <MediaType FormalName="Text"/>
+		  <Format FormalName="bcNITF2.5"/>
+		  <DataContent>
+<![CDATA[&lt;p&gt;AHN News Staff&lt;/p&gt;
+&lt;p&gt;Kashmir, India (AHN) - Police in Indian State of Kashmir have beaten two journalists while they were on they way to their offices despite the government's repeated reminders that pressmen must be allowed free movement even during the curfew.&lt;/p&gt;
+&lt;p&gt;  Merajuddin, a prominent video journalist for APTN, was rushed to hospital after he fell unconscious when police beat him on his head and neck batons.&lt;/p&gt;
+&lt;p&gt;  Omar Meraj, who is also his son, was also beaten savagely. Both journalists possessed curfew passes.&lt;/p&gt;
+&lt;p&gt;  Authorities declared a curfew in June after violent anti-Indian protests.&lt;/p&gt;
+&lt;p&gt;  The incident also marked an increase in number of attacks on local journalists in the region.&lt;/p&gt;
+&lt;p&gt;  According to a senior journalist, Sheikh Mushtaq, journalists have never felt so insecure. "We not only face a threat to our lives but are also humiliated off and on," Mushtaq added.&lt;/p&gt;
+&lt;p&gt;  The attack occurred at a time when Indian-administered Kashmir's Chief Minister Omar Abdullah publicly apologized in the Assembly after local police seized newspapers in Sri Nagar on Friday morning.&lt;/p&gt;
+&lt;p&gt;  The minister insisted that he had not ordered the seizure of newspapers and said that the incident occurred without his knowledge.&lt;/p&gt;]]>
+		  </DataContent>
+		</ContentItem>
+	</NewsComponent>
+	
+
+	<NewsComponent Duid="7020101903.jpg">
+		<NewsLines>
+			<HeadLine>Kashmiri Police Beat Journalists During Curfew</HeadLine>
+			<CopyrightLine>© AHN</CopyrightLine>
+		</NewsLines>
+		
+		<AdministrativeMetadata>
+			<Creator>
+				<Party FormalName="AHN" /> 
+			</Creator>
+		</AdministrativeMetadata>
+		
+		
+			<NewsComponent>
+			<Role FormalName="Caption" /> 
+			<ContentItem>
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent>
+					<![CDATA[Police in Indian State of Kashmir savagely beat a pedestrian in this undated file photo.]]>
+				</DataContent>
+			</ContentItem>
+		</NewsComponent>
+		
+		
+		<NewsComponent>
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://media.feedsyndicate.com/media/d/90018570_1.jpg">
+			<MediaType FormalName="Photo" /> 
+		</ContentItem>
+		</NewsComponent>
+	</NewsComponent>
+			
+
+	<NewsComponent Duid="7020101903.jpg">
+		<NewsLines>
+			<HeadLine>Kashmiri Police Beat Journalists During Curfew</HeadLine>
+			<CopyrightLine>© Map Copyright Google Maps</CopyrightLine>
+		</NewsLines>
+		
+		<AdministrativeMetadata>
+			<Creator>
+				<Party FormalName="Google Maps" /> 
+			</Creator>
+		</AdministrativeMetadata>
+		
+		
+			<NewsComponent>
+			<Role FormalName="Caption" /> 
+			<ContentItem>
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent>
+					<![CDATA[Story Location]]>
+				</DataContent>
+			</ContentItem>
+		</NewsComponent>
+		
+		
+		<NewsComponent>
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://www.feedsyndicate.com/cgi-bin/static_map.cgi?point=34.1490875,76.8259652zoom=6">
+			<MediaType FormalName="Photo" /> 
+		</ContentItem>
+		</NewsComponent>
+	</NewsComponent>
+			
+
+		</NewsComponent>
+	</NewsItem>
+		
+
+	<NewsItem>
+		<Identification>
+			<NewsIdentifier>
+				<ProviderId>www.feedsyndicate.com</ProviderId>
+				<DateId>20101004</DateId>
+				<NewsItemId>7020101542</NewsItemId>
+				<RevisionId PreviousRevision="0" Update="N">1</RevisionId>
+				<PublicIdentifier>urn:NewsML:www.feedsyndicate.com:20101004:7020101542:1</PublicIdentifier>
+			</NewsIdentifier>
+		</Identification>
+		
+		<NewsManagement>
+			<NewsItemType FormalName="News"/>
+			<FirstCreated>20101000T001908-0400</FirstCreated>
+			<ThisRevisionCreated>20101000T001908-0400</ThisRevisionCreated>
+			<Status FormalName="Usable"/>
+		</NewsManagement>
+		
+		<NewsComponent>	
+			<NewsLines>
+				<HeadLine>Canada To Issue Electronic Passports In 2012</HeadLine>
+				<DateLine></DateLine>
+				<CopyrightLine>© 2010 </CopyrightLine>
+			</NewsLines>
+			<AdministrativeMetadata>
+				<Provider>
+				<Party FormalName=""/>
+				</Provider>
+				<Creator>
+				<Party FormalName=""/>
+				</Creator>
+			</AdministrativeMetadata>
+			<DescriptiveMetadata>
+				<SubjectCode>
+	<Subject FormalName="politics" />
+</SubjectCode>
+
+			</DescriptiveMetadata>
+
+		<NewsComponent>
+		<Role FormalName="Summary" /> 
+         <ContentItem>
+           <MediaType FormalName="Text"/>
+           <Format FormalName="bcNITF2.5"/>
+           <DataContent>
+             <![CDATA[Ottawa will issue electronic passports for Canadian citizens in 2012. To begin the process, Public Works and Government Services Canada sought potential suppliers to submit letters of interest this summer.
+]]>
+           </DataContent>
+         </ContentItem>
+       </NewsComponent> 
+			
+
+	<NewsComponent>
+		<ContentItem>
+		  <MediaType FormalName="Text"/>
+		  <Format FormalName="bcNITF2.5"/>
+		  <DataContent>
+<![CDATA[&lt;p&gt;AHN News Staff&lt;/p&gt;
+&lt;p&gt;Gatineau, Ontario, Canada (AHN) - Ottawa will issue electronic passports to Canadian citizens starting in 2012. To begin the process, Public Works and Government Services Canada sought potential suppliers to submit letters of interest this summer.&lt;/p&gt;
+&lt;p&gt;  The ePassport will have a proximity contactless chip which could only be read within 10 centimeters (3.93 inches) of a reader. But the machine-readable zone on page 2 of the passport must be scanned first. Among the data on the chip are the holder's name, gender, date and place of birth and a digital photo of the citizen's face.&lt;/p&gt;
+&lt;p&gt;  Customs officials will compare the information on the chip with the printed information and photo in the passport.&lt;/p&gt;
+&lt;p&gt;  Passport Canada said the identity document will only bear the holder's face. It will not contain additional biometric data such as fingerprints or iris scans found in electronic passports of other countries. Passport Canada explained it excluded other biometric data due to privacy concerns.&lt;/p&gt;
+&lt;p&gt;  Canada will actually be catching up since at least 90 nations will have ePassports by the end of 2010. By 2014, the list would grow to 104 countries.&lt;/p&gt;
+&lt;p&gt;  The ePassport will cost more, so Passport Canada consulted Canadians in April this year through an online survey. Aside from higher cost, the new passport will also offer a longer life span of 10 years from the current five years.&lt;/p&gt;]]>
+		  </DataContent>
+		</ContentItem>
+	</NewsComponent>
+	
+
+	<NewsComponent Duid="7020101542.jpg">
+		<NewsLines>
+			<HeadLine>Canada To Issue Electronic Passports In 2012</HeadLine>
+			<CopyrightLine>© AHN</CopyrightLine>
+		</NewsLines>
+		
+		<AdministrativeMetadata>
+			<Creator>
+				<Party FormalName="AHN" /> 
+			</Creator>
+		</AdministrativeMetadata>
+		
+		
+			<NewsComponent>
+			<Role FormalName="Caption" /> 
+			<ContentItem>
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent>
+					<![CDATA[Ottawa will issue electronic passports for Canadian citizens in 2012. To begin the process, Public Works and Government Services Canada sought potential suppliers to submit letters of interest this summer.
+]]>
+				</DataContent>
+			</ContentItem>
+		</NewsComponent>
+		
+		
+		<NewsComponent>
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://media.feedsyndicate.com/media/e/90018608_1.jpg">
+			<MediaType FormalName="Photo" /> 
+		</ContentItem>
+		</NewsComponent>
+	</NewsComponent>
+			
+
+	<NewsComponent Duid="7020101542.jpg">
+		<NewsLines>
+			<HeadLine>Canada To Issue Electronic Passports In 2012</HeadLine>
+			<CopyrightLine>© Map Copyright Google Maps</CopyrightLine>
+		</NewsLines>
+		
+		<AdministrativeMetadata>
+			<Creator>
+				<Party FormalName="Google Maps" /> 
+			</Creator>
+		</AdministrativeMetadata>
+		
+		
+			<NewsComponent>
+			<Role FormalName="Caption" /> 
+			<ContentItem>
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent>
+					<![CDATA[Story Location]]>
+				</DataContent>
+			</ContentItem>
+		</NewsComponent>
+		
+		
+		<NewsComponent>
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://www.feedsyndicate.com/cgi-bin/static_map.cgi?point=45.4839330,-75.6456320zoom=6">
+			<MediaType FormalName="Photo" /> 
+		</ContentItem>
+		</NewsComponent>
+	</NewsComponent>
+			
+
+		</NewsComponent>
+	</NewsItem>
+		
+
+	<NewsItem>
+		<Identification>
+			<NewsIdentifier>
+				<ProviderId>www.feedsyndicate.com</ProviderId>
+				<DateId>20101004</DateId>
+				<NewsItemId>7020101509</NewsItemId>
+				<RevisionId PreviousRevision="0" Update="N">1</RevisionId>
+				<PublicIdentifier>urn:NewsML:www.feedsyndicate.com:20101004:7020101509:1</PublicIdentifier>
+			</NewsIdentifier>
+		</Identification>
+		
+		<NewsManagement>
+			<NewsItemType FormalName="News"/>
+			<FirstCreated>20101000T001908-0400</FirstCreated>
+			<ThisRevisionCreated>20101000T001908-0400</ThisRevisionCreated>
+			<Status FormalName="Usable"/>
+		</NewsManagement>
+		
+		<NewsComponent>	
+			<NewsLines>
+				<HeadLine>Tennessee Man Charged With Arson Threat To Congressman</HeadLine>
+				<DateLine></DateLine>
+				<CopyrightLine>© 2010 </CopyrightLine>
+			</NewsLines>
+			<AdministrativeMetadata>
+				<Provider>
+				<Party FormalName=""/>
+				</Provider>
+				<Creator>
+				<Party FormalName=""/>
+				</Creator>
+			</AdministrativeMetadata>
+			<DescriptiveMetadata>
+				<SubjectCode>
+	<Subject FormalName="politics" />
+</SubjectCode>
+
+			</DescriptiveMetadata>
+
+		<NewsComponent>
+		<Role FormalName="Summary" /> 
+         <ContentItem>
+           <MediaType FormalName="Text"/>
+           <Format FormalName="bcNITF2.5"/>
+           <DataContent>
+             <![CDATA[A Tennessee man has been indicted for threatening Rep. John Boccieri (D-OH) for his support of healthcare reform early this year. The charge is the latest in the investigation of threats received by several Democratic lawmakers during debate on the healthcare reform bill.]]>
+           </DataContent>
+         </ContentItem>
+       </NewsComponent> 
+			
+
+	<NewsComponent>
+		<ContentItem>
+		  <MediaType FormalName="Text"/>
+		  <Format FormalName="bcNITF2.5"/>
+		  <DataContent>
+<![CDATA[&lt;p&gt;Kris Alingod - AHN News Contributor&lt;/p&gt;
+&lt;p&gt;Cleveland, OH, United States (AHN) - A Tennessee man has been indicted for threatening Rep. John Boccieri (D-OH) for his support of healthcare reform early this year. The charge is the latest in the investigation of threats received by several Democratic lawmakers during debate on the healthcare reform bill.&lt;/p&gt;
+&lt;p&gt;  James Schmidlin, of Cleveland, was indicted by a grand jury on charges of communications involving threats of arson and harassing telephone calls.&lt;/p&gt;
+&lt;p&gt;  Prosecutors say the 40-year-old called the Ohio congressman's office in early March and threatened to set fire to Boccieri's home. Schmidlin was released on bond Friday.&lt;/p&gt;
+&lt;p&gt;  "Our system of government is the envy of the world because we debate with ideas and thoughtful discourse, not threats of arson," U.S. Attorney Steven Dettelbach said in a statement.&lt;/p&gt;
+&lt;p&gt;  Boccieri is a first-term lawmaker who initially opposed the administration's healthcare reform legislation. The calls made to his office were among threats made to Democrats during months of acrimonious debate on the bill, which Congress passed before leaving for the Easter recess.&lt;/p&gt;
+&lt;p&gt;  Sen. Patty Murray (D-WA), the fifth highest ranking senator as secretary of the Democratic conference, received "expletive laden" phone calls from a 64-year-old man who was charged early this year with making death threats to a federal official.&lt;/p&gt;
+&lt;p&gt;  Reps. James Clyburn (D-SC), the highest ranking African-American in Congress, and Bart Stupak (D-MI), a pro-life Democrat whose last-minute support was key to the bill's passage, both received faxes of nooses. In addition, the propane gas line at the home of the brother of Rep. Tom Perriello (D-VA) was cut after a Tea Party member published the address of the congressman's brother in a blog of conservative activists.&lt;/p&gt;
+&lt;p&gt;  'In America we enjoy the ability to engage in important conversations about national issues," Boccieri said in a statement on the indictment. "However we also have the responsibility of making sure these conversations do not descend into acts of violence. The federal government chose to press charges in this case and I trust our country's system of law to handle it appropriately."&lt;/p&gt;]]>
+		  </DataContent>
+		</ContentItem>
+	</NewsComponent>
+	
+
+	<NewsComponent Duid="7020101509.jpg">
+		<NewsLines>
+			<HeadLine>Tennessee Man Charged With Arson Threat To Congressman</HeadLine>
+			
+		</NewsLines>
+		
+		<AdministrativeMetadata>
+			<Creator>
+				<Party FormalName="U.S. House" /> 
+			</Creator>
+		</AdministrativeMetadata>
+		
+		
+			<NewsComponent>
+			<Role FormalName="Caption" /> 
+			<ContentItem>
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent>
+					<![CDATA[Rep. John Boccieri is a first-term lawmaker who initially opposed the administration's healthcare reform legislation. The calls made to his office were among threats made to Democrats during months of acrimonious debate on the bill.]]>
+				</DataContent>
+			</ContentItem>
+		</NewsComponent>
+		
+		
+		<NewsComponent>
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://media.feedsyndicate.com/media/9/90018614_1.jpg">
+			<MediaType FormalName="Photo" /> 
+		</ContentItem>
+		</NewsComponent>
+	</NewsComponent>
+			
+
+	<NewsComponent Duid="7020101509.jpg">
+		<NewsLines>
+			<HeadLine>Tennessee Man Charged With Arson Threat To Congressman</HeadLine>
+			<CopyrightLine>© Map Copyright Google Maps</CopyrightLine>
+		</NewsLines>
+		
+		<AdministrativeMetadata>
+			<Creator>
+				<Party FormalName="Google Maps" /> 
+			</Creator>
+		</AdministrativeMetadata>
+		
+		
+			<NewsComponent>
+			<Role FormalName="Caption" /> 
+			<ContentItem>
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent>
+					<![CDATA[Story Location]]>
+				</DataContent>
+			</ContentItem>
+		</NewsComponent>
+		
+		
+		<NewsComponent>
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://www.feedsyndicate.com/cgi-bin/static_map.cgi?point=41.47970, -81.67850zoom=10">
+			<MediaType FormalName="Photo" /> 
+		</ContentItem>
+		</NewsComponent>
+	</NewsComponent>
+			
+
+		</NewsComponent>
+	</NewsItem>
+		
+
+	<NewsItem>
+		<Identification>
+			<NewsIdentifier>
+				<ProviderId>www.feedsyndicate.com</ProviderId>
+				<DateId>20101001</DateId>
+				<NewsItemId>7020080376</NewsItemId>
+				<RevisionId PreviousRevision="0" Update="N">1</RevisionId>
+				<PublicIdentifier>urn:NewsML:www.feedsyndicate.com:20101001:7020080376:1</PublicIdentifier>
+			</NewsIdentifier>
+		</Identification>
+		
+		<NewsManagement>
+			<NewsItemType FormalName="News"/>
+			<FirstCreated>20101000T001908-0400</FirstCreated>
+			<ThisRevisionCreated>20101000T001908-0400</ThisRevisionCreated>
+			<Status FormalName="Usable"/>
+		</NewsManagement>
+		
+		<NewsComponent>	
+			<NewsLines>
+				<HeadLine>Paladino Trails In Poll As Controversy Erupts Over Fight With Reporter</HeadLine>
+				<DateLine></DateLine>
+				<CopyrightLine>© 2010 </CopyrightLine>
+			</NewsLines>
+			<AdministrativeMetadata>
+				<Provider>
+				<Party FormalName=""/>
+				</Provider>
+				<Creator>
+				<Party FormalName=""/>
+				</Creator>
+			</AdministrativeMetadata>
+			<DescriptiveMetadata>
+				<SubjectCode>
+	<Subject FormalName="politics" />
+</SubjectCode>
+
+			</DescriptiveMetadata>
+
+		<NewsComponent>
+		<Role FormalName="Summary" /> 
+         <ContentItem>
+           <MediaType FormalName="Text"/>
+           <Format FormalName="bcNITF2.5"/>
+           <DataContent>
+             <![CDATA[Republican candidate Carl Paladino is behind state Attorney General Andrew Cuomo by double digits but New York's Senate race remains fluid, according to a poll released as Paladino counters criticism for fighting with a reporter seeking proof of his claim that Cuomo had paramours.]]>
+           </DataContent>
+         </ContentItem>
+       </NewsComponent> 
+			
+
+	<NewsComponent>
+		<ContentItem>
+		  <MediaType FormalName="Text"/>
+		  <Format FormalName="bcNITF2.5"/>
+		  <DataContent>
+<![CDATA[&lt;p&gt;Kris Alingod - AHN News Contributor&lt;/p&gt;
+&lt;p&gt;Albany, NY, United States (AHN) - Republican candidate Carl Paladino is behind state Attorney General Andrew Cuomo by double digits but New York's Senate race remains fluid, according to a poll released as Paladino counters criticism for fighting with a reporter seeking proof of his claim that Cuomo had paramours.&lt;/p&gt;
+&lt;p&gt;  Cuomo leads the conservative, 53 percent to 38 percent, among likely voters in the Marist poll. The Democrat had a 52-33 percent advantage in a similar survey last week, before former Rep. Rick Lazio dropped out from the race.&lt;/p&gt;
+&lt;p&gt;  Among moderates, Cuomo leads 57 percent to 34 percent. The state attorney general holds a commanding 70 percent support in New York City, but is statistically even with Paladino upstate, 46 percent to 47 percent.&lt;/p&gt;
+&lt;p&gt;  The race has grown competitive in the suburbs, where 49 percent choose the Democrat and 43 percent support the Republican, significantly changed from Cuomo's 53-30 percent lead last week.&lt;/p&gt;
+&lt;p&gt;  Sixty percent have a favorable impression of Cuomo, while 31 percent have an unfavorable view of him and 9 percent are undecided. In contrast, 34 percent have a positive view of Paladino, 48 percent view the conservative negatively, and 18 percent are unsure.&lt;/p&gt;
+&lt;p&gt;  The GOP continue to be more enthusiastic about the elections than Democrats. But the discrepancy has decreased from 51 percent of registered Republicans and 34 percent of Democrats to 44 percent of GOP voters and 33 percent of Democrats.&lt;/p&gt;
+&lt;p&gt;  The poll is the first since Lazio withdrew from the race. The four-term congressman lost to Paladino during the Republican primary early this month despite having secured the Republican nomination in a state convention.&lt;/p&gt;
+&lt;p&gt;  Paladino, a real estate developer and former Democrat, petitioned his way onto the ballot and became one of a number of political newcomers with Tea Party backing to defeat establishment candidates in this election year filled with voter distrust.&lt;/p&gt;
+&lt;p&gt;  The Republican candidate is under fire because of a videotaped heated exchange this week with New York Post editor Fredric Dicker, who was asking him about his allegation that Cuomo had affairs.&lt;/p&gt;
+&lt;p&gt;  The shouting match, which has Paladino threatening, "You send another goon to my daughter's house and I'll take you out," has been widely viewed on YouTube and has prompted editorials questioning Paladino's qualifications for governor.&lt;/p&gt;
+&lt;p&gt;  "Try to imagine a man with Paladino's anger-management issues dealing with the daily pressures and complexities of the job," the New York Daily News said. "Imagine him winning over the Legislature. Imagine him responding calmly and coolly to a natural disaster or, God forbid, a terrorist attack."&lt;/p&gt;
+&lt;p&gt;  "It appears as though the man who so enjoys dishing it out can't even take a tough grilling from an irritating reporter," the New York Times added.&lt;/p&gt;
+&lt;p&gt;  Dicker was seeking proof behind Paladino's comments in an interview early this week with Politico.&lt;/p&gt;
+&lt;p&gt;  "Has anybody asked Andrew Cuomo about his paramours?," the Republican had told the newspaper. "When he was married or asked him why his wife left him or threw him out of the house?"&lt;/p&gt;
+&lt;p&gt;  The campaign manager for Paladino said Friday the altercation happened because the GOP candidate was trying to protect his daughter. According to Michael Caputo, a photographer from the Post attempted to take photos of Paladino's young daughter through the windows of their home.&lt;/p&gt;
+&lt;p&gt;  "We believe this conduct puts Carl Paladino's daughter in harm's way, susceptible to kidnapping or sexual predators," Caputo said. "This behavior by the New York Post and their senior political editor Fred Dicker is unacceptable. Endangering the safety of a 10-year-old child is repugnant."&lt;/p&gt;
+&lt;p&gt;  Paladino has also backpedaled from his allegation about Cuomo's affairs, despite telling Dicker repeatedly during their argument that he would reveal evidence of his claims "at the appropriate time."&lt;/p&gt;
+&lt;p&gt;  The conservative told the Buffalo News he was not accusing Cuomo of infidelity but expressing exasperation over questions about his life. Paladino early in his campaign admitted to having fathered a child out of wedlock.&lt;/p&gt;
+&lt;p&gt;  "Mr. Paladino should not be surprised by the media's interest in his families, as he has invited public scrutiny of his personal life by running for governor and speaking openly about his mistress and love child," Post editor-in-chief Col Allan argued.&lt;/p&gt;
+&lt;p&gt;  The controversy is the latest surrounding Paladino, who previously came under fire for forwarding dozens of emails containing photos of bestiality, pornography and racism.&lt;/p&gt;]]>
+		  </DataContent>
+		</ContentItem>
+	</NewsComponent>
+	
+
+	<NewsComponent Duid="7020080376.jpg">
+		<NewsLines>
+			<HeadLine>Paladino Trails In Poll As Controversy Erupts Over Fight With Reporter</HeadLine>
+			
+		</NewsLines>
+		
+		
+			<NewsComponent>
+			<Role FormalName="Caption" /> 
+			<ContentItem>
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent>
+					<![CDATA[Paladino is under fire because of a videotaped heated exchange this week with a reporter, who was asking him about his allegation that the state attorney general had affairs.]]>
+				</DataContent>
+			</ContentItem>
+		</NewsComponent>
+		
+		
+		<NewsComponent>
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://media.feedsyndicate.com/media/b/90018200_1.jpg">
+			<MediaType FormalName="Photo" /> 
+		</ContentItem>
+		</NewsComponent>
+	</NewsComponent>
+			
+
+	<NewsComponent Duid="7020080376.jpg">
+		<NewsLines>
+			<HeadLine>Paladino Trails In Poll As Controversy Erupts Over Fight With Reporter</HeadLine>
+			<CopyrightLine>© Map Copyright Google Maps</CopyrightLine>
+		</NewsLines>
+		
+		<AdministrativeMetadata>
+			<Creator>
+				<Party FormalName="Google Maps" /> 
+			</Creator>
+		</AdministrativeMetadata>
+		
+		
+			<NewsComponent>
+			<Role FormalName="Caption" /> 
+			<ContentItem>
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent>
+					<![CDATA[Story Location]]>
+				</DataContent>
+			</ContentItem>
+		</NewsComponent>
+		
+		
+		<NewsComponent>
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://www.feedsyndicate.com/cgi-bin/static_map.cgi?point=42.66060, -73.77850zoom=6">
+			<MediaType FormalName="Photo" /> 
+		</ContentItem>
+		</NewsComponent>
+	</NewsComponent>
+			
+
+		</NewsComponent>
+	</NewsItem>
+		
+
+	<NewsItem>
+		<Identification>
+			<NewsIdentifier>
+				<ProviderId>www.feedsyndicate.com</ProviderId>
+				<DateId>20100930</DateId>
+				<NewsItemId>7020070440</NewsItemId>
+				<RevisionId PreviousRevision="0" Update="N">1</RevisionId>
+				<PublicIdentifier>urn:NewsML:www.feedsyndicate.com:20100930:7020070440:1</PublicIdentifier>
+			</NewsIdentifier>
+		</Identification>
+		
+		<NewsManagement>
+			<NewsItemType FormalName="News"/>
+			<FirstCreated>20101000T001908-0400</FirstCreated>
+			<ThisRevisionCreated>20101000T001908-0400</ThisRevisionCreated>
+			<Status FormalName="Usable"/>
+		</NewsManagement>
+		
+		<NewsComponent>	
+			<NewsLines>
+				<HeadLine>Christine O'Donnell Under Fire For Oxford University Claims</HeadLine>
+				<DateLine></DateLine>
+				<CopyrightLine>© 2010 </CopyrightLine>
+			</NewsLines>
+			<AdministrativeMetadata>
+				<Provider>
+				<Party FormalName=""/>
+				</Provider>
+				<Creator>
+				<Party FormalName=""/>
+				</Creator>
+			</AdministrativeMetadata>
+			<DescriptiveMetadata>
+				<SubjectCode>
+	<Subject FormalName="politics" />
+</SubjectCode>
+
+			</DescriptiveMetadata>
+
+		<NewsComponent>
+		<Role FormalName="Summary" /> 
+         <ContentItem>
+           <MediaType FormalName="Text"/>
+           <Format FormalName="bcNITF2.5"/>
+           <DataContent>
+             <![CDATA[Tea Party conservative Christine O'Donnell is fighting back controversy surrounding an online resume that lists her as having studied in two top schools, including Oxford University. The Republican candidate denies creating the profile, but a second resume with a similar claim has been found.]]>
+           </DataContent>
+         </ContentItem>
+       </NewsComponent> 
+			
+
+	<NewsComponent>
+		<ContentItem>
+		  <MediaType FormalName="Text"/>
+		  <Format FormalName="bcNITF2.5"/>
+		  <DataContent>
+<![CDATA[&lt;p&gt;Kris Alingod - AHN News Contributor&lt;/p&gt;
+&lt;p&gt;Washington, D.C., United States (AHN) - Tea Party conservative Christine O'Donnell is fighting back controversy surrounding an online resume that lists her as having studied in two top schools, including Oxford University. The Republican candidate denies creating the profile, but a second resume with a similar claim has been found.&lt;/p&gt;
+&lt;p&gt;  In a statement to Greg Sargent of the Washington Post, O'Donnell called reports that she made a LinkedIn profile "categorically untrue." She denied creating the resume or authorizing anyone to do so.&lt;/p&gt;
+&lt;p&gt;  According to the LinkedIn profile, O'Donnell finished at Fairleigh Dickinson University, Claremont Graduate University and University of Oxford.&lt;/p&gt;
+&lt;p&gt;  O'Donnell actually received a certificate for a 2001 summer seminar given by the Phoenix Institute, which rented space at Oxford University.&lt;/p&gt;
+&lt;p&gt;  The conservative earned her degree from Fairleigh early this month but claimed for several years to have formally graduated despite not having done so because of unpaid tuition, a fact that she told New York Times early this month. She was a 2002 participant in the Lincoln Fellows program of a non-profit, the Claremont Institute, which is not affiliated with Claremont Graduate University.&lt;/p&gt;
+&lt;p&gt;  The Post, which was the first to report about the resume, pointed out that O'Donnell's campaign previously gave a comment justifying the inclusion of Oxford University.&lt;/p&gt;
+&lt;p&gt;  In her second official comment about the profile, O'Donnell "encourage[d]" LinkedIn to remove the resume. Her statement came as questions arose about another online resume, this one apparently created and verified by her.&lt;/p&gt;
+&lt;p&gt;  The ZoomInfo profile has O'Donnell earning her bachelor's degree from Fairleighh, finishing a fellowship at Claremont Institute and not at Claremont Graduate University and earning a certificate from the University of Oxford.&lt;/p&gt;
+&lt;p&gt;  The resume is "user verified" and last updated in March this year. A ZoomInfo spokesperson, Matt Lloyd, has told the Huffington Post, "The profile was actually claimed in 2008 which means that she has verified the information and updated it."&lt;/p&gt;
+&lt;p&gt;  O'Donnell defeated a nine-term congressman, Rep. Mike Castle (R-DE), in the GOP primary early this month despite having faced opposition from Republican leaders, including the state party chair, who said she is "not a viable candidate for any office in the state of Delaware."&lt;/p&gt;
+&lt;p&gt;  A conservative pundit who has never held public office, O'Donnell is a 41-year-old marketing consultant who previously ran twice for the Senate. She had endorsements from Sen. Jim Demint (R-SC) and former Alaska Gov. Sarah Palin on her third run, which had as its backdrop a volatile election year filled with public distrust of establishment candidates.&lt;/p&gt;
+&lt;p&gt;  The questions surrounding her educational record are not the first. Days before the primary, the conservative Weekly Standard reported about a gender discrimination lawsuite filed by O'Donnell agianst her former employer.&lt;/p&gt;
+&lt;p&gt;  In the lawsuit, O'Donnell claims to have been forced to stop her master's degree at Princeton University. "In the future with proper finances, Miss O'Donnell should probably be able to return and complete that program, however that increased earning power has been disrupted," the Standard cites a complaint from O'Donnell as saying.&lt;/p&gt;
+&lt;p&gt;  O'Donnell is running to fill the Senate seat of Vice President Joe Biden. She faces New Castle county executive Chris Coons, the Democratic nominee, in November. Polls have her trailing by double digits, despite Coons being relatively unknown nationally.&lt;/p&gt;
+&lt;p&gt;  A number of controversies surround the Republican candidate. Her admission at having dabbled in witchcraft has been fare for late night talk shows, and a Federal Election Commission complaint has been filed against her for because she is said to have used campaign donations to pay for rent and to have filed finance reports without having a campaign treasurer, as required by law to ensure oversight.&lt;/p&gt;
+&lt;p&gt;  O'Donnell has responded to the issue involving rent, which was in the form of a sworn statement from her former campaign manager, by saying she uses her home as a campaign office. She has dismissed other criticisms as "vain distractions" and attempts to "character assassinate," and has banned  interviews with national media outlets.&lt;/p&gt;
+&lt;p&gt;  The controversies surrounding her, however, have left some conservatives in agreement with progressives.&lt;/p&gt;
+&lt;p&gt;  "Once is misspeaking... But four or more?" Dianne Suffern wrote on the conservative blog, Hot Air. "That's a pattern and crosses the threshold into character. For someone with no record, we have only her character to recommend her... This isn't personal attack. It's getting ahead of an issue we wouldn't even tolerate in moderate Republicans, let alone our opponents on the Left."&lt;/p&gt;]]>
+		  </DataContent>
+		</ContentItem>
+	</NewsComponent>
+	
+
+	<NewsComponent Duid="7020070440.jpg">
+		<NewsLines>
+			<HeadLine>Christine O'Donnell Under Fire For Oxford University Claims</HeadLine>
+			
+		</NewsLines>
+		
+		
+			<NewsComponent>
+			<Role FormalName="Caption" /> 
+			<ContentItem>
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent>
+					<![CDATA[O'Donnell defeated a nine-term congressman in the primary. Her admission at having dabbled in witchcraft has been fare for late night talk shows, and a Federal Election Commission complaint has been filed against her for alleged use of campaign donations ]]>
+				</DataContent>
+			</ContentItem>
+		</NewsComponent>
+		
+		
+		<NewsComponent>
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://media.feedsyndicate.com/media/f/90018106_1.jpg">
+			<MediaType FormalName="Photo" /> 
+		</ContentItem>
+		</NewsComponent>
+	</NewsComponent>
+			
+
+	<NewsComponent Duid="7020070440.jpg">
+		<NewsLines>
+			<HeadLine>Christine O'Donnell Under Fire For Oxford University Claims</HeadLine>
+			<CopyrightLine>© Map Copyright Google Maps</CopyrightLine>
+		</NewsLines>
+		
+		<AdministrativeMetadata>
+			<Creator>
+				<Party FormalName="Google Maps" /> 
+			</Creator>
+		</AdministrativeMetadata>
+		
+		
+			<NewsComponent>
+			<Role FormalName="Caption" /> 
+			<ContentItem>
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent>
+					<![CDATA[Story Location]]>
+				</DataContent>
+			</ContentItem>
+		</NewsComponent>
+		
+		
+		<NewsComponent>
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://www.feedsyndicate.com/cgi-bin/static_map.cgi?point=38.8951118,-77.0363658zoom=6">
+			<MediaType FormalName="Photo" /> 
+		</ContentItem>
+		</NewsComponent>
+	</NewsComponent>
+			
+
+		</NewsComponent>
+	</NewsItem>
+		
+
+	<NewsItem>
+		<Identification>
+			<NewsIdentifier>
+				<ProviderId>www.feedsyndicate.com</ProviderId>
+				<DateId>20100930</DateId>
+				<NewsItemId>7020063717</NewsItemId>
+				<RevisionId PreviousRevision="0" Update="N">1</RevisionId>
+				<PublicIdentifier>urn:NewsML:www.feedsyndicate.com:20100930:7020063717:1</PublicIdentifier>
+			</NewsIdentifier>
+		</Identification>
+		
+		<NewsManagement>
+			<NewsItemType FormalName="News"/>
+			<FirstCreated>20101000T001908-0400</FirstCreated>
+			<ThisRevisionCreated>20101000T001908-0400</ThisRevisionCreated>
+			<Status FormalName="Usable"/>
+		</NewsManagement>
+		
+		<NewsComponent>	
+			<NewsLines>
+				<HeadLine>France Gives Ottawa List of Canadians Who Hold Secret Swiss Bank Accounts</HeadLine>
+				<DateLine></DateLine>
+				<CopyrightLine>© 2010 </CopyrightLine>
+			</NewsLines>
+			<AdministrativeMetadata>
+				<Provider>
+				<Party FormalName=""/>
+				</Provider>
+				<Creator>
+				<Party FormalName=""/>
+				</Creator>
+			</AdministrativeMetadata>
+			<DescriptiveMetadata>
+				<SubjectCode>
+	<Subject FormalName="politics" />
+</SubjectCode>
+
+			</DescriptiveMetadata>
+
+		<NewsComponent>
+		<Role FormalName="Summary" /> 
+         <ContentItem>
+           <MediaType FormalName="Text"/>
+           <Format FormalName="bcNITF2.5"/>
+           <DataContent>
+             <![CDATA[French investigators have handed over to the Canada Revenue Agency the details of about 1,800 Swiss bank accounts owned by Canadians.
+
+The accounts are among those discovered by French authorities who investigated clients of the Hong Kong and Shanghai Banking Corporation (HSBC).]]>
+           </DataContent>
+         </ContentItem>
+       </NewsComponent> 
+			
+
+	<NewsComponent>
+		<ContentItem>
+		  <MediaType FormalName="Text"/>
+		  <Format FormalName="bcNITF2.5"/>
+		  <DataContent>
+<![CDATA[&lt;p&gt;AHN News Staff&lt;/p&gt;
+&lt;p&gt;Ottawa, Ontario, Canada (AHN) - French investigators have handed over to the Canada Revenue Agency the details of about 1,800 Swiss bank accounts owned by Canadians.&lt;/p&gt;
+&lt;p&gt;  The accounts are among those discovered by French authorities who investigated clients of the Hong Kong and Shanghai Banking Corporation (HSBC). The data were among the 24,000 Swiss accounts stolen in 2007 by former HSBC computer specialist Herve Falciani.&lt;/p&gt;
+&lt;p&gt;  According to the chief prosecutor, Canadian Swiss bank account holders in HSBC are larger in number than those from the U.S., who hold only about 1,600 accounts.&lt;/p&gt;
+&lt;p&gt;  It is not illegal for Canadians to open a Swiss bank accounts, but they have to disclose the accounts to the concerned government agency for tax purposes.&lt;/p&gt;
+&lt;p&gt;  HSBC denied any wrongdoing and lashed out at France for using stolen documents to investigate their clients. The bank wrote to its Canadian clients six months ago to assure them it would be difficult to prosecute Canadian depositors based on stolen data.&lt;/p&gt;
+&lt;p&gt;  Falciani currently lives in Nice, France and helps French investigators go through the numerous documents he stole and turned over to the investigators after his home was searched upon the request of Swiss authorities.&lt;/p&gt;
+&lt;p&gt;  Reports indicate another HSBC employee,  Georgina Mikhael, was involved in the theft of the bank documents.&lt;/p&gt;
+&lt;p&gt;  The two denied they did anything illegal or asked money from French, German and British authorities when they contacted them over the list.&lt;/p&gt;
+&lt;p&gt;  According to Falciani, HSBC clients in its Geneva branch were required a minimum deposit of $500,000, which would place the minimum total value of the 1,800 Canadian-owned accounts to $900 billion.&lt;/p&gt;]]>
+		  </DataContent>
+		</ContentItem>
+	</NewsComponent>
+	
+
+	<NewsComponent Duid="7020063717.jpg">
+		<NewsLines>
+			<HeadLine>France Gives Ottawa List of Canadians Who Hold Secret Swiss Bank Accounts</HeadLine>
+			<CopyrightLine>© AHN</CopyrightLine>
+		</NewsLines>
+		
+		<AdministrativeMetadata>
+			<Creator>
+				<Party FormalName="AHN" /> 
+			</Creator>
+		</AdministrativeMetadata>
+		
+		
+			<NewsComponent>
+			<Role FormalName="Caption" /> 
+			<ContentItem>
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent>
+					<![CDATA[French investigators have handed over to the Canada Revenue Agency the details of about 1,800 Swiss bank accounts owned by Canadians.]]>
+				</DataContent>
+			</ContentItem>
+		</NewsComponent>
+		
+		
+		<NewsComponent>
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://media.feedsyndicate.com/media/0/90018052_1.jpg">
+			<MediaType FormalName="Photo" /> 
+		</ContentItem>
+		</NewsComponent>
+	</NewsComponent>
+			
+
+	<NewsComponent Duid="7020063717.jpg">
+		<NewsLines>
+			<HeadLine>France Gives Ottawa List of Canadians Who Hold Secret Swiss Bank Accounts</HeadLine>
+			<CopyrightLine>© Map Copyright Google Maps</CopyrightLine>
+		</NewsLines>
+		
+		<AdministrativeMetadata>
+			<Creator>
+				<Party FormalName="Google Maps" /> 
+			</Creator>
+		</AdministrativeMetadata>
+		
+		
+			<NewsComponent>
+			<Role FormalName="Caption" /> 
+			<ContentItem>
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent>
+					<![CDATA[Story Location]]>
+				</DataContent>
+			</ContentItem>
+		</NewsComponent>
+		
+		
+		<NewsComponent>
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://www.feedsyndicate.com/cgi-bin/static_map.cgi?point=45.4115720,-75.6981940zoom=6">
+			<MediaType FormalName="Photo" /> 
+		</ContentItem>
+		</NewsComponent>
+	</NewsComponent>
+			
+
+		</NewsComponent>
+	</NewsItem>
+		
+
+</NewsML>
+

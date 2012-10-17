@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE NewsML PUBLIC "urn:newsml:iptc.org:20001006:NewsMLv1.2:1" "http://www.afp.com/dtd/NewsMLv1.2.dtd">
+<NewsML>
+	<NewsEnvelope>
+		<DateAndTime>20101011T001445-04:00</DateAndTime>
+	</NewsEnvelope>
+	
+	<NewsItem>
+		<Identification>
+			<NewsIdentifier>
+				<ProviderId>www.feedsyndicate.com</ProviderId>
+				<DateId>20101010</DateId>
+				<NewsItemId>7020169213</NewsItemId>
+				<RevisionId PreviousRevision="0" Update="N">1</RevisionId>
+				<PublicIdentifier>urn:NewsML:www.feedsyndicate.com:20101010:7020169213:1</PublicIdentifier>
+			</NewsIdentifier>
+		</Identification>
+		
+		<NewsManagement>
+			<NewsItemType FormalName="News"/>
+			<FirstCreated>20101000T001445-0400</FirstCreated>
+			<ThisRevisionCreated>20101000T001445-0400</ThisRevisionCreated>
+			<Status FormalName="Usable"/>
+		</NewsManagement>
+		
+		<NewsComponent>	
+			<NewsLines>
+				<HeadLine>NY Man Randomly Stabs 8-Year Old Boy at New York Dave and Busters</HeadLine>
+				<DateLine></DateLine>
+				<CopyrightLine>© 2010 </CopyrightLine>
+			</NewsLines>
+			<AdministrativeMetadata>
+				<Provider>
+				<Party FormalName=""/>
+				</Provider>
+				<Creator>
+				<Party FormalName=""/>
+				</Creator>
+			</AdministrativeMetadata>
+			<DescriptiveMetadata>
+				<SubjectCode>
+	<Subject FormalName="crime, law and justice" />
+</SubjectCode>
+
+			</DescriptiveMetadata>
+
+		<NewsComponent>
+		<Role FormalName="Summary" /> 
+         <ContentItem>
+           <MediaType FormalName="Text"/>
+           <Format FormalName="bcNITF2.5"/>
+           <DataContent>
+             <![CDATA[23-year old Evan Sachs pleaded not guilty Saturday on charges of second degree attempted murder, assault and possession of a dangerous weapon after repeatedly stabbing an 8 year old boy in the back with a hunting knife.]]>
+           </DataContent>
+         </ContentItem>
+       </NewsComponent> 
+			
+
+	<NewsComponent>
+		<ContentItem>
+		  <MediaType FormalName="Text"/>
+		  <Format FormalName="bcNITF2.5"/>
+		  <DataContent>
+<![CDATA[&lt;p&gt;Lawrence Mijares - AHN News Contributor&lt;/p&gt;
+&lt;p&gt;New York, New York, United States (AHN) - While inside a Dave and Buster's, a popular restaurant and arcade chain in Nassau County, New York, Evan Sachs, 23, chose at random an 8 year old boy playing a video game, crept behind then stabbed him five times in the back with a 3.5 inch hunting knife. &lt;/p&gt;
+&lt;p&gt;  Sachs pleaded not guilty when arraigned Saturday at the First District Court, Hempstead, NY for attempted murder, assault and possession of a dangerous weapon.&lt;/p&gt;
+&lt;p&gt;  The boy suffered a collapsed lung and was rushed immediately to the Winthorp Hospital in Long Island where he is now in stable condition.&lt;/p&gt;
+&lt;p&gt;  Immediately after the attack, the boy staggered towards his mother who screamed for help. Meanwhile, Sachs with bloodied hands, went to the restroom but was seen by a witness who called on the boy's father.&lt;/p&gt;
+&lt;p&gt;  Within seconds, both men apprehended Sachs who offered no resistance and was arrested when police arrived.&lt;/p&gt;
+&lt;p&gt;  Elaborating on the incident, Lt. Kevin Smith of the Nassau Police Department said the attack was totally unprovoked and that both assailant and victim did not know each other. According to Smith, Sachs was alone at the time and, "for no other apparent reason besides to commit this type of act."&lt;/p&gt;
+&lt;p&gt;  Though the boy's parents were within 20 feet from their son when the attack occurred, Lt. Smith was quick to observe, "Who hasn't sent their 8-year-old a few feet away to play a game? It's just a tragedy that something like this could ever happen."&lt;/p&gt;
+&lt;p&gt;  Sachs who lived nearby Calhoun High School, shocked the community there who couldn't believe that one of their own could commit such a crime.&lt;/p&gt;
+&lt;p&gt;  According to Sal Salerno, Sach's former drama teacher, he was known as a good student and a crative member of the school's internet radio club.&lt;/p&gt;
+&lt;p&gt;  Sachs is held without bail and is scheduled to be back in court on Wednesday.&lt;/p&gt;]]>
+		  </DataContent>
+		</ContentItem>
+	</NewsComponent>
+	
+
+	<NewsComponent Duid="7020169213.jpg">
+		<NewsLines>
+			<HeadLine>NY Man Randomly Stabs 8-Year Old Boy at New York Dave and Busters</HeadLine>
+			<CopyrightLine>© AHN</CopyrightLine>
+		</NewsLines>
+		
+		<AdministrativeMetadata>
+			<Creator>
+				<Party FormalName="AHN" /> 
+			</Creator>
+		</AdministrativeMetadata>
+		
+		
+			<NewsComponent>
+			<Role FormalName="Caption" /> 
+			<ContentItem>
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent>
+					<![CDATA[23-year old Evan Sachs pleaded not guilty Saturday on charges of second degree attempted murder, assault and possession of a dangerous weapon after repeatedly stabbing an 8 year old boy in the back with a hunting knife.]]>
+				</DataContent>
+			</ContentItem>
+		</NewsComponent>
+		
+		
+		<NewsComponent>
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://media.feedsyndicate.com/media/c/90019357_1.png">
+			<MediaType FormalName="Photo" /> 
+		</ContentItem>
+		</NewsComponent>
+	</NewsComponent>
+			
+
+		</NewsComponent>
+	</NewsItem>
+		
+
+	<NewsItem>
+		<Identification>
+			<NewsIdentifier>
+				<ProviderId>www.feedsyndicate.com</ProviderId>
+				<DateId>20101010</DateId>
+				<NewsItemId>7020169207</NewsItemId>
+				<RevisionId PreviousRevision="0" Update="N">1</RevisionId>
+				<PublicIdentifier>urn:NewsML:www.feedsyndicate.com:20101010:7020169207:1</PublicIdentifier>
+			</NewsIdentifier>
+		</Identification>
+		
+		<NewsManagement>
+			<NewsItemType FormalName="News"/>
+			<FirstCreated>20101000T001445-0400</FirstCreated>
+			<ThisRevisionCreated>20101000T001445-0400</ThisRevisionCreated>
+			<Status FormalName="Usable"/>
+		</NewsManagement>
+		
+		<NewsComponent>	
+			<NewsLines>
+				<HeadLine>Orlando Girl Accused Of Poisoning Adoptive Family</HeadLine>
+				<DateLine></DateLine>
+				<CopyrightLine>© 2010 </CopyrightLine>
+			</NewsLines>
+			<AdministrativeMetadata>
+				<Provider>
+				<Party FormalName=""/>
+				</Provider>
+				<Creator>
+				<Party FormalName=""/>
+				</Creator>
+			</AdministrativeMetadata>
+			<DescriptiveMetadata>
+				<SubjectCode>
+	<Subject FormalName="crime, law and justice" />
+</SubjectCode>
+
+			</DescriptiveMetadata>
+
+		<NewsComponent>
+		<Role FormalName="Summary" /> 
+         <ContentItem>
+           <MediaType FormalName="Text"/>
+           <Format FormalName="bcNITF2.5"/>
+           <DataContent>
+             <![CDATA[Deputies in Orlando, Fla. arrested a 13-year-old girl after her adoptive mother tested positive for arsenic in her blood. 
+
+Investigators accuse the girl of lacing her family's food with insecticide, dog feces and soapy water.]]>
+           </DataContent>
+         </ContentItem>
+       </NewsComponent> 
+			
+
+	<NewsComponent>
+		<ContentItem>
+		  <MediaType FormalName="Text"/>
+		  <Format FormalName="bcNITF2.5"/>
+		  <DataContent>
+<![CDATA[&lt;p&gt;David Goodhue - AHN News Reporter&lt;/p&gt;
+&lt;p&gt;Orlando, FL, United States (AHN) - Deputies in Orlando, Fla. arrested a 13-year-old girl after her adoptive mother tested positive for arsenic in her blood.&lt;/p&gt;
+&lt;p&gt;  Investigators accuse the girl of lacing her family's food with insecticide, dog feces and soapy water.&lt;/p&gt;
+&lt;p&gt;  The girl's mother told Orange County Sheriff's Office deputies that her daughter had been poisoning the family's food from early 2009 until April 2010.&lt;/p&gt;
+&lt;p&gt;  The Orlando Sentinel reports that investigators are not releasing her name because of her name and because she reportedly has a history of mental health issues.&lt;/p&gt;
+&lt;p&gt;  Her mother got the blood tested after she became ill over the year.&lt;/p&gt;]]>
+		  </DataContent>
+		</ContentItem>
+	</NewsComponent>
+	
+
+	<NewsComponent Duid="7020169207.jpg">
+		<NewsLines>
+			<HeadLine>Orlando Girl Accused Of Poisoning Adoptive Family</HeadLine>
+			<CopyrightLine>© AHN</CopyrightLine>
+		</NewsLines>
+		
+		<AdministrativeMetadata>
+			<Creator>
+				<Party FormalName="AHN" /> 
+			</Creator>
+		</AdministrativeMetadata>
+		
+		
+			<NewsComponent>
+			<Role FormalName="Caption" /> 
+			<ContentItem>
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent>
+					<![CDATA[Deputies in Orlando, Fla. arrested a 13-year-old girl after her adoptive mother tested positive for arsenic in her blood. 
+]]>
+				</DataContent>
+			</ContentItem>
+		</NewsComponent>
+		
+		
+		<NewsComponent>
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://media.feedsyndicate.com/media/c/90019363_1.gif">
+			<MediaType FormalName="Photo" /> 
+		</ContentItem>
+		</NewsComponent>
+	</NewsComponent>
+			
+
+		</NewsComponent>
+	</NewsItem>
+		
+
+	<NewsItem>
+		<Identification>
+			<NewsIdentifier>
+				<ProviderId>www.feedsyndicate.com</ProviderId>
+				<DateId>20101010</DateId>
+				<NewsItemId>7020168512</NewsItemId>
+				<RevisionId PreviousRevision="0" Update="N">1</RevisionId>
+				<PublicIdentifier>urn:NewsML:www.feedsyndicate.com:20101010:7020168512:1</PublicIdentifier>
+			</NewsIdentifier>
+		</Identification>
+		
+		<NewsManagement>
+			<NewsItemType FormalName="News"/>
+			<FirstCreated>20101000T001445-0400</FirstCreated>
+			<ThisRevisionCreated>20101000T001445-0400</ThisRevisionCreated>
+			<Status FormalName="Usable"/>
+		</NewsManagement>
+		
+		<NewsComponent>	
+			<NewsLines>
+				<HeadLine>France Raises Retirement Age To Cut Pension Costs</HeadLine>
+				<DateLine></DateLine>
+				<CopyrightLine>© 2010 </CopyrightLine>
+			</NewsLines>
+			<AdministrativeMetadata>
+				<Provider>
+				<Party FormalName=""/>
+				</Provider>
+				<Creator>
+				<Party FormalName=""/>
+				</Creator>
+			</AdministrativeMetadata>
+			<DescriptiveMetadata>
+				<SubjectCode>
+	<Subject FormalName="politics" />
+</SubjectCode>
+
+			</DescriptiveMetadata>
+
+		<NewsComponent>
+		<Role FormalName="Summary" /> 
+         <ContentItem>
+           <MediaType FormalName="Text"/>
+           <Format FormalName="bcNITF2.5"/>
+           <DataContent>
+             <![CDATA[Defying trade union threats, the French Senate on Friday approved an increase in the country's retirement age from 60 to 62 in an effort to reduce pension costs.]]>
+           </DataContent>
+         </ContentItem>
+       </NewsComponent> 
+			
+
+	<NewsComponent>
+		<ContentItem>
+		  <MediaType FormalName="Text"/>
+		  <Format FormalName="bcNITF2.5"/>
+		  <DataContent>
+<![CDATA[&lt;p&gt;AHN News Staff&lt;/p&gt;
+&lt;p&gt;Paris, France (AHN) - Defying trade union threats, the French Senate on Friday approved an increase in the country's retirement age from 60 to 62 in an effort to reduce pension costs. Union leaders are expected to protest the move and called a national strike on October 16.&lt;/p&gt;
+&lt;p&gt;  Parliament's Lower House has already supported the reform, but it will not go into affect until the Upper House approves it.&lt;/p&gt;
+&lt;p&gt;  The government hopes that the reform will be fully approved by the end of this month. If the proposal gets the approval, the employees will not be able to qualify for state pension until they work for a minimum of 41.5 years.&lt;/p&gt;
+&lt;p&gt;  The government is endorsing the reforms in a bid to reduce country's lending levels, which sharply increased in the wake of global financial crisis.&lt;/p&gt;
+&lt;p&gt;  Currently, French budget deficit stands at 7 percent of GDP, which is far beyond the prescribed 3 percent as per European Union norms. However, it is much lower compared to its EU members - U.K., Greece, Ireland, Portugal and Spain.&lt;/p&gt;]]>
+		  </DataContent>
+		</ContentItem>
+	</NewsComponent>
+	
+
+	<NewsComponent Duid="7020168512.jpg">
+		<NewsLines>
+			<HeadLine>France Raises Retirement Age To Cut Pension Costs</HeadLine>
+			<CopyrightLine>© AHN</CopyrightLine>
+		</NewsLines>
+		
+		<AdministrativeMetadata>
+			<Creator>
+				<Party FormalName="AHN" /> 
+			</Creator>
+		</AdministrativeMetadata>
+		
+		
+			<NewsComponent>
+			<Role FormalName="Caption" /> 
+			<ContentItem>
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent>
+					<![CDATA[Defying the trade unions]]>
+				</DataContent>
+			</ContentItem>
+		</NewsComponent>
+		
+		
+		<NewsComponent>
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://media.feedsyndicate.com/media/8/90019125_1.png">
+			<MediaType FormalName="Photo" /> 
+		</ContentItem>
+		</NewsComponent>
+	</NewsComponent>
+			
+
+		</NewsComponent>
+	</NewsItem>
+		
+
+	<NewsItem>
+		<Identification>
+			<NewsIdentifier>
+				<ProviderId>www.feedsyndicate.com</ProviderId>
+				<DateId>20101009</DateId>
+				<NewsItemId>7020162907</NewsItemId>
+				<RevisionId PreviousRevision="0" Update="N">1</RevisionId>
+				<PublicIdentifier>urn:NewsML:www.feedsyndicate.com:20101009:7020162907:1</PublicIdentifier>
+			</NewsIdentifier>
+		</Identification>
+		
+		<NewsManagement>
+			<NewsItemType FormalName="News"/>
+			<FirstCreated>20101000T001445-0400</FirstCreated>
+			<ThisRevisionCreated>20101000T001445-0400</ThisRevisionCreated>
+			<Status FormalName="Usable"/>
+		</NewsManagement>
+		
+		<NewsComponent>	
+			<NewsLines>
+				<HeadLine>Syria, Iran Object To $2.75 Billion U.S.-Israel Defense Deal</HeadLine>
+				<DateLine></DateLine>
+				<CopyrightLine>© 2010 </CopyrightLine>
+			</NewsLines>
+			<AdministrativeMetadata>
+				<Provider>
+				<Party FormalName=""/>
+				</Provider>
+				<Creator>
+				<Party FormalName=""/>
+				</Creator>
+			</AdministrativeMetadata>
+			<DescriptiveMetadata>
+				<SubjectCode>
+	<Subject FormalName="politics" />
+</SubjectCode>
+
+			</DescriptiveMetadata>
+
+		<NewsComponent>
+		<Role FormalName="Summary" /> 
+         <ContentItem>
+           <MediaType FormalName="Text"/>
+           <Format FormalName="bcNITF2.5"/>
+           <DataContent>
+             <![CDATA[Just a day after the United States signed a $2.75 billion deal to sell 20 F-35 fighter jets to Israel, Syria opposed the move and said that the defense deal will threaten security in the region.
+
+Under the deal, Israel will get 20 fifth-generation F-35 stealth jets, which cannot be detected by radar, and the first jet will be delivered between 2015 and 2017.]]>
+           </DataContent>
+         </ContentItem>
+       </NewsComponent> 
+			
+
+	<NewsComponent>
+		<ContentItem>
+		  <MediaType FormalName="Text"/>
+		  <Format FormalName="bcNITF2.5"/>
+		  <DataContent>
+<![CDATA[&lt;p&gt;AHN News Staff&lt;/p&gt;
+&lt;p&gt;Damascus, Syria (AHN) - Just a day after the United States signed a $2.75 billion deal to sell 20 F-35 fighter jets to Israel, Syria opposed the move and said that the defense deal will threaten security in the region.&lt;/p&gt;
+&lt;p&gt;  The deal came as an offer from Washington to Tel Aviv to apparently save Middle East peace talks. Under the deal, Israel will get 20 fifth-generation F-35 stealth jets, which cannot be detected by radar, and the first jet will be delivered between 2015 and 2017.&lt;/p&gt;
+&lt;p&gt;  "The most advanced fighter jet in the world today, the F-35 will enhance Israel's ability to defend itself, by itself, against any threat or combination of threats, from anywhere within the Middle East," Michael Oren, Israel's ambassador to the U.S. said in a statement.&lt;/p&gt;
+&lt;p&gt;  Describing the deal an event of great strategic and historic significance, Oren said that it would serve common interests of the two countries. It is believed that Washington's offer was intended to persuade Jerusalem to extend the Gaza settlement halt for two more months.&lt;/p&gt;
+&lt;p&gt;  However, Syrian Foreign Minister Walid Muallem said, "We are told that Israeli Prime Minister Benjamin Netanyahu will announce a two-month freeze on settlements, provided this issue is not raised again, and obtain in exchange a deal for very sophisticated arms." "The question is no longer a two-month settlement freeze, but rather a threat to Arab security," Muallem added.&lt;/p&gt;
+&lt;p&gt;  The move has also upset Iran and it can further increase tensions, which are already at its high, following an announcement from the U.S. about a major arms sale to Saudi Arabia in recent past.&lt;/p&gt;]]>
+		  </DataContent>
+		</ContentItem>
+	</NewsComponent>
+	
+
+	<NewsComponent Duid="7020162907.jpg">
+		<NewsLines>
+			<HeadLine>Syria, Iran Object To $2.75 Billion U.S.-Israel Defense Deal</HeadLine>
+			<CopyrightLine>© AHN</CopyrightLine>
+		</NewsLines>
+		
+		<AdministrativeMetadata>
+			<Creator>
+				<Party FormalName="AHN" /> 
+			</Creator>
+		</AdministrativeMetadata>
+		
+		
+			<NewsComponent>
+			<Role FormalName="Caption" /> 
+			<ContentItem>
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent>
+					<![CDATA[Just a day after the United States signed a $2.75 billion deal to sell 20 F-35 fighter jets to Israel, Syria opposed the move and said that the defense deal will threaten security in the region.]]>
+				</DataContent>
+			</ContentItem>
+		</NewsComponent>
+		
+		
+		<NewsComponent>
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://media.feedsyndicate.com/media/7/90019162_1.jpg">
+			<MediaType FormalName="Photo" /> 
+		</ContentItem>
+		</NewsComponent>
+	</NewsComponent>
+			
+
+		</NewsComponent>
+	</NewsItem>
+		
+
+	<NewsItem>
+		<Identification>
+			<NewsIdentifier>
+				<ProviderId>www.feedsyndicate.com</ProviderId>
+				<DateId>20101009</DateId>
+				<NewsItemId>7020162726</NewsItemId>
+				<RevisionId PreviousRevision="0" Update="N">1</RevisionId>
+				<PublicIdentifier>urn:NewsML:www.feedsyndicate.com:20101009:7020162726:1</PublicIdentifier>
+			</NewsIdentifier>
+		</Identification>
+		
+		<NewsManagement>
+			<NewsItemType FormalName="News"/>
+			<FirstCreated>20101000T001445-0400</FirstCreated>
+			<ThisRevisionCreated>20101000T001445-0400</ThisRevisionCreated>
+			<Status FormalName="Usable"/>
+		</NewsManagement>
+		
+		<NewsComponent>	
+			<NewsLines>
+				<HeadLine>Al Shabaab: We Will Never Negotiate With Somali Government</HeadLine>
+				<DateLine></DateLine>
+				<CopyrightLine>© 2010 </CopyrightLine>
+			</NewsLines>
+			<AdministrativeMetadata>
+				<Provider>
+				<Party FormalName=""/>
+				</Provider>
+				<Creator>
+				<Party FormalName=""/>
+				</Creator>
+			</AdministrativeMetadata>
+			<DescriptiveMetadata>
+				<SubjectCode>
+	<Subject FormalName="politics" />
+</SubjectCode>
+
+			</DescriptiveMetadata>
+
+		<NewsComponent>
+		<Role FormalName="Summary" /> 
+         <ContentItem>
+           <MediaType FormalName="Text"/>
+           <Format FormalName="bcNITF2.5"/>
+           <DataContent>
+             <![CDATA[Somalia's al Shabaab has spurned any negotiations with the Transitional Federal Government of Somalia led by Sharif sheikh Ahmed, according to an al Shabaab official.]]>
+           </DataContent>
+         </ContentItem>
+       </NewsComponent> 
+			
+
+	<NewsComponent>
+		<ContentItem>
+		  <MediaType FormalName="Text"/>
+		  <Format FormalName="bcNITF2.5"/>
+		  <DataContent>
+<![CDATA[&lt;p&gt;Abdi Hajji Hussein - AHN News Correspondent&lt;/p&gt;
+&lt;p&gt;Mogadishu, Somalia (AHN) - Somalia's al Shabaab has spurned any negotiations with the Transitional Federal Government of Somalia led by Sharif sheikh Ahmed, according to an al Shabaab official.&lt;/p&gt;
+&lt;p&gt;  Sheik Mukhtar Robow Abu Mansur, one of Somalia's de facto leaders explained, "We will never negotiate with Somali Government instead we will welcome it with fire and bullets."&lt;/p&gt;
+&lt;p&gt;  Speaking at a mosque in Mogadishu's Bakara market, an area tightly controlled by al Shabaab militants, Rabow stated that the Somali government has allegedly spread rumors of a power struggle within the group. Rabow added that they will commence a new campaign against what he called the adversary of Allah, calling all al Shabaab fighters to get ready.&lt;/p&gt;
+&lt;p&gt;  "Let alone al Shabaab to have been dismantled, it will declare new offensive uprooting AMISOM forces and their apostate government," Robow said after Friday congregational prayer.&lt;/p&gt;
+&lt;p&gt;  The group asserted to be al Qaeda's branch in Somalia after Robow told the reporters "We telling the Mujahideen around, particularly, Sheikh Osama Bin Laden, our leader, your students in Somalia are united"&lt;/p&gt;
+&lt;p&gt;  The statement from al Qaeda's affiliate in the horn of Africa nation comes as the international community and Somali government called on al Shabaab to negotiate with the TFG.&lt;/p&gt;]]>
+		  </DataContent>
+		</ContentItem>
+	</NewsComponent>
+	
+
+	<NewsComponent Duid="7020162726.jpg">
+		<NewsLines>
+			<HeadLine>Al Shabaab: We Will Never Negotiate With Somali Government</HeadLine>
+			<CopyrightLine>© AHN</CopyrightLine>
+		</NewsLines>
+		
+		<AdministrativeMetadata>
+			<Creator>
+				<Party FormalName="AHN" /> 
+			</Creator>
+		</AdministrativeMetadata>
+		
+		
+			<NewsComponent>
+			<Role FormalName="Caption" /> 
+			<ContentItem>
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent>
+					<![CDATA[Somalia]]>
+				</DataContent>
+			</ContentItem>
+		</NewsComponent>
+		
+		
+		<NewsComponent>
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://media.feedsyndicate.com/media/9/90019163_1.jpg">
+			<MediaType FormalName="Photo" /> 
+		</ContentItem>
+		</NewsComponent>
+	</NewsComponent>
+			
+
+		</NewsComponent>
+	</NewsItem>
+		
+
+</NewsML>
+

@@ -1,0 +1,33 @@
+@include "~/application/modules/Core/externals/styles/admin/constants.css";
+
+
+#global_page_article-admin-manage-index .admin_search {
+	max-width: 98%;
+}
+
+.article_widget_form .form-wrapper {
+    border-top: 1px solid #EEEEEE;
+    clear: both;
+    overflow: hidden;
+    padding: 0px 0;
+    margin-top: 4px !important;
+}
+.article_widget_form .form-label {
+    clear: left;
+    float: left;
+    font-weight: bold;
+    overflow: hidden;
+    padding-right: 15px;
+    width: 160px;
+}
+.article_widget_form .form-element {
+    float: left;
+    overflow: hidden;
+}
+#category_list .move-me {
+  cursor: move;
+}
+
+.article_text_desc {
+  font-size: 0.8em;
+}

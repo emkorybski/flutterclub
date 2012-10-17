@@ -1,0 +1,834 @@
+/* $Id: main.css 2010-07-02 01:29 ermek $*/
+@include "~/application/modules/Core/externals/styles/admin/constants.css";
+
+.provider_select {
+    margin-top: 24px;
+    z-index: 1;
+    position: absolute;
+}
+
+.provider_list {
+    border: 1px solid #EAEAEA;
++rounded ( 3 px );
+    background-color: $theme_body_background_color;
+    padding: 1px;
+    padding-bottom: 3px;
+}
+
+.provider {
+    border: 1px solid transparent;
+    cursor: pointer;
+    height: 30px;
+    padding: 1px 4px 1px 1px;
++rounded ( 3 px );
+}
+
+.selected_provider {
+    float: right;
+    margin-left: 2px;
+}
+
+.selected_provider img {
+    height: 24px;
+    margin-top: -1px;
+}
+
+.show_providers {
+    float: left;
+    cursor: pointer;
+}
+
+.show_provider_btn {
+    background-image: url(~/application/modules/Inviter/externals/images/expand.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    width: 23px;
+    height: 22px;
+    float: right;
+    position: relative;
+}
+
+.hide_provider_btn {
+    background-image: url(~/application/modules/Inviter/externals/images/collapse.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+.show_provider_btn:hover {
+    background-position: 0 -22px;
+}
+
+.provider:hover {
+    border: 1px solid $theme_border_color;
++foreground;
+    -moz-border-radius: 2px;
+}
+
+.provider_logo {
+    float: left;
+    height: 30px;
+}
+
+.provider_name {
+    float: left;
+    font-weight: bold;
+    line-height: 30px;
+    margin-left: 8px;
+}
+
+.providers_hidden {
+    margin: 0px;
+    overflow: hidden;
+    position: static;
+    height: 0px;
+}
+
+#invite_friends div.form-label {
+    width: 70px;
+}
+
+.send_invite_form .form-elements {
+    width: 650px;
+    float: left;
+}
+
+.send_invite_form .inviter_contact {
+    display: inline;
+}
+
+.send_invite_form li {
+    padding: 5px 1px 0 8px;
+    height: 24px;
+    border: 1px solid transparent;
+    margin: 1px;
+}
+
+.send_invite_form li:hover, .send_invite_form li.checked {
+    background-color: #C9DDE7;
++rounded ( 3 px );
+}
+
+.send_invite_form #contacts-element {
+    padding-right: 10px;
+}
+
+.send_invite_form ul {
+    max-height: 321px;
+    overflow-y: auto;
+    width: 450px;
+}
+
+#contacts-wrapper {
+    padding-bottom: 20px;
+}
+
+#check_all-element {
+    padding-left: 10px;
+}
+
+.global_form >  div > .my_invitations {
+    width: 650px;
+    margin-top: 5px;
+    padding: 20px;
+}
+
+.my_invitation_list {
+    width: 95%;
+    border: 1px dashed $theme_input_background_color;
+}
+
+.my_invitation_list tr td {
+    padding: 7px 10px;
+    border-bottom: 1px solid $theme_input_border_colors;
+}
+
+.my_invitation_list tr:nth-child(2n) {
+    background-color: $theme_input_background_color;
+}
+
+.my_invitation_list tr:nth-child(2n-1) {
+    background-color: $theme_body_background_color;
+}
+
+.my_invitation_list tr:last-child td {
+    border-bottom-style: none;
+}
+
+.my_invitation_list .delete_btn, .my_invitation_list .send_btn {
+    background-repeat: no-repeat;
+    font-size: 0.8em;
+    height: 16px;
+}
+
+.my_invitation_list .delete_btn {
+    background-image: url(~/application/modules/Inviter/externals/images/delete.png);
+    margin-right: 15px;
+}
+
+.my_invitation_list .send_btn {
+    background-image: url(~/application/modules/Inviter/externals/images/send.png);
+}
+
+input.sendnew {
+    width: 300px;
+}
+
+#message_box-wrapper {
+    padding: 10px 0px;
+}
+
+ul.form-errors {
+    width: 600px;
+}
+
+ul.form-errors li {
+    height: 40px;
+}
+
+li.suggest_friend {
+    width: 182px;
+    float: left;
+    height: 70px;
+    overflow: hidden;
+}
+
+li.suggest_friend_widget {
+    width: 170px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+div.nonefriend {
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+}
+
+div.nonfriend_delete {
+    background-image: url(~/application/modules/Inviter/externals/images/nonfriend_delete.png);
+    background-repeat: no-repeat;
+}
+
+div.nonfriend_delete_hover {
+    background-image: url(~/application/modules/Inviter/externals/images/nonfriend_delete_hover.png);
+    background-repeat: no-repeat;
+}
+
+div.suggest_more_button {
+    clear: both;
+    background-image: url(~/application/modules/Inviter/externals/images/expand_small.png);
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding: 4px 30px;
+    cursor: pointer;
+    border-top: 2px solid $theme_form_border_color;
+    background-color: $theme_form_background_color;
+    color: $theme_link_color;
+    font-weight: bold;
+}
+
+div.inviter_theme_colors {
+    display: none;
+    color: $theme_foreground_background_color;
+    background-color: $theme_form_background_color;
+    border:
+}
+
+div.default_provider {
+    padding-left: 5px;
+    height: 50px;
+    float: left;
+}
+
+div.inviter_contacts {
+    background-color: $theme_body_background_color;
+}
+
+#inviter_contacts_loading {
+    background: url("/application/modules/Hecore/externals/images/he_contacts_loading.gif") no-repeat scroll center center transparent;
+    height: 50px;
+    left: 220px;
+    position: absolute;
+    top: 100px;
+    width: 50px;
+    display: none;
+}
+
+div.writer-textarea-conteiner {
+    float: left;
+    width: 320px;
+    margin-top: 10px;
+}
+
+div.widget-writer-textarea-conteiner {
+    float: left;
+    width: 235px;
+    margin-top: 5px;
+}
+
+div.writer-textarea-conteiner label {
+    clear: left;
+    float: left;
+    font-weight: bold;
+    margin-bottom: 10px;
+    overflow: hidden;
+    padding: 4px 15px 0 2px;
+    text-align: right;
+}
+
+.inviter-form-title {
+    cursor: pointer;
+}
+
+.inviter-form {
+    padding: 0px 10px 10px 10px;
+}
+
+div.inviter-form-bg {
+    background-color: $theme_form_background_color;
+}
+
+div.inviter-form-hover {
+    background-color: $theme_input_background_color;
+}
+
+div.inviter-form-conteiner {
+    border-top: 2px solid $theme_form_border_color;
+}
+
+#inviter-upload-conteiner {
+    padding-bottom: 2px;
+}
+
+div.inviter-import-title, div.inviter-upload-title, div.inviter-suggest-title, div.inviter-write-title {
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+div.inviter-import-title {
+    background-image: url(~/application/modules/Inviter/externals/images/import_contacts.png);
+}
+
+div.inviter-upload-title {
+    background-image: url(~/application/modules/Inviter/externals/images/upload_contacts.png);
+}
+
+div.inviter-write-title {
+    background-image: url(~/application/modules/Inviter/externals/images/write_contacts.png);
+}
+
+div.inviter-suggest-title {
+    background-image: url(~/application/modules/Inviter/externals/images/suggest_contacts.png);
+    padding: 10px 10px 10px 40px;
+    height: 32px;
+}
+
+div.writer_contacts_loading {
+    background-image: url(~/application/modules/Core/externals/images/loading.gif);
+    background-repeat: no-repeat;
+    width: 100px;
+    float: left;
+    margin: 15px 0px 0px 5px;
+    display: none;
+}
+
+div.show_creation_description {
+    padding-bottom: 10px;
+}
+
+div.creation_description_conteiner {
+    background: $theme_input_background_color;
+    border: 1px solid $theme_input_border_colors;
+    padding: 10px;
+}
+
+div.creation_item_title {
+    padding: 10px 0px;
+}
+
+div.creation_item_description {
+    font-size: 9pt;
+    padding: 1px 15px 12px;
+}
+
+div.creation_item_hide {
+    display: none;
+}
+
+.icon_contacts_new {
+    background-image: url(~/application/modules/Inviter/externals/images/add_contact.gif);
+}
+
+.layout_inviter_list_suggest, .layout_inviter_list_top_inviters, .layout_inviter_list_top_referrals {
+    clear: both;
+    margin-bottom: 15px;
+    overflow: auto;
+}
+
+.layout_inviter_list_suggest div.layout_user_list_popular,
+.layout_inviter_list_top_inviters div.layout_user_list_popular,
+.layout_inviter_list_top_referrals div.layout_user_list_popular {
+    clear: inherit;
+    margin-bottom: 0px;
+    overflow: visible;
+}
+
+.inviter-forms-conteiner > div > div,
+#invite_friends > div > div {
+    max-width: 700px;
+}
+
+.introduce_photo {
+    float: left;
+    margin-right: 10px;
+}
+
+.introduce_info {
+    float: left;
+}
+
+.introduce_title {
+    font-weight: bold;
+    font-size: 1em;
+    color: $theme_headline_color;
+}
+
+.layout_inviter_introduce_yourself {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 8px;
+    background-color: $theme_foreground_background_color;
+    border: 1px dashed $theme_foreground_border_color;
+}
+
+.layout_inviter_introduce_member, .layout_inviter_find_more_friends,
+.layout_inviter_facebook_suggest, .layout_inviter_facebook_connected_friends,
+.layout_inviter_twitter_suggest, .layout_inviter_twitter_members,
+.layout_inviter_twitter_connected_friends, .layout_inviter_linkedin_suggest,
+.layout_inviter_linkedin_members, .layout_inviter_linkedin_connected_friends {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.layout_inviter_introduce_member > div, .layout_inviter_find_more_friends > div {
+    padding: 8px;
++foreground;
+}
+
+.hide_introduce_btn {
+    background-image: url(~/application/modules/Inviter/externals/images/delete.gif);
+    width: 16px;
+    height: 16px;
+    display: block;
+    float: right;
+}
+
+.hide_introduce_btn:hover {
+    background-image: url(~/application/modules/Inviter/externals/images/delete_hover.png);
+}
+
+.add_introduce_btn {
+    display: block;
+    margin-top: 7px;
+}
+
+.edit_introduce_btn {
+    background-image: url(~/application/modules/Inviter/externals/images/edit.png);
+    width: 16px;
+    height: 16px;
+    display: block;
+    float: right;
+}
+
+.introduce_member_body {
+    background-color: $theme_pulldown_background_color_hover;
+    border: 1px dashed $theme_foreground_border_color;
++rounded ( 4 px );
+    padding: 5px;
+    margin: 4px 0;
+}
+
+.introduce_additional_info {
+    padding-top: 2px;
+    padding-bottom: 6px;
+}
+
+.inviter_mutual_friends, .inviter_mutual_likes {
+    font-size: 9pt;
+    display: block;
+    margin-right: 9px;
+    padding-left: 18px;
+    float: left;
+    background-repeat: no-repeat;
+    background-image: url(~/application/modules/Inviter/externals/images/user.gif);
+    margin-bottom: 4px;
+}
+
+.horizontal-list .inviter_mutual_friends, .horizontal-list .inviter_mutual_likes {
+    font-size: 11px;
+}
+
+.inviter_mutual_likes {
+    margin-right: 0px;
+    background-image: url(~/application/modules/Inviter/externals/images/like_button.png);
+}
+
+.snowbot_inviter_introduce_yourself {
+    padding: 8px !important;
+}
+
+.bamboo_inviter_introduce_member .introduce_member_body {
+    background-color: transparent;
+}
+
+.bamboo_inviter_introduce_member > div.introduce_member_box {
+    padding: 0px;
+}
+
+.inviter_more_friends_items {
+    padding-top: 4px;
+    padding-bottom: 5px;
+    margin-left: -3px;
+    margin-right: -4px;
+    padding-bottom: 5px;
+    padding-top: 4px;
+}
+
+.inviter_more_friends_item {
+    float: left;
+    display: block;
+    margin-right: 2px;
+}
+
+.inviter_more_friends_items a > img {
+    width: 32px;
+    height: 32px;
+}
+
+.inviter_more_friends_desc {
+    margin-bottom: 6px;
+}
+
+.inviter_more_friends_provider {
+    display: inline;
+    width: 32px;
+    height: 32px;
+}
+
+.inviter_widget_title {
+    padding: 5px 6px 4px;
+    font-weight: bold;
+}
+
+.inviter_facebook_member {
+    display: block;
+    float: left;
+}
+
+.inviter_facebook_page_header {
+    background-repeat: no-repeat;
+    height: 40px;
+    padding-left: 40px;
+    padding-top: 5px;
+    background-image: url(~/application/modules/Inviter/externals/images/facebook.png);
+}
+
+.introduce_member_title a {
+    font-weight: bold;
+}
+
+.inviter_provider_description {
++rounded;
+    border: 2px solid $theme_foreground_border_color;
+    margin-top: 20px;
+    padding: 10px 10px 5px;
+}
+
+.inviter_provider_description .form-wrapper {
+    border-top-style: none;
+    padding: 10px 0;
+    float: none;
+}
+
+.inviter_provider_description .he_setting_fieldset {
+    border-style: none;
+    padding: 0;
+}
+
+.inviter_provider_description .inviter_provider_label {
+    background-color: #FFFFFF;
+    float: left;
+    font-weight: bold;
+    margin-top: -22px;
+    padding: 2px 10px;
+}
+
+.inviter_twitter_login_btn, .inviter_linkedin_login_btn, .inviter_facebook_login_btn {
+    background-image: url(~/application/modules/Inviter/externals/images/twitter.png);
+    background-position: 6px 4px;
+    background-repeat: no-repeat;
+    font-size: 8pt;
+    padding-left: 24px;
+}
+
+inviter_twitter_login_btn:hover {
+    background-image: url(~/application/modules/Inviter/externals/images/twitter.png) !important;
+}
+
+.inviter_linkedin_login_btn, .inviter_linkedin_login_btn:hover {
+    background-image: url(~/application/modules/Inviter/externals/images/linkedin.png);
+}
+
+.inviter_facebook_login_btn, .inviter_facebook_login_btn:hover {
+    background-image: url(~/application/modules/Inviter/externals/images/facebook_small.png) !important;
+}
+
+.admin_inviter_provider_shown {
+    background-color: #EAF5ED;
+}
+
+.admin_inviter_provider_disabled {
+    background-color: #FDE8DD;
+}
+
+.page-inviter-provider {
+    height: 25px;
+    display: inline-block;
+}
+
+.page-inviter-wrapper {
+
+    padding: 5px;
+    background-color: $theme_foreground_background_color;
+    border: 1px solid $theme_foreground_border_color;
+    border-radius: 5px 5px;
+}
+
+.page-inviter-wrapper > div {
+    border: 1px solid $theme_foreground_border_color;
+    background-color: $theme_foreground_background_color;
+    padding-bottom: 3px;
+    padding-top: 3px;
+"
+}
+
+.page-inviter-more-friends {
+    text-align: center;
+}
+
+.page-inviter-page-block {
+    background-color: #ffffff;
+    border: 1px solid $theme_foreground_border_color;
+    border-radius: 3px;
+    margin: 8px 2px;
+    padding: 5px 8px;
+}
+
+div.page-inviter-list-info {
+    margin-bottom: 4px;
+}
+
+.page-inviter-list-info div {
+    font-size: 11px;
+}
+
+.page-inviter-list-info div.r {
+    float: left;
+    overflow-x: hidden;
+    width: 240px;
+}
+
+.page-inviter-list-info div.r div {
+    margin-top: 3px;
+}
+
+.page-inviter-list-info .page_list_desc {
+    margin-bottom: 6px;
+    font-size: 11px;
+}
+
+.active_provider_box_input {
+    color: $theme_font_color;
+}
+
+.layout_active_theme_slipstream .inviter-form-bg {
+    background-color: transparent;
+}
+
+.deprecated_providers span.caption {
+    font-size: 16px;
+    color: #ff5a25 !important;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.deprecated_providers span.body {
+    font-size: 16px;
+    color: #ff5a25 !important;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.admin_table_deprecated tr td {
+    padding: 7px 10px;
+    font-size: .9em;
+    border-bottom: 1px solid silver;
+    white-space: nowrap;
+}
+
+.admin_table_deprecated tr td.header {
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    background: #dddddd;
+    border-bottom: 1px solid gray;
+}
+
+.admin_table_deprecated tr td.title {
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.admin_table_deprecated tr td.gray {
+    background: #eeeeee;
+}
+
+.tip {
+    /*margin-left: 30px;*/
+}
+
+#global_page_inviter-index-index .global_form > div > div p a {
+    display: none;
+}
+
+.inviter-loader {
+    display: none;
+    max-width: 400px;
+    text-align: center;
+}
+
+.layout_inviter_referral_link {
+    margin-bottom: 15px;
+}
+
+.layout_inviter_referral_link > div {
++foreground;
++rounded;
+    padding: 5px;
+}
+
+.inviter-referral-link {
+    margin-top: 5px;
+}
+
+div.layout_inviter_facebook_suggest div.inviter_widget_title button:active {
+    background-image: url("/se423rtl/application/modules/Inviter/externals/images/facebook_small.png");
+}
+
+div#inviter-referral-link div.addthis_toolbox {
+    margin-top: 10px;
+}
+
+div.inviter-referral-link textarea.link {
+    border: 1px solid $theme_border_dark_color;
+    border-radius: 4px;
+    width: 97%;
+    height: 35px;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+}
+div.referrals-wrapper > div.row {
+    margin-bottom: 10px;
+    padding: 5px 5px 3px 5px;
+    border-bottom:1px solid $theme_border_dark_color;
+}
+div.referrals-wrapper > div.row > div.photo {
+    float: left;
+}
+div.referrals-wrapper > div.row > div.photo > a > img {
+    width: 64px;
+
+}
+div.referrals-wrapper > div.row > div.info {
+    margin-left: 10px;
+    float: left;
+}
+div.referrals-wrapper > div.row > div.info div{
+    margin-bottom: 5px;
+}
+div.referrals-wrapper > div.row > div.action {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.inviter-search
+{
+    float: left;
+    border-bottom:1px solid $theme_border_dark_color;
+    margin-bottom: 20px;
+}
+html[dir="rtl"] .inviter-search { float: right; }
+.inviter-search > form {
+    overflow: hidden;
+    background: none;
+    border: none;
+    padding: 5px 5px 3px;
+}
+.inviter-search form > div
+{
+  float: left;
+  overflow: hidden;
+  margin-left: 10px;
+}
+html[dir="rtl"] .inviter-search form > div
+{
+  float: right;
+  margin-left: 0px;
+  margin-right: 10px;
+}
+.inviter-search form > div:first-child { margin-left: 0px; }
+html[dir="rtl"] .inviter-search form > div:first-child { margin-right: 0px; }
+.inviter-search div label
+{
+  font-size: 8pt;
+  font-weight: bold;
+  display: block;
+}
+.inviter-search div input, div.inviter-search div select
+{
+  width: auto;
+  margin-top: 3px;
+}
+.inviter-search div select option { padding-left: 3px; }
+html[dir="rtl"] .inviter-search div select option
+{
+  padding-left: 0px;
+  padding-right: 3px;
+}
+.inviter-search .buttons { margin-top: 1em; }
+#delete-all {
+    margin-left: 40px;
+    padding-left: 16px;
+    background-image: url(~/application/modules/Inviter/externals/images/delete.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-color: transparent;
+
+}
+#global_page_inviter-invitations-index input[type="checkbox"] + label {
+    display: inline-block;
+}
+
+.provider-action-button {
+    margin-top: 30px;
+}
+.provider-action-button-right {
+    float: right;
+}
+.inviter_loader { display: inline-block; margin-left: 22%; cursor: default;}
+.inviter_loader_hidden { display: none; margin-left: 25%; cursor: default;}

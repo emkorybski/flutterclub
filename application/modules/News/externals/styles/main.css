@@ -1,0 +1,266 @@
+
+/* $Id: main.css 7306 2010-09-07 07:33:09Z john $ */
+@include "~/application/modules/Core/externals/styles/constants.css";
+
+
+/*
+ADMIN TABLE LIST 
+Styles most tabular data in the admin panel.
+*/
+.layout_page_news_index_list .generic_layout_container h3 {
+    margin-bottom: 0px !important;
+}
+.layout_news_featured_news .panelContainer .row_title h4 {
+	margin-bottom: 0px !important;
+
+}
+table.news_admin_table thead tr th
+{
+  +foreground;
+  padding: 10px;
+  border-bottom: 1px solid #aaa;
+  font-weight: bold;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  white-space: nowrap;
+  background-color: #E9F4FA;
+}
+table.news_admin_table thead tr th a
+{
+  font-weight: bold;
+}
+table.news_admin_table tbody tr:nth-child(even)
+{
+  background-color: #E9F4FA;
+}
+table.news_admin_table tbody tr td
+{
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  font-size: .9em;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  white-space: wrap;
+  vertical-align: top;
+}
+th.news_admin_table_short
+{
+  width: 1%;
+}
+td.news_admin_table_options
+{
+  color: #ccc;
+}
+.news_admin_table_centered
+{
+  text-align: center;
+}
+.news_admin_table_centered a
+{
+  text-align: center;
+}
+.news_admin_table_bold,
+.news_admin_table_bold a
+{
+  font-weight: bold;
+}
+td.news_admin_table_options > span.sep
+{
+  display: none;
+}
+td.news_admin_table_options > a + span.sep
+{
+  display: inline;
+}
+.news_admin_table_email
+{
+  white-space: normal !important;
+  max-width: 200px;
+  word-wrap: break-word;
+}
+
+
+/*
+BROWSE BLOGS
+Styles the browse blogs page and the
+manage blog entries page.
+*/
+ul.blogs_browse
+{
+  clear: both;
+}
+ul.blogs_browse > li
+{
+  clear: both;
+  padding: 0px 0px 15px 0px;
+}
+ul.blogs_browse > li + li
+{
+  border-top-width: 1px;
+  padding-top: 15px;
+}
+ul.blogs_browse > li .blogs_browse_photo
+{
+  float: left;
+  overflow: hidden;
+  margin-right: 8px;
+}
+ul.blogs_browse > li .blogs_browse_options
+{
+  float: right;
+  overflow: hidden;
+  padding-left: 20px;
+}
+ul.blogs_browse > li .blogs_browse_options > a
+{
+  clear: both;
+  display: block;
+  margin: 5px;
+  font-size: .8em;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+ul.blogs_browse > li .blogs_browse_info
+{
+  overflow: hidden;
+}
+ul.blogs_browse > li .blogs_browse_info_title
+{
+  font-weight: bold;
+}
+ul.blogs_browse > li .blogs_browse_info_date
+{
+  font-size: .8em;
+  color: $theme_font_color_light;
+}
+ul.blogs_browse > li .blogs_browse_info_blurb
+{
+  margin-top: 5px;
+}
+
+
+
+/*
+VIEW BLOG
+Styles both the 'view blog' and the 'view blog entry'
+pages, including the right-side gutter column by default.
+*/
+ul.blogs_entrylist
+{
+  margin-top: 10px;
+  border-top-width: 1px;
+  padding-top: 10px;
+}
+ul.blogs_entrylist > li
+{
+  padding-bottom: 10px;
+  border-bottom-width: 1px;
+  margin-bottom: 10px
+}
+ul.blogs_entrylist h3
+{
+  margin-bottom: 1px;
+}
+ul.blogs_entrylist .blog_entrylist_entry_date
+{
+  font-size: 8pt;
+  margin-bottom: 5px;
+  color: $theme_font_color_light;
+}
+ul.blogs_entrylist .blog_entrylist_entry_body
+{
+  line-height: 1.5em;
+  padding: 5px 5px 5px 0px;
+}
+ul.blogs_entrylist .blog_entrylist_entry_body img
+{
+  max-width: 100%;
+}
+ul.blogs_entrylist .blog_entrylist_entry_body + .buttonlink
+{
+  margin-top: 5px;
+}
+ul.blogs_entrylist + .comments
+{
+  padding-top: 10px;
+}
+div.blogs_gutter .blogs_gutter_photo > img
+{
+  width: 98%;
+  display: block;
+}
+div.blogs_gutter .blogs_gutter_name
+{
+  display: block;
+  font-weight: bold;
+  margin: 3px 0px 15px 0px;
+}
+div.blogs_gutter .buttonlink
+{
+  padding-top: 2px;
+  padding-bottom: 1px;
+}
+div.blogs_gutter h4
+{
+  margin: 20px 0px 5px 0px;
+  text-transform: uppercase;
+}
+div.blogs_gutter > ul > li
+{
+  margin-bottom: 2px;
+}
+div.blogs_gutter ul.blogs_gutter_options > li
+{
+  font-size: .8em;
+  margin: 3px 0px 3px 0px;
+}
+
+#button {
+	-moz-border-radius:3px 3px 3px 3px;
+	background-color:#619DBE;
+	background-image:url("/application/modules/Core/externals/images/buttonbg.png");
+	background-position:0 1px;
+	background-repeat:repeat-x;
+	border:1px solid #50809B;
+	color:#FFFFFF;
+	font-family:tahoma,verdana,arial,sans-serif;
+	font-weight:bold;
+	padding:5px;	
+}
+
+.settings .form-label {
+	clear:left;
+	float:left;
+	font-weight:bold;
+	overflow:hidden;
+	padding-right:15px;
+	width:250px;
+}
+
+
+ul.form-success
+{
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+ul.form-success
+{
+  margin-top: 10px;
+}
+ul.form-success > li
+{
+  +rounded;
+  font-weight: bold;
+  padding: .5em .75em .5em .75em;
+}
+ul.form-success > li + li
+{
+  margin-top: 5px;
+}
+ul.form-success > li
+{
+  color: #fff;
+  background-color: #458B74;
+  border: 2px solid #32CD32;
+}
+

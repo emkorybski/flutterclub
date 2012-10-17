@@ -1,0 +1,96 @@
+.layout_news_top_news > ul, .layout_news_top_news > ul, .layout_news_lasted_news > ul, .layout_news_most_commented_news > ul, .layout_news_most_liked_news > ul
+{
+    -moz-border-radius: 3px 3px 3px 3px;
+    
+    background-image:
+        url("~/application/modules/Core/externals/images/foreground_bg.png");
+    background-repeat: repeat-x;
+    border: 1px solid #D0E2EC;
+    padding: 5px;
+    margin-bottom:15px;
+}
+.layout_news_top_news > ul > li {
+	clear:both;
+	overflow:hidden;
+	padding:3px 5px;
+        padding-top:10px;
+	border-top:1px solid #EAEAEA;
+}
+.layout_news_top_news > ul > li.first {
+	border-top:none;
+}
+.layout_news_lasted_news > ul > li {
+	clear:both;
+	overflow:hidden;
+	padding:3px 5px;
+        padding-top:10px;
+	border-top:1px solid #EAEAEA;
+}
+.layout_news_lasted_news > ul > li.first {
+	border-top:none;
+}
+/*.layout_news_lasted_news > ul > li {
+	border-bottom:1px solid #EAEAEA;
+	clear:both;
+	overflow:hidden;
+	padding:3px 5px;
+}*/
+.layout_news_most_commented_news > ul > li {
+    border-bottom:1px solid #EAEAEA;
+    clear:both;
+    overflow:hidden;
+    padding:3px 5px;
+}
+.layout_news_most_liked_news > ul > li {
+    border-bottom:1px solid #EAEAEA;
+    clear:both;
+    overflow:hidden;
+    padding:3px 5px;
+}
+/*.layout_news_lasted_news > ul > li >a{
+	border:none;
+	clear:both;
+	overflow:hidden;
+	padding:3px 5px;
+}*/
+.games_widget_item_info_title
+{
+    font-weight: bold;
+}
+
+div.widget_innerholder_news
+{
+	padding-right: 0px 3px;
+	float: left; 
+	margin-bottom: 10px
+}
+div.widget_innerholder_news >h4 
+{
+	border:none;
+  margin:0;
+  padding:0;
+}
+p.ynnews-bd3{
+  margin-top: 5px;
+}
+img.ynnews-smallthumb{
+  width: 65px;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+a.ynnews-viewmore{float:right;}
+p.ynnews-ft3{
+  padding-top: 5px;
+  font-size: 0.8em;  
+  color: #999999;
+}
+h4.ynnew-tt3{
+  
+}
+p.ynnews-info3{
+  color: #999999;
+  font-size: 0.8em;
+}
+.layout_page_news_index_list .generic_layout_container h3{
+margin-bottom:6px !important;}
+  

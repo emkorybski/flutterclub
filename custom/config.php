@@ -16,6 +16,7 @@ define('BETS_DB_NAME', 'fc_demo');
 define('PATH_APP', realpath(dirname(__FILE__)) . '/');
 define('PATH_LIB', PATH_APP . 'lib/');
 define('PATH_DOMAIN', PATH_APP . 'domain/');
+define('WEB_HOST', 'http://demo.flutterclub.com');
 define('WEB_ROOT', '/fc/');
 
 // Default includes

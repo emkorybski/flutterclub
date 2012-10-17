@@ -1,0 +1,1328 @@
+{
+  "type": "module",
+  "name": "video",
+  "version": "4.2.3",
+  "revision": "9688",
+  "path": "application\/modules\/Video",
+  "repository": null,
+  "date": "Wed, 23 May 2012 22:20:20 +0000",
+  "title": "Videos",
+  "description": "Videos",
+  "thumb": null,
+  "developer": null,
+  "authors": [
+    "Webligo Developments"
+  ],
+  "changeLog": {
+    "4.2.3": {
+      "\/application\/languages\/en\/video.csv": "Rewrite Profile viewing and Profile Commenting Options Descriptions",
+      "Form\/Admin\/Settings\/Level.php": "Added support links in admin panel",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my.sql": "Incremented version",
+      "views\/scripts\/index\/create.tpl": "Added support links in admin panel"
+    },
+    "4.2.1": {
+      "controllers\/IndexController.php": "Improved message given when no results are found",
+      "Plugin\/Job\/Encode.php": "Fixed compatibility issue with ffmpeg 0.10",
+      "settings\/changelog.php": "Incremented version",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my.sql": "Incremented version",
+      "views\/scripts\/index\/browse.tpl": "Improved message given when no results are found"
+    },
+    "4.2.0": {
+      "Api\/Core.php": "Fixed rare error when deleting a video",
+      "externals\/scripts\/composer_video.js": "Added namespace for Wibiya compatibility",
+      "externals\/styles\/mobile.css": "Adjustments for mobile",
+      "Model\/Video.php": "Adjustments for mobile",
+      "Plugin\/Job\/Encode.php": "Fixed issue with extracting a thumbnail from some videos",
+      "settings\/changelog.php": "Incremented version",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my.sql": "Incremented version",
+      "views\/scripts\/index\/view.tpl": "Hiding share\/report options when not logged in"
+    },
+    "4.1.8p2": {
+      "externals\/scripts\/composer_video.js": "Added cross domain policy file for CDN support",
+      "Model\/Video.php": "Fixed typo in the URL that would prevent flowplayer from loading",
+      "Plugin\/Job\/Encode.php": "Fixed issue with stalled video encodes",
+      "settings\/changelog.php": "Incremented version",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my.sql": "Incremented version",
+      "views\/scripts\/_FancyUpload.tpl": "Added cross domain policy file for CDN support",
+      "views\/scripts\/admin-manage\/index.tpl": "Added video type column",
+      "views\/scripts\/index\/browse.tpl": "Adjusted duration display format",
+      "views\/scripts\/index\/manage.tpl": "Adjusted duration display format"
+    },
+    "4.1.8p1": {
+      "settings\/changelog.php": "Incremented version",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my.sql": "Incremented version",
+      "views\/scripts\/_FancyUpload.tpl": "Fixed failed SVN merge"
+    },
+    "4.1.8": {
+      "controllers\/IndexController.php": "Added pages to the layout editor",
+      "externals\/.htaccess": "Updated with far-future expires headers for static resources",
+      "externals\/styles\/main.css": "Style tweaks for layout editor",
+      "Model\/Video.php": "Added static base URL for CDN support",
+      "Plugin\/Menus.php": "Added helper method",
+      "settings\/changelog.php": "Incremented version",
+      "settings\/content.php": "Added pages to the layout editor",
+      "settings\/install.php": "Added pages to the layout editor",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my-upgrade-4.1.7-4.1.8.sql": "Added",
+      "settings\/my.sql": "Incremented version",
+      "views\/scripts\/_composeVideo.tpl": "Added static base URL for CDN support",
+      "views\/scripts\/_FancyUpload.tpl": "Added static base URL for CDN support",
+      "views\/scripts\/admin-settings\/categories.tpl": "Added static base URL for CDN support",
+      "views\/scripts\/index\/browse.tpl": "Added pages to the layout editor",
+      "views\/scripts\/index\/create.tpl": "Compatibility for AJAX page loader",
+      "views\/scripts\/index\/manage.tpl": "Removing deprecated routes",
+      "views\/scripts\/index\/view.tpl": "Added static base URL for CDN support; Compatibility for AJAX page loader",
+      "views\/scripts\/video\/external.tpl": "Removing deprecated routes; Added static base URL for CDN support",
+      "widgets\/browse-menu-quick\/Controller.php": "Added",
+      "widgets\/browse-menu-quick\/index.tpl": "Added",
+      "widgets\/browse-menu\/Controller.php": "Added",
+      "widgets\/browse-menu\/index.tpl": "Added",
+      "widgets\/browse-search\/Controller.php": "Added",
+      "widgets\/browse-search\/index.tpl": "Added",
+      "widgets\/profile-videos\/Controller.php": "Fixed issue where title would not be displayed when placed outside a tab container widget",
+      "widgets\/profile-videos\/index.tpl": "Added static base URL for CDN support"
+    },
+    "4.1.7": {
+      "controllers\/AdminSettingsController.php": "Removing deprecated usage of $this->_helper->api()",
+      "controllers\/IndexController.php": "Removing deprecated usage of $this->_helper->api()",
+      "settings\/changelog.php": "Incremented version",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my.sql": "Incremented version"
+    },
+    "4.1.5": {
+      "Model\/Video.php": "Fixed play issues in the feed for youtube",
+      "settings\/changelog.php": "Incremented version",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my-upgrade-4.1.4-4.1.5.sql": "Added",
+      "settings\/my.sql": "Incremented version"
+    },
+    "4.1.4": {
+      "\/application\/languages\/en\/video.csv": "Added phrases",
+      "controllers\/IndexController.php": "Fixed issues with youtu.be links; added embed code support",
+      "controllers\/VideoController.php": "Added",
+      "externals\/styles\/main.css": "Added svn:keywords Id",
+      "externals\/styles\/mobile.css": "Added",
+      "Form\/Admin\/Global.php": "Added option to enable\/disable embed codes",
+      "Model\/Video.php": "Updated embed code for YouTube and Vimeo",
+      "settings\/changelog.php": "Incremented version",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my-upgrade-4.1.3p1-4.1.4.sql": "Added",
+      "settings\/my.sql": "Incremented version; Inserts menu item for mobile",
+      "views\/scripts\/index\/browse.tpl": "Fixed display issue with video durations",
+      "views\/scripts\/index\/create.tpl": "Fixed issues with youtu.be links",
+      "views\/scripts\/index\/manage.tpl": "Fixed display issue with video durations",
+      "views\/scripts\/index\/view.tpl": "Added embed code action",
+      "views\/scripts\/video\/embed.tpl": "Added",
+      "views\/scripts\/video\/external.tpl": "Added"
+    },
+    "4.1.3p1": {
+      "controllers\/IndexController.php": "Fixed issue with viewing uploaded video",
+      "settings\/changelog.php": "Incremented version",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my.sql": "Incremented version"
+    },
+    "4.1.3": {
+      "controllers\/IndexController.php": "Fixed issue with undefined $total variable; Better handling of videos uploaded using the composer",
+      "externals\/scripts\/composer_video.js": "Removes the video when member decides to cancel the attachment",
+      "Plugin\/Composer.php": "Added preliminary code to keep track of parents; Better handling of videos uploaded using the composer",
+      "settings\/changelog.php": "Incremented version",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my-upgrade-4.1.2-4.1.3.sql": "Added",
+      "settings\/my.sql": "Incremented version"
+    },
+    "4.1.2": {
+      "Api\/Core.php": "Fixed issue where encoding would fail on distributed hosting",
+      "controllers\/AdminSettingsController.php": "Updated utilities for newer versions of ffmpeg",
+      "controllers\/IndexController.php": "Code formatting",
+      "externals\/styles\/main.css": "Remove old styles",
+      "Form\/Search.php": "Changed to GET",
+      "Plugin\/Job\/Encode.php": "Fixed issue where encoding would fail on distributed hosting",
+      "settings\/changelog.php": "Incremented version",
+      "settings\/content.php": "Added widgets",
+      "settings\/install.php": "Added preliminary layout code",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my.sql": "Incremented version",
+      "views\/scripts\/admin-settings\/utility.tpl": "Updated utilities for newer versions of ffmpeg",
+      "views\/scripts\/index\/browse.tpl": "Fixed pagination issue; fixed localization issues",
+      "views\/scripts\/index\/view.tpl": "Fixed category link",
+      "widgets\/list-popular-videos\/Controller.php": "Added configuration options",
+      "widgets\/list-popular-videos\/index.tpl": "Styles are now generic",
+      "widgets\/list-recent-videos\/Controller.php": "Added configuration options",
+      "widgets\/list-recent-videos\/index.tpl": "Styles are now generic",
+      "widgets\/show-also-liked\/Controller.php": "Added",
+      "widgets\/show-also-liked\/index.tpl": "Added",
+      "widgets\/show-same-poster\/Controller.php": "Added",
+      "widgets\/show-same-poster\/index.tpl": "Added",
+      "widgets\/show-same-tags\/Controller.php": "Added",
+      "widgets\/show-same-tags\/index.tpl": "Added"
+    },
+    "4.1.1": {
+      "controllers\/AdminSettingsController.php": "Fixed issue with detection of ffmpeg path and newly created categories gets the correct owner id",
+      "controllers\/IndexController.php": "Blocks uploads of obvious scripting file extensions",
+      "controllers\/UploadController.php": "Removed",
+      "externals\/.htaccess": "Added keywords; removed deprecated code",
+      "externals\/scripts\/composer_video.js": "Fixed issue with disappearing Add Video text",
+      "externals\/styles\/main.css": "Removed duplicate CSS rule in manage page for the video duration span element",
+      "settings\/changelog.php": "Incremented version",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my.sql": "Incremented version",
+      "views\/scripts\/admin-settings\/categories.tpl": "Hides the owner id column when viewing categories",
+      "views\/scripts\/upload\/": "Removed"
+    },
+    "4.1.0": {
+      "\/application\/languages\/en\/video.csv": "Fixed phrases with stray double-quotes",
+      "Api\/Core.php": "Fixed issue with ratings; added job support",
+      "controllers\/AdminManageController.php": "Added option to cancel video encoding (only works before encoding starts)",
+      "controllers\/AdminSettingsController.php": "Added notice on form save",
+      "controllers\/IndexController.php": "Fixed issue with ratings; fixed issue with incrementing view count",
+      "externals\/images\/nophoto_video_thumb_icon.png": "Added",
+      "externals\/scripts\/composer_video.js": "Fixed issue with messages composer",
+      "externals\/styles\/main.css": "Adjusted styles",
+      "Form\/Admin\/Global.php": "Moved public view option to level settings",
+      "Form\/Edit.php": "Fixed issue with disabled privacy options",
+      "Form\/Video.php": "Fixed issue with disabled privacy options",
+      "Model\/Video.php": "Added object param to address z-index issues with IM",
+      "Plugin\/Job\/Encode.php": "Added",
+      "Plugin\/Job\/Maintenance\/RebuildPrivacy.php": "Added",
+      "Plugin\/Task\/Encode.php": "Removed",
+      "Plugin\/Task\/Maintenance\/RebuildPrivacy.php": "Removed",
+      "settings\/changelog.php": "Incremented version",
+      "settings\/content.php": "Added pagination\/item count limits to widgets",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my-upgrade-4.0.0rc1-4.0.0rc2.sql": "Backwards compatibility fix for tasks modifications",
+      "settings\/my-upgrade-4.0.3-4.0.4.sql": "Backwards compatibility fix for tasks modifications",
+      "settings\/my-upgrade-4.0.4-4.0.5.sql": "Backwards compatibility fix for tasks modifications",
+      "settings\/my-upgrade-4.0.5-4.1.0.sql": "Added",
+      "settings\/my.sql": "Incremented version",
+      "views\/scripts\/_composeVideo.tpl": "Fixed issue with messages composer",
+      "views\/scripts\/admin-manage\/deleteselected.tpl": "Removed",
+      "views\/scripts\/admin-manage\/index.tpl": "Improvements",
+      "views\/scripts\/index\/manage.tpl": "Fixed UTF-8 truncation issue",
+      "views\/scripts\/index\/view.tpl": "UI improvements",
+      "widgets\/list-popular-videos\/Controller.php": "Added pagination\/item count limit",
+      "widgets\/list-recent-videos\/Controller.php": "Added pagination\/item count limit",
+      "widgets\/profile-videos\/Controller.php": "Added pagination\/item count limit",
+      "widgets\/profile-videos\/index.tpl": "Added pagination\/item count limit"
+    },
+    "4.0.5": {
+      "Api\/Core.php": "Fixed video tag searches causing exceptions; fixed issue with duplicate results when viewing a tag",
+      "controllers\/AdminSettingsController.php": "Fixed problems with open_basedir and ffmpeg path verification\/detection",
+      "controllers\/IndexController.php": "Added registered privacy type",
+      "Form\/Admin\/Settings\/Level.php": "Added registered privacy type",
+      "Form\/Edit.php": "Added registered privacy type",
+      "Form\/Video.php": "Added registered privacy type",
+      "Model\/Video.php": "Tweak to slug handling",
+      "Plugin\/Task\/Encode.php": "Added notifications on failed encoding; fixed problems with open_basedir and ffmpeg path verification\/detection; code formatting",
+      "Plugin\/Task\/Maintenance\/RebuildPrivacy.php": "Added idle support",
+      "settings\/changelog.php": "Added",
+      "settings\/content.php": "Code formatting",
+      "settings\/install.php": "Fixed problems with open_basedir and ffmpeg path verification\/detection",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my-upgrade-4.0.3-4.0.4.sql": "Fixed missing category in encode task",
+      "settings\/my-upgrade-4.0.4-4.0.5.sql": "Added",
+      "settings\/my.sql": "Incremented version",
+      "views\/scripts\/index\/create.tpl": "Fixed issue with selecting tags from autosuggest",
+      "\/application\/languages\/en\/video.csv": "Added missing phrases"
+    },
+    "4.0.4": {
+      "Api\/Core.php": "Added the ability to search browse videos by search phrase",
+      "controllers\/AdminSettingsController.php": "Fixed warning message about ffmpeg when open_basedir enabled",
+      "controllers\/IndexController.php": "Fixed warning messages; added the ability to search browse videos by search phrase",
+      "externals\/styles\/main.css": "Improved RTL support",
+      "Form\/Edit.php": "Removing deprecated code; fixed issue with incorrect auth checking",
+      "Form\/Search.php": "Added the ability to search browse videos by search phrase",
+      "Plugin\/Task\/Encode.php": "Added progress reporting",
+      "Plugin\/Task\/Maintenance\/RebuildPrivacy.php": "Added to fix privacy issues in the feed",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my-upgrade-4.0.1-4.0.2.sql": "Added; fixed typo",
+      "settings\/my-upgrade-4.0.3-4.0.4.sql": "Added; added code to address typo",
+      "settings\/my.sql": "Incremented version",
+      "views\/scripts\/_FancyUpload.tpl": "Added missing translation",
+      "views\/scripts\/_formButtonCancel.tpl": "Removing deprecated code",
+      "views\/scripts\/index\/browse.tpl": "Improved RTL support",
+      "views\/scripts\/index\/view.tpl": "Improved RTL support",
+      "views\/scripts\/upload\/upload.tpl": "Added missing translation",
+      "widgets\/profile-videos\/index.tpl": "Improved RTL support",
+      "\/application\/languages\/en\/video.csv": "Added phrases"
+    },
+    "4.0.3": {
+      "controllers\/IndexController.php": "Fixed activity privacy bug; fixed quote handling bug",
+      "controllers\/AdminSettingsController.php": "Show error message if FFMPEG path is invalid",
+      "Form\/Video.php": "Hides the privacy setting if there are no privacy set",
+      "Plugin\/Task\/Encode.php": "Fixed activity privacy bug; Passes owner_id to storage system; Sets video to processing only after FFMPEG check passes",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my.sql": "Incremented version",
+      "views\/scripts\/_composeVideo.tpl": "Added missing translation",
+      "views\/scripts\/admin-manage\/index.tpl": "Added correct locale date format",
+      "views\/scripts\/index\/create.tpl": "Fixed unlimited quota bug",
+      "views\/scripts\/index\/manage.tpl": "Fixed unlimited quota bug",
+      "views\/scripts\/index\/view.tpl": "Added missing translation",
+      "widgets\/list-recent-videos\/Controller.php": "No longer shows videos that failed or have not finished encoding",
+      "\/application\/languages\/en\/video.csv": "Added phrases"
+    },
+    "4.0.2": {
+      "Api\/Core.php": "Categories ordered by name",
+      "controllers\/AdminSettingsController.php": "Various level settings fixes and enhancements",
+      "controllers\/IndexController.php": "Filter form now accepts GET requests",
+      "Form\/Admin\/Level.php": "Moved",
+      "Form\/Admin\/Settings\/Level.php": "Various level settings fixes and enhancements",
+      "Plugin\/Task\/Encode.php": "Added Ffmpeg validation prior to running encode task.",
+      "settings\/install.php": "Checks for ffmpeg binary on install\/upgrade",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my-upgrade-4.0.1-4.0.2.sql": "Added",
+      "settings\/my.sql": "Various level settings fixes and enhancements",
+      "views\/scripts\/admin-manage\/index.tpl": "Uses displayname instead of username",
+      "views\/scripts\/index\/browse.tpl": "Pagination control keeps filter form params"
+    },
+    "4.0.1": {
+      "Api\/Core.php": "Adjustments for trial",
+      "controllers\/AdminSettingsController.php": "Fixed problem in level select",
+      "controllers\/IndexController.php": "Better cleanup of temporary files and fixed public permissions",
+      "controllers\/UploadController.php": "Fixed missing level permission check",
+      "Plugin\/Core.php": "Query optimization",
+      "Plugin\/Task\/Encode.php": "Better cleanup of temporary files",
+      "settings\/manifest.php": "Incremented version",
+      "settings\/my-upgrade-4.0.0-4.0.1.sql": "Added",
+      "settings\/my.sql": "Added comment_count column to engine4_video_videos table"
+    }
+  },
+  "meta": {
+    "date": "Wed, 23 May 2012 22:20:20 +0000",
+    "title": "Videos",
+    "description": "Videos",
+    "developer": null,
+    "authors": [
+      "Webligo Developments"
+    ],
+    "changeLog": null
+  },
+  "actions": [
+    "install",
+    "upgrade",
+    "refresh",
+    "enable",
+    "disable"
+  ],
+  "callback": {
+    "path": "application\/modules\/Video\/settings\/install.php",
+    "class": "Video_Installer",
+    "priority": 100
+  },
+  "dependencies": {
+    "module-core": {
+      "type": "module",
+      "name": "core",
+      "guid": "module-core",
+      "minVersion": "4.2.0",
+      "maxVersion": null,
+      "excludeExcept": null
+    }
+  },
+  "tests": [
+    
+  ],
+  "permissions": [
+    
+  ],
+  "structure": {
+    "application\/modules\/Video": {
+      "type": "directory",
+      "path": "application\/modules\/Video",
+      "structure": [
+        {
+          "path": "Api",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Api\/Core.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 8417,
+          "sha1": "a846d4d322ad76ac5ebcc844fa0bf84cc0b4e94e"
+        },
+        {
+          "path": "Bootstrap.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 537,
+          "sha1": "a2e79ad72b63d25445f7baf1e24fa9893c7f7605"
+        },
+        {
+          "path": "controllers",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/AdminManageController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2623,
+          "sha1": "07a9841a4c66d986c28683c5ff583606f3ee63af"
+        },
+        {
+          "path": "controllers\/AdminSettingsController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 10528,
+          "sha1": "b8db865abacc7ebda31759a586419e795e212783"
+        },
+        {
+          "path": "controllers\/IndexController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 32528,
+          "sha1": "1b75989cd9f15a766a29a9fc352a2a00c7530ff1"
+        },
+        {
+          "path": "controllers\/VideoController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3105,
+          "sha1": "e5d027753e04625fe6b50966dba32d3bd1a9ae4b"
+        },
+        {
+          "path": "externals",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/.htaccess",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1042,
+          "sha1": "6c835f103d253edf70bfd5ba2430ebe3fa8cacdd"
+        },
+        {
+          "path": "externals\/images",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "externals\/images\/delete.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 715,
+          "sha1": "8f0ebcb45d7ba71a541d4781329f4a6900c7ee65"
+        },
+        {
+          "path": "externals\/images\/edit.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 450,
+          "sha1": "62a1b41ac5eefbf3d0ad578a19572d4096d88146"
+        },
+        {
+          "path": "externals\/images\/new.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 739,
+          "sha1": "606a684490fe55ff2ef051148ac1c63f019cad56"
+        },
+        {
+          "path": "externals\/images\/nophoto_video_thumb_icon.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3554,
+          "sha1": "14a8185068b0f704cf173222ef83d80d9769d5e0"
+        },
+        {
+          "path": "externals\/images\/types",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/images\/types\/video.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 653,
+          "sha1": "3811ee746f69176ff8c7b610ae5c4ce80e0ec50b"
+        },
+        {
+          "path": "externals\/images\/video.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2817,
+          "sha1": "8d47692e7a3900d551008292eed26513415ddf68"
+        },
+        {
+          "path": "externals\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/scripts\/composer_video.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 9738,
+          "sha1": "e915736bf1f4fb93241db84473a3d8b6f1993996"
+        },
+        {
+          "path": "externals\/styles",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "externals\/styles\/main.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6638,
+          "sha1": "3b12e7ff8a74b7599fcded79ad1183f42625f7c4"
+        },
+        {
+          "path": "externals\/styles\/mobile.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5536,
+          "sha1": "06644f3c38757a56a8ce4ba35aeaa95a68a88953"
+        },
+        {
+          "path": "Form",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/Category.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2003,
+          "sha1": "b7e3541b4a16fc10a25885fc0e9f12ff208849b0"
+        },
+        {
+          "path": "Form\/Admin\/Delete.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 515,
+          "sha1": "694d277f6f94b0ba94b6891f6b13692612673782"
+        },
+        {
+          "path": "Form\/Admin\/Global.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2247,
+          "sha1": "a850c9cd9ebde88187c4759acb254e8d0253f497"
+        },
+        {
+          "path": "Form\/Admin\/Settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/Settings\/Level.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6563,
+          "sha1": "1d40ac5e0364437929285aef7348fdd99c8c88c7"
+        },
+        {
+          "path": "Form\/Delete.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1447,
+          "sha1": "2c54ece5e286d4c48676b790d14c67c770dcab95"
+        },
+        {
+          "path": "Form\/Edit.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5311,
+          "sha1": "d5b3b3f19793e561e858c2aef77ac0b356f7afa9"
+        },
+        {
+          "path": "Form\/Search.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1623,
+          "sha1": "e53b2b9ae7580e9e33f320fa07a3682e6507dcd0"
+        },
+        {
+          "path": "Form\/Video.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 9072,
+          "sha1": "de2cc3086236cfaf50b480d43b4f8419f5f83454"
+        },
+        {
+          "path": "Model",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Model\/Category.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1101,
+          "sha1": "81db65f362b2cb345e8f4029687ad33ba79bdc78"
+        },
+        {
+          "path": "Model\/DbTable",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Model\/DbTable\/Categories.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 577,
+          "sha1": "f8e880f4cbbd2f536f6a665b9d71e383781a9f49"
+        },
+        {
+          "path": "Model\/DbTable\/Ratings.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 570,
+          "sha1": "6bd1037c4303a889abba32c0c2e73ad89bbc533d"
+        },
+        {
+          "path": "Model\/DbTable\/Videos.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 567,
+          "sha1": "e0c3fc03abfdbfe0533c09b63de6eda5c184c377"
+        },
+        {
+          "path": "Model\/Exception.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 518,
+          "sha1": "4bd0d10a655f68a76df2d080da1553cf0481aafe"
+        },
+        {
+          "path": "Model\/Rating.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 799,
+          "sha1": "124110a1015dc273fd6e65ac82f834ff87d70e07"
+        },
+        {
+          "path": "Model\/Video.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 11269,
+          "sha1": "c6df9acdc2eac060f8befa6f23c6a8dc386b762d"
+        },
+        {
+          "path": "Plugin",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Plugin\/Composer.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1347,
+          "sha1": "b8238d7944c4f0e6ca5259584f4374f9407df014"
+        },
+        {
+          "path": "Plugin\/Core.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1253,
+          "sha1": "f333f53762cc93033c94b97191e4a6c6c3316897"
+        },
+        {
+          "path": "Plugin\/Job",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Plugin\/Job\/Encode.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 12449,
+          "sha1": "8b96080bab85f951166d515d1cdad19988da5fa1"
+        },
+        {
+          "path": "Plugin\/Job\/Maintenance",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "Plugin\/Job\/Maintenance\/RebuildPrivacy.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4036,
+          "sha1": "9193f7f3530d2a6d76d214ab0490186036dc76f8"
+        },
+        {
+          "path": "Plugin\/Menus.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1161,
+          "sha1": "f094c1c14f1bf955cada0d4f641aaf43a0a0d346"
+        },
+        {
+          "path": "settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "settings\/changelog.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 18008,
+          "sha1": "196124080447f639c1d2462ef1fa2c7ba942ba5f"
+        },
+        {
+          "path": "settings\/content.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4157,
+          "sha1": "9c5347626d2bc2dd84ef83090cff5d18e095e891"
+        },
+        {
+          "path": "settings\/install.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 10822,
+          "sha1": "f7d618bee58ca5b08a9e68e19ab08772b250e6a0"
+        },
+        {
+          "path": "settings\/manifest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2608,
+          "sha1": "129c3d89bdddf8e06c6b113410d8fa3de8e69650"
+        },
+        {
+          "path": "settings\/my-upgrade-4.0.0-4.0.1.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 318,
+          "sha1": "386badf912920d4da783cadc9764c64bcf61969b"
+        },
+        {
+          "path": "settings\/my-upgrade-4.0.0beta3-4.0.0rc1.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 312,
+          "sha1": "e549a238f87ed3d06dc8131649dad91bcec1ddaa"
+        },
+        {
+          "path": "settings\/my-upgrade-4.0.0rc1-4.0.0rc2.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 174,
+          "sha1": "88cf4f0370fe886f0c92e8358bb453b2843ccec4"
+        },
+        {
+          "path": "settings\/my-upgrade-4.0.0rc2-4.0.0.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 296,
+          "sha1": "7b9f5d1bb273563acc1e12ee6d915a1710567b9a"
+        },
+        {
+          "path": "settings\/my-upgrade-4.0.1-4.0.2.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4414,
+          "sha1": "2d89671b76e991464ac9981ea48dba07dadf98db"
+        },
+        {
+          "path": "settings\/my-upgrade-4.0.3-4.0.4.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2415,
+          "sha1": "bb199168caf15b8e5bf09b3bdc98d6264dec768b"
+        },
+        {
+          "path": "settings\/my-upgrade-4.0.4-4.0.5.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 843,
+          "sha1": "8de11c16f5b7dce7bf26194a0361691c71df1bb8"
+        },
+        {
+          "path": "settings\/my-upgrade-4.0.5-4.1.0.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 738,
+          "sha1": "be7e7eb36d9fb0f6b9ed099eed88d36c77b3ee12"
+        },
+        {
+          "path": "settings\/my-upgrade-4.1.2-4.1.3.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 193,
+          "sha1": "0fe2030943749846a2d4f55e75ec18e3d6410c82"
+        },
+        {
+          "path": "settings\/my-upgrade-4.1.3p1-4.1.4.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 321,
+          "sha1": "dadd059ca821239c32542c0fface2a94554197ad"
+        },
+        {
+          "path": "settings\/my-upgrade-4.1.4-4.1.5.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 159,
+          "sha1": "35086e0097b6598cfbf567fea52a2a26a227627c"
+        },
+        {
+          "path": "settings\/my-upgrade-4.1.7-4.1.8.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 467,
+          "sha1": "ed65a079da0e40aeb35521f32cbb5f354980200f"
+        },
+        {
+          "path": "settings\/my.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 12582,
+          "sha1": "86f9b1f446fe4143378f6f1561a8b16758eefb18"
+        },
+        {
+          "path": "views",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-manage",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/delete.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1099,
+          "sha1": "9109ebcffa860413c935cc323a1c68c816c35b1e"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5331,
+          "sha1": "87af5b8cac19e6777d374fbbc1078b130de8082f"
+        },
+        {
+          "path": "views\/scripts\/admin-settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/categories.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2925,
+          "sha1": "f675482fb38cffedf34771db0882d9f6932151d2"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/delete.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1093,
+          "sha1": "d15ef4ebc0b138b67fdd5c4fd17c389757f938e8"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/form.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 480,
+          "sha1": "1658862bada371e69bcf76950cf0237866e9c28b"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 704,
+          "sha1": "2945e786dc452024908eb21fa5e8d3fc69553342"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/level.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 895,
+          "sha1": "def66ef60b527d40383dca91efb6707087f032e2"
+        },
+        {
+          "path": "views\/scripts\/admin-settings\/utility.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1953,
+          "sha1": "8d3391c55639debf036c31a2fcbdc9b6f4fcd38e"
+        },
+        {
+          "path": "views\/scripts\/index",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/index\/browse.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3334,
+          "sha1": "f0c4a31fdf933b0b2887ede097b29b07ecbbd39c"
+        },
+        {
+          "path": "views\/scripts\/index\/create.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 9487,
+          "sha1": "720923c98822a709cd937d8a12158861c8bd5a32"
+        },
+        {
+          "path": "views\/scripts\/index\/delete.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 341,
+          "sha1": "eb2773e1c3459671bc19673dcb85bb4ef8f69e0a"
+        },
+        {
+          "path": "views\/scripts\/index\/edit.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 598,
+          "sha1": "e49bb53748a8f8c0b5a65ade15d5c6b09cdb3a58"
+        },
+        {
+          "path": "views\/scripts\/index\/manage.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6675,
+          "sha1": "3da43f2d4b7669e727806c414feb5e37e0dc72be"
+        },
+        {
+          "path": "views\/scripts\/index\/validation.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 441,
+          "sha1": "92c9ff836b8341ad670248c1f157d2a73c7e12b6"
+        },
+        {
+          "path": "views\/scripts\/index\/view.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 10003,
+          "sha1": "ef09fdf5fbacb85767c93163c984529d48e7a4e7"
+        },
+        {
+          "path": "views\/scripts\/video",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/video\/embed.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1116,
+          "sha1": "cd7a6e14ba13624775a7b825eac66520762f53a3"
+        },
+        {
+          "path": "views\/scripts\/video\/external.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6506,
+          "sha1": "eab2a3d8e76139385835a28e3fe5fabc7ce92ffc"
+        },
+        {
+          "path": "views\/scripts\/_composeVideo.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2520,
+          "sha1": "967d8933ab1e317431139fc47863848f7279d974"
+        },
+        {
+          "path": "views\/scripts\/_FancyUpload.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 14993,
+          "sha1": "a6d5cb5953390f4db416f93a95c27a7f9d4309c4"
+        },
+        {
+          "path": "widgets",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/browse-menu",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/browse-menu\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 784,
+          "sha1": "77bf59b88b198a2039aeb7341721368232f51121"
+        },
+        {
+          "path": "widgets\/browse-menu\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 288,
+          "sha1": "378ec9315e63875fbb441151530bd691c3364cd3"
+        },
+        {
+          "path": "widgets\/browse-menu-quick",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/browse-menu-quick\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 783,
+          "sha1": "126e880f9e0925fc88941e1c373b90a6654588f6"
+        },
+        {
+          "path": "widgets\/browse-menu-quick\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 272,
+          "sha1": "13fa164e7bca3d55c3015cf51214e75785618753"
+        },
+        {
+          "path": "widgets\/browse-search",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/browse-search\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1405,
+          "sha1": "45f298b328d0ffdaf977e5224bb9bf886183707f"
+        },
+        {
+          "path": "widgets\/browse-search\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 91,
+          "sha1": "23eff47de6eaaf3d4a1db78d492dc6360fcbfe85"
+        },
+        {
+          "path": "widgets\/list-popular-videos",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/list-popular-videos\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1615,
+          "sha1": "48512979fbc463a55977a498b5d116688968c124"
+        },
+        {
+          "path": "widgets\/list-popular-videos\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1679,
+          "sha1": "e58086535fe747317db9657dc1aebfd7e1959525"
+        },
+        {
+          "path": "widgets\/list-recent-videos",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/list-recent-videos\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1704,
+          "sha1": "e822e6ca55d5e9f38b27efb8dca80878915fd592"
+        },
+        {
+          "path": "widgets\/list-recent-videos\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1101,
+          "sha1": "03961439a6805c9a9fb3414179f66b66b859d3a7"
+        },
+        {
+          "path": "widgets\/profile-videos",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/profile-videos\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1733,
+          "sha1": "f8bb089f0fc89656ddb772941030bf57448cd285"
+        },
+        {
+          "path": "widgets\/profile-videos\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3914,
+          "sha1": "21d62f0b5dd3923a8877df5a2c64a0a75cf26548"
+        },
+        {
+          "path": "widgets\/show-also-liked",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/show-also-liked\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2340,
+          "sha1": "345a82955f290679fd683a22bd28480ba846ff2c"
+        },
+        {
+          "path": "widgets\/show-also-liked\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1097,
+          "sha1": "b2cb6345ba72c419b1d8ceacdf3316c835d874bb"
+        },
+        {
+          "path": "widgets\/show-same-poster",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/show-same-poster\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1672,
+          "sha1": "bbda6dfb39456382bf6206d7d8b47c744e59b897"
+        },
+        {
+          "path": "widgets\/show-same-poster\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1096,
+          "sha1": "31f75bea229a47f68d2cd19888a67ece4a277b38"
+        },
+        {
+          "path": "widgets\/show-same-tags",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/show-same-tags\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2660,
+          "sha1": "20be9853d89f4f157e47fe2ee5e67bf0c324224f"
+        },
+        {
+          "path": "widgets\/show-same-tags\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1096,
+          "sha1": "31f75bea229a47f68d2cd19888a67ece4a277b38"
+        }
+      ]
+    },
+    "application\/languages\/en\/video.csv": {
+      "type": "file",
+      "path": "application\/languages\/en\/video.csv",
+      "structure": {
+        "path": "video.csv",
+        "dir": false,
+        "file": true,
+        "perms": "0666",
+        "size": 17547,
+        "sha1": "ac54100eb8d66eab6bb3809ea1f7a5f55c5ec7b1"
+      }
+    }
+  }
+}

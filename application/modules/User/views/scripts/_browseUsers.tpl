@@ -11,7 +11,15 @@
  */
 ?>
 <h3>
-  <?php echo $this->translate(array('%s member found.', '%s members found.', $this->totalUsers),$this->locale()->toNumber($this->totalUsers)) ?>
+
+  <?php 
+  
+  //echo "List of members found".
+  //echo $this->translate(array('%s member found.', '%s members found.', $this->totalUsers),$this->locale()->toNumber($this->totalUsers)) 
+  echo $this->translate(array('Member found.', 'Members found.', $this->totalUsers),$this->locale()->toNumber($this->totalUsers)) 
+  
+  ?>
+
 </h3>
 
 <ul id="browsemembers_ul">

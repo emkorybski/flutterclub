@@ -1,0 +1,255 @@
+
+/* $Id: main.css 2010-07-02 01:29 mirlan $ */
+
+@include "~/application/modules/Core/externals/styles/admin/constants.css";
+
+.hecore-menu-tab{
+}
+
+.hecore-menu-tab:hover{
+  background: #F0F7FB;
+}
+
+.hecore-menu-tab a{
+  padding-left:3px;
+  text-decoration:none
+}
+
+.hecore-plugin {
+  padding: 5px;
+  padding-bottom: 10px;
+  border: 1px solid #DDDDDD;
+}
+
+.hecore-plugin:hover{
+  background-color: #F4F8FC;
+}
+
+.hecore-plugin-header{
+  margin:0px 10px 10px 0px;
+  border-bottom:1px solid #EBEAD6;
+  font-weight:bold;
+  height:20px;
+}
+
+.hecore-plugin-tabs, .hecore-plugin-name{
+  float: left;
+}
+
+.hecore-plugin-name{
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.hecore-plugin-tab{
+  cursor: pointer;
+  background-color:#F0F1F2;
+  border-color:#e6e7eb #e6e7eb -moz-use-text-color;
+  border-style:solid solid none;
+  border-width:1px 1px medium;
+  float:left;
+  margin-right:10px;
+  padding:2px 5px;
+  color:#5BA1CD;
+  font-weight: bold;
+}
+
+.hecore-plugin-tab:hover{
+  background: #FFFFFF;
+}
+
+.active-tab {
+  background-color:#FFFFFF;
+}
+
+.hecore-plugin-tab-content {
+  display:none;
+}
+
+.active-tab-content{
+  display: inline;
+}
+
+.hecore-plugin-information{
+  font-weight: bold;
+  padding: 0px 5px 3px 0px;
+}
+
+.hecore-plugin-thumb a div{
+  color:#5BA1CD;
+  font-size:14px;
+  font-weight:bold;
+  margin: 10px;
+  margin-top: 3px;
+}
+
+.hecore-plugin-store{
+  background: #FDFFE1;
+  border: 1px solid #CFCB8E;
+  margin:auto;
+  padding: 20px;
+}
+
+.hecore-plugin-store h3{
+  color:#85A923;
+  font-size:20px;
+  font-weight:bold;
+  margin:12px 0 24px;
+}
+
+.hecore-plugin-screenshot{
+  border:1px solid #C3DEEC;
+  float:left;
+  margin:2px;
+}
+
+.hecore-installed{
+  display:none;
+}
+
+.hecore-menu-link{
+  padding-left:3px !important;
+  text-decoration:none !important;
+  width: 100% !important;
+}
+
+.active-menu-tab{
+  background:#7EB6D5 !important;
+}
+
+.active-menu-tab a{
+  color:#ffffff !important;
+}
+
+.hecore-all{
+  margin-top:15px;
+}
+
+.twtr-widget h3{
+  display:none !important;
+}
+
+.twtr-widget h4{
+  display:none !important;
+  font-weight:bold !important;
+}
+
+#twtr-widget-1 .twtr-tweet a{
+  display:inline-block;
+  font-weight:normal !important;
+  padding:0px !important;
+}
+
+.twtr-hd{
+  padding:2px !important;
+}
+
+.twtr-doc a, .twtr-ft span a{
+  font-weight:normal !important;
+  padding:0px !important;
+}
+
+.twtr-ft a img {
+  -moz-border-radius:3px 3px 3px 3px;
+  background:none repeat scroll 0 0 #5D9FC1;
+  border:1px solid #000000;
+  padding:4px;
+  position:relative;
+  top:2px;
+}
+
+.hecore_admin_licenses {
+  display:none;
+}
+.hecore_admin_licenses .loader {
+  display:none;
+  float:right;
+}
+.hecore_admin_licenses .header {
+  margin-bottom: 1em;
+  border-bottom:1px solid #DDDDDD;
+  display:block;
+  height:1em;
+  overflow:hidden;
+}
+.hecore_admin_licenses .header > span {
+  background-color:#fff;
+  display:block;
+  font-size:13pt;
+  font-weight:bold;
+  overflow:hidden;
+  padding:5px 10px 5px 0;
+  position:absolute;
+}
+.hecore_admin_licenses .header span img {
+  height: 24px;
+  vertical-align: top;
+  margin-right: 5px;
+}
+.hecore_admin_licenses .list .item {
+  border:1px solid #DDDDDD;
+  padding:10px;
+  margin:10px 0;
+}
+.hecore_admin_licenses .list .item .title {
+  float:left;
+  font-size:14pt;
+  height:28px;
+  line-height:32px;
+  width:325px;
+}
+.hecore_admin_licenses .list .item .license {
+  width:310px;
+  padding:5px;
+  float:left;
+  margin-left:10px;
+}
+.hecore_admin_licenses .list .item .license input {
+  width:280px;
+}
+.hecore_admin_licenses .list .item .license.invalid {
+  background: #ffc5c1 url("~/application/modules/Core/externals/images/error.png") no-repeat scroll;
+  background-position: 297px 8px;
+}
+.hecore_admin_licenses .list .item .license.valid {
+  background: #D0FFC1 url("~/application/modules/Core/externals/images/notice.png") no-repeat scroll;
+  background-position: 297px 8px;
+}
+.hecore_update {
+  color:#008000;
+}
+.he_confirm_container .he_confirm_title {
+  font-size:11pt;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+.he_confirm_container .he_confirm_desc {
+  margin-bottom:10px;
+}
+.he_confirm_container .he_confirm_tools .confirm_btn {
+  margin-right:5px;
+}
+.he_confirm_container .he_confirm_tools .cancel_btn {
+  margin-left:5px;
+}
+.display_none {
+  display:none;
+}
+.hecore_button_update {
+ 	+foreground;
+  +rounded;
+  border: 1px solid $theme_foreground_border_color;
+  font-size:8pt;
+  font-weight:bold;
+  padding:3px;
+}
+
+.global_form > div.hecore_check_license_loader {
+  background-image: url("~/application/modules/Hecore/externals/images/he_contacts_loading.gif");
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+
+html[dir="rtl"] .global_form > div.hecore_check_license_loader {
+  background-position: left top;
+}

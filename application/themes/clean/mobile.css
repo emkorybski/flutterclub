@@ -19,6 +19,7 @@ GLOBAL STYLES, FONTS & RESETS
 body
 {
   background-color: $theme_topbar_menu_background_color;
+  padding-top:0px;
 }
 table
 {
@@ -748,7 +749,7 @@ Used at the top of most browse pages. Often contains button-style tabs.
   letter-spacing: 0.1em;
   padding: 4px 10px;
   color: #fff;
-  background-color: #822E2C;
+  background-color: #aa0088;
 }
 .tabs > ul li > a:hover
 {
@@ -758,7 +759,8 @@ Used at the top of most browse pages. Often contains button-style tabs.
 }
 .tabs > ul li.active > a
 {
-  background-color: #CD4849;
+  background-color: #ff00ff;
+  color:#000;
 }
 .tabs > ul li.active > a:hover
 {
@@ -972,17 +974,18 @@ lists, etc. Each tag has its own remove link.
   outline: none;
   display: block;
   padding: .5em 0em;
-  background-color: #3AAACF;
-  border-bottom: 5px solid #3C88A8;
-  border-top: 5px solid #3C88A8;
+  background-color: #ff00ff;
+  border-bottom: 5px solid #aa0088;
+  border-top: 5px solid #aa0088;
   text-shadow: 1px 1px 0px rgba(0,0,0,.2);
   font-family: fc_bebas;
   font-weight: normal;
+  color:#000;
 }
 .layout_mobi_mobi_menu_main ul a:link,
 .layout_mobi_mobi_menu_main ul a:visited
 {
-  color: #fff;
+  color: #000;
   text-decoration: none;
 }
 .layout_mobi_mobi_menu_main ul a:hover
@@ -991,8 +994,8 @@ lists, etc. Each tag has its own remove link.
 }
 .layout_mobi_mobi_menu_main li.active a
 {
-  background-color: #71B8CA;
-  color: #D9FFFF;
+  background-color: #800080;
+  color: #fff;
 }
 .layout_mobi_mobi_menu_main li.active:first-child a
 {
@@ -1113,7 +1116,8 @@ body {
 }
 
 #global_header {
-  background: #e9f4fa url(/fc/custom/images/clouds.png) repeat-x top center;
+  background: #f6d5ff url(/fc/custom/images/clouds.png) repeat-x top center;
+  padding-top:15px;
 
 }
 
@@ -1125,11 +1129,11 @@ body {
 
 #global_content .generic_layout_container > h3:first-child {
   text-align: center;
-  background-color: #ff6600;
-  color: #ffffff;
+  background-color: #ff00ff;
+  color: #000;
   border-radius: 0;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
   font-family: fc_bebas;
   font-size: 14px;
   text-align: left;
@@ -1170,7 +1174,7 @@ body {
 
 #main_tabs {
   background-color: transparent;
-  border-bottom: 5px solid #CD4849;
+  border-bottom: 5px solid #aa0088;
   padding: 0;
   overflow: hidden;
   font-size: 14px;
@@ -1178,8 +1182,8 @@ body {
   word-spacing: 0.4em;
 }
 #main_tabs li {
-  float: left;
-  margin: 0;
+  width:100%;
+  margin-bottom:2px;
 }
 #main_tabs li a {
   border-color: transparent;
@@ -1187,9 +1191,10 @@ body {
   display: block;
   color: #ffffff;
   position: static;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  background-color: #822E2C;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;  
+  border-bottom-left-radius: 5px;
+  background-color: #aa0088;
   padding-left: 10px;
   padding-right: 10px;
   margin-right: 2px;
@@ -1199,9 +1204,10 @@ body {
   position: relative;
 }
 #global_wrapper #main_tabs li.active a {
-  border-color: #CD4849;
-  background-color: #CD4849;
+  border-color:transparent;
+  background-color: #ff00ff;
 }
+
 .tabs_alt > ul > li.tab_active > a, .tabs_alt > ul > li.active > a {
   font-weight: normal;
   padding: 5px;
@@ -1374,6 +1380,40 @@ hr.line {
   margin-bottom: 5px !important;
 }
 
+
+.fc_betting_market button:hover {
+    background:#000
+}
+
+.fc_betting_slip .slip_actions button:hover{
+    background: #000;
+}
+
+.fc_betting_market:nth-of-type(2), .fc_betting_market:nth-of-type(3)
+{
+  display:none
+} 
+
+
+.fc_betting_pending .bet_info {
+    background-color: #aa0088;
+    box-shadow: 0 3px 2px rgba(50, 50, 50, 0.5);
+    color: white;
+    font-weight: bold;
+    margin-bottom: 0;
+    padding: 10px;
+    position: relative;
+}
+
+.fc_betting_pending table {
+    background-color: #dbe3e2;
+    margin-left: 0;
+    width: 100%;
+}
+
+
+
+
 /* login or signup */
 
 .layout_user_login_or_signup > h3 {
@@ -1405,3 +1445,32 @@ hr.line {
   padding-left: 21px;
   margin: 5px;
 }
+
+
+/* LINKS */
+
+a:link, a:visited {
+    color: #aa0088;
+    text-decoration: none;
+}
+
+h2, #profile_status h2
+{
+  color:#000;
+}
+
+
+/* sign-up button mobile */
+
+.layout_user_login_or_signup > h3 a {
+    background-color: #aa0088;
+    background-image: url("/application/modules/Mobi/externals/images/mobile_buttonbg.png?c=21&c=243");
+    background-position: left top;
+    background-repeat: repeat-x;
+    border: 1px solid #9F6969;
+    border-radius: 3px 3px 3px 3px;
+    color: #FFFFFF;
+    padding: 0 8px 2px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+

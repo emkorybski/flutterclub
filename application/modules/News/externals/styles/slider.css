@@ -1,0 +1,72 @@
+
+#page-wrap{
+    margin:auto; position: relative; min-height: 250px;
+}
+#page-wrap ul{
+    list-style: square inside; 
+}
+#page-wrap a,#page-wrap a:visited{ text-decoration: none; }
+#page-wrap a:hover, #page-wrap a:active{  }
+#page-wrap blockquote{ padding: 0 20px; margin-left: 20px; border-left: 20px solid #ccc; font-size: 14px; 
+font-family: Georgia, serif; font-style: italic; margin-top: 10px;}
+#page-wrap .stripViewer {
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+    margin-left: -10px;
+
+}
+#page-wrap .slider-wrap{ width: 96%; position: relative; top: 12px; left: 10px; }			
+#page-wrap .stripViewer .panelContainer 
+#page-wrap .panel ul { text-align: left; margin: 0 15px 0 30px; }
+
+#page-wrap .stripViewer .panelContainer				{ position: relative; left: 0; top: 0; }
+#page-wrap .stripViewer .panelContainer .panel			{ float: left; height: 100%; position: relative; width: 540px; }
+#page-wrap .stripNavL, .stripNavR, .stripNav			{ display: none; }
+#page-wrap .nav-thumb
+{
+    border: none;
+    margin-bottom:5px;
+    height:50px;
+
+} 									
+#movers-row{  margin:10px 0 0 -5px;border-top: 1px dotted #CCCCCC;}
+#movers-row div								{ width: 100px; float: left; text-align: center;height:100px;margin-right:1px;}
+#movers-row div.cross-link:hover
+{
+    background:url("~/application/modules/News/externals/images/bg_over.gif") no-repeat center 20%;       
+    cursor:pointer; 
+}
+#movers-row div.cross-link:hover a{
+    color:white;
+}
+#movers-row div a.cross-link 				{ float: right; }
+.photo-meta-data							{ padding: 10px; height: 30px; 
+margin-top: -50px; position: relative; z-index: 9999; color: white; }
+.photo-meta-data span 						{ font-size: 13px; }
+.cross-link									
+{ 
+    display: block;
+
+    padding-bottom: 5px;
+    padding-top: 15px;
+    position: relative;
+    width: 62px;
+    z-index: 9999;
+}
+div#button-next-prev{
+    clear: both;
+    float: right;
+    margin-right: 10px;
+    margin-top: 40px;
+    position: inherit;
+}
+div.nav-thumb img{
+    border:1px solid;
+    padding:1px;
+}
+
+
+
+
+

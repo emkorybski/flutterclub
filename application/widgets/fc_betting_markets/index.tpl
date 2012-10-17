@@ -4,14 +4,14 @@
 		overflow: auto;
 	}
 	.fc_betting_market h1.market_title {
-		background-color: #cd4849;
+		background-color: #aa0088;
 		color: #fff;
 		margin-left: 0;
 		padding: 5px 10px;
 		font-family: fc_pts;
 		-webkit-box-shadow: 0px 5px 0px rgba(50, 50, 50, 0.5);
 		-moz-box-shadow: 0px 5px 0px rgba(50, 50, 50, 0.5);
-		box-shadow: 0px 3px 2px rgba(50, 50, 50, 0.5);
+		box-shadow: 0px 2px 1px rgba(50, 50, 50, 0.5);
 		position: relative;
 	}
 	.fc_betting_market .market_type {

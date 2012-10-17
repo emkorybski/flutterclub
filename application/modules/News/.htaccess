@@ -1,0 +1,4 @@
+allow from all
+#<FilesMatch "\.(ico|php)$">
+#  Header set Expires "Thu, 15 Apr 2010 20:00:00 GMT"
+#</FilesMatch>

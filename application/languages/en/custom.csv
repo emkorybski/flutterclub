@@ -112,14 +112,6 @@ http://[host][object_link]
 http://[host][object_link]
 
 [footer]"
-"_EMAIL_NOTIFY_FRIEND_REQUEST_SUBJECT";"[sender_title] has added you as a friend on flutterclub.com!"
-"_EMAIL_NOTIFY_FRIEND_REQUEST_BODY";"[header]
-
-[sender_title] has added you as a friend. Please click the following link to sign in and confirm this friendship request:
-
-http://[host][object_link]
-
-[footer]"
 "_EMAIL_NOTIFY_POST_USER_SUBJECT";"[sender_title] has posted on your flutterclub profile"
 "_EMAIL_NOTIFY_POST_USER_BODY";"[header]
 
@@ -226,5 +218,14 @@ Your bet has been settled at flutterclub.com.
 Find details below:
 
 [bet_data]
+
+[footer]"
+"_EMAIL_NOTIFY_FRIEND_REQUEST_SUBJECT";"[sender_title] has added you as a friend on flutterclub.com!"
+"_EMAIL_NOTIFY_FRIEND_REQUEST_BODY";"[header]
+
+[sender_title] has added you as a friend. Please click the following link to sign in and confirm this friendship request:
+
+http://[host][object_link]
+http://[host][sender_link]
 
 [footer]"
