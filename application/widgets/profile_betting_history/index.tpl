@@ -19,7 +19,7 @@
 
 	.profile_betting_history .bet_info {
 		font-weight: bold;
-		background-color: #CD4849;
+		background-color: #aa0088;
 		color: white;
 		padding: 10px 10px;
 		margin-bottom: 0px;
@@ -52,7 +52,7 @@
 	}
 
 	.profile_betting_history table {
-		background-color: #BFD8DF;
+		background-color: #dbe3e2;
 		width: 100%;
 		margin-left: 0;
 	}

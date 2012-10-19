@@ -1,0 +1,94 @@
+div#news_list div.row_title{
+   
+    margin-bottom: 2px;
+     font-size: 11pt;
+    font-weight: bold;
+}
+div#news_list div#link_only{
+    padding-left: 10px;
+    font-size: 9pt;
+}
+div#news_list h3{
+    margin-top: 3px;
+    border-bottom: 2px solid;
+    
+   /* background: no-repeat scroll 50% 50% #E3F0F9;*/
+}
+div#news_list h5{
+     margin-top: 3px;
+     font-size:9px;
+    
+}
+div#news_list h3 a{
+    margin-top: 3px;
+   color :#473C8B;
+}
+div#news_list div#news_item{
+    border-bottom:1px solid #CCCCCC;
+     margin-top: 3px;    
+    
+}
+div#news_list div#news_item .view_more{
+    float:right;
+}
+div#js_new_entry{
+   border-bottom:1px solid #CCCCCC;
+  
+   margin-top: -10px;
+}
+div#news_list div.blog_content{
+    float:left;
+    width:99%
+    
+}
+div#news_list div.image_content{
+    
+    padding-right:10px;
+    float:left;
+    
+}
+div#news_list div.image_content .img{
+   max-width: 50px;
+    max-height: 50px; 
+}
+div#news_list div.description_content, div#news_list div.description_content span{
+   
+   padding-right:1px; 
+   /*margin-top:10px;*/
+}
+div#news_list div.description_content span.description img{
+    float:left ; 
+    margin-right: 10px;
+    max-height: 100px;
+    max-width: 130px;
+}
+div#js_new_entry .datetime,div#news_list .datetime{
+     color: #999999;
+    font-size: 0.8em;
+    font-weight: normal; 
+}
+div#js_new_entry div.view_all{
+    float:right;
+}
+div#news_list .count_view{
+    font-weight:bold;
+    font-size:1em;
+    color:#000;
+}
+div#tipDiv {
+    padding:4px;
+    color:#000; font-size:11px; line-height:1.2;
+    background-color:#E1E5F1; border:1px solid #667295; 
+    max-width :400px;
+}
+
+/* example demonstrating applying styles to content inside 'tipContent' for tooltip display */
+div#tipDiv div.blog_content div.image_content {
+    
+    float:left;
+    padding-right:10px;
+}
+div#tipDiv div.blog_content span.description img{
+    float:left ; 
+    margin-right: 10px;
+}

@@ -43,16 +43,6 @@ Congratulations, someone has joined flutterclub.com. Welcome the new member to y
 
 [object_title] : http://[host][object_link]
 Signup Date: [date]"
-"_EMAIL_CORE_WELCOME_SUBJECT";"Welcome to the flutterclub.com!"
-"_EMAIL_CORE_WELCOME_BODY";"[header]
-
-Thank you for joining flutterclub.com. Click the following link and enter your information below to login:
-
-http://[host][object_link]
-
-Email: [email]
-
-[footer]"
 "_EMAIL_CORE_WELCOME_PASSWORD_SUBJECT";"Welcome to flutterclub.com!"
 "_EMAIL_CORE_WELCOME_PASSWORD_BODY";"[header]
 
@@ -108,14 +98,6 @@ http://[host][object_link]
 "_EMAIL_NOTIFY_FRIEND_ACCEPTED_BODY";"[header]
 
 [sender_title] has approved you as a friend. Please click the following link to sign in:
-
-http://[host][object_link]
-
-[footer]"
-"_EMAIL_NOTIFY_FRIEND_REQUEST_SUBJECT";"[sender_title] has added you as a friend on flutterclub.com!"
-"_EMAIL_NOTIFY_FRIEND_REQUEST_BODY";"[header]
-
-[sender_title] has added you as a friend. Please click the following link to sign in and confirm this friendship request:
 
 http://[host][object_link]
 
@@ -226,5 +208,48 @@ Your bet has been settled at flutterclub.com.
 Find details below:
 
 [bet_data]
+
+[footer]"
+"_EMAIL_NOTIFY_FRIEND_REQUEST_SUBJECT";"[sender_title] has added you as a friend on flutterclub.com!"
+"_EMAIL_NOTIFY_FRIEND_REQUEST_BODY";"[header]
+
+[sender_title] has added you as a friend. Please click the following link to sign in and confirm this friendship request:
+
+http://[host][sender_link]
+
+[footer]"
+"_EMAIL_CORE_WELCOME_SUBJECT";"Welcome to flutterclub.com!"
+"_EMAIL_CORE_WELCOME_BODY";"[header]
+
+Thank you for signing up at flutterclub.com, the home of fantasy betting for PC, Tablet & Mobile!
+
+You now have FB$ 10,000 in your account to start betting with. The aim of the game is to generate as much profit as possible between now and the end of each competition. We have three real money prizes for the highest earners in the current competition - 1st €500, 2nd €300, 3rd €200.
+
+If you have joined the site towards the end of the competition, do not worry as a new competition begins at 7.00am on Wednesday 24th October.
+
+Although the site is now live on PC and Mobile, our major launch is October 24th. We want to make sure you like the features on site beforehand! Please try as many features of the site on both PC and Mobile – you can:
+
+•	Place single and accumulator bets, make profit and win
+•	Video Betting previews from Super Models
+•	View your position on the competition leader boards
+•	Invite friends and show them who the boss is
+•	Post comments, bet recommendations, links and videos
+•	Connect through Facebook & Twitter
+•	Set up your own groups with your local team/colleagues
+•	Browse articles and post videos
+
+You have automatically become friends with ‘flutterclub admin’ on the site. Flutterclub admin will periodically post important information to your wall such as prizes for the current competition, free betting tips from our experts and important site updates.
+
+All feedback is appreciated and can be submitted through either the ‘Feedback’ link to the right hand side of every page or by emailing us at admin@flutterclub.com.
+
+If you need any information regarding the flutterclub site and games or wish to change your personal profile settings, please refer to the FAQ and SETTINGS sections at top of every page.
+
+Enjoy playing and hopefully winning!
+
+Click the following link and enter your information below to login:
+
+http://[host][object_link]
+
+Email: [email]
 
 [footer]"

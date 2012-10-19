@@ -13,7 +13,7 @@
 		width: 300px;
 		overflow: hidden;
 		position: relative;
-		top: 70px;
+		top: 30px;
 	}
 	#account_info .account_info_left, #account_info .account_info_right, #account_info .account_info_user_points {
 		float: left;
@@ -25,7 +25,7 @@
 	}
 	#account_info .account_info_left {
 		width: 55%;
-		background-color: #70b8c7;
+		background-color: #000;
 		color: #ffffff;
 	}
 	#account_info .account_info_right {
@@ -39,23 +39,23 @@
 	}
 
 	.aim1 {
-		border: 2px solid #39abcd;
+		border: 2px solid #000;
 		border-top-left-radius: 10px;
 		border-right: none;
 		border-bottom: none;
-		background-image: url(/application/themes/clean/images/chip.png);
+		background-image: url(/application/themes/clean/images/chip_new.png);
 		background-repeat: no-repeat;
 		background-position: 5px center;
 		text-indent: 30px;
 	}
 	.aim2 {
-		border: 2px solid #39abcd;
+		border: 2px solid #000;
 		border-top-right-radius: 10px;
 		border-left: none;
 		border-bottom: none;
 	}
 	.aim3 {
-		border: 2px solid #39abcd;
+		border: 2px solid #000;
 		border-bottom-left-radius: 10px;
 		border-right: none;
 		border-top: none;
@@ -65,7 +65,7 @@
 		text-indent: 30px;
 	}
 	.aim4 {
-		border: 2px solid #39abcd;
+		border: 2px solid #000;
 		border-bottom-right-radius: 10px;
 		border-left: none;
 		border-top: none;

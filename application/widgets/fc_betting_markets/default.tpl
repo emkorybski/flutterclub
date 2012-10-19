@@ -29,7 +29,7 @@
 	}
 
 	.fc_selection * {
-		color: #5f93b4;
+		color: #aa0088;
 		font-weight: bold;
 	}
 
@@ -73,14 +73,14 @@
 	}
 
 	.fc_betting_market {
-		background-color: #bfd8df;
+		background-color: #dbe2e3;
 		margin-bottom: 10px;
 		overflow: auto;
 		padding-bottom: 10px;
 	}
 
 	.fc_betting_market h1.market_title {
-		background-color: #cd4849;
+		background-color: #aa0088;
 		color: #fff;
 		margin-left: 0;
 		padding: 5px 10px;
@@ -101,7 +101,7 @@
 		float: right;
 		margin: 10px;
 		font-weight: bold;
-		color: #5F93B4;
+		color: #aa0088;
 		margin-bottom: 0;
 	}
 

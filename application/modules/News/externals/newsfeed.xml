@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE NewsML PUBLIC "urn:newsml:iptc.org:20001006:NewsMLv1.2:1" "http://www.afp.com/dtd/NewsMLv1.2.dtd">
+<NewsML>
+	<NewsEnvelope>
+		<DateAndTime>20101005T055012-04:00</DateAndTime>
+	</NewsEnvelope>
+	
+	<NewsItem>
+		<Identification>
+			<NewsIdentifier>
+				<ProviderId>www.feedsyndicate.com</ProviderId>
+				<DateId>20101005</DateId>
+				<NewsItemId>7020112890</NewsItemId>
+				<RevisionId PreviousRevision="0" Update="N">1</RevisionId>
+				<PublicIdentifier>urn:NewsML:www.feedsyndicate.com:20101005:7020112890:1</PublicIdentifier>
+			</NewsIdentifier>
+		</Identification>
+		
+		<NewsManagement>
+			<NewsItemType FormalName="News"/>
+			<FirstCreated>20101000T055012-0400</FirstCreated>
+			<ThisRevisionCreated>20101000T055012-0400</ThisRevisionCreated>
+			<Status FormalName="Usable"/>
+		</NewsManagement>
+		
+		<NewsComponent>	
+			<NewsLines>
+				<HeadLine>EURO 2012 Schedule Finalized; Poland, Ukraine To Host Games</HeadLine>
+				<DateLine></DateLine>
+				<CopyrightLine>© 2010 </CopyrightLine>
+			</NewsLines>
+			<AdministrativeMetadata>
+				<Provider>
+				<Party FormalName=""/>
+				</Provider>
+				<Creator>
+				<Party FormalName=""/>
+				</Creator>
+			</AdministrativeMetadata>
+			<DescriptiveMetadata>
+				<SubjectCode>
+	<Subject FormalName="sports event" />
+</SubjectCode>
+
+			</DescriptiveMetadata>
+
+		<NewsComponent>
+		<Role FormalName="Summary" /> 
+         <ContentItem>
+           <MediaType FormalName="Text"/>
+           <Format FormalName="bcNITF2.5"/>
+           <DataContent>
+             <![CDATA[The UEFA Executive Committee approved the EURO 2012 match schedule Monday during a meeting at Minsk, Belarus, with Poland and Ukraine confirmed as hosts of the games slated from June 8- July 1 in 2012.]]>
+           </DataContent>
+         </ContentItem>
+       </NewsComponent> 
+			
+
+	<NewsComponent>
+		<ContentItem>
+		  <MediaType FormalName="Text"/>
+		  <Format FormalName="bcNITF2.5"/>
+		  <DataContent>
+<![CDATA[&lt;p&gt;Jojo Doria - AHN Sports Contributor&lt;/p&gt;
+&lt;p&gt;Minsk, Belarus (AHN) - The UEFA Executive Committee approved the EURO 2012 match schedule Monday during a meeting at Minsk, Belarus, with Poland and Ukraine confirmed as hosts of the games slated from June 8- July 1 in 2012.&lt;/p&gt;
+&lt;p&gt;  Warsaw is set to host five matches, three first-round matches, a quarterfinals and a semifinal. Poland will play its second group match in Warsaw.&lt;/p&gt;
+&lt;p&gt;  Other Polish cities confirmed by European soccer's governing body are Wroclaw and Poznan, which will host three group stage matches.&lt;/p&gt;
+&lt;p&gt;  Gdansk will be the site of stage three group stage matches and a quarterfinal.&lt;/p&gt;
+&lt;p&gt;  In Ukraine, Donetsk will also host three group stage matches, a quarterfinal and a semifinal, while Kharkiv and Lviv will welcome stage three group matches.&lt;/p&gt;
+&lt;p&gt;  Ukraine is scheduled to open their bid in Group D in Kyiv.&lt;/p&gt;
+&lt;p&gt;  Meanwhile, Sweden was appointed as host nation for the UEFA European Women's Championship in 2013.&lt;/p&gt;
+&lt;p&gt;  Confirmed as hosts for the UEFA European Under-17 Championship final rounds in 2012 and '13 were Slovenia and Slovakia, respectively.&lt;/p&gt;
+&lt;p&gt;  As for the UEFA European Under-17 Championship final rounds, Slovenia and Slovakia were designated hosts in 2012 and '13, respectively.&lt;/p&gt;
+&lt;p&gt;  Turkey and Wales were also appointed hosts for the UEFA European Women's Under-19 Championships in 2012 and '13, respectively.&lt;/p&gt;
+&lt;p&gt;  Apart from the UEFA EURO 2012 match schedules, amendments to the UEFA Europe League access list were also approved during the meeting.&lt;/p&gt;]]>
+		  </DataContent>
+		</ContentItem>
+	</NewsComponent>
+	
+
+	<NewsComponent Duid="7020112890.jpg">
+		<NewsLines>
+			<HeadLine>EURO 2012 Schedule Finalized; Poland, Ukraine To Host Games</HeadLine>
+			
+		</NewsLines>
+		
+		
+		
+		<NewsComponent>
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://media.feedsyndicate.com/media/3/90018689_1.png">
+			<MediaType FormalName="Photo" /> 
+		</ContentItem>
+		</NewsComponent>
+	</NewsComponent>
+			
+
+		</NewsComponent>
+	</NewsItem>
+		
+
+	<NewsItem>
+		<Identification>
+			<NewsIdentifier>
+				<ProviderId>www.feedsyndicate.com</ProviderId>
+				<DateId>20101005</DateId>
+				<NewsItemId>7020112886</NewsItemId>
+				<RevisionId PreviousRevision="0" Update="N">1</RevisionId>
+				<PublicIdentifier>urn:NewsML:www.feedsyndicate.com:20101005:7020112886:1</PublicIdentifier>
+			</NewsIdentifier>
+		</Identification>
+		
+		<NewsManagement>
+			<NewsItemType FormalName="News"/>
+			<FirstCreated>20101000T055012-0400</FirstCreated>
+			<ThisRevisionCreated>20101000T055012-0400</ThisRevisionCreated>
+			<Status FormalName="Usable"/>
+		</NewsManagement>
+		
+		<NewsComponent>	
+			<NewsLines>
+				<HeadLine>Impressive Preseason Earns Rangers Forward Fedotenko One-Year Pact</HeadLine>
+				<DateLine></DateLine>
+				<CopyrightLine>© 2010 </CopyrightLine>
+			</NewsLines>
+			<AdministrativeMetadata>
+				<Provider>
+				<Party FormalName=""/>
+				</Provider>
+				<Creator>
+				<Party FormalName=""/>
+				</Creator>
+			</AdministrativeMetadata>
+			<DescriptiveMetadata>
+				<SubjectCode>
+	<Subject FormalName="ice hockey" />
+</SubjectCode>
+
+			</DescriptiveMetadata>
+
+		<NewsComponent>
+		<Role FormalName="Summary" /> 
+         <ContentItem>
+           <MediaType FormalName="Text"/>
+           <Format FormalName="bcNITF2.5"/>
+           <DataContent>
+             <![CDATA[Free agent veteran forward Ruslan Fedotenko, who earned his spot over the past few weeks as a tryout at training camp, was signed to a one-year contract by the New York Rangers. Fedotenko led the Rangers in scoring with seven points in five preseason contests.]]>
+           </DataContent>
+         </ContentItem>
+       </NewsComponent> 
+			
+
+	<NewsComponent>
+		<ContentItem>
+		  <MediaType FormalName="Text"/>
+		  <Format FormalName="bcNITF2.5"/>
+		  <DataContent>
+<![CDATA[&lt;p&gt;Jojo Doria - AHN Sports Contributor&lt;/p&gt;
+&lt;p&gt;New York, NY, United States (AHN) - Free agent veteran forward Ruslan Fedotenko, who earned his spot over the past few weeks as a tryout player at training camp, was signed to a one-year contract by the New York Rangers.&lt;/p&gt;
+&lt;p&gt;  The deal with the 31-year-old Fedotenko, who led the Rangers in scoring with seven points in five preseason contests, is worth about $1 million according to multiple reports&lt;/p&gt;
+&lt;p&gt;  The 6-foot-2, 195-pound Russian forward ended with one goal and six assists, along with two penalty minutes and a plus-five rating.&lt;/p&gt;
+&lt;p&gt;  Aside from points, Fedotenko also led the team in assists, which placed sixth in the league, and plus/minus rating. He also tied for second on the Rangers with 11 shots.&lt;/p&gt;
+&lt;p&gt;  Fedotenko not only shown offensively in the preseason, but the big Russian left winger also asserted his physical presence in all three zones.&lt;/p&gt;
+&lt;p&gt;  Fedotenko, a two-time Stanley Cup Champion, having helped Tampa Bay win the title in 2003-04 and Pittsburgh in 2008-09, is expected to continue his successful partnership with Sean Avery and rookie Derek Stepan on the Rangers' third line.&lt;/p&gt;
+&lt;p&gt;  Avery and Stepan were Fedotenko's most frequent partners in the preseason.&lt;/p&gt;
+&lt;p&gt;  Fedotenko spent the past two seasons in Pittsburgh. He recorded 11 goals and 30 points in 80 contests with the Penguins last season.&lt;/p&gt;
+&lt;p&gt;  Originally signed as a free agent with the Philadelphia Flyers in August of 1999, Fedotenko has compiled 150 goals and 308 points in 677 tilts with the Flyers, Lightning, Islanders and Penguins in nine NHL seasons.&lt;/p&gt;]]>
+		  </DataContent>
+		</ContentItem>
+	</NewsComponent>
+	
+
+	<NewsComponent Duid="7020112886.jpg">
+		<NewsLines>
+			<HeadLine>Impressive Preseason Earns Rangers Forward Fedotenko One-Year Pact</HeadLine>
+			<CopyrightLine>© wikipedia</CopyrightLine>
+		</NewsLines>
+		
+		<AdministrativeMetadata>
+			<Creator>
+				<Party FormalName="Marcusvfx" /> 
+			</Creator>
+		</AdministrativeMetadata>
+		
+		
+			<NewsComponent>
+			<Role FormalName="Caption" /> 
+			<ContentItem>
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent>
+					<![CDATA[Ruslan Fedotenko]]>
+				</DataContent>
+			</ContentItem>
+		</NewsComponent>
+		
+		
+		<NewsComponent>
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://media.feedsyndicate.com/media/d/90018677_1.jpg">
+			<MediaType FormalName="Photo" /> 
+		</ContentItem>
+		</NewsComponent>
+	</NewsComponent>
+			
+
+		</NewsComponent>
+	</NewsItem>
+		
+
+	<NewsItem>
+		<Identification>
+			<NewsIdentifier>
+				<ProviderId>www.feedsyndicate.com</ProviderId>
+				<DateId>20101005</DateId>
+				<NewsItemId>7020112725</NewsItemId>
+				<RevisionId PreviousRevision="0" Update="N">1</RevisionId>
+				<PublicIdentifier>urn:NewsML:www.feedsyndicate.com:20101005:7020112725:1</PublicIdentifier>
+			</NewsIdentifier>
+		</Identification>
+		
+		<NewsManagement>
+			<NewsItemType FormalName="News"/>
+			<FirstCreated>20101000T055012-0400</FirstCreated>
+			<ThisRevisionCreated>20101000T055012-0400</ThisRevisionCreated>
+			<Status FormalName="Usable"/>
+		</NewsManagement>
+		
+		<NewsComponent>	
+			<NewsLines>
+				<HeadLine>Big Ben Back: Ban Over For Steelers Quarterback, Roethlisberger Rejoins Team</HeadLine>
+				<DateLine></DateLine>
+				<CopyrightLine>© 2010 </CopyrightLine>
+			</NewsLines>
+			<AdministrativeMetadata>
+				<Provider>
+				<Party FormalName=""/>
+				</Provider>
+				<Creator>
+				<Party FormalName=""/>
+				</Creator>
+			</AdministrativeMetadata>
+			<DescriptiveMetadata>
+				<SubjectCode>
+	<Subject FormalName="National Football League" />
+</SubjectCode>
+
+			</DescriptiveMetadata>
+
+		<NewsComponent>
+		<Role FormalName="Summary" /> 
+         <ContentItem>
+           <MediaType FormalName="Text"/>
+           <Format FormalName="bcNITF2.5"/>
+           <DataContent>
+             <![CDATA[Ben Roethlisberger, who has not suited for the Pittsburgh Steelers since the preseason, is officially back Monday after the Steelers starting quarterback was reinstated by the NFL following a four-game suspension for violating the league's personal conduct policy.]]>
+           </DataContent>
+         </ContentItem>
+       </NewsComponent> 
+			
+
+	<NewsComponent>
+		<ContentItem>
+		  <MediaType FormalName="Text"/>
+		  <Format FormalName="bcNITF2.5"/>
+		  <DataContent>
+<![CDATA[&lt;p&gt;Jojo Doria - AHN Sports Contributor&lt;/p&gt;
+&lt;p&gt;Pittsburgh, PA, United States (AHN) - Ben Roethlisberger, who has not suited for the Pittsburgh Steelers since the preseason, is officially back Monday after the Steelers starting quarterback was reinstated by the NFL following a four-game suspension for violating the league's personal conduct policy.&lt;/p&gt;
+&lt;p&gt;  Roethlisberger, 28, who for the first time since 2007 was not elected captain by his teammates, received a warm reception from his teammates in his return.&lt;/p&gt;
+&lt;p&gt;  The Pro Bowl quarterback and two-time Super Bowl champion attributed to his absence as the cause of his failure to get the nod of his teammates for the co-captaincy.&lt;/p&gt;
+&lt;p&gt;  "It's good to be back here at the facility, especially with my teammates," Roethlisberger said at a news conference Monday. "It's good to see coaches and be around my teammates. I'm just excited to be back and get focused on football, focused on this year and try to get to Dallas,'' he added.&lt;/p&gt;
+&lt;p&gt;  Roethlisberger is not only expected to work his way back slowly, but will have plenty of making up to do with the Steelers, his teammates and even the city of Pittsburgh.&lt;/p&gt;
+&lt;p&gt;  The Steelers were 3-1 without their starting quarterback, who led them to two Super Bowl victories over the previous five seasons.&lt;/p&gt;
+&lt;p&gt;  Despite establishing themselves as one of the top teams in the AFC during Roethlisberger's absence, the Steelers struggled with their passing game, placing 31st among 32 NFL teams.&lt;/p&gt;
+&lt;p&gt;  Pittsburgh went through a quarterback carousel in Roethlisberger's absence, with third-year signal-caller Dennis Dixon starting the season.&lt;/p&gt;
+&lt;p&gt;  But Dixon did not last long under center as he suffered an injury vs. the Titans on Sept. 19.&lt;/p&gt;
+&lt;p&gt;  The ailment sidelined Dixon for the rest of the season, paving the way for veteran Charlie Batch to direct the offense. Batch, in turn, will have to step back in the return of Roethlisberger.&lt;/p&gt;
+&lt;p&gt;  Roethlisberger reportedly attended the Steelers' meeting in advance of Tuesday's practice. He is most likely to play in Pittsburgh's Week 6 contest against Cleveland.&lt;/p&gt;]]>
+		  </DataContent>
+		</ContentItem>
+	</NewsComponent>
+	
+
+	<NewsComponent Duid="7020112725.jpg">
+		<NewsLines>
+			<HeadLine>Big Ben Back: Ban Over For Steelers Quarterback, Roethlisberger Rejoins Team</HeadLine>
+			<CopyrightLine>© wikipedia</CopyrightLine>
+		</NewsLines>
+		
+		<AdministrativeMetadata>
+			<Creator>
+				<Party FormalName="SteelCityHobbies" /> 
+			</Creator>
+		</AdministrativeMetadata>
+		
+		
+			<NewsComponent>
+			<Role FormalName="Caption" /> 
+			<ContentItem>
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent>
+					<![CDATA[Ben Roethlisberger]]>
+				</DataContent>
+			</ContentItem>
+		</NewsComponent>
+		
+		
+		<NewsComponent>
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://media.feedsyndicate.com/media/4/90018687_1.jpg">
+			<MediaType FormalName="Photo" /> 
+		</ContentItem>
+		</NewsComponent>
+	</NewsComponent>
+			
+
+		</NewsComponent>
+	</NewsItem>
+		
+
+	<NewsItem>
+		<Identification>
+			<NewsIdentifier>
+				<ProviderId>www.feedsyndicate.com</ProviderId>
+				<DateId>20101005</DateId>
+				<NewsItemId>7020112406</NewsItemId>
+				<RevisionId PreviousRevision="0" Update="N">1</RevisionId>
+				<PublicIdentifier>urn:NewsML:www.feedsyndicate.com:20101005:7020112406:1</PublicIdentifier>
+			</NewsIdentifier>
+		</Identification>
+		
+		<NewsManagement>
+			<NewsItemType FormalName="News"/>
+			<FirstCreated>20101000T055012-0400</FirstCreated>
+			<ThisRevisionCreated>20101000T055012-0400</ThisRevisionCreated>
+			<Status FormalName="Usable"/>
+		</NewsManagement>
+		
+		<NewsComponent>	
+			<NewsLines>
+				<HeadLine>U.S. Wallops France In Straight Sets At Men's Volleyball Worlds</HeadLine>
+				<DateLine></DateLine>
+				<CopyrightLine>© 2010 </CopyrightLine>
+			</NewsLines>
+			<AdministrativeMetadata>
+				<Provider>
+				<Party FormalName=""/>
+				</Provider>
+				<Creator>
+				<Party FormalName=""/>
+				</Creator>
+			</AdministrativeMetadata>
+			<DescriptiveMetadata>
+				<SubjectCode>
+	<Subject FormalName="sports event" />
+</SubjectCode>
+
+			</DescriptiveMetadata>
+
+		<NewsComponent>
+		<Role FormalName="Summary" /> 
+         <ContentItem>
+           <MediaType FormalName="Text"/>
+           <Format FormalName="bcNITF2.5"/>
+           <DataContent>
+             <![CDATA[Clayton Stanley tallied 14 points, including four blocks and four aces, as the Olympic champion United States clobbered France in straight sets Monday in the third round Pool O of the 2010 FIVB Men's World Championship at PalaLottomatica in Rome, Italy.]]>
+           </DataContent>
+         </ContentItem>
+       </NewsComponent> 
+			
+
+	<NewsComponent>
+		<ContentItem>
+		  <MediaType FormalName="Text"/>
+		  <Format FormalName="bcNITF2.5"/>
+		  <DataContent>
+<![CDATA[&lt;p&gt;Jojo Doria - AHN Sports Contributor&lt;/p&gt;
+&lt;p&gt;Rome, Italy (AHN) - Clayton Stanley tallied 14 points, including four blocks and four aces, as the Olympic champions United States clobbered France in straight sets Monday in the third round Pool O of the 2010 FIVB Men's World Championship at PalaLottomatica in Rome, Italy.&lt;/p&gt;
+&lt;p&gt;  Sean Rooney and David Lee each scored 11 points, while Reid Priddy finished with 10 points as the No. 3 ranked Americans opened the third round with 25-16, 25-14, 25-23 triumph.&lt;/p&gt;
+&lt;p&gt;  The dominating victory showed sheer power by the US squad, which not only executed its attack fluidly but also registered a high block percentage, which was key to the win.&lt;/p&gt;
+&lt;p&gt;  The vaunted blocking trio of the Americans, composed of Stanley, Priddy and Lee, formed an insurmountable obstacle for France, which were out-blocked, 17-7.&lt;/p&gt;
+&lt;p&gt;  Lee accounted for five of the total stoppages, while Priddy registered four.&lt;/p&gt;
+&lt;p&gt;  Monday's win marked the 13th in 20 matches against France by Americans, who fortified their bid for a strong finish.&lt;/p&gt;
+&lt;p&gt;  Aside from the United States, Brazil, Serbia and Bulgaria also solidified their campaign for semifinal positions after winning their respective Pool matches Monday.&lt;/p&gt;]]>
+		  </DataContent>
+		</ContentItem>
+	</NewsComponent>
+	
+
+	<NewsComponent Duid="7020112406.jpg">
+		<NewsLines>
+			<HeadLine>U.S. Wallops France In Straight Sets At Men's Volleyball Worlds</HeadLine>
+			
+		</NewsLines>
+		
+		
+			<NewsComponent>
+			<Role FormalName="Caption" /> 
+			<ContentItem>
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent>
+					<![CDATA[PalaLottomatica]]>
+				</DataContent>
+			</ContentItem>
+		</NewsComponent>
+		
+		
+		<NewsComponent>
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://media.feedsyndicate.com/media/5/90018682_1.jpg">
+			<MediaType FormalName="Photo" /> 
+		</ContentItem>
+		</NewsComponent>
+	</NewsComponent>
+			
+
+		</NewsComponent>
+	</NewsItem>
+		
+
+	<NewsItem>
+		<Identification>
+			<NewsIdentifier>
+				<ProviderId>www.feedsyndicate.com</ProviderId>
+				<DateId>20101005</DateId>
+				<NewsItemId>7020112261</NewsItemId>
+				<RevisionId PreviousRevision="0" Update="N">1</RevisionId>
+				<PublicIdentifier>urn:NewsML:www.feedsyndicate.com:20101005:7020112261:1</PublicIdentifier>
+			</NewsIdentifier>
+		</Identification>
+		
+		<NewsManagement>
+			<NewsItemType FormalName="News"/>
+			<FirstCreated>20101000T055012-0400</FirstCreated>
+			<ThisRevisionCreated>20101000T055012-0400</ThisRevisionCreated>
+			<Status FormalName="Usable"/>
+		</NewsManagement>
+		
+		<NewsComponent>	
+			<NewsLines>
+				<HeadLine>Defense, Special Teams Key In Pats' Rout Of Dolphins</HeadLine>
+				<DateLine></DateLine>
+				<CopyrightLine>© 2010 </CopyrightLine>
+			</NewsLines>
+			<AdministrativeMetadata>
+				<Provider>
+				<Party FormalName=""/>
+				</Provider>
+				<Creator>
+				<Party FormalName=""/>
+				</Creator>
+			</AdministrativeMetadata>
+			<DescriptiveMetadata>
+				<SubjectCode>
+	<Subject FormalName="National Football League" />
+</SubjectCode>
+
+			</DescriptiveMetadata>
+
+		<NewsComponent>
+		<Role FormalName="Summary" /> 
+         <ContentItem>
+           <MediaType FormalName="Text"/>
+           <Format FormalName="bcNITF2.5"/>
+           <DataContent>
+             <![CDATA[Patrick Chung blocked two kicks in the second half and returned an interception for a score, while the Patriots' special teams accounted for two scores in New England's 41-14 demolition of the Miami Dolphins Monday night at Sun Life Stadium.]]>
+           </DataContent>
+         </ContentItem>
+       </NewsComponent> 
+			
+
+	<NewsComponent>
+		<ContentItem>
+		  <MediaType FormalName="Text"/>
+		  <Format FormalName="bcNITF2.5"/>
+		  <DataContent>
+<![CDATA[&lt;p&gt;Jojo Doria - AHN Sports Contributor&lt;/p&gt;
+&lt;p&gt;Miami, FL, United States (AHN) - Patrick Chung blocked two kicks in the second half and returned an interception for a score, while the Patriots' special teams accounted for two scores in New England's 41-14 demolition of the Miami Dolphins Monday night at Sun Life Stadium.&lt;/p&gt;
+&lt;p&gt;  New England's defensive numbers were woeful entering Week 4, though that changed against the punchless Fins.&lt;/p&gt;
+&lt;p&gt;  It ranked a distant 28th in the league in terms of scoring defense and 27th in yards allowed. The Pats also ranked 25th in passing defense and placed 20th in rushing defense prior to Monday's tilt.&lt;/p&gt;
+&lt;p&gt;  But the Patriots' struggling, young defense got an unexpected contributor in Chung, who blocked a punt to set up a touchdown before blocking a field goal that Kyle Arrington returned 35 yards for a score that put New England ahead 34-14.&lt;/p&gt;
+&lt;p&gt;  Also in the fourth, Chung returned an interception 51 yards for New England's final tally.&lt;/p&gt;
+&lt;p&gt;  Pats linebacker Rob Ninkovich also stepped up, recording the first two interceptions of his five-year career.&lt;/p&gt;
+&lt;p&gt;  Tom Brady threw for only 153 yards but went on to notch his 100th win. The Patriots' field general became the 11th NFL quarterback to reach the milestone and the quickest ever.&lt;/p&gt;
+&lt;p&gt;  Brady accomplished the feat in 131 starts.&lt;/p&gt;
+&lt;p&gt;  He completed 19-of-24 passes for 153 yards and a score for the Patriots (3-1), who moved into a tie with the New York Jets for first place in the AFC East.&lt;/p&gt;
+&lt;p&gt;  Chad Henne, who entered Monday's contest with a solid 88.5 passer rating, connected on 29-of-39 through the air for 302 yards with two TD but had three interceptions for the Dolphins.&lt;/p&gt;
+&lt;p&gt;  With the loss, the Dolphins (2-2) slipped to third place.&lt;/p&gt;]]>
+		  </DataContent>
+		</ContentItem>
+	</NewsComponent>
+	
+
+	<NewsComponent Duid="7020112261.jpg">
+		<NewsLines>
+			<HeadLine>Defense, Special Teams Key In Pats' Rout Of Dolphins</HeadLine>
+			<CopyrightLine>© wikipedia</CopyrightLine>
+		</NewsLines>
+		
+		<AdministrativeMetadata>
+			<Creator>
+				<Party FormalName="Keith Allison" /> 
+			</Creator>
+		</AdministrativeMetadata>
+		
+		
+			<NewsComponent>
+			<Role FormalName="Caption" /> 
+			<ContentItem>
+				<MediaType FormalName="Text" /> 
+				<Format FormalName="bcNITF2.5" /> 
+				<DataContent>
+					<![CDATA[Tom Brady]]>
+				</DataContent>
+			</ContentItem>
+		</NewsComponent>
+		
+		
+		<NewsComponent>
+		<Role FormalName="JPG" /> 
+		<ContentItem Href="http://media.feedsyndicate.com/media/f/90018686_1.jpg">
+			<MediaType FormalName="Photo" /> 
+		</ContentItem>
+		</NewsComponent>
+	</NewsComponent>
+			
+
+		</NewsComponent>
+	</NewsItem>
+		
+
+</NewsML>
+

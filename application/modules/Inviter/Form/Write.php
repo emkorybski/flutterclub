@@ -1,0 +1,80 @@
+<?php
+/**
+ * SocialEngine
+ *
+ * @category   Application_Extensions
+ * @package    Inviter
+ * @copyright  Copyright Hire-Experts LLC
+ * @license    http://www.hire-experts.com
+ * @version    $Id: Write.php 2010-07-02 19:54 mirlan $
+ * @author     Mirlan
+ */
+
+/**
+ * @category   Application_Extensions
+ * @package    Inviter
+ * @copyright  Copyright Hire-Experts LLC
+ * @license    http://www.hire-experts.com
+ */
+
+class Inviter_Form_Write extends Engine_Form
+{
+  public function init()
+  {
+    // Init settings object
+    $settings = Engine_Api::_()->getApi('settings', 'core');
+
+    // Init form
+    $this->clearDecorators()
+         ->clearAttribs()
+         ->setDescription('INVITER_FORM_WRITE_DESCRIPTION')
+         ->setAttrib( 'id', 'invite_friends');
+
+    // Init recipients
+    $this->addElement('Textarea', 'recipients', array(
+      'label' => 'Recipients',
+      'description' => 'Comma-separated list, or one-email-per-line.',
+      'required' => true,
+      'allowEmpty' => false,
+      'class' => 'writer_textarea',
+      'decorators'=>array(
+          'ViewHelper',
+           'Description',
+          'Label',
+          array('HtmlTag2', array('tag' => 'div', 'class'=>'writer-textarea-conteiner')),
+      ),
+    ));
+    $this->recipients->getDecorator('Description')->setOptions(array('placement' => 'APPEND'));
+
+    // Init custom message
+    if( $settings->getSetting('invite.allowCustomMessage', 1) > 0 ) {
+      $this->addElement('Textarea', 'message', array(
+        'label' => 'Message',
+        'required' => false,
+        'allowEmpty' => true,
+        'value' => $this->getTranslator()->_($settings->getSetting('invite.message')),
+        'filters' => array(
+          new Engine_Filter_Censor(),
+        ),
+        'decorators'=>array(
+            'ViewHelper',
+            'Label',
+            array('HtmlTag2', array('tag' => 'div', 'class'=>'writer-textarea-conteiner')),
+        ),
+        'class' => 'writer_textarea',
+      ));
+    }
+
+    $path = Engine_Api::_()->getModuleBootstrap('inviter')->getModulePath();
+    $this->addPrefixPath('Engine_Form_Decorator_', $path . '/Form/Decorator/', 'Decorator');
+    $this->addElement('button', 'submit_contacts', array(
+      'label' => 'INVITER_Send Invitations',
+      'onClick'=>'sendInvitations()',
+      'decorators'=>array(
+       'ViewHelper',
+        'SubmitContacts',
+      ),
+      'style' => 'margin-top: 10px;float:left'
+    ));
+  }
+}

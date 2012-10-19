@@ -1,0 +1,1479 @@
+{
+  "type": "module",
+  "name": "news",
+  "version": "4.06p3",
+  "revision": null,
+  "path": "application\/modules\/News",
+  "repository": null,
+  "date": "Wed, 02 May 2012 05:47:40 +0000",
+  "title": "News",
+  "description": "Get RSS feeds from remote servers",
+  "thumb": null,
+  "developer": null,
+  "authors": [
+    "YouNet Company"
+  ],
+  "changeLog": null,
+  "meta": {
+    "date": "Wed, 02 May 2012 05:47:40 +0000",
+    "title": "News",
+    "description": "Get RSS feeds from remote servers",
+    "developer": null,
+    "authors": [
+      "YouNet Company"
+    ],
+    "changeLog": null
+  },
+  "actions": [
+    "install",
+    "upgrade",
+    "refresh",
+    "enable",
+    "disable"
+  ],
+  "callback": {
+    "path": null,
+    "class": "Engine_Package_Installer_Module",
+    "priority": 4000
+  },
+  "dependencies": {
+    "module-core": {
+      "type": "module",
+      "name": "core",
+      "guid": "module-core",
+      "minVersion": "4.1.0",
+      "maxVersion": null,
+      "excludeExcept": null
+    },
+    "module-younet-core": {
+      "type": "module",
+      "name": "younet-core",
+      "guid": "module-younet-core",
+      "minVersion": "4.01",
+      "maxVersion": null,
+      "excludeExcept": null
+    }
+  },
+  "tests": [
+    
+  ],
+  "permissions": [
+    
+  ],
+  "structure": {
+    "application\/modules\/News": {
+      "type": "directory",
+      "path": "application\/modules\/News",
+      "structure": [
+        {
+          "path": "LoadDataFromFeed.php",
+          "dir": false,
+          "file": true,
+          "perms": "0664",
+          "size": 7564,
+          "sha1": "2ceb0495c810ef581b1143270fa326b43de973fd"
+        },
+        {
+          "path": "controllers",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/YnsRSSFeed",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/YnsRSS.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 20459,
+          "sha1": "0a640bb8dee9bacba6914dde62852dec1677c56d"
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/item.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 48,
+          "sha1": "f1a43fd87eaa2f5b8e2b3aa194ae5c808e6b2cdb"
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/base.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 12585,
+          "sha1": "9a950650198ea229c3b963fe1a064f02b9429c55"
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/example",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/example\/NEWS",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1916,
+          "sha1": "5b9ae5c5854d62827e04b9eafe4d2596ab0f8a16"
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/example\/README",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1349,
+          "sha1": "892bcd271c61796ccd1b45cd35782f6d26fe7222"
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/example\/htdocs",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/example\/htdocs\/index.html",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 12906,
+          "sha1": "97a2980bd818d80556c7695204d6117d52b7e9ad"
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/example\/htdocs\/cookbook.html",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6432,
+          "sha1": "b961f4fe10570106e5cba2767cc9f6df5c31a377"
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/example\/TROUBLESHOOTING",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5004,
+          "sha1": "dc3335c0c207d2b63c2a5aa16dbab9303a463f81"
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/example\/AUTHORS",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 29,
+          "sha1": "d3702674d0376aa144675e60b5634319af0fd606"
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/example\/ChangeLog",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 9642,
+          "sha1": "ed90de0b9bfb44e89f144d2ab1d9c97c8cff8c43"
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/example\/CHANGES",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1152,
+          "sha1": "61d8053082d932f237f8f2fcfde090a31d26abed"
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/example\/cookbook",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3157,
+          "sha1": "9a9ee969fd7f2435bde9487297fc5dcd630416c7"
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/example\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/example\/scripts\/cache",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/example\/scripts\/cache\/cf666fe4dd24248d87fbe9f5f0a0af01",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 85737,
+          "sha1": "01aeb4fe1651b3202bcb7d104dc670c3f866d583"
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/example\/scripts\/cache\/6d86980fda7a443c7346295bb5a58f02",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 130380,
+          "sha1": "05d369590749bcdcdf052caede76d27850e3128f"
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/example\/scripts\/cache\/af2e8110b3f844923f5b67726a573e97",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 83812,
+          "sha1": "5c0b3c532a6b1bb1c96b9918d55dea785e79fe4d"
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/example\/scripts\/magpie_slashbox.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1285,
+          "sha1": "f90c85d14f8cb6eca84afe772a9e5846b6f87f33"
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/example\/scripts\/README",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1025,
+          "sha1": "4a09fbe392c8fe8954fca61094b1f44129e57965"
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/example\/scripts\/magpie_debug.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1974,
+          "sha1": "d029563239e5ce12afe73442330e05df9bfa1529"
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/example\/scripts\/simple_smarty.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1654,
+          "sha1": "7488a8bd752f669a858930fef61f8b99ae15239f"
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/example\/scripts\/templates",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/example\/scripts\/templates\/simple.smarty",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 816,
+          "sha1": "de0bc8c37b89a42e2bb7dece8ba20059fb38e050"
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/example\/scripts\/magpie_simple.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 883,
+          "sha1": "463c72f1ca455e12478f37e449f6de4cd86bfb4b"
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/example\/scripts\/smarty_plugin",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/example\/scripts\/smarty_plugin\/modifier.rss_date_parse.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 779,
+          "sha1": "f93797f82b2f12195391ba520c4b5c6fbb43c356"
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/example\/INSTALL",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4859,
+          "sha1": "875021bd3bd48fdd5f4758fb7b1d91968574a71e"
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/rss_utils.inc",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2123,
+          "sha1": "db4bd7832e9eb3e208a94776f0ab8c47fd07cdc1"
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/rss_parse.inc",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 22102,
+          "sha1": "266536acdcb77cb79b3b16ef3741b41ed63863f0"
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/extlib",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/extlib\/Snoopy.class.inc",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 28302,
+          "sha1": "4360f937b6e6a91ce93e5320996b5e28bdf9b900"
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/rss_cache.inc",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6581,
+          "sha1": "05fbddb0876fb4446dcd9576973818d34a9f35e8"
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/Plugins\/core\/rss_fetch.inc",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 15804,
+          "sha1": "d8cdc0db518e7393b77d97df53e2c59e17de88e2"
+        },
+        {
+          "path": "controllers\/YnsRSSFeed\/base.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 12585,
+          "sha1": "9a950650198ea229c3b963fe1a064f02b9429c55"
+        },
+        {
+          "path": "controllers\/AdminManageController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 43339,
+          "sha1": "2799af5d9503a80c2e9390a7614bd739c80a2588"
+        },
+        {
+          "path": "controllers\/IndexController.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 15683,
+          "sha1": "73ed04f334ad819a5d34157f2fcbdbae538e47e2"
+        },
+        {
+          "path": "Form",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Edit.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1863,
+          "sha1": "d0c6f21675a63e37bdf3d09324e76c8fd1690c80"
+        },
+        {
+          "path": "Form\/Commonsearch.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2735,
+          "sha1": "8df168c57960e8deac0cc6c92950121174df36e1"
+        },
+        {
+          "path": "Form\/Admin",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/Manage",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Form\/Admin\/Manage\/Poll.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1552,
+          "sha1": "bc79b9bc1df7d2f7e2dc822c32a702878b31fcca"
+        },
+        {
+          "path": "Form\/Admin\/Manage\/Createuser.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 818,
+          "sha1": "430ac05dfa0e67e5016238c0dbf0f03ec4df1807"
+        },
+        {
+          "path": "Form\/Admin\/Manage\/Create.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2650,
+          "sha1": "d17697130c10f21dd8232bbebc4fdca07b4d9066"
+        },
+        {
+          "path": "Form\/Admin\/Manage\/Createcategory.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1541,
+          "sha1": "c2920f11b3fcdae5cb784723396a07027ee2b9dc"
+        },
+        {
+          "path": "Form\/Admin\/Manage\/Setting.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2700,
+          "sha1": "4df36954d08e5134854d9b292a5b5abd5b1b5149"
+        },
+        {
+          "path": "Form\/Search.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1813,
+          "sha1": "a1b7243b6634abf10bcf1df8a924c42fc3d75412"
+        },
+        {
+          "path": "Bootstrap.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3691,
+          "sha1": "b5108be10ec3c6ac9c8a3264265b2ddc5da67f05"
+        },
+        {
+          "path": "views",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/_formButtonCancel.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 529,
+          "sha1": "a04677f4d817e523180dd4704e1938c653481f6b"
+        },
+        {
+          "path": "views\/scripts\/index",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/index\/edit.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 86,
+          "sha1": "f008af4bae1f7db5306b9e65bcfd77dfb9b1558b"
+        },
+        {
+          "path": "views\/scripts\/index\/lists.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 10139,
+          "sha1": "38a4c725d8749dd085521a89e8bcfb0f400d4e3e"
+        },
+        {
+          "path": "views\/scripts\/index\/manage.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 8393,
+          "sha1": "2cf48e881c215e3611d06cca1069aeff13fff7c5"
+        },
+        {
+          "path": "views\/scripts\/index\/detail.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 7345,
+          "sha1": "95687571908cdcaec05ffa0f074bf1081a4705cc"
+        },
+        {
+          "path": "views\/scripts\/index\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "views\/scripts\/index\/list.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2781,
+          "sha1": "0d12801e1f555e15af276a7f8853aae1bad615bc"
+        },
+        {
+          "path": "views\/scripts\/_poll.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3923,
+          "sha1": "abcca1eac5aeb46524e707936ac0dab19d58c599"
+        },
+        {
+          "path": "views\/scripts\/admin-manage",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/categories.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 8042,
+          "sha1": "806d2b0b7561be429656986ca695b07b2c6c6364"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/setting.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 990,
+          "sha1": "f9737ea233c5091505d88bc547d09ddadb61a15d"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/edit.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 403,
+          "sha1": "1c760b81d2110b172952659204e2c0388f423ef8"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/create.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 588,
+          "sha1": "60ff31cd73f93027d688c3aa33c9f04b3076131d"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/users.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5319,
+          "sha1": "5ac87f4801f78071353d034680eefbe5f7b3906f"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/delete.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1138,
+          "sha1": "11d894b257dbfae9af6287e2a76d1c72934489e6"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/poll.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 7887,
+          "sha1": "d683ca3ee217a429381e9d87085a6ac4ee3bdf53"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/editcategory.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 401,
+          "sha1": "e80096b440d5446c668ddd862ff2535b9070d39f"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 8221,
+          "sha1": "61f759ace651388fc6c72f6ca776b286628a3c72"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/category.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 9696,
+          "sha1": "fa5da3142a9d26ba50a67d17f5c2acc463984ccc"
+        },
+        {
+          "path": "views\/scripts\/admin-manage\/getdata.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "views\/scripts\/pagination",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "views\/scripts\/pagination\/newspagination.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1584,
+          "sha1": "d21df88e8c22e7080787cbe7e705febc8cedc8e1"
+        },
+        {
+          "path": ".htaccess",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 112,
+          "sha1": "30b586fc3fa364c49baee81ef3f0d7190500ba55"
+        },
+        {
+          "path": "info.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 335,
+          "sha1": "e1facc76b531f6b9871975dfd000d413a7bbada5"
+        },
+        {
+          "path": "settings",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "settings\/manifest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3320,
+          "sha1": "112b645bcb43ca811eb089bcb1692529bb8f71a7"
+        },
+        {
+          "path": "settings\/content.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6762,
+          "sha1": "2eff83ec7474331df2ebfb2dbf87dcc29c04c4a1"
+        },
+        {
+          "path": "settings\/my.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 11255,
+          "sha1": "f4927ec8735c95b0a42c7a4e0aab6dabf52f034b"
+        },
+        {
+          "path": "settings\/my-upgrade-4.04-4.05.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 8503,
+          "sha1": "d4d64de524e71fafd0ad0278c1f5573cd60b5687"
+        },
+        {
+          "path": "Content",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Content\/Widget",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Content\/Widget\/Base.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2221,
+          "sha1": "4e50a06e4c300e4aa263541515a5fa3934b22ef1"
+        },
+        {
+          "path": "Model",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Model\/Category.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 548,
+          "sha1": "f9a55297c5995cb37f06a6001be9621bd3640d7b"
+        },
+        {
+          "path": "Model\/Poll.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 73,
+          "sha1": "d8406f4e849a13ce8fc6a7f233f7af56dfd0b43b"
+        },
+        {
+          "path": "Model\/Timeframe.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 547,
+          "sha1": "7a0dcdf70c017b467575449ffd02fc74a0360c45"
+        },
+        {
+          "path": "Model\/Param.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 75,
+          "sha1": "556cba55aa487787804268450344247ac53d1af9"
+        },
+        {
+          "path": "Model\/DbTable",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Model\/DbTable\/Categoryparents.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 552,
+          "sha1": "edaac3b761a5c40be71ecf78e702cb7182b1582f"
+        },
+        {
+          "path": "Model\/DbTable\/Timeframe.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 595,
+          "sha1": "d340035c35d914f321c1e9ef95675be841fc839f"
+        },
+        {
+          "path": "Model\/DbTable\/Nusers.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 70,
+          "sha1": "b15b2b10608d2a01bbf942b7654f8480054148ea"
+        },
+        {
+          "path": "Model\/DbTable\/Contents.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 592,
+          "sha1": "7c3b5019230ef78d42a06f2b4f5d785f7a6a26de"
+        },
+        {
+          "path": "Model\/DbTable\/Categories.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 547,
+          "sha1": "eebdf1547b747d836dab97f6aeb140d59b969bfe"
+        },
+        {
+          "path": "Model\/DbTable\/Params.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 587,
+          "sha1": "6dc54ce44bf8c086d00a42a6c84606e6243a8c4d"
+        },
+        {
+          "path": "Model\/DbTable\/Votes.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 71,
+          "sha1": "3ccea694ea494422061f4046c3ea7de1219ccd25"
+        },
+        {
+          "path": "Model\/DbTable\/Options.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 73,
+          "sha1": "ea0fe5a9e33c0a2d0ce288f7d02120040596439a"
+        },
+        {
+          "path": "Model\/DbTable\/Polls.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 536,
+          "sha1": "55e77bf9c098dd4e21c91960592c647d3e2d6a1f"
+        },
+        {
+          "path": "Model\/Nuser.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 77,
+          "sha1": "224006771512c31333870cb4108fe2f662285eb8"
+        },
+        {
+          "path": "Model\/Categoryparent.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 554,
+          "sha1": "2d9a9664d51a5e63c56b22a68f61144e332a34f0"
+        },
+        {
+          "path": "Model\/Content.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1984,
+          "sha1": "28d53d0e4edf390cc541f9f6f2cff82d91232980"
+        },
+        {
+          "path": "externals",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "externals\/news.xml",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 23614,
+          "sha1": "6d0bd4f4e8d67cbafe6d6b063f70dfae95b1de29"
+        },
+        {
+          "path": "externals\/.htaccess",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 151,
+          "sha1": "14bb349b1c925d02749e75194772c3fe53c85921"
+        },
+        {
+          "path": "externals\/newsfeed.xml",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 22663,
+          "sha1": "ae350972c7397276e4a7d403f0c08ae50d222271"
+        },
+        {
+          "path": "externals\/images",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "externals\/images\/print_icon.gif",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1126,
+          "sha1": "434d702e1be17fb98e9b280f065ae9e521af9d87"
+        },
+        {
+          "path": "externals\/images\/next_icon.gif",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 80,
+          "sha1": "bb685286349a74bb92e4b613a8141a9e518afffa"
+        },
+        {
+          "path": "externals\/images\/bg_over3.gif",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 230,
+          "sha1": "a1293c6e3727a83015c1e3c515f441ec78d39314"
+        },
+        {
+          "path": "externals\/images\/bg_over1.gif",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 230,
+          "sha1": "9395d31e1dd5cb6faeb6fa26cfd652e5f7d07964"
+        },
+        {
+          "path": "externals\/images\/bg_over.gif",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 507,
+          "sha1": "3ea6a4c64c69eedba499c3941ef45a04fee07779"
+        },
+        {
+          "path": "externals\/images\/back_icon.gif",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 79,
+          "sha1": "f14d56b547a95be665254db864833ea4a01bc527"
+        },
+        {
+          "path": "externals\/images\/Thumbs.db",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 8192,
+          "sha1": "e1df5059b224442c1a1d6af6c36bcb01686024b5"
+        },
+        {
+          "path": "externals\/images\/transpBlack.png",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 121,
+          "sha1": "edaa427e930f6e3133a4315c9e664ece49093844"
+        },
+        {
+          "path": "externals\/images\/no-image.jpg",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2377,
+          "sha1": "8cbeb600631b681ac55ac3874af334407288f24f"
+        },
+        {
+          "path": "externals\/feed.xml",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 63647,
+          "sha1": "917fe20e995264cf111f00d3baa75c931db82f21"
+        },
+        {
+          "path": "externals\/feed1.xml",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 21765,
+          "sha1": "4066036e200e1dfdfc48c1ae3b4810a256154114"
+        },
+        {
+          "path": "externals\/styles",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "externals\/styles\/newsfeed.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1995,
+          "sha1": "6fb9038fc252601992425da53b8371a41f9eebb2"
+        },
+        {
+          "path": "externals\/styles\/slider.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2033,
+          "sha1": "13f8829f95edb0e03f75edcd047bc069d3ab0f67"
+        },
+        {
+          "path": "externals\/styles\/main.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4759,
+          "sha1": "77ea916229d095971db2aaf4edef692b10860872"
+        },
+        {
+          "path": "externals\/styles\/_web.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 655,
+          "sha1": "26385fdcfb78c0d13ffd97188beac99dc46a457e"
+        },
+        {
+          "path": "externals\/styles\/main-widgets.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1958,
+          "sha1": "deb231c8940513fbec4a747b5e535fc93e0dc253"
+        },
+        {
+          "path": "externals\/styles\/style.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1825,
+          "sha1": "df2f93e7ec31e2c4861a8ee3c1ec66637a2d90b9"
+        },
+        {
+          "path": "externals\/scripts",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "externals\/scripts\/jquery-easing-compatibility.1.2.pack.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1567,
+          "sha1": "1906046f6173df46f295ab0c1f0f74f664305325"
+        },
+        {
+          "path": "externals\/scripts\/mootools-1.2-core.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 50817,
+          "sha1": "8d3f28d3437dcbe16b6b503dd1cf1df61d27a1a8"
+        },
+        {
+          "path": "externals\/scripts\/coda-slider.1.1.1.pack.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2507,
+          "sha1": "9341f1aeadc07fbf8026983fa227738374477a84"
+        },
+        {
+          "path": "externals\/scripts\/_class.noobSlide.packed.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6649,
+          "sha1": "d05346a1eb3de736a4195b46ba66183dbb0296ff"
+        },
+        {
+          "path": "externals\/scripts\/core.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 690,
+          "sha1": "37b7f535ae53a16bc2955a7c5b06db571b3ea743"
+        },
+        {
+          "path": "externals\/scripts\/jquery-easing-1.3.pack.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 6789,
+          "sha1": "0119cb2381371b488bcef772911541398854a349"
+        },
+        {
+          "path": "externals\/scripts\/jquery.js",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 98668,
+          "sha1": "41684cfd39ece7612c7b2500943f81717d7622ef"
+        },
+        {
+          "path": "widgets",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/top-news",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/top-news\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1046,
+          "sha1": "8255e92431bf3e2be30dcbe67ac202f2c81c5825"
+        },
+        {
+          "path": "widgets\/top-news\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1338,
+          "sha1": "702fe1fcc8acf6e67ed7cb3a6c463328ff4b29dd"
+        },
+        {
+          "path": "widgets\/most-commented-news",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/most-commented-news\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1309,
+          "sha1": "954f57d6f70e26fe1b61980758a6e5fc1295fff3"
+        },
+        {
+          "path": "widgets\/most-commented-news\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4610,
+          "sha1": "8570fff7f057c7faa829cdcd18b3b085cd053379"
+        },
+        {
+          "path": "widgets\/lasted-news",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/lasted-news\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 903,
+          "sha1": "7e5e5e24c28b094329e88a47873f5a87bbee8c42"
+        },
+        {
+          "path": "widgets\/lasted-news\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4872,
+          "sha1": "2956a4e3c6f4e6f6bae2c66793a4f1e6138b871a"
+        },
+        {
+          "path": "widgets\/listing-news",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/listing-news\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2229,
+          "sha1": "e48cd9bf90a5f8bc2d446a17956761bfae8045bb"
+        },
+        {
+          "path": "widgets\/listing-news\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5302,
+          "sha1": "17997182d2aaf07066c7ac44edb2017430db4237"
+        },
+        {
+          "path": "widgets\/list-news",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/list-news\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2141,
+          "sha1": "efa850b47f20f3eabd0a5a2c9f42feadd6d41fed"
+        },
+        {
+          "path": "widgets\/list-news\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 5290,
+          "sha1": "df8c61342c6b4ca1cda683ba252a4071fca81b7c"
+        },
+        {
+          "path": "widgets\/most-liked-news",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/most-liked-news\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1298,
+          "sha1": "0271be4aa2013d0bccf93c9d52337b1acdb89510"
+        },
+        {
+          "path": "widgets\/most-liked-news\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 4875,
+          "sha1": "e8d533296df2c2abd42536182fc6c773406c4b67"
+        },
+        {
+          "path": "widgets\/menu-news",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/menu-news\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1437,
+          "sha1": "45d85f823caf037a6b16318b73512398cbcef873"
+        },
+        {
+          "path": "widgets\/menu-news\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 404,
+          "sha1": "87700feb2fbd0373c91a1402da0f6ef5bfb62c4a"
+        },
+        {
+          "path": "widgets\/search-news",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/search-news\/styles.css",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 82,
+          "sha1": "13d43db2ad145e5817ff709725e12a5b2cae38a3"
+        },
+        {
+          "path": "widgets\/search-news\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3192,
+          "sha1": "487dcd1ba99c480e6ec29c7ee933d9ba0f3918e1"
+        },
+        {
+          "path": "widgets\/search-news\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 2181,
+          "sha1": "26400ae84ac2bd16555c7daa7bd3c0d9b1d33069"
+        },
+        {
+          "path": "widgets\/featured-news",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/featured-news\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1212,
+          "sha1": "a4d6be8666cda9f37e8f6ec30bbb0e909d9a52c9"
+        },
+        {
+          "path": "widgets\/featured-news\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 10727,
+          "sha1": "7b30a01a89b0ced270f78c22eef2d085df9abfe0"
+        },
+        {
+          "path": "widgets\/browse-news",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "widgets\/browse-news\/Controller.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1920,
+          "sha1": "7a718f9df021c26b31dc250e15205ef937b271db"
+        },
+        {
+          "path": "widgets\/browse-news\/index.tpl",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 3434,
+          "sha1": "e5bac235d392e099ecca8f73206bb7b95e863495"
+        },
+        {
+          "path": "Api",
+          "dir": true,
+          "file": false,
+          "perms": "0775",
+          "size": 4096,
+          "sha1": null
+        },
+        {
+          "path": "Api\/Core.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 13349,
+          "sha1": "b7b5e31fdab534a5f3ae8cf3dabc73fa76fc6843"
+        }
+      ]
+    },
+    "application\/languages\/en\/news.csv": {
+      "type": "file",
+      "path": "application\/languages\/en\/news.csv",
+      "structure": {
+        "path": "news.csv",
+        "dir": false,
+        "file": true,
+        "perms": "0644",
+        "size": 574,
+        "sha1": "17141f7efc66231e99aa4e0f00de483582322286"
+      }
+    },
+    "application\/modules\/Core\/View\/Helper\/FeedDescription.php": {
+      "type": "file",
+      "path": "application\/modules\/Core\/View\/Helper\/FeedDescription.php",
+      "structure": {
+        "path": "FeedDescription.php",
+        "dir": false,
+        "file": true,
+        "perms": "0777",
+        "size": 559,
+        "sha1": "107dd94865723a857b0129667e4f3d3ce0e57893"
+      }
+    }
+  }
+}

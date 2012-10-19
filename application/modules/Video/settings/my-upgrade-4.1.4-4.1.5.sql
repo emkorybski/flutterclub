@@ -1,0 +1,1 @@
+UPDATE `engine4_core_menuitems` SET `params` = '{"route":"video_general","action":"browse"}' WHERE `engine4_core_menuitems`.`name` ='core_main_video' LIMIT 1 ;

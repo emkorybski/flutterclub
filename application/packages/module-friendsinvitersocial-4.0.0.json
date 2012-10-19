@@ -1,0 +1,114 @@
+{
+  "type": "module",
+  "name": "friendsinvitersocial",
+  "version": "4.0.0",
+  "revision": null,
+  "path": "application\/modules\/Friendsinvitersocial",
+  "repository": null,
+  "date": "Sat, 27 Aug 2011 23:42:44 +0000",
+  "title": "Friends Inviter Social Networks Extension",
+  "description": "Friends Inviter Social Networks Extension",
+  "thumb": null,
+  "developer": null,
+  "authors": [
+    "SocialEngineMods"
+  ],
+  "changeLog": null,
+  "meta": {
+    "date": "Sat, 27 Aug 2011 23:42:44 +0000",
+    "title": "Friends Inviter Social Networks Extension",
+    "description": "Friends Inviter Social Networks Extension",
+    "developer": null,
+    "authors": [
+      "SocialEngineMods"
+    ],
+    "changeLog": null
+  },
+  "actions": [
+    "install",
+    "upgrade",
+    "refresh",
+    "enable",
+    "disable"
+  ],
+  "callback": {
+    "path": "application\/modules\/Friendsinvitersocial\/settings\/install.php",
+    "class": "Friendsinvitersocial_Installer",
+    "priority": 100
+  },
+  "dependencies": null,
+  "tests": [
+    
+  ],
+  "permissions": [
+    
+  ],
+  "structure": {
+    "application\/modules\/Friendsinvitersocial": {
+      "type": "directory",
+      "path": "application\/modules\/Friendsinvitersocial",
+      "structure": [
+        {
+          "path": "Bootstrap.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 302,
+          "sha1": "6592fe498378311048aae804773fa2cf1c5bc4e2"
+        },
+        {
+          "path": "index.html",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 0,
+          "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        },
+        {
+          "path": "settings",
+          "dir": true,
+          "file": false,
+          "perms": "0777",
+          "size": 0,
+          "sha1": null
+        },
+        {
+          "path": "settings\/install.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 214,
+          "sha1": "90932c2f9581138c2b9ea2e767b403e5ebfc532e"
+        },
+        {
+          "path": "settings\/manifest.php",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1381,
+          "sha1": "89af3847c9c3b1592c8c88fe629a24410a6c0449"
+        },
+        {
+          "path": "settings\/my.sql",
+          "dir": false,
+          "file": true,
+          "perms": "0666",
+          "size": 1881,
+          "sha1": "8ac2fd7a10d7ae8ddbfc44d7120b4f0804d26ed6"
+        }
+      ]
+    },
+    "application\/languages\/en\/friendsinvitersocial.csv": {
+      "type": "file",
+      "path": "application\/languages\/en\/friendsinvitersocial.csv",
+      "structure": {
+        "path": "friendsinvitersocial.csv",
+        "dir": false,
+        "file": true,
+        "perms": "0666",
+        "size": 47,
+        "sha1": "c9dbc23cade5c1685fc3a4947a54a56873ff88a2"
+      }
+    }
+  }
+}

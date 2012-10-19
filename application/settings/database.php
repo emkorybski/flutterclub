@@ -6,7 +6,7 @@ return array(
 		'host' => 'localhost',
 		'username' => 'fc_app',
 		'password' => 'zZ92u]0',
-		'dbname' => 'fc_demo',
+		'dbname' => 'fc_live',
 		'charset' => 'UTF8',
 		'adapterNamespace' => 'Zend_Db_Adapter',
 	),

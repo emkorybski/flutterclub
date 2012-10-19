@@ -1,0 +1,460 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+  <base href="http://localhost/fc/" />
+
+  
+    
+
+      <title>Flutterclub</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Language" content="en" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+
+
+      <link href="/fc/application/css.php?request=application/themes/clean/theme.css&amp;c=9" media="screen" rel="stylesheet" type="text/css" />
+<link href="/favicon.ico?c=9" rel="favicon" type="image/x-icon" />
+  
+
+    
+    <script type="text/javascript">if (window.location.hash == '#_=_')window.location.hash = '';</script>
+  <script type="text/javascript">
+      </script>
+    <script type="text/javascript" src="/fc/externals/mootools/mootools-core-1.4.5-full-compat-nc.js?c=9"></script>
+<script type="text/javascript" src="/fc/externals/mootools/mootools-more-1.4.0.1-full-compat-nc.js?c=9"></script>
+<script type="text/javascript" src="/fc/externals/chootools/chootools.js?c=9"></script>
+<script type="text/javascript" src="/fc/application/modules/Core/externals/scripts/core.js?c=9"></script>
+<script type="text/javascript" src="/fc/application/modules/User/externals/scripts/core.js?c=9"></script>
+<script type="text/javascript" src="/fc/externals/smoothbox/smoothbox4.js?c=9"></script>
+<script type="text/javascript">
+    //<![CDATA[
+
+    Date.setServerOffset('Tue, 7 Aug 2012 6:51:59 +0000');
+    
+    en4.orientation = 'ltr';
+    en4.core.environment = 'development';
+    en4.core.language.setLocale('en');
+    en4.core.setBaseUrl('/fc/');
+    en4.core.staticBaseUrl = '/fc/';
+    en4.core.loader = new Element('img', {src: en4.core.staticBaseUrl + 'application/modules/Core/externals/images/loading.gif'});
+    
+            if( false ) {
+      en4.core.runonce.add(function() {
+        en4.core.dloader.attach();
+      });
+    }
+    
+        //]]>
+</script>
+<script type="text/javascript"></script>
+<script type="text/javascript" src="/fc/application/modules/Activity/externals/scripts/core.js?c=9"></script>
+
+  
+  
+    
+  
+  
+</head>
+<body id="global_page_core-widget-index">
+  <div id="global_header">
+    <div class="layout_page_header">
+<div class="generic_layout_container layout_main">
+<div class="generic_layout_container layout_core_menu_mini">
+<div id='core_menu_mini_menu'>
+    <ul>
+              <li><a  href="/fc/pages/fc-admin" class="menu_core_mini custom_100">FC Admin</a></li>
+          <li><a  href="/fc/login/return_url/64-L2ZjL3dpZGdldD9uYW1lPWZjX3NjcmlwdA%3D%3D" class="menu_core_mini core_mini_auth">Sign In</a></li>
+          <li><a  href="/fc/signup" class="menu_core_mini core_mini_signup">Sign Up</a></li>
+              <li id="global_search_form_container">
+        <form id="global_search_form" action="/fc/search" method="get">
+          <input type='text' class='text suggested' name='query' id='global_search_field' size='20' maxlength='100' alt='Search' />
+        </form>
+      </li>
+      </ul>
+</div>
+
+
+<script type='text/javascript'>
+  var notificationUpdater;
+
+  en4.core.runonce.add(function(){
+    if($('global_search_field')){
+      new OverText($('global_search_field'), {
+        poll: true,
+        pollInterval: 500,
+        positionOptions: {
+          position: ( en4.orientation == 'rtl' ? 'upperRight' : 'upperLeft' ),
+          edge: ( en4.orientation == 'rtl' ? 'upperRight' : 'upperLeft' ),
+          offset: {
+            x: ( en4.orientation == 'rtl' ? -4 : 4 ),
+            y: 2
+          }
+        }
+      });
+    }
+
+    if($('notifications_markread_link')){
+      $('notifications_markread_link').addEvent('click', function() {
+        //$('notifications_markread').setStyle('display', 'none');
+        en4.activity.hideNotifications('0 Updates');
+      });
+    }
+
+      });
+
+
+  var toggleUpdatesPulldown = function(event, element, user_id) {
+    if( element.className=='updates_pulldown' ) {
+      element.className= 'updates_pulldown_active';
+      showNotifications();
+    } else {
+      element.className='updates_pulldown';
+    }
+  }
+
+  var showNotifications = function() {
+    en4.activity.updateNotifications();
+    new Request.HTML({
+      'url' : en4.core.baseUrl + 'activity/notifications/pulldown',
+      'data' : {
+        'format' : 'html',
+        'page' : 1
+      },
+      'onComplete' : function(responseTree, responseElements, responseHTML, responseJavaScript) {
+        if( responseHTML ) {
+          // hide loading icon
+          if($('notifications_loading')) $('notifications_loading').setStyle('display', 'none');
+
+          $('notifications_menu').innerHTML = responseHTML;
+          $('notifications_menu').addEvent('click', function(event){
+            event.stop(); //Prevents the browser from following the link.
+
+            var current_link = event.target;
+            var notification_li = $(current_link).getParent('li');
+
+            // if this is true, then the user clicked on the li element itself
+            if( notification_li.id == 'core_menu_mini_menu_update' ) {
+              notification_li = current_link;
+            }
+
+            var forward_link;
+            if( current_link.get('href') ) {
+              forward_link = current_link.get('href');
+            } else{
+              forward_link = $(current_link).getElements('a:last-child').get('href');
+            }
+
+            if( notification_li.get('class') == 'notifications_unread' ){
+              notification_li.removeClass('notifications_unread');
+              en4.core.request.send(new Request.JSON({
+                url : en4.core.baseUrl + 'activity/notifications/markread',
+                data : {
+                  format     : 'json',
+                  'actionid' : notification_li.get('value')
+                },
+                onSuccess : function() {
+                  window.location = forward_link;
+                }
+              }));
+            } else {
+              window.location = forward_link;
+            }
+          });
+        } else {
+          $('notifications_loading').innerHTML = 'You have no new updates.';
+        }
+      }
+    }).send();
+  };
+
+  /*
+  function focusSearch() {
+    if(document.getElementById('global_search_field').value == 'Search') {
+      document.getElementById('global_search_field').value = '';
+      document.getElementById('global_search_field').className = 'text';
+    }
+  }
+  function blurSearch() {
+    if(document.getElementById('global_search_field').value == '') {
+      document.getElementById('global_search_field').value = 'Search';
+      document.getElementById('global_search_field').className = 'text suggested';
+    }
+  }
+  */
+</script></div>
+
+<div class="generic_layout_container layout_core_menu_logo">
+<a  href="/fc/"><img src="public/admin/logo.png" alt="Flutterclub" /></a></div>
+
+<div class="generic_layout_container layout_fc_account_info">
+
+</div>
+
+<div class="generic_layout_container layout_core_menu_main">
+<ul class="navigation">
+    <li>
+        <a class="menu_core_main core_main_home" href="/fc/">Home</a>
+    </li>
+    <li>
+        <a class="menu_core_main custom_99" href="/fc/pages/betting">Betting</a>
+    </li>
+    <li>
+        <a class="menu_core_main custom_148" href="/fc/pages/competition">Competition</a>
+    </li>
+    <li>
+        <a class="menu_core_main core_main_group" href="/fc/groups">Groups</a>
+    </li>
+    <li>
+        <a class="menu_core_main custom_163" href="/fc/pages/news">News</a>
+    </li>
+    <li>
+        <a class="menu_core_main core_main_video" href="/fc/videos">Videos</a>
+    </li>
+</ul></div>
+
+<div class="generic_layout_container layout_core_html_block">
+<div class="header-bottom-arrows">&nbsp;</div>
+
+<!-- jQuery -->
+<script type="text/javascript" src="/fc/custom/js/jquery.js"></script>
+
+<!-- fc -->
+<script type="text/javascript" src="/fc/custom/js/fc.js"></script>
+
+<!-- calendar -->
+<link rel="stylesheet" type="text/css" href="/fc/custom/js/calendar/codebase/dhtmlxcalendar.css" />
+<link rel="stylesheet" type="text/css" href="/fc/custom/js/calendar/codebase/skins/dhtmlxcalendar_dhx_skyblue.css" />
+<link rel="stylesheet" type="text/css" href="/fc/custom/js/calendar/codebase/skins/dhtmlxcalendar_dhx_web.css" />
+<link rel="stylesheet" type="text/css" href="/fc/custom/js/calendar/codebase/skins/dhtmlxcalendar_omega.css" />
+<script type="text/javascript" src="/fc/custom/js/calendar/codebase/dhtmlxcalendar.js"></script>
+
+<!-- window -->
+<link rel="stylesheet" type="text/css" href="/fc/custom/js/squeezebox/SqueezeBox.css" />
+<script type="text/javascript" src="/fc/custom/js/squeezebox/SqueezeBox.js"></script></div>
+</div>
+</div>
+  </div>
+  <div id='global_wrapper'>
+    <div id='global_content'>
+            
+          </div>
+  </div>
+  <div id="global_footer">
+    <div class="layout_page_footer">
+<div class="generic_layout_container layout_main">
+<div class="generic_layout_container layout_core_menu_footer">
+Copyright &copy;2012  &nbsp;-&nbsp; <a  href="/fc/help/privacy" class="menu_core_footer core_footer_privacy" order="1">Privacy</a>  &nbsp;-&nbsp; <a  href="/fc/help/terms" class="menu_core_footer core_footer_terms" order="2">Terms of Service</a>  &nbsp;-&nbsp; <a  href="/fc/help/contact" class="menu_core_footer core_footer_contact" order="3">Contact</a>  &nbsp;-&nbsp; <a  href="/fc/widget?mobile=1" enabled="1" class="menu_core_footer core_footer_mobile" order="4" uri="/fc/widget?mobile=1">Mobile Site</a>
+
+</div>
+
+<div class="generic_layout_container layout_footer"><style type="text/css">
+	.layout_page_header {
+		background: #e9f4fa url(/fc/custom/images/clouds.png) repeat-x top center;
+		height: 200px;
+		position: relative;
+		clear: both;
+		margin-bottom: 20px;
+	}
+
+	.layout_core_menu_main {
+		background-color: #3aaacf;
+		border: 1px solid #388ab0;
+		border-width: 3px 0 0 3px;
+		border-radius: 7px;
+		position: absolute;
+		bottom: -20px;
+	}
+
+	#global_header .menu_core_main {
+		color: #ffffff;
+	}
+
+	#global_header {
+		background: url(/fc/custom/images/topbar_bg.png) repeat-x center;
+	}
+
+	body {
+		background-color: #f1eeee;
+	}
+
+	.layout_core_menu_logo {
+		float: left;
+		width: auto;
+	}
+
+	.layout_core_menu_logo img {
+		height: 130px;
+	}
+
+	#global_header {
+		background: #e9f4fa url(/fc/custom/images/clouds.png) repeat-x top center;
+
+	}
+
+	.layout_page_header {
+		background: url(/fc/custom/images/arrow.png) repeat-x center 187px;
+	}
+
+	/* ** */
+
+	#global_content .generic_layout_container h3, #fc_activity_feed_title, #main_tabs {
+		text-align: center;
+		background-color: #ff6600;
+		color: #ffffff;
+		border-radius: 0;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+		font-family: fc_bebas;
+		font-size: 14px;
+		text-align: left;
+		word-spacing: 0.4em;
+	}
+	#global_content .generic_layout_container h3 a {
+	    color: #fff;
+	    font-family: fc_bebas;
+	}
+	.clear {
+		clear: both;
+	}
+
+	.generic_layout_container h3 {
+		margin-bottom: 0;
+		padding: 5px;
+		letter-spacing: 0;
+		font-weight: normal;
+	}
+
+	#fc_activity_feed_title {
+		text-align: left;
+	}
+
+	.layout_activity_feed .tip span {
+		border: none;
+		background-color: transparent;
+	}
+	.activity-post-container {
+		background: transparent;
+	}
+
+	/* ** */
+
+	.tabs_parent {
+		margin: 0;
+	}
+
+	#main_tabs {
+		background-color: transparent;
+		border-bottom: 5px solid #CD4849;
+		padding: 0;
+		overflow: hidden;
+	}
+	#main_tabs li {
+		float: left;
+		margin: 0;
+	}
+	#main_tabs li a {
+		border-color: transparent;
+		font-family: fc_bebas;
+		display: block;
+		color: #ffffff;
+		position: static;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+		background-color: #822E2C;
+		padding-left: 10px;
+		padding-right: 10px;
+		margin-right: 2px;
+	}
+	#global_wrapper #main_tabs li.active {
+		z-index: 10;
+		position: relative;
+	}
+	#global_wrapper #main_tabs li.active a {
+		border-color: #CD4849;
+		background-color: #CD4849;
+	}
+	.tabs_alt > ul > li.tab_active > a, .tabs_alt > ul > li.active > a {
+		font-weight: normal;
+		padding: 5px;
+	}
+	.tabs_alt > ul > li > a {
+		padding: 5px;
+	}
+
+	/* ** */
+
+	@font-face {
+		font-family: fc_bebas;
+		src: url('/fc/custom/fonts/bebas.ttf');
+	}
+
+	@font-face {
+		font-family: fc_pts;
+		src: url('/fc/custom/fonts/pts75f.ttf');
+	}
+
+	.menu_core_main, .layout_fc_betting_categories h3 {
+		font-family: fc_bebas;
+		font-size: 14px;
+		word-spacing: 0.4em;
+	}
+
+	/* box */
+
+	#global_content .box_title, #global_wrapper #global_content .fc_admin h3 {
+		font-family: fc_bebas;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+		background-color: #cd4849;
+		font-size: 13px;
+		color: #ffffff;
+		padding: .4em .7em;
+		word-spacing: 0.4em;
+	}
+
+	.box_shadow {
+		box-shadow: 5px 5px 15px 0 #cccccc;
+	}
+
+	hr.line {
+		border-bottom: 1px solid #cccccc;
+	}
+
+
+	/* forum */
+
+
+	#global_content .forum_categories h3 {
+		background-color: transparent;
+		color: #555;
+	}
+
+</style>
+
+</div>
+
+<div class="generic_layout_container layout_web_engage">
+<script id="_webengage_script_tag" type="text/javascript">
+	window.webengageWidgetInit = window.webengageWidgetInit || function () {
+		webengage.init({
+			licenseCode:"~c2ab35d8"
+		}).onReady(function () {
+					webengage.render();
+				});
+	};
+
+	(function (d) {
+		var _we = d.createElement('script');
+		_we.type = 'text/javascript';
+		_we.async = true;
+		_we.src = (d.location.protocol == 'https:' ? "//ssl.widgets.webengage.com" : "//cdn.widgets.webengage.com") + "/js/widget/webengage-min-v-3.0.js";
+		var _sNode = d.getElementById('_webengage_script_tag');
+		_sNode.parentNode.insertBefore(_we, _sNode);
+	})(document);
+</script>
+</div>
+</div>
+</div>
+  </div>
+</body>
+</html>

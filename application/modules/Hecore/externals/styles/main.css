@@ -1,0 +1,1113 @@
+
+/* $Id: main.css 4617 2010-07-15 01:29:10Z ermek $ */
+
+@include "~/application/modules/Core/externals/styles/admin/constants.css";
+
+.clr {
+  clear: both;
+}
+
+.display_none {
+  display: none;
+}
+
+.float_left {
+  float:left;
+}
+
+.float_right {
+  float:right;
+}
+
+.no_content {
+  padding: 10px;
+  text-align: center;
+}
+
+/* Messages */
+.he_message_container {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index:100;
+}
+
+.he_message_container .he_close {
+  background: url(~/application/modules/Hecore/externals/images/close_btn_small.png) no-repeat  50% 50%;
+  width: 16px;
+  height: 16px;
+  display: block;
+  float: right;
+}
+
+.he_message_container .he_msg_text, .he_message_container .he_msg_error, .he_message_container .he_msg_notice {
+  width: 320px;
+  padding: 8px;
+  color: #FFFFFF;
+  font-size:13px;
+  font-weight:bold;
+  text-align:center;
+  margin:2px;
+  z-index:105;
+}
+
+.he_message_container span, .he_message_container span a {
+  font-weight:bold; 
+}
+
+.he_message_container .he_msg_text {
+  background-color: #4CA33D;
+  border: 1px solid #428F35;
+}
+
+.he_message_container .he_msg_error {
+  background-color: #E33C3C;
+  border: 1px solid #EF0000;
+}
+
+.he_message_container .he_msg_notice {
+  border: 1px solid #E4C224;
+  background: #FFE04F;
+}
+
+/* Photos */
+.he_photo_fullsize {
+  margin: 4px;
+  margin-bottom: 0px;
+}
+
+*+html .he_photo_fullsize {
+  margin: 4px;  
+}
+
+.he_photo_close {
+  position:absolute;
+  top: 0px;
+  right: 0px;
+  background-image: url(~/application/modules/Hecore/externals/images/photo_close.png);
+  height: 36px;
+  width: 36px;
+  background-color: #444444;
+  cursor:pointer;
+}
+
+
+.he_contacts .contact_checkbox {
+  width: 60px;
+  height: 25px;
+  padding-left: 21px;
+  padding-top: 2px;
+  background: white url(~/application/modules/Hecore/externals/images/he_contacts_checkbox.gif) no-repeat;
+  background-position: 1px -3px;
+  display: block;
+  clear: left;
+  float: left;
+  font-size: 11px;
+}
+
+.he_contacts .check_all, .he_contacts .check_all_disabled {
+  cursor: pointer;
+  float: left;
+  height: 16px;
+  text-align: left;
+}
+
+.he_contacts .check_all_disabled {
+  color: #bfbfbf;
+  cursor: auto;
+}
+
+.he_contacts .he_before_check {
+  background-position: 1px -28px;
+}
+
+.he_contacts .he_checked {
+  background-position: 1px -53px;
+}
+
+.he_contacts .he_before_uncheck {
+  background-position: 1px -78px;
+}
+
+.he_contacts {
+  padding: 20px;
+}
+
+.he_contacts img.thumb_icon {
+  padding: 2px;
+}
+
+#he_contacts_loading {
+  background:transparent url(~/application/modules/Hecore/externals/images/he_contacts_loading.gif) no-repeat scroll center center;
+  height:50px;
+  left:246px;
+  opacity:0.6;
+  position:absolute;
+  top:208px;
+  width:50px;
+}
+
+.he_contacts .contacts, .he_contacts .emails {
+  border: 1px solid #ddd;
+  margin: 0 auto;
+  padding: 6px; 
+  width: 470px;
+}
+
+.he_contacts .contacts {
+  overflow-y:auto;
+  height: 280px;
+}
+
+.he_contacts .emails {
+  border-top: none;
+  padding: 8px 6px 10px;
+}
+
+.he_contacts .label {
+  font-weight: bold;
+  margin-bottom: 6px;
+  text-align: left;
+}
+.he_contacts .btn {
+  margin: 8px 0 0 15px;
+  text-align: left;
+  width: 200px;
+}
+.he_contacts .info {
+  color: #999;
+  font-weight: normal;
+}
+
+#he_list {
+  height: 280px;
+  overflow-y: auto;
+}
+
+.he_contacts .contacts a.active,
+.he_contacts .contacts .item:hover{
+  text-decoration: none;
+  +foreground;
+  +rounded(3px);
+}
+
+#he_contacts_list {
+  text-align: center;
+}
+
+.contacts .pagination {
+  text-align: center;
+  font-weight: bold;
+  display: block;
+  padding: 5px;
+  float: left;
+  width: 97%;
+  +foreground;
+  +rounded;
+}
+
+.he_contacts .contacts a.disabled{
+  display: block;
+  float: left;
+  height: 62px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  overflow: hidden;
+  width: 142px;
+  outline:none;
+  border: 1px solid transparent;
+  +opacity(.5);
+}
+
+.he_contacts .contacts a.disabled:hover{
+  text-decoration: none;
+  background: none;
+  cursor: default;
+  color: $theme_link_color;
+}
+
+.he_contacts .contacts .item {
+  display: block;
+  float: left;
+  height: 62px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  overflow: hidden;
+  width: 142px;
+  outline:none;
+  border: 1px solid transparent;
+}
+
+.he_contacts .contacts .active .photo .inner {
+  background: url(~/application/modules/Hecore/externals/images/he_contacts_checked_i.gif) no-repeat bottom left;
+  display: block;
+  height: 14px;
+  width: 13px;
+  position: relative;
+  top: -17px;
+  border: 1px solid $theme_foreground_border_color;
+  border-left-style:none;
+  border-top-style:solid;
+  border-right-style:solid;
+  border-bottom-style:none;
+  background-color:$theme_foreground_background_color; 
+}
+.he_contacts .contacts .photo {
+  display: block;
+  float: left;
+  margin: 5px 5px 0;
+  height: 54px;
+  width: 54px;
+}
+.he_contacts .contacts .name {
+  display: block;
+  margin-top: 5px;
+  overflow: hidden;
+  width: 77px;
+  font-size:0.8em;
+}
+.he_contacts .more, .he_contacts .more_disabled {
+  background: url(~/application/modules/Hecore/externals/images/he_contacts_more.png) no-repeat right;
+  cursor: pointer;
+  float: right;
+  padding-right: 20px;
+  height: 16px;
+  text-align: right;
+}
+.he_contacts .more_disabled {
+  background: url(~/application/modules/Hecore/externals/images/he_contacts_more_disabled.png) no-repeat right;
+  color: #bfbfbf;
+  cursor: auto;
+}
+
+.he_contacts .options{
+  padding: 5px 0 5px 20px;
+  margin: 10px 0px;
+  height: 20px;
+  +foreground;
+}
+
+.he_contacts .options div.select_btns{
+  float: left;
+  width: 50%;
+}
+
+.he_contacts .options div.contacts_filter{
+  float: right;
+  margin-right: 10px;
+}
+
+.contacts_filter input.filter{
+  background: #FFFFFF url(~/application/modules/Hecore/externals/images/search.png) no-repeat scroll 3px 4px;
+  padding: 3px 3px 3px 17px;
+  font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+  font-size: 11px;
+  color: #777777;
+  width: 200px;
+}
+
+.contacts_filter input.list_filter {
+  float: none;
+  width: 170px;
+  font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+  font-size: 11px;
+  color: #777777;
+  background: transparent;
+  border-style: none;
+}
+
+.contacts_filter div.list_filter_cont {
+  position:relative;
+  float: none;
+  width: 200px;
+  border: 1px solid #BDC7D8;
+  background-color:#FFFFFF;
+  padding: 1px;
+  padding-left:2px;
+  +rounded(3px);
+}
+
+.contacts_filter a.list_filter_btn {
+  background: #FFFFFF url(~/application/modules/Hecore/externals/images/search.png) no-repeat scroll 3px 4px;
+  display:block;
+  height:17px;
+  position:absolute;
+  right:1px;
+  top:1px;
+  width:20px;
+  z-index:1;
+}
+
+.select_btns{
+  padding-top: 2px;
+}
+
+#TB_window a:link, #TB_window a:visited {
+    color: #5F93B4;
+    text-decoration: none;
+}
+
+.select_btns a, #TB_window .select_btns a {
+  color: #3B5998;
+  font-size: 11px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 3px;
+  padding:3px 5px 3px 7px;
+  display: inline-block;
+}
+
+.select_btns a.active, #TB_window .select_btns a.active {
+  +rounded;
+  color: #FFF;
+  background-color: #3B5998;
+}
+
+#no_result{
+  color: #999;
+}
+
+.visible{
+  display: block !important;
+}
+
+.hidden{
+  display: none !important;
+}
+
+.uiSearchInput {
+  background:#FFFFFF none repeat scroll 0 0;
+  border-color:#6484B4 #899BC1 #899BC1;
+  border-style:solid;
+  border-width:1px;
+  display:inline-block;
+}
+
+.uiSearchInput span {
+  border-color: #EDEDED -moz-use-text-color -moz-use-text-color;
+  border-style: solid none none;
+  border-width: 1px 0 0;
+  display: inline-block;
+  padding: 1px 0 2px;
+  position: relative;
+}
+
+.uiSearchInput input {
+  border-color:-moz-use-text-color #E5E5E5 -moz-use-text-color -moz-use-text-color;
+  border-style:none solid none none;
+  border-width:0 1px 0 0;
+  margin:0 22px 0 5px;
+  outline-style: none;
+  outline-width: medium;
+  padding:1px 5px 2px 0;
+  width:190px;
+}
+
+.uiSearchInput button:hover{
+  background-color: transparent;
+}
+
+.uiSearchInput button {
+  background: transparent url(~/application/modules/Hecore/externals/images/list_filter_btn.png) no-repeat scroll 0 0px;
+  border:0 none;
+  cursor: pointer;
+  display: block;
+  float: right;
+  height: 19px;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 22px;
+  z-index: 2;
+}
+
+#he_list a.item:hover{
+  background: none;
+}
+
+#he_list .item .name{
+  font-weight: bold;
+  margin: 13px 0px 0px 3px;
+}
+
+#he_list .pagination{
+  display: block;
+  clear: both;
+  float: left;
+  text-align: center;
+  width: 99%;
+  padding: 5px 0px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 12px;
+  +rounded(3px);
+  +foreground;
+}
+
+#he_list .pagination:hover{
+  text-decoration: none;
+  color: #3B5998;
+}
+
+.contacts_error {
+  font-weight:bold;
+}
+
+.global_form .errors a.invalid_license_key {
+  font-weight:bold;
+}
+
+.form_license_key_error ul.form-errors > li {
+  width: 500px;
+}
+
+.align_right {
+  text-align: right;
+}
+
+.he_confirm_container .he_confirm_title {
+  font-size:11pt;
+  font-weight:bold;
+  margin-bottom:10px; 
+}
+
+.he_confirm_container .he_confirm_desc {
+  margin-bottom:10px;  
+}
+
+.he_confirm_container .he_confirm_tools .confirm_btn {
+  margin-right:5px;
+}
+
+.he_confirm_container .he_confirm_tools .cancel_btn {
+  margin-left:5px;
+}
+
+.he_admin_faq_desc {
+  padding:10px;
+}
+
+.he_admin_faq_question {
+  background-color:#E9F4FA;
+  font-weight:bold;
+  padding:10px;
+}
+
+.he_admin_faq_answer {
+  padding:10px;  
+}
+
+.he_admin_faq_answer li {
+  list-style-type:circle;
+  margin-left:10px;
+  margin-bottom:10px;
+}
+
+.he_admin_faq_answer li div {
+  margin-bottom: 8px;
+}
+
+
+.layout_hecore_friends{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.layout_hecore_mutual_friends{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.he_friends_widget{
+  padding: 3px;
+  +foreground;
+  +rounded;
+}
+
+.he_friends_widget .he_widget_header{
+  margin: 5px;
+  border-bottom: 1px solid $theme_foreground_border_color;
+  padding-bottom: 3px;
+}
+
+.he_friends_widget .he_widget_header div.he_widget_see_all{
+  float: left;
+  font-size: 11px;
+  margin-top: 9px;
+}
+
+.he_friends_widget .he_widget_header .options{
+  float: right;
+  margin: 0px;
+  position: relative;
+  font-size: 11px;
+}
+
+.he_friends_widget .he_widget_header .options .config_form{
+  z-index: 10;
+  position: absolute;
+  top: 0px;
+  right: -222px;
+  width: 220px;
+  padding: 0px 0px 5px 5px;
+  background-color: $theme_form_background_color;
+  border: 1px solid $theme_foreground_border_color;
+  -moz-box-shadow: 4px 4px 4px $theme_body_background_color;
+  -webkit-box-shadow: 4px 4px 4px $theme_body_background_color;
+  box-shadow: 4px 4px 4px $theme_body_background_color;
+}
+
+html[dir="rtl"] .he_friends_widget .he_widget_header .options .config_form{
+  right: 35px;
+}
+
+.he_friends_widget .he_widget_header .options div.toggler_wrapper{
+  padding: 6px;
+  border: 1px solid $theme_foreground_background_color;
+}
+
+.he_friends_widget .he_widget_header .options div.active{
+  background-color: $theme_body_background_color;
+  border: 1px solid $theme_foreground_border_color;
+}
+
+.he_friends_widget .he_widget_header .options div.toggler_wrapper .config{
+  background-image: url(~/application/modules/Hecore/externals/images/config.png);
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.he_friends_loader{
+  background: transparent url(~/application/modules/Hecore/externals/images/friend_loading.gif) no-repeat center center;
+  height: 100px;
+}
+
+.config_header{
+  font-weight: bold;
+  height: 23px;
+  padding: 5px 3px 0px 8px;
+  margin: 0px 0px 0px -6px;
+  background-color: $theme_body_background_color;
+  border-bottom: 1px solid $theme_form_border_color;
+}
+
+.config_select_wrapper{
+  padding: 5px;
+  margin: 0px 5px 5px 0px;
+  border-bottom: 1px solid $theme_form_border_color;
+}
+
+.config_display_wrapper{
+  margin:0 5px 5px 0;
+  padding:5px;
+}
+
+.he_friends_widget .row{
+  float: left;
+}
+
+.he_friends_widget .row .he_item{
+  width: 50px;
+  float: left;
+  padding: 5px;
+  overflow: hidden;
+}
+
+.he_friends_widget .row .he_item div{
+  float: left;
+}
+
+.he_friends_widget .row .he_item div.title{
+  width: 50px;
+}
+
+.he_friends_widget .row .he_item div.title a{
+  font-size: 11px;
+}
+
+.layout_hecore_featured_members{
+  margin: 15px 0px;
+  +foreground;
+  +rounded;
+  border: 1px solid $theme_foreground_border_color;
+  padding: 4px;
+}
+
+.layout_hecore_featured_members h3{
+  margin-left: 4px;
+}
+
+.layout_hecore_featured_members h3 a{
+  float: right;
+  font-size: 9pt;
+  font-weight: normal;
+  line-height: 21px;
+  margin-right: 4px;
+  letter-spacing: 0px;
+}
+
+.layout_hecore_featured_members .list .item{
+  float: left;
+  margin: 5px;
+  width: 50px;
+}
+
+.layout_hecore_featured_members .list .item a{
+  font-size: 8pt;
+  float: left;
+  margin-top: 2px;
+  display: block;
+  width: 50px;
+  height: 25px;
+}
+
+.layout_hecore_featured_members .list .item a.featured_profile_thumb{
+  width: 48px;
+  height: 48px;
+}
+
+.featured_profile_title {
+  display: block;
+  width: 50px;
+  overflow: hidden;
+}
+
+.he_carousel_list {
+  margin:3px;
+  padding:10px 10px 10px 8px;
+  +foreground;
+  +rounded;
+  border: 1px solid $theme_foreground_border_color;
+}
+
+.he_carousel_list .list {
+  left:0;
+  top:0;
+  position:absolute;
+  padding:0;
+}
+
+.he_carousel_list .listing {
+  background: $theme_topbar_minimenu_background_color;
+  border: $theme_topbar_minimenu_border;
+  +rounded;
+  height:86px;
+  position:relative;
+  float:left;
+  overflow:hidden;
+}
+
+.he_carousel_list .item {
+  width:75px;
+  height:86px;
+  padding:5px;
+  margin:0;
+  float:left;
+  margin:0;
+}
+
+.he_carousel_list .thumbnail img {
+  height:74px;
+  border-width:0px;
+  margin-left:-50px;
+  margin-right:-50px;
+}
+
+/* IE 7 hack */
+*+html .he_carousel_list .thumbnail img {
+  margin: auto;
+}
+
+.he_carousel_list .prev, .he_carousel_list .next {
+  cursor:pointer;
+  width:16px;
+  height:28px;
+  padding:0;
+  margin:3px;
+  margin-top:32px;
+  float:left;
+  background-repeat:no-repeat;
+}
+
+.he_carousel_list.middle_2 .item {
+  width:71px;
+}
+
+.he_carousel_list.middle_2 .thumbnail img {
+  width:70px;
+}
+
+.he_carousel_list .content {
+  display:block; margin:auto;
+}
+
+.he_carousel_list .prev {
+  background-image:url('~/application/modules/Hecore/externals/images/prev.png');
+}
+
+.he_carousel_list .next {
+  background-image:url('~/application/modules/Hecore/externals/images/next.png');
+}
+
+.he_carousel_list .prev:hover {
+  background-image:url('~/application/modules/Hecore/externals/images/prev_active.png');
+}
+
+.he_carousel_list .next:hover {
+  background-image:url('~/application/modules/Hecore/externals/images/next_active.png');
+}
+
+.he_carousel_list .prev.disabled {
+  background-image:url('~/application/modules/Hecore/externals/images/prev_disabled.png');
+}
+
+.he_carousel_list .next.disabled {
+  background-image:url('~/application/modules/Hecore/externals/images/next_disabled.png');
+}
+
+.he_carousel_list .tip_title, .he_carousel_list .tip_text {
+  display:none;
+}
+
+.he_carousel_list_tips .tip-text{
+  +rounded(2px);
+  text-align: center;
+  padding: 3px 3px 4px 3px;
+  color: #fff;
+  background-color: #505050;
+  opacity: .9;
+  font-size: 8pt;
+  font-weight:bold;
+}
+
+.he_carousel_list .item .thumbnail a {
+  height: 74px;
+  width: 73px;
+  border: 1px solid transparent;
+  text-align:center;
+  overflow:hidden;
+  display:block;
+}
+
+.he_carousel_list.middle_2 .item {
+  width:71px;
+}
+
+.he_carousel_list.middle_2 .thumbnail a {
+  width:69px;
+}
+
+.layout_hecore_featured_carousel {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+
+/*
+HE TOOL TIP
+*/
+
+.he-tool-tip {
+  min-width: 295px;
+  width: auto !important;
+  width: 295px;
+  background-color: transparent;
+  z-index: 100;
+}
+
+.he-tool-tip .he-tip .he-hint .he-hint-body{
+  background-color: white;
+}
+
+.he-tool-tip .he-tip .he-hint .he-hint-body .he-hint-left,
+.he-tool-tip .he-tip .he-hint .he-hint-body .he-hint-right {
+  float: left;
+}
+
+.he-tool-tip .he-tip .he-hint .he-hint-body{
+  padding: 7px;
+}
+
+.he-tool-tip .he-tip .he-hint .he-hint-body .he-hint-left {
+  padding-left: 7px;
+  width: 185px;
+}
+
+.he-tool-tip .he-tip .he-hint .he-hint-body .he-hint-right {
+  height: 100px;
+  max-width: 100px;
+  width: auto !important;
+  width: 100px;
+}
+
+.he-tool-tip .he-tip .he-hint .he-hint-body .he-hint-right a{
+  display: block;
+  float: left;
+}
+
+.he-tool-tip .he-tip .he-hint .he-hint-body .he-hint-right a{
+  float: left;
+  text-align: left;
+  display: block;
+  max-width: 100px;
+  width: auto !important;
+  width: 100px;
+  max-height: 100px;
+  height: auto !important;
+  height: 100px;
+}
+
+.he-tool-tip .he-tip .he-hint .he-hint-body .he-hint-right a img {
+  max-width: 100px;
+  width: auto !important;
+  width: 100px;
+  max-height: 100px;
+  height: auto !important;
+  height: 100px;
+}
+
+.he-tool-tip .he-tip .he-hint .he-hint-body .he-hint-left .title{
+  float: left;
+}
+
+.he-tool-tip .he-tip .he-hint .he-hint-body .he-hint-left .title a {
+  font-weight: bold;
+  font-family:  "lucida grande",tahoma,verdana,arial,sans-serif;
+  font-size:  13px;
+}
+
+.he-tool-tip .he-tip .he-hint .he-hint-body .he-hint-left .horizontal-list {
+  float: left;
+  margin-top: 31px;
+}
+
+.he-tool-tip .he-tip .he-hint .he-hint-body .he-hint-left .horizontal-list .item {
+  float: left;
+  padding: 1px;
+}
+
+.he-tool-tip .he-tip .he-hint .he-hint-body .he-hint-left .info{
+  font-size: 11px;
+  font-family:  "lucida grande",tahoma,verdana,arial,sans-serif;
+  color: $theme_font_color_light;
+}
+
+.he-tool-tip .he-tip .he-hint .he-hint-body .he-hint-left .horizontal-list .item a img {
+  max-width: 32px;
+  width: auto !important;
+  width: 32px;
+  max-height: 32px;
+  height: auto !important;
+  height: 32px;
+}
+
+.he-tool-tip .he-tip-title {
+  height: 10px;
+}
+
+.he-tool-tip .he-tip{
+  border-left: 1px solid #203b6b;
+  border-right: 1px solid #203b6b;
+  border-bottom: 2px solid #203b6b;
+  border-top: 1px solid #203b6b;
+  background-color: #F2F1F1;
+  min-height: 120px;
+  height: auto !important;
+  height: 120px;
+  border-radius: 3px 3px 3px 3px;
+}
+
+.he-tool-tip .he-tip-footer{
+  min-height: 8px;
+  height: auto !important;
+  height: 8px;
+  position: relative;
+  top: -2px;
+  background: transparent url(~/application/modules/Hecore/externals/images/arrow_down.png) no-repeat 20px top;
+}
+
+/* IE 7 hack */
+*+html .he-tool-tip .he-tip-footer {
+  width:40px;
+}
+
+.he-hint-options a.icon_friend_add,
+.he-hint-options a.icon_friend_remove,
+.he-hint-options a.icon_friend_cancel{
+  float: left;
+  font-size: 11px;
+  font-weight: normal;
+  display: block;
+  margin: 10px;
+  padding: 2px 2px 2px 20px;
+}
+
+.he-hint-options a.icon_friend_add:hover,
+.he-hint-options a.icon_friend_remove:hover,
+.he-hint-options a.icon_friend_cancel:hover,
+.he-tool-tip * a:hover{
+  text-decoration: none;
+  color: black;
+}
+
+.he-hint .he-hint-options{
+  height: 40px;
+  border-top: 1px solid #DEDEDE;
+  background-color: #F2F2F2;
+}
+
+.he-hint-send-message {
+  float: left;
+  font-size: 11px;
+  display: block;
+  margin: 10px;
+  padding: 2px 2px 2px 20px;
+  background: transparent url(~/application/modules/Messages/externals/images/send.png) no-repeat left center;
+}
+
+.he-tip-mini .tip .tip-text {
+  background-color: black;
+  color: white;
+  font-size: 11px;
+  font-family:  "lucida grande",tahoma,verdana,arial,sans-serif;
+  padding: 5px;
+}
+
+.he-hint-tip-links {
+  display: block;
+}
+
+
+/**
+*
+* MINI TIPS
+*
+**/
+
+.he-tip-mini {
+  z-index: 100000;
+}
+
+.he-tip-mini .he-tip {
+  background-color: #282828;
+  color: white;
+  font-size: 11px;
+  font-family:  "lucida grande",tahoma,verdana,arial,sans-serif;
+  padding: 5px;
+}
+
+.he-tip-mini .he-tip-footer {
+  background: transparent url(~/application/modules/Hecore/externals/images/arrow_down_mini.png) no-repeat 10px top;
+  height: 5px;
+}
+
+.he-tool-tip.he_loader .he-tip {
+  min-height: 0 !important;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.loader_icon {
+  background: url(~/application/modules/Core/externals/images/loading.gif) no-repeat center center;
+  padding-left: 21px;
+}
+
+.hecore_he_list_window {
+  background-color: $theme_body_background_color;
+}
+
+.hecore_he_list_window div.select_btns {
+  padding-top: 0;
+}
+
+.layout_active_theme_clean .he_contacts .contacts a.active,
+.layout_active_theme_clean .he_contacts .contacts .item:hover {
+  background-color: $theme_pulldown_contents_list_background_color_active;
+  border-width: 1px;
+}
+
+.layout_active_theme_clean #he_list .pagination {
+  background-color: $theme_pulldown_contents_list_background_color_active;
+}
+
+.layout_active_theme_clean .he_friends_widget .he_widget_header .options .config_form {
+  background-color: $theme_tabs_background_color;
+}
+
+
+.settings .he_setting_fieldset {
++rounded;
+  padding: 0 10px;
+  border: 2px solid $theme_foreground_border_color;
+}
+
+.settings .he_setting_fieldset .description {
+  display: none;
+}
+
+.settings .he_setting_fieldset .form-element .description {
+  min-width: 200px;
+}
+
+.settings .he_setting_fieldset .form-wrapper {
+  padding: 10px 0;
+  border: none;
+}
+
+.settings .he_setting_fieldset .form-label {
+  width: 160px;
+  font-weight: normal;
+}
+
+.settings .he_setting_fieldset div.form-label label {
+  font-weight: normal;
+}
+
+.he_setting_fieldset legend {
+  padding: 0 10px;
+}
+
+.settings .form-wrapper fieldset legend{
+  background-color: white;
+  clear: left;
+  display: block;
+  font-weight: bold;
+  margin-top: -9px;
+  padding: 0 14px;
+  width: auto !important;
+}
+
+html[dir="rtl"] .he_contacts .options {
+  padding:5px 10px;
+}
+
+html[dir="rtl"] .float_left_rtl {
+  float: left;
+}
+
+html[dir="rtl"] .float_right_rtl {
+  float: right;
+}
+
+html[dir="rtl"] .float_left_rtl_force {
+  float: left !important;
+}
+
+html[dir="rtl"] .float_right_rtl_force {
+  float: right !important;
+}
+
+html[dir="rtl"] .he_contacts .contacts .photo {
+  float: right;
+}
+
+html[dir="rtl"] .he_contacts .contacts .photo {
+  float: right;
+}
+
+html[dir="rtl"] .he_contacts .contacts .name {
+  text-align: right;
+}
