@@ -70,14 +70,14 @@ class Widget_FC_ScriptController extends Engine_Content_Widget_Abstract
 			$emailHtmlBody .= "<tr>";
 			$emailHtmlBody .= "<td>" . $data['position'] . "</td>";
 			$emailHtmlBody .= "<td>" . $data['user'] . "</td>";
-			$emailHtmlBody .= "<td>" . number_format($data['profit'], 2, '.', ',') . "</td>";
+			$emailHtmlBody .= "<td>" . $data['profit'] . "</td>";
 			$emailHtmlBody .= "<td>" . $data['successRate'] . " ";
 			$emailHtmlBody .= "(" . $data['won_count'] . "/" . $data['bet_count'] . ")</td>";
 			$emailHtmlBody .= "</tr>";
 
 			$emailTextBody .= $data['position'] . ", ";
 			$emailTextBody .= $data['user'] . ", ";
-			$emailTextBody .= number_format($data['profit'], 2, '.', ',') . ", ";
+			$emailTextBody .= $data['profit'] . ", ";
 			$emailTextBody .= $data['successRate'] . " ";
 			$emailTextBody .= "(" . $data['won_count'] . "/" . $data['bet_count'] . ")";
 			$emailTextBody .= "\r\n";
