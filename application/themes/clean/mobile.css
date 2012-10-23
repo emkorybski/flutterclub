@@ -64,14 +64,16 @@ h2
 {
   font-family: fc_bebas;
   font-size: $theme_headline_size_large;
-  letter-spacing: -1px;
+  letter-spacing: normal;
   margin-bottom: 10px;
+  word-spacing: 0.2em;
 }
 h3
 {
   font-family: fc_bebas;
   font-size: $theme_headline_size_medium;
-  letter-spacing: -1px;
+  letter-spacing: normal;
+  word-spacing: 0.2em;
 }
 h4
 {
@@ -497,7 +499,7 @@ input.text,
   position: static;
   font-size: 13pt;
   text-align: center;
-  letter-spacing: -1px;
+  letter-spacing: normal;
   background: none;
   padding: 0px;
 } 
@@ -1144,7 +1146,7 @@ body {
 .generic_layout_container h3 {
   margin-bottom: 0;
   padding: 5px;
-  letter-spacing: 0;
+  letter-spacing: normal;
   font-weight: normal;
 }
 
@@ -1370,4 +1372,36 @@ hr.line {
   border-radius: 0 !important;
   padding: 5px 10px !important;
   margin-bottom: 5px !important;
+}
+
+/* login or signup */
+
+.layout_user_login_or_signup > h3 {
+  color: #555 !important;
+  background-color: transparent !important;
+  font-size: 21px !important;
+  word-spacing: .2em !important;
+}
+
+.layout_user_login_or_signup > h3 a {
+  padding: 0px 8px 2px 8px;
+  background-color: #ce4847;
+  border: 1px solid #9F6969;
+  color: #fff;
+  background-image: url(/application/modules/Mobi/externals/images/mobile_buttonbg.png?c=21);
+  background-repeat: repeat-x;
+  background-position: top left;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* group profile */
+
+.layout_group_profile_options #profile_options li a {
+  display: inline-block;
+  padding: 0;
+  padding-left: 21px;
+  margin: 5px;
 }

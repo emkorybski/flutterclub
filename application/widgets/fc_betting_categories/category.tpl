@@ -1,4 +1,4 @@
-<?php $class = $category['isLeaf'] ? ' category_lead' : ' category_branch'; ?>
+<?php $class = $category['isLeaf'] ? ' category_leaf' : ' category_branch'; ?>
 <a href="" attr-idsport="<?=$category['idsport']?>"
    attr-idevent="<?=$category['idevent']?>"
    class="fc_betting_category<?=$class?>"

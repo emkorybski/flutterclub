@@ -2098,6 +2098,15 @@ div.group_discussions_list
     width: auto;
 }
 
+/* Pagination of friends list causes creates nested divs with class 'layout_user_profile_friends' */
+.layout_user_profile_friends > .layout_user_profile_friends h3 {
+    display: none;
+}
+
+.layout_user_profile_friends > .layout_user_profile_friends {
+    padding: 0;
+}
+
 /* Groups */
 
 .groups_browse {
@@ -2164,6 +2173,15 @@ div.group_discussions_list
 .layout_page_group_profile_index .layout_group_profile_discussions {
   padding: 10px;
   background-color: $theme_foreground_background_color;
+}
+
+/* Pagination of group members list causes creates nested divs with class 'layout_group_profile_members' */
+.layout_group_profile_members > .layout_group_profile_members h3 {
+  display: none;
+}
+
+.layout_group_profile_members > .layout_group_profile_members {
+  padding: 0;
 }
 
 /* Contact Us */

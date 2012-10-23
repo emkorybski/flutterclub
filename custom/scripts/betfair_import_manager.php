@@ -103,7 +103,7 @@ class BetfairImportManager
 		$soapRequest = new \stdClass();
 		$soapRequest->username = "thefly01";
 		$soapRequest->password = "jf123456";
-		$soapRequest->productId = 82;
+		$soapRequest->productId = 264;
 		$soapRequest->ipAddress = '';
 		$soapRequest->locationId = 0;
 		$soapRequest->vendorSoftwareId = 0;
