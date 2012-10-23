@@ -45,8 +45,11 @@ class Widget_FC_Betting_MarketsController extends Engine_Content_Widget_Abstract
 	{
 		$this->_action = 'default';
 
-		$now = date('Y-m-d H:i:s', mktime(date("H"), date("i"), date("s"), date("m"), date("d"), date("Y")));
-		$then = date('Y-m-d H:i:s', mktime(date("H") + 8, date("i"), date("s"), date("m"), date("d"), date("Y")));
+		$nowDatetime = new \DateTime();
+		$now = $nowDatetime->format('Y-m-d H:i:s');
+
+		$thenDatetime = $nowDatetime->add(new DateInterval('PT8H'));
+		$then = $thenDatetime->format('Y-m-d H:i:s');
 
 		// $topSports = array('Soccer', 'Golf', 'Horse Racing', 'Rugby Union', 'Tennis', 'Cricket');
 		$topSports = array('Soccer', 'Golf', 'Horse Racing', 'Rugby Union', 'Cricket');

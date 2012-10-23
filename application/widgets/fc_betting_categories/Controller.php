@@ -27,7 +27,8 @@ class Widget_FC_Betting_CategoriesController extends \Engine_Content_Widget_Abst
 
 	public function getCategories($tsStart, $tsStop, $idSport, $idEvent)
 	{
-		$now = date('Y-m-d H:i:s', mktime(date("H"), date("i"), date("s"), date("m"), date("d"), date("Y")));
+		$nowDatetime = new \DateTime();
+		$now = $nowDatetime->format('Y-m-d H:i:s');
 
 		$result = array(array('idsport' => '', 'idevent' => '', 'name' => 'All'));
 		if (empty($idSport)) {

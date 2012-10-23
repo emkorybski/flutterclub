@@ -78,7 +78,8 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 		$competition = bets\Competition::getCurrent();
 		$user = bets\User::getCurrentUser();
 
-		$now = date('Y-m-d H:i:s', mktime(date("H"), date("i"), date("s"), date("m"), date("d"), date("Y")));
+		$nowDatetime = new \DateTime();
+		$now = $nowDatetime->format('Y-m-d H:i:s');
 
 		$isValid = true;
 		$userSelections = \bets\UserSelection::findWhere(array('idcompetition=' => $competition->id, 'iduser=' => $user->id));
