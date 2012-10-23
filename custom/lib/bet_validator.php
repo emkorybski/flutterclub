@@ -20,7 +20,7 @@ class BetValidator
 
 			$selectionStatus = array('void' => 1, 'won' => 2, 'pending' => 3, 'lost' => 4);
 			$betTotalOdds = 1;
-			$betStatus = 0;
+			$betStatus = 1;
 			foreach ($betSelectionsList as $betSelection) {
 				$betStatus = max($betStatus, $selectionStatus[$betSelection->status]);
 
