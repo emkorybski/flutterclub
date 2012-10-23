@@ -12,9 +12,14 @@ class Competition extends DBRecord
 
 	public static function getCurrent()
 	{
-		$current = static::getWhere(array('ts_start<=' => date('Y-m-d 23:59:59')), 'ORDER BY ts_start DESC');
+		$nowDatetime = new \DateTime();
+		$now = $nowDatetime->format('Y-m-d H:i:s');
+		$current = static::getWhere(array(
+			'settled=' => 'n',
+			'ts_start<=' => $now,
+			'ts_end>=' => $now));
 		if (!$current) {
-			$current = static::getWhere(array(), 'ORDER BY ts_start DESC');
+			die("ERROR: NO COMPETITION DEFINED!!!");
 		}
 		return $current;
 	}

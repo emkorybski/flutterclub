@@ -47,7 +47,9 @@ class User extends DBRecord
 	public function getUserSelections($validate = false)
 	{
 		if ($validate) {
-			$now = date('Y-m-d H:i:s', mktime(date("H"), date("i"), date("s"), date("m"), date("d"), date("Y")));
+			$nowDatetime = new \DateTime();
+			$now = $nowDatetime->format('Y-m-d H:i:s');
+
 			$userSelections = UserSelection::findWhere(array('idcompetition=' => $this->currentCompetitionId, 'iduser=' => $this->id));
 			foreach ($userSelections as $userSelection) {
 				$selection = $userSelection->getSelection();
