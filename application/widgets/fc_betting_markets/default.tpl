@@ -7,6 +7,7 @@
 	.fc_betting_market .market_type {
 		margin-left: 10px;
 		font-family: fc_pts;
+		color:#333;
 	}
 
 	.fc_betting_market .market_header {

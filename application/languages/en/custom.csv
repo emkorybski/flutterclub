@@ -118,30 +118,6 @@ You have been tagged in a [object_type_name]. Please click the following link to
 http://[host][object_link]
 
 [footer]"
-"_EMAIL_INVITE_SUBJECT";"You have received an invitation to join flutterclub.com!"
-"_EMAIL_INVITE_BODY";"[header]
-
-You have been invited by [sender_title] to join flutterclub.com, where fantasy betting and social networking come together. To join, please follow the link below:
-
-http://[host][object_link]
-
-----------------------------------------
-[message]
-----------------------------------------
-
-[footer]"
-"_EMAIL_INVITE_CODE_SUBJECT";"You have received an invitation to join flutterclub.com!"
-"_EMAIL_INVITE_CODE_BODY";"[header]
-
-You have been invited by [sender_title] to join flutterclub.com, where fantasy betting and social networking come together! To join, please follow the link below:
-
-http://[host][object_link]
-
-----------------------------------------
-[message]
-----------------------------------------
-
-[footer]"
 "_EMAIL_NOTIFY_MESSAGE_NEW_SUBJECT";"You have received a new flutterclub message from [sender_title]."
 "_EMAIL_NOTIFY_MESSAGE_NEW_BODY";"[header]
 
@@ -251,5 +227,29 @@ Click the following link and enter your information below to login:
 http://[host][object_link]
 
 Email: [email]
+
+[footer]"
+"_EMAIL_INVITE_SUBJECT";"You have received an invitation to join flutterclub.com!"
+"_EMAIL_INVITE_BODY";"[header]
+
+You have been invited by [sender_title] to join flutterclub.com, where fantasy betting and social networking come together bringing you fantastic competitions and prizes....all for free. To join, please follow the link below:
+
+http://[host][object_link]
+
+----------------------------------------
+[message]
+----------------------------------------
+
+[footer]"
+"_EMAIL_INVITE_CODE_SUBJECT";"You have received an invitation to join flutterclub.com!"
+"_EMAIL_INVITE_CODE_BODY";"[header]
+
+You have been invited by [sender_title] to join flutterclub.com, where fantasy betting and social networking come together! To join, please follow the link below:
+
+http://[host][object_link]
+
+----------------------------------------
+[message]
+----------------------------------------
 
 [footer]"

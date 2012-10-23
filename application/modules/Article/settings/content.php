@@ -572,6 +572,13 @@ return array(
     'name' => 'article.profile-tools',       
   ),
     
-  
+     array(
+    'title' => 'Flutterclub TV',
+    'description' => 'Flutterclub promotional videos.',
+    'category' => 'Articles',
+    'type' => 'widget',
+    'name' => 'article.flutterclub-tv',
+
+    ),
   
 ) ?>

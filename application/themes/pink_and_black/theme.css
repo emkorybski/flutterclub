@@ -2718,6 +2718,10 @@ div.article_featured_slide .article_photo img {
     height: 100px;
 }
 
+.article_featured_mask {
+  height:130px;
+}
+
 div.article_featured_slide .article_photo {
 float: left;
 margin-left: 7px;
