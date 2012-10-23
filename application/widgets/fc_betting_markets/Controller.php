@@ -56,14 +56,14 @@ class Widget_FC_Betting_MarketsController extends Engine_Content_Widget_Abstract
 		$upcomingEvents = array();
 		foreach ($topSports as $topSport) {
 			$sport = \bets\Sport::getWhere(array('name=' => $topSport));
-			if (!$sport) continue;
+			if (!$sport || $sport->enabled == 'n') continue;
 
 			$upcomingEvent = \bets\Event::getWhere(array(
-				'idsport = ' => $sport->id,
-				'betfairMarketId IS NOT ' => null,
-				//'betfairAmountMatched > ' => 0,
-				'ts > ' => $now,
-				'ts < ' => $then),
+					'idsport = ' => $sport->id,
+					'betfairMarketId IS NOT ' => null,
+					//'betfairAmountMatched > ' => 0,
+					'ts > ' => $now,
+					'ts < ' => $then),
 				'ORDER BY betfairAmountMatched DESC, ts ASC');
 			if ($upcomingEvent) {
 				$upcomingEvents[] = $upcomingEvent;
