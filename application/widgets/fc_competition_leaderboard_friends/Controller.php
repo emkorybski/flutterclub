@@ -10,7 +10,7 @@ class Widget_FC_Competition_Leaderboard_FriendsController extends Engine_Content
 	{
 		$competition = \bets\Competition::getCurrent();
 
-		bets\bets::sql()->multiQuery("call fc_sp_get_competition_leaderboard_friends($competition->id)");
+		bets\bets::sql()->multiQuery("call fc_sp_get_competition_complete_leaderboard($competition->id)");
 		$leaderboardData = bets\bets::sql()->getResult();
 		while (bets\bets::sql()->moreResults()) {
 			bets\bets::sql()->getResult();
