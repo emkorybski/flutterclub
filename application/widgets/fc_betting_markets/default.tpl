@@ -187,7 +187,9 @@ endforeach;
 				alert('Internal error, try again');
 			},
 			complete:function () {
-				j('.action_place_bet')[0].scrollIntoView(false);
+        if (j('.action_place_bet')[0]) {
+				  j('.action_place_bet')[0].scrollIntoView(false);
+        }
 			}
 		});
 	});
