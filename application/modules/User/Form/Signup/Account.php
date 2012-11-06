@@ -23,7 +23,7 @@ class User_Form_Signup_Account extends Engine_Form
   {
     $settings = Engine_Api::_()->getApi('settings', 'core');
     $inviteSession = new Zend_Session_Namespace('invite');
-    $tabIndex = 1;
+    $tabIndex = 11;
     
     // Init form
     $this->setTitle('Create Account');
