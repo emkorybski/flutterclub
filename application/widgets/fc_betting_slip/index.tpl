@@ -34,6 +34,11 @@
 		position: relative;
 	}
 
+  .fc_betting_slip .slip_actions button {
+    float: right;
+    min-width: 80px;
+  }
+
 	.fc_betting_slip .action_remove_selection {
 		cursor: pointer;
 		overflow: hidden;
@@ -50,7 +55,7 @@
 		background-position: -20px center;
 	}
 
-	.fc_betting_slip .action_remove_all {
+	.fc_betting_slip .slip_actions a {
 		float: left;
 		position: absolute;
 		bottom: 0;
@@ -59,51 +64,91 @@
 	.fc_betting_slip .action_place_bet {
 		float: right;
 	}
+
+  .fc_betting_slip ul.form-errors {
+    width: 220px;
+  }
+
+  .fc_betting_slip ul.form-errors li {
+    height: auto !important;
+  }
+
+  .fc_betting_slip ul.form-errors > li {
+    margin: 0px !important;
+    padding: 5px 15px 5px 32px;
+  }
+
+  ul.form-errors > li > ul > li {
+    font-size: 1em;
+    font-weight: normal;
+    width: 173px;
+  }
+
 </style>
 
 <div class="fc_betting_slip">
-<?php
-if ( count($this->betSlipSelections) ) :
-?>
-	<table>
-	<?php
-	foreach ($this->betSlipSelections as $userSel) :
-		$sel = $userSel->getSelection();
-	?>
-		<tr>
-			<td class="selection_name"><?=htmlentities($sel->name)?></td>
-			<td class="selection_odds"><?=\bets\fc::formatOdds($sel->odds)?></td>
-			<td class="selection_stake">FB$ <input type="text" data-userselectionid="<?=$userSel->id?>"/></td>
-			<td class="action_remove_selection" data-userselectionid="<?=$userSel->id?>">X</td>
-		</tr>
-	<?php
-	endforeach;
-	?>
-	</table>
-	<?php
-	if ( count($this->betSlipSelections) > 1 && $this->accumulatorBetAvailable ) :
-	?>
-	<label for="accumulator">Accumulator</label>
-	<input id="accumulator" type="text" class="box_accumulator"/>
-	<?php
-	elseif ( !$this->accumulatorBetAvailable ) :
-	?>
-	<p>You cannot place accumulator on selections within same event or on the same selection more than once.</p>
-	<?php
-	endif;
-	?>
-	<div class="slip_actions">
-		<a href="#" class="action_remove_all">Remove all</a>
-		<button class="action_place_bet">Place Bet</button>
-		<div class="clear"></div>
-	</div>
-<?php
-else :
-?>
-	<div href="#" class="slip_item">You don't have any bets in slip!</div>
-<?php
-endif;
-?>
+  <div class="fc_betting_slip" id="fc_betting_slip_selections">
+  <?php
+  if ( count($this->betSlipSelections) ) :
+  ?>
+    <table>
+    <?php
+    foreach ($this->betSlipSelections as $userSel) :
+      $sel = $userSel->getSelection();
+    ?>
+      <tr>
+        <td class="selection_name"><?=htmlentities($sel->name)?></td>
+        <td class="selection_odds"><?=\bets\fc::formatOdds($sel->odds)?></td>
+        <td class="selection_stake">FB$ <input type="text" data-userselectionid="<?=$userSel->id?>"/></td>
+        <td class="action_remove_selection" data-userselectionid="<?=$userSel->id?>">X</td>
+      </tr>
+    <?php
+    endforeach;
+    ?>
+    </table>
+    <?php
+    if ( count($this->betSlipSelections) > 1 && $this->accumulatorBetAvailable ) :
+    ?>
+    <label for="accumulator">Accumulator</label>
+    <input id="accumulator" type="text" class="box_accumulator"/>
+    <?php
+    elseif ( !$this->accumulatorBetAvailable ) :
+    ?>
+    <p>You cannot place accumulator on selections within same event or on the same selection more than once.</p>
+    <?php
+    endif;
+    ?>
+    <ul id="fc_betting_slip_errors" class="form-errors" style="display: none">
+      <li><ul class="errors"><li id="fc_betting_slip_error_msg"></li></ul></li>
+    </ul>
+    <div class="slip_actions">
+      <a href="#" class="action_remove_all">Remove all</a>
+      <button class="action_place_bet">Place Bet</button>
+      <div class="clear"></div>
+    </div>
+  <?php
+  else :
+  ?>
+    <p href="#" class="slip_item">You don't have any bets in slip!</p>
+  <?php
+  endif;
+  ?>
+  </div>
+  <div class="fc_betting_slip" id="fc_betting_slip_confirm" style="display: none">
+    <p id="fc_betting_slip_confirm_msg"></p>
+    <div class="slip_actions">
+      <a href="#" class="action_cancel_place_bet">Cancel</a>
+      <button class="action_confirm_place_bet">Yes</button>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div class="fc_betting_slip" id="fc_betting_slip_bet_placed" style="display: none">
+    <p>Your bet has been placed, good luck!</p>
+    <div class="slip_actions">
+      <button class="action_return_to_betting_slip">OK</button>
+      <div class="clear"></div>
+    </div>
+  </div>
 </div>
 
 <script type="text/javascript">
@@ -158,58 +203,143 @@ endif;
 		});
 	});
 
+  var showBetSlip = function(msg) {
+    j('#fc_betting_slip_confirm').hide();
+    j('#fc_betting_slip_bet_placed').hide();
+    j('#fc_betting_slip_selections').show();
+  }
+
+  var showConfirm = function(msg) {
+    j("#fc_betting_slip_confirm_msg").html(msg);
+
+    j('#fc_betting_slip_selections').hide();
+    j('#fc_betting_slip_bet_placed').hide();
+    j('#fc_betting_slip_confirm').show();
+  }
+
+  var showBetPlaced = function() {
+    j('#fc_betting_slip_selections').hide();
+    j('#fc_betting_slip_confirm').hide();
+    j('#fc_betting_slip_bet_placed').show();
+  }
+
+  var showError = function(msg) {
+    if (msg) {
+      j("#fc_betting_slip_error_msg").html(msg);
+      j("#fc_betting_slip_errors").show();
+      showBetSlip();
+    }
+    else {
+      j("#fc_betting_slip_error_msg").html('');
+      j("#fc_betting_slip_errors").hide();
+    }
+  }
+
+  var validateAndGetBets = function() {
+
+    var bets = getBets();
+
+    var accumulator = j('.fc_betting_slip .box_accumulator');
+    var accStake = j(accumulator).val();
+    if (accStake && !isNaN(accStake)) {
+      bets.push({
+        user_selection_id:'accumulator',
+        stake:accStake
+      })
+    }
+
+    for (i = 0; i < bets.length; i++) {
+      if ((accStake && accStake > 500) || (bets[i].stake && bets[i].stake > 500)) {
+        showError('Maximum bet is FB$500!');
+        return null;
+      }
+    }
+
+    if (bets.length <= 0) {
+      showError('Please insert stakes!');
+      return null;
+    }
+
+    return bets;
+  }
+
 	j('.action_place_bet').live("click", function (evt) {
 		evt.preventDefault();
 
-		var bets = getBets();
-
-		var accumulator = j('.fc_betting_slip .box_accumulator');
-		var accStake = j(accumulator).val();
-		if (accStake && !isNaN(accStake)) {
-			bets.push({
-				user_selection_id:'accumulator',
-				stake:accStake
-			})
-		}
-
-		for (i = 0; i < bets.length; i++) {
-			if ((accStake && accStake > 500) || (bets[i].stake && bets[i].stake > 500)) {
-				alert('Maximum bet is FB$500!');
-				return;
-			}
-		}
-
-		if (bets.length <= 0) {
-			alert('Please insert stakes!');
-			return;
-		}
-
-		if (!confirm('Do you want to approve this betting slip for this competition?')) {
-			return;
-		}
+    var bets = validateAndGetBets();
+    if (!bets) {
+      return;
+    }
 
 		j.ajax(WEB_ROOT + 'widget?name=fc_betting_slip&format=html', {
-			data:{ action:'place_bet', bets:bets },
+			data:{ action:'validate_bet', bets:bets },
 			dataType:'json',
 			success:function (response) {
 				if (response.result == 'invalid_selection_timestamp') {
-					alert('Invalid selections timestamp. Betting slip will be refreshed');
+          showError('Invalid selections timestamp. Betting slip will be refreshed');
 					fc.user.updateBettingSlip();
 				}
 				else if (response.result == 'balance_exceeded') {
-					alert("Unfortunately you don't have enough FB$ to place this bet.");
+          showError("Unfortunately you don't have enough FB$ to place this bet.");
 				}
 				else if (response.result == 'max_stake_exceeded') {
-					alert('Maximum bet is FB$500!');
+          showError('Maximum bet is FB$500!');
 				}
-				else if (response.result == 'success') {
-					fc.user.updateAccountBalance();
-					fc.user.updateBettingMarkets();
-					fc.user.updateBettingSlip();
-					fc.user.updateBettingPending();
-					fc.user.updateBettingRecent();
+				else {
+          showError('');
+          showConfirm(response.result);
 				}
 			}
 		});
 	});
+
+  j('.action_cancel_place_bet').live("click", function (evt) {
+    evt.preventDefault();
+
+    showBetSlip();
+  });
+
+  j('.action_confirm_place_bet').live("click", function (evt) {
+    evt.preventDefault();
+
+    var bets = validateAndGetBets();
+    if (!bets) {
+      return;
+    }
+
+    j.ajax(WEB_ROOT + 'widget?name=fc_betting_slip&format=html', {
+      data:{ action:'place_bet', bets:bets },
+      dataType:'json',
+      success:function (response) {
+        if (response.result == 'invalid_selection_timestamp') {
+          showError('Invalid selections timestamp. Betting slip will be refreshed');
+          fc.user.updateBettingSlip();
+        }
+        else if (response.result == 'balance_exceeded') {
+          showError("Unfortunately you don't have enough FB$ to place this bet.");
+        }
+        else if (response.result == 'max_stake_exceeded') {
+          showError('Maximum bet is FB$500!');
+        }
+        else if (response.result == 'success') {
+          showBetPlaced();
+          fc.user.updateAccountBalance();
+          fc.user.updateBettingMarkets();
+          //fc.user.updateBettingSlip();
+          fc.user.updateBettingPending();
+          fc.user.updateBettingRecent();
+        }
+        else {
+          showError('An unknown error has occurred');
+        }
+      }
+    });
+  });
+
+  j('.action_return_to_betting_slip').live("click", function (evt) {
+    evt.preventDefault();
+
+    fc.user.updateBettingSlip();
+  });
+
 </script>

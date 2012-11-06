@@ -21,6 +21,10 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 			: 'render';
 
 		switch ($action) {
+            case 'validate_bet':
+                $response = array('result' => $this->validateBet());
+                exit(json_encode($response));
+                break;
 			case 'place_bet':
 				$response = array('result' => $this->placeBet());
 				exit(json_encode($response));
@@ -137,80 +141,154 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 		return $isValid;
 	}
 
-	private function placeBet()
-	{
-		if (!$this->validateSelectionTimestamp()) {
-			return 'invalid_selection_timestamp';
-		}
+    private function checkBet() {
 
-		if (!$this->validateBalanceExceed()) {
-			return 'balance_exceeded';
-		}
+        if (!$this->validateSelectionTimestamp()) {
+            return 'invalid_selection_timestamp';
+        }
 
-		if (!$this->validateSelectionMaxStake()) {
-			return 'max_stake_exceeded';
-		}
+        if (!$this->validateBalanceExceed()) {
+            return 'balance_exceeded';
+        }
 
-		$competition = bets\Competition::getCurrent();
+        if (!$this->validateSelectionMaxStake()) {
+            return 'max_stake_exceeded';
+        }
+
+        return 'ok';
+    }
+
+    private function computeBet(&$totalStake, &$betSlips) {
+
+        $competition = bets\Competition::getCurrent();
+        $user = bets\User::getCurrentUser();
+
+        $totalStake = 0;
+        $betSlips = array();
+
+        foreach ($_REQUEST['bets'] as $betSlipSelection) {
+
+            $betSlip = array();
+
+            $bet = new \bets\Bet();
+            $bet->idcompetition = $competition->id;
+            $bet->iduser = $user->id;
+            $bet->stake = $betSlipSelection['stake'];
+            $bet->ts_placed = \bets\fc::getGMTTimestamp();
+            $totalStake += $bet->stake;
+
+            $betSelections = array();
+            if ($betSlipSelection['user_selection_id'] == 'accumulator') {
+                $bet->odds_real = 1;
+                $bet->odds = 1;
+
+                $userSelections = $user->getUserSelections();
+                $odds_real = 1;
+                $odds = 1;
+                foreach ($userSelections as $userSel) {
+                    $selection = \bets\Selection::get($userSel->idselection);
+
+                    $odds_real *= $selection->odds;
+                    $odds *= \bets\fc::roundDecimalOdds($selection->odds);
+
+                    $betSelection = new \bets\BetSelection();
+                    $betSelection->idselection = $selection->id;
+                    $betSelection->name = $selection->name;
+                    $betSelection->odds = $selection->odds;
+
+                    array_push($betSelections, $betSelection);
+                }
+
+                $bet->odds_real = $odds_real;
+                $bet->odds = \bets\fc::roundDecimalOdds($odds);
+            } else {
+                $idUserSel = $betSlipSelection['user_selection_id'];
+                $userSel = \bets\UserSelection::get($idUserSel);
+
+                $selection = \bets\Selection::get($userSel->idselection);
+
+                $bet->odds = \bets\fc::roundDecimalOdds($selection->odds);
+                $bet->odds_real = $selection->odds;
+
+                $betSelection = new \bets\BetSelection();
+                $betSelection->idselection = $selection->id;
+                $betSelection->name = $selection->name;
+                $betSelection->odds = $selection->odds;
+
+                array_push($betSelections, $betSelection);
+            }
+
+            $betSlip['bet'] = $bet;
+            $betSlip['selections'] = $betSelections;
+
+            array_push($betSlips, $betSlip);
+        }
+    }
+
+    private function validateBet() {
+
+        $check = $this->checkBet();
+        if ($check != 'ok') {
+            return $check;
+        }
+
+        $totalStake = 0;
+        $betSlips = null;
+
+        $this->computeBet($totalStake, $betSlips);
+
+        $slipDescription = '<table>';
+        foreach ($betSlips as $betSlip) {
+            $bet = $betSlip['bet'];
+            $betSelections = $betSlip['selections'];
+            $isAccumulator = count($betSelections)>1;
+
+            $slipDescription = $slipDescription . '<tr><td>';
+            $slipDescription = $slipDescription . 'Place FB$' . $bet->stake;
+            $slipDescription = $slipDescription . ($isAccumulator ? ' Accumulator' : ''). ' bet on ';
+            $isFirstSelection = true;
+            foreach ($betSelections as $betSelection) {
+                $slipDescription =  $slipDescription . ($isFirstSelection ? '' : ', ');
+                $slipDescription = $slipDescription . $betSelection->name;
+                $isFirstSelection = false;
+            }
+            $slipDescription = $slipDescription . ' with a potential return of $FB' . ($bet->stake * $bet->odds) . '. ';
+            $slipDescription = $slipDescription . ($isAccumulator ? 'In a multiple bet all selections must win for you to win your bet as the individual odds are multiplied.' : '');
+
+            $slipDescription = $slipDescription . '</td></tr>';
+        }
+        $slipDescription = $slipDescription . '</table>';
+
+        $slipDescription = $slipDescription . '<p>Do you wish to place bet(s)?</p>';
+
+        return $slipDescription;
+    }
+
+	private function placeBet() {
+
+        $check = $this->checkBet();
+        if ($check != 'ok') {
+            return $check;
+        }
+
 		$user = bets\User::getCurrentUser();
 
-		$totalStake = 0;
-		foreach ($_REQUEST['bets'] as $betSlipSelection) {
-			if ($betSlipSelection['user_selection_id'] == 'accumulator') {
-				$bet = new \bets\Bet();
-				$bet->idcompetition = $competition->id;
-				$bet->iduser = $user->id;
-				$bet->odds_real = 1;
-				$bet->odds = 1;
-				$bet->stake = $betSlipSelection['stake'];
-				$bet->ts_placed = \bets\fc::getGMTTimestamp();
-				$bet->insert();
-				$totalStake += $bet->stake;
+        $totalStake = 0;
+        $betSlips = null;
 
-				$userSelections = $user->getUserSelections();
-				$odds_real = 1;
-				$odds = 1;
-				foreach ($userSelections as $userSel) {
-					$selection = \bets\Selection::get($userSel->idselection);
+        $this->computeBet($totalStake, $betSlips);
 
-					$odds_real *= $selection->odds;
-					$odds *= \bets\fc::roundDecimalOdds($selection->odds);
+		foreach ($betSlips as $betSlip) {
+            $bet = $betSlip['bet'];
+            $betSelections = $betSlip['selections'];
 
-					$betSelection = new \bets\BetSelection();
-					$betSelection->idbet = $bet->id;
-					$betSelection->idselection = $selection->id;
-					$betSelection->name = $selection->name;
-					$betSelection->odds = $selection->odds;
-					$betSelection->insert();
-				}
-
-				$bet->odds_real = $odds_real;
-				$bet->odds = \bets\fc::roundDecimalOdds($odds);
-				$bet->update();
-			} else {
-				$idUserSel = $betSlipSelection['user_selection_id'];
-				$userSel = \bets\UserSelection::get($idUserSel);
-
-				$selection = \bets\Selection::get($userSel->idselection);
-
-				$bet = new \bets\Bet();
-				$bet->idcompetition = $competition->id;
-				$bet->iduser = $user->id;
-				$bet->odds = \bets\fc::roundDecimalOdds($selection->odds);
-				$bet->odds_real = $selection->odds;
-				$bet->stake = $betSlipSelection['stake'];
-				$bet->ts_placed = \bets\fc::getGMTTimestamp();
-				$bet->insert();
-				$totalStake += $bet->stake;
-
-				$betSelection = new \bets\BetSelection();
-				$betSelection->idbet = $bet->id;
-				$betSelection->idselection = $selection->id;
-				$betSelection->name = $selection->name;
-				$betSelection->odds = $selection->odds;
-				$betSelection->insert();
-			}
+            $bet->insert();
+            foreach ($betSelections as $betSelection) {
+                $betSelection->idbet = $bet->id;
+                $betSelection->insert();
+            }
 		}
+
 		\bets\UserBalance::updateUserBalance(-1 * $totalStake);
 
 		// remove user selections from the bet slip
