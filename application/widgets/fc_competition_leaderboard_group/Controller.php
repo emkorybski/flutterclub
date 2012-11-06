@@ -22,8 +22,6 @@ class Widget_FC_Competition_Leaderboard_GroupController extends Engine_Content_W
 		$paginator = Zend_Paginator::factory($select);
 
 		$groupMembersIds = array();
-		$count = 1;
-		$break = false;
 		for ($pageNo = 1; $pageNo <= $paginator->count(); $pageNo++) {
 			$paginator->setCurrentPageNumber($pageNo);
 			$groupMembers = $paginator->getCurrentItems();
@@ -32,15 +30,8 @@ class Widget_FC_Competition_Leaderboard_GroupController extends Engine_Content_W
 				$fcUser = \bets\User::getWhere(array('id_engine4_users=' => $seUserId));
 				if ($fcUser) {
 					$groupMembersIds[] = $fcUser->id;
-					$count++;
-				}
-
-				if ($count > 20) {
-					$break = true;
-					break;
 				}
 			}
-			if ($break) break;
 		}
 
 		$leaderboard = array();
@@ -62,6 +53,8 @@ class Widget_FC_Competition_Leaderboard_GroupController extends Engine_Content_W
 				'successRate' => $successRate);
 			$leaderboard[] = $userData;
 			$position++;
+
+			if ($position > 20) break;
 		}
 		$this->view->leaderboardUsers = $leaderboard;
 	}

@@ -24,8 +24,6 @@ class Widget_FC_Competition_Leaderboard_FriendsController extends Engine_Content
 		$fcUser = \bets\User::getWhere(array('id_engine4_users=' => $seUserId));
 		$userFriendsIds = array($fcUser->id);
 
-		$count = 1;
-		$break = false;
 		for ($pageNo = 1; $pageNo <= $paginator->count(); $pageNo++) {
 			$paginator->setCurrentPageNumber($pageNo);
 			$friends = $paginator->getCurrentItems();
@@ -34,15 +32,8 @@ class Widget_FC_Competition_Leaderboard_FriendsController extends Engine_Content
 				$fcUser = \bets\User::getWhere(array('id_engine4_users=' => $seUserId));
 				if ($fcUser) {
 					$userFriendsIds[] = $fcUser->id;
-					$count++;
-				}
-
-				if ($count > 20) {
-					$break = true;
-					break;
 				}
 			}
-			if ($break) break;
 		}
 
 		$leaderboard = array();
@@ -64,6 +55,8 @@ class Widget_FC_Competition_Leaderboard_FriendsController extends Engine_Content
 				'successRate' => $successRate);
 			$leaderboard[] = $userData;
 			$position++;
+
+			if ($position > 20) break;
 		}
 		$this->view->leaderboardUsers = $leaderboard;
 	}
