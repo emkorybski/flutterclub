@@ -20,12 +20,19 @@ class Widget_FC_Competition_Leaderboard_FriendsController extends Engine_Content
 		$seCurrentUser = Engine_Api::_()->user()->getViewer();
 		$friends = Zend_Paginator::factory($seCurrentUser->membership()->getMembersOfSelect());
 
-		$count = 1;
-		$userFriendsIds = array($seCurrentUser->user_id);
-		foreach ($friends as $friend) {
-			$userFriendsIds[] = $friend->resource_id;
+		$seUserId = $seCurrentUser->user_id;
+		$fcUser = \bets\User::getWhere(array('id_engine4_users=' => $seUserId));
+		$userFriendsIds = array($fcUser->id);
 
-			$count++;
+		$count = 1;
+		foreach ($friends as $friend) {
+			$seUserId = $friend->resource_id;
+			$fcUser = \bets\User::getWhere(array('id_engine4_users=' => $seUserId));
+			if ($fcUser) {
+				$userFriendsIds[] = $fcUser->id;
+				$count++;
+			}
+
 			if ($count > 20) break;
 		}
 
@@ -35,7 +42,7 @@ class Widget_FC_Competition_Leaderboard_FriendsController extends Engine_Content
 			$fcUser = \bets\User::get($leaderboardUserData['iduser']);
 			$seUser = Engine_Api::_()->user()->getUser($fcUser->id_engine4_users);
 
-			if (!in_array($seUser->user_id, $userFriendsIds))
+			if (!in_array($fcUser->id, $userFriendsIds))
 				continue;
 
 			$successRate = \bets\fc::getPercentage($leaderboardUserData['won_count'], $leaderboardUserData['bet_count']);

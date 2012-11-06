@@ -23,7 +23,11 @@ class Widget_FC_Competition_Leaderboard_GroupController extends Engine_Content_W
 
 		$groupMembersIds = array();
 		foreach ($groupMembers as $groupMember) {
-			$groupMembersIds[] = $groupMember->user_id;
+			$seUserId = $groupMember->user_id;
+			$fcUser = \bets\User::getWhere(array('id_engine4_users=' => $seUserId));
+			if ($fcUser) {
+				$groupMembersIds[] = $fcUser->id;
+			}
 		}
 
 		$leaderboard = array();
@@ -32,7 +36,7 @@ class Widget_FC_Competition_Leaderboard_GroupController extends Engine_Content_W
 			$fcUser = \bets\User::get($leaderboardUserData['iduser']);
 			$seUser = Engine_Api::_()->user()->getUser($fcUser->id_engine4_users);
 
-			if (!in_array($seUser->user_id, $groupMembersIds))
+			if (!in_array($fcUser->id, $groupMembersIds))
 				continue;
 
 			$successRate = \bets\fc::getPercentage($leaderboardUserData['won_count'], $leaderboardUserData['bet_count']);
