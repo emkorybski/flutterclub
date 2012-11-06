@@ -19,7 +19,8 @@ class BetValidator
 			$betSelectionsList = \bets\BetSelection::findWhere(array('idbet=' => $pendingBet->id));
 
 			$selectionStatus = array('void' => 1, 'won' => 2, 'pending' => 3, 'lost' => 4);
-			$betTotalOdds = 1;
+			$odds_real = 1;
+			$odds = 1;
 			$betStatus = 1;
 			foreach ($betSelectionsList as $betSelection) {
 				$betStatus = max($betStatus, $selectionStatus[$betSelection->status]);
@@ -28,12 +29,14 @@ class BetValidator
 					$betSelection->odds = 1;
 					$betSelection->update();
 				} else {
-					$betTotalOdds *= $betSelection->odds;
+					$odds_real *= $betSelection->odds;
+					$odds *= \bets\fc::roundDecimalOdds($betSelection->odds);
 				}
 			}
 			$betStatus = array_search($betStatus, $selectionStatus);
 
-			$pendingBet->odds = $betTotalOdds;
+			$pendingBet->odds_real = $odds_real;
+			$pendingBet->odds = $odds;
 			$pendingBet->status = $betStatus;
 			$pendingBet->update();
 			if ($betStatus != 'pending') {

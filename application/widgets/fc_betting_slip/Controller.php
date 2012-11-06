@@ -160,6 +160,7 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 				$bet = new \bets\Bet();
 				$bet->idcompetition = $competition->id;
 				$bet->iduser = $user->id;
+				$bet->odds_real = 1;
 				$bet->odds = 1;
 				$bet->stake = $betSlipSelection['stake'];
 				$bet->ts_placed = \bets\fc::getGMTTimestamp();
@@ -167,11 +168,13 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 				$totalStake += $bet->stake;
 
 				$userSelections = $user->getUserSelections();
+				$odds_real = 1;
 				$odds = 1;
 				foreach ($userSelections as $userSel) {
-					$odds *= $userSel->odds;
-
 					$selection = \bets\Selection::get($userSel->idselection);
+
+					$odds_real *= $selection->odds;
+					$odds *= \bets\fc::roundDecimalOdds($selection->odds);
 
 					$betSelection = new \bets\BetSelection();
 					$betSelection->idbet = $bet->id;
@@ -181,7 +184,8 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 					$betSelection->insert();
 				}
 
-				$bet->odds = $odds;
+				$bet->odds_real = $odds_real;
+				$bet->odds = \bets\fc::roundDecimalOdds($odds);
 				$bet->update();
 			} else {
 				$idUserSel = $betSlipSelection['user_selection_id'];
@@ -192,7 +196,8 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 				$bet = new \bets\Bet();
 				$bet->idcompetition = $competition->id;
 				$bet->iduser = $user->id;
-				$bet->odds = $selection->odds;
+				$bet->odds = \bets\fc::roundDecimalOdds($selection->odds);
+				$bet->odds_real = $selection->odds;
 				$bet->stake = $betSlipSelection['stake'];
 				$bet->ts_placed = \bets\fc::getGMTTimestamp();
 				$bet->insert();
