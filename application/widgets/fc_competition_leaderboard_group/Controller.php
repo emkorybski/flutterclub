@@ -10,7 +10,7 @@ class Widget_FC_Competition_Leaderboard_GroupController extends Engine_Content_W
 	{
 		$competition = \bets\Competition::getCurrent();
 
-		bets\bets::sql()->multiQuery("call fc_sp_get_competition_leaderboard($competition->id)");
+		bets\bets::sql()->multiQuery("call fc_sp_get_competition_leaderboard_friends($competition->id)");
 		$leaderboardData = bets\bets::sql()->getResult();
 		while (bets\bets::sql()->moreResults()) {
 			bets\bets::sql()->getResult();
@@ -22,12 +22,16 @@ class Widget_FC_Competition_Leaderboard_GroupController extends Engine_Content_W
 		$groupMembers = Zend_Paginator::factory($select);
 
 		$groupMembersIds = array();
+		$count = 1;
 		foreach ($groupMembers as $groupMember) {
 			$seUserId = $groupMember->user_id;
 			$fcUser = \bets\User::getWhere(array('id_engine4_users=' => $seUserId));
 			if ($fcUser) {
 				$groupMembersIds[] = $fcUser->id;
+				$count++;
 			}
+
+			if ($count > 20) break;
 		}
 
 		$leaderboard = array();
