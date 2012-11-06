@@ -19,19 +19,28 @@ class Widget_FC_Competition_Leaderboard_GroupController extends Engine_Content_W
 
 		$group = Engine_Api::_()->core()->getSubject('group');
 		$select = $group->membership()->getMembersObjectSelect();
-		$groupMembers = Zend_Paginator::factory($select);
+		$paginator = Zend_Paginator::factory($select);
 
 		$groupMembersIds = array();
 		$count = 1;
-		foreach ($groupMembers as $groupMember) {
-			$seUserId = $groupMember->user_id;
-			$fcUser = \bets\User::getWhere(array('id_engine4_users=' => $seUserId));
-			if ($fcUser) {
-				$groupMembersIds[] = $fcUser->id;
-				$count++;
-			}
+		$break = false;
+		for ($pageNo = 1; $pageNo <= $paginator->count(); $pageNo++) {
+			$paginator->setCurrentPageNumber($pageNo);
+			$groupMembers = $paginator->getCurrentItems();
+			foreach ($groupMembers as $groupMember) {
+				$seUserId = $groupMember->user_id;
+				$fcUser = \bets\User::getWhere(array('id_engine4_users=' => $seUserId));
+				if ($fcUser) {
+					$groupMembersIds[] = $fcUser->id;
+					$count++;
+				}
 
-			if ($count > 20) break;
+				if ($count > 20) {
+					$break = true;
+					break;
+				}
+			}
+			if ($break) break;
 		}
 
 		$leaderboard = array();

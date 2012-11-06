@@ -18,22 +18,31 @@ class Widget_FC_Competition_Leaderboard_FriendsController extends Engine_Content
 		}
 
 		$seCurrentUser = Engine_Api::_()->user()->getViewer();
-		$friends = Zend_Paginator::factory($seCurrentUser->membership()->getMembersOfSelect());
+		$paginator = Zend_Paginator::factory($seCurrentUser->membership()->getMembersOfSelect());
 
 		$seUserId = $seCurrentUser->user_id;
 		$fcUser = \bets\User::getWhere(array('id_engine4_users=' => $seUserId));
 		$userFriendsIds = array($fcUser->id);
 
 		$count = 1;
-		foreach ($friends as $friend) {
-			$seUserId = $friend->resource_id;
-			$fcUser = \bets\User::getWhere(array('id_engine4_users=' => $seUserId));
-			if ($fcUser) {
-				$userFriendsIds[] = $fcUser->id;
-				$count++;
-			}
+		$break = false;
+		for ($pageNo = 1; $pageNo <= $paginator->count(); $pageNo++) {
+			$paginator->setCurrentPageNumber($pageNo);
+			$friends = $paginator->getCurrentItems();
+			foreach ($friends as $friend) {
+				$seUserId = $friend->resource_id;
+				$fcUser = \bets\User::getWhere(array('id_engine4_users=' => $seUserId));
+				if ($fcUser) {
+					$userFriendsIds[] = $fcUser->id;
+					$count++;
+				}
 
-			if ($count > 20) break;
+				if ($count > 20) {
+					$break = true;
+					break;
+				}
+			}
+			if ($break) break;
 		}
 
 		$leaderboard = array();
