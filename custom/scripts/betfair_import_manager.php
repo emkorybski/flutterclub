@@ -34,6 +34,11 @@ class BetfairImportManager
 		$this->login();
 	}
 
+    private static function log($message)
+    {
+        //file_put_contents('betfair_import_manager.log', $message . "\r\n", FILE_APPEND | LOCK_EX);
+    }
+
 	public static function setRunning($value)
 	{
 		// running status needs to be saved in database
@@ -254,14 +259,21 @@ class BetfairImportManager
 
 	private function parseEvents($sport, $bfEvents)
 	{
+        $this->log('Parsing events for sport: ' . $sport->name);
+
 		$this->eventsById = array();
 		$this->eventsByParentAndName = array();
 		$this->eventsByBetfairMarketId = array();
 
+        $this->log('Searching for events...');
 		$events = \bets\Event::findWhere(array('idsport=' => $sport->id));
+        $this->log('Found '. count($events) . ' events');
+
+        $this->log('Loading events...');
 		foreach ($events as $event) {
 			$this->addEvent($event);
 		}
+        $this->log('Loaded ' . count($this->eventsById) . ' events');
 
 		foreach ($bfEvents as $bfEvent) {
 			$attributes = $bfEvent->attributes();
@@ -290,13 +302,20 @@ class BetfairImportManager
 				continue;
 			}
 
+            $this->log('Parsins subevents for event ' . $event->name . '...');
 			if (count($bfEvent->subevent) > 0) {
 				$this->parseSubEvents($event, $bfEvent->subevent);
 			}
+            $this->log('Parse complete.');
 		}
 
+        $this->log('Bulk updating events...');
 		\bets\Event::bulkUpdate($this->eventsById);
+        $this->log('Bulk update complete.');
+
+        $this->log('Committing..');
 		\bets\bets::sql()->commit();
+        $this->log('Commit complete.');
 
 		\bets\Event::clearCache();
 		$this->eventsById = null;
