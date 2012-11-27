@@ -41,4 +41,12 @@ return array(
       'subject' => 'user',
     ),
   ),
+  
+     array(
+    'title' => 'Flutterclub TV',
+    'description' => 'Intro video',
+    'category' => 'Mobile',
+    'type' => 'widget',
+    'name' => 'mobi.flutterclub-tv-mobile',
+    ),
 ) ?>

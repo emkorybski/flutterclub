@@ -1075,6 +1075,14 @@ form.filters dd + dt
   display: none;
 }
 
+.activity-post-container > form textarea {
+  width:150px ;
+}
+
+.activity-post-container .compose-menu:before { margin-top:10px;
+	vertical-align:none
+ }
+
 
 /* Moved from widgets\footer\index.tpl - to be cleaned up */
 .layout_page_header {
@@ -1474,3 +1482,31 @@ h2, #profile_status h2
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
+#user_form_login button#submit:hover {
+font-size: 12pt;
+background-color:#000;
+}
+
+button:hover {
+background-color: #000;
+cursor: pointer;
+}
+
+
+
+.compose-menu {
+    display: block;
+
+
+    margin-top: 10px;
+    vertical-align:none;
+width:50px;
+}
+
+#activity_body {
+    display: block;
+    font-size: 1.2em;
+    margin-right: 3px;
+    vertical-align: bottom;
+    width: 60%;
+}

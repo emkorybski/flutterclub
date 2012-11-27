@@ -36,7 +36,7 @@ class BetfairImportManager
 
     private static function log($message)
     {
-        //file_put_contents('betfair_import_manager.log', $message . "\r\n", FILE_APPEND | LOCK_EX);
+        file_put_contents('betfair_import_manager.log', $message . "\r\n", FILE_APPEND | LOCK_EX);
     }
 
 	public static function setRunning($value)
@@ -194,7 +194,7 @@ class BetfairImportManager
 			$this->eventsByParentAndName = array();
 			$this->eventsByBetfairMarketId = array();
 
-			$events = \bets\Event::findWhere(array('idsport=' => $sport->id));
+			$events = \bets\Event::findWhere(array('idsport=' => $sport->id), ' AND ((betfairMarketId IS NULL) OR (ts IS NULL) or (ts > \'2012-11-13\'))');
 			foreach ($events as $event) {
 				$this->addEvent($event);
 			}
@@ -266,7 +266,7 @@ class BetfairImportManager
 		$this->eventsByBetfairMarketId = array();
 
         $this->log('Searching for events...');
-		$events = \bets\Event::findWhere(array('idsport=' => $sport->id));
+		$events = \bets\Event::findWhere(array('idsport=' => $sport->id), ' AND ((betfairMarketId IS NULL) OR (ts IS NULL) or (ts > \'2012-11-13\')) ');
         $this->log('Found '. count($events) . ' events');
 
         $this->log('Loading events...');

@@ -53,6 +53,7 @@ class User_Widget_ListOnlineController extends Engine_Content_Widget_Abstract
     if( $count <= 0 ) {
       return $this->setNoRender();
     }
+     else { $count = $count * 7; }
     $this->view->paginator = $paginator;
 
     // Make title

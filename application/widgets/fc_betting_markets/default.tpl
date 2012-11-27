@@ -114,7 +114,7 @@
 		margin-bottom: 0;
 		font-style: italic;
 		padding-right: 5px;
-		background-color: #fff;
+		background-color: transparent;
 		vertical-align: top;
 		padding-left: 5px;
 		padding-top: 2px;
@@ -125,6 +125,8 @@
 		margin: 10px;
 		margin-bottom: 0;
 	}
+	
+	.form_guide{display:block;line-height:25px;margin-top:8px;margin-left:20px;height:35px;float:left;font-weight:bold}
 
 </style>
 
@@ -164,7 +166,23 @@ foreach ( $this->upcomingEvents as $event) :
 		endforeach;
 		?>
 		</div>
-		<a class="link_to_betfair" href="http://sports.betfair.com/?mi=<?=$event->betfairMarketId?>&ex=1" target="_blank" title="Betfair"><img src="/fc/custom/images/betfair.png" alt="Betfair"></a>
+		
+		<!--<iframe class="link_to_betfair" allowtransparency="true" src="http://ads.betfair.com/ad.aspx?bid=4839&pid=75008" width="93" height="41" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no"></iframe>-->
+		
+		<iframe class="link_to_betfair" allowtransparency="true" src="http://ads.betfair.com/ad.aspx?bid=2781&pid=75008" width="120" height="60" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no"></iframe>
+		
+		<?php if($event->getSport()->name == 'Horse Racing') : ?>
+		<a class="form_guide" href="http://www.attheraces.com/index.aspx?ref=splash" target="_blank" title="Betfair">
+		
+		Racing form guide
+		</a>
+		<?php endif; ?>
+		
+		<!--
+		<a class="link_to_betfair" href="http://sports.betfair.com/?mi=<?=$event->betfairMarketId?>&ex=1" target="_blank" title="Betfair">
+		<img src="/fc/custom/images/betfair.png" alt="Betfair">
+		See live on Betfair
+		</a> -->
 		<a class="link_to_market" href="<?=$goToMarketUrl?>">Go to market</a>
 	</div>
 <?php

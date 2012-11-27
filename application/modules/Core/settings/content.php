@@ -141,6 +141,16 @@ return array(
       'header-footer',
     ),
   ),
+  
+  array(
+    'title' => 'Search Friends',
+    'description' => 'Allows searching friends throughout the site.',
+    'category' => 'Core',
+    'type' => 'widget',
+    'name' => 'core.search-friends',
+    
+  ),
+  
   array(
     'title' => 'Site Logo',
     'description' => 'Shows your site-wide main logo or title.  Images are uploaded via the <a href="admin/files" target="_parent">File Media Manager</a>.',

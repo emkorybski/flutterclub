@@ -1,4 +1,4 @@
-# menu items
+﻿# menu items
 "_SITE_TITLE";"Social Network"
 "Home";"Home"
 "Members";"Members"
@@ -181,7 +181,7 @@
 "_ACTIVITY_ACTIONTYPE_FRIENDS";"When I become friends with someone"
 "_ACTIVITY_ACTIONTYPE_FRIENDS_FOLLOW";"When I follow someone"
 
-"_CORE_CONTACT_DESCRIPTION";"If you want to ask us a question directly, please submit your message with the following form."
+"_CORE_CONTACT_DESCRIPTION";"If you want to ask us a question directly, please submit your message with the following form. Also, please use this form if you are enquiring about investing in flutterclub.com or working for flutterclub.com. Thank you."
 "_CORE_HELP_CONTACT_MESSAGE";"Name: %1$s
 Email: %2$s
 Member Info: (%3$s - %4$s)

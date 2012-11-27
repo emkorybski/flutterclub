@@ -209,4 +209,15 @@ return array(
       'subject' => 'user',
     ),
   ),
-) ?>
+  
+    array(
+    'title' => 'Facebook-Twitter Buttons',
+    'description' => 'Get users and followers',
+    'category' => 'User',
+    'type' => 'widget',
+    'name' => 'user.fb-twitter',
+
+    ),
+) 
+
+?>

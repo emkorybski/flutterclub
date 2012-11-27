@@ -1,0 +1,408 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="language" content="English" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="Content-Language" content="en-gb" />
+	<title>flutterclub::Homepage</title>
+	<meta name="description" content="Butlers Bingo Demo Games" />
+	<meta name="author" content="Butlers Bingo" />
+	<meta name="robots" content="noindex, nofollow"/>
+    <script type="text/javascript" src="http://www.butlersbingo.com/js/butlersBingoGuestCasino.js"></script>
+
+	<style>
+
+@import "/fc/custom/fonts/nunito/stylesheet.css";
+
+	@font-face {
+		font-family: 'BebasNeueRegular';
+		src: url('/fc/custom/fonts/BebasNeue-webfont.eot');
+		src: url('/fc/custom/fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+		     url('/fc/custom/fonts/BebasNeue-webfont.woff') format('woff'),
+		     url('/fc/custom/fonts/BebasNeue-webfont.ttf') format('truetype'),
+		     url('/fc/custom/fonts/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+
+
+
+	body {
+		background:#ffd5f6;
+
+padding:0px;
+margin:0px;
+margin-top:-36px;
+
+	}
+
+	#global_content_simple {
+		width: 100%;
+	}
+
+	.landing-page-wrapper {
+		
+	background: url(/fc/custom/images/clouds_new.png) #ffd5f6;
+		background-repeat: no-repeat;
+		background-position: top left;
+			padding: 0px;
+text-align:left;
+	}
+
+	.landing-page {
+		
+		width: 900px;
+padding:0px;
+		height: 400px;
+border:none;
+		margin: 0 auto;
+		background: transparent;			}
+
+	.landing-page-logo {
+		
+margin-top:0px;
+margin-left: 125px;
+position: relative;
+top:15px;
+padding-bottom:5px;
+	}
+.landing-page-logo p {
+	
+color:#000;
+font-family:"nunitobold";
+font-size:36px;
+text-shadow: 0px 1px 3px #333;
+	}
+
+.landing-page-logo span
+{
+  color:#ff00ff;
+font-size:42px;
+font-family:"nunitobold";
+text-shadow: 0px 1px 3px #333;
+
+}
+
+	.landing-page h1, .landing-page h1 span {
+		font: 40px/48px 'BebasNeueRegular', Arial, sans-serif;
+	}
+
+	.landing-page h1.line1 {
+		color: #000000;
+		text-shadow: 1px 1px 3px #333;
+		font-size: 30px;
+margin-top:5px;
+		margin-left: 181px;
+
+	}
+
+	.landing-page h1.line1 span {
+		color: #800080;
+		text-shadow: 0px 1px 2px #ff00ff;
+	margin-left:10px;	
+		font-size: 40px;
+		
+	}
+
+.landing-page .buttons
+ {
+margin-left: 110px;
+height:35px;
+width:320px;
+border:none;
+}
+
+.landing-page button
+ {
+width: 130px;
+height: 30px;
+font-family: 'BebasNeueRegular', Arial, sans-serif;
+font-size: 25px;
+padding: 0;
+}
+
+.landing-page button.login 
+{
+background-color: #aa0088;
+border: 1px solid #000000;
+margin-right: 10px;
+margin-top:-36px;
+float:right;
+text-shadow: 1px 1px #333333;
+}
+
+.landing-page button.signup {
+background-color: #ff00ff;
+border:1px solid  #000000;
+margin-left:30px;
+text-shadow: 1px 1px #333333;
+margin-top: 1px;
+float:left;
+}
+
+.landing-page button.login:hover,
+.landing-page button.signup:hover
+ {
+background-color: #ffd5f6;
+color:#000;
+}
+
+.landing-page .videowrapper
+{
+width: 490px;
+height: 380px;
+margin-left:430px;
+margin-top:-345px;
+border:none;
+background: url(/fc/custom/images/iMac_new.png);
+background-repeat: no-repeat;
+background-position: top center;
+}
+
+.landing-page .video
+ {
+border:none;
+}
+
+.landing-page .video iframe
+ {
+
+margin-top:15px;
+margin-left:42px;
+}
+
+
+table { 
+margin-left:150px;
+width:260px;
+           border:none;
+           
+margin-top:-15px;
+         margin-bottom:10px;
+ }
+
+table tbody
+{
+    background-color: transparent;
+ -webkit-border-bottom-right-radius:6px;
+        -moz-border-radius:6px 6px 0px 0px;
+    
+    border-bottom-right-radius:6px;
+   
+   }
+
+
+table th {
+
+  font-size:16px;
+  font-family:Trebuchet MS;
+  text-shadow:1px 1px 1px #ccc;
+  border-bottom:2px solid #FAFCF9;
+  background-color:#ccc;
+  background-image: linear-gradient(bottom, #FAFCF9 64%, #EBF0E8 76%, #E4EBEB 97%);
+background-image: -o-linear-gradient(bottom, #FAFCF9 64%, #EBF0E8 76%, #E4EBEB 97%);
+background-image: -moz-linear-gradient(bottom, #FAFCF9 64%, #EBF0E8 76%, #E4EBEB 97%);
+background-image: -webkit-linear-gradient(bottom, #FAFCF9 64%, #EBF0E8 76%, #E4EBEB 97%);
+background-image: -ms-linear-gradient(bottom, #FAFCF9 64%, #EBF0E8 76%, #E4EBEB 97%);
+
+background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.64, #FAFCF9),
+	color-stop(0.76, #EBF0E8),
+	color-stop(0.97, #E4EBEB)
+);
+   
+  -webkit-border-top-left-radius:5px;
+    -webkit-border-top-right-radius:5px;
+    -moz-border-radius:5px 5px 0px 0px;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+
+  width:240px;
+  margin-left:1px;
+  padding:8px;
+
+ }
+
+table tbody tr td.first { font-weight:bold;padding-left:8px }
+
+table tbody tr td
+{
+   padding:3px; 
+   font-family:Trebuchet MS;
+   background: #fff;
+   
+   
+ }
+
+td img{vertical-align:baseline}
+
+#fant_bet{ color:#000;
+font-family:Trebuchet MS;
+font-size:16px;
+font-weight:bold;
+text-transform:uppercase;
+padding-top:4px;
+padding-bottom:4px;
+margin-left:105px;
+letter-spacing:5px; margin-top:-15px;
+width:330px;
+border-top:2px solid #000;border-bottom:2px solid #000;
+text-align:center;
+ }
+ 
+
+
+	.about {
+padding-top:30px;
+		background-color: #000;
+		-webkit-box-shadow: 0px 10px 5px rgba(50, 50, 50, 0.75);
+		-moz-box-shadow: 0px 10px 5px rgba(50, 50, 50, 0.75);
+		box-shadow:	0px 10px 5px rgba(50, 50, 50, 0.75);
+margin-top:0px;
+min-height:500px;
+	}
+
+	.about h2 {
+		font-family: 'BebasNeueRegular', Arial, sans-serif;
+		color: #ffd5f6;
+		letter-spacing: normal;
+		font-size: 40px;
+	}
+
+	.about p {
+		font-family:Trebuchet MS;
+		color: #fff;
+		font-size: 14px;
+	}
+
+	.about > div {
+		background-color: #000;
+		width: 900px;
+                  min-height:500px;
+		margin: 0 auto;
+		padding: 30px 0;
+	}
+
+	.about .section {
+		width: 270px;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+		box-sizing: border-box;
+		float: left;
+		width: 25%;
+		margin: 0 35px;
+	}
+
+
+ p#disclaimer { color:#ffd5f6; 
+border-radius:10px;
+border:5px solid #fff;
+font-size:20px;
+font-family:Trebuchet MS;
+background:url('/fc/custom/images/excl.png') no-repeat 20px center;
+padding:9px;
+padding-left:80px;
+width:830px;
+margin-left:auto;
+margin-right:auto;
+}
+
+#disclaimer span{color:#fff;font-size:26px}
+
+a.btns button:hover{cursor:pointer}
+</style>
+	
+	</head>
+<body>
+
+<div class="landing-page-wrapper">
+<div class="landing-page">
+<div class="landing-page-logo"><p><span>flutterclub</span>.com
+</p></div>
+
+<p id="fant_bet">a fantasy betting site</p>
+<h1 class="line1">Play free<span>win big</span></h1>
+
+<table id="results">
+    <thead>
+        
+            <th scope="row" colspan="2">Prizes for current 7-day competition</th>
+        
+    </thead>
+    <tbody>
+
+          <tr>
+            <td class="first">1st prize</td>
+            <td>&#128;500</td>
+          </tr>
+          <tr>
+            <td class="first">2nd prize</td>
+            <td>&#128;300</td>
+           </tr>
+
+           <tr>
+             <td class="first">3rd prize</td>
+              <td>&#128;200</td>
+           </tr>
+           
+    </tbody>
+
+</table>
+
+<div class="buttons">
+<a class="btns" href="http://www.flutterclub.com/fc/signup"><button class="signup">Sign Up</button></a>
+<br /><br />
+<a class="btns" href="http://www.flutterclub.com/fc/login"><button class="login">Log In</button></a>
+</div>
+
+<div class="videowrapper">
+<div class="video">
+<iframe src="http://player.vimeo.com/video/52233374?badge=0" width="400" height="225" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+</div>
+
+</div>
+</div>
+
+<div class="about">
+<p id="disclaimer">
+<span>Thinking of signing up?</span>
+<br/>Flutterclub will always be FREE for our members.<br/>
+All of our income comes from our advertisers.<br/>
+We will not spam you with unsolicited email, don't worry.
+</p>
+
+	<div>
+		<div class="section">
+			<h2>What we do</h2>
+			<p>
+			At flutterclub you can bet on all your favourite sporting events - for free. No strings attached. The money is virtual, but the girls and prizes are real.
+			</p>
+		</div>
+
+		<div class="section">
+			<h2>How we do it</h2>
+			<p>
+			Bet like a pro on live sporting events, and each week you could walk away with one of our amazing prizes including cash, holidays, games consoles, and even a date with one of our Flutter Girls!
+ 
+			</p>
+		</div>
+
+		<div class="section">
+			<h2>LET's go</h2>
+			<p>
+It's so simple. Log in now on your PC, Tablet or Smartphone, and join the club. Become a betting expert without risking any of your own money. 
+			</p>
+		</div>
+		<div style="clear: left"></div>
+	</div>
+</div>
+
+
+</body>
+</html>
