@@ -9,8 +9,8 @@ if($qstring_p1 == 'fc' && $qstring_p2 == 'mon')
 {
 
 	
-	//header('location: http://www.flutterclub.com/fc/ext.html');
-	include('ext.html');
+	header('location: http://www.flutterclub.com/fc/pages/signup-alt');
+	//include('ext.html');
 	
 	$counter = "counter.txt";
 	

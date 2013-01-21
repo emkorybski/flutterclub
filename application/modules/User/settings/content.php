@@ -10,6 +10,16 @@
  * @author     John
  */
 return array(
+
+   array(
+    'title' => 'Daily Competition',
+    'description' => 'Displays daily competition.',
+    'category' => 'User',
+    'type' => 'widget',
+    'name' => 'user.comp-daily',
+    
+  ),
+
   array(
     'title' => 'Quick Links',
     'description' => 'Displays a list of quick links.',

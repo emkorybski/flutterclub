@@ -249,8 +249,8 @@
     }
 
     for (i = 0; i < bets.length; i++) {
-      if ((accStake && accStake > 500) || (bets[i].stake && bets[i].stake > 500)) {
-        showError('Maximum bet is FB$500!');
+      if ((accStake && accStake > 50) || (bets[i].stake && bets[i].stake > 50)) {
+        showError('Maximum bet is FB$50!');
         return null;
       }
     }
@@ -283,7 +283,7 @@
           showError("Unfortunately you don't have enough FB$ to place this bet.");
 				}
 				else if (response.result == 'max_stake_exceeded') {
-          showError('Maximum bet is FB$500!');
+          showError('Maximum bet is FB$50!');
 				}
 				else {
           showError('');
@@ -319,7 +319,7 @@
           showError("Unfortunately you don't have enough FB$ to place this bet.");
         }
         else if (response.result == 'max_stake_exceeded') {
-          showError('Maximum bet is FB$500!');
+          showError('Maximum bet is FB$50!');
         }
         else if (response.result == 'success') {
           showBetPlaced();

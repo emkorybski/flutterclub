@@ -133,7 +133,7 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 					$totalStake += $bet->stake;
 				}
 			}
-			if ($totalStake + $betSlipSelectionStake > 500) {
+			if ($totalStake + $betSlipSelectionStake > 50) {
 				$isValid = false;
 				break;
 			}

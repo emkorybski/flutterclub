@@ -1,0 +1,10 @@
+QPR V Tottenham,Home Win,Draw,Away Win|
+Aston Villa V Southampton,Home Win,Draw,Away Win|
+Everton V Swansea,Home Win,Draw,Away Win|
+Fulham V Wigan,Home Win,Draw,Away Win|
+Norwich V Newcastle,Home Win,Draw,Away Win|
+Reading V West Brom,Home Win,Draw,Away Win|
+Stoke V Chelsea,Home Win,Draw,Away Win|
+Sunderland V West Ham,Home Win,Draw,Away Win|
+Man Utd V Liverpool,Home Win,Draw,Away Win|
+Arsenal V Man City,Home Win,Draw,Away Win

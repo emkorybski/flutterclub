@@ -90,11 +90,11 @@ DEFAULT STYLES FOR THIS THEME
   theme_input_background_color: #fff;
   theme_input_font_color: #555;
   theme_input_border_colors: #999 #ccc #ccc #999;
-  theme_button_background_color: #aa0088;
+  theme_button_background_color: #990000;
   theme_button_background_color_hover: #e5504e;
   theme_button_background_color_active: #ce4847;
   theme_button_font_color: #fff;
-  theme_button_border_color: #9F6969;
+  theme_button_border_color: #ccc;
 
   /*
   PHOTO BORDERS
@@ -166,14 +166,6 @@ DEFAULT STYLES FOR THIS THEME
 
 
 
-
-
-
-
-
-
-
-
 /* Global member photos and icons */
 img.main
 {
@@ -202,19 +194,6 @@ img.thumb_icon
 {
   border: 1px solid $theme_photo_border_color;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

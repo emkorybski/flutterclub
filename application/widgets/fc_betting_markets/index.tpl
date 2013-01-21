@@ -4,7 +4,7 @@
 		overflow: auto;
 	}
 	.fc_betting_market h1.market_title {
-		background-color: #aa0088;
+		background-color: #990000;
 		color: #fff;
 		margin-left: 0;
 		padding: 5px 10px;
@@ -44,7 +44,7 @@
 		text-decoration: none;
 	}
 	.fc_selection * {
-		color: #aa0088;
+		color: #990000;
 		font-weight: bold;
 	}
 	.fc_selection .selection_name {
@@ -88,7 +88,7 @@
 	}
 
 	.fc_betting_market h1.market_title {
-		background-color: #aa0088;
+		background-color: #990000;
 		color: #fff;
 		margin-left: 0;
 		padding: 5px 10px;
@@ -106,7 +106,7 @@
 		float: right;
 		margin: 10px;
 		font-weight: bold;
-		color: #aa0088;
+		color: #990000;
 		margin-bottom: 0;
 	}
 
@@ -172,7 +172,12 @@
 		endforeach;
 		?>
 		</div>
-		<a class="link_to_betfair" href="http://sports.betfair.com/?mi=<?=$this->event->betfairMarketId?>&ex=1" target="_blank" title="Betfair"><img src="/fc/custom/images/betfair.png" alt="Betfair"></a>
+		<!-- <a class="link_to_betfair" href="http://sports.betfair.com/?mi=<?=$this->event->betfairMarketId?>&ex=1" target="_blank" title="Betfair"><img src="/fc/custom/images/betfair.png" alt="Betfair"></a> -->
+		
+		<iframe class="link_to_betfair" allowtransparency="true" src="http://ads.betfair.com/ad.aspx?bid=2781&pid=75008" width="120" height="60" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no">
+		
+		</iframe>
+		
 		<a class="link_to_market" href="<?=$goToMarketUrl?>">Market ID: <?=$this->event->id?></a>
 	<?php
 	endif;

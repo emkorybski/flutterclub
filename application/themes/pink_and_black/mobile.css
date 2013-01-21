@@ -16,6 +16,7 @@ GLOBAL STYLES, FONTS & RESETS
   border-color: $theme_border_color;
   -webkit-text-size-adjust: none;
 }
+
 body
 {
   background-color: $theme_topbar_menu_background_color;
@@ -506,9 +507,6 @@ input.text,
 } 
 
 
-
-
-
 /*
 SMALL BOX FORM
 These styles are for small box forms, such
@@ -585,12 +583,6 @@ Also used to style popup response messages, etc.
   text-align: center;
   font-weight: bold;
 }
-
-
-
-
-
-
 
 
 /*
@@ -749,7 +741,7 @@ Used at the top of most browse pages. Often contains button-style tabs.
   letter-spacing: 0.1em;
   padding: 4px 10px;
   color: #fff;
-  background-color: #aa0088;
+  background-color: #990000;
 }
 .tabs > ul li > a:hover
 {
@@ -759,8 +751,8 @@ Used at the top of most browse pages. Often contains button-style tabs.
 }
 .tabs > ul li.active > a
 {
-  background-color: #ff00ff;
-  color:#000;
+  background-color: #d40000;
+  color:#fff;
 }
 .tabs > ul li.active > a:hover
 {
@@ -831,11 +823,6 @@ TABS (TAB STYLE, NON-DEFAULT)
 }
 
 
-
-
-
-
-
 /*
 TAGS
 Styles lists of tags that are used for message recipients, lists of friend
@@ -859,11 +846,6 @@ lists, etc. Each tag has its own remove link.
   padding-left: 6px;
   text-transform: uppercase;
 }
-
-
-
-
-
 
 
 /* login page */
@@ -974,13 +956,13 @@ lists, etc. Each tag has its own remove link.
   outline: none;
   display: block;
   padding: .5em 0em;
-  background-color: #ff00ff;
-  border-bottom: 5px solid #aa0088;
-  border-top: 5px solid #aa0088;
+  background-color: #d40000;
+  border-bottom: 5px solid #990000;
+  border-top: 5px solid #990000;
   text-shadow: 1px 1px 0px rgba(0,0,0,.2);
   font-family: fc_bebas;
   font-weight: normal;
-  color:#000;
+  color:#fff;
 }
 .layout_mobi_mobi_menu_main ul a:link,
 .layout_mobi_mobi_menu_main ul a:visited
@@ -994,7 +976,7 @@ lists, etc. Each tag has its own remove link.
 }
 .layout_mobi_mobi_menu_main li.active a
 {
-  background-color: #800080;
+  background-color: #333;
   color: #fff;
 }
 .layout_mobi_mobi_menu_main li.active:first-child a
@@ -1124,7 +1106,7 @@ body {
 }
 
 #global_header {
-  background: #f6d5ff url(/fc/custom/images/clouds.png) repeat-x top center;
+  background:url(/fc/custom/images/bg_red.png);
   padding-top:15px;
 
 }
@@ -1137,8 +1119,8 @@ body {
 
 #global_content .generic_layout_container > h3:first-child {
   text-align: center;
-  background-color: #ff00ff;
-  color: #000;
+  background-color: #d40000;
+  color: #fff;
   border-radius: 0;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
@@ -1182,7 +1164,7 @@ body {
 
 #main_tabs {
   background-color: transparent;
-  border-bottom: 5px solid #aa0088;
+  border-bottom: 5px solid #990000;
   padding: 0;
   overflow: hidden;
   font-size: 14px;
@@ -1202,18 +1184,20 @@ body {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;  
   border-bottom-left-radius: 5px;
-  background-color: #aa0088;
+  background-color: #990000;
   padding-left: 10px;
   padding-right: 10px;
   margin-right: 2px;
 }
+
 #global_wrapper #main_tabs li.active {
   z-index: 10;
   position: relative;
 }
+
 #global_wrapper #main_tabs li.active a {
   border-color:transparent;
-  background-color: #ff00ff;
+  background-color: #d40000;
 }
 
 .tabs_alt > ul > li.tab_active > a, .tabs_alt > ul > li.active > a {
@@ -1404,7 +1388,7 @@ hr.line {
 
 
 .fc_betting_pending .bet_info {
-    background-color: #aa0088;
+    background-color: #990000;
     box-shadow: 0 3px 2px rgba(50, 50, 50, 0.5);
     color: white;
     font-weight: bold;
@@ -1433,8 +1417,8 @@ hr.line {
 
 .layout_user_login_or_signup > h3 a {
   padding: 0px 8px 2px 8px;
-  background-color: #ce4847;
-  border: 1px solid #9F6969;
+  background-color: #efefef;
+  border: 1px solid #ccc;
   color: #fff;
   background-image: url(/application/modules/Mobi/externals/images/mobile_buttonbg.png?c=21);
   background-repeat: repeat-x;
@@ -1458,7 +1442,7 @@ hr.line {
 /* LINKS */
 
 a:link, a:visited {
-    color: #aa0088;
+    color: #990000;
     text-decoration: none;
 }
 
@@ -1471,11 +1455,11 @@ h2, #profile_status h2
 /* sign-up button mobile */
 
 .layout_user_login_or_signup > h3 a {
-    background-color: #aa0088;
+    background-color: #990000;
     background-image: url("/application/modules/Mobi/externals/images/mobile_buttonbg.png?c=21&c=243");
     background-position: left top;
     background-repeat: repeat-x;
-    border: 1px solid #9F6969;
+    border: 1px solid #ccc;
     border-radius: 3px 3px 3px 3px;
     color: #FFFFFF;
     padding: 0 8px 2px;
@@ -1510,3 +1494,27 @@ width:50px;
     vertical-align: bottom;
     width: 60%;
 }
+
+.layout_inviter_referral_link{
+        border-top:1px solid #ccc;
+        margin-top:5px;
+	color:#000;
+        margin-left:10px;
+        width:90%;
+padding-left:20px;  
+}
+
+.layout_inviter_referral_link input{
+    width:80%;
+}
+
+h3{
+
+color:#990000;
+}
+
+.layout_mobi_mobi_main_menu li.active a{
+   background-color:#333;
+
+}
+

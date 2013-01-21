@@ -33,13 +33,13 @@
 	
 	.mobile_account_info .balance {
 		
-		color:#aa0088;
+		color:#990000;
 		font-weight:bold;
 	}
 	
 	.mobile_account_info .remaining{
 		
-		color:#aa0088;
+		color:#990000;
 		font-weight:bold;
 	}
 	

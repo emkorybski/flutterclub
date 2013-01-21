@@ -14,7 +14,7 @@
 
 <?php if($category['name'] == 'Horse Racing') : ?>
 	         
-		<a id="form_guide" target="_blank" href="http://www.attheraces.com/index.aspx?ref=splash">> Horse Racing Form Guide</button>
+		<a id="form_guide" target="_blank" href="http://www.attheraces.com/index.aspx?ref=splash">> Horse Racing Form Guide</a>
 	
 	<?php endif; ?>
 

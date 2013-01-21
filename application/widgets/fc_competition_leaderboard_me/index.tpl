@@ -1,5 +1,5 @@
 <style type="text/css">
-		/* styles go in here */
+	
 </style>
 
 <div class="fc_competition_leaderboard">
@@ -15,7 +15,7 @@ if ( count($this->leaderboardUsers) ) :
 		</tr>
 		<?php
 		
-		$curUserId = Engine_Api::_()->user()->getViewer()->getIdentity();
+		//$curUserId = Engine_Api::_()->user()->getViewer()->getIdentity();
 		//echo 	$curUserId;
 		
 		?>
@@ -25,11 +25,8 @@ if ( count($this->leaderboardUsers) ) :
 		?>
 		<tr>
 			<td>
-			<?php 
-				//echo  $user['position'];
-				echo $this->ranking;	
-			
-			?>
+			<?=$this->user_pos; ?><br/>
+			<!-- <?=$this->comp_id; ?> -->
 			</td>
 			
 			<td class="leaderboard_username">

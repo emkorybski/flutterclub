@@ -439,8 +439,8 @@ html[dir="rtl"] .layout_core_menu_mini #core_menu_mini_menu
 .layout_core_menu_mini #core_menu_mini_menu > ul > li > a:hover
 {
   +rounded(3px);
-  background: #ff00ff;
-  color: #aa0088;
+  background: #d40000;
+  color: #990000;
   text-decoration: $theme_topbar_minimenu_link_hover_decoration;
 }
 .layout_core_menu_mini #core_menu_mini_menu_updates
@@ -570,13 +570,13 @@ ul.form-notices > li > ul > li
 }
 ul.form-errors > li {
   background-image: url(~/application/modules/Core/externals/images/error.png);
-  background-color: #aa0088;
+  background-color: #990000;
   border: none;
 color:#fff;
 }
 ul.form-notices > li {
   background-image: url(~/application/modules/Core/externals/images/notice.png);
-  background-color: #aa0088;
+  background-color: #990000;
   border: none;
 }
 
@@ -749,7 +749,7 @@ html[dir="rtl"] .global_form > div
 {
   border: 0px solid $theme_form_border_color;
   padding: 0px;
-  background-color: #ffd5f6;
+  background-color: #fff;
   -webkit-border-top-left-radius: 10px;
   -webkit-border-top-right-radius: 10px;
   -moz-border-radius-topleft: 10px;
@@ -1349,7 +1349,7 @@ html[dir="rtl"] .headline h2
   letter-spacing: 0.1em;
   padding: 4px 10px;
   color: #fff;
-  background-color: #aa0088;
+  background-color: #990000;
   background-image: none;
   font-size: 1.1em;
 }
@@ -1359,7 +1359,7 @@ html[dir="rtl"] .headline h2
 }
 .tabs > ul li.active > a
 {
-  background-color: #ff00ff;
+  background-color: #d40000;
 }
 .tabs > ul li.active > a:hover
 {
@@ -1405,7 +1405,7 @@ html[dir="rtl"] .tabs_alt > ul
   /* +rounded(3px, false, false, true, true); */
   /*border: 1px solid $theme_tabs_border_color;*/
   border-bottom: none;
-  background-color: #ff00ff;
+  background-color: #d40000;
   color: $theme_tabs_font_color_active;
   position: relative;
   top: -1px;
@@ -2048,12 +2048,14 @@ div.group_discussions_list
 
 .layout_activity_feed {
   background-color: $theme_foreground_background_color;
-  -webkit-border-top-left-radius: 10px;
+/*  
+-webkit-border-top-left-radius: 10px;
   -webkit-border-top-right-radius: 10px;
   -moz-border-radius-topleft: 10px;
   -moz-border-radius-topright: 10px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+*/
 }
 
 .activity-post-container {
@@ -2457,7 +2459,7 @@ body {
 
 
 #global_header {
-  background: #ffd5f6 url(/fc/custom/images/clouds.png) repeat-x top center;
+  background: url(/fc/custom/images/bg_red.png);
 padding:0px;
 
 }
@@ -2470,7 +2472,7 @@ padding:0px;
 
 #global_content .generic_layout_container > h3:first-child {
   text-align: center;
-  background-color: #ff00ff;
+  background-color: #d40000;
   color: #ffffff;
   border-radius: 0;
   border-top-left-radius: 5px;
@@ -2489,7 +2491,7 @@ margin-top:20px;
 
 
 div.twtr-doc {
-background-color: #ff00ff !important;
+background-color: #d40000 !important;
 color: white !important;
 }
 
@@ -2593,7 +2595,7 @@ margin-top:0px;
 }
 #global_wrapper #main_tabs li.active a {
   border-color: none;
-  background-color: #aa8800;
+  background-color: #990000;
 }
 .tabs_alt > ul > li.tab_active > a, .tabs_alt > ul > li.active > a {
   font-weight: normal;
@@ -2633,7 +2635,7 @@ margin-top:0px;
   font-family: fc_bebas;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  background-color: #aa0088;
+  background-color: #990000;
   font-size: 13px;
   color: #ffffff;
   padding: .4em .7em;
@@ -2787,18 +2789,18 @@ button:hover
 }
 button:active
 {
-  background-color: #aa0088;
+  background-color: #990000;
   background-image: none;
 }
 
 a:link, a:visited
 {
-  color:#aa0088;
+  color:#990000;
 }
 
 .updates_pulldown a.new_updates
 {
-  background:#ff00ff;
+  background:#d40000;
 }
 
 .updates_pulldown a.new_updates:hover
@@ -2879,7 +2881,7 @@ font-size: 1.1em;
 
 .tabs > ul li > a:hover 
 {
-  background:#aa0088;
+  background:#990000;
 }
 
 .layout_group_browse_search
@@ -2895,7 +2897,7 @@ font-size: 1.1em;
 }
 
 .groups_browse h3 a:link, .groups_browse h3 a:visited {
-color: #aa0088 !important;
+color: #990000 !important;
 font-family: Tahoma, arial, verdana, sans-serif !important;
 word-spacing: 1em !important;
 }
@@ -2910,13 +2912,13 @@ margin-right:4px;
 
 .twtr-hd, .twtr-ft
 {
-  background:#ff00ff;
+  background:#d40000;
   
 }
 
 .twtr-bd
 {
-  border:1px solid #ff00ff;
+  border:1px solid #d40000;
 }
 
 div.twtr-tweets
@@ -2939,7 +2941,7 @@ border-top-left-radius:5px;
 }
 
 .twtr-hd a, #twtr-widget-1 h3, #twtr-widget-1 h4 {
-background-color: #ff00ff !important;
+background-color: #d40000 !important;
 color: white !important;
 display:block;
 }
@@ -2966,7 +2968,7 @@ margin-top: 0px;
 
 .activity-post-container {
     background-color: #EEEEEE;
-    border: 1px solid #aa0088;
+    border: 1px solid #990000;
     border-radius: 0 0 0 0;
     margin-top: 10px;
 }
@@ -2974,7 +2976,7 @@ margin-top: 0px;
 
 .activity-post-container > form > h1 span
 {
-  color:#aa0088;
+  color:#990000;
 }
 
 #compose-photo-activator,
@@ -2982,11 +2984,11 @@ margin-top: 0px;
 #compose-video-activator
 
 {
-  color:#aa0088
+  color:#990000
 }
 
 #global_wrapper #main_tabs li.active a {
-    background-color: #ff00ff;
+    background-color: #d60000;
 }
 
 #main_tabs li {
@@ -3002,7 +3004,7 @@ border-bottom:1px solid #000;
 
 #main_tabs li a {
     width:100%;
-    background-color: #aa0088;
+    background-color: #990000;
     text-align:center;
     border-color: transparent;
     border-top-left-radius: 5px;
@@ -3017,14 +3019,14 @@ border-bottom:1px solid #000;
 }
 
 #main_tabs li a:hover {
-    background-color: #aa0088;
+    background-color: #990000;
     text-decoration:underline;
     
 }
 
 #main_tabs {
     background-color: transparent;
-    border-bottom: 5px solid #aa0088;
+    border-bottom: 5px solid #990000;
     font-size: 14px;
     overflow: hidden;
     padding: 0;
@@ -3097,7 +3099,7 @@ margin-top:20px;
 }
 
 h1.market_title {
-    background-color: #aa0088;
+    background-color: #990000;
     box-shadow: 0 2px 1px rgba(50, 50, 50, 0.5);
     color: #FFFFFF;
     margin-bottom: 10px;
@@ -3113,19 +3115,19 @@ h1.market_title {
 
 
 .tabs_alt > ul > li.tab_open .tab_pulldown_contents_wrapper {
-    background-color: #aa0088;
+    background-color: #990000;
     display: block;
     margin-top: 28px;
 }
 
 .tab_pulldown_contents ul li:hover
 {
-  background:#aa0088;
+  background:#990000;
 }
 
 .link_to_market
 {
-  color:#aa0088;
+  color:#990000;
 }
 
 
@@ -3254,7 +3256,7 @@ background-color:#000;
 
 
 .fc_betting_recent .bet_info {
-    background-color: #aa0088;
+    background-color: #990000;
     box-shadow: 0 3px 2px rgba(50, 50, 50, 0.5);
     color: white;
     font-weight: bold;
@@ -3313,11 +3315,12 @@ padding-bottom:10px;
 .custom_99, .core_main_group {
 
 font-size: 1.7em;
-color:#aa0088;
+color:#990000;
 
 }
 
-.core_main_inviter, .core_main_home, .custom_148, .core_main_video, .core_main_article, .custom_260{line-height:21px;}
+.core_main_inviter, .core_main_home, .custom_148, .core_main_video, .core_main_article, .custom_260, .custom_261
+{line-height:21px;}
 
 .layout_core_menu_main > ul > li a {
 
@@ -3329,4 +3332,33 @@ padding: .3em .7em .4em .7em;
    margin-top:15px
 }
 
-.custom_260:after{content:'beta';font-size:9px;font-family:fc_bebas;margin-left:2px;color:#aa0088;}
+.custom_260:after{content:'beta';font-size:9px;font-family:fc_bebas;margin-left:2px;color:#990000;}
+
+.custom_261:after{content:'new';font-size:9px;font-family:fc_bebas;margin-left:2px;color:#990000;}
+
+.terms_and_conditions, .terms_and_conditions li{
+   color:#000;
+}
+
+/* MEMEBER HOMEPAGE ACT.FEED AFTER ADDING IT AS A TAB    */
+
+.layout_activity_feed {
+background-color: #fff;
+border-radius:none;
+padding-top:10px;
+margin-top:0px;
+}
+/*
+.core_main_home:hover:after{
+   content:"Your Facebook newsfeed";
+   margin-top:-20px;
+   font-family:fc_bebas;
+   color:#fff;
+}
+*/
+
+.activity-post-container > form {
+background: #ccc;
+border: none;
+box-shadow: 0 2px #CCC;
+}

@@ -30,7 +30,7 @@
 	}
 
 	.fc_selection * {
-		color: #aa0088;
+		color: #990000;
 		font-weight: bold;
 	}
 
@@ -81,7 +81,7 @@
 	}
 
 	.fc_betting_market h1.market_title {
-		background-color: #aa0088;
+		background-color: #990000;
 		color: #fff;
 		margin-left: 0;
 		padding: 5px 10px;
@@ -102,7 +102,7 @@
 		float: right;
 		margin: 10px;
 		font-weight: bold;
-		color: #aa0088;
+		color: #990000;
 		margin-bottom: 0;
 	}
 
@@ -126,7 +126,10 @@
 		margin-bottom: 0;
 	}
 	
-	.form_guide{display:block;line-height:25px;margin-top:8px;margin-left:20px;height:35px;float:left;font-weight:bold}
+	.form_guide{
+	           display:block;line-height:25px;margin-top:8px;margin-left:20px;height:35px;float:left;font-weight:bold}
+		   
+	.bet4real{color:#990000;margin-left:20px;font-weight:bold}	   
 
 </style>
 
@@ -168,8 +171,12 @@ foreach ( $this->upcomingEvents as $event) :
 		</div>
 		
 		<!--<iframe class="link_to_betfair" allowtransparency="true" src="http://ads.betfair.com/ad.aspx?bid=4839&pid=75008" width="93" height="41" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no"></iframe>-->
+		<p class="bet4real">
+		Bet for real with:
+		</p>
+		<iframe class="link_to_betfair" allowtransparency="true" src="http://ads.betfair.com/ad.aspx?bid=2781&pid=75008" width="120" height="60" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no">
 		
-		<iframe class="link_to_betfair" allowtransparency="true" src="http://ads.betfair.com/ad.aspx?bid=2781&pid=75008" width="120" height="60" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no"></iframe>
+		</iframe>
 		
 		<?php if($event->getSport()->name == 'Horse Racing') : ?>
 		<a class="form_guide" href="http://www.attheraces.com/index.aspx?ref=splash" target="_blank" title="Betfair">

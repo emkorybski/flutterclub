@@ -19,7 +19,7 @@
 
 	.fc_betting_pending .bet_info {
 		font-weight: bold;
-		background-color: #aa0088;
+		background-color: #990000;
 		color: white;
 		padding: 10px 10px;
 		margin-bottom: 0px;

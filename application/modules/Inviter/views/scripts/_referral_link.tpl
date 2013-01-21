@@ -28,7 +28,8 @@
     };
     var addthis_share = {
         url:"<?php echo urlencode($this->referral_link);?>",
-        title:"<?php echo $this->translate("INVITER_Join our social network!");?>",
+       title:"<?php echo $this->translate("INVITER_Join our social network!");?>",
+	//title:"<?php echo $this->translate("INVITER_Join flutterclub.com, the world's favorite fantasy betting site!");?>",
         description:"Some description"
     };
 </script>

@@ -26,7 +26,7 @@
 	#search-friends-wrapper h3
 	{
 	border-radius:none;
-		background-color:#ff00ff;
+		background-color:#d40000;
 		 -webkit-border-top-left-radius: 7px;
 		 -webkit-border-top-right-radius: 7px;
                      -moz-border-top-left-radius: 7px;
@@ -52,7 +52,7 @@
 	
 	#friends_search_form_container  p
 	{
-		color:#aa0088;
+		color:#990000;
 		line-height:18px;
 		font-weight:bold;
 		margin-left:5px;
@@ -62,7 +62,7 @@
 	
 	#friends_search_form_container  p span
 	{
-		color:#aa0088;
+		color:#990000;
 		font-weight:normal;
 		margin-top:5px
 		

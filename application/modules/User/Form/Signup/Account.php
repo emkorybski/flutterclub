@@ -26,7 +26,7 @@ class User_Form_Signup_Account extends Engine_Form
     $tabIndex = 11;
     
     // Init form
-    $this->setTitle('Create Account');
+    $this->setTitle('Sign  up  here');
 
     // Element: email
     $this->addElement('Text', 'email', array(

@@ -140,7 +140,7 @@ class Widget_FC_ScriptController extends Engine_Content_Widget_Abstract
 		$endDate->add(new \DateInterval("P14D"));
 
 		$newCompetition = new \bets\Competition();
-		$newCompetition->start_balance = 10000;
+		$newCompetition->start_balance = 1000;
 		$newCompetition->ts_start = $lastCompetition->ts_end;
 		$newCompetition->ts_end = date('Y-m-d H:i:s', $endDate->getTimestamp());
 		$newCompetition->settled = 'n';
