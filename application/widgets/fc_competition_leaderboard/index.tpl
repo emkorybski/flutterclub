@@ -43,17 +43,59 @@ if ( count($this->leaderboardUsers) ) :
 			<th>FB$ Profit</th>
 			<th>Success Rate</th>
 		</tr>
-		<?php
+<?php
 	foreach($this->leaderboardUsers as $user) :
 		$seUser = $user['user'];
-	?>
+		$fcUser = $user['fcuser']->id;
+		//echo $fcUser;
+?>
 		<tr>
 			<td><?=$user['position']?></td>
 			<td class="leaderboard_username">
 				<?=$this->htmlLink($seUser->getHref(), $this->itemPhoto($seUser, 'thumb.icon'))?>
 				<?=$this->htmlLink($seUser->getHref(), $seUser->getTitle())?>
 			</td>
-			<td><?=$user['profit']?></td>
+
+<td>
+               
+<?php
+   if( count($this->blackjackUsers)) :
+?>
+	<?php 
+                                
+		foreach($this->blackjackUsers as $b_user) :
+		echo $b_user['blackjack_profit'];
+	?>	
+	
+		<?php
+			if($b_user['user'] == $fcUser) :
+                                    
+			$total_profit = floatval($user['profit']) + floatval($b_user['blackjack_profit']);   
+                ?>
+		
+			<?=$total_profit?>
+                     <?php		
+			else :
+		?>	
+			<?=$user['profit']?>               
+		<?php
+		        endif;
+                                            
+	         ?>
+		<?php
+
+                   endforeach;
+	        ?>
+	<?php
+             else :	
+	?>	
+	        <?=$user['profit']?>	
+<?php
+       endif;
+?>       
+</td>
+			<!--<td><?php  echo "test";  ?></td>-->
+			<!--<td><?=$user['profit']?></td>-->
 			<td><span><?=$user['successRate']?></span> <span>(<?=$user['won_count']?>/<?=$user['bet_count']?>)</span></td>
 		</tr>
 		<?php

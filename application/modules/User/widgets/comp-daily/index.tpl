@@ -153,7 +153,7 @@
             $file = "/var/www/fc_live/fc/tstamp.txt";
             $fopen = fopen($file, "r");
             $fread = fread($fopen, filesize($file));
-            $tmstamp_ahead = $fread + 3600 * 24 * 3;
+            $tmstamp_ahead = $fread + 3600 * 24 * 33;
 	    //$tmstamp_ahead = $fread + 600;
             
             if($tmstamp_ahead <= $timestamp){

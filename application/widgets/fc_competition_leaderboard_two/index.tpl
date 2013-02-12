@@ -45,7 +45,7 @@
 
 
 <?php
-if ( count($this->leaderboardUsers) ) :
+if ( count($this->leaderboardUsers) > 0 ) :
 ?>
 
 <p><span>REMEMBER!</span> You need to have at least 1 bet settled to appear on the Leaderboard.</p>
@@ -53,8 +53,10 @@ if ( count($this->leaderboardUsers) ) :
 			
 		<?php
 		
-		//$curUserId = Engine_Api::_()->user()->getViewer()->getIdentity();
+		$curUserId = Engine_Api::_()->user()->getViewer()->getIdentity();
 		$curUserName = Engine_Api::_()->user()->getViewer();
+		$getCurFcUser = $this->getCurFcUser;
+		//echo $getCurFcUser[0]['id'];
 		
 		
 		?>
@@ -65,15 +67,16 @@ if ( count($this->leaderboardUsers) ) :
 	
 	
 	$seUser = $user['user'];
-	//echo $seUser;
-	$user_pos = $user['profit'];
+	$fcUser = $user['fcuser']->id;
+	//echo $fcUser;
+	//$user_pos = $user['profit'];
 		
 	?>
 
 	
-	<?php
+<?php
 	if($seUser == $curUserName) :
-	?>
+?>
 	
 	<table>
 		<tr>
@@ -88,7 +91,45 @@ if ( count($this->leaderboardUsers) ) :
 				<?=$this->htmlLink($seUser->getHref(), $this->itemPhoto($seUser, 'thumb.icon'))?>
 				<?=$this->htmlLink($seUser->getHref(), $seUser->getTitle())?>
 			</td>
-			<td><?=$user['profit']?></td>
+			
+	<td>
+               
+	<?php
+		if( count($this->blackjackUsers) > 0) :
+	?>
+	<?php 
+                                
+		foreach($this->blackjackUsers as $b_user) :
+		echo $b_user['blackjack_profit'];
+	?>	
+	
+		<?php
+			if($b_user['user'] == $getCurFcUser[0]['id']) :
+                                    
+			$total_profit = floatval($user['profit']) + floatval($b_user['blackjack_profit']);   
+                ?>
+		
+<?=$total_profit?>
+                                  
+<?php
+	endif;
+?>
+
+<?php
+
+                   endforeach;
+?>
+	<?php
+             else :	
+	?>	
+	        <?=$user['profit']?>	
+<?php
+       endif;
+?>       
+</td>
+	
+			
+			<!-- <td><?=$user['profit']?></td> -->
 			<td><span><?=$user['successRate']?></span> <span>(<?=$user['won_count']?>/<?=$user['bet_count']?>)</span></td>
 		</tr>
 		

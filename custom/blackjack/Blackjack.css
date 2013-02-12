@@ -1,0 +1,254 @@
+@import "../fonts/nunito/stylesheet.css";
+
+body {
+	 background:url("greenBG.png");
+}
+
+#blackjack_wrapper{
+    
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:20px;
+    width:90%;
+    height:auto;
+    background:#000;
+    padding:15px;
+   
+}
+ 
+h1{
+	font-family: "CoffeeTin"; 
+	font-size: 50px;
+        color:#fff;
+        line-height:72px;
+	margin: 20px 0px;
+	white-space: nowrap;
+        border-top:1px solid #efefef;
+        border-bottom:1px solid #efefef;
+}
+
+h1 span{margin-top:21px}
+h1 img{vertical-align:middle;margin-bottom:10px;margin-top:7px}
+
+#cards {
+	display: table;
+}
+
+#dealer, #player {
+	display: table-row;
+}
+
+#dealer {
+	color: #990000;
+}
+
+#player {
+	color: green;
+}
+
+.label {
+	display: table-cell;
+	vertical-align: middle;
+	font-family: "Trebuchet MS";
+	font-size: 22px;
+	width: 180px;
+}
+
+.label .caps {
+	/* font-family: "Comfortaa"; */
+}
+
+.card {
+	display: table-cell;
+	vertical-align: middle;
+	padding: 5px 4px;
+	visibility: hidden;
+}
+
+.card.show {
+	visibility: visible;
+}
+
+.card img {
+	-webkit-transition-property: -webkit-transform;
+	-webkit-transition-duration: 0.1s;
+	-moz-transition-property: -moz-transform;
+	-moz-transition-duration: 0.1s;
+	-o-transition-property: -o-transform;
+	-o-transition-duration: 0.1s;
+	-ms-transition-property: -ms-transform;
+	-ms-transition-duration: 0.1s;
+	transition-property: transform;
+	transition-duration: 0.1s;
+}
+
+.flat {
+	-webkit-transform: rotateX(90deg);
+	-moz-transform: rotateX(90deg);
+	-o-transform: rotateX(90deg);
+	-ms-transform: rotateX(90deg);
+	transform: rotateX(90deg);
+}
+
+.amount {
+	font-family: "Trebuchet MS";
+	font-size: 30px;
+	font-weight: bold;
+	color: darkgreen;
+}
+
+.normal {
+	font-family: "Trebuchet MS";
+	font-size: 18px;
+	padding: 2px 6px;
+	color: #999999;
+        margin-top:20px;
+}
+
+#bet_amount {
+	border: 0;
+	font-family: "Trebuchet MS";
+	font-weight: bold;
+	font-size: 30px;
+	color: #990000;
+	text-align: left;
+	width: 80px;
+	background-color: transparent;
+	outline: none;
+}
+
+#bet_amount:disabled {
+	color: lightgray;
+}
+
+output {
+	font-family: "Trebuchet MS";
+	font-size: 18px;
+}
+
+.over {
+	visibility: hidden;
+	font-family: "Trebuchet MS";
+	font-size: 50px;
+	z-index: 1;
+	position: absolute;
+}
+
+#dealer_over {
+	left: 530px;
+	top: 300px;
+	color: #990000;
+}
+
+#player_over {
+	left: 530px;
+	top: 420px;
+	color: green;
+}
+
+#split_over {
+	left: 430px;
+	top: 400px;
+	color: green;
+}
+
+#split_hand {
+	display: none;
+	color: green;
+}
+
+#split_hand.show {
+	display: table-row;
+}
+
+button {
+	font-size: 16px;
+        font-family: "Trebuchet MS";
+	margin: 2px 6px;
+	padding: 4px 10px 2px;
+}
+
+footer {
+	display: block;
+	margin-top: 50px;
+}
+
+footer small {
+	display: block;
+	margin: 0;
+	font-size: 10px;
+}
+
+h2{font-family:"nunitoregular";color:#fff;font-size:36px}
+
+#homepage{font-family:"Trebuchet MS";color:#e6e6e6}
+#controls{font-family:"Trebuchet MS";color:#efefef;padding:4px;background:#990000;margin-bottom:10px}
+#buttons{border-top:1px solid #efefef;padding-top:5px;margin-top:10px;}
+
+small a{color:#990000}
+
+/*  POPUP STYLES */
+
+.csspop{margin-bottom:20px;}
+
+.csspop a {
+color: #fff;
+margin-left:5px;
+margin-bottom: 20px;
+text-transform:uppercase;
+border-bottom:1px dotted #fff;
+font-size:24px;
+font-family:"Trebuchet MS";
+text-decoration: none;
+}
+
+.csspop a span {
+display:none;
+z-index:100;
+font-size:14px;
+padding:20px;
+text-transform:none;
+}
+
+.csspop a span img{
+    
+    position:absolute;
+    top:10px;
+    left:490px;
+    width:17px;
+        
+}
+
+.csspop a:active span {
+display:inline;
+padding:20px;
+position:absolute;
+left:50%;
+margin-left:-250px;
+width:500px;
+top:30%;
+height:250px;
+overflow:auto;
+background-color:#990000;
+-moz-box-shadow:    3px 3px 5px 6px #800000;
+  -webkit-box-shadow: 3px 3px 5px 6px #800000;
+  box-shadow:         3px 3px 5px 6px #800000;
+
+}
+
+
+.csspop a:focus span {
+display:inline;
+position:absolute;
+padding:20px;
+left:50%;
+margin-left:-250px;
+width:500px;
+top:30%;
+height:250px;
+overflow:auto;
+background-color:#990000;
+-moz-box-shadow:    0 5px 5px -5px #800000;
+  -webkit-box-shadow: 0 5px 5px -5px #800000;
+  box-shadow:         0 5px 5px -5px #800000;
+}
