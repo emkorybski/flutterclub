@@ -1,88 +1,81 @@
 <style type="text/css">
-	.layout_fc_betting_slip {
-		padding: 10px;
-		background-color: #fff;
-		margin-bottom: 10px;
-	}
+    .layout_fc_betting_slip {
+        padding: 10px;
+        background-color: #fff;
+        margin-bottom: 10px;
+    }
 
-	.fc_betting_slip {
-		text-align: right;
-		background-color: #fff;
-	}
+    .fc_betting_slip {
+        text-align: right;
+        background-color: #fff;
+    }
 
-	.fc_betting_slip table {
-		width: 100%;
-		margin-bottom: 10px;
-	}
+    .fc_betting_slip table {
+        width: 100%;
+        margin-bottom: 10px;
+    }
 
-	.fc_betting_slip tr {
-		background-color: #bfd8df;
-	}
+    .fc_betting_slip tr {
+        background-color: #bfd8df;
+    }
 
-	.fc_betting_slip td {
-		padding: 5px;
-		border-bottom: 5px solid #fff;
-	}
+    .fc_betting_slip td {
+        padding: 5px;
+        border-bottom: 5px solid #fff;
+    }
 
-	.fc_betting_slip td.selection_stake input,
-	.box_accumulator {
-		width: 40px !important;
-	}
+    .fc_betting_slip td.selection_stake input,
+    .box_accumulator {
+        width: 40px !important;
+    }
 
-	.fc_betting_slip .slip_actions {
-		margin-top: 10px;
-		position: relative;
-	}
+    .fc_betting_slip .slip_actions {
+        margin-top: 10px;
+        position: relative;
+    }
 
-  .fc_betting_slip .slip_actions button {
-    float: right;
-    min-width: 80px;
-  }
+    .fc_betting_slip .slip_actions button {
+        float: right;
+        min-width: 80px;
+    }
 
-	.fc_betting_slip .action_remove_selection {
-		cursor: pointer;
-		overflow: hidden;
-		background-image: url(/fc/custom/images/delete.png);
-		background-repeat: no-repeat;
-		background-position: 0px center;
-		text-indent: -999px;
-		width: 15px;
-		padding: 0;
-		padding-right: 5px;
-	}
+    .fc_betting_slip .action_remove_selection {
+        cursor: pointer;
+        overflow: hidden;
+        background-image: url(/fc/custom/images/delete.png);
+        background-repeat: no-repeat;
+        background-position: 0px center;
+        text-indent: -999px;
+        width: 15px;
+        padding: 0;
+        padding-right: 5px;
+    }
 
-	.fc_betting_slip .action_remove_selection:hover {
-		background-position: -20px center;
-	}
+    .fc_betting_slip .action_remove_selection:hover {
+        background-position: -20px center;
+    }
 
-	.fc_betting_slip .slip_actions a {
-		float: left;
-		position: absolute;
-		bottom: 0;
-	}
+    .fc_betting_slip .slip_actions a {
+        float: left;
+        position: absolute;
+        bottom: 0;
+    }
 
-	.fc_betting_slip .action_place_bet {
-		float: right;
-	}
+    .fc_betting_slip .action_place_bet {
+        float: right;
+    }
 
-  .fc_betting_slip ul.form-errors {
-    width: 220px;
-  }
+    .fc_betting_slip ul.form-errors li {
+        height: auto !important;
+        margin: 0px !important;
+        width: 243px;
+    }
 
-  .fc_betting_slip ul.form-errors li {
-    height: auto !important;
-  }
-
-  .fc_betting_slip ul.form-errors > li {
-    margin: 0px !important;
-    padding: 5px 15px 5px 32px;
-  }
-
-  ul.form-errors > li > ul > li {
-    font-size: 1em;
-    font-weight: normal;
-    width: 173px;
-  }
+    ul.form-errors > li > ul > li {
+        font-size: 1em;
+        font-weight: normal;
+        width: 225px;
+    }
 
 </style>
 
@@ -91,6 +84,19 @@
   <?php
   if ( count($this->betSlipSelections) ) :
   ?>
+    <?php
+    if ( $this->maxPayoutAlert ) :
+    ?>
+    <ul class="form-errors">
+      <li>
+        <ul class="errors">
+          <li>The maximum payout per bet is <?=\bets\fc::formatOdds(30)?>.</li>
+        </ul>
+      </li>
+    </ul>
+    <?php
+    endif;
+    ?>
     <table>
     <?php
     foreach ($this->betSlipSelections as $userSel) :
