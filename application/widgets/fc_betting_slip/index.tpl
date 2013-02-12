@@ -65,16 +65,18 @@
         float: right;
     }
 
+    .fc_betting_slip ul.form-errors {
+        width: 100%;
+    }
     .fc_betting_slip ul.form-errors li {
         height: auto !important;
         margin: 0px !important;
-        width: 243px;
+        width: 180px;
     }
 
     ul.form-errors > li > ul > li {
         font-size: 1em;
         font-weight: normal;
-        width: 225px;
     }
 
 </style>
