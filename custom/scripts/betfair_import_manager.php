@@ -12,7 +12,8 @@ require_once(PATH_DOMAIN . 'selection.php');
 
 class BetfairImportManager
 {
-	private $excludedEvents = array('ANTEPOST', 'Asian Handicap');
+	private $excludedEvents = array('ANTEPOST', 'ASIAN HANDICAP');
+	private $excludedSubEvents = array('MO - DRAW NO BET', 'DRAW NO BET', 'NEXT GOAL');
 	private $excludedEventsContaining = array('Match Bets');
 
 	private $soapClient;
@@ -34,10 +35,10 @@ class BetfairImportManager
 		$this->login();
 	}
 
-    private static function log($message)
-    {
-        file_put_contents('betfair_import_manager.log', $message . "\r\n", FILE_APPEND | LOCK_EX);
-    }
+	private static function log($message)
+	{
+		//file_put_contents('betfair_import_manager.log', $message . "\r\n", FILE_APPEND | LOCK_EX);
+	}
 
 	public static function setRunning($value)
 	{
@@ -194,7 +195,7 @@ class BetfairImportManager
 			$this->eventsByParentAndName = array();
 			$this->eventsByBetfairMarketId = array();
 
-			$events = \bets\Event::findWhere(array('idsport=' => $sport->id), ' AND ((betfairMarketId IS NULL) OR (ts IS NULL) or (ts > \'2012-11-13\'))');
+			$events = \bets\Event::findWhere(array('idsport=' => $sport->id));
 			foreach ($events as $event) {
 				$this->addEvent($event);
 			}
@@ -228,7 +229,7 @@ class BetfairImportManager
 			foreach ($bfEvents as $bfEvent) {
 				$eventName = trim($bfEvent->eventName);
 
-				if (in_array($eventName, $this->excludedEvents)) {
+				if (in_array(strtoupper($eventName), $this->excludedEvents)) {
 					continue;
 				}
 
@@ -259,21 +260,21 @@ class BetfairImportManager
 
 	private function parseEvents($sport, $bfEvents)
 	{
-        $this->log('Parsing events for sport: ' . $sport->name);
+		$this->log('Parsing events for sport: ' . $sport->name);
 
 		$this->eventsById = array();
 		$this->eventsByParentAndName = array();
 		$this->eventsByBetfairMarketId = array();
 
-        $this->log('Searching for events...');
-		$events = \bets\Event::findWhere(array('idsport=' => $sport->id), ' AND ((betfairMarketId IS NULL) OR (ts IS NULL) or (ts > \'2012-11-13\')) ');
-        $this->log('Found '. count($events) . ' events');
+		$this->log('Searching for events...');
+		$events = \bets\Event::findWhere(array('idsport=' => $sport->id));
+		$this->log('Found ' . count($events) . ' events');
 
-        $this->log('Loading events...');
+		$this->log('Loading events...');
 		foreach ($events as $event) {
 			$this->addEvent($event);
 		}
-        $this->log('Loaded ' . count($this->eventsById) . ' events');
+		$this->log('Loaded ' . count($this->eventsById) . ' events');
 
 		foreach ($bfEvents as $bfEvent) {
 			$attributes = $bfEvent->attributes();
@@ -298,24 +299,24 @@ class BetfairImportManager
 				}
 			}
 
-			if (!$eventFound || in_array($event->name, $this->excludedEvents)) {
+			if (!$eventFound || in_array(strtoupper($event->name), $this->excludedEvents)) {
 				continue;
 			}
 
-            $this->log('Parsins subevents for event ' . $event->name . '...');
+			$this->log('Parsins subevents for event ' . $event->name . '...');
 			if (count($bfEvent->subevent) > 0) {
 				$this->parseSubEvents($event, $bfEvent->subevent);
 			}
-            $this->log('Parse complete.');
+			$this->log('Parse complete.');
 		}
 
-        $this->log('Bulk updating events...');
+		$this->log('Bulk updating events...');
 		\bets\Event::bulkUpdate($this->eventsById);
-        $this->log('Bulk update complete.');
+		$this->log('Bulk update complete.');
 
-        $this->log('Committing..');
+		$this->log('Committing..');
 		\bets\bets::sql()->commit();
-        $this->log('Commit complete.');
+		$this->log('Commit complete.');
 
 		\bets\Event::clearCache();
 		$this->eventsById = null;
@@ -350,6 +351,10 @@ class BetfairImportManager
 			$subEventDate = date('Y-m-d H:i:00', \DateTime::createFromFormat('d/m/Y H:i', "{$attributes['date']} {$attributes['time']}")->getTimestamp());
 			$subEventBetfairMarketId = intval($attributes['id']);
 			$subEventTotalAmountMatched = floatval($attributes['TotalAmountMatched']);
+
+			if (in_array(strtoupper($subEventName), $this->excludedSubEvents)) {
+				continue;
+			}
 
 			$nowDate = date('Y-m-d H:i:s');
 			if ($subEventDate < $nowDate || $subEventDate > $this->competition->ts_end)

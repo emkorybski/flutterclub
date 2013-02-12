@@ -37,8 +37,7 @@ class fc
 
 	public static function getProfit($stake, $odds)
 	{
-		$fractions = self::getFractions($odds);
-		return $stake * round($fractions[0] / $fractions[1], 2);
+		return $stake * ($odds - 1);
 	}
 
 	public static function formatOdds($dec, $oddsFormat = null)
@@ -168,4 +167,8 @@ class fc
 
 //echo fc::roundDecimalOdds(1.73) . '<br/>';
 //echo fc::decimal2fractional(1.73) . '<br/>';
-//echo fc::getProfit(100, 1.73) . '<br/>';
+//echo fc::getProfit(50, 32.5) . '<br/>';
+//echo fc::getProfit(50, 6.5) . '<br/>';
+//echo fc::getProfit(50, 1.44) . '<br/>';
+//echo fc::getProfit(50, 2) . '<br/>';
+
