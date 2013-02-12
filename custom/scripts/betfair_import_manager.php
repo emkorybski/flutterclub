@@ -195,7 +195,7 @@ class BetfairImportManager
 			$this->eventsByParentAndName = array();
 			$this->eventsByBetfairMarketId = array();
 
-			$events = \bets\Event::findWhere(array('idsport=' => $sport->id));
+			$events = \bets\Event::findWhere(array('idsport=' => $sport->id), ' AND ((betfairMarketId IS NULL) OR (ts IS NULL) or (ts > \'2013-01-01\'))');
 			foreach ($events as $event) {
 				$this->addEvent($event);
 			}
@@ -267,7 +267,7 @@ class BetfairImportManager
 		$this->eventsByBetfairMarketId = array();
 
 		$this->log('Searching for events...');
-		$events = \bets\Event::findWhere(array('idsport=' => $sport->id));
+		$events = \bets\Event::findWhere(array('idsport=' => $sport->id), ' AND ((betfairMarketId IS NULL) OR (ts IS NULL) or (ts > \'2013-01-01\')) ');
 		$this->log('Found ' . count($events) . ' events');
 
 		$this->log('Loading events...');
