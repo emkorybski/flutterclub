@@ -217,7 +217,7 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 					$betSelection = new \bets\BetSelection();
 					$betSelection->idselection = $selection->id;
 					$betSelection->name = $selection->name;
-					$betSelection->odds = $selection->odds;
+					$betSelection->odds = \bets\fc::roundDecimalOdds($selection->odds);
 
 					array_push($betSelections, $betSelection);
 				}
@@ -236,7 +236,7 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 				$betSelection = new \bets\BetSelection();
 				$betSelection->idselection = $selection->id;
 				$betSelection->name = $selection->name;
-				$betSelection->odds = $selection->odds;
+				$betSelection->odds = \bets\fc::roundDecimalOdds($selection->odds);
 
 				array_push($betSelections, $betSelection);
 			}
