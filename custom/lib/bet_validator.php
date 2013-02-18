@@ -36,7 +36,7 @@ class BetValidator
 			$betStatus = array_search($betStatus, $selectionStatus);
 
 			$pendingBet->odds_real = $odds_real;
-			$pendingBet->odds = $odds;
+			$pendingBet->odds = min($odds, 30);
 			$pendingBet->status = $betStatus;
 			$pendingBet->update();
 			if ($betStatus != 'pending') {
