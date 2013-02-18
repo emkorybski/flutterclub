@@ -37,7 +37,7 @@ class fc
 
 	public static function getProfit($stake, $odds)
 	{
-		return $stake * ($odds - 1);
+		return $stake * (min($odds,30) - 1);
 	}
 
 	public static function formatOdds($dec, $oddsFormat = null)
