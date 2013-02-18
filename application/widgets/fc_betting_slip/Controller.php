@@ -86,13 +86,13 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 		$accumulatorOdds = 1;
 		foreach ($userSelections as $userSelection) {
 			$selection = $userSelection->getSelection();
-			if ($selection->odds > 30) {
+			if ($selection->odds > 31) {
 				$raiseAlert = true;
 				break;
 			}
 			$accumulatorOdds *= $selection->odds;
 		}
-		if (!$raiseAlert && count($userSelections) > 1 && $accumulatorOdds > 30) {
+		if (!$raiseAlert && count($userSelections) > 1 && $accumulatorOdds > 31) {
 			$raiseAlert = true;
 		}
 
@@ -276,7 +276,7 @@ class Widget_FC_Betting_SlipController extends Engine_Content_Widget_Abstract
 				$slipDescription = $slipDescription . $betSelection->name;
 				$isFirstSelection = false;
 			}
-			$odds = min($bet->odds, 30);
+			$odds = min($bet->odds, 31);
 			$slipDescription = $slipDescription . ' with a potential return of $FB' . ($bet->stake * $odds) . '. ';
 			$slipDescription = $slipDescription . ($isAccumulator ? 'In a multiple bet all selections must win for you to win your bet as the individual odds are multiplied.' : '');
 
