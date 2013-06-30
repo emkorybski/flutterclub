@@ -12,8 +12,8 @@ require_once(PATH_DOMAIN . 'selection.php');
 
 class BetfairImportManager
 {
-	private $excludedEvents = array('ANTEPOST', 'ASIAN HANDICAP');
-	private $excludedSubEvents = array('MO - DRAW NO BET', 'DRAW NO BET', 'NEXT GOAL');
+	private $excludedEvents = array('ANTEPOST', 'ASIAN HANDICAP', 'Ante Post', 'Forecast Betting', 'Reverse Forecast');
+	private $excludedSubEvents = array('MO - DRAW NO BET', 'DRAW NO BET', 'NEXT GOAL', 'Reverse FC', 'Forecast');
 	private $excludedEventsContaining = array('Match Bets');
 
 	private $soapClient;
@@ -191,28 +191,88 @@ class BetfairImportManager
 				$sport->insert();
 			}
 
-			$this->eventsById = array();
-			$this->eventsByParentAndName = array();
-			$this->eventsByBetfairMarketId = array();
+			$competitions = $this->getCompetitions($sport);
+			foreach ($competitions as $competition) {
 
-			$events = \bets\Event::findWhere(array('idsport=' => $sport->id), ' AND ((betfairMarketId IS NULL) OR (ts IS NULL) or (ts > \'2013-01-01\'))');
-			foreach ($events as $event) {
-				$this->addEvent($event);
+				if ($competition->betfairEventId == null) {
+					continue;
+				}
+
+				$this->eventsById = array();
+				$this->eventsByParentAndName = array();
+				$this->eventsByBetfairMarketId = array();
+
+				var_dump($sport->name);
+				var_dump($competition->name);
+				$events = \bets\Event::findWhere(array('idcomp=' => $competition->id));
+				foreach ($events as $event) {
+					$this->addEvent($event);
+				}
+				var_dump(count($events));
+				echo '<br/>';
+
+				$this->getEvents($competition->betfairEventId, $sport->id, $competition->id, $competition->id);
+
+				\bets\Event::clearCache();
+				$this->eventsById = null;
+				$this->eventsByParentAndName = null;
+				$this->eventsByBetfairMarketId = null;
+
 			}
-
-			$this->getEvents($sport->betfairSportId, $sport->id, 0);
-
-			\bets\Event::clearCache();
-			$this->eventsById = null;
-			$this->eventsByParentAndName = null;
-			$this->eventsByBetfairMarketId = null;
 		}
 
 		\bets\bets::sql()->commit();
 		\bets\bets::sql()->autocommit(true);
 	}
 
-	private function getEvents($betfairParentId, $sportId, $fcParentId)
+	private function getCompetitions($sport)
+	{
+		// getCompetitions
+		$soapRequest = new \stdClass();
+		$soapRequest->header = new \stdClass();
+		$soapRequest->header->sessionToken = $this->sessionToken;
+		$soapRequest->header->clientStamp = 0;
+		$soapRequest->eventParentId = $sport->betfairSportId;
+		$response = $this->soapClient->getEvents(array('request' => $soapRequest))->Result;
+
+		$competitionsByName = array();
+
+		$competitions = \bets\Event::findWhere(array('idsport=' => $sport->id, 'idparent=' => 0));
+		foreach ($competitions as $competition) {
+			$competitionsByName[$competition->name] = $competition;
+		}
+
+		if ($response->errorCode == 'OK' && property_exists($response->eventItems, 'BFEvent')) {
+			$bfCompetitions = is_object($response->eventItems->BFEvent)
+				? array($response->eventItems->BFEvent)
+				: $response->eventItems->BFEvent;
+			foreach ($bfCompetitions as $bfCompetition) {
+
+				$competitionName = trim($bfCompetition->eventName);
+
+				$competition = null;
+				if (array_key_exists($competitionName, $competitionsByName)) {
+					$competition = $competitionsByName[$competitionName];
+				} else {
+					$competition = new \bets\Event(null, array('name' => $competitionName, 'idparent' => 0, 'betfairMarketId' => null));
+					$competition->idsport = $sport->id;
+					$competition->betfairEventId = $bfCompetition->eventId;
+					$idComp = $competition->insert();
+					$competition->idcomp = $idComp;
+					$competition->update();
+
+					$competitions[] = $competition;
+					$competitionsByName[$competition->name] = $competition;
+				}
+
+				$competition->betfairEventId = $bfCompetition->eventId;
+			}
+		}
+
+		return $competitions;
+	}
+
+	private function getEvents($betfairParentId, $sportId, $competitionId, $fcParentId)
 	{
 		// getEvents
 		$soapRequest = new \stdClass();
@@ -248,12 +308,13 @@ class BetfairImportManager
 				if (!$event) {
 					$event = new \bets\Event(null, array('name' => $eventName, 'idparent' => $fcParentId, 'betfairMarketId' => null));
 					$event->idsport = $sportId;
+					$event->idcomp = $competitionId;
 					$parentId = $event->insert();
 					$this->addEvent($event);
 				} else {
 					$parentId = $event->id;
 				}
-				$this->getEvents($bfEvent->eventId, $sportId, $parentId);
+				$this->getEvents($bfEvent->eventId, $sportId, $competitionId, $parentId);
 			}
 		}
 	}
@@ -262,68 +323,73 @@ class BetfairImportManager
 	{
 		$this->log('Parsing events for sport: ' . $sport->name);
 
-		$this->eventsById = array();
-		$this->eventsByParentAndName = array();
-		$this->eventsByBetfairMarketId = array();
+		$competitions = \bets\Event::findWhere(array('idparent=' => 0));
+		foreach ($competitions as $competition) {
+			$idCompetition = $competition->idcomp;
 
-		$this->log('Searching for events...');
-		$events = \bets\Event::findWhere(array('idsport=' => $sport->id), ' AND ((betfairMarketId IS NULL) OR (ts IS NULL) or (ts > \'2013-01-01\')) ');
-		$this->log('Found ' . count($events) . ' events');
+			$this->eventsById = array();
+			$this->eventsByParentAndName = array();
+			$this->eventsByBetfairMarketId = array();
 
-		$this->log('Loading events...');
-		foreach ($events as $event) {
-			$this->addEvent($event);
-		}
-		$this->log('Loaded ' . count($this->eventsById) . ' events');
+			$this->log('Searching for events...');
+			$events = \bets\Event::findWhere(array('idsport=' => $sport->id, 'idcomp=' => $idCompetition), ' AND ((betfairMarketId IS NULL) OR (ts IS NULL) or (ts > \'2013-01-01\')) ');
+			$this->log('Found ' . count($events) . ' events');
 
-		foreach ($bfEvents as $bfEvent) {
-			$attributes = $bfEvent->attributes();
-			$eventName = trim($attributes['name'] . '');
-			//$eventDate = date('Y-m-d 00:00:00', \DateTime::createFromFormat('d/m/Y', $attributes['date'])->getTimestamp());
+			$this->log('Loading events...');
+			foreach ($events as $event) {
+				$this->addEvent($event);
+			}
+			$this->log('Loaded ' . count($this->eventsById) . ' events');
 
-			$eventsList = explode('/', $eventName);
+			foreach ($bfEvents as $bfEvent) {
+				$attributes = $bfEvent->attributes();
+				$eventName = trim($attributes['name'] . '');
+				//$eventDate = date('Y-m-d 00:00:00', \DateTime::createFromFormat('d/m/Y', $attributes['date'])->getTimestamp());
 
-			$idParent = 0;
-			$eventName = '';
-			for ($i = 0; $i < count($eventsList); $i++) {
-				$eventName .= trim($eventsList[$i]);
-				//$event = \bets\Event::getWhere(array('idsport=' => $sport->id, 'idparent=' => $idParent, 'name=' => $eventName));
-				$event = $this->getEventByParentAndName($idParent, $eventName);
-				if (!$event) {
-					$eventName .= '/';
-					$eventFound = false;
-				} else {
-					$idParent = $event->id;
-					$eventName = '';
-					$eventFound = true;
+				$eventsList = explode('/', $eventName);
+
+				$idParent = 0;
+				$eventName = '';
+				for ($i = 0; $i < count($eventsList); $i++) {
+					$eventName .= trim($eventsList[$i]);
+					//$event = \bets\Event::getWhere(array('idsport=' => $sport->id, 'idparent=' => $idParent, 'name=' => $eventName));
+					$event = $this->getEventByParentAndName($idParent, $eventName);
+					if (!$event) {
+						$eventName .= '/';
+						$eventFound = false;
+					} else {
+						$idParent = $event->id;
+						$eventName = '';
+						$eventFound = true;
+					}
 				}
+
+				if (!$eventFound || in_array(strtoupper($event->name), $this->excludedEvents)) {
+					continue;
+				}
+
+				$this->log('Parsing subevents for event ' . $event->name . '...');
+				if (count($bfEvent->subevent) > 0) {
+					$this->parseSubEvents($event, $bfEvent->subevent);
+				}
+				$this->log('Parse complete.');
 			}
 
-			if (!$eventFound || in_array(strtoupper($event->name), $this->excludedEvents)) {
-				continue;
-			}
+			$this->log('Bulk updating events...');
+			\bets\Event::bulkUpdate($this->eventsById);
+			$this->log('Bulk update complete.');
 
-			$this->log('Parsins subevents for event ' . $event->name . '...');
-			if (count($bfEvent->subevent) > 0) {
-				$this->parseSubEvents($event, $bfEvent->subevent);
-			}
-			$this->log('Parse complete.');
+			$this->log('Committing..');
+			\bets\bets::sql()->commit();
+			$this->log('Commit complete.');
+
+			\bets\Event::clearCache();
+			$this->eventsById = null;
+			$this->eventsByParentAndName = null;
+			$this->eventsByBetfairMarketId = null;
+
+			gc_collect_cycles();
 		}
-
-		$this->log('Bulk updating events...');
-		\bets\Event::bulkUpdate($this->eventsById);
-		$this->log('Bulk update complete.');
-
-		$this->log('Committing..');
-		\bets\bets::sql()->commit();
-		$this->log('Commit complete.');
-
-		\bets\Event::clearCache();
-		$this->eventsById = null;
-		$this->eventsByParentAndName = null;
-		$this->eventsByBetfairMarketId = null;
-
-		gc_collect_cycles();
 	}
 
 	private function updateParentEventsDate($event, $eventDate)
@@ -366,6 +432,7 @@ class BetfairImportManager
 				$subEvent = new \bets\Event(null, array('name' => $subEventName, 'ts' => $subEventDate, 'betfairMarketId' => $subEventBetfairMarketId, 'betfairAmountMatched' => $subEventTotalAmountMatched));
 				$subEvent->idsport = $event->idsport;
 				$subEvent->idparent = $event->id;
+				$subEvent->idcomp = $event->idcomp;
 				$subEvent->insert();
 				$this->addEvent($subEvent);
 
@@ -438,10 +505,15 @@ class BetfairImportManager
 		}
 
 		$isValidMarket = false;
-		if (($count <= 2 && $bookmakerPercentage < 120) ||
-			($count <= 5 && $bookmakerPercentage < 130) ||
-			($count <= 8 && $bookmakerPercentage < 150) ||
-			($count > 8 && $bookmakerPercentage < 250)
+		if (
+			//($count <= 2 && $bookmakerPercentage < 120) ||
+			//($count <= 5 && $bookmakerPercentage < 130) ||
+			//($count <= 8 && $bookmakerPercentage < 150) ||
+			//($count > 8 && $bookmakerPercentage < 250)
+			($count <= 2 && $bookmakerPercentage < 130) ||
+			($count <= 5 && $bookmakerPercentage < 150) ||
+			($count <= 8 && $bookmakerPercentage < 200) ||
+			($count > 8 && $bookmakerPercentage < 500)
 		) {
 			$isValidMarket = true;
 			\bets\Selection::bulkInsert($this->selectionsById);
